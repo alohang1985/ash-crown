@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>잿빛 왕관 · 시제품</title><script data-goatcounter="https://alohang1985.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0b0a;--bg2:#17130f;--card:#1f1a15;--line:#3a3027;--ink:#efe4cf;--ink2:#b9ab92;--ink3:#7d705d;--gold:#e0b04a;--red:#c4372b;
+ --g0:#b8b8b8;--g1:#5fcf6e;--g2:#4aa3ff;--g3:#ff4d4d;--g4:#ffb22e;--g5:#d77bff}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html,body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,#2a1d12,transparent),var(--bg);color:var(--ink);font-family:'Noto Serif KR',serif;-webkit-font-smoothing:antialiased;min-height:100vh}
+button{font:inherit;color:inherit;cursor:pointer}
+.app{max-width:520px;margin:0 auto;padding:12px 14px 90px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.logo{font-weight:900;font-size:22px;letter-spacing:.04em;color:var(--gold);text-shadow:0 0 18px rgba(224,176,74,.35)}
+.logo small{display:block;font-size:10.5px;color:var(--ink3);letter-spacing:.2em;font-weight:500}
+.cur{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.cur span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12.5px;white-space:nowrap}.cur b{color:var(--gold)}
+.ticker{margin:10px 0;border:1px solid #4a3a22;background:linear-gradient(90deg,#1c140b,#120e0a);border-radius:8px;height:30px;overflow:hidden;position:relative;font-size:13px}
+.ticker div{position:absolute;white-space:nowrap;top:5px;left:100%;animation:tick 14s linear}
+@keyframes tick{to{transform:translateX(calc(-100% - 560px))}}
+.hero{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px}
+.hero .pic{width:96px;height:120px;border-radius:10px;display:grid;place-items:center;font-size:44px;border:2px solid var(--line);background:#120f0c;position:relative;overflow:hidden}
+.hero h2{margin:0;font-size:18px}.hero p{margin:2px 0;font-size:13px;color:var(--ink2)}.cp{font-size:26px;font-weight:900;color:var(--gold)}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin:12px 0}
+.tabs button{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:9px 0;font-size:14px;color:var(--ink2)}
+.tabs button[aria-pressed=true]{background:linear-gradient(#4a2416,#2a140c);border-color:var(--red);color:var(--ink);font-weight:700}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.panel h3{margin:0 0 4px;font-size:16px}.sub{color:var(--ink3);font-size:12.5px;margin:0 0 12px}
+.btn{border:1px solid #6b4a20;background:linear-gradient(#5a3a16,#2e1d0b);border-radius:10px;padding:12px 14px;font-weight:700;font-size:15px;box-shadow:inset 0 1px 0 rgba(255,220,150,.2)}
+.btn.red{border-color:#8a2a20;background:linear-gradient(#7d2218,#3e100b)}
+.btn:disabled{opacity:.4;cursor:default}
+.row{display:flex;gap:8px}.row .btn{flex:1}
+.bar{height:8px;background:#0e0b09;border-radius:5px;overflow:hidden;border:1px solid var(--line)}.bar i{display:block;height:100%;background:linear-gradient(90deg,#8a5a1a,var(--gold));transition:width .3s}
+.mini{font-size:12.5px;color:var(--ink2)}
+.pack{border:1px solid var(--line);border-top:3px solid var(--pc);border-radius:12px;padding:12px;margin-bottom:10px;background:linear-gradient(180deg,color-mix(in srgb,var(--pc) 10%,transparent),transparent 60%)}.ph b{font-size:16px;color:var(--pc)}.ph small{display:block;color:var(--ink3);font-size:12px}.pr{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:12.5px;margin:8px 0}.pack .btn{font-size:13.5px;padding:10px 8px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.cardS{border:1px solid var(--line);border-radius:8px;padding:6px 4px;text-align:center;background:#16120e;font-size:11.5px;position:relative}
+.cardS .e{font-size:24px;display:block}.cardS .n{display:block;line-height:1.25;margin-top:2px}.cardS .c{position:absolute;top:2px;right:5px;font-size:11px;color:var(--gold)}
+.cardS.off{opacity:.25;filter:grayscale(1)}.cardS.eq{box-shadow:0 0 0 2px var(--gold)}
+.gsel{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:10px}.gsel button{border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:5px 11px;font-size:12.5px}.gsel button[aria-pressed=true]{border-color:currentColor;font-weight:700}
+.log{margin-top:12px;max-height:180px;overflow:auto;font-size:12.5px;color:var(--ink2);border-top:1px solid var(--line);padding-top:8px}.log p{margin:3px 0}
+.pt{width:100%;border-collapse:collapse;font-size:13px}.pt td{padding:5px 6px;border-bottom:1px solid var(--line)}.pt td:last-child{text-align:right;font-family:ui-monospace,Menlo,monospace}
+.note{font-size:11.5px;color:var(--ink3);margin-top:8px;line-height:1.5}
+/* 연출 무대 */
+.stage{position:fixed;inset:0;z-index:50;background:radial-gradient(circle at 50% 45%,rgba(40,25,10,.6),rgba(0,0,0,.94));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;overflow:hidden}
+.stage.shake{animation:shake .5s}
+@keyframes shake{0%,100%{transform:none}20%{transform:translate(-8px,4px)}40%{transform:translate(7px,-5px)}60%{transform:translate(-5px,-3px)}80%{transform:translate(4px,5px)}}
+.stage .msg{font-size:15px;color:var(--ink2);min-height:22px;text-align:center}
+.stage .skip{position:absolute;right:14px;bottom:18px;font-size:12px;color:var(--ink3);background:none;border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.big{width:200px;height:280px;perspective:900px;position:relative}
+.big .in{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.3,1.4,.5,1)}
+.big.flip .in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:16px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.back{background:repeating-linear-gradient(45deg,#2a1d12 0 10px,#1d140c 10px 20px);border:3px solid var(--ac,#555);box-shadow:0 0 30px var(--ac,transparent),0 0 70px var(--ac,transparent),inset 0 0 30px var(--ac,transparent);transition:border-color .15s,box-shadow .15s}
+.back::after{content:'♛';font-size:60px;color:rgba(224,176,74,.4)}
+.big.tremble .in{animation:trem .12s infinite}
+@keyframes trem{0%,100%{translate:0 0}25%{translate:-2px 1px}50%{translate:2px -1px}75%{translate:-1px -2px}}
+.front{transform:rotateY(180deg);background:linear-gradient(160deg,#2b2118,#120e0b);border:3px solid var(--ac);box-shadow:0 0 40px var(--ac)}
+.front .e{font-size:84px;filter:drop-shadow(0 0 12px var(--ac))}.front .g{font-size:13px;letter-spacing:.2em;color:var(--ac);font-weight:700}.front .n{font-size:20px;font-weight:900;text-align:center;padding:0 10px}
+.beam{position:absolute;left:50%;top:-20%;width:240px;height:140%;transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--ac),transparent);opacity:0;filter:blur(8px);pointer-events:none}
+.beam.on{animation:beam 1.6s ease-out}
+@keyframes beam{0%{opacity:0;width:20px}20%{opacity:.85}100%{opacity:0;width:420px}}
+.flash{position:fixed;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:60}.flash.on{animation:fl .5s ease-out}@keyframes fl{0%{opacity:.85}100%{opacity:0}}
+.multi{display:grid;grid-template-columns:repeat(4,64px);gap:8px;justify-content:center}
+.mc{width:64px;height:90px;border-radius:8px;border:2px solid #444;background:repeating-linear-gradient(45deg,#2a1d12 0 6px,#1d140c 6px 12px);display:grid;place-items:center;font-size:30px;transition:all .25s}
+.mc.open{background:linear-gradient(160deg,#2b2118,#120e0b);border-color:var(--ac);box-shadow:0 0 16px var(--ac)}
+.spark{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--ac,#ffd27a);pointer-events:none;animation:sp .9s ease-out forwards}
+@keyframes sp{to{transform:translate(var(--dx),var(--dy)) scale(.2);opacity:0}}
+.anvil{font-size:80px;position:relative}.hammer{position:absolute;top:-40px;right:-50px;font-size:56px;transform-origin:80% 80%;transform:rotate(-40deg)}.hammer.hit{animation:hit .28s ease-in}
+@keyframes hit{0%{transform:rotate(-40deg)}60%{transform:rotate(25deg)}100%{transform:rotate(-40deg)}}
+.wlv{font-size:34px;font-weight:900;color:var(--gold);text-shadow:0 0 18px rgba(224,176,74,.6)}
+.orbit{position:relative;width:220px;height:220px}.orbit .mc{position:absolute;left:78px;top:65px;transition:transform 1.4s cubic-bezier(.6,0,.4,1),opacity .4s}
+.gauge{width:240px}.gauge .bar{height:12px}
+.crack{animation:crack .6s}@keyframes crack{0%{filter:none}30%{filter:brightness(2)}100%{filter:grayscale(1) brightness(.4);transform:scale(.9) rotate(-4deg)}}
+</style></head><body>
+<div class="app">
+ <div class="top"><div class="logo">잿빛 왕관<small>에르덴 대륙 · 시제품 · 뽑기 · 합성 · 강화</small></div><div class="cur" id="cur"></div></div>
+ <div class="ticker" id="ticker"></div>
+ <div class="hero"><div class="pic" id="hpic"></div><div><h2 id="hname"></h2><p id="hsub"></p><div class="cp" id="hcp"></div><div class="bar" style="margin-top:6px"><i id="hunt"></i></div><p class="mini" id="hhunt"></p></div></div>
+ <div class="tabs" id="tabs"><button data-t="hunt">사냥</button><button data-t="gacha">뽑기</button><button data-t="synth">합성</button><button data-t="enh">강화</button><button data-t="book">도감</button></div>
+ <div class="panel" id="body"></div>
+ <p class="note">시제품입니다. 현금 결제는 없고, 모든 재화는 사냥으로만 얻습니다. 확률은 '확률표'에 전부 공개합니다. 기록은 이 브라우저에만 저장됩니다.</p>
+</div>
+<div class="stage" id="stage" hidden></div><div class="flash" id="flash"></div>
+<script>
+const $=id=>document.getElementById(id);const rnd=Math.random;const R=(a,b)=>a+Math.floor(rnd()*(b-a+1));const pick=a=>a[Math.floor(rnd()*a.length)];const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const G=[{k:0,ko:'일반',c:'var(--g0)',p:.6},{k:1,ko:'고급',c:'var(--g1)',p:.28},{k:2,ko:'희귀',c:'var(--g2)',p:.09},{k:3,ko:'영웅',c:'var(--g3)',p:.025},{k:4,ko:'전설',c:'var(--g4)',p:.0045},{k:5,ko:'신화',c:'var(--g5)',p:.0005}];
+const CARDS=[['skel','해골 병사','💀',0],['wolf','늑대인간','🐺',0],['orc','오크 전사','👹',0],['gob','고블린 궁수','🏹',0],['slime','독 슬라임','🟢',0],['bat','흡혈 박쥐','🦇',0],
+ ['lizard','리자드맨','🦎',1],['basil','바실리스크','🐍',1],['scout','어둠 정찰병','🗡️',1],['ogre','오우거','🪓',1],['ghoul','구울 기사','🧟',1],['spider','거미 여왕','🕷️',1],
+ ['warlock','흑마법사','🧙',2],['lich','리치','☠️',2],['drake','붉은 드레이크','🐲',2],['frost','서리 거인','🧊',2],['griffin','그리핀 기수','🦅',2],['wraith','망령 기사','👻',2],
+ ['duke','핏빛 공작','🧛',3],['paladin','불사의 성기사','🛡️',3],['storm','폭풍 마녀','⚡',3],
+ ['dk','데스나이트','⚔️',4],['ashking','잿빛 왕','👑',4],['abyss','심연의 용기사','🐉',4],['moon','달의 여사제','🌙',4],['flame','태초의 불꽃 군주','🔥',5]].map(([id,n,e,g])=>({id,n,e,g}));
+const POW=[30,90,260,700,1800,5000];
+const HUNTS=[{n:'속삭이는 섬',need:0,m:1,mob:['독 슬라임','들개','고블린']},{n:'기에른 성 외곽',need:600,m:1.6,mob:['오크 떼','해골 병사','늑대인간']},{n:'잿빛 협곡',need:1500,m:2.5,mob:['구울','리자드맨','오우거']},{n:'망자의 탑',need:4000,m:4,mob:['망령 기사','리치','흑마법사']},{n:'불타는 용의 둥지',need:9000,m:7,mob:['붉은 드레이크','데스나이트','서리 거인']}];
+const PACKS=[{k:'normal',ko:'일반 패키지',d:'골드로 살 수 있는 기본 소환',cur:'gold',p1:5000,p11:50000,rates:[.62,.28,.08,.02,0,0],pity:0,c:'#a8a8a8'},
+ {k:'silver',ko:'실버 패키지',d:'고급부터 시작 · 영웅까지',cur:'won',p1:3300,p11:33000,rates:[0,.75,.21,.04,0,0],pity:30,pg:3,c:'#c9d3dc'},
+ {k:'goldp',ko:'골드 패키지',d:'고급부터 시작 · 전설까지',cur:'won',p1:11000,p11:110000,rates:[0,.5,.34,.135,.025,0],pity:80,pg:4,c:'#ffcf5a'}];
+const ENH=[1,1,1,1,.9,.8,.6,.4,.25,.15,.09,.05,.03,.02,.01];  // +0→+1 ... +14→+15
+const SYN=[.25,.15,.08,.03,.01];const PITY=200;const SYN_PITY=100;
+let S=load();fix();
+function load(){try{const x=JSON.parse(localStorage.getItem('ash.v1'));if(x)return x}catch(_){}return{gem:30000,gold:5000,scroll:30,bless:3,cards:{skel:1},eq:'skel',wlv:0,pity:0,spts:[0,0,0,0,0],t:Date.now(),log:[],best:0,hz:0,spent:0,pp:{}}}
+function fix(){S.spent=S.spent||0;S.pp=S.pp||{};if(S.gold<20000&&!S.giftG){S.gold+=200000;S.giftG=1}}
+function save(){try{localStorage.setItem('ash.v1',JSON.stringify(S))}catch(_){}}
+const C=id=>CARDS.find(c=>c.id===id);
+function power(){const c=C(S.eq);let p=100+(c?POW[c.g]:0)+Math.round(40*Math.pow(1.38,S.wlv));const own=CARDS.filter(x=>S.cards[x.id]);p+=own.reduce((a,x)=>a+POW[x.g]*.15,0);return Math.round(p)}
+/* ---------- 소리 ---------- */
+let AC=null;function ac(){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume()}catch(_){}return AC}
+function tone(f,d=.15,type='sine',v=.12,delay=0,slide=0){const a=ac();if(!a)return;const t=a.currentTime+delay;const o=a.createOscillator(),g=a.createGain();o.type=type;o.frequency.setValueAtTime(f,t);if(slide)o.frequency.exponentialRampToValueAtTime(Math.max(30,f*slide),t+d);g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g).connect(a.destination);o.start(t);o.stop(t+d+.02)}
+const sfx={tick:g=>tone(300+g*120,.08,'triangle',.08),up:g=>tone(420+g*160,.18,'square',.06),flip:()=>{tone(180,.25,'sawtooth',.05,0,2.5)},
+ rare:g=>{[0,4,7,12].forEach((s,i)=>tone(440*Math.pow(2,(s+g*2)/12),.35,'triangle',.1,i*.09))},
+ legend:()=>{[0,4,7,12,16,19,24].forEach((s,i)=>tone(392*Math.pow(2,s/12),.5,'square',.07,i*.11));tone(60,1.2,'sine',.25,0,.5)},
+ hit:()=>{tone(900,.06,'square',.1);tone(140,.18,'sawtooth',.12,0,.4)},fail:()=>{tone(220,.5,'sawtooth',.1,0,.3)},boom:()=>{tone(80,.9,'sawtooth',.2,0,.3);tone(40,1,'sine',.3)},hum:()=>tone(70,1.6,'sine',.12,0,1.6)};
+const buzz=p=>{try{navigator.vibrate&&navigator.vibrate(p)}catch(_){}};
+/* ---------- 알림 띠 ---------- */
+function announce(t){const tk=$('ticker');const d=document.createElement('div');d.innerHTML=t;tk.innerHTML='';tk.appendChild(d);S.log.unshift(t.replace(/<[^>]+>/g,''));S.log=S.log.slice(0,40)}
+/* ---------- 화면 ---------- */
+let TAB='gacha';
+function head(){$('cur').innerHTML=`<span>골드 <b>${S.gold.toLocaleString()}</b></span><span>주문서 <b>${S.scroll}</b></span><span>축복 <b>${S.bless}</b></span>`;
+ const c=C(S.eq);$('hpic').textContent=c.e;$('hpic').style.borderColor=G[c.g].c;$('hpic').style.boxShadow=`0 0 18px ${G[c.g].c}`;$('hname').textContent=`${c.n} 변신`;$('hsub').innerHTML=`<span style="color:${G[c.g].c}">${G[c.g].ko}</span> · 잿빛 장검 <b style="color:var(--gold)">+${S.wlv}</b>`;$('hcp').textContent=`전투력 ${power().toLocaleString()}`}
+function render(){head();for(const b of $('tabs').children)b.setAttribute('aria-pressed',b.dataset.t===TAB);$('body').innerHTML=({hunt:vHunt,gacha:vGacha,synth:vSynth,enh:vEnh,book:vBook})[TAB]()}
+function vHunt(){return`<h3>자동 사냥 · 에르덴 대륙</h3><div class="gsel">${HUNTS.map((h,i)=>`<button data-hz="${i}" aria-pressed="${i===S.hz}" ${power()<h.need?'disabled':''}>${h.n}${power()<h.need?` · ${h.need.toLocaleString()}`:''}</button>`).join('')}</div><p class="sub">켜 두면 골드와 강화 주문서가 쌓입니다. 창을 닫아도 최대 12시간까지 쌓여 있어요. 전투력이 높을수록 더 많이 얻습니다.</p>
+ <p class="mini">1분에 골드 약 ${Math.round(power()*HUNTS[S.hz||0].m/8)} · 주문서 가끔</p><div class="log">${S.log.map(t=>`<p>${t}</p>`).join('')||'<p>아직 기록이 없습니다.</p>'}</div>`}
+function vGacha(){return`<h3>변신 카드 소환</h3><p class="sub">현금 패키지는 시제품이라 실제 결제가 일어나지 않아요. 대신 '가상 결제 누적'에 쌓입니다. <b>누적 ₩${S.spent.toLocaleString()}</b></p>
+ ${PACKS.map(P=>{const pc=P.pity?(S.pp[P.k]||0):0,price=n=>P.cur==='gold'?`${(n===1?P.p1:P.p11).toLocaleString()} 골드`:`₩${(n===1?P.p1:P.p11).toLocaleString()}`,dis=n=>P.cur==='gold'&&S.gold<(n===1?P.p1:P.p11);
+ return`<div class="pack" style="--pc:${P.c}"><div class="ph"><b>${P.ko}</b><small>${P.d}</small></div>
+  <div class="pr">${G.map((g,i)=>P.rates[i]?`<span style="color:${g.c}">${g.ko} ${(P.rates[i]*100).toFixed(P.rates[i]<.1?1:0)}%</span>`:'').join('')}</div>
+  ${P.pity?`<p class="mini">${G[P.pg].ko} 확정까지 <b style="color:${G[P.pg].c}">${P.pity-pc}</b>회</p><div class="bar" style="margin:4px 0 8px"><i style="width:${pc/P.pity*100}%"></i></div>`:''}
+  <div class="row"><button class="btn" data-pk="${P.k}" data-n="1" ${dis(1)?'disabled':''}>1회 · ${price(1)}</button><button class="btn red" data-pk="${P.k}" data-n="11" ${dis(11)?'disabled':''}>11회 · ${price(11)}</button></div></div>`}).join('')}`}
+function vSynth(){const g=SG;const have=CARDS.filter(c=>c.g===g).reduce((a,c)=>a+(S.cards[c.id]||0),0);return`<h3>카드 합성</h3><p class="sub">같은 등급 4장을 넣어 다음 등급에 도전합니다. 실패하면 넣은 카드 중 1장이 돌아오고 합성 포인트가 쌓여요. 포인트가 가득 차면 다음 합성은 확정 성공.</p>
+ <div class="gsel">${G.slice(0,5).map(x=>`<button data-sg="${x.k}" style="color:${x.c}" aria-pressed="${x.k===g}">${x.ko}</button>`).join('')}</div>
+ <p class="mini">가진 ${G[g].ko} 카드 <b>${have}</b>장 · 성공 확률 <b style="color:${G[g+1].c}">${(SYN[g]*100).toFixed(0)}%</b> → ${G[g+1].ko}</p>
+ <div class="bar" style="margin:8px 0 12px"><i style="width:${S.spts[g]/SYN_PITY*100}%"></i></div><p class="mini" style="margin-top:-8px">합성 포인트 ${S.spts[g]} / ${SYN_PITY}</p>
+ <button class="btn red" style="width:100%" data-act="syn" ${have<4?'disabled':''}>4장 합성하기</button>`}
+function vEnh(){const lv=S.wlv,p=ENH[lv];return`<h3>무기 강화 · 잿빛 장검</h3><p class="sub">+7부터는 실패하면 무기가 <b style="color:var(--red)">파괴</b>됩니다(+0으로). 축복 주문서는 실패해도 한 단계만 내려가요.</p>
+ <div style="text-align:center;margin:8px 0"><div class="wlv">+${lv}</div><p class="mini">다음 단계 성공 확률 <b style="color:var(--gold)">${lv>=15?'-':(p*100).toFixed(0)+'%'}</b> · 실패하면 ${lv<6?'그대로':lv<7?'그대로':'파괴'} · 최고 기록 +${S.best}</p></div>
+ <div class="row"><button class="btn" data-act="enh" ${S.scroll<1||lv>=15?'disabled':''}>강화 (주문서 1)</button><button class="btn red" data-act="benh" ${S.bless<1||lv>=15?'disabled':''}>축복 강화 (축복 1)</button></div>
+ <table class="pt" style="margin-top:14px">${ENH.map((x,i)=>i>=4?`<tr${i===lv?' style="background:#2a1d10"':''}><td>+${i} → +${i+1}</td><td>${(x*100).toFixed(0)}%</td></tr>`:'').join('')}</table>`}
+function vBook(){const own=CARDS.filter(c=>S.cards[c.id]).length;return`<h3>변신 도감 · ${own} / ${CARDS.length}</h3><p class="sub">모은 카드마다 전투력이 오릅니다. 카드를 누르면 그 모습으로 변신합니다.</p>
+ <div class="grid">${CARDS.map(c=>`<div class="cardS${S.cards[c.id]?'':' off'}${S.eq===c.id?' eq':''}" data-eq="${c.id}" style="border-color:${G[c.g].c}"><span class="c">${S.cards[c.id]?'×'+S.cards[c.id]:''}</span><span class="e">${c.e}</span><span class="n">${c.n}</span></div>`).join('')}</div>`}
+let SG=0;
+$('tabs').onclick=e=>{const b=e.target.closest('button');if(!b)return;TAB=b.dataset.t;render()};
+$('body').onclick=e=>{const a=e.target.closest('[data-act]'),sg=e.target.closest('[data-sg]'),eq=e.target.closest('[data-eq]');
+ const pk=e.target.closest('[data-pk]');if(pk&&!pk.disabled&&!BUSY){ac();Promise.resolve(buyPack(pk.dataset.pk,+pk.dataset.n)).catch(()=>{}).finally(()=>{if(BUSY)stageOff()});return}
+ const hz=e.target.closest('[data-hz]');if(hz&&!hz.disabled){S.hz=+hz.dataset.hz;save();render();return}
+ if(sg){SG=+sg.dataset.sg;render();return}if(eq){if(S.cards[eq.dataset.eq]){S.eq=eq.dataset.eq;save();render()}return}
+ if(!a||a.disabled||BUSY)return;ac();Promise.resolve(({g1:()=>gacha(1),g11:()=>gacha(11),syn:synth,enh:()=>enhance(false),benh:()=>enhance(true)})[a.dataset.act]()).catch(()=>{}).finally(()=>{if(BUSY)stageOff()})};
+/* ---------- 연출 공통 ---------- */
+let BUSY=false,SKIP=false;
+function stageOn(html){const s=$('stage');s.innerHTML=html+'<button class="skip" id="skip">빠르게 ▸▸</button>';s.hidden=false;SKIP=false;$('skip').onclick=()=>{SKIP=true};return s}
+function stageOff(){$('stage').hidden=true;$('stage').innerHTML='';BUSY=false;save();render()}
+const W=ms=>SKIP?wait(Math.min(ms,60)):wait(ms);
+function sparks(el,n,color){const r=el.getBoundingClientRect(),st=$('stage');for(let i=0;i<n;i++){const s=document.createElement('i');s.className='spark';const a=rnd()*Math.PI*2,d=60+rnd()*160;s.style.left=(r.left+r.width/2)+'px';s.style.top=(r.top+r.height/2)+'px';s.style.setProperty('--dx',Math.cos(a)*d+'px');s.style.setProperty('--dy',Math.sin(a)*d+'px');if(color)s.style.background=color;st.appendChild(s);setTimeout(()=>s.remove(),950)}}
+function flash(){const f=$('flash');f.classList.remove('on');void f.offsetWidth;f.classList.add('on')}
+function shake(){const s=$('stage');s.classList.remove('shake');void s.offsetWidth;s.classList.add('shake')}
+/* ---------- 뽑기 ---------- */
+function rollGrade(){if(S.pity>=PITY-1){S.pity=0;return rnd()<.1?5:4}let x=rnd(),acc=0;for(let i=G.length-1;i>=0;i--){acc+=G[i].p;if(x<acc){if(i>=4)S.pity=0;else S.pity++;return i}}S.pity++;return 0}
+function rollPack(P){const pc=(S.pp[P.k]||0)+1;let g;if(P.pity&&pc>=P.pity){g=P.pg;S.pp[P.k]=0}else{let x=rnd(),acc=0;g=P.rates.findIndex(r=>(acc+=r)>x);if(g<0)g=1;if(P.pity){S.pp[P.k]=g>=P.pg?0:pc}}
+ const c=pick(CARDS.filter(x=>x.g===g));S.cards[c.id]=(S.cards[c.id]||0)+1;return c}
+async function buyPack(k,n){const P=PACKS.find(x=>x.k===k);const cost=n===1?P.p1:P.p11;if(P.cur==='gold'){if(S.gold<cost)return;S.gold-=cost}else S.spent+=cost;BUSY=true;const res=[];for(let i=0;i<n;i++)res.push(rollPack(P));save();
+ if(n===1){await revealOne(res[0],true);stageOff();return}await revealMany(res)}
+function rollCard(){const g=rollGrade();const c=pick(CARDS.filter(x=>x.g===g));S.cards[c.id]=(S.cards[c.id]||0)+1;return c}
+async function revealOne(c,big){const g=c.g;const st=stageOn(`<div class="msg" id="msg">${big?'운명의 카드가 떨립니다…':''}</div><div class="big tremble" id="bc"><div class="beam" id="beam" style="--ac:${G[g].c}"></div><div class="in"><div class="face back" id="back"></div><div class="face front" style="--ac:${G[g].c}"><span class="g">${G[g].ko}</span><span class="e">${c.e}</span><span class="n">${c.n}</span></div></div></div>`);
+ const back=$('back'),bc=$('bc');sfx.hum();await W(500);
+ const fake=g>=3&&rnd()<.55;const tease=g<=1&&rnd()<.22;const top=fake?g-1:g;
+ for(let i=0;i<=Math.max(top,tease?g+1:0);i++){back.style.setProperty('--ac',G[i].c);sfx.up(i);if(i>=2)buzz(20);await W(260+i*160)}
+ if(tease){$('msg').textContent='…!';await W(500);back.style.setProperty('--ac',G[g].c);sfx.fail();$('msg').textContent='아쉽게도…';await W(450)}
+ if(fake){$('msg').textContent='…';await W(900);flash();shake();sfx.boom();back.style.setProperty('--ac',G[g].c);$('msg').innerHTML=`<b style="color:${G[g].c}">빛이 한 번 더 솟구칩니다!</b>`;buzz([60,40,120]);await W(800)}
+ if(g>=4){$('msg').innerHTML=`<b style="color:${G[g].c}">${G[g].ko}의 기운!</b>`;await W(SKIP?60:900)}
+ bc.classList.remove('tremble');bc.classList.add('flip');sfx.flip();await W(350);
+ if(g>=2){sparks(bc,g*14,G[g].c);sfx.rare(g)}if(g>=3){$('beam').classList.add('on');flash();shake()}if(g>=4){sfx.legend();buzz([100,60,200,60,300]);sparks(bc,80,G[g].c)}
+ $('msg').innerHTML=`<b style="color:${G[g].c}">${G[g].ko}</b> · ${c.n}`;if(g>=3)announce(`<span style="color:${G[g].c}">★ 당신이 ${G[g].ko} 「${c.n}」 변신을 손에 넣었습니다!</span>`);await wait(g>=4?2200:g>=2?1300:900)}
+async function gacha(n){const cost=n===1?300:3000;if(S.gem<cost)return;BUSY=true;S.gem-=cost;const res=[];for(let i=0;i<n;i++)res.push(rollCard());save();
+ if(n===1){await revealOne(res[0],true);stageOff();return}
+ await revealMany(res)}
+async function revealMany(res){const order=res.map((c,i)=>i).sort((a,b)=>res[a].g-res[b].g);const best=order.pop();
+ stageOn(`<div class="msg" id="msg">11장의 카드가 펼쳐집니다</div><div class="multi" id="mul">${res.map((c,i)=>`<div class="mc" id="m${i}"></div>`).join('')}</div>`);sfx.hum();await W(600);
+ for(const i of order){const c=res[i],el=$('m'+i);el.style.setProperty('--ac',G[c.g].c);el.classList.add('open');el.textContent=c.e;sfx.tick(c.g);if(c.g>=2)sparks(el,10,G[c.g].c);await W(c.g>=2?380:170)}
+ $('msg').innerHTML='<b>마지막 한 장…</b>';$('m'+best).classList.add('tremble');await W(900);await revealOne(res[best],false);
+ const top=res.reduce((a,c)=>Math.max(a,c.g),0);if(top<3)announce(`11회 소환 · 최고 등급 <span style="color:${G[top].c}">${G[top].ko}</span>`);stageOff()}
+/* ---------- 합성 ---------- */
+function takeCards(g,n){const L=[];const pool=CARDS.filter(c=>c.g===g);while(L.length<n){const c=pool.filter(x=>(S.cards[x.id]||0)>0).sort((a,b)=>(S.cards[b.id]||0)-(S.cards[a.id]||0))[0];if(!c)break;S.cards[c.id]--;if(!S.cards[c.id])delete S.cards[c.id];L.push(c)}
+ if(!S.cards[S.eq])S.eq=Object.keys(S.cards)[0]||'skel';return L}
+async function synth(){const g=SG;const ins=takeCards(g,4);if(ins.length<4){ins.forEach(c=>S.cards[c.id]=(S.cards[c.id]||0)+1);return}BUSY=true;
+ const sure=S.spts[g]>=SYN_PITY;const ok=sure||rnd()<SYN[g];
+ const st=stageOn(`<div class="msg" id="msg">${G[g].ko} 카드 4장을 제단에 올립니다</div><div class="orbit" id="orb">${ins.map((c,i)=>`<div class="mc open" id="o${i}" style="--ac:${G[g].c};transform:rotate(${i*90}deg) translateY(-80px) rotate(-${i*90}deg)">${c.e}</div>`).join('')}</div><div class="gauge"><div class="bar"><i id="gg" style="width:0"></i></div></div>`);
+ sfx.hum();await W(400);for(let i=0;i<4;i++){$('o'+i).style.transform='translate(0,0) scale(.6)';$('o'+i).style.opacity='.85'}
+ let w=0;const target=ok?100:R(62,96);while(w<target){w=Math.min(target,w+R(4,11));$('gg').style.width=w+'%';sfx.tick(Math.floor(w/25));await W(90)}
+ if(!ok){$('msg').textContent='…';await W(700);}
+ if(ok){const c=pick(CARDS.filter(x=>x.g===g+1));S.cards[c.id]=(S.cards[c.id]||0)+1;S.spts[g]=sure?0:S.spts[g];flash();shake();sfx.boom();sparks($('orb'),60,G[g+1].c);await W(500);await revealOne(c,false)}
+ else{const back=pick(ins);S.cards[back.id]=(S.cards[back.id]||0)+1;S.spts[g]=Math.min(SYN_PITY,S.spts[g]+R(8,15));for(let i=0;i<4;i++)$('o'+i).classList.add('crack');sfx.fail();buzz(200);
+  $('msg').innerHTML=`합성 실패 · 「${back.n}」 1장이 돌아왔습니다<br><span class="mini">합성 포인트 ${S.spts[g]} / ${SYN_PITY}</span>`;await wait(1800)}
+ stageOff()}
+/* ---------- 강화 ---------- */
+async function enhance(bl){if(bl?S.bless<1:S.scroll<1)return;BUSY=true;if(bl)S.bless--;else S.scroll--;const lv=S.wlv,ok=rnd()<ENH[lv];
+ const st=stageOn(`<div class="msg" id="msg">잿빛 장검 +${lv} 강화를 시작합니다${bl?' · 축복':''}</div><div class="anvil" id="anv">🗡️<span class="hammer" id="ham">🔨</span></div><div class="wlv" id="wl">+${lv}</div>`);
+ const hits=3,gap=lv>=7?(SKIP?60:700):380;for(let i=0;i<hits;i++){await W(i===hits-1&&lv>=7?gap*1.8:gap);$('ham').classList.remove('hit');void $('ham').offsetWidth;$('ham').classList.add('hit');sfx.hit();sparks($('anv'),8+i*6,'#ffcf6a');if(lv>=9)buzz(30)}
+ await W(lv>=9?900:300);
+ if(ok){S.wlv++;S.best=Math.max(S.best,S.wlv);flash();sfx.rare(Math.min(5,Math.floor(S.wlv/3)));sparks($('anv'),30+S.wlv*4,'#ffd27a');$('wl').textContent='+'+S.wlv;$('msg').innerHTML=`<b style="color:var(--gold)">강화 성공!</b>`;if(S.wlv>=9){shake();sfx.legend();buzz([80,50,160]);announce(`<span style="color:var(--g4)">★ 당신이 잿빛 장검 +${S.wlv} 강화에 성공했습니다!</span>`)}}
+ else if(lv<7){sfx.fail();$('msg').textContent='강화 실패 · 아무 일도 일어나지 않았습니다'}
+ else if(bl){S.wlv=Math.max(0,lv-1);sfx.fail();buzz(200);$('wl').textContent='+'+S.wlv;$('msg').innerHTML='축복의 힘으로 파괴는 면했습니다 · 한 단계 하락'}
+ else{S.wlv=0;sfx.boom();shake();buzz([300,80,300]);$('anv').classList.add('crack');$('wl').textContent='+0';$('msg').innerHTML=`<b style="color:var(--red)">무기가 산산조각 났습니다</b><br><span class="mini">+${lv}의 잿빛 장검은 재가 되었습니다</span>`;if(lv>=9)announce(`<span style="color:#ff6b6b">✝ 당신의 잿빛 장검 +${lv}이(가) 파괴되었습니다…</span>`)}
+ await wait(ok&&S.wlv>=9?2200:1600);stageOff()}
+/* ---------- 자동 사냥 ---------- */
+function huntTick(sec){const p=power()*HUNTS[S.hz||0].m;const gold=Math.round(p/2*sec/60),gem=Math.round(p/40*sec/60);S.gold+=gold;S.gem+=gem;if(rnd()<sec/90)S.scroll++;if(rnd()<sec/1200)S.bless++;return{gold,gem}}
+{const away=Math.min(12*3600,Math.floor((Date.now()-(S.t||Date.now()))/1000));if(away>60){const r=huntTick(away);setTimeout(()=>announce(`자리를 비운 ${Math.round(away/60)}분 동안 골드 ${r.gold.toLocaleString()}을 모았습니다`),600)}}
+let hp=0;setInterval(()=>{hp=(hp+10)%110;$('hunt').style.width=Math.min(100,hp)+'%';if(hp===100){huntTick(10);S.t=Date.now();save();head()}const H=HUNTS[S.hz||0];$('hhunt').textContent=`자동 사냥 중 · ${H.n} · ${H.mob[Math.floor(Date.now()/4000)%H.mob.length]} 처치 중`},1000);
+render();
+</script></body></html>
