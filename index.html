@@ -170,6 +170,17 @@ button{font:inherit;color:inherit;cursor:pointer}
 }
 
 .slog{scrollbar-width:thin;scrollbar-color:#5a4520 transparent}.app>*{min-width:0}
+
+.rg{width:min(760px,94vw);max-height:92vh;display:flex;flex-direction:column;gap:10px}
+.rgh{text-align:center}.rgh>b{font-size:16px}.rgc{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;font-size:13px;margin-top:4px;font-weight:700}
+.rgs{display:grid;gap:3px;margin-top:6px;font-size:12.5px;color:var(--ink2)}.rgs b{color:#7dff9a}
+.rgg{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:6px;overflow:auto;padding:4px}
+.rgi{position:relative;border:1px solid var(--ac);border-radius:8px;background:linear-gradient(160deg,#2b2118,#120e0b);display:flex;flex-direction:column;align-items:center;padding:5px 2px;opacity:0;animation:rgin .25s forwards}
+.rgi small{font-size:10.5px;text-align:center;line-height:1.15;color:var(--ac)}.rgi em{position:absolute;top:2px;right:4px;font-style:normal;font-size:11px;font-weight:700;color:#fff;text-shadow:0 0 3px #000}
+.rgi.hi{box-shadow:0 0 14px var(--ac)}
+@keyframes rgin{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+.cardS .dup{position:absolute;top:2px;left:4px;font-size:10px;color:#7dff9a;font-weight:700}
+.dupl{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}.dupl span{display:flex;align-items:center;gap:4px;border:1px solid var(--ac);border-radius:8px;padding:2px 7px 2px 2px;font-size:11.5px;background:#16120e}.dupl b{color:#7dff9a;font-size:11px}
 </style></head><body>
 <div class="app">
  <div class="top"><div class="logo">잿빛 왕관<small>에르덴 대륙 · 시제품</small></div><div class="cur" id="cur"></div><button class="ic" id="mute" type="button" aria-label="소리">🔊</button></div>
@@ -217,8 +228,8 @@ const CM={};CARDS.forEach(c=>CM[c.id]=c);const C=id=>CM[id];const byName=(ty,n)=
 const ZONES=ATL.Z.map(([n,reg,fl,mons],i)=>({n,reg,fl,mons,need:i?Math.round(120*Math.pow(1.19,i)):0,m:1+i*.4,lv:i+1}));
 const PACKS=[{k:'normal',ko:'일반 패키지',d:'골드로 살 수 있는 기본 소환',cur:'gold',p1:5000,p11:50000,rates:[.62,.28,.08,.02,0,0,0],pity:0,c:'#a8a8a8'},
  {k:'silver',ko:'실버 패키지',d:'고급부터 시작 · 영웅까지',cur:'won',p1:3300,p11:33000,rates:[0,.75,.21,.04,0,0,0],pity:30,pg:3,c:'#c9d3dc'},
- {k:'goldp',ko:'골드 패키지',d:'고급부터 시작 · 전설까지 · 아주 드물게 유일',cur:'won',p1:11000,p11:110000,rates:[0,.5,.34,.134,.025,0,.001],pity:80,pg:4,c:'#ffcf5a'}];
-const ENH=[1,1,1,1,.9,.8,.6,.4,.25,.15,.09,.05,.03,.02,.01];const SYN=[.25,.15,.08,.03,.01,.005];const SYN_PITY=100;
+ {k:'goldp',ko:'골드 패키지',d:'고급부터 시작 · 전설까지 · 아주 드물게 신화',cur:'won',p1:11000,p11:110000,rates:[0,.5,.34,.134,.025,.001,0],pity:80,pg:4,c:'#ffcf5a'}];
+const ENH=[1,1,1,1,.9,.8,.6,.4,.25,.15,.09,.05,.03,.02,.01];const SYN=[.25,.15,.08,.03,.01,1];const SYN_PITY=100;
 const COLS=[['속삭이는 섬의 친구들','d',['생쥐','박쥐','개구리','양'],{hp:.05}],['기에른 수비대','t',['오크','오크 전사','오크 기사','오크 대족장'],{atk:.04}],
  ['숲의 사냥꾼','t',['엘프 사냥꾼','켄타우로스','하피'],{crit:.02}],['망자의 군단','t',['해골 병사','구울','미라','와이트'],{def:5}],['밤의 귀족','t',['뱀파이어','뱀파이어 기사','리치'],{atk:.06}],
  ['거인의 피','t',['언덕 거인','서리 거인','불의 거인','바위 거인','타이탄'],{hp:.12}],['용의 혈통','t',['붉은 용','빙룡','폭풍의 용','그림자 용'],{pw:.1}],
@@ -291,7 +302,7 @@ function killMob(m,t){if(m.dead)return;const z=zone(),M=stats(),ms=mStat(z),cl=C
  if(m.boss){shakeT=t+400;fx.push({k:'ring',x:m.x+24,y:m.y+20,t,c:'#ffd23a'})}
  if(rnd()<.06*(cl.scroll||1)*M.drop*(m.boss?5:1)){S.scroll++;fx.push({k:'icon',ic:'scroll',x:m.x+16,y:m.y,t});if(m.boss)addDrop('#e0b04a','강화 주문서')}if(rnd()<.004*(m.boss?10:1)){S.bless++;fx.push({k:'num',x:m.x,y:m.y-10,t,txt:'축복 주문서!',c:'#9fe3ff'});addDrop('#9fe3ff','축복 주문서')}
  if(rnd()<(m.boss?.35:.006)){const ty=rnd()<.45?'w':'a';const L=CARDS.filter(c=>c.ty===ty&&c.g<=Math.min(3,1+Math.floor(z.lv/8)));const w=pick(L);giveCard(w);fx.push({k:'num',x:m.x,y:m.y-24,t,txt:`${w.n} 획득!`,c:G[w.g].c});addDrop(G[w.g].c,`${G[w.g].ko} ${tyKo(ty)} 「${w.n}」`);announce(`<span style="color:${G[w.g].c}">${ty==='w'?'⚔':'🛡'} ${z.n}에서 ${G[w.g].ko} ${tyKo(ty)} 「${w.n}」을 주웠습니다</span>`)}
- if(m.boss&&rnd()<.002){const ty=pick(['t','d','w','a']);const u=pick(CARDS.filter(c=>c.ty===ty&&c.g===6));giveCard(u);flash();addDrop(G[6].c,`유일 ${tyKo(ty)} 「${u.n}」`);announce(`<span style="color:${G[6].c}">✧ 기적! ${z.n} 우두머리가 유일 ${tyKo(ty)} 「${u.n}」을 떨어뜨렸습니다!</span>`)}
+ if(m.boss&&rnd()<.002){const ty=pick(['t','d','w','a']);const u=pick(CARDS.filter(c=>c.ty===ty&&c.g===5));giveCard(u);flash();addDrop(G[5].c,`신화 ${tyKo(ty)} 「${u.n}」`);announce(`<span style="color:${G[5].c}">✧ 기적! ${z.n} 우두머리가 신화 ${tyKo(ty)} 「${u.n}」을 떨어뜨렸습니다!</span>`)}
  if(rnd()<(m.boss?.04:.002)){const ty=rnd()<.5?'t':'d';const gg=rnd()<.15?Math.min(3,1+Math.floor(z.lv/10)):Math.min(2,Math.floor(z.lv/12));const cd=pick(CARDS.filter(c=>c.ty===ty&&c.g===gg));giveCard(cd);fx.push({k:'num',x:m.x,y:m.y-38,t,txt:`${tyKo(ty)} 카드!`,c:G[gg].c,crit:1});addDrop(G[gg].c,`${G[gg].ko} ${tyKo(ty)} 카드 「${cd.n}」`);announce(`<span style="color:${G[gg].c}">🂠 ${z.n}에서 ${tyKo(ty)} 카드 「${cd.n}」을 얻었습니다</span>`)}
  if(rnd()<(m.boss?.3:.02)){const n=m.boss?R(5,15):R(1,3);S.pot+=n;if(m.boss)addDrop('#ff9bd0',`물약 ${n}개`)}
  if(rnd()<.0004){S.cc++;addDrop('#7dff9a','전직 주문서');announce('<span style="color:#7dff9a">✦ 전직 주문서를 주웠습니다! 캐릭터 탭에서 직업을 바꿀 수 있어요</span>')}
@@ -385,7 +396,7 @@ function vChar(){const M=stats(),cl=CL(),ci=charIdx(S.cls?S.cls.k:'기사',S.cls
  <h4 class="ch4">물약 <small>HP 50% 아래면 자동으로 마십니다 · 가진 물약 ${S.pot}개</small></h4><div class="row"><button class="btn" data-pot="10" ${S.gold<1000?'disabled':''}>10개 · 1,000 골드</button><button class="btn" data-pot="100" ${S.gold<9000?'disabled':''}>100개 · 9,000 골드</button></div>`}
 const dropsHtml=()=>(S.drops||[]).length?(S.drops||[]).map(d=>`<li><b style="color:${d.c}">${d.n}</b><small>${d.z} · ${Math.max(0,Math.round((Date.now()-d.t)/60000))}분 전</small></li>`).join(''):'<li><small>아직 귀한 전리품이 없어요</small></li>';
 function vHunt(){const p=power();const regs=[...new Set(ZONES.map(z=>z.reg))];return`<h3>사냥터 · 에르덴 대륙</h3><p class="sub">전투력이 오르면 더 깊은 곳이 열립니다. 가끔 <b style="color:#ffd23a">우두머리</b>가 나타나고, 우두머리는 무기를 떨어뜨리기도 해요. 창을 닫아도 최대 12시간 동안 사냥이 계속됩니다.</p>
- <div class="droptbl"><b>사냥 전리품</b><span>골드 · 강화 주문서 6% · 물약 2% · 축복 주문서 0.4% · 무기·방어구 0.6% · 변신/인형 카드 0.2% · 전직 주문서 0.04%</span><span>우두머리: 무기·방어구 35% · 카드 4% · 주문서 5배 · <b style="color:#2ef2ff">유일 0.2%</b></span></div>
+ <div class="droptbl"><b>사냥 전리품</b><span>골드 · 강화 주문서 6% · 물약 2% · 축복 주문서 0.4% · 무기·방어구 0.6% · 변신/인형 카드 0.2% · 전직 주문서 0.04%</span><span>우두머리: 무기·방어구 35% · 카드 4% · 주문서 5배 · <b style="color:#ffc83a">신화 0.2%</b></span></div>
  <h4 class="ch4">최근 전리품</h4><ul class="drops" id="drops">${dropsHtml()}</ul>
  ${regs.map(r=>`<div class="reg"><h4>${r}</h4><div class="zl">${ZONES.map((z,i)=>z.reg!==r?'':`<button class="zb${i===S.hz?' on':''}" data-hz="${i}" ${p<z.need?'disabled':''}><span class="zm">${z.mons.map(m=>spr(m,28)).join('')}</span><b>Lv.${z.lv} ${z.n}</b><small>${p<z.need?`전투력 ${fmt(z.need)} 필요`:`골드 ×${z.m.toFixed(1)}`}</small></button>`).join('')}</div></div>`).join('')}`}
 function vGacha(){return`<h3>소환</h3>${poolSel()}<p class="sub">현금 패키지는 시제품이라 실제 결제가 일어나지 않아요. 대신 가상 결제 누적에 쌓입니다. <b>누적 ₩${fmt(S.spent)}</b></p>
@@ -401,6 +412,7 @@ function vSynth(){const g=SG;const have=haveCnt(POOL,g);const sp=S.spts[POOL+g]|
  return`<h3>합성</h3>${poolSel()}<p class="sub">같은 등급 4장으로 다음 등급에 도전합니다. 실패하면 1장이 돌아오고 합성 포인트가 쌓여요. 100점이면 확정 성공. <b>같은 것이 2장 이상일 때만</b> 한 장을 남기고 나머지를 재료로 씁니다.${isGear(POOL)?' 강화한 것과 장착 중인 것도 재료에서 빠져요.':''}</p>
  <div class="gsel g6">${G.slice(0,6).map((x,i)=>`<button data-sg="${i}" style="color:${x.c}" aria-pressed="${i===g}">${x.ko} ${haveCnt(POOL,i)}</button>`).join('')}</div>
  <p class="mini">합칠 수 있는 ${G[g].ko} ${tyKo(POOL)} <b>${have}</b>장 · 성공 확률 <b style="color:${G[g+1].c}">${(()=>{const v=(SYN[g]+(CL().syn||0))*100;return v<1?v.toFixed(1):v.toFixed(0)})()}%</b> → ${G[g+1].ko}</p>
+${(()=>{const D=CARDS.filter(c=>c.ty===POOL&&c.g===g&&spare(c)>0).sort((a,b)=>spare(b)-spare(a));return D.length?`<div class="dupl">${D.map(c=>`<span style="--ac:${G[c.g].c}">${spr(c.i,28)}<small>${c.n}</small><b>중복 ${spare(c)}</b></span>`).join('')}</div>`:`<p class="mini">이 등급에는 중복이 없어요.</p>`})()}
  <div class="bar" style="margin:8px 0 4px"><i style="width:${sp/SYN_PITY*100}%"></i></div><p class="mini">합성 포인트 ${sp} / ${SYN_PITY}</p>
  <div class="row" style="margin-top:8px"><button class="btn" data-act="syn" ${have<4?'disabled':''}>4장 합성</button><button class="btn red" data-act="synall" ${have<4?'disabled':''}>${G[g].ko} 전부 (${Math.floor(have/4)}회)</button></div>
  <button class="btn gold wide" data-act="synevery" ${allG<1?'disabled':''}>일반부터 신화까지 한 번에 전부 합성</button><p class="mini" style="text-align:center">아래 등급부터 차례로 합성하고, 새로 생긴 카드도 다시 재료로 씁니다.</p>`}
@@ -415,8 +427,8 @@ function vEnh(){if(ET!=='w'&&!SLOT[ET])ET='w';const it=enhItem();const c=it&&C(i
  <h4 class="ch4">가진 ${ET==='w'?'무기':SLOT[ET][0]} ${L.length}개 <small>누르면 장착${ET==='w'?' · 직업 무기 ★ 공격 +20%':''}</small></h4><div class="wl">${L.slice().sort((a,b)=>C(b.id).g-C(a.id).g||b.e-a.e).map(x=>{const c=C(x.id),af=ET==='w'&&CL().wt&&CL().wt.includes(c.wt);return`<button class="wi${isEqU(x.u)?' on':''}" data-equ="${x.u}" style="--gc:${G[c.g].c}">${spr(c.i,36)}<b>${c.n} +${x.e}</b><small style="color:${G[c.g].c}">${G[c.g].ko} ${ET==='w'?WTKO[c.wt]:'방어 '+c.def}${af?' ★':''}</small></button>`}).join('')||'<p class="mini">없어요. 소환이나 사냥으로 얻을 수 있어요.</p>'}</div>
  <table class="pt" style="margin-top:14px">${ENH.map((x,i)=>i>=4?`<tr${i===lv?' class="cur"':''}><td>+${i} → +${i+1}</td><td>${(x*100).toFixed(0)}%</td></tr>`:'').join('')}</table>`}
 function vBook(){const L=CARDS.filter(c=>c.ty===POOL);const own=L.filter(c=>isGear(POOL)?inv(POOL).some(w=>w.id===c.id):S.cards[c.id]).length;
- return`<h3>도감 · ${own} / ${L.length}</h3>${poolSel()}<p class="sub">${POOL==='t'?'변신마다 계열에 따라 고유 스킬과 능력이 다릅니다. 가진 카드를 누르면 장착합니다.':POOL==='d'?'인형마다 붙는 효과가 다릅니다. 가진 카드를 누르면 장착합니다.':'가진 장비를 누르면 가장 높게 강화된 것을 장착합니다.'}</p>
- <div class="grid">${L.map(c=>{const has=isGear(POOL)?inv(POOL).filter(w=>w.id===c.id).length:S.cards[c.id];const on=S.eqT===c.id||S.eqD===c.id||(isGear(POOL)&&inv(POOL).some(w=>w.id===c.id&&isEqU(w.u)));return`<div class="cardS${has?'':' off'}${on?' eq':''}" data-eq="${c.id}" style="--gc:${G[c.g].c}"><span class="c">${has?'×'+has:''}</span>${spr(c.i,44)}<span class="n">${c.n}</span><span class="fx" style="color:${G[c.g].c}">${c.ty==='t'?c.F.sk:c.ty==='d'?c.bko+' +'+Math.round(c.bv*100)+'%':c.ty==='a'?SLOT[c.sl][0]+' · 방어 '+c.def:WTKO[c.wt]+' · 공격 '+c.base}</span></div>`}).join('')}</div>`}
+ return`<h3>도감 · ${own} / ${L.length}</h3>${poolSel()}<p class="mini">중복(합성·컬렉션에 쓸 수 있는 여분) 합계 <b style="color:#7dff9a">${L.reduce((a,c)=>a+spare(c),0)}</b>장</p><p class="sub">${POOL==='t'?'변신마다 계열에 따라 고유 스킬과 능력이 다릅니다. 가진 카드를 누르면 장착합니다.':POOL==='d'?'인형마다 붙는 효과가 다릅니다. 가진 카드를 누르면 장착합니다.':'가진 장비를 누르면 가장 높게 강화된 것을 장착합니다.'}</p>
+ <div class="grid">${L.map(c=>{const has=isGear(POOL)?inv(POOL).filter(w=>w.id===c.id).length:S.cards[c.id];const on=S.eqT===c.id||S.eqD===c.id||(isGear(POOL)&&inv(POOL).some(w=>w.id===c.id&&isEqU(w.u)));return`<div class="cardS${has?'':' off'}${on?' eq':''}" data-eq="${c.id}" style="--gc:${G[c.g].c}"><span class="c">${has?'×'+has:''}</span>${spare(c)>0?`<span class="dup">중복 ${spare(c)}</span>`:''}${spr(c.i,44)}<span class="n">${c.n}</span><span class="fx" style="color:${G[c.g].c}">${c.ty==='t'?c.F.sk:c.ty==='d'?c.bko+' +'+Math.round(c.bv*100)+'%':c.ty==='a'?SLOT[c.sl][0]+' · 방어 '+c.def:WTKO[c.wt]+' · 공격 '+c.base}</span></div>`}).join('')}</div>`}
 function vCol(){const done=COLS.filter(colDone).length;const b=colBonus();
  return`<h3>컬렉션 · ${done} / ${COLS.length}</h3><p class="sub">카드나 무기를 <b>등록</b>하면 그 한 장은 사라지고, 묶음을 다 채우면 효과가 영원히 붙습니다. 장착 중인 것과 강화한 무기는 등록할 수 없어요.</p><div class="colsum">지금 받는 효과 <b>${Object.keys(b).length?bTxt(b):'아직 없음'}</b></div>
  ${COLS.map(cl=>{const reg=S.col[cl.k]||{};const full=colDone(cl);const n=cl.ids.filter(id=>reg[id]).length;return`<div class="colb${full?' done':''}"><div class="colh"><b>${full?'✦ ':''}${cl.n} <small>${n}/${cl.ids.length}</small></b><small>${bTxt(cl.b)}</small></div><div class="coli">${cl.ids.map(id=>{const c=C(id);const has=isGear(cl.ty)?inv(cl.ty).some(w=>w.id===id&&!isEqU(w.u)&&w.e===0):(S.cards[id]||0)>((id===S.eqT||id===S.eqD)?1:0);
@@ -476,8 +488,8 @@ function giveCard(c){if(isGear(c.ty))inv(c.ty).push({u:++S.uid,id:c.id,e:0});els
 function rollPack(P,ty){const key=P.k+ty;const pc=(S.pp[key]||0)+1;let g;if(P.pity&&pc>=P.pity){g=P.pg;S.pp[key]=0}else{let x=rnd(),acc=0;g=P.rates.findIndex(r=>(acc+=r)>x);if(g<0)g=1;if(P.pity)S.pp[key]=g>=P.pg?0:pc}
  const c=pick(CARDS.filter(c=>c.ty===ty&&c.g===g));giveCard(c);return c}
 async function buyPack(k,n){const P=PACKS.find(x=>x.k===k);const cost=n===1?P.p1:P.p11*n/11;if(P.cur==='gold'){if(S.gold<cost)return;S.gold-=cost}else S.spent+=cost;BUSY=true;const res=[];for(let i=0;i<n;i++)res.push(rollPack(P,POOL));save();
- if(n===1){await revealOne(res[0],true);stageOff();return}if(n<=11){await revealMany(res);stageOff();return}
- const cnt=G.map((g,i)=>res.filter(c=>c.g===i).length);
+ if(n===1){await revealOne(res[0],true);stageOff();return}await showGrid(res,`${P.ko} · ${tyKo(POOL)} ${n}장 소환`);stageOff()}
+async function _unusedBulk(P,n,res){const cnt=G.map((g,i)=>res.filter(c=>c.g===i).length);
  stageOn(`<div class="msg"><b>${P.ko} · ${tyKo(POOL)} ${n}장 소환</b></div><div class="synsum">${G.map((g,i)=>cnt[i]?`<div><span style="color:${g.c}">${g.ko}</span><b style="color:${g.c}">${cnt[i]}장</b></div>`:'').join('')}</div>`);sfx.hum();
  for(const el of $('stage').querySelectorAll('.synsum>div')){el.classList.add('in');sfx.tick(2);await W(300)}await W(1000);
  const top=res.filter(c=>c.g>=2).sort((a,b)=>a.g-b.g);if(top.length)await revealMany(top.slice(-40),`희귀 이상 ${top.length}장`);else await revealMany(res.slice(-11));stageOff()}
@@ -492,6 +504,15 @@ async function revealOne(c,big){const g=c.g;stageOn(`<div class="msg" id="msg">$
  bc.classList.remove('tremble');bc.classList.add('flip');sfx.flip();await W(350);
  if(g>=2){sparks(bc,g*14,G[g].c);sfx.rare(g)}if(g>=3){$('beam').classList.add('on');flash();shake()}if(g>=4){sfx.legend();buzz([100,60,200,60,300]);sparks(bc,80,G[g].c)}
  $('msg').innerHTML=`<b style="color:${G[g].c}">${G[g].ko}</b> · ${c.n}`;if(g>=3)announce(`<span style="color:${G[g].c}">★ 당신이 ${G[g].ko} ${tyKo(c.ty)} 「${c.n}」을 손에 넣었습니다!</span>`);await wait(SKIP?400:g>=4?2200:g>=2?1300:900)}
+/* 여러 장 결과: 기다리지 않고 한 번에 보여주기 */
+function showGrid(res,title,headHtml){const m={};for(const c of res){(m[c.id]=m[c.id]||{c,n:0}).n++}const L=Object.values(m).sort((a,b)=>b.c.g-a.c.g||b.n-a.n);
+ const cnt=G.map((g,i)=>res.filter(c=>c.g===i).length);const top=res.reduce((a,c)=>Math.max(a,c.g),0);
+ stageOn(`<div class="rg"><div class="rgh"><b>${title}</b><div class="rgc">${G.map((g,i)=>cnt[i]?`<span style="color:${g.c}">${g.ko} ${cnt[i]}</span>`:'').join('')}</div>${headHtml||''}</div>
+ <div class="rgg">${L.map((x,i)=>`<div class="rgi${x.c.g>=3?' hi':''}" style="--ac:${G[x.c.g].c};animation-delay:${Math.min(i,40)*18}ms">${spr(x.c.i,40)}<small>${x.c.n}</small>${x.n>1?`<em>×${x.n}</em>`:''}</div>`).join('')}</div>
+ <button class="btn gold wide" id="rgok">확인</button></div>`);$('skip').remove();
+ if(top>=3){flash();sfx.rare(top);buzz([60,40,120])}else sfx.tick(2);if(top>=4)sfx.legend();
+ for(const x of L)if(x.c.g>=4)announce(`<span style="color:${G[x.c.g].c}">★ 당신이 ${G[x.c.g].ko} ${tyKo(x.c.ty)} 「${x.c.n}」을 손에 넣었습니다!</span>`);
+ return new Promise(r=>{$('rgok').onclick=r})}
 async function revealMany(res,title){if(!res.length)return;const order=res.map((c,i)=>i).sort((a,b)=>res[a].g-res[b].g);const best=order.pop();
  stageOn(`<div class="msg" id="msg">${title||res.length+'장의 카드가 펼쳐집니다'}</div><div class="multi${res.length>12?' many':''}">${res.map((c,i)=>`<div class="mc" id="m${i}"></div>`).join('')}</div>`);sfx.hum();await W(600);
  for(const i of order){const c=res[i],el=$('m'+i);el.style.setProperty('--ac',G[c.g].c);el.classList.add('open');el.innerHTML=spr(c.i,res.length>12?32:48);sfx.tick(c.g);if(c.g>=2)sparks(el,10,G[c.g].c);await W(c.g>=2?320:Math.max(40,170-res.length*4))}
@@ -504,9 +525,8 @@ function synthOnce(ty,g){const ins=[];for(let i=0;i<4;i++){const c=takeOne(ty,g)
 async function synth(mode){const ty=POOL;
  if(mode){const gs=mode===2?[0,1,2,3,4,5]:[SG];const rows=[],won=[];for(const g of gs){let n=0,ok=0,used=0;while(haveCnt(ty,g)>=4&&n<500){const r=synthOnce(ty,g);if(!r)break;n++;used+=4;if(r.ok){ok++;won.push(r.c)}else used--}if(n)rows.push({g,n,ok,used})}
   if(!rows.length)return;BUSY=true;ensure();save();
-  stageOn(`<div class="msg"><b>${mode===2?'한 번에 전부 합성':G[SG].ko+' 전부 합성'}</b></div><div class="synsum">${rows.map(r=>`<div><span><span style="color:${G[r.g].c}">${G[r.g].ko}</span> → <span style="color:${G[r.g+1].c}">${G[r.g+1].ko}</span></span><b>${r.n}회 · 성공 ${r.ok}</b><small>재료 ${r.used}장 소모 · 포인트 ${S.spts[ty+r.g]||0}/${SYN_PITY}</small></div>`).join('')}</div>`);sfx.hum();
-  const rows2=$('stage').querySelectorAll('.synsum>div');for(const el of rows2){el.classList.add('in');sfx.tick(2);await W(260)}await W(900);
-  const keep=won.filter(c=>c.g>=2);const show=keep.length?keep:won;if(show.length){await revealMany(show.slice(-40),`새로 생긴 ${tyKo(ty)} ${won.length}개${keep.length&&keep.length<won.length?` (희귀 이상 ${keep.length}장)`:''}`)}else{$('stage').querySelector('.msg').innerHTML='<b>모두 실패…</b><br><span class="mini">합성 포인트는 쌓였어요</span>';sfx.fail();await wait(1500)}stageOff();return}
+  const head=`<div class="rgs">${rows.map(r=>`<div><span style="color:${G[r.g].c}">${G[r.g].ko}</span>→<span style="color:${G[r.g+1].c}">${G[r.g+1].ko}</span> ${r.n}회 · 성공 <b>${r.ok}</b> <small>포인트 ${S.spts[ty+r.g]||0}/${SYN_PITY}</small></div>`).join('')}</div>`;
+  await showGrid(won,`${mode===2?'한 번에 전부 합성':G[SG].ko+' 전부 합성'} · 새로 생긴 ${tyKo(ty)} ${won.length}개`,head+(won.length?'':'<p class="mini">모두 실패했지만 합성 포인트는 쌓였어요</p>'));stageOff();return}
  const g=SG;if(haveCnt(ty,g)<4)return;BUSY=true;const r=synthOnce(ty,g);if(!r){BUSY=false;return}ensure();const ins=r.ins;
  stageOn(`<div class="msg" id="msg">${G[g].ko} ${tyKo(ty)} 4장을 제단에 올립니다</div><div class="orbit" id="orb">${ins.map((c,i)=>`<div class="mc open" id="o${i}" style="--ac:${G[g].c};transform:rotate(${i*90}deg) translateY(-80px) rotate(-${i*90}deg)">${spr(c.i,48)}</div>`).join('')}</div><div class="gauge"><div class="bar"><i id="gg" style="width:0"></i></div></div>`);
  sfx.hum();await W(400);for(let i=0;i<4;i++){$('o'+i).style.transform='translate(0,0) scale(.6)';$('o'+i).style.opacity='.85'}
