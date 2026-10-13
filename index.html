@@ -336,9 +336,11 @@ function vGacha(){return`<h3>소환</h3>${poolSel()}<p class="sub">현금 패키
   <div class="pr">${G.map((g,i)=>P.rates[i]?`<span style="color:${g.c}">${g.ko} ${(P.rates[i]*100).toFixed(P.rates[i]<.1?1:0)}%</span>`:'').join('')}</div>
   ${P.pity?`<p class="mini">${G[P.pg].ko} 확정까지 <b style="color:${G[P.pg].c}">${P.pity-pc}</b>회</p><div class="bar" style="margin:4px 0 8px"><i style="width:${pc/P.pity*100}%"></i></div>`:''}
   <div class="row"><button class="btn" data-pk="${P.k}" data-n="1" ${dis(1)?'disabled':''}>1회 · ${price(1)}</button><button class="btn red" data-pk="${P.k}" data-n="11" ${dis(11)?'disabled':''}>11회 · ${price(11)}</button></div><button class="btn gold wide" data-pk="${P.k}" data-n="110" ${dis(110)?'disabled':''}>11회 × 10번 한 번에 (110장) · ${price(110)}</button></div>`}).join('')}`}
-const haveCnt=(ty,g)=>ty==='w'?S.wpn.filter(w=>w.e===0&&w.u!==S.eqW&&C(w.id).g===g).length:CARDS.filter(c=>c.ty===ty&&c.g===g).reduce((a,c)=>a+(S.cards[c.id]||0)-((c.id===S.eqT||c.id===S.eqD)&&S.cards[c.id]?1:0),0);
+const spareW=id=>{const all=S.wpn.filter(w=>w.id===id);return Math.max(0,Math.min(all.filter(w=>w.e===0&&w.u!==S.eqW).length,all.length-1))};
+const spare=c=>c.ty==='w'?spareW(c.id):Math.max(0,(S.cards[c.id]||0)-1);/* 한 장은 항상 남김 */
+const haveCnt=(ty,g)=>CARDS.filter(c=>c.ty===ty&&c.g===g).reduce((a,c)=>a+spare(c),0);
 function vSynth(){const g=SG;const have=haveCnt(POOL,g);const sp=S.spts[POOL+g]||0;const allG=G.slice(0,5).reduce((a,x,i)=>a+Math.floor(haveCnt(POOL,i)/4),0);
- return`<h3>합성</h3>${poolSel()}<p class="sub">같은 등급 4장으로 다음 등급에 도전합니다. 실패하면 1장이 돌아오고 합성 포인트가 쌓여요. 100점이면 확정 성공. 장착 중인 것${POOL==='w'?'과 강화한 무기':''}는 재료로 쓰지 않습니다.</p>
+ return`<h3>합성</h3>${poolSel()}<p class="sub">같은 등급 4장으로 다음 등급에 도전합니다. 실패하면 1장이 돌아오고 합성 포인트가 쌓여요. 100점이면 확정 성공. <b>같은 것이 2장 이상일 때만</b> 한 장을 남기고 나머지를 재료로 씁니다.${POOL==='w'?' 강화한 무기와 장착 중인 무기도 재료에서 빠져요.':''}</p>
  <div class="gsel">${G.slice(0,5).map((x,i)=>`<button data-sg="${i}" style="color:${x.c}" aria-pressed="${i===g}">${x.ko} ${haveCnt(POOL,i)}</button>`).join('')}</div>
  <p class="mini">합칠 수 있는 ${G[g].ko} ${tyKo(POOL)} <b>${have}</b>장 · 성공 확률 <b style="color:${G[g+1].c}">${((SYN[g]+(CL().syn||0))*100).toFixed(0)}%</b> → ${G[g+1].ko}</p>
  <div class="bar" style="margin:8px 0 4px"><i style="width:${sp/SYN_PITY*100}%"></i></div><p class="mini">합성 포인트 ${sp} / ${SYN_PITY}</p>
@@ -431,8 +433,8 @@ async function revealMany(res,title){if(!res.length)return;const order=res.map((
  for(const i of order){const c=res[i],el=$('m'+i);el.style.setProperty('--ac',G[c.g].c);el.classList.add('open');el.innerHTML=spr(c.i,res.length>12?32:48);sfx.tick(c.g);if(c.g>=2)sparks(el,10,G[c.g].c);await W(c.g>=2?320:Math.max(40,170-res.length*4))}
  $('msg').innerHTML='<b>마지막 한 장…</b>';$('m'+best).classList.add('tremble');await W(900);await revealOne(res[best],false);
  const top=res.reduce((a,c)=>Math.max(a,c.g),0);if(top<3)announce(`${res.length}장 · 최고 등급 <span style="color:${G[top].c}">${G[top].ko}</span>`)}
-function takeOne(ty,g){if(ty==='w'){const i=S.wpn.findIndex(w=>w.e===0&&w.u!==S.eqW&&C(w.id).g===g);if(i<0)return null;return C(S.wpn.splice(i,1)[0].id)}
- const c=CARDS.filter(x=>x.ty===ty&&x.g===g&&(S.cards[x.id]||0)>((x.id===S.eqT||x.id===S.eqD)?1:0)).sort((a,b)=>(S.cards[b.id]||0)-(S.cards[a.id]||0))[0];if(!c)return null;S.cards[c.id]--;if(!S.cards[c.id])delete S.cards[c.id];return c}
+function takeOne(ty,g){const c=CARDS.filter(x=>x.ty===ty&&x.g===g&&spare(x)>0).sort((a,b)=>spare(b)-spare(a))[0];if(!c)return null;
+ if(ty==='w'){const i=S.wpn.findIndex(w=>w.id===c.id&&w.e===0&&w.u!==S.eqW);S.wpn.splice(i,1)}else S.cards[c.id]--;return c}
 function synthOnce(ty,g){const ins=[];for(let i=0;i<4;i++){const c=takeOne(ty,g);if(!c){ins.forEach(giveCard);return null}ins.push(c)}const key=ty+g;const sure=(S.spts[key]||0)>=SYN_PITY;const ok=sure||rnd()<SYN[g]+(CL().syn||0);
  if(ok){const c=pick(CARDS.filter(x=>x.ty===ty&&x.g===g+1));giveCard(c);if(sure)S.spts[key]=0;return{ok,c,ins}}const back=pick(ins);giveCard(back);S.spts[key]=Math.min(SYN_PITY,(S.spts[key]||0)+R(8,15));return{ok,c:back,ins}}
 async function synth(mode){const ty=POOL;
