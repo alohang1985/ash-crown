@@ -136,33 +136,47 @@ button{font:inherit;color:inherit;cursor:pointer}
 
 .side{display:none}
 @media(min-width:1000px){
- .app{max-width:1360px;display:grid;grid-template-columns:minmax(520px,1fr) minmax(560px,1fr);column-gap:22px;align-items:start;padding:16px 24px 60px}
- .app>.top{grid-column:1/-1;margin-bottom:6px}
- .lcol{position:sticky;top:12px;display:flex;flex-direction:column;gap:8px}
- .lcol .ticker{margin:0}
- .rcol .tabs{margin-top:0}
- .heq{margin-top:0}
+ .app{max-width:1360px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:18px;row-gap:8px;align-items:start;padding:16px 24px 60px}
+ .app>.top{grid-column:1/-1;margin-bottom:0}
+ .lcol{grid-column:1;grid-row:2;display:flex;flex-direction:column;gap:8px}
+ .ccol{grid-column:1;grid-row:3;display:flex;flex-direction:column;gap:8px}
+ .rcol{grid-column:2;grid-row:2/span 2}
+ .lcol .ticker{margin:0}.rcol .tabs{margin-top:0}.heq{margin-top:0}
  .side{display:grid;grid-template-columns:1fr 1fr;gap:8px}
  .sbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
- .sbox:last-child{grid-column:1/-1}
  .sbox h4{margin:0 0 8px;font-size:13px;color:var(--gold)}
  .sg{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px}.sg span{display:flex;justify-content:space-between;font-size:12px;color:var(--ink2)}.sg b{color:var(--ink,#eee)}
  .sarm{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
  .sarm button{border:1px solid var(--line);border-bottom:3px solid var(--gc);border-radius:8px;background:#16120e;padding:3px 0;display:flex;flex-direction:column;align-items:center}
  .sarm small{font-size:10px;color:var(--ink2)}.sarm b{font-size:11px}
  .slog{list-style:none;margin:0;padding:0;display:grid;gap:3px;max-height:190px;overflow:auto}.slog li{font-size:12px;color:var(--ink2);border-bottom:1px dashed var(--line);padding:2px 0}
- .grid{grid-template-columns:repeat(6,1fr)}
+ .grid{grid-template-columns:repeat(5,1fr)}
  .zl{grid-template-columns:repeat(3,1fr)}
  .wl{grid-template-columns:repeat(3,1fr)}
  .heq{grid-template-columns:repeat(4,1fr)}
 }
-@media(min-width:1400px){.app{grid-template-columns:minmax(560px,1.05fr) 1fr}}
+@media(min-width:1440px){
+ .app{max-width:1680px;grid-template-columns:280px minmax(0,1fr) minmax(440px,540px);column-gap:18px}
+ .ccol{grid-column:1;grid-row:2;position:sticky;top:12px}
+ .lcol{grid-column:2;grid-row:2;position:sticky;top:12px}
+ .rcol{grid-column:3;grid-row:2}
+ .heq{grid-template-columns:1fr}
+ .heq .eq{min-height:0}
+ .side{grid-template-columns:1fr}
+ .side2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+ .side2 .slog{max-height:240px}
+ .grid{grid-template-columns:repeat(4,1fr)}
+ .zl,.wl{grid-template-columns:repeat(2,1fr)}
+}
+
+.slog{scrollbar-width:thin;scrollbar-color:#5a4520 transparent}.app>*{min-width:0}
 </style></head><body>
 <div class="app">
  <div class="top"><div class="logo">잿빛 왕관<small>에르덴 대륙 · 시제품</small></div><div class="cur" id="cur"></div><button class="ic" id="mute" type="button" aria-label="소리">🔊</button></div>
  <div class="lcol"><div class="livea" id="liveA"></div><div class="ticker" id="ticker"></div>
  <div class="battle"><canvas id="bt" width="384" height="168"></canvas><div class="hcp" id="hcp"></div></div>
- <div class="heq" id="heq"></div>
+ <div class="side side2" id="side2"></div></div>
+ <div class="ccol"><div class="heq" id="heq"></div>
  <div class="side" id="side"></div></div><div class="rcol">
  <div class="tabs" id="tabs"><button data-t="char">캐릭터</button><button data-t="hunt">사냥터</button><button data-t="gacha">소환</button><button data-t="synth">합성</button><button data-t="enh">강화</button><button data-t="col">컬렉션</button><button data-t="ah">거래소</button><button data-t="book">도감</button></div>
  <div class="panel" id="body"></div>
@@ -260,8 +274,8 @@ const sfx={tick:g=>tone(300+g*120,.08,'triangle',.08),up:g=>tone(420+g*160,.18,'
 const buzz=p=>{try{navigator.vibrate&&navigator.vibrate(p)}catch(_){}};let MUTE=false;
 function sideRender(){const el=$('side');if(!el||!S||!S.wpn||getComputedStyle(el).display==='none')return;const M=stats();
  el.innerHTML=`<div class="sbox"><h4>전투 능력</h4><div class="sg"><span>공격력<b>${fmt(M.atk)}</b></span><span>방어력<b>${fmt(M.def)}</b></span><span>치명타<b>${(M.crit*100).toFixed(1)}%</b></span><span>공격 속도<b>${(1000/M.iv).toFixed(2)}</b></span><span>스킬 위력<b>${fmt(M.skill)}</b></span><span>전투력<b>${fmt(power())}</b></span></div></div>
- <div class="sbox"><h4>방어구</h4><div class="sarm">${SLOTS.map(sl=>{const x=eqArm(sl),c=x&&C(x.id);return`<button data-side="${sl}" style="--gc:${c?G[c.g].c:'#444'}" title="${c?c.n:''}">${c?spr(c.i,32):''}<small>${SLOT[sl][0]}</small><b>${x?'+'+x.e:'-'}</b></button>`}).join('')}</div></div>
- <div class="sbox"><h4>최근 소식</h4><ul class="slog">${(S.log||[]).slice(0,10).map(l=>`<li>${l.replace(/</g,'&lt;')}</li>`).join('')||'<li>아직 소식이 없어요</li>'}</ul></div>`}
+ <div class="sbox"><h4>방어구</h4><div class="sarm">${SLOTS.map(sl=>{const x=eqArm(sl),c=x&&C(x.id);return`<button data-side="${sl}" style="--gc:${c?G[c.g].c:'#444'}" title="${c?c.n:''}">${c?spr(c.i,32):''}<small>${SLOT[sl][0]}</small><b>${x?'+'+x.e:'-'}</b></button>`}).join('')}</div></div>`;
+ const e2=$('side2');if(e2)e2.innerHTML=`<div class="sbox"><h4>최근 소식</h4><ul class="slog">${(S.log||[]).slice(0,14).map(l=>`<li>${l.replace(/</g,'&lt;')}</li>`).join('')||'<li>아직 소식이 없어요</li>'}</ul></div><div class="sbox"><h4>최근 전리품</h4><ul class="slog">${(S.drops||[]).slice(0,14).map(d=>`<li><b style="color:${d.c}">${d.n}</b> · ${d.z}</li>`).join('')||'<li>아직 귀한 전리품이 없어요</li>'}</ul></div>`}
 function announce(t){const tk=$('ticker');const d=document.createElement('div');d.innerHTML=t;tk.innerHTML='';tk.appendChild(d);S.log.unshift(t.replace(/<[^>]+>/g,''));S.log=S.log.slice(0,40);sideRender()}
 /* ================= 전투 ================= */
 const BW=384,BH=168,BS=1.5;let mobs=[],fx=[],shots=[],btT=0,nextSpawn=0,lastT=0,mAtkT=0,skT=0,regT=0,deadUntil=0,shakeT=0,combo=0,comboT=0;
