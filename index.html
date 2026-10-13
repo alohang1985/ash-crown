@@ -331,11 +331,11 @@ function vHunt(){const p=power();const regs=[...new Set(ZONES.map(z=>z.reg))];re
  <h4 class="ch4">최근 전리품</h4><ul class="drops" id="drops">${dropsHtml()}</ul>
  ${regs.map(r=>`<div class="reg"><h4>${r}</h4><div class="zl">${ZONES.map((z,i)=>z.reg!==r?'':`<button class="zb${i===S.hz?' on':''}" data-hz="${i}" ${p<z.need?'disabled':''}><span class="zm">${z.mons.map(m=>spr(m,28)).join('')}</span><b>Lv.${z.lv} ${z.n}</b><small>${p<z.need?`전투력 ${fmt(z.need)} 필요`:`골드 ×${z.m.toFixed(1)}`}</small></button>`).join('')}</div></div>`).join('')}`}
 function vGacha(){return`<h3>소환</h3>${poolSel()}<p class="sub">현금 패키지는 시제품이라 실제 결제가 일어나지 않아요. 대신 가상 결제 누적에 쌓입니다. <b>누적 ₩${fmt(S.spent)}</b></p>
- ${PACKS.map(P=>{const key=P.k+POOL,pc=P.pity?(S.pp[key]||0):0,price=n=>P.cur==='gold'?`${fmt(n===1?P.p1:P.p11)} 골드`:`₩${fmt(n===1?P.p1:P.p11)}`,dis=n=>P.cur==='gold'&&S.gold<(n===1?P.p1:P.p11);
+ ${PACKS.map(P=>{const key=P.k+POOL,pc=P.pity?(S.pp[key]||0):0,cost=n=>n===1?P.p1:P.p11*n/11,price=n=>P.cur==='gold'?`${fmt(cost(n))} 골드`:`₩${fmt(cost(n))}`,dis=n=>P.cur==='gold'&&S.gold<cost(n);
  return`<div class="pack" style="--pc:${P.c}"><div class="ph"><b>${P.ko}</b><small>${P.d} · ${tyKo(POOL)}</small></div>
   <div class="pr">${G.map((g,i)=>P.rates[i]?`<span style="color:${g.c}">${g.ko} ${(P.rates[i]*100).toFixed(P.rates[i]<.1?1:0)}%</span>`:'').join('')}</div>
   ${P.pity?`<p class="mini">${G[P.pg].ko} 확정까지 <b style="color:${G[P.pg].c}">${P.pity-pc}</b>회</p><div class="bar" style="margin:4px 0 8px"><i style="width:${pc/P.pity*100}%"></i></div>`:''}
-  <div class="row"><button class="btn" data-pk="${P.k}" data-n="1" ${dis(1)?'disabled':''}>1회 · ${price(1)}</button><button class="btn red" data-pk="${P.k}" data-n="11" ${dis(11)?'disabled':''}>11회 · ${price(11)}</button></div></div>`}).join('')}`}
+  <div class="row"><button class="btn" data-pk="${P.k}" data-n="1" ${dis(1)?'disabled':''}>1회 · ${price(1)}</button><button class="btn red" data-pk="${P.k}" data-n="11" ${dis(11)?'disabled':''}>11회 · ${price(11)}</button></div><button class="btn gold wide" data-pk="${P.k}" data-n="110" ${dis(110)?'disabled':''}>11회 × 10번 한 번에 (110장) · ${price(110)}</button></div>`}).join('')}`}
 const haveCnt=(ty,g)=>ty==='w'?S.wpn.filter(w=>w.e===0&&w.u!==S.eqW&&C(w.id).g===g).length:CARDS.filter(c=>c.ty===ty&&c.g===g).reduce((a,c)=>a+(S.cards[c.id]||0)-((c.id===S.eqT||c.id===S.eqD)&&S.cards[c.id]?1:0),0);
 function vSynth(){const g=SG;const have=haveCnt(POOL,g);const sp=S.spts[POOL+g]||0;const allG=G.slice(0,5).reduce((a,x,i)=>a+Math.floor(haveCnt(POOL,i)/4),0);
  return`<h3>합성</h3>${poolSel()}<p class="sub">같은 등급 4장으로 다음 등급에 도전합니다. 실패하면 1장이 돌아오고 합성 포인트가 쌓여요. 100점이면 확정 성공. 장착 중인 것${POOL==='w'?'과 강화한 무기':''}는 재료로 쓰지 않습니다.</p>
@@ -409,8 +409,12 @@ function shake(){const s=$('stage');s.classList.remove('shake');void s.offsetWid
 function giveCard(c){if(c.ty==='w')S.wpn.push({u:++S.uid,id:c.id,e:0});else S.cards[c.id]=(S.cards[c.id]||0)+1}
 function rollPack(P,ty){const key=P.k+ty;const pc=(S.pp[key]||0)+1;let g;if(P.pity&&pc>=P.pity){g=P.pg;S.pp[key]=0}else{let x=rnd(),acc=0;g=P.rates.findIndex(r=>(acc+=r)>x);if(g<0)g=1;if(P.pity)S.pp[key]=g>=P.pg?0:pc}
  const c=pick(CARDS.filter(c=>c.ty===ty&&c.g===g));giveCard(c);return c}
-async function buyPack(k,n){const P=PACKS.find(x=>x.k===k);const cost=n===1?P.p1:P.p11;if(P.cur==='gold'){if(S.gold<cost)return;S.gold-=cost}else S.spent+=cost;BUSY=true;const res=[];for(let i=0;i<n;i++)res.push(rollPack(P,POOL));save();
- if(n===1){await revealOne(res[0],true);stageOff();return}await revealMany(res);stageOff()}
+async function buyPack(k,n){const P=PACKS.find(x=>x.k===k);const cost=n===1?P.p1:P.p11*n/11;if(P.cur==='gold'){if(S.gold<cost)return;S.gold-=cost}else S.spent+=cost;BUSY=true;const res=[];for(let i=0;i<n;i++)res.push(rollPack(P,POOL));save();
+ if(n===1){await revealOne(res[0],true);stageOff();return}if(n<=11){await revealMany(res);stageOff();return}
+ const cnt=G.map((g,i)=>res.filter(c=>c.g===i).length);
+ stageOn(`<div class="msg"><b>${P.ko} · ${tyKo(POOL)} ${n}장 소환</b></div><div class="synsum">${G.map((g,i)=>cnt[i]?`<div><span style="color:${g.c}">${g.ko}</span><b style="color:${g.c}">${cnt[i]}장</b></div>`:'').join('')}</div>`);sfx.hum();
+ for(const el of $('stage').querySelectorAll('.synsum>div')){el.classList.add('in');sfx.tick(2);await W(300)}await W(1000);
+ const top=res.filter(c=>c.g>=2).sort((a,b)=>a.g-b.g);if(top.length)await revealMany(top.slice(-40),`희귀 이상 ${top.length}장`);else await revealMany(res.slice(-11));stageOff()}
 const cardSub=c=>c.ty==='t'?`${c.fam} 계열 · 공격 +${Math.round(c.atk*100)}%<br>스킬 「${c.F.sk}」 ${c.F.d}`:c.ty==='d'?`${c.bko} +${Math.round(c.bv*100)}%`:`${WTKO[c.wt]} · 공격 ${c.base}`;
 async function revealOne(c,big){const g=c.g;stageOn(`<div class="msg" id="msg">${big?'카드가 떨립니다…':''}</div><div class="big tremble" id="bc"><div class="beam" id="beam" style="--ac:${G[g].c}"></div><div class="in"><div class="face back" id="back"></div><div class="face front" style="--ac:${G[g].c}"><span class="g">${G[g].ko} · ${tyKo(c.ty)}</span>${spr(c.i,128,'filter:drop-shadow(0 0 14px '+G[g].c+')')}<span class="n">${c.n}</span><span class="cs">${cardSub(c)}</span></div></div></div>`);
  const back=$('back'),bc=$('bc');sfx.hum();await W(500);
