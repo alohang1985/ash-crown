@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>잿빛 왕관 · 시제품</title><script data-goatcounter="https://alohang1985.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
@@ -265,6 +265,16 @@ html.mono{filter:grayscale(1) contrast(.95)}
 .passl{display:grid;gap:5px}.pt2{display:grid;grid-template-columns:44px 1fr 1fr;gap:6px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:5px;background:#120e0b}.pt2>b{text-align:center;color:var(--ink2)}.pt2.ok>b{color:var(--gold)}.pt2 .btn{font-size:11px;padding:7px 4px}.pt2 .prem{border-color:#a07a2a}
 .ptoast{position:fixed;left:50%;top:18%;transform:translateX(-50%);z-index:80;background:rgba(10,8,5,.88);border:1px solid var(--gold);border-radius:14px;padding:8px 18px;font-size:15px;color:#fff;pointer-events:none;animation:ptoast 1.8s ease-out forwards}.ptoast b{color:var(--gold);font-size:18px}.ptoast span{color:#7dff9a;font-weight:700}
 @keyframes ptoast{0%{opacity:0;transform:translate(-50%,10px) scale(.9)}15%{opacity:1;transform:translate(-50%,0) scale(1.05)}25%{transform:translate(-50%,0) scale(1)}80%{opacity:1}100%{opacity:0;transform:translate(-50%,-16px)}}
+.pdoll{display:grid;grid-template-columns:64px 1fr 64px;gap:8px;align-items:stretch;background:radial-gradient(circle at 50% 40%,#2a1d10,#0e0a07 70%);border:1px solid #6b4a20;border-radius:14px;padding:10px}
+.pcol{display:flex;flex-direction:column;gap:6px;justify-content:space-between}
+.pslot{position:relative;width:64px;height:64px;border:1px solid var(--line);border-bottom:3px solid var(--gc);border-radius:10px;background:#120e0b;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0}
+.pslot small{position:absolute;bottom:1px;font-size:9.5px;color:var(--ink2)}.pslot em{position:absolute;top:2px;right:4px;font-style:normal;font-size:11px;font-weight:900;color:#fff;text-shadow:0 0 3px #000}.pslot.empty i{font-style:normal;color:#5a4a36;font-size:20px}.pslot .spr{margin-top:-8px}
+.pmid{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0}.pmid .sbar{width:100%}.pname b{font-size:17px}.pname span{color:var(--gold)}.pfig{filter:drop-shadow(0 6px 10px #000)}.ppow{font-size:13px;color:var(--ink2)}.ppow b{color:var(--gold);font-size:18px}
+.pdoll2{display:grid;grid-template-columns:64px 1fr;gap:8px;margin-top:8px;align-items:center}.pskl{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.pskl button{border:1px solid var(--line);border-bottom:3px solid var(--gc,#3a2e22);border-radius:8px;background:#120e0b;height:64px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:2px}.pskl small{font-size:9.5px;line-height:1.1;text-align:center}.pskl .empty small{color:#5a4a36}
+.pstat{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin:10px 0}.pstat>div{border:1px solid var(--line);border-radius:8px;padding:6px;background:#14100c;display:flex;flex-direction:column;align-items:center}.pstat small{font-size:10.5px;color:var(--ink2)}.pstat b{font-size:13.5px}
+.pdet{border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin-bottom:8px;background:#120e0b}.pdet summary{cursor:pointer;font-weight:700;font-size:13.5px}
+.plist{display:grid;gap:5px;overflow:auto;margin:8px 0}.pli{display:grid;grid-template-columns:40px 1fr auto;gap:8px;align-items:center;text-align:left;border:1px solid var(--line);border-left:3px solid var(--gc);border-radius:8px;background:#14100c;padding:6px 8px}.pli>div{display:flex;flex-direction:column;min-width:0}.pli small{font-size:11px;color:var(--ink2)}.pli em{font-style:normal;font-size:12px;color:var(--gold)}.pli.on{box-shadow:0 0 0 1px var(--gold);background:#221a0e}
+html,body{touch-action:manipulation;-webkit-text-size-adjust:100%}button,canvas,.stage{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 </style></head><body>
 <div class="app">
  <div class="top"><div class="logo">잿빛 왕관<small>에르덴 대륙 · 시제품</small></div><div class="cur" id="cur"></div><button class="ic" id="mute" type="button" aria-label="소리">🔊</button></div>
@@ -583,22 +593,37 @@ function render(){if(POOL==='s'&&TAB!=='gacha')POOL='t';if(POOL==='s'&&TAB==='sy
 const poolSel=(w=1)=>`<div class="gsel pool"><button data-pool="t" aria-pressed="${POOL==='t'}">변신</button><button data-pool="d" aria-pressed="${POOL==='d'}">인형</button>${w?`<button data-pool="w" aria-pressed="${POOL==='w'}">무기</button><button data-pool="a" aria-pressed="${POOL==='a'}">방어구</button>`:''}</div>`;
 const tyKo=ty=>({t:'변신',d:'인형',w:'무기',a:'방어구',s:'스킬북'})[ty];const isGear=ty=>ty==='w'||ty==='a';
 const STK={str:['힘','공격력'],dex:['민첩','치명타 · 공격 속도 · 회피'],int:['지능','스킬 위력 · 최대 MP'],con:['체력','최대 HP · 방어']};
-function vChar(){return accBox()+vChar0()}
-function vChar0(){const M=stats(),cl=CL(),ci=charIdx(S.cls?S.cls.k:'기사',S.cls?S.cls.sx:'M'),t=C(S.eqT),d=C(S.eqD),w=W_(),wc=WC(w),need=expNeed(S.lv),col=colBonus();
- return`<div class="chr"><div class="cp1">${spr(ci,96)}<div><h3>${S.cls?S.cls.k:'직업 없음'} <small>Lv.${S.lv}</small></h3><p class="mini">${cl.d||''} · 장착 스킬 ${activeSkills().map(k=>k.n).join(' · ')||'없음'} · 직업 무기 ${(cl.wt||[]).map(x=>WTKO[x]).join('·')}</p>
- <div class="sbar"><span>HP</span><i><u style="width:${S.hp/M.hp*100}%;background:#e33"></u></i><b>${fmt(Math.ceil(S.hp))} / ${fmt(M.hp)}</b></div>
- <div class="sbar"><span>MP</span><i><u style="width:${S.mp/M.mp*100}%;background:#4a8cff"></u></i><b>${Math.floor(S.mp)} / ${M.mp}</b></div>
- <div class="sbar"><span>EXP</span><i><u style="width:${S.exp/need*100}%;background:var(--gold)"></u></i><b>${(S.exp/need*100).toFixed(1)}%</b></div></div></div>
- <div class="ccbox"><b>캐릭터 ${SLOT_IDX+1} / ${SLOT_MAX}</b><small>직업을 바꾸는 대신 캐릭터를 여러 개 키워요. 충전 잔액과 창고는 모든 캐릭터가 함께 써요.</small><button class="btn sm2" data-chars="1">캐릭터 목록 · 바꾸기</button></div>
- <h4 class="ch4">능력치 <small>남은 포인트 ${S.pt}</small> <label class="mini"><input type="checkbox" id="autoSt" ${S.auto?'checked':''}> 자동 분배</label></h4>
- <div class="stg">${Object.entries(STK).map(([k,[ko,dd]])=>`<div><b>${ko} <em>${S.st[k]}</em></b><small>${dd}</small><button class="btn sm" data-stat="${k}" ${S.pt<1?'disabled':''}>+</button></div>`).join('')}</div>
- <h4 class="ch4">전투 능력</h4><table class="pt"><tr><td>공격력</td><td>${fmt(M.atk)}</td></tr><tr><td>방어력</td><td>${fmt(M.def)}</td></tr><tr><td>치명타</td><td>${(M.crit*100).toFixed(1)}%</td></tr><tr><td>공격 속도</td><td>${(1000/M.iv).toFixed(2)}회/초</td></tr><tr><td>스킬 위력</td><td>${fmt(M.skill)}</td></tr><tr><td>전투력</td><td>${fmt(power())}</td></tr><tr><td>처치 / 사망</td><td>${fmt(S.kills)} / ${S.deaths}</td></tr></table>
- <h4 class="ch4">장비와 효과</h4><table class="pt"><tr><td>무기</td><td><span style="color:${G[wc.g].c}">${wc.n}</span> +${w.e} · 공격 ${fmt(M.watk)}${M.aff>1?' · <b style="color:#7dff9a">직업 무기 +20%</b>':''}</td></tr><tr><td>방어구</td><td>${SLOTS.map(sl=>{const x=eqArm(sl);const c=x&&C(x.id);return c?`<span style="color:${G[c.g].c}">${c.n}</span> +${x.e}`:`<span class="mini">${SLOT[sl][0]} 없음</span>`}).join(' · ')}<br>방어구 방어력 합계 ${fmt(M.adef)}</td></tr>
- ${t?`<tr><td>변신</td><td><span style="color:${G[t.g].c}">${t.n}</span>${S.morph===false?' (해제)':''} · ${t.fam} 계열 · 공격 +${Math.round(t.atk*100)}%${t.F.hp?` · HP +${Math.round(t.F.hp*100)}%`:''}${t.F.crit?` · 치명 +${Math.round(t.F.crit*100)}%`:''}<br>스킬 「${t.F.sk}」 ${t.F.d}</td></tr>`:''}${d?`<tr><td>인형</td><td><span style="color:${G[d.g].c}">${d.n}</span> · ${d.bko} +${Math.round(d.bv*100)}%</td></tr>`:''}
- <tr><td>장비 옵션 합계</td><td>${Object.entries(M.O).map(([k,v])=>optTxt(k,v)).join(' · ')||'없음'}${M.procs.length?'<br>발동: '+M.procs.map(p=>p.n).join(', '):''}<br><span class="mini">빗나갈 확률 ${(M.miss*100).toFixed(0)}%</span></td></tr>
- <tr><td>컬렉션</td><td>${Object.keys(col).length?bTxt(col):'없음'}</td></tr></table>
- <div class="row" style="margin:10px 0"><button class="btn" data-reset="1">처음부터 다시 시작</button></div>
- <h4 class="ch4">물약 <small>HP 50% 아래면 자동으로 마십니다 · 가진 물약 ${S.pot}개</small></h4><div class="row"><button class="btn" data-pot="10" ${S.gold<1000?'disabled':''}>10개 · 1,000 골드</button><button class="btn" data-pot="100" ${S.gold<9000?'disabled':''}>100개 · 9,000 골드</button></div>`}
+function vChar(){return vChar0()+accBox()}
+function vChar0(){const M=stats(),cl=CL(),ci=charIdx(S.cls?S.cls.k:'기사',S.cls?S.cls.sx:'M'),need=expNeed(S.lv),col=colBonus();
+ const slotBox=(sl,label)=>{let c=null,e=0,b=0;if(sl==='w'){const w=W_();c=w&&C(w.id);e=w?w.e:0;b=w&&w.b}else if(sl==='t'){c=S.morph!==false&&C(S.eqT)}else if(sl==='d'){c=C(S.eqD)}else{const x=eqArm(sl);c=x&&C(x.id);e=x?x.e:0;b=x&&x.b}
+  return`<button class="pslot${c?'':' empty'}" data-pick="${sl}" style="--gc:${c?G[c.g].c:'#3a2e22'}">${c?`<span class="${b?'blessed':''}">${spr(c.i,40)}</span>${e?`<em>+${e}</em>`:''}`:'<i>＋</i>'}<small>${label}</small></button>`};
+ const sk=activeSkills();
+ return`<div class="pdoll">
+  <div class="pcol">${slotBox('helm','투구')}${slotBox('body','갑옷')}${slotBox('cloak','망토')}${slotBox('t','변신')}</div>
+  <div class="pmid"><div class="pname"><b>${S.cls?S.cls.k:'직업 없음'}</b> <span>Lv.${S.lv}</span></div><div class="pfig">${spr(ci,112)}</div><div class="ppow">전투력 <b>${fmt(power())}</b></div>
+   <div class="sbar"><span>HP</span><i><u style="width:${S.hp/M.hp*100}%;background:#e33"></u></i><b>${fmt(Math.ceil(S.hp))}/${fmt(M.hp)}</b></div>
+   <div class="sbar"><span>EXP</span><i><u style="width:${S.exp/need*100}%;background:var(--gold)"></u></i><b>${(S.exp/need*100).toFixed(1)}%</b></div>
+   <button class="btn sm2" data-chars="1">캐릭터 ${SLOT_IDX+1}/${SLOT_MAX} · 바꾸기</button></div>
+  <div class="pcol">${slotBox('w','무기')}${slotBox('glove','장갑')}${slotBox('boot','부츠')}${slotBox('shield','방패')}</div>
+ </div>
+ <div class="pdoll2">${slotBox('d','인형')}<div class="pskl">${Array.from({length:SK_SLOTS},(_,i)=>{const k=sk[i];return k?`<button data-sub="skill" style="--gc:${G[k.g].c}">${spr(k.i,28)}<small>${k.n}</small></button>`:'<button data-sub="skill" class="empty"><small>스킬 칸</small></button>'}).join('')}</div></div>
+ <p class="mini" style="text-align:center">장비 칸을 누르면 바로 바꿀 수 있어요 · 스킬을 누르면 스킬 화면으로 가요</p>
+ <div class="pstat">${[['공격력',fmt(M.atk)],['방어력',fmt(M.def)],['최대 HP',fmt(M.hp)],['치명타',(M.crit*100).toFixed(1)+'%'],['치명 피해','×'+M.cdmg.toFixed(2)],['공격 속도',(1000/M.iv).toFixed(2)+'/초'],['스킬 위력',fmt(M.skill)],['빗나감',(M.miss*100).toFixed(0)+'%']].map(([a,b])=>`<div><small>${a}</small><b>${b}</b></div>`).join('')}</div>
+ <details class="pdet"><summary>능력치 포인트 ${S.pt?`<b style="color:#7dff9a">+${S.pt}</b>`:''}</summary><label class="mini"><input type="checkbox" id="autoSt" ${S.auto?'checked':''}> 자동 분배</label>
+  <div class="stg">${Object.entries(STK).map(([k,[ko,dd]])=>`<div><b>${ko} <em>${S.st[k]}</em></b><small>${dd}</small><button class="btn sm" data-stat="${k}" ${S.pt<1?'disabled':''}>+</button></div>`).join('')}</div></details>
+ <details class="pdet"><summary>장비 옵션 · 컬렉션 효과</summary><p class="mini">${Object.entries(M.O).map(([k,v])=>optTxt(k,v)).join(' · ')||'옵션 없음'}${M.procs.length?'<br>발동: '+M.procs.map(p=>p.n).join(', '):''}</p><p class="mini">컬렉션: ${Object.keys(col).length?bTxt(col):'없음'}</p><p class="mini">${cl.d||''}</p></details>
+ <details class="pdet"><summary>물약 ${S.pot}개 · 초기화</summary><div class="row"><button class="btn" data-pot="10" ${S.gold<1000?'disabled':''}>물약 10개 · 1,000 골드</button><button class="btn" data-pot="100" ${S.gold<9000?'disabled':''}>100개 · 9,000 골드</button></div>
+  <div class="row" style="margin-top:8px"><button class="btn" data-reset="1">이 캐릭터만 다시 시작</button><button class="btn red" data-resetall="1">계정 전체 초기화</button></div><p class="mini">「계정 전체 초기화」는 모든 캐릭터, 공유 골드·장비, 창고를 지워요. 충전 잔액은 서버에 있어서 그대로예요.</p></details>`}
+function slotPick(sl){const st=$('stage');let L=[];const cur=sl==='w'?S.eqW:sl==='t'?S.eqT:sl==='d'?S.eqD:S.eqA[sl];
+ if(sl==='w')L=S.wpn.filter(w=>classW(C(w.id))&&!isOther(w.u)).map(w=>({key:w.u,c:C(w.id),e:w.e,b:w.b,sc:gearScore(C(w.id),w.e)}));
+ else if(sl==='t'||sl==='d')L=Object.keys(S.cards).filter(id=>id.startsWith(sl+':')).map(id=>({key:id,c:C(id),n:S.cards[id],sc:POW[C(id).g]}));
+ else L=S.arms.filter(a=>C(a.id).sl===sl&&!isOther(a.u)).map(a=>({key:a.u,c:C(a.id),e:a.e,b:a.b,sc:gearScore(C(a.id),a.e)}));
+ L.sort((a,b)=>b.sc-a.sc);const name=sl==='w'?'무기':sl==='t'?'변신':sl==='d'?'인형':SLOT[sl][0];
+ st.hidden=false;st.innerHTML=`<div class="cinfo" style="--ac:#e0b04a;width:min(520px,94vw);max-height:86vh;display:flex;flex-direction:column"><h3>${name} 바꾸기 <small class="mini">좋은 순서</small></h3><div class="plist">${L.map(x=>`<button class="pli${String(x.key)===String(cur)?' on':''}" data-pk2="${x.key}" style="--gc:${G[x.c.g].c}"><span class="${x.b?'blessed':''}">${spr(x.c.i,40)}</span><div><b>${x.c.n}${x.e?' +'+x.e:''}${x.n>1?' ×'+x.n:''}</b><small style="color:${G[x.c.g].c}">${G[x.c.g].ko}</small><small>${x.c.ty==='w'?'공격 '+fmt(x.c.base*wMul(x.c.g,x.e||0)):x.c.ty==='a'?'방어 '+fmt(x.c.def*aMul(x.c.g,x.e||0)):cardSub(x.c).replace(/<br>/g,' · ')}</small></div><em>${String(x.key)===String(cur)?'착용 중':'장착'}</em></button>`).join('')||'<p class="mini">가진 것이 없어요. 보물상자나 소환으로 얻어요.</p>'}</div>
+ <div class="row" style="margin-top:8px">${sl==='w'||SLOT[sl]?'<button class="btn" id="pkEnh">강화하러 가기</button>':''}<button class="btn gold" id="pkX">닫기</button></div></div>`;
+ st.onclick=e=>{if(e.target.id==='pkX'||e.target===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}if(e.target.id==='pkEnh'){st.hidden=true;st.innerHTML='';st.onclick=null;TAB='enh';ET=sl;render();return}
+  const b=e.target.closest('[data-pk2]');if(!b)return;const k=b.dataset.pk2;if(sl==='t'){S.eqT=k;S.morph=true}else if(sl==='d')S.eqD=k;else equipU(+k);save();st.hidden=true;st.innerHTML='';st.onclick=null;render()}}
+
 const dropsHtml=()=>(S.drops||[]).length?(S.drops||[]).map(d=>`<li><b style="color:${d.c}">${d.n}</b><small>${d.z} · ${Math.max(0,Math.round((Date.now()-d.t)/60000))}분 전</small></li>`).join(''):'<li><small>아직 귀한 전리품이 없어요</small></li>';
 function vHunt(){const st=S.stage||1,ms=stStat(st),M=stats();const hits=Math.max(1,Math.ceil(ms.hp/Math.max(1,M.atk)));
  return`<h3>사냥 정보</h3><p class="sub">스테이지는 자동으로 올라가요. 한 스테이지에 몬스터 ${STG_KILLS}마리, 10스테이지마다 보스가 나와요. 보스를 30초 안에 못 잡거나 쓰러지면 한 단계 아래에서 반복 사냥해요. 창을 닫아도 최대 12시간 동안 사냥이 계속돼요.</p>
@@ -729,7 +754,7 @@ function vAH(){ahRefresh();const left=Math.max(0,5*60-Math.floor((Date.now()-S.a
  :`${S.ah.sell.length?`<h4 class="ch4">판매 중</h4><div class="ahl">${S.ah.sell.map(s=>{const c=C(s.id);return`<div class="ahi" style="--gc:${G[c.g].c}">${spr(c.i,40)}<div><b>${c.n}${s.e?' +'+s.e:''}</b><small>내놓은 값 ${fmt(s.p)} · 시세 ${fmt(mPrice(s.id,s.e))}</small><small>살 사람을 기다리는 중…</small></div><button class="btn sm2" data-ahcancel="${s.k}">취소</button></div>`}).join('')}</div>`:''}
  <h4 class="ch4">내 물건 <small>싸게 내놓으면 빨리, 비싸게 내놓으면 안 팔릴 수도 있어요</small></h4><div class="ahl">${mine.slice(0,60).map(x=>{const c=C(x.id),mp=mPrice(x.id,x.e);return`<div class="ahi" style="--gc:${G[c.g].c}">${spr(c.i,40)}<div><b>${c.n}${x.e?' +'+x.e:''}${x.n>1?' ×'+x.n:''}</b><small><span style="color:${G[c.g].c}">${G[c.g].ko} ${tyKo(c.ty)}</span> · 시세 ${fmt(mp)}</small></div><div class="sb3"><button class="btn sm2" data-ahsell="${x.u||x.id}" data-r=".85">${fmt(mp*.85)}</button><button class="btn sm2" data-ahsell="${x.u||x.id}" data-r="1.15">${fmt(mp*1.15)}</button></div></div>`}).join('')||'<p class="mini">팔 수 있는 물건이 없어요. 장착 중인 것과 마지막 한 장은 팔 수 없어요.</p>'}</div>`}`}
 /* ================= 입력 ================= */
-const GROUPS=[['grow','성장',[['up','능력 강화'],['char','캐릭터'],['skill','스킬']]],['gear','장비',[['chest','보물상자'],['enh','강화'],['synth','합성'],['book','도감'],['col','컬렉션']]],['gacha','상점',[['gacha','소환'],['pass','성장 패스'],['month','월정액']]],['adv','모험',[['adv','보스·던전·임무'],['ach','업적'],['arena','결투장']]],['more','더보기',[['hunt','사냥 정보'],['wh','창고'],['ah','거래소']]]];
+const GROUPS=[['grow','성장',[['char','내 캐릭터'],['up','능력 강화'],['skill','스킬']]],['gear','장비',[['chest','보물상자'],['enh','강화'],['synth','합성'],['book','도감'],['col','컬렉션']]],['gacha','상점',[['gacha','소환'],['pass','성장 패스'],['month','월정액']]],['adv','모험',[['adv','보스·던전·임무'],['ach','업적'],['arena','결투장']]],['more','더보기',[['hunt','사냥 정보'],['wh','창고'],['ah','거래소']]]];
 const grpOf=t=>GROUPS.find(g=>g[2].some(x=>x[0]===t))||GROUPS[0];const LASTSUB={};
 $('tabs').innerHTML=GROUPS.map(g=>`<button data-g="${g[0]}">${g[1]}</button>`).join('');
 $('body').addEventListener('change',e=>{if(e.target.id==='chDism'){S.chDism=+e.target.value;save()}});
@@ -751,6 +776,8 @@ $('body').onclick=e=>{ac();const t=e.target;const q=s=>t.closest(s);
  if(h('[data-et]',el=>{ET=el.dataset.et;render()}))return;
  if(h('[data-aht]',el=>{AHT=el.dataset.aht;render()}))return;
  if(h('[data-chars]',()=>charSelect()))return;
+ if(h('[data-pick]',el=>{slotPick(el.dataset.pick)}))return;
+ if(h('[data-resetall]',()=>{if(!confirm('계정 전체를 초기화할까요? 모든 캐릭터, 공유 골드·장비, 창고가 지워져요. 충전 잔액은 그대로예요.'))return;if(!confirm('정말요? 되돌릴 수 없어요.'))return;NOSAVE=true;try{for(const k of Object.keys(localStorage))if(k.startsWith('ash.')&&!['ash.sid','ash.acct','ash.mono'].includes(k))localStorage.removeItem(k)}catch(_){}location.reload()}))return;
  if(h('[data-reset]',()=>{if(!confirm('정말 이 캐릭터를 처음부터 다시 시작할까요? 이 캐릭터의 레벨과 장비가 모두 사라져요. (다른 캐릭터와 창고는 그대로예요)'))return;NOSAVE=true;try{const A=accGet();if(A&&A.locks){delete A.locks[SLOT_IDX];localStorage.setItem('ash.acc',JSON.stringify(A))}localStorage.removeItem(KEY);if(!SLOT_IDX)localStorage.removeItem('ash.v2');const r=roster();delete r[SLOT_IDX];localStorage.setItem('ash.roster',JSON.stringify(r))}catch(_){}location.reload()}))return;
  if(h('[data-skeq]',el=>{const id=el.dataset.skeq;const i=S.skEq.indexOf(id);if(i>=0)S.skEq.splice(i,1);else if(S.skEq.length<SK_SLOTS&&skLv(id))S.skEq.push(id);save();render()}))return;
  if(h('[data-sklv]',el=>{const id=el.dataset.sklv;if(!skSpare(id)||skLv(id)>=5)return;S.skb[id]--;S.skills[id]++;sfx.rare(2);announce(`📖 「${SKM[id].n}」 Lv.${S.skills[id]}!`);save();render()}))return;
@@ -1076,5 +1103,6 @@ function liveSend(ev){const b=JSON.stringify(Object.assign({s:liveSid(),st:S.cls
  fetch(LIVE_URL+'/hb',{method:'POST',body:b,headers:{'Content-Type':'text/plain'}}).then(r=>r.json()).then(j=>{LIVE=j;const el=$('liveA');if(el&&j&&j.now)el.innerHTML=`<i class="ldot"></i>지금 ${fmt(j.now)}명 접속 · ${fmt(j.living)}명 사냥 중`}).catch(()=>{})}
 walletSync();setInterval(()=>{if(!document.hidden)walletSync()},60000);
 liveSend();setInterval(()=>{if(!document.hidden)liveSend()},45000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)liveSend()});addEventListener('pagehide',()=>liveSend('bye'));
+document.addEventListener('gesturestart',e=>e.preventDefault());
 dailyEvent();einRefill();setInterval(einRefill,60000);render();stageUI();qCheck();requestAnimationFrame(loop);if(!S.cls)pickClass();
 </script></body></html>
