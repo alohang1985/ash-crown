@@ -32,9 +32,9 @@
   "bg_removal": "하지 않아도 됨 — 원본(마젠타 배경) 그대로 주세요. 정렬·배경제거·보간은 이쪽에서 일괄 처리.",
   "naming": "id 그대로 폴더명, 시트명은 sheets 배열의 이름"
  },
- "order": "priority 1(몹 16) → 2(전설·신화·유일 변신) → 3(영웅 이하 변신) → 4(인형). 한도가 차면 다음 날 이어서.",
+ "order": "priority 1(남은 몹) → 2(이펙트 20종, 그리고 전설·신화·유일 변신) → 3(영웅 이하 변신) → 4(인형).",
  "counts": {
-  "assets": 149,
+  "assets": 169,
   "todo_images": 652
  },
  "assets": [
@@ -3308,6 +3308,348 @@
    ],
    "status": "todo",
    "priority": 1
+  },
+  {
+   "id": "e_meteor",
+   "category": "이펙트",
+   "name": "마법 · 메테오",
+   "grade": "-",
+   "desc_en": "a huge flaming meteor falling from the top-right and exploding on the ground into a fireball and debris; frames 1-3 meteor falling, 4-6 impact explosion, 7-9 smoke and embers fading",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_fire_burst",
+   "category": "이펙트",
+   "name": "화염 폭발",
+   "grade": "-",
+   "desc_en": "a burst of fire exploding outward from the ground center, flames and sparks, then fading",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_hellfire",
+   "category": "이펙트",
+   "name": "지옥불 기둥",
+   "grade": "-",
+   "desc_en": "a tall pillar of dark red hellfire erupting from the ground, rising, peaking, collapsing into embers",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_ice_lance",
+   "category": "이펙트",
+   "name": "아이스 랜스",
+   "grade": "-",
+   "desc_en": "sharp ice crystal spikes erupting upward from the ground, shattering into frost particles",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_blizzard",
+   "category": "이펙트",
+   "name": "블리자드",
+   "grade": "-",
+   "desc_en": "a swirling storm of snow and ice shards in a circle, growing then dissipating",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_lightning",
+   "category": "이펙트",
+   "name": "콜 라이트닝",
+   "grade": "-",
+   "desc_en": "a bright blue-white lightning bolt striking down from the sky onto the ground with an electric impact flash",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_tornado",
+   "category": "이펙트",
+   "name": "토네이도",
+   "grade": "-",
+   "desc_en": "a tornado of wind and dust spinning upward, growing tall then dispersing",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_earthquake",
+   "category": "이펙트",
+   "name": "어스 퀘이크",
+   "grade": "-",
+   "desc_en": "the ground cracking open with rocks and dust bursting upward, shockwave ring",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_heal",
+   "category": "이펙트",
+   "name": "힐",
+   "grade": "-",
+   "desc_en": "gentle golden-green healing light pillar rising from the ground with sparkles and crosses, then fading",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_buff",
+   "category": "이펙트",
+   "name": "버프",
+   "grade": "-",
+   "desc_en": "glowing golden aura rings rising upward around a center point with light particles",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_stun",
+   "category": "이펙트",
+   "name": "기절",
+   "grade": "-",
+   "desc_en": "small glowing stars and sparkles circling in a loop (for above a stunned head)",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_poison",
+   "category": "이펙트",
+   "name": "독 구름",
+   "grade": "-",
+   "desc_en": "a toxic green poison cloud bubbling and spreading, then fading",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_dark_blast",
+   "category": "이펙트",
+   "name": "암흑 폭발",
+   "grade": "-",
+   "desc_en": "a purple-black shadow explosion with dark wisps and skull-like smoke, imploding then exploding",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_holy_light",
+   "category": "이펙트",
+   "name": "신성 폭발",
+   "grade": "-",
+   "desc_en": "a radiant white-gold holy light burst with a cross shape and expanding ring",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_arrow_rain",
+   "category": "이펙트",
+   "name": "애로우 레인",
+   "grade": "-",
+   "desc_en": "many glowing arrows raining down from above onto the ground with small impacts",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_slash",
+   "category": "이펙트",
+   "name": "베기 궤적",
+   "grade": "-",
+   "desc_en": "a single huge white crescent sword slash arc sweeping left to right with a bright edge and fading trail, horizontal",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_slash_red",
+   "category": "이펙트",
+   "name": "붉은 베기 궤적",
+   "grade": "-",
+   "desc_en": "a single huge crimson fiery crescent sword slash arc sweeping left to right, horizontal",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_disintegrate",
+   "category": "이펙트",
+   "name": "디스인티그레이트",
+   "grade": "-",
+   "desc_en": "an intense horizontal magic energy beam firing to the right, charging, full blast, fading",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_level_up",
+   "category": "이펙트",
+   "name": "레벨 업",
+   "grade": "-",
+   "desc_en": "a brilliant golden light pillar with rising sparkles and rings, celebration effect",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_hit_spark",
+   "category": "이펙트",
+   "name": "타격 불꽃",
+   "grade": "-",
+   "desc_en": "a small sharp impact spark burst, white-yellow star shape, very fast",
+   "current": "코드로 그린 간단한 효과(교체 대상)",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
   }
- ]
+ ],
+ "effects_rules": "이펙트 전용: 정사각형 3x3 그리드(9프레임, 왼→오, 위→아래), 모든 칸 같은 크기, 효과가 각 칸 중앙(바닥형은 칸 아래쪽 중앙)에 위치, 칸 밖으로 잘리지 않게 여백, 배경은 순수 검정 #000000, 캐릭터·글자·격자선 없음. 리니지M 같은 한국 MMORPG 스킬 이펙트 느낌으로 선명하고 빛나게(glow). 파일: art_in/e_<이름>/sheet.png",
+ "effects_prompt": "2D game VFX sprite sheet, square image, 3x3 grid of 9 animation frames read left-to-right top-to-bottom, every cell the same size, effect centered in each cell (ground effects at the bottom center of the cell) with margin so nothing is cut off, solid pure black background (#000000), no characters, no text, no grid lines. Vivid glowing high-quality Korean MMORPG skill effect (Lineage-style). Effect: "
 }
