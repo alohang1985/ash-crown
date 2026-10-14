@@ -1227,6 +1227,9 @@ html.land .lexp span{top:-14px!important;font-size:9px!important}
 .lchcol{gap:.7vh!important}.lcs2{width:8.6vh!important}.lchd{grid-template-columns:8.6vh 1fr 8.6vh!important}
 .eqimg{object-fit:contain;filter:drop-shadow(0 2px 3px rgba(0,0,0,.8))}
 .lchcol{display:grid!important;grid-template-rows:repeat(6,minmax(0,1fr));height:100%;min-height:0}.lchd{min-height:0}.lcs2{width:auto!important;height:100%;aspect-ratio:1;justify-self:center}
+.lcs2{background:radial-gradient(circle at 50% 45%,color-mix(in srgb,var(--gc) 22%,#14100a),#050302 75%)!important;box-shadow:inset 0 0 0 1px #000,inset 0 0 10px rgba(0,0,0,.9)!important;overflow:hidden}
+.lcs2>.spr,.lcs2>img,.lcs2>canvas{max-width:92%!important;max-height:92%!important}
+.lchc>div{background:radial-gradient(circle at 50% 40%,color-mix(in srgb,var(--gc) 18%,#0b0805),#050302 72%)!important}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -2652,7 +2655,7 @@ const rwIcons=r=>Object.entries(r||{}).map(([k,v])=>{const m={gold:['gold',fmt(v
 let CHT='eq',CHP=0;
 function charWin(){const draw=()=>{const tc=S.morph!==false&&C(S.eqT),dl=C(S.eqD);
   const art=tc&&tc.id==='t:ereshkigal'?'<img src="art/H_hellking_card.png" alt="">':`<div class="lcsspr">${spr(charIdx(S.cls?S.cls.k:'기사',S.cls?S.cls.sx:'M'),220)}</div>`;
-  const slot=sl=>{const x=sl==='w'?W_():eqArm(sl),c=x&&C(x.id);return`<button class="lcs2" data-ivk="${x?(sl==='w'?'w':'a')+':'+x.u:''}" style="--gc:${c?G[c.g].c:'#3a2c18'}">${c?cardIco(c,44):`<small>${{helm:'투구',body:'갑옷',w:'무기',glove:'장갑',boot:'부츠',cloak:'망토',shield:'방패',neck:'목걸이',ear:'귀걸이',ring:'반지',belt:'벨트'}[sl]}</small>`}${x&&x.e?`<em>+${x.e}</em>`:''}</button>`};
+  const slot=sl=>{const x=sl==='w'?W_():eqArm(sl),c=x&&C(x.id);return`<button class="lcs2" data-ivk="${x?(sl==='w'?'w':'a')+':'+x.u:''}" style="--gc:${c?G[c.g].c:'#3a2c18'}">${c?cardIco(c,Math.round(Math.min(innerHeight*.076,70))):`<small>${{helm:'투구',body:'갑옷',w:'무기',glove:'장갑',boot:'부츠',cloak:'망토',shield:'방패',neck:'목걸이',ear:'귀걸이',ring:'반지',belt:'벨트'}[sl]}</small>`}${x&&x.e?`<em>+${x.e}</em>`:''}</button>`};
   const P=[[['helm','body','w','glove','boot','cloak'],['shield','neck','ear','ring','belt']]];
   let body='';
   if(CHT==='eq'){if(CHP>1)CHP=1;if(CHP<1){const[L,R]=P[CHP];body=`<div class="lchd"><div class="lchcol">${L.map(slot).join('')}</div><div class="lchart">${art}</div><div class="lchcol">${R.map(slot).join('')}</div></div>`}
@@ -2904,8 +2907,8 @@ function svDrawPlayer(c,t,P,M,dead){const tc=S.morph!==false&&S.morphLook!==fals
  let ok=false;if(tc){if(artOf(tc)){ok=drawArt(c,tc,P.x-30,P.y+2,54,st,pp,t)}else if(isBeast(tc)){ok=drawBeast(c,tc,P.x-22,P.y+2,.95,st,pp,t)}else{const L=transformLook(tc),cp=lpcCompose(L);if(cp){const sc=1.0*(L.scale||1);drawWings(c,L,P.x-32*sc,P.y+2,sc,t);ok=drawLook(c,cp,P.x-32*sc,P.y+2,sc,st,pp,1)}}}
  if(!ok&&CARDART[clsArtKey()]){ok=drawArt(c,{id:'t:'+clsArtKey()},P.x-30,P.y+2,54,st,pp,t)}
  if(!ok){const cp=lpcCompose(myLook());if(cp){if(walk){const f=1+Math.floor(t/90)%8;c.drawImage(cp.cv,f*64,cp.fw+64,64,64,P.x-32,P.y-62,64,64)}else ok=drawLook(c,cp,P.x-32,P.y+2,1.0,st,pp,1)}}
- if(HITP>t){c.globalCompositeOperation='source-atop';}c.restore();if(OCV){c=c0;const T2=window.__oct||(window.__oct=document.createElement('canvas'));if(T2.width!==OCV.width||T2.height!==OCV.height){T2.width=OCV.width;T2.height=OCV.height}const tx=T2.getContext('2d');tx.globalCompositeOperation='source-over';tx.clearRect(0,0,T2.width,T2.height);tx.drawImage(OCV,0,0);tx.globalCompositeOperation='source-in';tx.fillStyle=OL;tx.fillRect(0,0,T2.width,T2.height);
-  const p=.75+.25*Math.sin(t/500);c.save();c.globalCompositeOperation='lighter';for(const[r,a]of[[2.2,.22],[1.2,.45]]){c.globalAlpha=a*p;for(const[dx,dy]of[[r,0],[-r,0],[0,r],[0,-r],[r*.7,r*.7],[-r*.7,r*.7],[r*.7,-r*.7],[-r*.7,-r*.7]])c.drawImage(T2,P.x-85+dx,P.y-130+dy,170,170)}c.restore();c.drawImage(OCV,P.x-85,P.y-130,170,170)}
+ if(HITP>t){c.globalCompositeOperation='source-atop';}c.restore();if(OCV){c=c0;const T2=window.__oct||(window.__oct=document.createElement('canvas'));if(T2.width!==OCV.width||T2.height!==OCV.height){T2.width=OCV.width;T2.height=OCV.height}const tx=T2.getContext('2d');tx.globalCompositeOperation='source-over';tx.clearRect(0,0,T2.width,T2.height);tx.drawImage(OCV,0,0);tx.globalCompositeOperation='source-in';tx.fillStyle=OL;tx.fillRect(0,0,T2.width,T2.height);{const K2=T2.width/170;tx.globalCompositeOperation='destination-out';const gr2=tx.createLinearGradient(0,(130-14)*K2,0,(130+2)*K2);gr2.addColorStop(0,'rgba(0,0,0,0)');gr2.addColorStop(1,'rgba(0,0,0,1)');tx.fillStyle=gr2;tx.fillRect(0,(130-14)*K2,T2.width,T2.height)}
+  const p=.75+.25*Math.sin(t/900);c.save();c.globalCompositeOperation='lighter';if(tc&&tc.g>=6){const gl=c.createRadialGradient(P.x,P.y-34,4,P.x,P.y-34,52);gl.addColorStop(0,OL+'40');gl.addColorStop(.55,OL+'1c');gl.addColorStop(1,OL+'00');c.globalAlpha=p;c.fillStyle=gl;c.beginPath();c.ellipse(P.x,P.y-34,40,54,0,0,7);c.fill()}for(const[r,a]of[[3.2,.1],[1.6,.28]]){c.globalAlpha=a*p;for(const[dx,dy]of[[r,0],[-r,0],[0,r],[0,-r],[r*.7,r*.7],[-r*.7,r*.7],[r*.7,-r*.7],[-r*.7,-r*.7]])c.drawImage(T2,P.x-85+dx,P.y-130+dy,170,170)}c.restore();c.drawImage(OCV,P.x-85,P.y-130,170,170)}
  if(LAND&&!dead){const nm=(typeof ACC!=='undefined'&&ACC&&ACC.user)||(S.cls?S.cls.k:'');const hy=P.y-(tc&&artOf(tc)?78:66);c.save();c.font='bold 8px "Noto Sans KR",sans-serif';c.textAlign='center';c.lineWidth=2.5;c.strokeStyle='rgba(0,0,0,.85)';c.strokeText(nm,P.x,hy);c.fillStyle='#8cff8c';c.fillText(nm,P.x,hy);const mh=stats().hp;c.fillStyle='rgba(0,0,0,.7)';c.fillRect(P.x-14,hy+2,28,3);c.fillStyle='#e33';c.fillRect(P.x-14,hy+2,28*Math.max(0,Math.min(1,S.hp/mh)),3);c.restore()}
 }
 
