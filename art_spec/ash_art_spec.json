@@ -6028,11 +6028,191 @@
    "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
    "status": "todo",
    "priority": 1
+  },
+  {
+   "id": "i_ui_shop",
+   "category": "아이콘",
+   "name": "상점(보석)",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 상점(보석), flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_ui_bag",
+   "category": "아이콘",
+   "name": "가방",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 가방, flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_ui_skill",
+   "category": "아이콘",
+   "name": "스킬(책)",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 스킬(책), flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_ui_quest",
+   "category": "아이콘",
+   "name": "퀘스트(두루마리)",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 퀘스트(두루마리), flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_ui_clan",
+   "category": "아이콘",
+   "name": "혈맹(방패)",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 혈맹(방패), flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_ui_menu",
+   "category": "아이콘",
+   "name": "메뉴",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 메뉴, flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_ui_map",
+   "category": "아이콘",
+   "name": "지도",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 지도, flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_ui_bookmark",
+   "category": "아이콘",
+   "name": "기억 장소",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 기억 장소, flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_ui_attack",
+   "category": "아이콘",
+   "name": "공격(교차한 칼)",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 공격(교차한 칼), flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_potion",
+   "category": "아이콘",
+   "name": "빨간 물약",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 빨간 물약, flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_tp",
+   "category": "아이콘",
+   "name": "순간이동 주문서(파랑)",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 순간이동 주문서(파랑), flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_return",
+   "category": "아이콘",
+   "name": "귀환 주문서(초록)",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 귀환 주문서(초록), flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_poly",
+   "category": "아이콘",
+   "name": "변신 주문서(보라)",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 변신 주문서(보라), flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_doll",
+   "category": "아이콘",
+   "name": "마법인형 소환",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 마법인형 소환, flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_scroll",
+   "category": "아이콘",
+   "name": "강화 주문서",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 강화 주문서, flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_bless",
+   "category": "아이콘",
+   "name": "축복 주문서",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 축복 주문서, flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_cur_dia",
+   "category": "아이콘",
+   "name": "다이아",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 다이아, flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_cur_gold",
+   "category": "아이콘",
+   "name": "아데나 금화",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted game UI icon of 아데나 금화, flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
   }
  ],
  "effects_rules": "이펙트 전용: 정사각형 3x3 그리드(9프레임, 왼→오, 위→아래), 모든 칸 같은 크기, 효과가 각 칸 중앙(바닥형은 칸 아래쪽 중앙)에 위치, 칸 밖으로 잘리지 않게 여백, 배경은 순수 검정 #000000, 캐릭터·글자·격자선 없음. 리니지M 같은 한국 MMORPG 스킬 이펙트 느낌으로 선명하고 빛나게(glow). 파일: art_in/e_<이름>/sheet.png",
  "effects_prompt": "2D game VFX sprite sheet, square image, 3x3 grid of 9 animation frames read left-to-right top-to-bottom, every cell the same size, effect centered in each cell (ground effects at the bottom center of the cell) with margin so nothing is cut off, solid pure black background (#000000), no characters, no text, no grid lines. Vivid glowing high-quality Korean MMORPG skill effect (Lineage-style). Effect: ",
- "icon_rules": "아이콘 시트: 정사각형 3x3 그리드(9칸), desc_en에 적힌 순서대로 칸마다 아이템 1개, 칸 가운데에 크게, 리니지M 아이템 아이콘처럼 45도 비스듬한 구도와 묵직한 질감, 등급이 높을수록 화려하게 빛남. 배경 #FF00FF, 글자·숫자·격자선·테두리 없음. 파일: art_in/<id>/sheet.png",
+ "icon_rules": "아이콘은 리니지M처럼 2D 손그림 느낌. 3D 렌더·반짝이는 이모지 느낌 금지 (사용자가 싫어함). 같은 세트끼리 선 굵기·채도·조명 방향 통일.",
  "ground_rules": "바닥: art_in/g_<지역>/tile.png = 위에서 내려다본 이음매 없는 바닥 텍스처 1장(정사각형, 반복해서 깔아도 경계가 안 보이게), art_in/g_<지역>/props.png = 그 지역 소품 9개 3x3(배경 #FF00FF).",
  "notes_2026_10_14": "상위 변신(영웅 이상)은 리니지M처럼 고대 신·악마·천사 컨셉으로 이름/설명 변경됨(old_name 참고). 유일 변신은 명계의 왕 하나만 유지, 나머지 유일 3종은 cancelled. 변신을 최우선으로, 등급 높은 것부터 작업.",
  "building_rules": "건물: art_in/b_<이름>/ref.png = 건물 1장(정면 3/4 위에서 본 각도, 리니지M 마을 건물 느낌, 배경 #FF00FF 단색, 그림자 포함). 바닥 g_road/g_coast/g_sea/g_plaza/g_dungeon 은 tile.png 하나(이음매 없는 반복 텍스처).",
