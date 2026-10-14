@@ -3507,8 +3507,8 @@ async function enhance(bl){if(bl?S.bless<1:S.scroll<1)return;const it=enhItem();
  {const rk0=riskLv(c);if(it.e>=rk0){if(c.g>=5&&S.useProt&&!((S.prot||0)>0)){resultBox('보호 주문서가 없어요',`「보호 주문서 사용」이 켜져 있지만 보유한 보호 주문서가 0장이에요.<br>보호 주문서를 사거나 체크를 끈 뒤 강화하세요.`,false);return}
   if(!(c.g>=5&&S.useProt)&&!confirm(`${c.n} +${it.e} → +${it.e+1}\n실패하면 장비가 증발해서 사라져요. 정말 강화할까요?`))return}}const cost=enhCost(c,it.e);if(S.gold<cost){announce('골드가 부족해요 · 강화 비용 '+fmt(cost));return}S.gold-=cost;track('enh');BUSY=true;if(bl)S.bless--;else S.scroll--;const nm=c.n;const lv=it.e,ok=rnd()<enhRate(c,lv),rk=riskLv(c);
  stageOn(`<div class="msg" id="msg">${it.b?'축복받은 ':''}${nm} +${lv} 강화를 시작합니다${bl?' · <b style="color:#9fe3ff">축복 주문서</b>':''}</div><div class="anvil lmagic${it.b?' blessed':''}${bl?' bl':''}" id="anv"><i class="lmc1"></i><i class="lmc2"></i>${cardIco(c,96)}<span class="hammer" id="ham" hidden></span></div><div class="wlv" id="wl">+${lv}</div>`);
- const risky=lv>=rk;const gap=risky?700:380;for(let i=0;i<3;i++){await W(i===2&&risky?gap*1.8:gap);$('anv').classList.remove('pulse');void $('anv').offsetWidth;$('anv').classList.add('pulse');sfx.tick&&sfx.tick(i+1);sparks($('anv'),8+i*6,bl?'#9fe3ff':'#ffcf6a');if(risky)buzz(30)}
- await W(risky?900:300);
+ const risky=lv>=rk;const gap=risky?260:160;for(let i=0;i<3;i++){await W(i===2&&risky?gap*1.6:gap);$('anv').classList.remove('pulse');void $('anv').offsetWidth;$('anv').classList.add('pulse');sfx.tick&&sfx.tick(i+1);sparks($('anv'),8+i*6,bl?'#9fe3ff':'#ffcf6a');if(risky)buzz(30)}
+ await W(risky?350:120);
  if(ok){const up=bl?pick([1,1,1,2,2,3]):1;it.e=Math.min(15,lv+up);if(bl)it.b=1;S.best=Math.max(S.best,it.e);flash();sfx.rare(Math.min(5,Math.floor(it.e/3)));sparks($('anv'),30+it.e*4,bl?'#9fe3ff':'#ffd27a');$('wl').textContent='+'+it.e;if(bl)$('anv').classList.add('blessed');
   $('msg').innerHTML=`<b style="color:var(--gold)">강화 성공!</b>${up>1?` <b style="color:#9fe3ff">+${up} 단계 상승!</b>`:''}${bl?'<br><span class="blessed-t">축복받은 장비가 되었습니다</span>':''}`;if(it.e>=9||up>=3||(c.g>=5&&it.e>=3)){shake();sfx.legend();buzz([80,50,160]);announce(`<span style="color:#ffb22e">★ 당신이 ${nm} +${it.e} 강화에 성공했습니다!</span>`)}}
  else if(c.acc){sfx.fail();if(lv>=4){it.e=lv-1;$('wl').textContent='+'+it.e;$('msg').innerHTML='강화 실패 · <b style="color:#ff8a8a">강화 수치가 1 내려갔습니다</b><br><span class="mini">장신구는 사라지지 않아요</span>'}else $('msg').textContent='강화 실패 · 아무 일도 일어나지 않았습니다'}
@@ -3516,7 +3516,7 @@ async function enhance(bl){if(bl?S.bless<1:S.scroll<1)return;const it=enhItem();
  else if(c.g>=5&&S.useProt&&(S.prot||0)>0){S.prot--;sfx.fail();buzz(200);$('msg').innerHTML='강화 실패 · <b style="color:#9fe3ff">보호 주문서</b>가 대신 부서졌습니다<br><span class="mini">장비와 강화 수치는 그대로예요</span>'}
  else{const L=inv(c.ty),k=L.findIndex(x=>x.u===it.u);if(k>=0)L.splice(k,1);if(!S.wpn.length)S.wpn.push({u:++S.uid,id:'w:short_sword_1_new',e:0});ensure();sfx.boom();shake();buzz([300,80,300]);$('anv').classList.add('crack');$('wl').textContent='증발';
   $('msg').innerHTML=`<b style="color:#ff6b6b">${nm} +${lv}이(가) 증발했습니다</b><br><span class="mini">장비가 사라졌습니다</span>`;if(lv>=7||c.g>=4)announce(`<span style="color:#ff6b6b">✝ 당신의 ${nm} +${lv}이(가) 증발했습니다…</span>`)}
- await wait(ok&&it.e>=9?2200:1600);stageOff()}
+ await wait(ok&&it.e>=9?1300:800);stageOff()}
 
 /* ===== 리니지M식 강화 창: 가운데 강화 패널 · 오른쪽 장비/주문서 ===== */
 let EWT='one',EWR='eq',MESEL=new Set(),MTGT=5;
