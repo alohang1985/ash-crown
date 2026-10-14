@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14 12:37",
+ "updated": "2026-10-14 12:49",
  "source": "Gemini 웹(Pro) via OpenClaw 맥미니 — 원본 그대로(배경 #FF00FF 요청, 오른쪽 아래 Gemini 반짝이 워터마크 있음)",
  "assets": {
   "m_goblin": {
@@ -363,9 +363,21 @@
      "w": 2048,
      "h": 2048,
      "sec": 311
+    },
+    "attack1": {
+     "at": "10-14 12:42",
+     "w": 1024,
+     "h": 1024,
+     "sec": 255
+    },
+    "hit_death": {
+     "at": "10-14 12:49",
+     "w": 1024,
+     "h": 1024,
+     "sec": 344
     }
    },
-   "complete": false
+   "complete": true
   }
  }
 }
