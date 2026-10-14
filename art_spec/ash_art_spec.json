@@ -34,8 +34,8 @@
  },
  "order": "priority 1(남은 몹) → 2(직업 캐릭터 16종 · 이펙트 28종 · 전설·신화·유일 변신) → 3(영웅 이하 변신) → 4(인형). 직업 캐릭터를 이펙트보다 먼저.",
  "counts": {
-  "assets": 193,
-  "todo_images": 792
+  "assets": 215,
+  "todo_images": 820
  },
  "assets": [
   {
@@ -4168,8 +4168,562 @@
    ],
    "status": "todo",
    "priority": 2
+  },
+  {
+   "id": "g_island",
+   "category": "바닥",
+   "name": "속삭이는 섬",
+   "grade": "-",
+   "desc_en": "grassy coastal meadow with small flowers and sandy patches",
+   "current": "코드로 그린 단색 바닥",
+   "display_px": {
+    "tile": "반복해서 깔림"
+   },
+   "format": "tile: 정사각형 1장, 위에서 내려다본 이음매 없는(seamless, tileable) 바닥 텍스처, 그림자·캐릭터·글자 없음 / props: 3x3 그리드에 그 지역 소품 9개(바위·풀·나무 그루터기·뼈 등), 위에서 약간 비스듬히 본 모습, 배경 #FF00FF",
+   "sheets": [
+    "tile",
+    "props"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "g_castle",
+   "category": "바닥",
+   "name": "기에른 성",
+   "grade": "-",
+   "desc_en": "worn cobblestone road and trampled dirt near a medieval castle",
+   "current": "코드로 그린 단색 바닥",
+   "display_px": {
+    "tile": "반복해서 깔림"
+   },
+   "format": "tile: 정사각형 1장, 위에서 내려다본 이음매 없는(seamless, tileable) 바닥 텍스처, 그림자·캐릭터·글자 없음 / props: 3x3 그리드에 그 지역 소품 9개(바위·풀·나무 그루터기·뼈 등), 위에서 약간 비스듬히 본 모습, 배경 #FF00FF",
+   "sheets": [
+    "tile",
+    "props"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "g_canyon",
+   "category": "바닥",
+   "name": "잿빛 협곡",
+   "grade": "-",
+   "desc_en": "dry red-orange canyon rock and cracked dusty earth",
+   "current": "코드로 그린 단색 바닥",
+   "display_px": {
+    "tile": "반복해서 깔림"
+   },
+   "format": "tile: 정사각형 1장, 위에서 내려다본 이음매 없는(seamless, tileable) 바닥 텍스처, 그림자·캐릭터·글자 없음 / props: 3x3 그리드에 그 지역 소품 9개(바위·풀·나무 그루터기·뼈 등), 위에서 약간 비스듬히 본 모습, 배경 #FF00FF",
+   "sheets": [
+    "tile",
+    "props"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "g_deadland",
+   "category": "바닥",
+   "name": "망자의 땅",
+   "grade": "-",
+   "desc_en": "dark cursed graveyard soil with dead grass, bones and purple mist stains",
+   "current": "코드로 그린 단색 바닥",
+   "display_px": {
+    "tile": "반복해서 깔림"
+   },
+   "format": "tile: 정사각형 1장, 위에서 내려다본 이음매 없는(seamless, tileable) 바닥 텍스처, 그림자·캐릭터·글자 없음 / props: 3x3 그리드에 그 지역 소품 9개(바위·풀·나무 그루터기·뼈 등), 위에서 약간 비스듬히 본 모습, 배경 #FF00FF",
+   "sheets": [
+    "tile",
+    "props"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "g_frost",
+   "category": "바닥",
+   "name": "얼음과 불",
+   "grade": "-",
+   "desc_en": "snowy frozen ground with ice patches (and a few lava cracks)",
+   "current": "코드로 그린 단색 바닥",
+   "display_px": {
+    "tile": "반복해서 깔림"
+   },
+   "format": "tile: 정사각형 1장, 위에서 내려다본 이음매 없는(seamless, tileable) 바닥 텍스처, 그림자·캐릭터·글자 없음 / props: 3x3 그리드에 그 지역 소품 9개(바위·풀·나무 그루터기·뼈 등), 위에서 약간 비스듬히 본 모습, 배경 #FF00FF",
+   "sheets": [
+    "tile",
+    "props"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "g_abyss",
+   "category": "바닥",
+   "name": "심연",
+   "grade": "-",
+   "desc_en": "black volcanic hellstone with glowing red lava cracks",
+   "current": "코드로 그린 단색 바닥",
+   "display_px": {
+    "tile": "반복해서 깔림"
+   },
+   "format": "tile: 정사각형 1장, 위에서 내려다본 이음매 없는(seamless, tileable) 바닥 텍스처, 그림자·캐릭터·글자 없음 / props: 3x3 그리드에 그 지역 소품 9개(바위·풀·나무 그루터기·뼈 등), 위에서 약간 비스듬히 본 모습, 배경 #FF00FF",
+   "sheets": [
+    "tile",
+    "props"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_weapon_1",
+   "category": "아이콘",
+   "name": "무기 아이콘 1",
+   "grade": "-",
+   "desc_en": "3x3 icon grid, in this exact order (left→right, top→bottom): 1) plain worn iron one-handed sword (숏소드); 2) sturdy steel one-handed sword (시미터); 3) sturdy steel one-handed sword (롱소드); 4) sturdy steel one-handed sword (팔시온); 5) fine steel with blue accents one-handed sword (엘프의 검); 6) fine steel with blue accents one-handed sword (카타나); 7) ornate with red glowing runes one-handed sword (은빛 세이버); 8) legendary purple-glowing ornate one-handed sword (황금검); 9) legendary purple-glowing ornate one-handed sword (축복받은 검)",
+   "items": [
+    "w:short_sword_1_new",
+    "w:scimitar_1_new",
+    "w:long_sword_1_new",
+    "w:falchion_1_new",
+    "w:elven_broadsword",
+    "w:katana",
+    "w:sabre_1_silver",
+    "w:golden_sword",
+    "w:blessed_blade"
+   ],
+   "current": "32px 도트",
+   "display_px": {
+    "icon": "36~64"
+   },
+   "format": "정사각형 3x3 그리드, 칸마다 아이템 1개를 칸 가운데에 크게, 45도 비스듬한 아이콘 구도, 배경 #FF00FF, 글자·격자선·테두리 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_weapon_2",
+   "category": "아이콘",
+   "name": "무기 아이콘 2",
+   "grade": "-",
+   "desc_en": "3x3 icon grid, in this exact order (left→right, top→bottom): 1) legendary purple-glowing ornate one-handed sword (마검); 2) mythic golden radiant one-handed sword (태고의 검); 3) unique crystal-cyan divine one-handed sword (군주의 검); 4) plain worn iron two-handed greatsword (수련용 대검); 5) plain worn iron two-handed greatsword (투핸드 소드); 6) sturdy steel two-handed greatsword (오크 대검); 7) fine steel with blue accents two-handed greatsword (클레이모어); 8) fine steel with blue accents two-handed greatsword (기사의 대검); 9) ornate with red glowing runes two-handed greatsword (삼날검)",
+   "items": [
+    "w:demon_blade",
+    "w:ancient_sword",
+    "w:spwpn_sword_of_power_new",
+    "w:greatsword_1_new",
+    "w:two_handed_sword",
+    "w:orcish_great_sword",
+    "w:claymore",
+    "w:greatsword_2",
+    "w:triple_sword_new"
+   ],
+   "current": "32px 도트",
+   "display_px": {
+    "icon": "36~64"
+   },
+   "format": "정사각형 3x3 그리드, 칸마다 아이템 1개를 칸 가운데에 크게, 45도 비스듬한 아이콘 구도, 배경 #FF00FF, 글자·격자선·테두리 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_weapon_3",
+   "category": "아이콘",
+   "name": "무기 아이콘 3",
+   "grade": "-",
+   "desc_en": "3x3 icon grid, in this exact order (left→right, top→bottom): 1) legendary purple-glowing ornate two-handed greatsword (흑기사의 대검); 2) mythic golden radiant two-handed greatsword (성기사의 대검); 3) unique crystal-cyan divine two-handed greatsword (화염 마왕의 검); 4) plain worn iron bow (사냥꾼의 활); 5) plain worn iron bow (짧은 활); 6) sturdy steel bow (장궁); 7) fine steel with blue accents bow (은빛 장궁); 8) fine steel with blue accents bow (석궁); 9) ornate with red glowing runes bow (대형 석궁)",
+   "items": [
+    "w:greatsword_4",
+    "w:claymore_blessed",
+    "w:spwpn_sword_of_cerebov_new",
+    "w:bow_1",
+    "w:shortbow_1",
+    "w:longbow",
+    "w:longbow_2",
+    "w:crossbow_1",
+    "w:arbalest_2"
+   ],
+   "current": "32px 도트",
+   "display_px": {
+    "icon": "36~64"
+   },
+   "format": "정사각형 3x3 그리드, 칸마다 아이템 1개를 칸 가운데에 크게, 45도 비스듬한 아이콘 구도, 배경 #FF00FF, 글자·격자선·테두리 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_weapon_4",
+   "category": "아이콘",
+   "name": "무기 아이콘 4",
+   "grade": "-",
+   "desc_en": "3x3 icon grid, in this exact order (left→right, top→bottom): 1) legendary purple-glowing ornate bow (엘프 왕의 활); 2) mythic golden radiant bow (정령의 활); 3) unique crystal-cyan divine bow (명사수의 석궁); 4) plain worn iron magic staff (나무 지팡이); 5) plain worn iron magic staff (수련자의 지팡이); 6) sturdy steel magic staff (마력의 지팡이); 7) fine steel with blue accents magic staff (서리 지팡이); 8) ornate with red glowing runes magic staff (화염의 지팡이); 9) legendary purple-glowing ornate magic staff (번개의 지팡이)",
+   "items": [
+    "w:longbow_3",
+    "w:longbow_1",
+    "w:urand_sniper",
+    "w:staff_0",
+    "w:staff_1",
+    "w:staff_2",
+    "w:staff_5",
+    "w:staff_7",
+    "w:staff_8"
+   ],
+   "current": "32px 도트",
+   "display_px": {
+    "icon": "36~64"
+   },
+   "format": "정사각형 3x3 그리드, 칸마다 아이템 1개를 칸 가운데에 크게, 45도 비스듬한 아이콘 구도, 배경 #FF00FF, 글자·격자선·테두리 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_weapon_5",
+   "category": "아이콘",
+   "name": "무기 아이콘 5",
+   "grade": "-",
+   "desc_en": "3x3 icon grid, in this exact order (left→right, top→bottom): 1) mythic golden radiant magic staff (대마법사의 지팡이); 2) unique crystal-cyan divine magic staff (심연의 지팡이); 3) plain worn iron short magic rod (수련자의 마력봉); 4) plain worn iron short magic rod (구리 마력봉); 5) sturdy steel short magic rod (은 마력봉); 6) fine steel with blue accents short magic rod (환영의 마력봉); 7) ornate with red glowing runes short magic rod (시간의 마력봉); 8) legendary purple-glowing ornate short magic rod (공허의 마력봉); 9) mythic golden radiant short magic rod (차원의 마력봉)",
+   "items": [
+    "w:staff_9",
+    "w:spwpn_staff_of_dispater_new",
+    "w:rod_0_new",
+    "w:rod_1_new",
+    "w:rod_2_new",
+    "w:rod_4_new",
+    "w:rod_5_new",
+    "w:rod_7_new",
+    "w:rod_9_new"
+   ],
+   "current": "32px 도트",
+   "display_px": {
+    "icon": "36~64"
+   },
+   "format": "정사각형 3x3 그리드, 칸마다 아이템 1개를 칸 가운데에 크게, 45도 비스듬한 아이콘 구도, 배경 #FF00FF, 글자·격자선·테두리 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_weapon_6",
+   "category": "아이콘",
+   "name": "무기 아이콘 6",
+   "grade": "-",
+   "desc_en": "3x3 icon grid, in this exact order (left→right, top→bottom): 1) unique crystal-cyan divine short magic rod (환술사의 지배봉); 2) plain worn iron dagger (단검); 3) plain worn iron dagger (오크 단검); 4) sturdy steel dagger (레이피어); 5) sturdy steel dagger (엘프 단검); 6) fine steel with blue accents dagger (퀵블레이드); 7) ornate with red glowing runes dagger (쌍날검); 8) legendary purple-glowing ornate dagger (그림자 단검); 9) mythic golden radiant dagger (암살자의 단검)",
+   "items": [
+    "w:spwpn_staff_of_olgreb",
+    "w:dagger_new",
+    "w:orcish_dagger",
+    "w:rapier_1",
+    "w:elven_dagger",
+    "w:quickblade",
+    "w:double_sword_new",
+    "w:dagger_7",
+    "w:urand_spriggans_knife_new"
+   ],
+   "current": "32px 도트",
+   "display_px": {
+    "icon": "36~64"
+   },
+   "format": "정사각형 3x3 그리드, 칸마다 아이템 1개를 칸 가운데에 크게, 45도 비스듬한 아이콘 구도, 배경 #FF00FF, 글자·격자선·테두리 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_weapon_7",
+   "category": "아이콘",
+   "name": "무기 아이콘 7",
+   "grade": "-",
+   "desc_en": "3x3 icon grid, in this exact order (left→right, top→bottom): 1) unique crystal-cyan divine dagger (흡혈의 이빨); 2) plain worn iron spear (창); 3) plain worn iron spear (기병창); 4) sturdy steel spear (삼지창); 5) fine steel with blue accents spear (할버드); 6) ornate with red glowing runes spear (악마의 삼지창); 7) legendary purple-glowing ornate spear (천검); 8) mythic golden radiant spear (신의 삼지창); 9) unique crystal-cyan divine spear (심판의 글레이브)",
+   "items": [
+    "w:spwpn_vampires_tooth",
+    "w:spear_1",
+    "w:spear_2_new",
+    "w:trident_1",
+    "w:halberd_1",
+    "w:demon_trident",
+    "w:tsurugi",
+    "w:trishula",
+    "w:spwpn_glaive_of_prune_new"
+   ],
+   "current": "32px 도트",
+   "display_px": {
+    "icon": "36~64"
+   },
+   "format": "정사각형 3x3 그리드, 칸마다 아이템 1개를 칸 가운데에 크게, 45도 비스듬한 아이콘 구도, 배경 #FF00FF, 글자·격자선·테두리 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_weapon_8",
+   "category": "아이콘",
+   "name": "무기 아이콘 8",
+   "grade": "-",
+   "desc_en": "3x3 icon grid, in this exact order (left→right, top→bottom): 1) plain worn iron battle axe (손도끼); 2) plain worn iron mace/club (곤봉); 3) plain worn iron mace/club (철퇴); 4) sturdy steel battle axe (전투 도끼); 5) fine steel with blue accents battle axe (브로드 액스); 6) ornate with red glowing runes battle axe (처형자의 도끼); 7) legendary purple-glowing ornate mace/club (성스러운 채찍); 8) mythic golden radiant battle axe (거인의 도끼); 9) unique crystal-cyan divine battle axe (분노의 도끼)",
+   "items": [
+    "w:hand_axe_1_new",
+    "w:club_new",
+    "w:mace_1_new",
+    "w:war_axe_1",
+    "w:broad_axe_1",
+    "w:executioner_axe",
+    "w:holy_scourge",
+    "w:battle_axe_7",
+    "w:spwpn_wrath_of_trog_new"
+   ],
+   "current": "32px 도트",
+   "display_px": {
+    "icon": "36~64"
+   },
+   "format": "정사각형 3x3 그리드, 칸마다 아이템 1개를 칸 가운데에 크게, 45도 비스듬한 아이콘 구도, 배경 #FF00FF, 글자·격자선·테두리 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_armor_1",
+   "category": "아이콘",
+   "name": "방어구 아이콘 1",
+   "grade": "-",
+   "desc_en": "3x3 icon grid, in this exact order (left→right, top→bottom): 1) plain worn iron helmet (가죽 모자); 2) plain worn iron helmet (철 투구); 3) sturdy steel helmet (엘프 가죽 투구); 4) sturdy steel helmet (기사 투구); 5) fine steel with blue accents helmet (볏 투구); 6) fine steel with blue accents helmet (마법사 모자); 7) ornate with red glowing runes helmet (판금 투구); 8) ornate with red glowing runes helmet (깃털 투구); 9) legendary purple-glowing ornate helmet (용사의 투구)",
+   "items": [
+    "a:cap_1",
+    "a:helmet_1",
+    "a:elven_leather_helm",
+    "a:helmet_2",
+    "a:crested_helmet",
+    "a:wizard_hat_1",
+    "a:helmet_4_visor",
+    "a:plumed_helmet",
+    "a:helmet_art_1"
+   ],
+   "current": "32px 도트",
+   "display_px": {
+    "icon": "36~64"
+   },
+   "format": "정사각형 3x3 그리드, 칸마다 아이템 1개를 칸 가운데에 크게, 45도 비스듬한 아이콘 구도, 배경 #FF00FF, 글자·격자선·테두리 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_armor_2",
+   "category": "아이콘",
+   "name": "방어구 아이콘 2",
+   "grade": "-",
+   "desc_en": "3x3 icon grid, in this exact order (left→right, top→bottom): 1) mythic golden radiant helmet (수호자의 투구); 2) unique crystal-cyan divine helmet (용의 가면); 3) plain worn iron body armor (가죽 갑옷); 4) plain worn iron body armor (수련자 로브); 5) plain worn iron body armor (링 메일); 6) sturdy steel body armor (징 박힌 가죽 갑옷); 7) sturdy steel body armor (사슬 갑옷); 8) sturdy steel body armor (비늘 갑옷); 9) fine steel with blue accents body armor (엘프 가죽 갑옷)",
+   "items": [
+    "a:helmet_ego_4",
+    "a:urand_dragonmask",
+    "a:leather_armor_1",
+    "a:robe_1_new",
+    "a:ring_mail_1_new",
+    "a:studded_leather_armor",
+    "a:chain_mail_1",
+    "a:scale_mail_1_new",
+    "a:elven_leather_armor"
+   ],
+   "current": "32px 도트",
+   "display_px": {
+    "icon": "36~64"
+   },
+   "format": "정사각형 3x3 그리드, 칸마다 아이템 1개를 칸 가운데에 크게, 45도 비스듬한 아이콘 구도, 배경 #FF00FF, 글자·격자선·테두리 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_armor_3",
+   "category": "아이콘",
+   "name": "방어구 아이콘 3",
+   "grade": "-",
+   "desc_en": "3x3 icon grid, in this exact order (left→right, top→bottom): 1) fine steel with blue accents body armor (밴디드 메일); 2) fine steel with blue accents body armor (마력의 로브); 3) ornate with red glowing runes body armor (판금 갑옷); 4) ornate with red glowing runes body armor (트롤 가죽 갑옷); 5) legendary purple-glowing ornate body armor (빙룡 비늘 갑옷); 6) legendary purple-glowing ornate body armor (수정 판금 갑옷); 7) mythic golden radiant body armor (금룡 비늘 갑옷); 8) unique crystal-cyan divine body armor (용왕의 갑옷); 9) plain worn iron cloak (가죽 망토)",
+   "items": [
+    "a:banded_mail_1",
+    "a:robe_ego_1",
+    "a:plate_mail_1",
+    "a:troll_leather_armor",
+    "a:ice_dragon_armor_new",
+    "a:crystal_plate_mail",
+    "a:gold_dragon_armor_new",
+    "a:urand_dragon_king",
+    "a:cloak_1_leather"
+   ],
+   "current": "32px 도트",
+   "display_px": {
+    "icon": "36~64"
+   },
+   "format": "정사각형 3x3 그리드, 칸마다 아이템 1개를 칸 가운데에 크게, 45도 비스듬한 아이콘 구도, 배경 #FF00FF, 글자·격자선·테두리 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_armor_4",
+   "category": "아이콘",
+   "name": "방어구 아이콘 4",
+   "grade": "-",
+   "desc_en": "3x3 icon grid, in this exact order (left→right, top→bottom): 1) sturdy steel cloak (여행자 망토); 2) fine steel with blue accents cloak (기사의 망토); 3) ornate with red glowing runes cloak (마법 망토); 4) legendary purple-glowing ornate cloak (섬광의 망토); 5) mythic golden radiant cloak (별빛 망토); 6) unique crystal-cyan divine cloak (용가죽 망토); 7) plain worn iron gauntlets (가죽 장갑); 8) sturdy steel gauntlets (수련자 장갑); 9) fine steel with blue accents gauntlets (사냥꾼 장갑)",
+   "items": [
+    "a:cloak_2",
+    "a:cloak_3",
+    "a:cloak_4",
+    "a:urand_flash",
+    "a:urand_starlight",
+    "a:urand_dragonskin",
+    "a:glove_1_new",
+    "a:glove_2_new",
+    "a:glove_3_new"
+   ],
+   "current": "32px 도트",
+   "display_px": {
+    "icon": "36~64"
+   },
+   "format": "정사각형 3x3 그리드, 칸마다 아이템 1개를 칸 가운데에 크게, 45도 비스듬한 아이콘 구도, 배경 #FF00FF, 글자·격자선·테두리 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_armor_5",
+   "category": "아이콘",
+   "name": "방어구 아이콘 5",
+   "grade": "-",
+   "desc_en": "3x3 icon grid, in this exact order (left→right, top→bottom): 1) fine steel with blue accents gauntlets (철 건틀릿); 2) ornate with red glowing runes gauntlets (기사의 건틀릿); 3) legendary purple-glowing ornate gauntlets (마력 장갑); 4) mythic golden radiant gauntlets (검객의 장갑); 5) unique crystal-cyan divine gauntlets (전쟁의 건틀릿); 6) plain worn iron boots (가죽 신발); 7) sturdy steel boots (여행자 부츠); 8) fine steel with blue accents boots (기사 부츠); 9) ornate with red glowing runes boots (엘프 부츠)",
+   "items": [
+    "a:gauntlet_1",
+    "a:glove_4_gauntlets",
+    "a:glove_5",
+    "a:urand_fencer_new",
+    "a:urand_war",
+    "a:low_boots",
+    "a:boots_1_brown_new",
+    "a:boots_2_jackboots",
+    "a:boots_3_stripe_new"
+   ],
+   "current": "32px 도트",
+   "display_px": {
+    "icon": "36~64"
+   },
+   "format": "정사각형 3x3 그리드, 칸마다 아이템 1개를 칸 가운데에 크게, 45도 비스듬한 아이콘 구도, 배경 #FF00FF, 글자·격자선·테두리 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_armor_6",
+   "category": "아이콘",
+   "name": "방어구 아이콘 6",
+   "grade": "-",
+   "desc_en": "3x3 icon grid, in this exact order (left→right, top→bottom): 1) legendary purple-glowing ornate boots (강철 부츠); 2) mythic golden radiant boots (그림자 장화); 3) unique crystal-cyan divine boots (바람의 장화); 4) plain worn iron shield (나무 방패); 5) plain worn iron shield (둥근 방패); 6) sturdy steel shield (엘프 방패); 7) sturdy steel shield (철 방패); 8) fine steel with blue accents shield (연 방패); 9) fine steel with blue accents shield (대형 방패)",
+   "items": [
+    "a:boots_iron_2",
+    "a:urand_assassin",
+    "a:boots_4_green",
+    "a:buckler_1_new",
+    "a:buckler_2_new",
+    "a:elven_buckler_1",
+    "a:shield_1",
+    "a:shield_2_kite",
+    "a:large_shield_1_new"
+   ],
+   "current": "32px 도트",
+   "display_px": {
+    "icon": "36~64"
+   },
+   "format": "정사각형 3x3 그리드, 칸마다 아이템 1개를 칸 가운데에 크게, 45도 비스듬한 아이콘 구도, 배경 #FF00FF, 글자·격자선·테두리 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_armor_7",
+   "category": "아이콘",
+   "name": "방어구 아이콘 7",
+   "grade": "-",
+   "desc_en": "3x3 icon grid, in this exact order (left→right, top→bottom): 1) ornate with red glowing runes shield (드워프 방패); 2) ornate with red glowing runes shield (기사단 방패); 3) legendary purple-glowing ornate shield (반사의 방패); 4) mythic golden radiant shield (성기사의 방패); 5) unique crystal-cyan divine shield (심판의 방패)",
+   "items": [
+    "a:dwarven_buckler_1",
+    "a:shield_3",
+    "a:shield_of_reflection",
+    "a:lshield_louise",
+    "a:urand_bullseye"
+   ],
+   "current": "32px 도트",
+   "display_px": {
+    "icon": "36~64"
+   },
+   "format": "정사각형 3x3 그리드, 칸마다 아이템 1개를 칸 가운데에 크게, 45도 비스듬한 아이콘 구도, 배경 #FF00FF, 글자·격자선·테두리 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
+  },
+  {
+   "id": "i_misc_1",
+   "category": "아이콘",
+   "name": "아이템 아이콘",
+   "grade": "-",
+   "desc_en": "3x3 icon grid in this exact order: 1) 강화 주문서: rolled parchment scroll with a red wax seal and glowing runes; 2) 축복 주문서: rolled parchment scroll with golden ribbon and holy light glow; 3) 보호 주문서: rolled parchment scroll with a blue shield emblem; 4) 물약: red health potion in a round glass flask; 5) 골드: pile of gold coins; 6) 보물상자: ornate wooden treasure chest with gold trim, glowing; 7) 스킬북: thick leather spell book with a glowing gem; 8) 아인하사드의 축복: glowing blue-white blessing orb with feather wings; 9) 결투장 입장권: crossed swords emblem medallion",
+   "items": [
+    "misc:scroll",
+    "misc:bless",
+    "misc:prot",
+    "misc:pot",
+    "misc:gold",
+    "misc:chest",
+    "misc:skillbook",
+    "misc:ein",
+    "misc:ticket"
+   ],
+   "current": "이모지·도트",
+   "display_px": {
+    "icon": "24~64"
+   },
+   "format": "정사각형 3x3 그리드, 배경 #FF00FF, 글자·격자선 없음",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 3
   }
  ],
  "effects_rules": "이펙트 전용: 정사각형 3x3 그리드(9프레임, 왼→오, 위→아래), 모든 칸 같은 크기, 효과가 각 칸 중앙(바닥형은 칸 아래쪽 중앙)에 위치, 칸 밖으로 잘리지 않게 여백, 배경은 순수 검정 #000000, 캐릭터·글자·격자선 없음. 리니지M 같은 한국 MMORPG 스킬 이펙트 느낌으로 선명하고 빛나게(glow). 파일: art_in/e_<이름>/sheet.png",
- "effects_prompt": "2D game VFX sprite sheet, square image, 3x3 grid of 9 animation frames read left-to-right top-to-bottom, every cell the same size, effect centered in each cell (ground effects at the bottom center of the cell) with margin so nothing is cut off, solid pure black background (#000000), no characters, no text, no grid lines. Vivid glowing high-quality Korean MMORPG skill effect (Lineage-style). Effect: "
+ "effects_prompt": "2D game VFX sprite sheet, square image, 3x3 grid of 9 animation frames read left-to-right top-to-bottom, every cell the same size, effect centered in each cell (ground effects at the bottom center of the cell) with margin so nothing is cut off, solid pure black background (#000000), no characters, no text, no grid lines. Vivid glowing high-quality Korean MMORPG skill effect (Lineage-style). Effect: ",
+ "icon_rules": "아이콘 시트: 정사각형 3x3 그리드(9칸), desc_en에 적힌 순서대로 칸마다 아이템 1개, 칸 가운데에 크게, 리니지M 아이템 아이콘처럼 45도 비스듬한 구도와 묵직한 질감, 등급이 높을수록 화려하게 빛남. 배경 #FF00FF, 글자·숫자·격자선·테두리 없음. 파일: art_in/<id>/sheet.png",
+ "ground_rules": "바닥: art_in/g_<지역>/tile.png = 위에서 내려다본 이음매 없는 바닥 텍스처 1장(정사각형, 반복해서 깔아도 경계가 안 보이게), art_in/g_<지역>/props.png = 그 지역 소품 9개 3x3(배경 #FF00FF)."
 }
