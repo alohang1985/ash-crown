@@ -932,7 +932,7 @@ function survival(t){const cv=$('bt');if(!cv)return;const h=SVH();if(cv.height!=
  SV.pick=SV.pick.filter(k=>!k.done);
  // 그리기 (y 정렬)
  const ents=[...mobs.map(m=>({m,y:m.y})),{p:1,y:P.y}].sort((a,b)=>a.y-b.y);
- for(const e of ents){if(e.p){svDrawPlayer(c,t,P,M,dead);continue}const m=e.m;const a=m.dead?Math.max(0,1-(t-m.dead)/400):1;if(a<=0)continue;const sc=m.boss?2:m.named?1.5:m.elite?1.2:.95;
+ for(const e of ents){if(e.p){svDrawPlayer(c,t,P,M,dead);continue}const m=e.m;const a=m.dead?Math.max(0,1-(t-m.dead)/400):1;if(a<=0)continue;const sc=m.boss?1.5:m.named?1.15:m.elite?.9:.72;
   c.fillStyle=`rgba(0,0,0,${.3*a})`;c.beginPath();c.ellipse(m.x,m.y,10*sc,3.5*sc,0,0,7);c.fill();if((m.named||m.elite||m.boss)&&!m.dead)morphAura(c,t,m.x,m.y,m.boss?5:m.named?5:3,true);
   const st=m.dead?'hurt':m.atkT&&t-m.atkT<420?'atk':m.mv?'walk':'idle';const pp=m.dead?(t-m.dead)/400:st==='atk'?(t-m.atkT)/420:(t%700)/700;c.save();c.globalAlpha=a;
   drawMon(c,m.kind,m.fx>0?'R':'L',m.x-32*sc,m.y+2,sc,st,pp,m.named?'purple':m.elite?'red':m.slow>t?'crystal':null);if(m.hit>t&&!m.dead){c.globalCompositeOperation='lighter';c.globalAlpha=.6;drawMon(c,m.kind,m.fx>0?'R':'L',m.x-32*sc,m.y+2,sc,st,pp)}c.restore();
@@ -991,10 +991,10 @@ function svClear(t){const key=S.burstK||S.gi||0;S.svStg=S.svStg||{};const st=SV.
  fx.push({k:'clear',t,txt:`스테이지 ${st} 클리어!`});sfx.legend();flash();buzz([100,50,200]);announce(`<span style="color:#ffd23a">🏆 스테이지 ${st} 클리어! · 골드 ${fmt(g)} · 보물상자 ${ch} · 강화 주문서 ${sc}</span>`);save();setTimeout(()=>{svReset(false);fx.push({k:'wavebn',t:performance.now(),txt:`스테이지 ${SV.stg} 시작`})},2500)}
 
 function svDrawPlayer(c,t,P,M,dead){const tc=S.morph!==false&&S.morphLook!==false&&C(S.eqT);const st=dead?'hurt':t-ATKT<ATKD?'atk':'idle';const pp=dead?Math.min(1,(t-(deadUntil-2200))/600):(t-ATKT)/ATKD;
- c.fillStyle='rgba(0,0,0,.4)';c.beginPath();c.ellipse(P.x,P.y,14,5,0,0,7);c.fill();if(tc&&tc.g>=3)morphAura(c,t,P.x,P.y,tc.g,true);
+ c.fillStyle='rgba(0,0,0,.4)';c.beginPath();c.ellipse(P.x,P.y,11,4,0,0,7);c.fill();if(tc&&tc.g>=3)morphAura(c,t,P.x,P.y,tc.g,true);
  c.save();if(P.fx<0){c.translate(P.x*2,0);c.scale(-1,1)}const walk=!dead&&t-P.mv<120&&st==='idle';
- let ok=false;if(tc){if(artOf(tc)){ok=drawArt(c,tc,P.x-40,P.y+2,74,st,pp,t)}else if(isBeast(tc)){ok=drawBeast(c,tc,P.x-30,P.y+2,1.3,st,pp,t)}else{const L=transformLook(tc),cp=lpcCompose(L);if(cp){const sc=1.35*(L.scale||1);drawWings(c,L,P.x-32*sc,P.y+2,sc,t);ok=drawLook(c,cp,P.x-32*sc,P.y+2,sc,st,pp,1)}}}
- if(!ok){const cp=lpcCompose(myLook());if(cp){if(walk){const f=1+Math.floor(t/90)%8;c.drawImage(cp.cv,f*64,cp.fw+64,64,64,P.x-43,P.y-84,86,86)}else ok=drawLook(c,cp,P.x-43,P.y+2,1.35,st,pp,1)}}
+ let ok=false;if(tc){if(artOf(tc)){ok=drawArt(c,tc,P.x-30,P.y+2,54,st,pp,t)}else if(isBeast(tc)){ok=drawBeast(c,tc,P.x-22,P.y+2,.95,st,pp,t)}else{const L=transformLook(tc),cp=lpcCompose(L);if(cp){const sc=1.0*(L.scale||1);drawWings(c,L,P.x-32*sc,P.y+2,sc,t);ok=drawLook(c,cp,P.x-32*sc,P.y+2,sc,st,pp,1)}}}
+ if(!ok){const cp=lpcCompose(myLook());if(cp){if(walk){const f=1+Math.floor(t/90)%8;c.drawImage(cp.cv,f*64,cp.fw+64,64,64,P.x-32,P.y-62,64,64)}else ok=drawLook(c,cp,P.x-32,P.y+2,1.0,st,pp,1)}}
  if(HITP>t){c.globalCompositeOperation='source-atop';}c.restore();if(tc&&tc.g>=3)morphAura(c,t,P.x,P.y,tc.g,false);
 }
 
