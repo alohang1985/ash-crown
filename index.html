@@ -594,9 +594,13 @@ const TLC={};
 
 /* 고급 변신 그림: Pipoya RPG Monster Pack(상업적 사용 가능) · CraftPix 무료 몬스터 스프라이트(상업적 사용 가능) */
 const ARTM={"pip":{"lichking":[240,217],"dragon_mag":[222,230],"dragon_navy":[222,230],"dragon_storm":[222,230],"dragon_red":[222,230],"dragon_blue":[222,230],"dragon_gold":[222,230],"phoenix":[191,230],"griffon":[191,230],"cerberus":[240,211],"cerb_white":[240,211],"reaper":[224,230],"demonlord":[300,141],"skullangel":[300,175],"wyrm_dark":[235,230],"wyrm_green":[235,230],"golem_sand":[260,207],"golem_ice":[260,205],"golem_red":[260,205]},"fga":{"demon":{"fs":128,"rows":[["Idle",3],["Attack",4],["Hurt",2]]},"dragon":{"fs":128,"rows":[["Idle",3],["Attack",4],["Hurt",2]]},"jinn_animation":{"fs":128,"rows":[["Idle",3],["Magic_Attack",13],["Hurt",2]]},"lizard":{"fs":128,"rows":[["Idle",3],["Attack",5],["Hurt",2]]},"medusa":{"fs":128,"rows":[["Idle",3],["Attack",6],["Hurt",2]]},"small_dragon":{"fs":128,"rows":[["Idle",3],["Attack",3],["Hurt",2]]}}};const ARTI={};function artImg(f){return ARTI[f]||(ARTI[f]=Object.assign(new Image(),{src:'art/'+f}))}
-const HAM={hellking:{"cw": 300, "ch": 300, "fy": 282, "n": {"walk": 4, "idle": 9, "atk1": 9, "atk2": 9, "skill": 9, "ult": 9, "hurt": 3, "death": 6}}};let SKILLT=-9e9,HAMOVE=0;
+const HAX={"ham":{},"cart":{}};
+const HAM0={hellking:{"cw": 300, "ch": 300, "fy": 282, "n": {"walk": 4, "idle": 9, "atk1": 9, "atk2": 9, "skill": 9, "ult": 9, "hurt": 3, "death": 6}}};const HAM=Object.assign({},HAM0,HAX.ham);let SKILLT=-9e9,HAMOVE=0;
 const HIART={hellking:{"idle": [379, 420], "atk1": [422, 420], "atk2": [420, 420], "ult": [420, 420], "card": [522, 520]}};let ULTT=-9e9;
 const CARDART={ereshkigal:['hi','hellking']};
+Object.assign(CARDART,HAX.cart);
+const CLSK={'군주':'lord','기사':'knight','요정':'elf','마법사':'wizard','다크엘프':'darkelf','용기사':'dragonknight','환술사':'illusionist','전사':'warrior'};
+const clsArtKey=()=>S.cls?'cls_'+CLSK[S.cls.k]+'_'+S.cls.sx:'';
 const artOf=card=>card&&CARDART[card.id.slice(2)];
 const FGT={};function fgaSheet(k,tk){const im=artImg('F_'+k+'.png');if(!tk||!im.complete||!im.naturalWidth)return im;const key=k+tk;return FGT[key]||(FGT[key]=tintCv(im,tk))}
 function drawArt(c,card,x,gy,H,state,p,t){const a=artOf(card);if(!a)return false;
@@ -1002,6 +1006,7 @@ function svDrawPlayer(c,t,P,M,dead){const tc=S.morph!==false&&S.morphLook!==fals
  c.fillStyle='rgba(0,0,0,.4)';c.beginPath();c.ellipse(P.x,P.y,11,4,0,0,7);c.fill();if(tc&&tc.g>=3)morphAura(c,t,P.x,P.y,tc.g,true);
  c.save();if(P.fx<0){c.translate(P.x*2,0);c.scale(-1,1)}const walk=!dead&&t-P.mv<120&&st==='idle';
  let ok=false;if(tc){if(artOf(tc)){ok=drawArt(c,tc,P.x-30,P.y+2,54,st,pp,t)}else if(isBeast(tc)){ok=drawBeast(c,tc,P.x-22,P.y+2,.95,st,pp,t)}else{const L=transformLook(tc),cp=lpcCompose(L);if(cp){const sc=1.0*(L.scale||1);drawWings(c,L,P.x-32*sc,P.y+2,sc,t);ok=drawLook(c,cp,P.x-32*sc,P.y+2,sc,st,pp,1)}}}
+ if(!ok&&CARDART[clsArtKey()]){ok=drawArt(c,{id:'t:'+clsArtKey()},P.x-30,P.y+2,54,st,pp,t)}
  if(!ok){const cp=lpcCompose(myLook());if(cp){if(walk){const f=1+Math.floor(t/90)%8;c.drawImage(cp.cv,f*64,cp.fw+64,64,64,P.x-32,P.y-62,64,64)}else ok=drawLook(c,cp,P.x-32,P.y+2,1.0,st,pp,1)}}
  if(HITP>t){c.globalCompositeOperation='source-atop';}c.restore();if(tc&&tc.g>=3)morphAura(c,t,P.x,P.y,tc.g,false);
 }
