@@ -1655,7 +1655,7 @@ const BKO={hp:'최대 HP',atk:'공격력',crit:'치명타',def:'방어력',pw:'�
 const bTxt=b=>Object.entries(b).map(([k,v])=>`${BKO[k]} +${k==='def'?v:Math.round(v*100)+'%'}`).join(' · ');
 /* ================= 그림 ================= */
 const AW=ATL.cols*32,AH=ATL.rows*32;const IMG=new Image();IMG.src='atlas.png';
-const ICM={"items":{},"ground":{"coast":{"t":1},"plaza":{"t":1},"road":{"t":1},"sea":{"t":1}}};const ICOI={};for(let k=0;k<19;k++)ICOI[9000+k]=['acc'+(Math.floor(k/9)+1),k%9];setTimeout(()=>{for(const c of CARDS){const m=ICM.items[c.id];if(m)ICOI[c.i]=m}for(const k in ICM.ground){if(ICM.ground[k].t)artImg('GT_'+k+'.webp');if(ICM.ground[k].p)artImg('GP_'+k+'.webp')}},0);
+const ICM={"items":{},"ground":{"castle":{"t":1,"p":1},"coast":{"t":1},"dungeon":{"t":1,"p":1},"island":{"t":1,"p":1},"plaza":{"t":1},"road":{"t":1},"sea":{"t":1}}};const ICOI={};for(let k=0;k<19;k++)ICOI[9000+k]=['acc'+(Math.floor(k/9)+1),k%9];setTimeout(()=>{for(const c of CARDS){const m=ICM.items[c.id];if(m)ICOI[c.i]=m}for(const k in ICM.ground){if(ICM.ground[k].t)artImg('GT_'+k+'.webp');if(ICM.ground[k].p)artImg('GP_'+k+'.webp')}},0);
 function spr(i,px,extra){if(ICOI[i]){const[sk,ix]=ICOI[i];return`<i class="spr" style="width:${px}px;height:${px}px;background-image:url(art/IC_${sk}.webp);background-size:${px*9}px ${px}px;background-position:${-ix*px}px 0;image-rendering:auto;${extra||''}"></i>`}const k=px/32,cx=i%ATL.cols,cy=Math.floor(i/ATL.cols);return`<i class="spr" style="width:${px}px;height:${px}px;background-size:${AW*k}px ${AH*k}px;background-position:${-cx*32*k}px ${-cy*32*k}px;${extra||''}"></i>`}
 /* ================= 저장 ================= */
 /* 캐릭터 슬롯 (계정 하나에 여러 캐릭터) */
