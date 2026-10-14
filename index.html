@@ -499,6 +499,10 @@ html.touch .lmenu [data-lg=_cls]{display:none}html.touch .laysw{display:none!imp
 .stage .syc.anim{width:min(340px,60vw);margin:20px auto}
 @media (max-height:520px){.syc{width:min(220px,46vh)}.synr{gap:5px;padding:8px}}
 .syc{margin:4% 0 9%}
+.elxsum{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0}.elxsum>div{border:1px solid #6b4a20;background:#1a130b;border-radius:8px;padding:8px 12px;display:grid}.elxsum b{font-size:20px;color:#ffd98a}.elxsum small{color:var(--ink2);font-size:11px}
+.elxl{display:grid;gap:6px;margin-top:8px}.elxi{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;border:1px solid #3a2c14;border-left:3px solid var(--ec);background:linear-gradient(90deg,color-mix(in srgb,var(--ec) 10%,#120d07),#0d0905);border-radius:6px;padding:8px}
+.elxic{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;background:radial-gradient(color-mix(in srgb,var(--ec) 40%,#000),#0b0805);box-shadow:0 0 10px color-mix(in srgb,var(--ec) 40%,transparent)}
+.elxt{display:grid}.elxt b{color:var(--ec)}.elxt small{color:var(--ink2);font-size:11.5px}.elxb{display:flex;gap:4px}.elxb .btn small{display:block;font-size:9.5px;opacity:.85}
 </style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
 <div class="title" id="title"><div class="tbg"></div><div class="tin"><div class="tlogo">잿빛 왕관</div><div class="tsub">ASHEN CROWN · 에르덴 대륙</div><div class="tload"><i id="tbar"></i></div><div class="ttip" id="ttip">세계를 불러오는 중…</div><button class="tstart" id="tstart" disabled>게임 시작</button><div class="tfoot">서버 · 에르덴 1 &nbsp;|&nbsp; 시제품</div></div></div><div class="app">
  <div class="top"><div class="logo">잿빛 왕관<small>에르덴 대륙 · 시제품</small></div><div class="cur" id="cur"></div><button class="ic laysw" id="laySw" hidden>가로 화면</button><button class="ic" id="mute" type="button" aria-label="소리">🔊</button></div>
@@ -1395,7 +1399,7 @@ function svHud(t,M){if(LAND&&M)lhud(t,M);const el=$('svhud');if(!el)return;if(MO
  if(el.dataset.k!==key){el.dataset.k=key;el.innerHTML=`<div class="hsk">${L.map((k,i)=>`<button data-hsk="${i}" style="--gc:${k.g!=null?G[k.g].c:'#c79bff'}"><i>${skIcon(k)}</i><span class="cd"></span><small>${k.n}</small></button>`).join('')}</div><button class="hpot" data-hpot="1"><i>🧪</i><b>${S.pot}</b></button>`}
  const nx=L.length?SKI%L.length:-1,f=Math.min(1,skT/(SV.skCD||5000));el.querySelectorAll('[data-hsk]').forEach((b,i)=>{b.classList.toggle('nx',i===nx);b.querySelector('.cd').style.setProperty('--p',i===nx?(1-f):0);b.classList.toggle('nomp',S.mp<20&&!S.burstK)})}
 const skIcon=k=>{const e=skFx(k).e;return({fire:'🔥',ice:'❄️',bolt:'⚡',dark:'🌑',arrow:'🏹',earth:'🪨',arcane:'🔮',slash:'⚔️'})[e]||(k.heal?'✚':k.buff?'⬆':'⚔️')};
-function svKill(m,t){if(m.dead)return;LASTKILL=m;killMob(m,t);LASTKILL=null;SV.combo=(t-SV.comboT<2200?SV.combo:0)+1;SV.comboT=t;if([50,100,200,400,800].includes(SV.combo)){fx.push({k:'cmb',t,txt:{50:'학살!',100:'광란!',200:'전설!',400:'신화!',800:'불멸!'}[SV.combo]});sfx.rare(4)}
+function svKill(m,t){if(m.dead)return;LASTKILL=m;killMob(m,t);matDrop(m);LASTKILL=null;SV.combo=(t-SV.comboT<2200?SV.combo:0)+1;SV.comboT=t;if([50,100,200,400,800].includes(SV.combo)){fx.push({k:'cmb',t,txt:{50:'학살!',100:'광란!',200:'전설!',400:'신화!',800:'불멸!'}[SV.combo]});sfx.rare(4)}
  for(let i=0;i<(m.boss?40:m.elite||m.named?18:8);i++){const a=rnd()*6.283,v=.6+rnd()*1.6;fx.push({k:'pt',x:m.x,y:m.y-14,vx:Math.cos(a)*v,vy:Math.sin(a)*v-1,t,c:m.boss?'#ffd23a':m.named?'#ff7ad9':pick(['#ff5a3a','#ff8a5a','#ffd0a0','#fff'])})}
  if(!S.burstK&&(m.sref||m.fboss||m.dboss)){if(m.sref){const s=m.sref;s.m=null;s.rt=t+(s.camp!=null?25000:14000)+rnd()*6000}if(m.fboss||m.dboss)fieldBossDown(m,t);if(SV.tgt===m)SV.tgt=null;if(m.elite||m.named){const h=stats().hp*.2;S.hp=Math.min(stats().hp,S.hp+h)}return}
  if(!m.boss){const r=rnd();const pk=m.elite||m.named?pick(['magnet','meat','bomb','svchest']):r<.004?'magnet':r<.01?'meat':r<.013?'bomb':null;if(pk)SV.pick.push({k:pk,x:m.x,y:m.y,t})}const v=m.boss?40:m.named?20:m.elite?5:1;for(let i=0;i<(m.boss?12:1);i++)SV.gems.push({x:m.x+R(-10,10),y:m.y+R(-8,8),v:m.boss?4:v});if(m.svboss)svClear(t)}
@@ -1427,7 +1431,7 @@ function head(){headLite();const t=C(S.eqT),d=C(S.eqD),w=W_(),wc=WC(w);const ci=
  ${t?`<div class="eq${S.morph===false?' offm':''}" data-hpick="t" style="--gc:${G[t.g].c}">${cardIco(t,52)}<div><small>변신 · ${S.morph===false?'해제됨':t.F.sk}</small><b>${t.n}</b><em style="color:${G[t.g].c}">${G[t.g].ko}</em></div></div>`:'<div class="eq" data-hpick="t"><div><small>변신</small><b>없음</b></div></div>'}
  ${d?`<div class="eq" data-hpick="d" style="--gc:${G[d.g].c}">${spr(d.i,52)}<div><small>인형 · ${d.bko} +${Math.round(d.bv*100)}%</small><b>${d.n}</b><em style="color:${G[d.g].c}">${G[d.g].ko}</em></div></div>`:'<div class="eq" data-go="gacha"><div><small>인형</small><b>없음</b></div></div>'}
  <div class="eq" data-go="enh" style="--gc:${G[wc.g].c}"><span class="${w.b?'blessed':''}">${spr(wc.i,52)}</span><div><small>무기 +${w.e}</small><b>${wc.n}</b><em style="color:${G[wc.g].c}">${G[wc.g].ko}</em></div></div>`}
-function render(){if(POOL==='s'&&TAB!=='gacha')POOL='t';if(POOL==='s'&&TAB==='synth'){}ensure();qReset();head();sideRender();updDot();const gp=grpOf(TAB);LASTSUB[gp[0]]=TAB;for(const b of $('tabs').children)b.setAttribute('aria-pressed',b.dataset.g===gp[0]);const subs=gp[2].length>1?`<div class="subt">${gp[2].map(([k,n])=>`<button data-sub="${k}" aria-pressed="${k===TAB}">${n}</button>`).join('')}</div>`:'';$('body').innerHTML=subs+({char:vChar,hunt:vHunt,gacha:vGacha,synth:vSynth,enh:vEnh,book:vBook,col:vCol,ah:vAH,adv:vAdv,skill:vSkill,arena:vArena,up:vUp,wh:vWh,chest:vChest,ach:vAch,pass:vPass,month:vMonth})[TAB]();qCheck()}
+function render(){if(POOL==='s'&&TAB!=='gacha')POOL='t';if(POOL==='s'&&TAB==='synth'){}ensure();qReset();head();sideRender();updDot();const gp=grpOf(TAB);LASTSUB[gp[0]]=TAB;for(const b of $('tabs').children)b.setAttribute('aria-pressed',b.dataset.g===gp[0]);const subs=gp[2].length>1?`<div class="subt">${gp[2].map(([k,n])=>`<button data-sub="${k}" aria-pressed="${k===TAB}">${n}</button>`).join('')}</div>`:'';$('body').innerHTML=subs+({char:vChar,hunt:vHunt,gacha:vGacha,synth:vSynth,enh:vEnh,book:vBook,col:vCol,ah:vAH,adv:vAdv,skill:vSkill,arena:vArena,up:vElx,wh:vWh,chest:vChest,ach:vAch,pass:vPass,month:vMonth})[TAB]();qCheck()}
 const poolSel=(w=1)=>`<div class="gsel pool"><button data-pool="t" aria-pressed="${POOL==='t'}">변신</button><button data-pool="d" aria-pressed="${POOL==='d'}">인형</button>${w?`<button data-pool="w" aria-pressed="${POOL==='w'}">무기</button><button data-pool="a" aria-pressed="${POOL==='a'}">방어구</button>`:''}</div>`;
 const tyKo=ty=>({t:'변신',d:'인형',w:'무기',a:'방어구',s:'스킬북'})[ty];const isGear=ty=>ty==='w'||ty==='a';
 const STK={str:['힘','공격력'],dex:['민첩','치명타 · 공격 속도 · 회피'],int:['지능','스킬 위력 · 최대 MP'],con:['체력','최대 HP · 방어']};
@@ -1500,31 +1504,37 @@ const spare=c=>isGear(c.ty)?spareI(c.ty,c.id):Math.max(0,(S.cards[c.id]||0)-1);/
 const haveCnt=(ty,g)=>CARDS.filter(c=>c.ty===ty&&c.g===g).reduce((a,c)=>a+spare(c),0);
 /* ===== 리니지M식 합성 창: 같은 등급 4장 직접 등록 · 자동 등록 · 아데나(골드) 비용 · 실패 시 같은 등급 무작위 1장 ===== */
 const SYNCOST=[500,2000,8000,30000,120000,0];let SYW={ty:'t',g:0,sl:[]};
+const SYNAD=ty=>ty==='s'?{nm:'스킬북',grades:[0,2,3,4],next:g=>SKNEXT[g],rate:g=>SKSYN[g],items:g=>SKILLS.filter(k=>k.g===g),spare:k=>skSpare(k.id),take:k=>{S.skb[k.id]--},
+  win:ng=>{const L=SKILLS.filter(k=>k.g===ng&&skOk(k));return pick(L.length?L:SKILLS.filter(k=>k.g===ng&&k.cls==='공용'))},lose:g=>{const L=SKILLS.filter(k=>k.g===g&&skOk(k));return pick(L.length?L:SKILLS.filter(k=>k.g===g))},give:k=>learnSkill(k),cnt:g=>skSpareG(g)}
+ :{nm:ty==='t'?'변신':'인형',grades:[0,1,2,3,4],next:g=>g+1,rate:g=>Math.min(1,SYN[g]+(CL().syn||0)),items:g=>CARDS.filter(c=>c.ty===ty&&c.g===g),spare:c=>spare(c),take:c=>{S.cards[c.id]--},win:ng=>pick(poolOf(ty,x=>x.g===ng)),lose:g=>pick(poolOf(ty,x=>x.g===g)),give:c=>giveCard(c),cnt:g=>haveCnt(ty,g)};
+const SKCOST={0:1000,2:10000,3:40000,4:150000};
 function synthWin(ty){const st=$('stage');if(ty)SYW={ty,g:SYW.ty===ty?SYW.g:0,sl:[]};const T=SYW;
- const draw=()=>{const g=T.g,L=CARDS.filter(c=>c.ty===T.ty&&c.g===g).map(c=>({c,n:spare(c)-T.sl.filter(x=>x===c.id).length})).filter(x=>x.n>0||T.sl.includes(x.c.id)).sort((a,b)=>b.n-a.n);
-  const p=Math.min(1,SYN[g]+(CL().syn||0)),sp=S.spts[T.ty+g]||0,cost=SYNCOST[g],full=T.sl.length===4;
-  st.innerHTML=`<div class="mwin synw"><div class="mwh"><b>${T.ty==='t'?'변신':'인형'} 합성</b><div class="mtabs">${['t','d'].map(k=>`<button data-sy="${k}" class="${k===T.ty?'on':''}">${k==='t'?'변신':'인형'}</button>`).join('')}</div><button class="mwx" id="pkX">✕</button></div>
-  <div class="synb"><div class="synl"><div class="syg">${G.slice(0,5).map((x,i)=>`<button data-syg="${i}" class="${i===g?'on':''}" style="--gc:${x.c}">${x.ko}<small>${haveCnt(T.ty,i)}</small></button>`).join('')}</div>
-   <div class="mwg">${L.map(x=>`<button class="mwc${x.n<=0?' no':''}" data-sya="${x.c.id}" style="--gc:${G[g].c}"><span class="mwi">${cardIco(x.c,52)}</span><b>${x.c.n}</b><em>×${x.n}</em></button>`).join('')||'<p class="mini" style="grid-column:1/-1">이 등급에 합성할 카드가 없어요 (같은 카드 2장 이상부터, 1장은 남겨요)</p>'}</div></div>
-   <div class="synr"><div class="syc" style="--gc:${G[g].c};--gn:${G[g+1].c}"><div class="syring"></div>${[0,1,2,3].map(i=>{const id=T.sl[i],c=id&&C(id);return`<button class="sys s${i}${c?' on':''}" data-syr="${i}">${c?cardIco(c,64):'<i>+</i>'}${c?`<b>${c.n}</b>`:''}</button>`}).join('')}<div class="sycen">${G[g+1].ko}<small>${(p*100<1?(p*100).toFixed(1):(p*100).toFixed(0))}%</small></div></div>
-    <div class="syinfo"><div>성공 시 <b style="color:${G[g+1].c}">${G[g+1].ko} ${T.ty==='t'?'변신':'인형'}</b> 1장 · 실패 시 <b style="color:${G[g].c}">${G[g].ko}</b> 무작위 1장</div><div class="bar"><i style="width:${sp/SYN_PITY*100}%"></i></div><small>합성 포인트 ${sp} / ${SYN_PITY} · 100점이면 다음 합성 확정 성공</small></div>
+ const draw=()=>{const A=SYNAD(T.ty);if(!A.grades.includes(T.g))T.g=A.grades[0];const g=T.g,ng=A.next(g);const L=A.items(g).map(c=>({c,n:A.spare(c)-T.sl.filter(x=>x===c.id).length})).filter(x=>x.n>0||T.sl.includes(x.c.id)).sort((a,b)=>b.n-a.n);
+  const p=A.rate(g),key=(T.ty==='s'?'s':T.ty)+g,sp=S.spts[key]||0,cost=T.ty==='s'?SKCOST[g]:SYNCOST[g],full=T.sl.length===4,nAll=Math.floor(A.cnt(g)/4);
+  st.innerHTML=`<div class="mwin synw"><div class="mwh"><b>${A.nm} 합성</b><div class="mtabs">${['t','d','s'].map(k=>`<button data-sy="${k}" class="${k===T.ty?'on':''}">${k==='t'?'변신':k==='d'?'인형':'스킬북'}</button>`).join('')}</div><button class="mwx" id="pkX">✕</button></div>
+  <div class="synb"><div class="synl"><div class="syg">${A.grades.map(i=>`<button data-syg="${i}" class="${i===g?'on':''}" style="--gc:${G[i].c}">${G[i].ko}<small>${A.cnt(i)}</small></button>`).join('')}</div>
+   <div class="mwg">${L.map(x=>`<button class="mwc${x.n<=0?' no':''}" data-sya="${x.c.id}" style="--gc:${G[g].c}"><span class="mwi">${cardIco(x.c,52)}</span><b>${x.c.n}</b><em>×${x.n}</em></button>`).join('')||`<p class="mini" style="grid-column:1/-1">이 등급에 합성할 ${A.nm}이(가) 없어요${T.ty==='s'?' (같은 스킬북을 또 얻으면 여기 쌓여요)':' (같은 카드 2장 이상부터, 1장은 남겨요)'}</p>`}</div></div>
+   <div class="synr"><div class="syc" style="--gc:${G[g].c};--gn:${G[ng].c}"><div class="syring"></div>${[0,1,2,3].map(i=>{const id=T.sl[i],c=id&&(T.ty==='s'?SKM[id]:C(id));return`<button class="sys s${i}${c?' on':''}" data-syr="${i}">${c?cardIco(c,64):'<i>+</i>'}${c?`<b>${c.n}</b>`:''}</button>`}).join('')}<div class="sycen">${G[ng].ko}<small>${(p*100<1?(p*100).toFixed(1):(p*100).toFixed(0))}%</small></div></div>
+    <div class="syinfo"><div>성공 시 <b style="color:${G[ng].c}">${G[ng].ko} ${A.nm}</b> 1개 · 실패 시 <b style="color:${G[g].c}">${G[g].ko}</b> 무작위 1개</div><div class="bar"><i style="width:${sp/SYN_PITY*100}%"></i></div><small>합성 포인트 ${sp} / ${SYN_PITY} · 100점이면 다음 합성 확정 성공</small></div>
     <div class="sybt"><button class="btn" id="syAuto">자동 등록</button><button class="btn" id="syClr">초기화</button><button class="btn gold" id="syGo" ${full&&S.gold>=cost?'':'disabled'}>합성 <small>🪙 ${fmt(cost)}</small></button></div>
-    <button class="lnk" id="syAll">${G[g].ko} 전부 한 번에 합성 (${Math.floor(haveCnt(T.ty,g)/4)}회 · 🪙 ${fmt(cost*Math.floor(haveCnt(T.ty,g)/4))})</button></div></div></div>`};
+    <button class="lnk" id="syAll" ${nAll?'':'disabled'}>${G[g].ko} 전부 한 번에 합성 (${nAll}회 · 🪙 ${fmt(cost*nAll)})</button></div></div></div>`};
  st.hidden=false;draw();const close=()=>{st.hidden=true;st.innerHTML='';st.onclick=null};
- st.onclick=async e=>{const t=e.target;if(t.id==='pkX'||t===st){close();return}let b;
-  if(b=t.closest('[data-sy]')){T.ty=b.dataset.sy;T.sl=[];draw();return}if(b=t.closest('[data-syg]')){T.g=+b.dataset.syg;T.sl=[];draw();return}
-  if(b=t.closest('[data-sya]')){const id=b.dataset.sya,c=C(id);if(T.sl.length<4&&spare(c)-T.sl.filter(x=>x===id).length>0){T.sl.push(id);sfx.tick&&sfx.tick(1)}draw();return}
+ const once=(A,ins)=>{const g=T.g,key=(T.ty==='s'?'s':T.ty)+g,sure=(S.spts[key]||0)>=SYN_PITY,ok=sure||rnd()<A.rate(g);let r;if(ok){r=A.win(A.next(g));if(sure)S.spts[key]=0}else{r=A.lose(g);S.spts[key]=Math.min(SYN_PITY,(S.spts[key]||0)+R(8,15))}A.give(r);track('synth');return{ok,r,key}};
+ st.onclick=async e=>{const t=e.target;if(t.id==='pkX'||t===st){close();return}let b;const A=SYNAD(T.ty);const byId=id=>T.ty==='s'?SKM[id]:C(id);
+  if(b=t.closest('[data-sy]')){T.ty=b.dataset.sy;T.sl=[];T.g=0;draw();return}if(b=t.closest('[data-syg]')){T.g=+b.dataset.syg;T.sl=[];draw();return}
+  if(b=t.closest('[data-sya]')){const id=b.dataset.sya,c=byId(id);if(T.sl.length<4&&A.spare(c)-T.sl.filter(x=>x===id).length>0)T.sl.push(id);draw();return}
   if(b=t.closest('[data-syr]')){T.sl.splice(+b.dataset.syr,1);draw();return}
   if(t.closest('#syClr')){T.sl=[];draw();return}
-  if(t.closest('#syAuto')){T.sl=[];const L=CARDS.filter(c=>c.ty===T.ty&&c.g===T.g).sort((a,b)=>spare(b)-spare(a));for(const c of L){let n=spare(c);while(n-->0&&T.sl.length<4)T.sl.push(c.id)}draw();return}
-  if(t.closest('#syAll')){const n=Math.floor(haveCnt(T.ty,T.g)/4),cost=SYNCOST[T.g]*n;if(!n)return;if(S.gold<cost){announce('골드가 부족해요');return}S.gold-=cost;POOL=T.ty;SG=T.g;close();await synth(1);synthWin();return}
-  if(t.closest('#syGo')){if(T.sl.length<4)return;const cost=SYNCOST[T.g];if(S.gold<cost){announce('골드가 부족해요 · 합성 비용 '+fmt(cost));return}
-   const ins=T.sl.map(C);for(const c of ins)if(spare(c)<=0)return;S.gold-=cost;for(const c of ins)S.cards[c.id]--;track('synth');const key=T.ty+T.g,sure=(S.spts[key]||0)>=SYN_PITY,ok=sure||rnd()<SYN[T.g]+(CL().syn||0);let r;
-   if(ok){r=pick(poolOf(T.ty,x=>x.g===T.g+1));if(sure)S.spts[key]=0}else{r=pick(poolOf(T.ty,x=>x.g===T.g));S.spts[key]=Math.min(SYN_PITY,(S.spts[key]||0)+R(8,15))}giveCard(r);T.sl=[];ensure();save();BUSY=true;
-   stageOn(`<div class="msg" id="msg">${G[T.g].ko} ${T.ty==='t'?'변신':'인형'} 4장을 합성합니다</div><div class="syc anim" style="--gc:${G[T.g].c};--gn:${G[T.g+1].c}"><div class="syring"></div>${ins.map((c,i)=>`<div class="sys s${i} on" id="o${i}">${cardIco(c,64)}</div>`).join('')}<div class="sycen" id="syc"></div></div>`);
+  if(t.closest('#syAuto')){T.sl=[];const L=A.items(T.g).slice().sort((a,b)=>A.spare(b)-A.spare(a));for(const c of L){let n=A.spare(c);while(n-->0&&T.sl.length<4)T.sl.push(c.id)}draw();return}
+  const cost=T.ty==='s'?SKCOST[T.g]:SYNCOST[T.g];
+  if(t.closest('#syAll')){let n=0,okN=0;const won=[];while(A.cnt(T.g)>=4&&S.gold>=cost&&n<300){const L=A.items(T.g).slice().sort((a,b)=>A.spare(b)-A.spare(a));const ins=[];for(const c of L){let k=A.spare(c);while(k-->0&&ins.length<4)ins.push(c)}if(ins.length<4)break;S.gold-=cost;ins.forEach(A.take);const r=once(A,ins);n++;if(r.ok){okN++;won.push(r.r)}}
+   if(!n){announce('골드가 부족하거나 재료가 모자라요');return}ensure();save();BUSY=true;await showGrid(won,`${G[T.g].ko} ${A.nm} 합성 ${n}회 · 성공 ${okN}회`,won.length?'':'<p class="mini">모두 실패했지만 합성 포인트는 쌓였어요</p>');BUSY=false;save();synthWin();return}
+  if(t.closest('#syGo')){if(T.sl.length<4)return;if(S.gold<cost){announce('골드가 부족해요 · 합성 비용 '+fmt(cost));return}const ins=T.sl.map(byId);const need={};for(const c of ins)need[c.id]=(need[c.id]||0)+1;for(const c of ins)if(A.spare(c)<need[c.id])return;
+   S.gold-=cost;ins.forEach(A.take);const{ok,r,key}=once(A,ins);T.sl=[];ensure();save();BUSY=true;const gg=T.g,ng=A.next(gg);
+   stageOn(`<div class="msg" id="msg">${G[gg].ko} ${A.nm} 4개를 합성합니다</div><div class="syc anim" style="--gc:${G[gg].c};--gn:${G[ng].c}"><div class="syring"></div>${ins.map((c,i)=>`<div class="sys s${i} on" id="o${i}">${cardIco(c,64)}</div>`).join('')}<div class="sycen" id="syc"></div></div>`);
    sfx.hum&&sfx.hum();await W(500);for(let i=0;i<4;i++){const o=$('o'+i);if(o){o.style.transition='all .5s ease-in';o.style.left='50%';o.style.top='50%';o.style.transform='translate(-50%,-50%) scale(.3)';o.style.opacity='0'}}await W(600);
-   if(ok){flash();shake();sfx.boom();sparks($('syc'),70,G[T.g+1].c);await W(400)}else{sparks($('syc'),20,G[T.g].c);await W(300)}
-   await revealOne(r,ok&&T.g>=3);if(!ok)announce(`합성 실패 · ${G[T.g].ko} 「${r.n}」 획득 · 합성 포인트 ${S.spts[key]}/${SYN_PITY}`);else{announce(`<span style="color:${G[r.g].c}">✦ 합성 성공! ${G[r.g].ko} 「${r.n}」</span>`);if(r.g>=3)wNotice(`<b>${(typeof ACC!=='undefined'&&ACC&&ACC.user)||(S.cls?S.cls.k:'모험가')}</b> 님이 합성으로 <em style="color:${G[r.g].c}">${G[r.g].ko} 「${r.n}」</em>을(를) 획득했습니다.`,G[r.g].c)}
+   if(ok){flash();shake();sfx.boom();sparks($('syc'),70,G[ng].c);await W(400)}else{sparks($('syc'),20,G[gg].c);await W(300)}
+   await revealOne(r,ok&&ng>=3);if(!ok)announce(`합성 실패 · ${G[gg].ko} 「${r.n}」 획득 · 합성 포인트 ${S.spts[key]}/${SYN_PITY}`);else{announce(`<span style="color:${G[r.g].c}">✦ 합성 성공! ${G[r.g].ko} 「${r.n}」</span>`);if(r.g>=3)wNotice(`<b>${(typeof ACC!=='undefined'&&ACC&&ACC.user)||(S.cls?S.cls.k:'모험가')}</b> 님이 합성으로 <em style="color:${G[r.g].c}">${G[r.g].ko} 「${r.n}」</em>을(를) 획득했습니다.`,G[r.g].c)}
    BUSY=false;save();synthWin();return}}}
 function vSynth(){const g=SG;const have=haveCnt(POOL,g);const sp=S.spts[POOL+g]||0;const allG=G.slice(0,6).reduce((a,x,i)=>a+Math.floor(haveCnt(POOL,i)/4),0);
  if(POOL==='t'||POOL==='d'){return`<h3>합성</h3>${poolSel()}<div class="syntab"><p class="sub">리니지M처럼 같은 등급 카드 4장을 올려 합성해요. 성공하면 다음 등급, 실패하면 같은 등급 무작위 1장이 나와요.</p><button class="btn gold wide" data-act="synwin">${POOL==='t'?'변신':'인형'} 합성 창 열기</button></div>`}
@@ -1560,7 +1570,7 @@ function vSkill(){S.skills=S.skills||{};const eq=S.skEq||[];const tc=S.morph!==f
  <h4 class="ch4">장착 스킬 ${eq.length}/${SK_SLOTS} <small>사냥 중 6초마다 차례로 자동 사용 · 보스전에서는 「스킬」 버튼</small></h4>
  <div class="skslot">${Array.from({length:SK_SLOTS},(_,i)=>{const k=SKM[eq[i]];return k?`<button data-skeq="${k.id}" style="--gc:${G[k.g].c}">${spr(k.i,32)}<b>${k.n}</b><small>Lv.${skLv(k.id)}</small></button>`:'<button disabled><small>빈 칸</small></button>'}).join('')}</div>
  ${tc?`<p class="mini">변신 「${tc.n}」 스킬도 함께 써요: ${tc.sks.map(k=>k.n).join(' · ')}</p>`:''}
- <h4 class="ch4">스킬북 합성 <small>보관 중인 같은 등급 스킬북 4권 → 윗등급 스킬북 도전 · 실패하면 1권 돌아오고 포인트 적립</small></h4>
+ <h4 class="ch4">스킬북 합성 <small>같은 등급 스킬북 4권 → 성공하면 윗등급, 실패하면 같은 등급 무작위 1권</small></h4><button class="btn gold wide" data-act="synwinS">스킬북 합성 창 열기</button>
  <div class="sksyn">${[0,2,3,4].map(g=>{const n=skSpareG(g);return`<div style="--gc:${G[g].c}"><b style="color:${G[g].c}">${G[g].ko} → ${G[SKNEXT[g]].ko}</b><small>보관 ${n}권 · 성공 ${Math.round(SKSYN[g]*100)}% · 포인트 ${S.spts['s'+g]||0}/${SYN_PITY}</small><div class="row"><button class="btn sm2" data-sksyn="${g}" ${n<4?'disabled':''}>4권 합성</button><button class="btn sm2 red" data-sksynall="${g}" ${n<4?'disabled':''}>전부 (${Math.floor(n/4)}회)</button></div></div>`}).join('')}</div>
  <h4 class="ch4">${S.cls?S.cls.k:'직업'} 스킬</h4><div class="skl">${mine.filter(k=>k.cls!=='공용').map(row).join('')||'<p class="mini">직업을 고르면 직업 스킬이 보여요.</p>'}</div>
  <h4 class="ch4">공용 스킬</h4><div class="skl">${mine.filter(k=>k.cls==='공용').map(row).join('')}</div>`}
@@ -1642,7 +1652,7 @@ function vAH(){ahRefresh();const left=Math.max(0,5*60-Math.floor((Date.now()-S.a
  :`${S.ah.sell.length?`<h4 class="ch4">판매 중</h4><div class="ahl">${S.ah.sell.map(s=>{const c=C(s.id);return`<div class="ahi" style="--gc:${G[c.g].c}">${spr(c.i,40)}<div><b>${c.n}${s.e?' +'+s.e:''}</b><small>내놓은 값 ${fmt(s.p)} · 시세 ${fmt(mPrice(s.id,s.e))}</small><small>살 사람을 기다리는 중…</small></div><button class="btn sm2" data-ahcancel="${s.k}">취소</button></div>`}).join('')}</div>`:''}
  <h4 class="ch4">내 물건 <small>싸게 내놓으면 빨리, 비싸게 내놓으면 안 팔릴 수도 있어요</small></h4><div class="ahl">${mine.slice(0,60).map(x=>{const c=C(x.id),mp=mPrice(x.id,x.e);return`<div class="ahi" style="--gc:${G[c.g].c}">${spr(c.i,40)}<div><b>${c.n}${x.e?' +'+x.e:''}${x.n>1?' ×'+x.n:''}</b><small><span style="color:${G[c.g].c}">${G[c.g].ko} ${tyKo(c.ty)}</span> · 시세 ${fmt(mp)}</small></div><div class="sb3"><button class="btn sm2" data-ahsell="${x.u||x.id}" data-r=".85">${fmt(mp*.85)}</button><button class="btn sm2" data-ahsell="${x.u||x.id}" data-r="1.15">${fmt(mp*1.15)}</button></div></div>`}).join('')||'<p class="mini">팔 수 있는 물건이 없어요. 장착 중인 것과 마지막 한 장은 팔 수 없어요.</p>'}</div>`}`}
 /* ================= 입력 ================= */
-const GROUPS=[['grow','성장',[['char','내 캐릭터'],['up','능력 강화'],['skill','스킬']]],['gear','장비',[['chest','보물상자'],['enh','강화'],['synth','합성'],['book','도감'],['col','컬렉션']]],['gacha','상점',[['gacha','소환'],['pass','성장 패스'],['month','월정액']]],['adv','모험',[['adv','보스·던전·임무'],['ach','업적'],['arena','결투장']]],['more','더보기',[['hunt','사냥 정보'],['wh','창고'],['ah','거래소']]]];
+const GROUPS=[['grow','성장',[['char','내 캐릭터'],['up','엘릭서'],['skill','스킬']]],['gear','장비',[['chest','보물상자'],['enh','강화'],['synth','합성'],['book','도감'],['col','컬렉션']]],['gacha','상점',[['gacha','소환'],['pass','성장 패스'],['month','월정액']]],['adv','모험',[['adv','보스·던전·임무'],['ach','업적'],['arena','결투장']]],['more','더보기',[['hunt','사냥 정보'],['wh','창고'],['ah','거래소']]]];
 const grpOf=t=>GROUPS.find(g=>g[2].some(x=>x[0]===t))||GROUPS[0];const LASTSUB={};
 $('tabs').innerHTML=GROUPS.map(g=>`<button data-g="${g[0]}">${g[1]}</button>`).join('');
 $('body').addEventListener('change',e=>{if(e.target.id==='chDism'){S.chDism=+e.target.value;save()}});
@@ -1682,6 +1692,8 @@ $('body').onclick=e=>{ac();const t=e.target;const q=s=>t.closest(s);
  if(h('[data-arv]',async el=>{AR.view=el.dataset.arv;render();if(AR.view==='rank'){const j=await apiGet('/rank');if(j.ok){AR.ranking=j.list;AR.players=j.players}render()}if(AR.view==='log'){await arLoad()}}))return;
  if(h('[data-acc]',el=>{const k=el.dataset.acc;if(k==='save')accSave();if(k==='out')accLogout();if(k==='up'||k==='in'){const u=($('accU').value||'').trim(),pw=$('accP').value||'';if(!u||!pw){announce('아이디와 비밀번호를 넣어주세요');return}(k==='up'?accSignup:accLogin)(u,pw)}}))return;
  if(h('[data-sub]',el=>{TAB=el.dataset.sub;render()}))return;
+ if(h('[data-elxd]',el=>{const k=el.dataset.elxd;if(!(S.elx&&S.elx[k]>0)||elxUsed()>=elxCap())return;S.elx[k]--;S.elxU=elxUsed()+1;S.st[k]=(S.st[k]||0)+1;const e=ELX.find(x=>x[0]===k);sfx.rare(3);flash();playEA('buff',SV.p.x,SV.p.y+6,110,'b');announce(`<span style="color:${e[3]}">${e[2]} ${e[1]}을(를) 마셨어요 · ${k.toUpperCase()} +1</span>`);save();render()}))return;
+ if(h('[data-elxc]',el=>{const k=el.dataset.elxc;if((S.mstone||0)<ELX_STONE||S.gold<ELX_GOLD)return;S.mstone-=ELX_STONE;S.gold-=ELX_GOLD;elxGive(k);const e=ELX.find(x=>x[0]===k);sfx.rare(2);announce(`⚗️ ${e[1]} 제작 완료`);save();render()}))return;
  if(h('[data-up]',el=>{buyUp(el.dataset.up,UPN)}))return;
  if(h('[data-upn]',el=>{UPN=+el.dataset.upn;render()}))return;
  if(h('[data-wh]',el=>{const[k,a]=el.dataset.wh.split(/:(.*)/s);whMove(k,a)}))return;
@@ -1713,7 +1725,7 @@ $('body').onclick=e=>{ac();const t=e.target;const q=s=>t.closest(s);
   const p=Math.round(mPrice(id,e)*r);S.ah.sell.push({k:Math.random().toString(36).slice(2,8),id,e,p,at:Date.now()+R(r<1?10:40,r<1?40:120)*1000});save();render()}))return;
  if(h('[data-ahcancel]',el=>{const i=S.ah.sell.findIndex(s=>s.k===el.dataset.ahcancel);const s=S.ah.sell[i];if(!s)return;if(isGear(s.id[0]))inv(s.id[0]).push({u:++S.uid,id:s.id,e:s.e});else S.cards[s.id]=(S.cards[s.id]||0)+1;S.ah.sell.splice(i,1);save();render()}))return;
  if(BUSY)return;const pk=q('[data-pk]'),a=q('[data-act]');let job=null;
- if(pk&&!pk.disabled)job=buyPack(pk.dataset.pk,+pk.dataset.n);else if(a&&!a.disabled)job=({syn:()=>synth(0),synall:()=>synth(1),synevery:()=>synth(2),synwin:()=>{synthWin(POOL);return null},enh:()=>enhance(false),benh:()=>enhance(true)})[a.dataset.act]();
+ if(pk&&!pk.disabled)job=buyPack(pk.dataset.pk,+pk.dataset.n);else if(a&&!a.disabled)job=({syn:()=>synth(0),synall:()=>synth(1),synevery:()=>synth(2),synwin:()=>{synthWin(POOL);return null},synwinS:()=>{synthWin('s');return null},enh:()=>enhance(false),benh:()=>enhance(true)})[a.dataset.act]();
  if(job)Promise.resolve(job).catch(()=>{}).finally(()=>{if(BUSY)stageOff()})};
 /* ================= 연출 ================= */
 let BUSY=false,SKIP=false;
@@ -1823,6 +1835,21 @@ function einRefill(){const now=new Date(Date.now()+9*3600e3),d=now.toISOString()
 function useEin(){if(MODE||!(S.ein>0))return 1;S.ein--;if(S.ein%50===0)stageUI();return 2}
 /* 골드 능력 강화 */
 const UPS=[['atk','공격력','2레벨마다 공격력 +1',40,1.45,0],['hp','체력','최대 HP +5',35,1.45,0],['crit','치명타 확률','+0.2%',300,1.9,150],['cdmg','치명 피해','+2%',400,1.8,250],['aspd','공격 속도','+0.5%',600,2.2,60],['gold','골드 획득','+2%',800,1.9,100]];
+/* ===== 엘릭서 (리니지M식: 골드로 능력치를 사지 않고, 엘릭서를 마시거나 만들어서 올림) ===== */
+const ELX=[['str','힘의 엘릭서','💪','#ff7a5a','공격력이 올라요'],['dex','민첩의 엘릭서','🏹','#7adf7a','치명타·공격 속도가 올라요'],['int','지능의 엘릭서','🔮','#8fb0ff','마법(스킬) 대미지가 올라요'],['con','체력의 엘릭서','❤️','#ffb0c0','최대 HP가 올라요']];
+const elxCap=()=>Math.max(0,Math.min(20,Math.floor(((S.lv||1)-20)/5)));const elxUsed=()=>S.elxU||0;
+const ELX_STONE=50,ELX_GOLD=100000;
+function elxGive(k,n){S.elx=S.elx||{};S.elx[k]=(S.elx[k]||0)+(n||1)}
+function matDrop(m){const inD=typeof inDun==='function'&&inDun();const r=rnd(),mul=inD?2:1;let st=0;
+ if(m.fboss||m.dboss)st=R(40,80);else if(m.boss)st=R(10,20);else if(m.named)st=R(8,15);else if(m.elite)st=r<.35*mul?R(1,3):0;else st=r<.025*mul?1:0;
+ if(st){S.mstone=(S.mstone||0)+st;if(st>=5)announce(`<span style="color:#9fe3ff">💠 마력의 돌 ${st}개 획득</span>`)}
+ const ec=m.fboss||m.dboss?1:m.boss?.15:m.named?.08:0;if(ec&&rnd()<ec){const e=pick(ELX);elxGive(e[0]);addDrop('#c46bff',e[1]);announce(`<span style="color:${e[3]}">${e[2]} ${e[1]} 획득!</span>`)}}
+function vElx(){const used=elxUsed(),cap=elxCap(),st=S.st||{};const can=used<cap;
+ return`<h3>엘릭서 <small class="mini">마시면 능력치가 영구히 1 올라요</small></h3>
+ <div class="elxsum"><div><b>${used}</b> / ${cap}<small>마신 엘릭서 / 마실 수 있는 수</small></div><div><b>💠 ${fmt(S.mstone||0)}</b><small>마력의 돌</small></div></div>
+ <p class="mini">Lv.25부터 5레벨마다 1병씩 더 마실 수 있어요 (최대 20병). 엘릭서는 보스·네임드에게서 얻거나, 마력의 돌 ${ELX_STONE}개 + ${fmt(ELX_GOLD)} 골드로 만들 수 있어요. 마력의 돌은 몬스터가 떨어뜨려요 (던전은 2배).</p>
+ <div class="elxl">${ELX.map(([k,n,ic,c,d])=>{const have=(S.elx&&S.elx[k])||0;return`<div class="elxi" style="--ec:${c}"><div class="elxic">${ic}</div><div class="elxt"><b>${n}</b><small>${d} · 지금 ${k.toUpperCase()} ${st[k]||0}</small></div><div class="elxb"><button class="btn sm2 gold" data-elxd="${k}" ${have&&can?'':'disabled'}>마시기 <small>보유 ${have}</small></button><button class="btn sm2" data-elxc="${k}" ${(S.mstone||0)>=ELX_STONE&&S.gold>=ELX_GOLD?'':'disabled'}>제작 <small>💠${ELX_STONE} · 🪙${fmt(ELX_GOLD)}</small></button></div></div>`}).join('')}</div>
+ ${Object.keys(S.up||{}).some(k=>S.up[k])?`<p class="mini" style="opacity:.7">예전에 골드로 올린 능력 강화 효과는 그대로 유지돼요.</p>`:''}`}
 const upLv=k=>(S.up&&S.up[k])||0;const upCost=(u,l)=>Math.round(u[3]*Math.pow(l+1,u[4]));const upAdd=k=>k==='atk'?Math.floor(upLv('atk')/2):k==='hp'?5*upLv('hp'):0;
 const upMul=k=>k==='atk'||k==='hp'?Math.pow(1.05,upLv(k)):1;const upGold=()=>1+upLv('gold')*.02;
 function buyUp(k,n){const u=UPS.find(x=>x[0]===k);S.up=S.up||{};let c=0;for(let i=0;i<n;i++){const l=upLv(k);if(u[5]&&l>=u[5])break;const cost=upCost(u,l);if(S.gold<cost)break;S.gold-=cost;S.up[k]=l+1;c++}if(c){S.cnt=S.cnt||{};S.cnt['up_'+k]=(S.cnt['up_'+k]||0)+c;S.cnt.up=(S.cnt.up||0)+c;sfx.up(Math.min(5,Math.floor(c/5)));qCheck();save();render()}return c}
