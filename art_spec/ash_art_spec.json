@@ -39,6 +39,22 @@
  },
  "assets": [
   {
+   "id": "t_hellking_motion",
+   "category": "변신",
+   "name": "명계의 왕 (걷기·달리기 추가)",
+   "grade": "유일",
+   "desc_en": "The existing 명계의 왕 (King of the Underworld): horned demon-knight in black-crimson armor with skulls, red tattered cape, huge flaming greatsword. Redraw ONLY walk and run cycles matching the existing sheets exactly (same design/colors/scale).",
+   "sheets": [
+    "walk",
+    "run"
+   ],
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "format": "PNG, 배경 #FF00FF, 4x2 격자 8프레임",
+   "status": "todo",
+   "priority": 0,
+   "ref_existing": "art/H_hellking_*.png (현재 게임에 있는 명계의 왕 그림과 똑같이)"
+  },
+  {
    "id": "t_goblin_new",
    "category": "변신",
    "name": "고블린",
@@ -56,10 +72,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_kobold_new",
@@ -79,10 +97,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_gnoll_new",
@@ -102,10 +122,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_orc_new",
@@ -125,10 +147,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_hobgoblin_new",
@@ -148,10 +172,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_skeleton_humanoid_small_new",
@@ -171,10 +197,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_human",
@@ -194,10 +222,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_halfling_new",
@@ -217,10 +247,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_gnome",
@@ -240,10 +272,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_dwarf_new",
@@ -263,10 +297,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_elf_new",
@@ -286,10 +322,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_big_kobold_new",
@@ -309,10 +347,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_boggart_new",
@@ -332,10 +372,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_orc_priest_new",
@@ -355,10 +397,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_merfolk_fighter",
@@ -378,10 +422,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_tengu",
@@ -401,10 +447,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_satyr",
@@ -424,10 +472,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_faun",
@@ -447,10 +497,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_spriggan",
@@ -470,10 +522,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_formicid",
@@ -493,10 +547,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_kenku_winged",
@@ -516,10 +572,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_naga",
@@ -539,10 +597,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_gnoll_shaman",
@@ -562,10 +622,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_deep_elf_soldier",
@@ -585,10 +647,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_orc_warrior_new",
@@ -608,10 +672,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_orc_knight_new",
@@ -631,10 +697,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_ogre_new",
@@ -654,10 +722,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_troll",
@@ -677,10 +747,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_centaur",
@@ -700,10 +772,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_minotaur",
@@ -723,10 +797,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_deep_elf_fighter_new",
@@ -746,10 +822,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_deep_elf_mage",
@@ -769,10 +847,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_hill_giant_new",
@@ -792,10 +872,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_yaktaur_new",
@@ -815,10 +897,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_naga_warrior",
@@ -838,10 +922,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_merfolk_impaler_new",
@@ -861,10 +947,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_harpy",
@@ -884,10 +972,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_wizard",
@@ -907,10 +997,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_necromancer_new",
@@ -930,10 +1022,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_deep_dwarf_berserker",
@@ -953,10 +1047,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_tengu_warrior",
@@ -976,10 +1072,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_salamander",
@@ -999,10 +1097,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_gargoyle",
@@ -1022,10 +1122,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_ghoul",
@@ -1045,10 +1147,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_mummy",
@@ -1068,10 +1172,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_wight_new",
@@ -1091,10 +1197,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_deep_troll",
@@ -1114,10 +1222,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_rock_troll",
@@ -1137,10 +1247,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_ettin_new",
@@ -1160,10 +1272,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_cyclops_new",
@@ -1183,10 +1297,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_ogre_mage_new",
@@ -1206,11 +1322,13 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 3,
-   "old_name": "오우거 마법사"
+   "old_name": "오우거 마법사",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_orc_warlord",
@@ -1230,10 +1348,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_deep_elf_blademaster",
@@ -1253,10 +1373,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_deep_elf_sorcerer",
@@ -1276,11 +1398,13 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 3,
-   "old_name": "다크엘프 흑마법사"
+   "old_name": "다크엘프 흑마법사",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_naga_mage",
@@ -1300,10 +1424,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_manticore",
@@ -1323,10 +1449,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_griffon",
@@ -1346,10 +1474,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_sphinx_new",
@@ -1369,10 +1499,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_vampire_new",
@@ -1392,11 +1524,13 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 3,
-   "old_name": "뱀파이어"
+   "old_name": "뱀파이어",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_wraith",
@@ -1416,11 +1550,13 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 3,
-   "old_name": "레이스"
+   "old_name": "레이스",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_revenant",
@@ -1440,11 +1576,13 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 3,
-   "old_name": "망령 기사"
+   "old_name": "망령 기사",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_skeletal_warrior_new",
@@ -1464,10 +1602,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_stone_golem",
@@ -1487,10 +1627,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_frost_giant_new",
@@ -1510,10 +1652,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_death_knight",
@@ -1533,10 +1677,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_hell_knight_new",
@@ -1556,10 +1702,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_fire_giant_new",
@@ -1579,11 +1727,13 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 3,
-   "old_name": "불의 거인"
+   "old_name": "불의 거인",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_stone_giant_new",
@@ -1603,11 +1753,13 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 3,
-   "old_name": "바위 거인"
+   "old_name": "바위 거인",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_iron_troll",
@@ -1627,10 +1779,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_juggernaut",
@@ -1650,10 +1804,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_vampire_knight_new",
@@ -1673,11 +1829,13 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 3,
-   "old_name": "뱀파이어 기사"
+   "old_name": "뱀파이어 기사",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_lich",
@@ -1697,11 +1855,13 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 3,
-   "old_name": "리치"
+   "old_name": "리치",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_greater_mummy",
@@ -1721,11 +1881,13 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 3,
-   "old_name": "고대 미라 왕"
+   "old_name": "고대 미라 왕",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_deep_elf_high_priest",
@@ -1745,11 +1907,13 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 3,
-   "old_name": "다크엘프 대사제"
+   "old_name": "다크엘프 대사제",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_wyvern_new",
@@ -1769,11 +1933,13 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 3,
-   "old_name": "와이번"
+   "old_name": "와이번",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_fire_drake",
@@ -1793,10 +1959,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_iron_golem",
@@ -1816,10 +1984,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_efreet",
@@ -1839,10 +2009,12 @@
     "idle",
     "walk",
     "attack1",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_dragon",
@@ -1865,11 +2037,13 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 2,
-   "old_name": "붉은 용"
+   "old_name": "붉은 용",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_ice_dragon_new",
@@ -1892,11 +2066,13 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 2,
-   "old_name": "빙룡"
+   "old_name": "빙룡",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_storm_dragon_new",
@@ -1919,11 +2095,13 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 2,
-   "old_name": "폭풍의 용"
+   "old_name": "폭풍의 용",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_shadow_dragon",
@@ -1946,11 +2124,13 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 2,
-   "old_name": "그림자 용"
+   "old_name": "그림자 용",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_ancient_lich_new",
@@ -1973,11 +2153,13 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 2,
-   "old_name": "고대 리치"
+   "old_name": "고대 리치",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_balrug_new",
@@ -2000,11 +2182,13 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 2,
-   "old_name": "화염 마왕"
+   "old_name": "화염 마왕",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_pit_fiend",
@@ -2027,11 +2211,13 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 2,
-   "old_name": "지옥 군주"
+   "old_name": "지옥 군주",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_bone_dragon_new",
@@ -2054,11 +2240,13 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 2,
-   "old_name": "해골 용"
+   "old_name": "해골 용",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_titan_new",
@@ -2081,11 +2269,13 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 2,
-   "old_name": "타이탄"
+   "old_name": "타이탄",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_golden_dragon",
@@ -2108,11 +2298,13 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 2,
-   "old_name": "황금 용 군주"
+   "old_name": "황금 용 군주",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_holy_dragon",
@@ -2135,11 +2327,13 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 2,
-   "old_name": "빛의 성룡"
+   "old_name": "빛의 성룡",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_phoenix",
@@ -2162,11 +2356,13 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "todo",
    "priority": 2,
-   "old_name": "불사조"
+   "old_name": "불사조",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_ereshkigal",
@@ -2189,10 +2385,12 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "완료(명계의 왕 — 예시로 사용)",
-   "priority": 2
+   "priority": 2,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_tiamat_pale",
@@ -2215,10 +2413,12 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "cancelled",
-   "priority": 2
+   "priority": 2,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_antaeus",
@@ -2241,10 +2441,12 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "cancelled",
-   "priority": 2
+   "priority": 2,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "t_xtahua_old",
@@ -2267,10 +2469,12 @@
     "attack2",
     "skill",
     "ultimate",
-    "hit_death"
+    "hit_death",
+    "run"
    ],
    "status": "cancelled",
-   "priority": 2
+   "priority": 2,
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   },
   {
    "id": "d_rat",
@@ -4993,5 +5197,12 @@
  "ground_rules": "바닥: art_in/g_<지역>/tile.png = 위에서 내려다본 이음매 없는 바닥 텍스처 1장(정사각형, 반복해서 깔아도 경계가 안 보이게), art_in/g_<지역>/props.png = 그 지역 소품 9개 3x3(배경 #FF00FF).",
  "notes_2026_10_14": "상위 변신(영웅 이상)은 리니지M처럼 고대 신·악마·천사 컨셉으로 이름/설명 변경됨(old_name 참고). 유일 변신은 명계의 왕 하나만 유지, 나머지 유일 3종은 cancelled. 변신을 최우선으로, 등급 높은 것부터 작업.",
  "building_rules": "건물: art_in/b_<이름>/ref.png = 건물 1장(정면 3/4 위에서 본 각도, 리니지M 마을 건물 느낌, 배경 #FF00FF 단색, 그림자 포함). 바닥 g_road/g_coast/g_sea/g_plaza/g_dungeon 은 tile.png 하나(이음매 없는 반복 텍스처).",
- "notes_2026_10_14_b": "맵을 큰 대륙으로 바꿨어요. 바닥 타일(6지역+도로·해안·바다·광장·던전)과 마을 건물 15종을 우선순위 1로 추가. 변신 다음으로 이것부터 부탁해요."
+ "notes_2026_10_14_b": "맵을 큰 대륙으로 바꿨어요. 바닥 타일(6지역+도로·해안·바다·광장·던전)과 마을 건물 15종을 우선순위 1로 추가. 변신 다음으로 이것부터 부탁해요.",
+ "motion_prompts": {
+  "walk": "WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line.",
+  "run": "RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames.",
+  "common": "Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+  "sheets": "walk.png = 걷기 8프레임(4x2 격자), run.png = 달리기 8프레임(4x2 격자). 프레임 간격·크기·바닥선 동일."
+ },
+ "notes_motion": "최우선: t_hellking_motion (명계의 왕 걷기·달리기 8프레임). 이후 모든 변신에 walk/run 시트 추가. motion_prompts의 문장을 프롬프트에 그대로 넣어 주세요."
 }
