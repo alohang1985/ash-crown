@@ -11983,6 +11983,139 @@
    ],
    "priority": 0,
    "prompt": "Lineage M style equipment item icon: 타이탄의 벨트 (belt), grade 장신구(금·보석). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "t_hellking_w_bow",
+   "category": "변신",
+   "name": "명계의 왕 (bow 버전)",
+   "priority": 0,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "atk1",
+    "atk2",
+    "skill",
+    "hurt",
+    "death"
+   ],
+   "desc_en": "EXACT same character as style_ref/hellking_* (명계의 왕, horned demon king in black-red lava armor, green soul aura) but wielding a great black-and-green bow (ranged archer stance, draws and shoots) instead of the greatsword. Same scale, same palette, same frame layout as existing hellking sheets.",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "t_hellking_w_staff",
+   "category": "변신",
+   "name": "명계의 왕 (staff 버전)",
+   "priority": 0,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "atk1",
+    "atk2",
+    "skill",
+    "hurt",
+    "death"
+   ],
+   "desc_en": "EXACT same character as style_ref/hellking_* (명계의 왕, horned demon king in black-red lava armor, green soul aura) but wielding a tall dark staff with green soul crystal (casts spells) instead of the greatsword. Same scale, same palette, same frame layout as existing hellking sheets.",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "t_hellking_w_dagger",
+   "category": "변신",
+   "name": "명계의 왕 (dagger 버전)",
+   "priority": 0,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "atk1",
+    "atk2",
+    "skill",
+    "hurt",
+    "death"
+   ],
+   "desc_en": "EXACT same character as style_ref/hellking_* (명계의 왕, horned demon king in black-red lava armor, green soul aura) but wielding twin curved daggers (fast dual strikes) instead of the greatsword. Same scale, same palette, same frame layout as existing hellking sheets.",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "t_hellking_w_spear",
+   "category": "변신",
+   "name": "명계의 왕 (spear 버전)",
+   "priority": 0,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "atk1",
+    "atk2",
+    "skill",
+    "hurt",
+    "death"
+   ],
+   "desc_en": "EXACT same character as style_ref/hellking_* (명계의 왕, horned demon king in black-red lava armor, green soul aura) but wielding a long infernal spear/halberd instead of the greatsword. Same scale, same palette, same frame layout as existing hellking sheets.",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "t_hellking_w_axe",
+   "category": "변신",
+   "name": "명계의 왕 (axe 버전)",
+   "priority": 0,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "atk1",
+    "atk2",
+    "skill",
+    "hurt",
+    "death"
+   ],
+   "desc_en": "EXACT same character as style_ref/hellking_* (명계의 왕, horned demon king in black-red lava armor, green soul aura) but wielding a huge two-handed battle axe instead of the greatsword. Same scale, same palette, same frame layout as existing hellking sheets.",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "t_hellking_w_rod",
+   "category": "변신",
+   "name": "명계의 왕 (rod 버전)",
+   "priority": 0,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "atk1",
+    "atk2",
+    "skill",
+    "hurt",
+    "death"
+   ],
+   "desc_en": "EXACT same character as style_ref/hellking_* (명계의 왕, horned demon king in black-red lava armor, green soul aura) but wielding a magic rod/wand with green flame instead of the greatsword. Same scale, same palette, same frame layout as existing hellking sheets.",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "t_hellking_w_sword",
+   "category": "변신",
+   "name": "명계의 왕 (sword 버전)",
+   "priority": 0,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "atk1",
+    "atk2",
+    "skill",
+    "hurt",
+    "death"
+   ],
+   "desc_en": "EXACT same character as style_ref/hellking_* (명계의 왕, horned demon king in black-red lava armor, green soul aura) but wielding one-handed sword and shield instead of the greatsword. Same scale, same palette, same frame layout as existing hellking sheets.",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   }
  ],
  "effects_rules": "이펙트 전용: 정사각형 3x3 그리드(9프레임, 왼→오, 위→아래), 모든 칸 같은 크기, 효과가 각 칸 중앙(바닥형은 칸 아래쪽 중앙)에 위치, 칸 밖으로 잘리지 않게 여백, 배경은 순수 검정 #000000, 캐릭터·글자·격자선 없음. 리니지M 같은 한국 MMORPG 스킬 이펙트 느낌으로 선명하고 빛나게(glow). 파일: art_in/e_<이름>/sheet.png",
@@ -12009,5 +12142,6 @@
   "reject": "결과물이 어둡거나 칙칙하면(평균 밝기가 낮거나 회갈색 위주) 다시 생성한다."
  },
  "skill_icon_rules": "스킬 아이콘은 스킬마다 반드시 다른 그림. 리니지M 스킬 아이콘처럼 정사각형 가득 차는 빛나는 문양·이펙트, 가장자리 어둡게, 글자 금지. 직업별 색 테마(기사 주황, 요정 초록, 마법사 파랑·보라, 다크엘프 보라, 용기사 붉은색, 전사 주황·갈색, 환술사 청록, 군주 금색).",
- "equip_icon_rules": "★최우선★ 장비 아이콘 135종(i_eq_*). 사용자가 \"아이템 모양 시급\"이라고 함. 리니지M 가방 아이콘처럼 손그림, 대각선 구도로 칸을 가득 채움, 등급 높을수록 화려한 빛. 픽셀아트·3D 금지. 같은 종류(검·투구 등)도 아이템마다 모양·색 다르게."
+ "equip_icon_rules": "★최우선★ 장비 아이콘 135종(i_eq_*). 사용자가 \"아이템 모양 시급\"이라고 함. 리니지M 가방 아이콘처럼 손그림, 대각선 구도로 칸을 가득 채움, 등급 높을수록 화려한 빛. 픽셀아트·3D 금지. 같은 종류(검·투구 등)도 아이템마다 모양·색 다르게.",
+ "notes_unique_weapons": "유일·신화 공용 변신은 리니지M처럼 클래스 무기에 맞춰 무기만 바뀐 버전이 필요. 활/지팡이/단검/창/도끼/마력봉/한손검 7종. 기존 명계의 왕(대검)과 완전히 같은 캐릭터."
 }
