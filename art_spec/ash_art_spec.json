@@ -6298,6 +6298,106 @@
     "icon"
    ],
    "prompt": "Lineage M style 2D hand-painted item icon of 경험치 증가 주문서, flat painted illustration, NOT 3D render, NOT emoji, warm fantasy palette, subtle dark outline, centered, #FF00FF background, 128x128"
+  },
+  {
+   "id": "dg_talking_island",
+   "category": "던전 그림",
+   "name": "말하는 섬 던전 입구 (안개 낀 섬 동굴)",
+   "size": "512x384",
+   "sheets": [
+    "card"
+   ],
+   "prompt": "Lineage M style dungeon selection card illustration: 말하는 섬 던전 입구 (안개 낀 섬 동굴), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+  },
+  {
+   "id": "dg_giern_sewer",
+   "category": "던전 그림",
+   "name": "기에른 지하수로 (돌 수로, 횃불)",
+   "size": "512x384",
+   "sheets": [
+    "card"
+   ],
+   "prompt": "Lineage M style dungeon selection card illustration: 기에른 지하수로 (돌 수로, 횃불), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+  },
+  {
+   "id": "dg_canyon_maze",
+   "category": "던전 그림",
+   "name": "잿빛 협곡 지하 미궁",
+   "size": "512x384",
+   "sheets": [
+    "card"
+   ],
+   "prompt": "Lineage M style dungeon selection card illustration: 잿빛 협곡 지하 미궁, painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+  },
+  {
+   "id": "dg_tomb",
+   "category": "던전 그림",
+   "name": "망자의 무덤 (묘지·석관)",
+   "size": "512x384",
+   "sheets": [
+    "card"
+   ],
+   "prompt": "Lineage M style dungeon selection card illustration: 망자의 무덤 (묘지·석관), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+  },
+  {
+   "id": "dg_dragon_nest",
+   "category": "던전 그림",
+   "name": "용의 둥지 (용암·뼈)",
+   "size": "512x384",
+   "sheets": [
+    "card"
+   ],
+   "prompt": "Lineage M style dungeon selection card illustration: 용의 둥지 (용암·뼈), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+  },
+  {
+   "id": "dg_tower",
+   "category": "던전 그림",
+   "name": "오만의 탑 (하늘로 솟은 검은 탑)",
+   "size": "512x384",
+   "sheets": [
+    "card"
+   ],
+   "prompt": "Lineage M style dungeon selection card illustration: 오만의 탑 (하늘로 솟은 검은 탑), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+  },
+  {
+   "id": "dg_trial_gold",
+   "category": "던전 그림",
+   "name": "황금 동굴",
+   "size": "512x384",
+   "sheets": [
+    "card"
+   ],
+   "prompt": "Lineage M style dungeon selection card illustration: 황금 동굴, painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+  },
+  {
+   "id": "dg_trial_scroll",
+   "category": "던전 그림",
+   "name": "대장장이 창고",
+   "size": "512x384",
+   "sheets": [
+    "card"
+   ],
+   "prompt": "Lineage M style dungeon selection card illustration: 대장장이 창고, painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+  },
+  {
+   "id": "dg_trial_exp",
+   "category": "던전 그림",
+   "name": "시련의 탑",
+   "size": "512x384",
+   "sheets": [
+    "card"
+   ],
+   "prompt": "Lineage M style dungeon selection card illustration: 시련의 탑, painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+  },
+  {
+   "id": "dg_burst",
+   "category": "던전 그림",
+   "name": "폭젠 사냥터 (몬스터가 쏟아지는 붉은 하늘의 평원)",
+   "size": "512x384",
+   "sheets": [
+    "card"
+   ],
+   "prompt": "Lineage M style dungeon selection card illustration: 폭젠 사냥터 (몬스터가 쏟아지는 붉은 하늘의 평원), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
   }
  ],
  "effects_rules": "이펙트 전용: 정사각형 3x3 그리드(9프레임, 왼→오, 위→아래), 모든 칸 같은 크기, 효과가 각 칸 중앙(바닥형은 칸 아래쪽 중앙)에 위치, 칸 밖으로 잘리지 않게 여백, 배경은 순수 검정 #000000, 캐릭터·글자·격자선 없음. 리니지M 같은 한국 MMORPG 스킬 이펙트 느낌으로 선명하고 빛나게(glow). 파일: art_in/e_<이름>/sheet.png",
