@@ -1286,6 +1286,31 @@ html.land .battle canvas{width:100%!important;height:100%!important}
 .lenm{text-align:center;font-size:2.1vh;font-weight:700;padding:.6vh;text-shadow:0 0 4px #000}
 .lenr .ling{grid-template-columns:repeat(4,minmax(0,1fr))!important}
 .lenbt{justify-content:center!important}.lenbt button{width:auto!important;padding:0 4vh;gap:1vh;display:flex!important;font-size:2.2vh!important}
+/* 강화 연출: 망치 없이 빛 모으기 (리니지M) */
+.anvil.lmagic{position:relative;width:22vh;height:22vh;display:grid;place-items:center;background:none!important;border:0!important;box-shadow:none!important}
+.anvil.lmagic>img,.anvil.lmagic>.spr,.anvil.lmagic>canvas{position:relative;z-index:2;filter:drop-shadow(0 0 8px rgba(255,200,120,.6))}
+.lmc1,.lmc2{position:absolute;inset:0;border-radius:50%;pointer-events:none}
+.lmc1{background:radial-gradient(circle,rgba(255,210,120,.55),rgba(255,140,40,.15) 45%,transparent 70%);animation:lmcg 1.6s ease-in-out infinite}
+.lmc2{border:2px solid rgba(255,200,110,.6);box-shadow:0 0 18px rgba(255,170,60,.6),inset 0 0 18px rgba(255,170,60,.4);animation:lmcr 3s linear infinite;border-style:dashed}
+.anvil.bl .lmc1{background:radial-gradient(circle,rgba(160,230,255,.6),rgba(80,160,255,.15) 45%,transparent 70%)}.anvil.bl .lmc2{border-color:rgba(150,220,255,.7);box-shadow:0 0 18px rgba(100,200,255,.6),inset 0 0 18px rgba(100,200,255,.4)}
+.anvil.lmagic.pulse>img,.anvil.lmagic.pulse>.spr,.anvil.lmagic.pulse>canvas{animation:lmcp .45s ease-out}
+@keyframes lmcg{0%,100%{transform:scale(.9);opacity:.7}50%{transform:scale(1.1);opacity:1}}
+@keyframes lmcr{to{transform:rotate(360deg)}}
+@keyframes lmcp{0%{filter:brightness(3) drop-shadow(0 0 20px #fff)}100%{filter:drop-shadow(0 0 8px rgba(255,200,120,.6))}}
+.anvil.lmagic .hammer{display:none!important}
+/* 다중 강화 */
+.lenh .lpth{gap:2.4vh}
+.lmneed{text-align:center;font-size:1.9vh;color:#eadfc8;padding:.6vh}
+.lmsel{flex:1;display:flex;flex-wrap:wrap;align-content:flex-start;gap:1vh;padding:1.4vh;background:rgba(255,255,255,.03);margin:0 1vh;min-height:10vh}
+.lslot.sm{width:8vh;height:8vh;cursor:pointer;box-shadow:inset 0 0 0 2px #ff8a3a,0 0 8px rgba(255,120,40,.6)}
+.lmstep{display:flex;justify-content:center;gap:.4vh;padding:1.2vh}.lmstep button{width:5.6vh;height:3.6vh;border:0;background:#1e140c;color:#a99a85;font-size:2vh;cursor:pointer;clip-path:polygon(15% 0,100% 0,85% 100%,0 100%)}.lmstep button.on{background:#3a2410;color:#ffcf5a;font-weight:700}
+.lmwarn{text-align:center;color:#ff5a4a;font-size:1.9vh;padding:.6vh}
+.lii.msel{box-shadow:inset 0 0 0 2px #ff8a3a,0 0 10px rgba(255,140,40,.7)}.lii.msel::after{content:'✓';position:absolute;inset:0;display:grid;place-items:center;font-size:5vh;color:#ffcf5a;text-shadow:0 0 6px #000;font-weight:900}
+.lenbt button{flex:1}
+.lmres{width:min(70vh,90%);margin:auto;background:linear-gradient(#2a1a10,#120a05);border:1px solid #8a6a2c;padding:2vh;display:grid;gap:1.4vh;color:#eadfc8}.lmres h3{margin:0;text-align:center;color:#ffe9b0;font-size:2.8vh}
+.lmrl{display:grid;gap:.8vh;max-height:50vh;overflow:auto}.lmrl>div{display:grid;grid-template-columns:auto 1fr auto;grid-template-rows:auto auto;column-gap:1.4vh;align-items:center;padding:.8vh;background:rgba(0,0,0,.3);border-left:3px solid var(--gc)}
+.lmrl .lslot{grid-row:span 2;width:7vh;height:7vh}.lmrl b{font-size:2.1vh;color:var(--gc)}.lmrl em{grid-row:span 2;font-style:normal;font-size:2.4vh}.lmrl em i{font-style:normal;font-weight:900}.lmrl small{font-size:1.7vh;color:#a99a85}
+.lmres .lbtn{justify-self:center;width:30vh;height:5.4vh;padding:0;font-size:2.2vh}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -3473,8 +3498,8 @@ const enhCost=(c,e)=>Math.round(100*(e+1)*(c.g+1)*(c.ty==='w'?1:.6));
 async function enhance(bl){if(bl?S.bless<1:S.scroll<1)return;const it=enhItem();if(!it||it.e>=15)return;const c=C(it.id),AR=ET!=='w';
  {const rk0=riskLv(c);if(it.e>=rk0){if(c.g>=5&&S.useProt&&!((S.prot||0)>0)){resultBox('보호 주문서가 없어요',`「보호 주문서 사용」이 켜져 있지만 보유한 보호 주문서가 0장이에요.<br>보호 주문서를 사거나 체크를 끈 뒤 강화하세요.`,false);return}
   if(!(c.g>=5&&S.useProt)&&!confirm(`${c.n} +${it.e} → +${it.e+1}\n실패하면 장비가 증발해서 사라져요. 정말 강화할까요?`))return}}const cost=enhCost(c,it.e);if(S.gold<cost){announce('골드가 부족해요 · 강화 비용 '+fmt(cost));return}S.gold-=cost;track('enh');BUSY=true;if(bl)S.bless--;else S.scroll--;const nm=c.n;const lv=it.e,ok=rnd()<enhRate(c,lv),rk=riskLv(c);
- stageOn(`<div class="msg" id="msg">${it.b?'축복받은 ':''}${nm} +${lv} 강화를 시작합니다${bl?' · <b style="color:#9fe3ff">축복 주문서</b>':''}</div><div class="anvil${it.b?' blessed':''}" id="anv">${spr(c.i,80)}<span class="hammer" id="ham">🔨</span></div><div class="wlv" id="wl">+${lv}</div>`);
- const risky=lv>=rk;const gap=risky?700:380;for(let i=0;i<3;i++){await W(i===2&&risky?gap*1.8:gap);$('ham').classList.remove('hit');void $('ham').offsetWidth;$('ham').classList.add('hit');sfx.hit();sparks($('anv'),8+i*6,bl?'#9fe3ff':'#ffcf6a');if(risky)buzz(30)}
+ stageOn(`<div class="msg" id="msg">${it.b?'축복받은 ':''}${nm} +${lv} 강화를 시작합니다${bl?' · <b style="color:#9fe3ff">축복 주문서</b>':''}</div><div class="anvil lmagic${it.b?' blessed':''}${bl?' bl':''}" id="anv"><i class="lmc1"></i><i class="lmc2"></i>${cardIco(c,96)}<span class="hammer" id="ham" hidden></span></div><div class="wlv" id="wl">+${lv}</div>`);
+ const risky=lv>=rk;const gap=risky?700:380;for(let i=0;i<3;i++){await W(i===2&&risky?gap*1.8:gap);$('anv').classList.remove('pulse');void $('anv').offsetWidth;$('anv').classList.add('pulse');sfx.tick&&sfx.tick(i+1);sparks($('anv'),8+i*6,bl?'#9fe3ff':'#ffcf6a');if(risky)buzz(30)}
  await W(risky?900:300);
  if(ok){const up=bl?pick([1,1,1,2,2,3]):1;it.e=Math.min(15,lv+up);if(bl)it.b=1;S.best=Math.max(S.best,it.e);flash();sfx.rare(Math.min(5,Math.floor(it.e/3)));sparks($('anv'),30+it.e*4,bl?'#9fe3ff':'#ffd27a');$('wl').textContent='+'+it.e;if(bl)$('anv').classList.add('blessed');
   $('msg').innerHTML=`<b style="color:var(--gold)">강화 성공!</b>${up>1?` <b style="color:#9fe3ff">+${up} 단계 상승!</b>`:''}${bl?'<br><span class="blessed-t">축복받은 장비가 되었습니다</span>':''}`;if(it.e>=9||up>=3||(c.g>=5&&it.e>=3)){shake();sfx.legend();buzz([80,50,160]);announce(`<span style="color:#ffb22e">★ 당신이 ${nm} +${it.e} 강화에 성공했습니다!</span>`)}}
@@ -3486,10 +3511,24 @@ async function enhance(bl){if(bl?S.bless<1:S.scroll<1)return;const it=enhItem();
  await wait(ok&&it.e>=9?2200:1600);stageOff()}
 
 /* ===== 리니지M식 강화 창: 가운데 강화 패널 · 오른쪽 장비/주문서 ===== */
-let EWT='one',EWR='eq';
+let EWT='one',EWR='eq',MESEL=new Set(),MTGT=5;
+/* 다중 강화: 한 번에 여러 장비를 목표 단계까지 (연출 없이) */
+function enhRoll(it){const c=C(it.id),lv=it.e,rk=riskLv(c);if(rnd()<enhRate(c,lv)){it.e=lv+1;S.best=Math.max(S.best||0,it.e);return'ok'}if(c.acc){if(lv>=4)it.e=lv-1;return'down'}if(lv<rk)return'keep';if(c.g>=5&&S.useProt&&(S.prot||0)>0){S.prot--;return'prot'}const L=inv(c.ty),k=L.findIndex(x=>x.u===it.u);if(k>=0)L.splice(k,1);if(!S.wpn.length)S.wpn.push({u:++S.uid,id:'w:short_sword_1_new',e:0});return'boom'}
+async function multiEnh(){const L=[...S.wpn,...S.arms].filter(x=>MESEL.has(x.u)&&x.e<MTGT);if(!L.length){announce('강화할 장비를 골라 주세요');return}const res=[];let used=0;
+ for(const it of L){const c=C(it.id),s0=it.e;let r='';while(it.e<MTGT){if(S.scroll<1||S.gold<1000){r='stop';break}S.scroll--;S.gold-=1000;used++;track('enh');r=enhRoll(it);if(r==='boom'||r==='down')break}res.push({c,s0,e:it.e,r})}
+ MESEL.clear();ensure();save();sfx.hit&&sfx.hit();BUSY=true;
+ stageOn(`<div class="lmres"><h3>다중 강화 결과</h3><div class="lmrl">${res.map(x=>`<div style="--gc:${G[x.c.g].c}"><span class="lslot" style="--gc:${G[x.c.g].c}">${cardIco(x.c,Math.round(innerHeight*.06))}</span><b>${x.c.n}</b><em>+${x.s0} ▶ ${x.r==='boom'?'<i style="color:#ff5a4a">증발</i>':x.e>=MTGT?`<i style="color:#7dff6a">+${x.e}</i>`:`<i style="color:#ffcf5a">+${x.e}</i>`}</em><small>${x.r==='boom'?'실패 · 장비가 사라졌어요':x.r==='down'?'실패 · 1단계 내려감':x.r==='prot'?'보호 주문서로 지켰어요':x.r==='stop'?'주문서·골드 부족':x.e>=MTGT?'목표 달성':''}</small></div>`).join('')}</div><p class="mini">사용한 강화 주문서 ${used}장 · 골드 ${fmt(used*1000)}</p><button class="lbtn blue" id="mrOk">확인</button></div>`);
+ if(res.some(x=>x.r==='boom'))sfx.boom&&sfx.boom();else sfx.rare&&sfx.rare(2);
+ await new Promise(r=>{$('mrOk').onclick=r});stageOff();BUSY=false;enhWin()}
 function enhWin(){const draw=()=>{const it=enhItem(),c=it&&C(it.id);const all=[...S.wpn.map(x=>({...x,ty:'w'})),...S.arms.map(x=>({...x,ty:'a'}))].filter(x=>!isOther(x.u)).map(x=>({...x,c:C(x.id)})).filter(x=>x.c).sort((a,b)=>(isEqU(b.u)?1:0)-(isEqU(a.u)?1:0)||b.c.g-a.c.g||b.e-a.e);
   const bl=EWT==='bless';let mid='';
-  if(c){const lv=it.e,p=enhRate(c,lv),rk=riskLv(c),safe=lv<rk,cost=enhCost(c,lv),isW=c.ty==='w';const rows=[];
+  if(EWT==='multi'){const sel=all.filter(x=>MESEL.has(x.u));const need=sel.reduce((a,x)=>a+Math.max(0,MTGT-x.e),0);const risky=sel.some(x=>MTGT>riskLv(x.c)&&!x.c.acc);
+   mid=`<div class="leh" style="color:#ff5a4a">${sel.length?`${sel.length}개 장비를 +${MTGT}까지 강화`:'강화할 아이템과 강화 단계를 선택해 주세요.'}</div><div class="lemat"><div class="lslot">${ico('scroll')}<b>${fmt(S.scroll)}</b></div></div><div class="lmneed">주문서 필요 수량 ${need}</div>
+    <div class="lmsel">${sel.map(x=>`<button class="lslot sm" data-ewu="${x.u}" style="--gc:${G[x.c.g].c}">${cardIco(x.c,Math.round(innerHeight*.06))}<em>+${x.e}</em></button>`).join('')}</div>
+    <div class="lmstep">${[1,2,3,4,5,6,7,8].map(n=>`<button data-mt="${n}" class="${MTGT===n?'on':''}">+${n}</button>`).join('')}</div>
+    <div class="lefee"><span>수수료</span><div>${ico('gold')}<b>${fmt(need*1000)}</b></div></div>
+    <div class="lego"><button class="lbtn red" id="ewMulti" ${!sel.length||!need?'disabled':''}>강화 시작</button></div>${risky?'<div class="lmwarn">⚠ 안전 인챈트 구간이 아닌 아이템이 있습니다.</div>':''}`}
+  else if(c){const lv=it.e,p=enhRate(c,lv),rk=riskLv(c),safe=lv<rk,cost=enhCost(c,lv),isW=c.ty==='w';const rows=[];
    if(c.acc){const a0=accOpt(c,lv),a1=accOpt(c,lv+1);rows.push([`+${lv}`,`+${lv+1}`]);for(const k of Object.keys(a1))rows.push([OPTS[k][0]+' +'+(a0[k]||0),'+'+a1[k]])}
    else{const cur=isW?c.base*wMul(c.g,lv):c.def*aMul(c.g,lv),nx=isW?c.base*wMul(c.g,lv+1):c.def*aMul(c.g,lv+1);rows.push([`+${lv}`,bl?`+${lv+1}~${lv+3}`:`+${lv+1}`]);rows.push([(isW?'공격 ':'방어 ')+fmt(cur),fmt(nx)]);if(isW){const b0=wBonus(c.g,lv),b1=wBonus(c.g,lv+1);if(b1.crit)rows.push(['치명타 +'+Math.round(b0.crit||0)+'%',Math.round(b1.crit)+'%']);if(b1.boss)rows.push(['우두머리 대미지 +'+Math.round(b0.boss||0)+'%',Math.round(b1.boss)+'%'])}}
    const hi=c.g>=5;mid=`<div class="leh" style="color:${safe?'#eadfc8':'#ff5a4a'}">${it.b?'축복받은 ':''}+${lv} ${c.n} ${bl?'축복 강화':'강화'}</div>
@@ -3501,12 +3540,17 @@ function enhWin(){const draw=()=>{const it=enhItem(),c=it&&C(it.id);const all=[.
     <div class="lego"><button class="lbtn red" id="ewGo" ${lv>=15||(bl?S.bless<1:S.scroll<1)||S.gold<cost?'disabled':''}>강화 시작</button></div>
     <div class="lerp" id="ewRp" hidden>다음 단계 성공 확률 <b>${lv>=15?'-':(p*100).toFixed(0)+'%'}</b> · 실패하면 ${safe?'그대로':c.acc?'-1':'<b style="color:#ff5a4a">증발</b>'}</div>`}
   else mid='<p class="mini" style="padding:20px;text-align:center">오른쪽에서 강화할 장비를 골라 주세요</p>';
-  const grid=EWR==='eq'?all.map(x=>`<button class="lii${it&&x.u===it.u?' sel':''}" data-ewu="${x.u}" style="--gc:${G[x.c.g].c}">${cardIco(x.c,Math.round(innerHeight*.075))}${isEqU(x.u)?'<u>E</u>':''}${x.e?`<em>+${x.e}</em>`:''}</button>`).join(''):[['scroll','강화 주문서',S.scroll],['bless','축복 주문서',S.bless||0],['bless','보호 주문서',S.prot||0]].map(([ic,n,v])=>`<div class="lii" title="${n}"><i>${ico(ic)}</i><b>${fmt(v)}</b></div>`).join('');
+  const grid=EWR==='eq'?all.map(x=>`<button class="lii${EWT==='multi'?(MESEL.has(x.u)?' msel':''):it&&x.u===it.u?' sel':''}" data-ewu="${x.u}" style="--gc:${G[x.c.g].c}">${cardIco(x.c,Math.round(innerHeight*.075))}${isEqU(x.u)?'<u>E</u>':''}${x.e?`<em>+${x.e}</em>`:''}</button>`).join(''):[['scroll','강화 주문서',S.scroll],['bless','축복 주문서',S.bless||0],['bless','보호 주문서',S.prot||0]].map(([ic,n,v])=>`<div class="lii" title="${n}"><i>${ico(ic)}</i><b>${fmt(v)}</b></div>`).join('');
   const st=$('stage');st.hidden=false;st.classList.remove('sidel','sider','dockl','dockr');st.classList.add('dockr');
-  st.innerHTML=`<div class="lenh"><div class="lpth">${[['one','단일 강화'],['bless','축복 강화']].map(([k,n])=>`<button data-ewt="${k}" class="${EWT===k?'on':''}">${n}</button>`).join('<span>|</span>')}</div><div class="lenb">${mid}</div></div>
-   <div class="linv lenr"><div class="lpth">${[['eq','장비'],['sc','주문서']].map(([k,n])=>`<button data-ewr="${k}" class="${EWR===k?'on':''}">${ico(k==='eq'?'clan':'scroll')} ${n}</button>`).join('<span>|</span>')}<button class="lx" id="pkX">✕</button></div>${it&&c?`<div class="lenm" style="color:${G[c.g].c}">${it.b?'축복받은 ':''}+${it.e} ${c.n}</div>`:''}<div class="ling">${grid}${Array.from({length:Math.max(0,16-all.length)},()=>'<div class="lii empty"></div>').join('')}</div><div class="linf"><span>${ico('gold')} ${S.gold.toLocaleString()}</span><b>${all.length}/208</b></div><div class="linb lenbt"><button id="ewDet">${ico('star')} 상세보기</button></div></div>`;
+  st.innerHTML=`<div class="lenh"><div class="lpth">${[['one','단일 강화'],['multi','다중 강화'],['bless','축복 강화']].map(([k,n])=>`<button data-ewt="${k}" class="${EWT===k?'on':''}">${n}</button>`).join('<span>|</span>')}</div><div class="lenb">${mid}</div></div>
+   <div class="linv lenr"><div class="lpth">${[['eq','장비'],['sc','주문서']].map(([k,n])=>`<button data-ewr="${k}" class="${EWR===k?'on':''}">${ico(k==='eq'?'clan':'scroll')} ${n}</button>`).join('<span>|</span>')}<button class="lx" id="pkX">✕</button></div>${EWT!=='multi'&&it&&c?`<div class="lenm" style="color:${G[c.g].c}">${it.b?'축복받은 ':''}+${it.e} ${c.n}</div>`:''}<div class="ling">${grid}${Array.from({length:Math.max(0,16-all.length)},()=>'<div class="lii empty"></div>').join('')}</div><div class="linf"><span>${ico('gold')} ${S.gold.toLocaleString()}</span><b>${all.length}/208</b></div><div class="linb lenbt">${EWT==='multi'?`<button id="ewStep">${ico('star')} 강화 단계 선택</button><button id="ewSame">${ico('clan')} 동일 장비 선택</button>`:`<button id="ewDet">${ico('star')} 상세보기</button>`}</div></div>`;
   st.onclick=async e=>{const t=e.target;if(t.closest('#pkX')||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;ENHU=null;return}let b;
    if(b=t.closest('[data-ewt]')){EWT=b.dataset.ewt;draw();return}if(b=t.closest('[data-ewr]')){EWR=b.dataset.ewr;draw();return}
+   if(b=t.closest('[data-mt]')){MTGT=+b.dataset.mt;draw();return}
+   if(t.closest('#ewStep')){MTGT=MTGT>=8?1:MTGT+1;draw();return}
+   if(t.closest('#ewSame')){const last=[...MESEL].pop();const x0=all.find(x=>x.u===last);if(!x0){announce('먼저 장비 하나를 골라 주세요');return}for(const x of all)if(x.id===x0.id&&x.e<MTGT&&!isEqU(x.u))MESEL.add(x.u);draw();return}
+   if(t.closest('#ewMulti')){if(BUSY)return;const sel=all.filter(x=>MESEL.has(x.u));if(sel.some(x=>MTGT>riskLv(x.c)&&!x.c.acc)&&!confirm('안전 인챈트 구간이 아닌 아이템이 있어요. 실패하면 증발할 수 있어요. 진행할까요?'))return;st.onclick=null;await multiEnh();return}
+   if(EWT==='multi'&&(b=t.closest('[data-ewu]'))){const u=+b.dataset.ewu;MESEL.has(u)?MESEL.delete(u):MESEL.add(u);draw();return}
    if(b=t.closest('[data-ewu]')){ENHU=+b.dataset.ewu;const x=[...S.wpn,...S.arms].find(w=>w.u===ENHU);if(x){const cc=C(x.id);ET=cc.ty==='w'?'w':cc.sl}draw();return}
    if(t.closest('#ewRate')){const r=$('ewRp');if(r)r.hidden=!r.hidden;return}if(t.id==='useProt'){S.useProt=t.checked;save();return}
    if(t.closest('#ewDet')){const it2=enhItem();if(it2){IVSEL=(C(it2.id).ty==='w'?'w:':'a:')+it2.u;invWin()}return}
