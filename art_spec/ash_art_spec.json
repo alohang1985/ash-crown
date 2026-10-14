@@ -4744,11 +4744,254 @@
    ],
    "status": "todo",
    "priority": 3
+  },
+  {
+   "id": "g_road",
+   "category": "바닥",
+   "name": "흙길 도로",
+   "desc_en": "top-down seamless dirt road texture, worn cart tracks, small pebbles, dark-fantasy MMORPG (Lineage-like), muted earthy colors",
+   "sheets": [
+    "tile"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "g_coast",
+   "category": "바닥",
+   "name": "해안 모래사장",
+   "desc_en": "top-down seamless sandy beach texture with wet sand edge, shells, muted colors",
+   "sheets": [
+    "tile"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "g_sea",
+   "category": "바닥",
+   "name": "바다",
+   "desc_en": "top-down seamless deep sea water texture, subtle waves, dark teal-blue",
+   "sheets": [
+    "tile"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "g_plaza",
+   "category": "바닥",
+   "name": "마을 돌 광장",
+   "desc_en": "top-down seamless medieval cobblestone plaza texture, grey-beige stones, moss in gaps",
+   "sheets": [
+    "tile"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "g_dungeon",
+   "category": "바닥",
+   "name": "던전 돌바닥",
+   "desc_en": "top-down seamless dark dungeon stone floor texture, cracked flagstones, faint purple moss",
+   "sheets": [
+    "tile",
+    "props"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "b_house1",
+   "category": "건물",
+   "name": "마을 집 (작은 목조)",
+   "desc_en": "small medieval timber-frame house with red tile roof, isometric 3/4 top-down view like Lineage, door and two lit windows, dark-fantasy MMORPG art style, single object centered, magenta #FF00FF background",
+   "sheets": [
+    "ref"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "b_house2",
+   "category": "건물",
+   "name": "마을 집 (2층 석조)",
+   "desc_en": "two-story stone and timber house with dark slate roof, chimney with smoke, isometric 3/4 view, dark-fantasy MMORPG art style, single object centered, magenta #FF00FF background",
+   "sheets": [
+    "ref"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "b_inn",
+   "category": "건물",
+   "name": "여관",
+   "desc_en": "medieval inn with hanging wooden sign, warm lit windows, barrels at the door, isometric 3/4 view, dark-fantasy MMORPG art style, single object centered, magenta #FF00FF background",
+   "sheets": [
+    "ref"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "b_shop",
+   "category": "건물",
+   "name": "잡화점",
+   "desc_en": "general store building with striped awning, crates and sacks out front, isometric 3/4 view, dark-fantasy MMORPG art style, single object centered, magenta #FF00FF background",
+   "sheets": [
+    "ref"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "b_smith",
+   "category": "건물",
+   "name": "대장간",
+   "desc_en": "blacksmith forge with anvil, glowing furnace, weapon rack, isometric 3/4 view, dark-fantasy MMORPG art style, single object centered, magenta #FF00FF background",
+   "sheets": [
+    "ref"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "b_church",
+   "category": "건물",
+   "name": "신전",
+   "desc_en": "small stone chapel with bell tower and stained glass, isometric 3/4 view, dark-fantasy MMORPG art style, single object centered, magenta #FF00FF background",
+   "sheets": [
+    "ref"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "b_warehouse",
+   "category": "건물",
+   "name": "창고",
+   "desc_en": "large wooden warehouse with big double doors, isometric 3/4 view, dark-fantasy MMORPG art style, single object centered, magenta #FF00FF background",
+   "sheets": [
+    "ref"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "b_gate",
+   "category": "건물",
+   "name": "마을 성문",
+   "desc_en": "stone town gate with wooden doors open, two towers, banners, isometric 3/4 view, dark-fantasy MMORPG art style, single object centered, magenta #FF00FF background",
+   "sheets": [
+    "ref"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "b_fence",
+   "category": "건물",
+   "name": "마을 울타리",
+   "desc_en": "wooden palisade fence segment with pointed stakes (straight piece), isometric 3/4 view, dark-fantasy MMORPG art style, single object centered, magenta #FF00FF background",
+   "sheets": [
+    "ref"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "b_statue",
+   "category": "건물",
+   "name": "버프 동상",
+   "desc_en": "glowing magical statue on stone pedestal with floating purple crystal, isometric 3/4 view, dark-fantasy MMORPG art style, single object centered, magenta #FF00FF background",
+   "sheets": [
+    "ref"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "b_stall",
+   "category": "건물",
+   "name": "시장 노점",
+   "desc_en": "market stall with colored cloth awning and goods, isometric 3/4 view, dark-fantasy MMORPG art style, single object centered, magenta #FF00FF background",
+   "sheets": [
+    "ref"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "b_well",
+   "category": "건물",
+   "name": "우물",
+   "desc_en": "stone well with wooden roof and bucket, isometric 3/4 view, dark-fantasy MMORPG art style, single object centered, magenta #FF00FF background",
+   "sheets": [
+    "ref"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "b_tree",
+   "category": "건물",
+   "name": "나무 (마을)",
+   "desc_en": "leafy oak tree for town decoration, top-down 3/4 view, dark-fantasy MMORPG art style, single object centered, magenta #FF00FF background",
+   "sheets": [
+    "ref"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "b_board",
+   "category": "건물",
+   "name": "게시판",
+   "desc_en": "wooden notice board with papers pinned, isometric 3/4 view, dark-fantasy MMORPG art style, single object centered, magenta #FF00FF background",
+   "sheets": [
+    "ref"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
+  },
+  {
+   "id": "b_tower",
+   "category": "건물",
+   "name": "경비탑",
+   "desc_en": "stone guard watchtower, isometric 3/4 view, dark-fantasy MMORPG art style, single object centered, magenta #FF00FF background",
+   "sheets": [
+    "ref"
+   ],
+   "format": "PNG, 배경 #FF00FF 단색 (바닥 타일만 꽉 찬 텍스처)",
+   "status": "todo",
+   "priority": 1
   }
  ],
  "effects_rules": "이펙트 전용: 정사각형 3x3 그리드(9프레임, 왼→오, 위→아래), 모든 칸 같은 크기, 효과가 각 칸 중앙(바닥형은 칸 아래쪽 중앙)에 위치, 칸 밖으로 잘리지 않게 여백, 배경은 순수 검정 #000000, 캐릭터·글자·격자선 없음. 리니지M 같은 한국 MMORPG 스킬 이펙트 느낌으로 선명하고 빛나게(glow). 파일: art_in/e_<이름>/sheet.png",
  "effects_prompt": "2D game VFX sprite sheet, square image, 3x3 grid of 9 animation frames read left-to-right top-to-bottom, every cell the same size, effect centered in each cell (ground effects at the bottom center of the cell) with margin so nothing is cut off, solid pure black background (#000000), no characters, no text, no grid lines. Vivid glowing high-quality Korean MMORPG skill effect (Lineage-style). Effect: ",
  "icon_rules": "아이콘 시트: 정사각형 3x3 그리드(9칸), desc_en에 적힌 순서대로 칸마다 아이템 1개, 칸 가운데에 크게, 리니지M 아이템 아이콘처럼 45도 비스듬한 구도와 묵직한 질감, 등급이 높을수록 화려하게 빛남. 배경 #FF00FF, 글자·숫자·격자선·테두리 없음. 파일: art_in/<id>/sheet.png",
  "ground_rules": "바닥: art_in/g_<지역>/tile.png = 위에서 내려다본 이음매 없는 바닥 텍스처 1장(정사각형, 반복해서 깔아도 경계가 안 보이게), art_in/g_<지역>/props.png = 그 지역 소품 9개 3x3(배경 #FF00FF).",
- "notes_2026_10_14": "상위 변신(영웅 이상)은 리니지M처럼 고대 신·악마·천사 컨셉으로 이름/설명 변경됨(old_name 참고). 유일 변신은 명계의 왕 하나만 유지, 나머지 유일 3종은 cancelled. 변신을 최우선으로, 등급 높은 것부터 작업."
+ "notes_2026_10_14": "상위 변신(영웅 이상)은 리니지M처럼 고대 신·악마·천사 컨셉으로 이름/설명 변경됨(old_name 참고). 유일 변신은 명계의 왕 하나만 유지, 나머지 유일 3종은 cancelled. 변신을 최우선으로, 등급 높은 것부터 작업.",
+ "building_rules": "건물: art_in/b_<이름>/ref.png = 건물 1장(정면 3/4 위에서 본 각도, 리니지M 마을 건물 느낌, 배경 #FF00FF 단색, 그림자 포함). 바닥 g_road/g_coast/g_sea/g_plaza/g_dungeon 은 tile.png 하나(이음매 없는 반복 텍스처).",
+ "notes_2026_10_14_b": "맵을 큰 대륙으로 바꿨어요. 바닥 타일(6지역+도로·해안·바다·광장·던전)과 마을 건물 15종을 우선순위 1로 추가. 변신 다음으로 이것부터 부탁해요."
 }
