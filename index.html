@@ -811,6 +811,21 @@ html.land .lqs [data-q=morph],html.land .lqs [data-q=doll]{position:relative!imp
 .lmr-open{position:relative;margin:0 0 22px auto;margin-right:max(4vw,20px);padding:10px 34px;border:1px solid #3d6aa8;background:linear-gradient(#2a4f86,#183256);color:#e8f1ff;font-weight:700;font-size:15px;border-radius:2px;cursor:pointer}
 .lmr-many .lmc-n{display:none}
 @media (max-height:520px){.lmr-h{margin-top:8px}.lmr-g{padding:12px 8px;gap:8px}.lmr-open{margin-bottom:10px;padding:7px 22px}}
+/* 합성 결과 2차 (영상 기준) */
+.lmr-burst{position:absolute;inset:0;z-index:5;pointer-events:none;background:radial-gradient(circle at 50% 50%,rgba(255,250,230,.95),rgba(255,200,110,.85) 22%,rgba(200,120,40,.55) 50%,rgba(60,30,10,.2) 80%),repeating-conic-gradient(from 0deg at 50% 50%,rgba(255,230,170,.35) 0 4deg,transparent 4deg 11deg);animation:lmrb .75s ease-out forwards}
+@keyframes lmrb{0%{opacity:0;transform:scale(.6)}25%{opacity:1}100%{opacity:0;transform:scale(1.4)}}
+.lmr-g{justify-content:center}
+.lmc-st.spin{animation:lmspin .42s linear infinite}
+@keyframes lmspin{from{transform:translateX(0)}to{transform:translateX(calc(var(--cw)*-8))}}
+.lmc.pop .lmc-f{animation:lmpop .26s ease-out}@keyframes lmpop{0%{filter:brightness(4);box-shadow:0 0 30px #fff}100%{filter:none}}
+.lmc.white .lmc-f{filter:brightness(5) saturate(0);box-shadow:0 0 40px 12px #fff;transition:filter .3s}
+.lmc.glow .lmc-f{box-shadow:0 0 0 1px #000,0 0 26px 8px var(--gc)!important}
+.lsy-sl{grid-template-columns:repeat(5,1fr)!important;max-height:240px;overflow:auto}
+/* HUD: 오른쪽 아래 아이템창 = 스킬창과 같은 크기·모양 */
+html.land .lqs button:not(.lrd):not(.latk){width:60px!important;height:60px!important;border-radius:3px!important;border:1px solid #1a1208!important;box-shadow:0 0 0 1px #6b5228,0 3px 8px rgba(0,0,0,.8)!important;background:radial-gradient(circle at 50% 40%,#2a2016,#0a0705)!important}
+html.land .lqs{gap:6px!important;bottom:20px!important}
+html.land .svhud{bottom:20px!important}
+@media (max-height:520px){html.land .lqs button:not(.lrd):not(.latk){width:42px!important;height:42px!important}html.land .lqs{gap:4px!important;bottom:14px!important}html.land .svhud{bottom:14px!important}}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -947,7 +962,10 @@ html.rot90 .lsy-r{padding:6px 8px;gap:6px}
 html.rot90 .lbtn{padding:7px 4px;font-size:12px}
 html.rot90 .lmr-h{margin-top:8px}
 html.rot90 .lmr-g{padding:12px 8px;gap:8px}
-html.rot90 .lmr-open{margin-bottom:10px;padding:7px 22px}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
+html.rot90 .lmr-open{margin-bottom:10px;padding:7px 22px}
+html.rot90.land .lqs button:not(.lrd):not(.latk){width:42px!important;height:42px!important}
+html.rot90.land .lqs{gap:4px!important;bottom:14px!important}
+html.rot90.land .svhud{bottom:14px!important}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
 <div class="title" id="title"><div class="tbg"></div><div class="tin"><div class="tlogo">잿빛 왕관</div><div class="tsub">ASHEN CROWN · 에르덴 대륙</div><div class="tload"><i id="tbar"></i></div><div class="ttip" id="ttip">세계를 불러오는 중…</div><button class="tstart" id="tstart" disabled>게임 시작</button><div class="tfoot">서버 · 에르덴 1 &nbsp;|&nbsp; 시제품</div></div></div><div class="app">
  <div class="top"><div class="logo">잿빛 왕관<small>에르덴 대륙 · 시제품</small></div><div class="cur" id="cur"></div><button class="ic laysw" id="laySw" hidden>가로 화면</button><button class="ic" id="mute" type="button" aria-label="소리">🔊</button></div>
  <div class="lcol"><div class="livea" id="liveA"></div><div class="ticker" id="ticker"></div><div class="qbar" id="qbar"></div>
@@ -2317,53 +2335,53 @@ const SYNAD=ty=>ty==='s'?{nm:'스킬북',grades:[0,2,3,4],next:g=>SKNEXT[g],rate
 const SKCOST={0:1000,2:10000,3:40000,4:150000};
 function synthWin(ty){const st=$('stage');if(ty)SYW={ty,g:SYW.ty===ty?SYW.g:0,sl:[]};const T=SYW;
  const draw=()=>{const A=SYNAD(T.ty);if(!A.grades.includes(T.g))T.g=A.grades[0];const g=T.g,ng=A.next(g);const L=A.items(g).map(c=>({c,n:A.spare(c)-T.sl.filter(x=>x===c.id).length})).filter(x=>x.n>0||T.sl.includes(x.c.id)).sort((a,b)=>b.n-a.n);
-  const p=A.rate(g),key=(T.ty==='s'?'s':T.ty)+g,sp=S.spts[key]||0,cost=T.ty==='s'?SKCOST[g]:SYNCOST[g],full=T.sl.length===4,nAll=Math.floor(A.cnt(g)/4);
+  const p=A.rate(g),key=(T.ty==='s'?'s':T.ty)+g,sp=S.spts[key]||0,cost=T.ty==='s'?SKCOST[g]:SYNCOST[g],full=T.sl.length>=4,nSet=Math.floor(T.sl.length/4),nAll=Math.floor(A.cnt(g)/4);
   const gs=A.grades.slice().reverse();
   st.innerHTML=`<div class="mwin synw lsy"><div class="mwh"><b>${A.nm}</b><div class="mtabs">${['t','d','s'].map(k=>`<button data-sy="${k}" class="${k===T.ty?'on':''}">${k==='t'?'변신':k==='d'?'인형':'스킬북'}</button>`).join('')}</div><button class="mwx" id="pkX">✕</button></div>
   <div class="lsy-b"><div class="lsy-g">${gs.map(i=>`<button data-syg="${i}" class="${i===g?'on':''}" style="--gc:${G[i].c}"><b>${G[i].ko}</b><small>(${A.cnt(i)})</small></button>`).join('')}</div>
    <div class="lsy-c">${L.map(x=>`<button class="lsc${x.n<=0?' no':''}" data-sya="${x.c.id}" style="--gc:${G[g].c}"><span class="lsc-i">${cardIco(x.c,64)}</span><b>${x.c.n}</b><em>x${x.n}</em></button>`).join('')||`<p class="mini" style="grid-column:1/-1;padding:10px">이 등급에 합성할 ${A.nm}이(가) 없어요${T.ty==='s'?' (같은 스킬북을 또 얻으면 여기 쌓여요)':' (같은 카드 2장 이상부터, 1장은 남겨요)'}</p>`}</div>
-   <div class="lsy-r"><div class="lsy-rh"><b>합성</b><span><em style="color:${G[g].c}">${G[g].ko}</em> → <em style="color:${G[ng].c}">${G[ng].ko}</em> 1장 획득 가능! · 성공 <b>${(p*100<1?(p*100).toFixed(2):(p*100).toFixed(0))}%</b></span></div>
-    <div class="lsy-sl">${[0,1,2,3].map(i=>{const id=T.sl[i],c=id&&(T.ty==='s'?SKM[id]:C(id));return`<button class="lss${c?' on':''}" data-syr="${i}" style="--gc:${G[g].c}">${c?cardIco(c,72)+`<b>${c.n}</b>`:'<i>+</i>'}</button>`}).join('')}</div>
+   <div class="lsy-r"><div class="lsy-rh"><b>합성</b><span><em style="color:${G[g].c}">${G[g].ko}</em> → <em style="color:${G[ng].c}">${G[ng].ko}</em> ${Math.max(1,nSet)}장 획득 가능! · 성공 <b>${(p*100<1?(p*100).toFixed(2):(p*100).toFixed(0))}%</b></span></div>
+    <div class="lsy-sl">${Array.from({length:Math.min(20,Math.max(4,Math.ceil((T.sl.length+1)/4)*4))},(_,i)=>i).map(i=>{const id=T.sl[i],c=id&&(T.ty==='s'?SKM[id]:C(id));return`<button class="lss${c?' on':''}" data-syr="${i}" style="--gc:${G[g].c}">${c?cardIco(c,56):'<i>+</i>'}</button>`}).join('')}</div>
     <div class="lsy-inf">${p>=1?'100% 성공':`실패 시 <b style="color:${G[g].c}">${G[g].ko}</b> 무작위 1장`}${T.ty!=='s'&&g===4?' · <span style="color:#ffc83a">합성 포인트 없음</span>':T.ty!=='s'&&g===5?'':`<div class="bar"><i style="width:${sp/SYN_PITY*100}%"></i></div><small>합성 포인트 ${sp} / ${SYN_PITY}</small>`}</div>
-    <div class="lsy-bt"><button class="lbtn blue" id="syAuto">카드 자동 등록</button><button class="lbtn gold" id="syGo" ${full&&S.gold>=cost?'':'disabled'}>합성<small>${ico('gold')} ${fmt(cost)}</small></button></div>
+    <div class="lsy-bt"><button class="lbtn blue" id="syAuto">카드 자동 등록</button><button class="lbtn gold" id="syGo" ${full&&S.gold>=cost*nSet?'':'disabled'}>합성<small>${ico('gold')} ${fmt(cost*Math.max(1,nSet))}</small></button></div>
     <div class="lsy-bt2"><button class="lnk" id="syClr">초기화</button><button class="lnk" id="syAll" ${nAll?'':'disabled'}>${G[g].ko} 전부 합성 (${nAll}회 · ${fmt(cost*nAll)})</button></div></div></div></div>`};
  st.hidden=false;draw();const close=()=>{st.hidden=true;st.innerHTML='';st.onclick=null};
  const once=(A,ins)=>{const g=T.g,key=(T.ty==='s'?'s':T.ty)+g,sure=T.ty!=='s'&&g===4?false:(S.spts[key]||0)>=SYN_PITY,ok=sure||rnd()<A.rate(g);let r;if(ok){r=A.win(A.next(g));if(sure)S.spts[key]=0}else{r=A.lose(g);if(T.ty==='s'||g!==4)S.spts[key]=Math.min(SYN_PITY,(S.spts[key]||0)+R(8,15))}const gv=A.give(r);const dup=T.ty==='s'?gv==='dup':(S.cards[r.id]||0)>1;track('synth');return{ok,r,key,dup}};
  st.onclick=async e=>{const t=e.target;if(t.id==='pkX'||t===st){close();return}let b;const A=SYNAD(T.ty);const byId=id=>T.ty==='s'?SKM[id]:C(id);
   if(b=t.closest('[data-sy]')){T.ty=b.dataset.sy;T.sl=[];T.g=0;draw();return}if(b=t.closest('[data-syg]')){T.g=+b.dataset.syg;T.sl=[];draw();return}
-  if(b=t.closest('[data-sya]')){const id=b.dataset.sya,c=byId(id);if(T.sl.length<4&&A.spare(c)-T.sl.filter(x=>x===id).length>0)T.sl.push(id);draw();return}
+  if(b=t.closest('[data-sya]')){const id=b.dataset.sya,c=byId(id);if(T.sl.length<20&&A.spare(c)-T.sl.filter(x=>x===id).length>0)T.sl.push(id);draw();return}
   if(b=t.closest('[data-syr]')){T.sl.splice(+b.dataset.syr,1);draw();return}
   if(t.closest('#syClr')){T.sl=[];draw();return}
-  if(t.closest('#syAuto')){T.sl=[];const L=A.items(T.g).slice().sort((a,b)=>A.spare(b)-A.spare(a));for(const c of L){let n=A.spare(c);while(n-->0&&T.sl.length<4)T.sl.push(c.id)}draw();return}
+  if(t.closest('#syAuto')){T.sl=[];const L=A.items(T.g).slice().sort((a,b)=>A.spare(b)-A.spare(a));const cst=T.ty==='s'?SKCOST[T.g]:SYNCOST[T.g];const mx=Math.min(20,Math.floor(A.cnt(T.g)/4)*4,Math.floor(S.gold/Math.max(1,cst))*4);for(const c of L){let n=A.spare(c);while(n-->0&&T.sl.length<mx)T.sl.push(c.id)}if(!T.sl.length)announce('합성할 카드가 부족해요 (같은 등급 4장 필요)');draw();return}
   const cost=T.ty==='s'?SKCOST[T.g]:SYNCOST[T.g];
   if(t.closest('#syAll')){let n=0;const res=[];while(A.cnt(T.g)>=4&&S.gold>=cost&&n<300){const L=A.items(T.g).slice().sort((a,b)=>A.spare(b)-A.spare(a));const ins=[];for(const c of L){let k=A.spare(c);while(k-->0&&ins.length<4)ins.push(c)}if(ins.length<4)break;S.gold-=cost;ins.forEach(A.take);const r=once(A,ins);n++;res.push({ok:r.ok,c:r.r,g:T.g,dup:r.dup})}
    if(!n){announce('골드가 부족하거나 재료가 모자라요');return}ensure();save();BUSY=true;await synthResult(res);BUSY=false;save();synthWin();return}
-  if(t.closest('#syGo')){if(T.sl.length<4)return;if(S.gold<cost){announce('골드가 부족해요 · 합성 비용 '+fmt(cost));return}const ins=T.sl.map(byId);const need={};for(const c of ins)need[c.id]=(need[c.id]||0)+1;for(const c of ins)if(A.spare(c)<need[c.id])return;
-   S.gold-=cost;ins.forEach(A.take);const{ok,r,key,dup}=once(A,ins);SYDUP=dup;T.sl=[];ensure();save();BUSY=true;const gg=T.g,ng=A.next(gg);
-   await synthResult([{ok,c:r,g:gg,dup}]);if(!ok)announce(`합성 실패 · ${G[gg].ko} 「${r.n}」 획득 · 합성 포인트 ${S.spts[key]}/${SYN_PITY}`);else{announce(`<span style="color:${G[r.g].c}">✦ 합성 성공! ${G[r.g].ko} 「${r.n}」</span>`);if(r.g>=3)wNotice(`<b>${(typeof ACC!=='undefined'&&ACC&&ACC.user)||(S.cls?S.cls.k:'모험가')}</b> 님이 합성으로 <em style="color:${G[r.g].c}">${G[r.g].ko} 「${r.n}」</em>을(를) 획득했습니다.`,G[r.g].c)}
+  if(t.closest('#syGo')){const ns=Math.floor(T.sl.length/4);if(ns<1)return;if(S.gold<cost*ns){announce('골드가 부족해요 · 합성 비용 '+fmt(cost*ns));return}const ins=T.sl.slice(0,ns*4).map(byId);const need={};for(const c of ins)need[c.id]=(need[c.id]||0)+1;for(const c of ins)if(A.spare(c)<need[c.id])return;
+   const gg=T.g,res=[];for(let k=0;k<ns;k++){S.gold-=cost;const part=ins.slice(k*4,k*4+4);part.forEach(A.take);const{ok,r,dup}=once(A,part);res.push({ok,c:r,g:gg,dup})}T.sl=[];ensure();save();BUSY=true;
+   await synthResult(res);const okL=res.filter(x=>x.ok);if(okL.length){announce(`<span style="color:${G[okL[0].c.g].c}">✦ 합성 성공 ${okL.length}회!</span>`);for(const x of okL)if(x.c.g>=3)wNotice(`<b>${(typeof ACC!=='undefined'&&ACC&&ACC.user)||(S.cls?S.cls.k:'모험가')}</b> 님이 합성으로 <em style="color:${G[x.c.g].c}">${G[x.c.g].ko} 「${x.c.n}」</em>을(를) 획득했습니다.`,G[x.c.g].c)}else announce('합성 실패 · 같은 등급 카드를 돌려받았어요')
    BUSY=false;save();synthWin();return}}}
 
 /* 리니지M식 「합성 결과」: 카드 뒷면 → 카드 속 그림이 옆으로 돌다 멈춤 → 성공이면 화면 전체가 등급색으로 번쩍 · 다 열면 같은 카드는 한 장으로 묶고 아래에 x2 */
 async function synthResult(L){const n=L.length,many=n>14,cw=many?60:84;
- const root=stageOn(`<div class="lmr" id="lmr"><div class="lmr-bg"></div><div class="lmr-h"><i></i><b>합성 결과</b><i></i></div><button class="lmr-x" id="lmrX" hidden>✕</button>
+ const root=stageOn(`<div class="lmr" id="lmr"><div class="lmr-bg"></div><div class="lmr-burst" id="lmrb"></div><div class="lmr-h"><i></i><b>합성 결과</b><i></i></div><button class="lmr-x" id="lmrX" hidden>✕</button>
  <div class="lmr-g${many?' many':''}" id="lmrg" style="--cw:${cw}px">${L.map((x,i)=>`<div class="lmc" id="lc${i}" data-lc="${i}" style="--gc:#8a6a2c"><div class="lmc-f"><div class="lmc-bk">${ico('crown')}</div></div><b class="lmc-n"></b><em class="lmc-c"></em></div>`).join('')}</div>
  <div class="lmr-sum" id="lmrs"></div><button class="lmr-open" id="lmrO">모두 열기</button></div>`);
- const R0=$('lmr'),opened=new Set();let ok=0,busy=0;
- const open=async(i,fast)=>{if(opened.has(i))return;opened.add(i);const x=L[i],el=$('lc'+i);if(!el)return;const f=el.querySelector('.lmc-f');
-  const P=CARDS.filter(c=>c.ty===x.c.ty&&c.g===x.g);const strip=[];for(let k=0;k<9;k++)strip.push(P.length?pick(P):x.c);strip.push(x.c);
-  if(fast&&!x.ok){f.innerHTML=cardIco(x.c,cw)}else{
-   f.innerHTML=`<div class="lmc-st">${strip.map(c=>`<span>${cardIco(c,cw)}</span>`).join('')}</div>`;const s=f.firstChild;void s.offsetWidth;
-   const dur=SKIP?120:fast?(x.ok?900:260):(x.ok?1600:900);s.style.transition=`transform ${dur}ms cubic-bezier(.12,.7,.18,1)`;s.style.transform=`translateX(${-9*cw}px)`;sfx.tick&&sfx.tick(2);
-   if(x.ok){await W(dur*.72);R0.style.setProperty('--fl',G[x.c.g].c);R0.classList.remove('fl');void R0.offsetWidth;R0.classList.add('fl');thunder(x.c.g>=4);shake&&shake();buzz&&buzz(80);await W(dur*.28+120)}else await W(dur)}
-  el.style.setProperty('--gc',G[x.c.g].c);el.classList.add('done');if(x.ok){ok++;el.classList.add('up');sparks(el,x.c.g>=4?60:30,G[x.c.g].c)}
-  el.querySelector('.lmc-n').textContent=x.c.n;if(!x.dup)el.insertAdjacentHTML('beforeend','<span class="lmc-new">NEW</span>');
-  if(opened.size===n)finish()};
+ const R0=$('lmr');let ok=0,busy=0;const st=new Array(n).fill(0);/* 0 뒷면 · 1 도는 중 · 2 열림 */
+ sfx.boom&&sfx.boom();await W(750);$('lmrb').remove();
+ const flash=c=>{R0.style.setProperty('--fl',c);R0.classList.remove('fl');void R0.offsetWidth;R0.classList.add('fl')};
+ const spin=i=>{const x=L[i],el=$('lc'+i);if(!el||st[i])return;st[i]=1;const P=CARDS.filter(c=>c.ty===x.c.ty&&(c.g===x.g||c.g===x.g+1));const pk=()=>P.length?pick(P):x.c;const S8=Array.from({length:8},pk);
+  el.classList.add('pop');setTimeout(()=>el.classList.remove('pop'),260);el.querySelector('.lmc-f').innerHTML=`<div class="lmc-st spin">${[...S8,...S8].map(c=>`<span>${cardIco(c,cw)}</span>`).join('')}</div>`;sfx.tick&&sfx.tick(1)};
+ const stop=async i=>{if(st[i]===2)return;st[i]=2;const x=L[i],el=$('lc'+i);if(!el)return;const f=el.querySelector('.lmc-f');
+  if(x.ok){f.innerHTML=`<div class="lmc-st">${cardIco(x.c,cw)}</div>`;el.classList.add('white');thunder(x.c.g>=4);flash(G[x.c.g].c);shake&&shake();buzz&&buzz(80);await W(320);el.classList.remove('white');ok++;el.classList.add('up');sparks(el,x.c.g>=4?60:30,G[x.c.g].c)}
+  else{f.innerHTML=`<div class="lmc-st">${cardIco(x.c,cw)}</div>`;sfx.tick&&sfx.tick(3)}
+  el.style.setProperty('--gc',G[x.c.g].c);el.classList.add('done','glow');setTimeout(()=>el.classList.remove('glow'),700);el.querySelector('.lmc-n').textContent=x.c.n;if(!x.dup)el.insertAdjacentHTML('beforeend','<span class="lmc-new">NEW</span>')};
  let fin=null;const done=new Promise(r=>fin=r);
- const finish=async()=>{await W(450);const by={};L.forEach((x,i)=>{(by[x.c.id]=by[x.c.id]||[]).push(i)});
+ const finish=async()=>{await W(500);const by={};L.forEach((x,i)=>{(by[x.c.id]=by[x.c.id]||[]).push(i)});
   for(const id in by){const ix=by[id];if(ix.length<2)continue;ix.slice(1).forEach(i=>{const e=$('lc'+i);if(e){e.classList.add('gone');setTimeout(()=>e.remove(),320)}});const e0=$('lc'+ix[0]);if(e0)e0.querySelector('.lmc-c').textContent='x'+ix.length}
-  $('lmrs').innerHTML=n>1?`성공 <b>${ok}</b> / ${n}`:'';const O=$('lmrO');O.textContent='확인';O.onclick=()=>fin();$('lmrX').hidden=false;$('lmrX').onclick=()=>fin()};
- $('lmrg').onclick=e=>{const c=e.target.closest('[data-lc]');if(c&&!busy)open(+c.dataset.lc,false)};
- $('lmrO').onclick=async()=>{if(busy)return;busy=1;$('lmrO').disabled=true;for(let i=0;i<n;i++){if(opened.has(i))continue;await open(i,n>1);if(!L[i].ok)await W(n>20?30:90)}busy=0;$('lmrO').disabled=false};
+  $('lmrs').innerHTML=n>1?`성공 <b>${ok}</b> / ${n}`:'';const O=$('lmrO');O.disabled=false;O.textContent='확인';O.onclick=()=>fin();$('lmrX').hidden=false;$('lmrX').onclick=()=>fin()};
+ const run=async ids=>{busy=1;$('lmrO').disabled=true;for(const i of ids){spin(i);await W(n>14?40:110)}await W(1100);for(const i of ids){await stop(i);await W(L[i].ok?520:(n>14?60:200))}busy=0;if(st.every(v=>v===2))finish();else $('lmrO').disabled=false};
+ $('lmrg').onclick=e=>{const c=e.target.closest('[data-lc]');if(c&&!busy&&!st[+c.dataset.lc])run([+c.dataset.lc])};
+ $('lmrO').onclick=()=>{if(busy)return;run(L.map((_,i)=>i).filter(i=>!st[i]))};
  await done;stageOff()}
 /* 여러 장 합성 연출: 카드가 옆으로 돌다가 하나씩 멈춤 · 성공한 칸에는 다음 등급 색의 번개가 치고 윗등급 카드가 뜸 */
 function boltSVG(){let d='M20 0',x=20;for(let y=24;y<=300;y+=24){x=20+(Math.random()*24-12);d+=` L${x.toFixed(0)} ${y}`}return`<svg class="svbolt" viewBox="0 0 40 300" preserveAspectRatio="none"><path d="${d}"/><path class="core" d="${d}"/></svg>`}
