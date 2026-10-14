@@ -1191,9 +1191,9 @@
   {
    "id": "t_ogre_mage_new",
    "category": "변신",
-   "name": "오우거 마법사",
+   "name": "몰록의 사제",
    "grade": "희귀",
-   "desc_en": "ogre mage as a playable transformation: huge brute, massive club or axe; well-crafted gear with a colored accent; large (1.3x human)",
+   "desc_en": "Priest of Moloch: horned bull-masked priest in bronze and red robes, fire brazier staff; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #50 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1209,7 +1209,8 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "old_name": "오우거 마법사"
   },
   {
    "id": "t_orc_warlord",
@@ -1260,9 +1261,9 @@
   {
    "id": "t_deep_elf_sorcerer",
    "category": "변신",
-   "name": "다크엘프 흑마법사",
+   "name": "헤카테의 사도",
    "grade": "희귀",
-   "desc_en": "deep elf sorcerer as a playable transformation: agile archer or spear fighter; well-crafted gear with a colored accent; human-sized",
+   "desc_en": "Apostle of Hecate: hooded sorceress with triple-moon staff and purple witchfire; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #53 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1278,7 +1279,8 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "old_name": "다크엘프 흑마법사"
   },
   {
    "id": "t_naga_mage",
@@ -1375,9 +1377,9 @@
   {
    "id": "t_vampire_new",
    "category": "변신",
-   "name": "뱀파이어",
+   "name": "아자젤",
    "grade": "희귀",
-   "desc_en": "vampire as a playable transformation: undead, dark necrotic magic; well-crafted gear with a colored accent; human-sized",
+   "desc_en": "Azazel, fallen watcher angel: grey-winged fallen angel in dark leather armor, twin swords; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #58 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1393,14 +1395,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "old_name": "뱀파이어"
   },
   {
    "id": "t_wraith",
    "category": "변신",
-   "name": "레이스",
+   "name": "밴시",
    "grade": "희귀",
-   "desc_en": "wraith as a playable transformation: undead, dark necrotic magic; well-crafted gear with a colored accent; human-sized",
+   "desc_en": "Banshee: spectral wailing woman spirit in tattered pale robes, ghostly glow; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #59 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1416,14 +1419,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "old_name": "레이스"
   },
   {
    "id": "t_revenant",
    "category": "변신",
-   "name": "망령 기사",
+   "name": "아바돈의 기사",
    "grade": "희귀",
-   "desc_en": "revenant as a playable transformation: undead, dark necrotic magic; well-crafted gear with a colored accent; human-sized",
+   "desc_en": "Knight of Abaddon: dark knight in locust-motif black armor, glowing green eyes, halberd; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #60 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1439,7 +1443,8 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "old_name": "망령 기사"
   },
   {
    "id": "t_skeletal_warrior_new",
@@ -1559,9 +1564,9 @@
   {
    "id": "t_fire_giant_new",
    "category": "변신",
-   "name": "불의 거인",
+   "name": "무스펠의 거인",
    "grade": "영웅",
-   "desc_en": "fire giant as a playable transformation: huge brute, massive club or axe; ornate gear, glowing runes, faint aura; large (1.3x human)",
+   "desc_en": "Muspel fire giant: giant warrior of flame and black iron, burning axe; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #66 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1577,14 +1582,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "old_name": "불의 거인"
   },
   {
    "id": "t_stone_giant_new",
    "category": "변신",
-   "name": "바위 거인",
+   "name": "요툰",
    "grade": "영웅",
-   "desc_en": "stone giant as a playable transformation: huge brute, massive club or axe; ornate gear, glowing runes, faint aura; large (1.3x human)",
+   "desc_en": "Jotunn: rugged stone-skinned giant with rune-carved armor, boulder hammer; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #67 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1600,7 +1606,8 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "old_name": "바위 거인"
   },
   {
    "id": "t_iron_troll",
@@ -1651,9 +1658,9 @@
   {
    "id": "t_vampire_knight_new",
    "category": "변신",
-   "name": "뱀파이어 기사",
+   "name": "릴리스",
    "grade": "영웅",
-   "desc_en": "vampire knight as a playable transformation: undead, dark necrotic magic; ornate gear, glowing runes, faint aura; human-sized",
+   "desc_en": "Lilith, queen of night: dark seductive demoness in black-and-violet armor, bat wings, twin daggers; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #70 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1669,14 +1676,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "old_name": "뱀파이어 기사"
   },
   {
    "id": "t_lich",
    "category": "변신",
-   "name": "리치",
+   "name": "바포메트",
    "grade": "영웅",
-   "desc_en": "lich as a playable transformation: undead, dark necrotic magic; ornate gear, glowing runes, faint aura; human-sized",
+   "desc_en": "Baphomet: goat-headed horned demon sorcerer, robed, glowing occult sigils, staff; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #71 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1692,14 +1700,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "old_name": "리치"
   },
   {
    "id": "t_greater_mummy",
    "category": "변신",
-   "name": "고대 미라 왕",
+   "name": "오시리스",
    "grade": "영웅",
-   "desc_en": "greater mummy as a playable transformation: undead, dark necrotic magic; ornate gear, glowing runes, faint aura; human-sized",
+   "desc_en": "Osiris, god of the dead: green-skinned god-king in white-gold Egyptian regalia, crook and flail; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #72 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1715,14 +1724,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "old_name": "고대 미라 왕"
   },
   {
    "id": "t_deep_elf_high_priest",
    "category": "변신",
-   "name": "다크엘프 대사제",
+   "name": "세라핌",
    "grade": "영웅",
-   "desc_en": "deep elf high priest as a playable transformation: agile archer or spear fighter; ornate gear, glowing runes, faint aura; human-sized",
+   "desc_en": "Seraphim: angel with six burning wings, white-gold robes and armor, spear of light; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #73 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1738,14 +1748,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "old_name": "다크엘프 대사제"
   },
   {
    "id": "t_wyvern_new",
    "category": "변신",
-   "name": "와이번",
+   "name": "가루다",
    "grade": "영웅",
-   "desc_en": "wyvern as a playable transformation: winged dragon-kin, fire breath; ornate gear, glowing runes, faint aura; human-sized",
+   "desc_en": "Garuda: eagle-headed divine bird-warrior with golden feathers and armor, spear; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #74 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1761,7 +1772,8 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 3
+   "priority": 3,
+   "old_name": "와이번"
   },
   {
    "id": "t_fire_drake",
@@ -1835,9 +1847,9 @@
   {
    "id": "t_dragon",
    "category": "변신",
-   "name": "붉은 용",
+   "name": "수르트",
    "grade": "전설",
-   "desc_en": "dragon as a playable transformation: winged dragon-kin, fire breath; majestic, heavy ornate armor, strong purple aura, glowing eyes; large (1.3x human)",
+   "desc_en": "Surtr, fire giant lord: colossal giant of molten rock and flame, blazing sword, lava-cracked armor; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #78 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1856,14 +1868,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 2
+   "priority": 2,
+   "old_name": "붉은 용"
   },
   {
    "id": "t_ice_dragon_new",
    "category": "변신",
-   "name": "빙룡",
+   "name": "이미르",
    "grade": "전설",
-   "desc_en": "ice dragon as a playable transformation: winged dragon-kin, fire breath; majestic, heavy ornate armor, strong purple aura, glowing eyes; large (1.3x human)",
+   "desc_en": "Ymir, primordial frost giant: huge icy giant with frozen beard and ice-crystal armor, ice club; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #79 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1882,14 +1895,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 2
+   "priority": 2,
+   "old_name": "빙룡"
   },
   {
    "id": "t_storm_dragon_new",
    "category": "변신",
-   "name": "폭풍의 용",
+   "name": "토르",
    "grade": "전설",
-   "desc_en": "storm dragon as a playable transformation: winged dragon-kin, fire breath; majestic, heavy ornate armor, strong purple aura, glowing eyes; large (1.3x human)",
+   "desc_en": "Thor, thunder god: red-bearded warrior god in steel-and-gold armor, red cape, hammer crackling with lightning; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #80 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1908,14 +1922,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 2
+   "priority": 2,
+   "old_name": "폭풍의 용"
   },
   {
    "id": "t_shadow_dragon",
    "category": "변신",
-   "name": "그림자 용",
+   "name": "아스모데우스",
    "grade": "전설",
-   "desc_en": "shadow dragon as a playable transformation: winged dragon-kin, fire breath; majestic, heavy ornate armor, strong purple aura, glowing eyes; large (1.3x human)",
+   "desc_en": "Asmodeus, demon prince: elegant horned demon noble in dark ornate armor, shadow flames, curved blade; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #81 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1934,14 +1949,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 2
+   "priority": 2,
+   "old_name": "그림자 용"
   },
   {
    "id": "t_ancient_lich_new",
    "category": "변신",
-   "name": "고대 리치",
+   "name": "아누비스",
    "grade": "전설",
-   "desc_en": "ancient lich as a playable transformation: undead, dark necrotic magic; majestic, heavy ornate armor, strong purple aura, glowing eyes; human-sized",
+   "desc_en": "Anubis, jackal-headed god of death: black jackal head, gold-and-lapis Egyptian armor, staff with ankh; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #82 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1960,14 +1976,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 2
+   "priority": 2,
+   "old_name": "고대 리치"
   },
   {
    "id": "t_balrug_new",
    "category": "변신",
-   "name": "화염 마왕",
+   "name": "벨리알",
    "grade": "전설",
-   "desc_en": "balrug as a playable transformation: demon, hellfire, horns; majestic, heavy ornate armor, strong purple aura, glowing eyes; large (1.3x human)",
+   "desc_en": "Belial, fallen demon lord: charred black demon with molten cracks, broken angel wings, flaming whip; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #83 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -1986,14 +2003,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 2
+   "priority": 2,
+   "old_name": "화염 마왕"
   },
   {
    "id": "t_pit_fiend",
    "category": "변신",
-   "name": "지옥 군주",
+   "name": "루시퍼",
    "grade": "전설",
-   "desc_en": "pit fiend as a playable transformation: demon, hellfire, horns; majestic, heavy ornate armor, strong purple aura, glowing eyes; large (1.3x human)",
+   "desc_en": "Lucifer, fallen archangel: beautiful pale angel with black feathered wings, dark gold armor, crown of thorns, crimson sword; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #84 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -2012,14 +2030,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 2
+   "priority": 2,
+   "old_name": "지옥 군주"
   },
   {
    "id": "t_bone_dragon_new",
    "category": "변신",
-   "name": "해골 용",
+   "name": "하데스",
    "grade": "전설",
-   "desc_en": "bone dragon as a playable transformation: winged dragon-kin, fire breath; majestic, heavy ornate armor, strong purple aura, glowing eyes; large (1.3x human)",
+   "desc_en": "Hades, lord of the underworld: dark-robed god with skull crown, bident, ghostly blue flames; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #85 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -2038,14 +2057,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 2
+   "priority": 2,
+   "old_name": "해골 용"
   },
   {
    "id": "t_titan_new",
    "category": "변신",
-   "name": "타이탄",
+   "name": "크로노스",
    "grade": "전설",
-   "desc_en": "titan as a playable transformation: huge brute, massive club or axe; majestic, heavy ornate armor, strong purple aura, glowing eyes; large (1.3x human)",
+   "desc_en": "Kronos, titan of time: ancient titan in bronze armor with scythe, hourglass motifs, stern bearded face; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #86 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -2064,14 +2084,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 2
+   "priority": 2,
+   "old_name": "타이탄"
   },
   {
    "id": "t_golden_dragon",
    "category": "변신",
-   "name": "황금 용 군주",
+   "name": "제우스",
    "grade": "신화",
-   "desc_en": "golden dragon as a playable transformation: winged dragon-kin, fire breath; legendary golden-trimmed design, radiant gold aura, epic presence; large (1.3x human)",
+   "desc_en": "Zeus, king of the gods: towering muscular elder in golden-white divine armor and flowing cape, crown of light, wielding a crackling lightning spear; storm aura; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #87 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -2090,14 +2111,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 2
+   "priority": 2,
+   "old_name": "황금 용 군주"
   },
   {
    "id": "t_holy_dragon",
    "category": "변신",
-   "name": "빛의 성룡",
+   "name": "대천사 미카엘",
    "grade": "신화",
-   "desc_en": "holy dragon as a playable transformation: winged dragon-kin, fire breath; legendary golden-trimmed design, radiant gold aura, epic presence; large (1.3x human)",
+   "desc_en": "Archangel Michael: radiant knight-angel with six white feathered wings, gleaming silver-gold plate armor, flaming holy sword and shield; halo of light; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #88 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -2116,14 +2138,15 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 2
+   "priority": 2,
+   "old_name": "빛의 성룡"
   },
   {
    "id": "t_phoenix",
    "category": "변신",
-   "name": "불사조",
+   "name": "바알",
    "grade": "신화",
-   "desc_en": "phoenix as a playable transformation: winged dragon-kin, fire breath; legendary golden-trimmed design, radiant gold aura, epic presence; human-sized",
+   "desc_en": "Baal, great demon king: horned crowned demon lord with black-crimson armor, bat-like wings, burning eyes, giant flaming greatsword; hellfire aura; as a playable transformation, full body, heroic dark-fantasy MMORPG style",
    "current": "atlas.png 셀 #89 (32px 도트, 교체 대상)",
    "display_px": {
     "battle_height": "120~200",
@@ -2142,7 +2165,8 @@
     "hit_death"
    ],
    "status": "todo",
-   "priority": 2
+   "priority": 2,
+   "old_name": "불사조"
   },
   {
    "id": "t_ereshkigal",
@@ -2193,7 +2217,7 @@
     "ultimate",
     "hit_death"
    ],
-   "status": "todo",
+   "status": "cancelled",
    "priority": 2
   },
   {
@@ -2219,7 +2243,7 @@
     "ultimate",
     "hit_death"
    ],
-   "status": "todo",
+   "status": "cancelled",
    "priority": 2
   },
   {
@@ -2245,7 +2269,7 @@
     "ultimate",
     "hit_death"
    ],
-   "status": "todo",
+   "status": "cancelled",
    "priority": 2
   },
   {
@@ -4725,5 +4749,6 @@
  "effects_rules": "이펙트 전용: 정사각형 3x3 그리드(9프레임, 왼→오, 위→아래), 모든 칸 같은 크기, 효과가 각 칸 중앙(바닥형은 칸 아래쪽 중앙)에 위치, 칸 밖으로 잘리지 않게 여백, 배경은 순수 검정 #000000, 캐릭터·글자·격자선 없음. 리니지M 같은 한국 MMORPG 스킬 이펙트 느낌으로 선명하고 빛나게(glow). 파일: art_in/e_<이름>/sheet.png",
  "effects_prompt": "2D game VFX sprite sheet, square image, 3x3 grid of 9 animation frames read left-to-right top-to-bottom, every cell the same size, effect centered in each cell (ground effects at the bottom center of the cell) with margin so nothing is cut off, solid pure black background (#000000), no characters, no text, no grid lines. Vivid glowing high-quality Korean MMORPG skill effect (Lineage-style). Effect: ",
  "icon_rules": "아이콘 시트: 정사각형 3x3 그리드(9칸), desc_en에 적힌 순서대로 칸마다 아이템 1개, 칸 가운데에 크게, 리니지M 아이템 아이콘처럼 45도 비스듬한 구도와 묵직한 질감, 등급이 높을수록 화려하게 빛남. 배경 #FF00FF, 글자·숫자·격자선·테두리 없음. 파일: art_in/<id>/sheet.png",
- "ground_rules": "바닥: art_in/g_<지역>/tile.png = 위에서 내려다본 이음매 없는 바닥 텍스처 1장(정사각형, 반복해서 깔아도 경계가 안 보이게), art_in/g_<지역>/props.png = 그 지역 소품 9개 3x3(배경 #FF00FF)."
+ "ground_rules": "바닥: art_in/g_<지역>/tile.png = 위에서 내려다본 이음매 없는 바닥 텍스처 1장(정사각형, 반복해서 깔아도 경계가 안 보이게), art_in/g_<지역>/props.png = 그 지역 소품 9개 3x3(배경 #FF00FF).",
+ "notes_2026_10_14": "상위 변신(영웅 이상)은 리니지M처럼 고대 신·악마·천사 컨셉으로 이름/설명 변경됨(old_name 참고). 유일 변신은 명계의 왕 하나만 유지, 나머지 유일 3종은 cancelled. 변신을 최우선으로, 등급 높은 것부터 작업."
 }
