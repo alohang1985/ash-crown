@@ -1230,6 +1230,29 @@ html.land .lexp span{top:-14px!important;font-size:9px!important}
 .lcs2{background:radial-gradient(circle at 50% 45%,color-mix(in srgb,var(--gc) 22%,#14100a),#050302 75%)!important;box-shadow:inset 0 0 0 1px #000,inset 0 0 10px rgba(0,0,0,.9)!important;overflow:hidden}
 .lcs2>.spr,.lcs2>img,.lcs2>canvas{max-width:92%!important;max-height:92%!important}
 .lchc>div{background:radial-gradient(circle at 50% 40%,color-mix(in srgb,var(--gc) 18%,#0b0805),#050302 72%)!important}
+/* 미션 보상 표시 */
+.lql button{position:relative}.lql .rd,.lqtabs .rd{position:absolute;right:10px;top:8px;width:9px;height:9px;border-radius:50%;background:#e0302a;box-shadow:0 0 0 1px #000,0 0 6px #e0302a}
+.lqr.claim{box-shadow:inset 3px 0 0 #ffcf5a}.lqr.claim .lbtn{animation:autop 1.4s infinite}
+.ql.d.ok{color:#ffe48a}
+/* 아이폰 노치(안전 영역) */
+html.land{--sl:env(safe-area-inset-left,0px);--sr:env(safe-area-inset-right,0px)}
+html.land .lhud{left:calc(14px + var(--sl))!important}
+html.land .qbar{left:calc(8px + var(--sl))!important}
+html.land .lbuf{left:calc(96px + var(--sl))!important}html.land .lbuf::before{left:calc(16px + var(--sl))}
+html.land .hcp{left:calc(16px + var(--sl))!important}
+html.land .lqs .lrd{left:calc(12px + var(--sl))!important}
+html.land .syslog{margin-left:calc(var(--sl)/2)}
+html.land .lexp span{left:calc(8px + var(--sl))!important}
+.lchar{left:calc(3vh + var(--sl,0px))!important}
+.lnpcm{left:calc(8px + var(--sl,0px))!important}
+html.land .ltopm{right:calc(10px + var(--sr))!important}
+html.land .mmw{right:calc(10px + var(--sr))!important}html.land .lzone{right:calc(10px + var(--sr))!important}
+html.land .lqs{right:calc(10px + var(--sr))!important}html.land .lqs .latk{right:calc(24px + var(--sr))!important}html.land .lauto{right:calc(132px + var(--sr))!important}
+.linv,.lskw{right:calc(2.6vh + var(--sr,0px))!important}
+.lqb,.lqtabs{padding-left:calc(4vw + var(--sl,0px))!important;padding-right:calc(4vw + var(--sr,0px))!important}
+.lshb,.lshtab{padding-left:calc(1.5vw + var(--sl,0px))!important;padding-right:calc(1.5vw + var(--sr,0px))!important}
+.lmside{padding-right:var(--sr,0px)}
+@media (max-height:520px){html.land .lhud{left:calc(6px + var(--sl))!important}html.land .qbar{left:calc(4px + var(--sl))!important}html.land .lbuf{left:calc(70px + var(--sl))!important}html.land .lbuf::before{left:calc(8px + var(--sl))}html.land .lqs .lrd{left:calc(6px + var(--sl))!important}html.land .lqs{right:calc(6px + var(--sr))!important}html.land .lqs .latk{right:calc(12px + var(--sr))!important}html.land .lauto{right:calc(86px + var(--sr))!important}html.land .mmw{right:calc(6px + var(--sr))!important}html.land .lzone{right:calc(6px + var(--sr))!important}}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -1490,7 +1513,17 @@ html.rot90 .lshbt{padding:4px 1vw 6px}
 html.rot90 .lshbt .lbtn{padding:6px 24px;font-size:12px}
 html.rot90 .lsa,html.rot90 .lsci{min-height:46px}
 html.rot90 .lsc2 .lscl{position:absolute;right:4px;top:22px;padding:0}
-html.rot90 .lzoom{display:none}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
+html.rot90 .lzoom{display:none}
+html.rot90.land .lhud{left:calc(6px + var(--sl))!important}
+html.rot90.land .qbar{left:calc(4px + var(--sl))!important}
+html.rot90.land .lbuf{left:calc(70px + var(--sl))!important}
+html.rot90.land .lbuf::before{left:calc(8px + var(--sl))}
+html.rot90.land .lqs .lrd{left:calc(6px + var(--sl))!important}
+html.rot90.land .lqs{right:calc(6px + var(--sr))!important}
+html.rot90.land .lqs .latk{right:calc(12px + var(--sr))!important}
+html.rot90.land .lauto{right:calc(86px + var(--sr))!important}
+html.rot90.land .mmw{right:calc(6px + var(--sr))!important}
+html.rot90.land .lzone{right:calc(6px + var(--sr))!important}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
 <div class="title" id="title"><div class="tbg"></div><div class="tin"><div class="tlogo">잿빛 왕관</div><div class="tsub">ASHEN CROWN · 에르덴 대륙</div><div class="tload"><i id="tbar"></i></div><div class="ttip" id="ttip">세계를 불러오는 중…</div><button class="tstart" id="tstart" disabled>게임 시작</button><div class="tfoot">서버 · 에르덴 1 &nbsp;|&nbsp; 시제품</div></div></div><div class="app">
  <div class="top"><div class="logo">잿빛 왕관<small>에르덴 대륙 · 시제품</small></div><div class="cur" id="cur"></div><button class="ic laysw" id="laySw" hidden>가로 화면</button><button class="ic" id="mute" type="button" aria-label="소리">🔊</button></div>
  <div class="lcol"><div class="livea" id="liveA"></div><div class="ticker" id="ticker"></div><div class="qbar" id="qbar"></div>
@@ -2718,11 +2751,13 @@ function questWin(){qReset();const draw=()=>{let left=[],rows=[],det=null;
   else if(QTAB==='mis'){left=['일일','주간'];const L=QL?WQ:DQ,box=QL?'w':'d',cb=QL?'wc':'dc';L.forEach((q,i)=>{const v=Math.min(q[1],S.q[box][q[0]]||0),got=S.q[cb][i];rows.push({i,n:q[2],st:got?'done':v>=q[1]?'claim':'now',rw:q[3],desc:`${q[2]} ( ${fmt(v)}/${fmt(q[1])} )`,mis:box+':'+i})})}
   else if(QTAB==='clan'){left=['혈맹'];rows.push({i:0,n:'혈맹 출석',st:'now',rw:{},desc:S.clanLv?'혈맹 창에서 매일 출석하고 기부할 수 있어요':'아직 혈맹이 없어요 · 가입하거나 창설해 보세요',clan:1})}
   else{left=['출석'];const ad=S.att.last===kday(),di=(S.att.n||0)%7;ATT.forEach((r,i)=>rows.push({i,n:`${i+1}일차 출석`,st:i<di?'done':i===di?(ad?'now':'claim'):'lock',rw:r,desc:ad&&i===di?'내일 다시 받을 수 있어요':'매일 접속하면 받아요 · 7일마다 반복',att:1}))}
+  if(QTAB==='mis'||QTAB==='ach'){const o={claim:0,now:1,lock:2,done:3};rows.sort((a,b)=>o[a.st]-o[b.st])}
   det=rows.find(r=>r.i===QSEL)||rows.find(r=>r.st==='claim'||r.st==='now')||rows[0];if(det)QSEL=det.i;
-  const dot=k=>k==='ach'?ACH.some((a,i)=>!(S.ach||{})[i]&&achVal(a[0])>=a[1]):k==='mis'?DQ.some((q,i)=>!S.q.dc[i]&&qDone(DQ,i,'d')):k==='ev'?S.att.last!==kday():false;
+  const qlDot=i=>QTAB==='mis'?(i?WQ:DQ).some((q,j)=>!S.q[i?'wc':'dc'][j]&&(S.q[i?'w':'d'][q[0]]||0)>=q[1]):QTAB==='ach'?(()=>{const types=[...new Set(ACH.map(a=>a[0]))];return ACH.some((a,j)=>a[0]===types[i]&&!(S.ach||{})[j]&&achVal(a[0])>=a[1])})():QTAB==='main'?(()=>{const q=qCur(),b=[0,6,12,18,99];return(S.qi||0)>=b[i]&&(S.qi||0)<b[i+1]&&qVal(q)>=q[1]})():QTAB==='ev'?S.att.last!==kday():false;
+  const dot=k=>k==='main'?qVal(qCur())>=qCur()[1]:k==='ach'?ACH.some((a,i)=>!(S.ach||{})[i]&&achVal(a[0])>=a[1]):k==='mis'?DQ.some((q,i)=>!S.q.dc[i]&&qDone(DQ,i,'d'))||WQ.some((q,i)=>!S.q.wc[i]&&qDone(WQ,i,'w')):k==='ev'?S.att.last!==kday():false;
   const st=$('stage');st.hidden=false;st.classList.remove('sidel','sider','dockl','dockr');
   st.innerHTML=`<div class="lqw"><div class="lqwt">${ico('quest')}<b>퀘스트</b><button class="lx" id="pkX">✕</button></div><div class="lqtabs">${[['main','메인','menu'],['ach','업적','medal'],['mis','미션','ticket'],['clan','혈맹','clan'],['ev','이벤트','chest']].map(([k,n,ic])=>`<button data-qt="${k}" class="${QTAB===k?'on':''}">${ico(ic)} ${n}${dot(k)?'<i class="rd"></i>':''}</button>`).join('')}</div>
-   <div class="lqb"><div class="lql">${left.map((n,i)=>`<button data-ql="${i}" class="${QL===i?'on':''}">${n}</button>`).join('')}</div>
+   <div class="lqb"><div class="lql">${left.map((n,i)=>`<button data-ql="${i}" class="${QL===i?'on':''}">${n}${qlDot(i)?'<i class="rd"></i>':''}</button>`).join('')}</div>
    <div class="lqm">${rows.map(r=>`<div class="lqr${r.i===QSEL?' on':''} ${r.st}" data-qr="${r.i}">${r.st==='done'?'<em class="dn">완 료</em>':r.st==='lock'?ico('lock'):'<em class="ck">✓</em>'}<span class="qi2">${ico(QTAB==='ach'?'medal':'crown')}</span><b>${r.n}</b>${r.st==='done'?'<button class="lbtn gold sm" data-qv="1">대사 보기</button>':r.st==='claim'?`<button class="lbtn gold sm" data-qc2="${r.i}">보상 받기</button>`:r.st==='now'?`<button class="lbtn blue sm" data-qgo2="${r.i}">바로 가기</button>`:''}</div>`).join('')}</div>
    <div class="lqd">${det?`<h4>상세 내용</h4><p>${det.desc}</p><h4>보상 아이템</h4><div class="lqrw">${rwIcons(det.rw)}${Array.from({length:Math.max(0,5-Object.keys(det.rw||{}).length)},()=>'<span class="lrw"></span>').join('')}</div>`:''}</div></div></div>`;
   st.onclick=e=>{const t=e.target;if(t.closest('#pkX')||t===st){dockClose();return}let b;
@@ -2915,9 +2950,9 @@ function svDrawPlayer(c,t,P,M,dead){const tc=S.morph!==false&&S.morphLook!==fals
     const cx=P.x,cy=P.y-36;for(let i=0;i<24;i++){const life=800+hashR(i*3)*700,ph=((t+hashR(i)*5000)%life)/life,a=hashR(i*17)*6.283,ex=Math.cos(a)*(15+hashR(i*5)*7),ey=Math.sin(a)*38;const sway=Math.sin(t/180+i)*2.5*ph;const fx=cx+ex+sway,fy=cy+ey-ph*34;const s=(1-ph*.8)*(.8+hashR(i*9)*.7);if(Math.abs(ex)<9&&ey>-30&&ey<30&&hashR(i*13)<.7)continue;c.globalAlpha=Math.sin(ph*3.14)*.9*p;c.drawImage(F,fx-9*s,fy-30*s,18*s,36*s)}
     /* 몸을 감싸는 전기: 위아래로 흐르는 가는 번개 줄기 여러 개가 계속 지지직 바뀜 */
     const md=(x0,y0,x1,y1,d,sd,out)=>{if(d<1.2){out.push([x1,y1]);return}const mx=(x0+x1)/2+(hashR(sd)-.5)*d,my=(y0+y1)/2+(hashR(sd+1)-.5)*d*.5;md(x0,y0,mx,my,d/2,sd*3+7,out);md(mx,my,x1,y1,d/2,sd*3+11,out)};
-    const strands=[];for(let k=0;k<3;k++){const per=130+k*23,fr=Math.floor((t+k*57)/per),ph=((t+k*57)%per)/per,sd=fr*97+k*131;if(hashR(sd+5)<.3)continue;const side=k%2?1:-1,w=16+hashR(sd)*12,cxx=cx+3;
+    const strands=[];for(let k=0;k<2;k++){const per=130+k*23,fr=Math.floor((t+k*57)/per),ph=((t+k*57)%per)/per,sd=fr*97+k*131;if(hashR(sd+5)<.3)continue;const side=k%2?1:-1,w=16+hashR(sd)*12,cxx=cx+3;
      const top=[cxx+side*(4+hashR(sd+2)*10),cy-52-hashR(sd+3)*8],pts=[top];const ys=[-30,-8,14,36];for(let q=0;q<ys.length;q++){const px=cxx+side*(w*(.8+hashR(sd+q*7)*.5)),py=cy+ys[q]+(hashR(sd+q*9)-.5)*8;const out=[];md(pts[pts.length-1][0],pts[pts.length-1][1],px,py,7,sd+q*17,out);pts.push(...out)}
-     strands.push({p:pts,w:1,a:1-ph*.6});if(hashR(sd+3)<.75){for(let bb=0;bb<2;bb++){const b=pts[Math.floor(pts.length*(.2+hashR(sd+4+bb)*.6))],bo=[b];md(b[0],b[1],b[0]+side*(10+hashR(sd+6+bb)*16),b[1]+4+hashR(sd+8+bb)*14,5,sd+21+bb,bo);strands.push({p:bo,w:.55,a:.9-ph*.6})}}}
+     strands.push({p:pts,w:1,a:1-ph*.6});if(hashR(sd+3)<.5){for(let bb=0;bb<1;bb++){const b=pts[Math.floor(pts.length*(.2+hashR(sd+4+bb)*.6))],bo=[b];md(b[0],b[1],b[0]+side*(10+hashR(sd+6+bb)*16),b[1]+4+hashR(sd+8+bb)*14,5,sd+21+bb,bo);strands.push({p:bo,w:.55,a:.9-ph*.6})}}}
     window.__strd={s:strands,OL,p};
     /* 바닥 초록 불: 갈라진 불금 + 바닥에서 솟는 불길(뒤쪽 절반) */
     window.__gfire=(front)=>{const gy=P.y;c.save();c.globalCompositeOperation='lighter';
@@ -2930,7 +2965,7 @@ function svDrawPlayer(c,t,P,M,dead){const tc=S.morph!==false&&S.morphLook!==fals
     for(let q=0;q<14;q++){const ph=((t/1700+hashR(q*31))%1),a=hashR(q*7)*6.283,r0=10+hashR(q*5)*28;c.globalAlpha=(1-ph)*p;c.fillStyle=q%3?OL:'#fff';const sx=P.x+Math.cos(a)*r0*(1+ph*.4),sy=P.y-20-Math.abs(Math.sin(a))*40-ph*30;c.fillRect(sx,sy,1.4,1.4)}}
 }for(const[r,a]of[[3.2,.1],[1.6,.28]]){c.globalAlpha=a*p;for(const[dx,dy]of[[r,0],[-r,0],[0,r],[0,-r],[r*.7,r*.7],[-r*.7,r*.7],[r*.7,-r*.7],[-r*.7,-r*.7]])c.drawImage(T2,P.x-85+dx,P.y-130+dy,170,170)}c.restore();c.drawImage(OCV,P.x-85,P.y-130,170,170);if(tc&&tc.g>=6&&window.__gfire){window.__gfire(true);window.__gfire=null}const SD=window.__strd;if(tc&&tc.g>=6&&SD){const KB=2,BW2=170*KB,B=window.__bolt||(window.__bolt=document.createElement('canvas')),Bs=window.__boltS||(window.__boltS=document.createElement('canvas'));if(B.width!==BW2){B.width=B.height=BW2;Bs.width=Bs.height=56}const bx=B.getContext('2d');bx.setTransform(1,0,0,1,0,0);bx.clearRect(0,0,BW2,BW2);bx.setTransform(KB,0,0,KB,(-P.x+85)*KB,(-P.y+130)*KB);bx.lineCap='round';bx.lineJoin='round';
    for(const s of SD.s){const n=s.p.length;for(const[lw,cl,al]of[[2.6,SD.OL,.7],[1,'#ffffff',1]]){bx.strokeStyle=cl;for(let q=1;q<n;q++){const f=q/n;bx.globalAlpha=al*s.a*(f<.15?f/.15:1)*(f>.85?(1-f)/.15:1);bx.lineWidth=lw*s.w*(1.2-f*.7);bx.beginPath();bx.moveTo(s.p[q-1][0],s.p[q-1][1]);bx.lineTo(s.p[q][0],s.p[q][1]);bx.stroke()}}}
-   const sx=Bs.getContext('2d');sx.clearRect(0,0,56,56);sx.imageSmoothingEnabled=true;sx.drawImage(B,0,0,56,56);c.save();c.globalCompositeOperation='lighter';c.imageSmoothingEnabled=true;c.globalAlpha=.9*SD.p;c.drawImage(Bs,P.x-85,P.y-130,170,170);c.globalAlpha=.6*SD.p;c.drawImage(Bs,P.x-85-4,P.y-130-4,178,178);c.globalAlpha=1;c.drawImage(B,P.x-85,P.y-130,170,170);c.restore()}window.__strd=null}
+   const sx=Bs.getContext('2d');sx.clearRect(0,0,56,56);sx.imageSmoothingEnabled=true;sx.drawImage(B,0,0,56,56);c.save();c.globalCompositeOperation='lighter';c.imageSmoothingEnabled=true;c.globalAlpha=.5*SD.p;c.drawImage(Bs,P.x-85,P.y-130,170,170);c.globalAlpha=.7;c.drawImage(B,P.x-85,P.y-130,170,170);c.restore()}window.__strd=null}
  if(LAND&&!dead){const nm=(typeof ACC!=='undefined'&&ACC&&ACC.user)||(S.cls?S.cls.k:'');const hy=P.y-(tc&&artOf(tc)?78:66);c.save();c.font='bold 8px "Noto Sans KR",sans-serif';c.textAlign='center';c.lineWidth=2.5;c.strokeStyle='rgba(0,0,0,.85)';c.strokeText(nm,P.x,hy);c.fillStyle='#8cff8c';c.fillText(nm,P.x,hy);const mh=stats().hp;c.fillStyle='rgba(0,0,0,.7)';c.fillRect(P.x-14,hy+2,28,3);c.fillStyle='#e33';c.fillRect(P.x-14,hy+2,28*Math.max(0,Math.min(1,S.hp/mh)),3);c.restore()}
 }
 
@@ -3265,7 +3300,7 @@ $('side').onclick=e=>{const b=e.target.closest('[data-side]');if(b){TAB='enh';ET
 setInterval(sideRender,3000);addEventListener('resize',sideRender);
 const setMono=v=>{document.documentElement.classList.toggle('mono',v);try{localStorage.setItem('ash.mono',v?'1':'')}catch(_){}const b=$('mono');if(b)b.textContent=v?'🎨':'◐'};
 {const b=document.createElement('button');b.className='ic';b.id='mono';b.type='button';b.title='흑백 모드';b.setAttribute('aria-label','흑백 모드');const wr=document.createElement('div');wr.className='tbtn';$('mute').before(wr);wr.append(b,$('mute'));let v=false;try{v=localStorage.getItem('ash.mono')==='1'}catch(_){}setMono(v);b.onclick=()=>setMono(!document.documentElement.classList.contains('mono'))}
-document.addEventListener('click',e=>{if(e.target.closest('[data-charge]')){chargeBox(0);return}if(e.target.closest('#heq [data-chars]')){charSelect();return}{const st=e.target.closest('[data-st]');if(st&&!st.disabled){stageBtn(st.dataset.st);return}}if(e.target.closest('[data-qc]')){qClaim();return}{const qg=e.target.closest('[data-qgo]');if(qg){TAB=qg.dataset.qgo;render();if(LAND){document.documentElement.classList.add('mopen');lmSync();return}if(innerWidth<1000)$('body').scrollIntoView({behavior:'smooth'});return}}const b=e.target.closest('[data-m]');if(b){ac();modeBtn(b.dataset.m)}});
+document.addEventListener('click',e=>{if(e.target.closest('[data-charge]')){chargeBox(0);return}if(e.target.closest('#heq [data-chars]')){charSelect();return}{const st=e.target.closest('[data-st]');if(st&&!st.disabled){stageBtn(st.dataset.st);return}}if(e.target.closest('[data-qc]')){qClaim();return}{{const qw=e.target.closest('[data-qw]');if(qw){QTAB=qw.dataset.qw;QL=0;QSEL=null;questWin();return}}const qg=e.target.closest('[data-qgo]');if(qg){TAB=qg.dataset.qgo;render();if(LAND){document.documentElement.classList.add('mopen');lmSync();return}if(innerWidth<1000)$('body').scrollIntoView({behavior:'smooth'});return}}const b=e.target.closest('[data-m]');if(b){ac();modeBtn(b.dataset.m)}});
 addEventListener('keydown',e=>{if(!MODE||MODE.k!=='boss')return;if(e.code==='Space'){e.preventDefault();modeBtn('dodge')}if(e.key==='q'||e.key==='Q')modeBtn('skill');if(e.key==='w'||e.key==='W')modeBtn('pot')});
 $('mute').onclick=()=>{MUTE=!MUTE;$('mute').textContent=MUTE?'🔇':'🔊'};
 $('heq').onclick=e=>{{const pk=e.target.closest('[data-hpick]');if(pk){slotPick(pk.dataset.hpick);return}}const m=e.target.closest('[data-morph]'),g=e.target.closest('[data-go]');if(m){S.morph=S.morph===false?true:false;MORPHFX=performance.now();save();render()}else if(g){TAB=g.dataset.go;render()}};
@@ -3473,7 +3508,7 @@ const QCH=[['kill',20,'몬스터 20마리 처치',{gold:300},'hunt'],['up_atk',5
 function qCur(){const i=S.qi||0;if(i<QCH.length)return QCH[i];const k=i-QCH.length;const kinds=[['stage',(S.bestStage||1)+10,`${stLabel((S.bestStage||1)+10)} 도달`,{bless:1,scroll:5},'hunt'],['up',50,'능력 강화 50회',{scroll:5},'up'],['kill',300,'몬스터 300마리 처치',{gold:Math.round(stGOLD(S.bestStage||1)*200)},'hunt']];return kinds[k%3]}
 function qVal(q){const c=S.cnt||{};if(q[0]==='stage')return S.bestStage||1;if(q[0]==='equipT')return S.eqT&&S.eqT!=='t:goblin_new'?1:0;if(q[0]==='skeq')return(S.skEq||[]).length;return(c[q[0]]||0)-((S.qBase||{})[q[0]]||0)}
 function qCheck(){const el=$('qbar');if(!el)return;const q=qCur();const v=Math.min(q[1],qVal(q)),done=v>=q[1];
- if(LAND){let dl='';try{qReset();const i=DQ.findIndex((x,j)=>!S.q.dc[j]);if(i>=0){const d=DQ[i],dv=Math.min(d[1],S.q.d[d[0]]||0);dl=`<div class="ql d" data-qgo="adv"><em>[일일]</em> ${d[2]}<small>(${fmt(dv)}/${fmt(d[1])})</small></div>`}}catch(_){}
+ if(LAND){let dl='';try{qReset();let i=DQ.findIndex((x,j)=>!S.q.dc[j]&&(S.q.d[x[0]]||0)>=x[1]);const ok=i>=0;if(!ok)i=DQ.findIndex((x,j)=>!S.q.dc[j]);if(i>=0){const d=DQ[i],dv=Math.min(d[1],S.q.d[d[0]]||0);dl=`<div class="ql d${ok?' ok':''}" data-qw="mis"><em>[일일]</em> ${d[2]}<small>${ok?'(완료 · 보상 받기)':`(${fmt(dv)}/${fmt(d[1])})`}</small></div>`}}catch(_){}
   const f3=S.burstK?`<div class="ql b"><em>[폭젠]</em> ${(BURST.find(b=>b.k===S.burstK)||{}).n}<small>(남은 ${Math.ceil(burstLeft()/60000)}분)</small><button class="qlx" data-st="leave">나가기</button></div>`:inDun()?`<div class="ql b"><em>[던전]</em> ${DUNG[S.wd.r][0]} ${S.wd.f}층<small>(남은 ${Math.ceil(wdLeft()/60000)}분)</small></div>`:`<div class="ql f"><em>[필드]</em> ${gOf().n}<small>(몬스터 Lv.${SV.zml||gOf().ml})</small></div>`;
   const k=[q[2],v,done,dl,f3].join('|');if(el.dataset.k===k)return;el.dataset.k=k;
   el.innerHTML=`<div class="qhd"><b>${ico('quest')} 퀘스트</b><span>${ico('char')} 파티</span><span>${ico('swords')} 선택 대상</span><em>‹</em></div><div class="ql m${done?' ok':''}" ${done?'data-qc="1"':`data-qgo="${q[4]}"`}><em>[메인]</em> ${q[2]}<small>${done?'(완료 · 보상 받기)':`(${fmt(v)}/${fmt(q[1])})`}</small></div>${dl}${f3}`;el.classList.toggle('done',done);return}
