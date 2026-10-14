@@ -1,7 +1,7 @@
 {
  "game": "잿빛 왕관 (https://alohang1985.github.io/ash-crown/)",
  "style": {
-  "look": "다크 판타지 한국 MMORPG 컨셉아트풍(리니지 느낌), 반실사 페인팅, 굵은 외곽선 없이 디테일 많은 2D 일러스트. 도트(픽셀)아트 아님.",
+  "look": "리니지M 공식 아트 느낌: 밝고 채도 높은 반실사 2D 페인팅, 디테일 많고 실루엣이 또렷함. 어둡고 칙칙한 다크 판타지 금지. 도트(픽셀)아트 아님.",
   "view": "옆모습(side view, 살짝 3/4), 전신",
   "facing": "오른쪽을 봄(right)",
   "background": "단색 마젠타 #FF00FF (흰색 금지)",
@@ -3885,7 +3885,7 @@
    "category": "몹",
    "name": "goblin",
    "grade": "-",
-   "desc_en": "hostile monster: goblin raider with a dagger; menacing, human-sized; also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: goblin raider with a dagger; menacing, human-sized; also used as boss (shown 2x)",
    "current": "lpc/M_goblin_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -3905,14 +3905,15 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "m_orc",
    "category": "몹",
    "name": "orc",
    "grade": "-",
-   "desc_en": "hostile monster: orc warrior with a war axe; menacing, human-sized; also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: orc warrior with a war axe; menacing, human-sized; also used as boss (shown 2x)",
    "current": "lpc/M_orc_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -3932,14 +3933,15 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "m_orc_chief",
    "category": "몹",
    "name": "orc_chief",
    "grade": "-",
-   "desc_en": "hostile monster: orc warlord in dark spiked plate with horned helmet; menacing, large (1.2x human); also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: orc warlord in dark spiked plate with horned helmet; menacing, large (1.2x human); also used as boss (shown 2x)",
    "current": "lpc/M_orc_chief_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -3959,14 +3961,15 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "m_skeleton",
    "category": "몹",
    "name": "skeleton",
    "grade": "-",
-   "desc_en": "hostile monster: skeleton soldier with rusty sword; menacing, human-sized; also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: skeleton soldier with rusty sword; menacing, human-sized; also used as boss (shown 2x)",
    "current": "lpc/M_skeleton_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -3986,14 +3989,15 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "m_skel_knight",
    "category": "몹",
    "name": "skel_knight",
    "grade": "-",
-   "desc_en": "hostile monster: skeleton knight in dark plate armor; menacing, human-sized; also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: skeleton knight in dark plate armor; menacing, human-sized; also used as boss (shown 2x)",
    "current": "lpc/M_skel_knight_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -4013,14 +4017,15 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "m_zombie",
    "category": "몹",
    "name": "zombie",
    "grade": "-",
-   "desc_en": "hostile monster: rotting zombie; menacing, human-sized; also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: rotting zombie; menacing, human-sized; also used as boss (shown 2x)",
    "current": "lpc/M_zombie_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -4040,14 +4045,15 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "m_vampire",
    "category": "몹",
    "name": "vampire",
    "grade": "-",
-   "desc_en": "hostile monster: vampire count in black plate and red cape; menacing, human-sized; also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: vampire count in black plate and red cape; menacing, human-sized; also used as boss (shown 2x)",
    "current": "lpc/M_vampire_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -4067,14 +4073,15 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "m_lizard",
    "category": "몹",
    "name": "lizard",
    "grade": "-",
-   "desc_en": "hostile monster: lizardman with a spear; menacing, human-sized; also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: lizardman with a spear; menacing, human-sized; also used as boss (shown 2x)",
    "current": "lpc/M_lizard_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -4094,14 +4101,15 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "m_minotaur",
    "category": "몹",
    "name": "minotaur",
    "grade": "-",
-   "desc_en": "hostile monster: minotaur with a giant axe; menacing, large (1.2x human); also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: minotaur with a giant axe; menacing, large (1.2x human); also used as boss (shown 2x)",
    "current": "lpc/M_minotaur_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -4121,14 +4129,15 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "m_wolfman",
    "category": "몹",
    "name": "wolfman",
    "grade": "-",
-   "desc_en": "hostile monster: werewolf; menacing, human-sized; also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: werewolf; menacing, human-sized; also used as boss (shown 2x)",
    "current": "lpc/M_wolfman_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -4148,14 +4157,15 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "m_troll",
    "category": "몹",
    "name": "troll",
    "grade": "-",
-   "desc_en": "hostile monster: cave troll with a spiked mace; menacing, large (1.2x human); also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: cave troll with a spiked mace; menacing, large (1.2x human); also used as boss (shown 2x)",
    "current": "lpc/M_troll_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -4175,14 +4185,15 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "m_boarman",
    "category": "몹",
    "name": "boarman",
    "grade": "-",
-   "desc_en": "hostile monster: boar-headed brute with mace; menacing, human-sized; also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: boar-headed brute with mace; menacing, human-sized; also used as boss (shown 2x)",
    "current": "lpc/M_boarman_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -4202,14 +4213,15 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "m_dark_knight",
    "category": "몹",
    "name": "dark_knight",
    "grade": "-",
-   "desc_en": "hostile monster: death knight in black plate with glowing red sword and dark cape; menacing, large (1.2x human); also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: death knight in black plate with glowing red sword and dark cape; menacing, large (1.2x human); also used as boss (shown 2x)",
    "current": "lpc/M_dark_knight_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -4229,14 +4241,15 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "m_dark_mage",
    "category": "몹",
    "name": "dark_mage",
    "grade": "-",
-   "desc_en": "hostile monster: dark sorcerer in purple robes with staff; menacing, human-sized; also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: dark sorcerer in purple robes with staff; menacing, human-sized; also used as boss (shown 2x)",
    "current": "lpc/M_dark_mage_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -4256,14 +4269,15 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "m_fire_demon",
    "category": "몹",
    "name": "fire_demon",
    "grade": "-",
-   "desc_en": "hostile monster: fire demon with molten skin, horns, flaming axe; menacing, large (1.2x human); also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: fire demon with molten skin, horns, flaming axe; menacing, large (1.2x human); also used as boss (shown 2x)",
    "current": "lpc/M_fire_demon_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -4283,14 +4297,15 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "m_bandit",
    "category": "몹",
    "name": "bandit",
    "grade": "-",
-   "desc_en": "hostile monster: human bandit with dagger; menacing, human-sized; also used as boss (shown 2x)",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: hostile monster: human bandit with dagger; menacing, human-sized; also used as boss (shown 2x)",
    "current": "lpc/M_bandit_L.png (LPC 도트, 교체 대상)",
    "display_px": {
     "battle_height": "80~110 (보스 160~220)"
@@ -4310,7 +4325,8 @@
    ],
    "status": "todo",
    "priority": 1,
-   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark.",
+   "style_ref": "style_ref/lm_field_*.jpg"
   },
   {
    "id": "e_meteor",
@@ -6398,6 +6414,358 @@
     "card"
    ],
    "prompt": "Lineage M style dungeon selection card illustration: 폭젠 사냥터 (몬스터가 쏟아지는 붉은 하늘의 평원), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+  },
+  {
+   "id": "m_mushroom",
+   "category": "몹",
+   "name": "버섯 정령",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: cute but hostile walking mushroom spirit with a bright orange-red spotted cap, glowing yellow eyes, leafy arms — forest field monster",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "m_slime",
+   "category": "몹",
+   "name": "젤리 슬라임",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: translucent bright emerald-green jelly slime with sparkling highlights and a tiny crown of leaves",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "m_pixie",
+   "category": "몹",
+   "name": "장난꾸러기 픽시",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: mischievous pink-and-gold winged pixie with glittering butterfly wings and a thorn wand",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "m_lizardman_jungle",
+   "category": "몹",
+   "name": "정글 리자드맨",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: vivid green-and-yellow scaled jungle lizardman warrior with feathered headdress and bone spear (like Lineage M jungle field)",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "m_coral_serpent",
+   "category": "몹",
+   "name": "산호 바다뱀",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: colorful sea serpent with turquoise and coral-pink scales, frilled fins, pearl eyes — coastal coral reef monster",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "m_crab",
+   "category": "몹",
+   "name": "황금 집게게",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: big armored crab with shiny gold-orange shell and spiky claws",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "m_mermaid_warrior",
+   "category": "몹",
+   "name": "인어 전사",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: teal-scaled merfolk warrior with gold trident and seashell armor",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "m_scorpion",
+   "category": "몹",
+   "name": "사막 전갈",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: giant desert scorpion with glossy amber-red carapace and glowing stinger (like Lineage M desert field)",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "m_sand_spirit",
+   "category": "몹",
+   "name": "모래 정령",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: swirling golden sand elemental with glowing orange core",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "m_yeti",
+   "category": "몹",
+   "name": "설원 예티",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: white-furred yeti with icy blue horns and frost breath",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "m_ice_golem",
+   "category": "몹",
+   "name": "수정 얼음 골렘",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: golem made of shining sky-blue ice crystals with inner light",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "m_salamander",
+   "category": "몹",
+   "name": "불꽃 살라만더",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: bright orange-red fire salamander with flame mane and golden belly",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "m_griffon",
+   "category": "몹",
+   "name": "하늘 그리폰",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: majestic griffon with white-gold feathers and tawny lion body",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "m_cockatrice",
+   "category": "몹",
+   "name": "코카트리스",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: colorful rooster-serpent cockatrice with red crest and emerald tail feathers",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "m_harpy",
+   "category": "몹",
+   "name": "하피",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: harpy with vivid purple-and-turquoise plumage and golden talons",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "m_treant",
+   "category": "몹",
+   "name": "숲의 엔트",
+   "desc_en": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black. Subject: friendly-looking but hostile tree spirit with mossy bark, glowing green eyes and pink blossoms",
+   "style_ref": "style_ref/lm_field_*.jpg",
+   "format": "PNG, 배경 #FF00FF",
+   "priority": 1,
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "run",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit",
+    "death"
+   ],
+   "status": "todo",
+   "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
   }
  ],
  "effects_rules": "이펙트 전용: 정사각형 3x3 그리드(9프레임, 왼→오, 위→아래), 모든 칸 같은 크기, 효과가 각 칸 중앙(바닥형은 칸 아래쪽 중앙)에 위치, 칸 밖으로 잘리지 않게 여백, 배경은 순수 검정 #000000, 캐릭터·글자·격자선 없음. 리니지M 같은 한국 MMORPG 스킬 이펙트 느낌으로 선명하고 빛나게(glow). 파일: art_in/e_<이름>/sheet.png",
@@ -6414,5 +6782,13 @@
   "sheets": "walk.png = 걷기 8프레임(4x2 격자), run.png = 달리기 8프레임(4x2 격자). 프레임 간격·크기·바닥선 동일."
  },
  "notes_motion": "최우선: t_hellking_motion (명계의 왕 걷기·달리기 8프레임). 이후 모든 변신에 walk/run 시트 추가. motion_prompts의 문장을 프롬프트에 그대로 넣어 주세요.",
- "motion_rules": "모든 캐릭터(직업 캐릭터 c_*, 변신 t_*, 인형 d_*, 몬스터 m_*)는 동작을 빠짐없이 그려 주세요: ref(정면 1장), idle(숨쉬기 4~6프레임), walk(8프레임), run(8프레임), attack1, attack2, skill, hit(피격), death(쓰러짐). 특히 walk는 가장 중요해요 — motion_prompts.walk 문장을 Gemini 프롬프트에 그대로 넣고, 프레임마다 다리·팔·몸 높이가 자연스럽게 이어지는지 확인한 뒤 올려 주세요. 각 시트는 같은 캐릭터·같은 크기·같은 바닥선, 배경 #FF00FF."
+ "motion_rules": "모든 캐릭터(직업 캐릭터 c_*, 변신 t_*, 인형 d_*, 몬스터 m_*)는 동작을 빠짐없이 그려 주세요: ref(정면 1장), idle(숨쉬기 4~6프레임), walk(8프레임), run(8프레임), attack1, attack2, skill, hit(피격), death(쓰러짐). 특히 walk는 가장 중요해요 — motion_prompts.walk 문장을 Gemini 프롬프트에 그대로 넣고, 프레임마다 다리·팔·몸 높이가 자연스럽게 이어지는지 확인한 뒤 올려 주세요. 각 시트는 같은 캐릭터·같은 크기·같은 바닥선, 배경 #FF00FF.",
+ "monster_rules": {
+  "must": "몬스터는 반드시 리니지M 필드 몬스터 그림체를 절대적으로 참고해서 프롬프트를 쓴다. style_ref/lm_field_*.jpg (리니지M 실제 사냥터 캡처: 정글·해안 산호·사막·설원·폭젠)를 Gemini에 같이 넣고 '이 게임의 몬스터와 같은 그림체·색감'이라고 지시한다.",
+  "palette": "전체 몹 중 최소 절반은 밝고 화려하게: 선명한 초록·청록·주황·금색·분홍·하늘색 등. 어두운 몹(언데드·악마)도 칙칙하게 칠하지 말고 보라·청록 발광, 금장식, 붉은 룬 등 화려한 포인트를 넣는다.",
+  "lighting": "밝은 낮 조명(좌상단), 하이라이트와 반사광이 보이게. 전체 화면이 어두워지는 그림 금지.",
+  "variety": "사냥터마다 색 테마를 다르게: 숲/정글=초록·주황·분홍 꽃, 해안=청록·산호색, 사막=금색·주황, 설원=흰색·하늘색 수정, 화산=주황·빨강 불꽃, 천상=흰색·금색·하늘색.",
+  "prompt_prefix": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black.",
+  "reject": "결과물이 어둡거나 칙칙하면(평균 밝기가 낮거나 회갈색 위주) 다시 생성한다."
+ }
 }
