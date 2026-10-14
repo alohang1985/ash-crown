@@ -948,6 +948,9 @@ html.land.inmode .mctl{display:block!important;top:auto!important;bottom:96px!im
 .lmc2t{color:#cfe0f0;font-size:14px}.lmc2row{display:grid;gap:4px;padding:8px 0;border-top:1px solid rgba(160,200,240,.2)}.lmc2row span{color:#8aa0b8;font-size:12px}.lmc2row b{color:#fff;font-size:20px}.lmc2row p{margin:0;color:#ffe9b0;font-size:13.5px;line-height:1.6}
 .lmc2r .lbtn{width:200px}
 @media (max-height:520px){.ldci{height:96px;font-size:44px}.ldunb{grid-template-columns:96px 1fr}.ldpb{grid-template-columns:130px 1fr}.ldci.big{height:120px}}
+/* 같은 카드 겹친 모양 */
+.lmc.stk .lmc-f{box-shadow:4px 4px 0 -1px #1a120a,4px 4px 0 0 var(--gc),8px 8px 0 -1px #120c06,8px 8px 0 0 color-mix(in srgb,var(--gc) 60%,#000),0 4px 10px #000}
+.lmc.stk{margin-right:8px}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -2545,9 +2548,9 @@ function synthWin(ty){const st=$('stage');if(ty)SYW={ty,g:SYW.ty===ty?SYW.g:0,sl
    BUSY=false;save();synthWin();return}}}
 
 /* 리니지M식 「합성 결과」: 카드 뒷면 → 카드 속 그림이 옆으로 돌다 멈춤 → 성공이면 화면 전체가 등급색으로 번쩍 · 다 열면 같은 카드는 한 장으로 묶고 아래에 x2 */
-async function synthResult(L){const n=L.length,many=n>14,cw=many?60:84;
+async function synthResult(L0){const GRP={};const L=[];for(const x of L0){const k=x.c.id+'|'+(x.ok?1:0);if(GRP[k]){GRP[k].cnt++;GRP[k].dup=GRP[k].dup&&x.dup}else{GRP[k]=Object.assign({},x,{cnt:1});L.push(GRP[k])}}L.sort((a,b)=>(b.ok-a.ok)||(b.c.g-a.c.g));const N0=L0.length,OKN=L0.filter(x=>x.ok).length;const n=L.length,many=n>14,cw=many?60:84;
  const root=stageOn(`<div class="lmr" id="lmr"><div class="lmr-bg"></div><div class="lmr-burst" id="lmrb"></div><div class="lmr-h"><i></i><b>합성 결과</b><i></i></div><button class="lmr-x" id="lmrX" hidden>✕</button>
- <div class="lmr-g${many?' many':''}" id="lmrg" style="--cw:${cw}px">${L.map((x,i)=>`<div class="lmc" id="lc${i}" data-lc="${i}" style="--gc:#8a6a2c"><div class="lmc-f"><div class="lmc-bk">${ico('crown')}</div></div><b class="lmc-n"></b><em class="lmc-c"></em></div>`).join('')}</div>
+ <div class="lmr-g${many?' many':''}" id="lmrg" style="--cw:${cw}px">${L.map((x,i)=>`<div class="lmc${x.cnt>1?' stk':''}" id="lc${i}" data-lc="${i}" style="--gc:#8a6a2c"><div class="lmc-f"><div class="lmc-bk">${ico('crown')}</div></div><b class="lmc-n"></b><em class="lmc-c">${x.cnt>1?'x'+x.cnt:''}</em></div>`).join('')}</div>
  <div class="lmr-sum" id="lmrs"></div><button class="lmr-open" id="lmrO">모두 열기</button></div>`);
  const R0=$('lmr');let ok=0,busy=0;const st=new Array(n).fill(0);/* 0 뒷면 · 1 도는 중 · 2 열림 */
  sfx.boom&&sfx.boom();await W(750);$('lmrb').remove();
@@ -2559,10 +2562,9 @@ async function synthResult(L){const n=L.length,many=n>14,cw=many?60:84;
   else{f.innerHTML=`<div class="lmc-st">${cardIco(x.c,cw)}</div>`;sfx.tick&&sfx.tick(3)}
   el.style.setProperty('--gc',G[x.c.g].c);el.classList.add('done','glow');setTimeout(()=>el.classList.remove('glow'),700);el.querySelector('.lmc-n').textContent=x.c.n;if(!x.dup)el.insertAdjacentHTML('beforeend','<span class="lmc-new">NEW</span>')};
  let fin=null;const done=new Promise(r=>fin=r);
- const finish=async()=>{await W(500);const by={};L.forEach((x,i)=>{(by[x.c.id]=by[x.c.id]||[]).push(i)});
-  for(const id in by){const ix=by[id];if(ix.length<2)continue;ix.slice(1).forEach(i=>{const e=$('lc'+i);if(e){e.classList.add('gone');setTimeout(()=>e.remove(),320)}});const e0=$('lc'+ix[0]);if(e0)e0.querySelector('.lmc-c').textContent='x'+ix.length}
-  $('lmrs').innerHTML=n>1?`성공 <b>${ok}</b> / ${n}`:'';const O=$('lmrO');O.disabled=false;O.textContent='확인';O.onclick=()=>fin();$('lmrX').hidden=false;$('lmrX').onclick=()=>fin()};
- const run=async ids=>{busy=1;$('lmrO').disabled=true;for(const i of ids){spin(i);await W(n>14?40:110)}await W(1100);for(const i of ids){await stop(i);await W(L[i].ok?520:(n>14?60:200))}busy=0;if(st.every(v=>v===2))finish();else $('lmrO').disabled=false};
+ const finish=async()=>{await W(300);
+  $('lmrs').innerHTML=N0>1?`성공 <b>${OKN}</b> / ${N0}`:'';const O=$('lmrO');O.disabled=false;O.textContent='확인';O.onclick=()=>fin();$('lmrX').hidden=false;$('lmrX').onclick=()=>fin()};
+ const run=async ids=>{busy=1;$('lmrO').disabled=true;for(const i of ids){spin(i);await W(n>14?25:110)}await W(n>14?700:1100);for(const i of ids){await stop(i);await W(L[i].ok?(n>14?220:520):(n>14?40:200))}busy=0;if(st.every(v=>v===2))finish();else $('lmrO').disabled=false};
  $('lmrg').onclick=e=>{const c=e.target.closest('[data-lc]');if(c&&!busy&&!st[+c.dataset.lc])run([+c.dataset.lc])};
  $('lmrO').onclick=()=>{if(busy)return;run(L.map((_,i)=>i).filter(i=>!st[i]))};
  await done;stageOff()}
