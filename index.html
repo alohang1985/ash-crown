@@ -437,7 +437,8 @@ const BKO={hp:'최대 HP',atk:'공격력',crit:'치명타',def:'방어력',pw:'�
 const bTxt=b=>Object.entries(b).map(([k,v])=>`${BKO[k]} +${k==='def'?v:Math.round(v*100)+'%'}`).join(' · ');
 /* ================= 그림 ================= */
 const AW=ATL.cols*32,AH=ATL.rows*32;const IMG=new Image();IMG.src='atlas.png';
-function spr(i,px,extra){const k=px/32,cx=i%ATL.cols,cy=Math.floor(i/ATL.cols);return`<i class="spr" style="width:${px}px;height:${px}px;background-size:${AW*k}px ${AH*k}px;background-position:${-cx*32*k}px ${-cy*32*k}px;${extra||''}"></i>`}
+const ICM={"items":{},"ground":{}};const ICOI={};setTimeout(()=>{for(const c of CARDS){const m=ICM.items[c.id];if(m)ICOI[c.i]=m}for(const k in ICM.ground){if(ICM.ground[k].t)artImg('GT_'+k+'.webp');if(ICM.ground[k].p)artImg('GP_'+k+'.webp')}},0);
+function spr(i,px,extra){if(ICOI[i]){const[sk,ix]=ICOI[i];return`<i class="spr" style="width:${px}px;height:${px}px;background-image:url(art/IC_${sk}.webp);background-size:${px*9}px ${px}px;background-position:${-ix*px}px 0;image-rendering:auto;${extra||''}"></i>`}const k=px/32,cx=i%ATL.cols,cy=Math.floor(i/ATL.cols);return`<i class="spr" style="width:${px}px;height:${px}px;background-size:${AW*k}px ${AH*k}px;background-position:${-cx*32*k}px ${-cy*32*k}px;${extra||''}"></i>`}
 /* ================= 저장 ================= */
 /* 캐릭터 슬롯 (계정 하나에 여러 캐릭터) */
 const SLOT_MAX=6;const SLOT_IDX=(()=>{try{return Math.max(0,Math.min(SLOT_MAX-1,+(localStorage.getItem('ash.cur')||0)))}catch(_){return 0}})();
@@ -983,7 +984,10 @@ function survival(t){const cv=$('bt');if(!cv)return;const h=SVH();if(cv.height!=
  // 판 레벨 · 스킬
  bar(c,0,BH-6,BW,6,SV.rxp/rxpNeed(SV.rlv),'#7dff9a','rgba(0,0,0,.6)');txt(c,`판 Lv.${SV.rlv}`,6,BH-10,'#7dff9a',11);let ix=60;for(const k in SV.rk){txt(c,`${RSK[k][2]}${SV.rk[k]}`,ix,BH-10,'#fff',11);ix+=30}
  if(dead){c.fillStyle='rgba(60,0,0,.45)';c.fillRect(0,34,BW,BH-34)}}
-function svGround(c,cam,ox,oy,ri,T,t){const g=c.createLinearGradient(0,0,0,BH);g.addColorStop(0,T.g1);g.addColorStop(1,T.g2);c.fillStyle=g;c.fillRect(-4,-4,BW+8,BH+8);
+const GKEY=['island','castle','canyon','deadland','frost','abyss'];
+function svGround(c,cam,ox,oy,ri,T,t){const gk=GKEY[ri],GI=ICM.ground[gk];if(GI&&GI.t){const im=artImg('GT_'+gk+'.webp');if(im.complete&&im.naturalWidth){const pt=c.createPattern(im,'repeat');const S2=1;c.save();c.translate(((ox%256)+256)%256-256,((oy%256)+256)%256-256);c.fillStyle=pt;c.fillRect(0,0,BW+512,BH+512);c.restore();
+  if(GI.p){const pi=artImg('GP_'+gk+'.webp');if(pi.complete&&pi.naturalWidth){const C0=110,sx=Math.floor((cam.x-BW/2-60)/C0),sy=Math.floor((cam.y-BH/2-60)/C0);for(let gy=sy;gy<sy+(BH+120)/C0+1;gy++)for(let gx=sx;gx<sx+(BW+120)/C0+1;gx++){const h=hashR(gx*73+gy*9151+ri*7);if(h>.22)continue;const h2=hashR(gx*19+gy*311),fi=Math.floor(hashR(gx*5+gy*13)*9),sz=26+h2*22;c.drawImage(pi,fi*96,0,96,96,gx*C0+ox+h2*C0-sz/2,gy*C0+oy+h*C0*3-sz,sz,sz)}}}
+  return}}const g=c.createLinearGradient(0,0,0,BH);g.addColorStop(0,T.g1);g.addColorStop(1,T.g2);c.fillStyle=g;c.fillRect(-4,-4,BW+8,BH+8);
  const C0=48,sx=Math.floor((cam.x-BW/2-60)/C0),sy=Math.floor((cam.y-BH/2-60)/C0);
  for(let gy=sy;gy<sy+(BH+120)/C0+1;gy++)for(let gx=sx;gx<sx+(BW+120)/C0+1;gx++){const h=hashR(gx*73+gy*9151+ri*7),h2=hashR(gx*19+gy*311),X0=gx*C0+ox+h2*C0,Y0=gy*C0+oy+h*C0;
   if(h<.55){c.fillStyle=`rgba(0,0,0,${.05+h2*.08})`;c.beginPath();c.ellipse(X0,Y0,18+h*30,8+h2*12,0,0,7);c.fill()}else if(h<.7){c.fillStyle=`rgba(255,255,255,${.03+h2*.04})`;c.beginPath();c.ellipse(X0,Y0,14+h2*20,6+h*8,0,0,7);c.fill()}
