@@ -6208,6 +6208,96 @@
     "icon"
    ],
    "prompt": "Lineage M style 2D hand-painted game UI icon of 아데나 금화, flat painted illustration, NOT 3D render, NOT glossy emoji, warm muted fantasy colors, subtle dark outline, centered, transparent or #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_potion_red",
+   "category": "아이콘",
+   "name": "체력 회복제 (작은 빨간 물약병)",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted item icon of 체력 회복제 (작은 빨간 물약병), flat painted illustration, NOT 3D render, NOT emoji, warm fantasy palette, subtle dark outline, centered, #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_potion_orange",
+   "category": "아이콘",
+   "name": "고급 체력 회복제 (주황 물약병)",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted item icon of 고급 체력 회복제 (주황 물약병), flat painted illustration, NOT 3D render, NOT emoji, warm fantasy palette, subtle dark outline, centered, #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_potion_clear",
+   "category": "아이콘",
+   "name": "강력 체력 회복제 (맑은 흰빛 물약병)",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted item icon of 강력 체력 회복제 (맑은 흰빛 물약병), flat painted illustration, NOT 3D render, NOT emoji, warm fantasy palette, subtle dark outline, centered, #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_haste",
+   "category": "아이콘",
+   "name": "신속의 물약 (초록)",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted item icon of 신속의 물약 (초록), flat painted illustration, NOT 3D render, NOT emoji, warm fantasy palette, subtle dark outline, centered, #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_brave",
+   "category": "아이콘",
+   "name": "용기의 물약 (주황, 와인병 모양)",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted item icon of 용기의 물약 (주황, 와인병 모양), flat painted illustration, NOT 3D render, NOT emoji, warm fantasy palette, subtle dark outline, centered, #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_wis",
+   "category": "아이콘",
+   "name": "지혜의 물약 (파랑)",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted item icon of 지혜의 물약 (파랑), flat painted illustration, NOT 3D render, NOT emoji, warm fantasy palette, subtle dark outline, centered, #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_shield",
+   "category": "아이콘",
+   "name": "마법 방어 주문서",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted item icon of 마법 방어 주문서, flat painted illustration, NOT 3D render, NOT emoji, warm fantasy palette, subtle dark outline, centered, #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_battle",
+   "category": "아이콘",
+   "name": "전투 강화 주문서",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted item icon of 전투 강화 주문서, flat painted illustration, NOT 3D render, NOT emoji, warm fantasy palette, subtle dark outline, centered, #FF00FF background, 128x128"
+  },
+  {
+   "id": "i_item_exp",
+   "category": "아이콘",
+   "name": "경험치 증가 주문서",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "prompt": "Lineage M style 2D hand-painted item icon of 경험치 증가 주문서, flat painted illustration, NOT 3D render, NOT emoji, warm fantasy palette, subtle dark outline, centered, #FF00FF background, 128x128"
   }
  ],
  "effects_rules": "이펙트 전용: 정사각형 3x3 그리드(9프레임, 왼→오, 위→아래), 모든 칸 같은 크기, 효과가 각 칸 중앙(바닥형은 칸 아래쪽 중앙)에 위치, 칸 밖으로 잘리지 않게 여백, 배경은 순수 검정 #000000, 캐릭터·글자·격자선 없음. 리니지M 같은 한국 MMORPG 스킬 이펙트 느낌으로 선명하고 빛나게(glow). 파일: art_in/e_<이름>/sheet.png",
