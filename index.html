@@ -992,6 +992,63 @@ html.land .ltopm button i .uiimg{width:36px;height:36px}html.land .lqs .latk .ui
 .lsauto button{padding:5px 8px;border:1px solid color-mix(in srgb,var(--gc) 60%,#000);background:#16100a;color:var(--gc);font-size:11.5px;cursor:pointer}
 .nstot .svi,.nsi small .svi,.lsell .shcash .svi{display:inline-block;width:13px;height:13px;vertical-align:-2px;margin:0}
 .lsell .nsf .lbtn{padding:8px 22px}.lsell .nsf .lbtn:not(.gold){border:1px solid #5a4422;background:#1a130b;color:#eadfc8}
+/* ===== 캡처 세부 분석 반영 (2026-10-14) ===== */
+/* 초상: 마름모 테두리 */
+html.land .lhud{left:14px!important;top:8px!important;gap:10px!important;align-items:flex-start!important;pointer-events:auto}
+html.land .lpf{width:62px!important;height:62px!important;border-radius:0!important;transform:rotate(45deg);border:2px solid #b8923e!important;box-shadow:0 0 0 2px #1a1208,0 0 0 3px #6b5228,0 3px 10px #000!important;background:#0b0805!important;overflow:hidden;margin:10px 6px 0 8px;flex:0 0 auto}
+html.land .lpfi{width:100%;height:100%;transform:rotate(-45deg) scale(1.45);display:grid;place-items:center}
+html.land .lpfi img,html.land .lpfi canvas,html.land .lpfi>*{max-width:none!important;max-height:none!important}
+/* HP/MP 바: 길고 얇게 · 회색 바탕 */
+html.land .lbs{width:clamp(220px,25vw,330px)!important;gap:2px!important;padding-top:2px}
+html.land .lnm{gap:8px}html.land .lnm b{font-size:12.5px!important;color:#fff!important}html.land .lnm span{font-size:11px!important}
+html.land .lb{height:11px!important;border-radius:0!important;background:linear-gradient(#5a5a5a,#3a3a3a)!important;border:0!important;box-shadow:0 0 0 1px rgba(0,0,0,.8)!important}
+html.land .lb.hp i{background:linear-gradient(#ff5a4a,#d0201a 60%,#9a0f0a)!important}html.land .lb.mp{height:9px!important}html.land .lb.mp i{background:linear-gradient(#5aa0ff,#1f60e0 60%,#1440a0)!important}
+html.land .lb span{font-size:9.5px!important;line-height:11px!important}html.land .lb.mp span{line-height:9px!important;font-size:8.5px!important}
+/* 바 오른쪽: 자동 물약 · 버프 칸 · 다이아 */
+.lhx{display:none}html.land .lhx{display:flex;gap:4px;align-items:flex-start;margin-top:14px}
+.lhs{position:relative;width:44px;height:44px;display:grid;place-items:center;border:1px solid #6b5228;background:radial-gradient(#2a1f12,#0a0705);box-shadow:inset 0 0 0 1px #000,0 2px 5px #000;cursor:pointer}
+.lhs i .svi{width:30px;height:30px}.lhs b{position:absolute;right:2px;bottom:0;font-size:10px;color:#ffe9a8;text-shadow:0 0 2px #000,0 0 2px #000}
+.lhs u{position:absolute;left:1px;top:1px;text-decoration:none}.lhs u .svi{width:13px;height:13px}
+.lhs[data-hx=buff]{background:radial-gradient(#1e4a7a,#0a1a30)}
+.lhd{display:flex;align-items:center;gap:3px;margin-left:4px;color:#fff;font-size:12px;text-shadow:0 1px 2px #000;cursor:pointer}.lhd .svi{width:16px;height:16px}
+/* 버프 줄: 바 아래로 길게 */
+html.land .lbuf{left:96px!important;top:72px!important;gap:2px!important;max-width:44vw;flex-wrap:nowrap;overflow:hidden}
+html.land .lbuf::after{content:none!important}html.land .lbuf::before{content:'Buff';position:fixed;left:16px;top:86px;font-size:11px;font-style:italic;font-weight:700;color:#ffe9b0;padding:1px 8px;border:1px solid #8a6a2c;border-radius:10px;background:rgba(0,0,0,.6)}
+html.land .lbuf span{width:24px!important;height:24px!important;border:1px solid #c9a24a!important;border-radius:0!important;background:linear-gradient(#3a2c16,#1a1208)!important}
+html.land .lbuf span .svi{width:18px!important;height:18px!important}
+html.land .hcp{top:112px!important;left:16px!important}
+/* 퀘스트 머리: 퀘스트 | 파티 | 선택 대상 */
+.qhd{align-items:center}.qhd span{font-size:12px;color:#8a7e6a;display:flex;align-items:center;gap:3px}.qhd span .svi{width:14px;height:14px;opacity:.6}.qhd em{margin-left:auto;font-style:normal;color:#ffe9b0;font-size:18px;line-height:1}
+html.land .qbar{top:132px!important}
+/* 상단: 골드 + 아이콘 (혈맹 아이콘 없음) */
+html.land .top{left:auto!important;right:calc(5*58px + 22px)!important;top:14px!important}
+html.land .top .cur .cgold b{font-size:13.5px!important;color:#fff!important}.cgo{font-style:normal;font-size:18px;color:#fff;margin-left:6px}
+html.land .ltopm button{position:relative}
+.wring{position:absolute;left:50%;top:2px;transform:translateX(-50%);width:40px;height:40px;border-radius:50%;background:conic-gradient(#1fb8ff calc(var(--w,0)*1%),transparent 0);-webkit-mask:radial-gradient(circle,transparent 17px,#000 18px);mask:radial-gradient(circle,transparent 17px,#000 18px);font-size:0;pointer-events:none}
+.ltopm .wgt small{color:#7fd8ff!important}
+.rdot{position:absolute;right:8px;top:2px;width:9px;height:9px;border-radius:50%;background:#e0302a;box-shadow:0 0 0 1px #000}
+/* 미니맵 위 시간 알약 */
+html.land .mmw::before{top:-24px!important;right:auto!important;left:50%;transform:translateX(-50%);padding:2px 12px!important;border-radius:12px!important;background:rgba(10,8,5,.75)!important;border:1px solid #5a4422;font-size:12px!important}
+html.land .mmw{top:96px!important;padding:2px!important;border:1px solid #8a6a2c!important}
+html.land .lzone{top:236px!important}
+/* 공격·AUTO 버튼: 채운 원 대신 빛나는 테두리 */
+html.land .lqs .latk{background:radial-gradient(circle,rgba(40,20,10,.55),rgba(0,0,0,.2) 70%)!important;border:2px solid rgba(255,170,90,.55)!important;box-shadow:0 0 18px rgba(255,140,60,.45),inset 0 0 14px rgba(255,140,60,.3)!important}
+html.land .lauto{background:radial-gradient(circle,rgba(30,20,10,.5),rgba(0,0,0,.15) 70%)!important;border:3px solid #e07a2a!important;color:#fff!important;box-shadow:0 0 10px rgba(255,120,40,.5)!important}
+html.land .lauto small{display:none}
+/* 슬롯 아래 페이지 점 · 경험치 줄 눈금 */
+html.land .lqs::after,html.land .svhud::after{content:'● ○ ○ ○ ○';position:absolute;left:0;right:0;bottom:-13px;text-align:center;font-size:7px;letter-spacing:6px;color:rgba(255,255,255,.55);pointer-events:none}
+html.land .lqs{position:fixed}
+html.land .lexp{height:7px!important;background:repeating-linear-gradient(90deg,#0a0704 0 calc(10% - 1px),#5a4422 calc(10% - 1px) 10%)!important}
+html.land .lexp span{top:-14px!important;font-size:9px!important}
+@media (max-height:520px){
+ html.land .lpf{width:44px!important;height:44px!important;margin:6px 4px 0 6px}html.land .lbs{width:200px!important}
+ .lhs{width:32px;height:32px}.lhs i .svi{width:22px;height:22px}html.land .lhx{margin-top:8px}
+ html.land .lbuf{left:70px!important;top:54px!important}html.land .lbuf span{width:18px!important;height:18px!important}html.land .lbuf::before{top:64px;left:8px;font-size:9px}
+ html.land .hcp{top:84px!important}html.land .qbar{top:100px!important}
+ html.land .top{right:calc(5*44px + 12px)!important;top:8px!important}
+ .wring{width:30px;height:30px;-webkit-mask:radial-gradient(circle,transparent 12px,#000 13px);mask:radial-gradient(circle,transparent 12px,#000 13px)}
+ html.land .mmw{top:68px!important}html.land .lzone{top:170px!important}
+}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -1163,7 +1220,21 @@ html.rot90 .ldci.big{height:120px}
 html.rot90.land .lnpc{bottom:176px!important;left:46px!important}
 html.rot90.land .ltopm button i .uiimg{width:26px;height:26px}
 html.rot90.land .lqs .latk .uiimg{width:40px;height:40px}
-html.rot90.land .lqs .lrd .uiimg{width:20px;height:20px}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
+html.rot90.land .lqs .lrd .uiimg{width:20px;height:20px}
+html.rot90.land .lpf{width:44px!important;height:44px!important;margin:6px 4px 0 6px}
+html.rot90.land .lbs{width:200px!important}
+html.rot90 .lhs{width:32px;height:32px}
+html.rot90 .lhs i .svi{width:22px;height:22px}
+html.rot90.land .lhx{margin-top:8px}
+html.rot90.land .lbuf{left:70px!important;top:54px!important}
+html.rot90.land .lbuf span{width:18px!important;height:18px!important}
+html.rot90.land .lbuf::before{top:64px;left:8px;font-size:9px}
+html.rot90.land .hcp{top:84px!important}
+html.rot90.land .qbar{top:100px!important}
+html.rot90.land .top{right:calc(5*44px + 12px)!important;top:8px!important}
+html.rot90 .wring{width:30px;height:30px;-webkit-mask:radial-gradient(circle,transparent 12px,#000 13px);mask:radial-gradient(circle,transparent 12px,#000 13px)}
+html.rot90.land .mmw{top:68px!important}
+html.rot90.land .lzone{top:170px!important}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
 <div class="title" id="title"><div class="tbg"></div><div class="tin"><div class="tlogo">잿빛 왕관</div><div class="tsub">ASHEN CROWN · 에르덴 대륙</div><div class="tload"><i id="tbar"></i></div><div class="ttip" id="ttip">세계를 불러오는 중…</div><button class="tstart" id="tstart" disabled>게임 시작</button><div class="tfoot">서버 · 에르덴 1 &nbsp;|&nbsp; 시제품</div></div></div><div class="app">
  <div class="top"><div class="logo">잿빛 왕관<small>에르덴 대륙 · 시제품</small></div><div class="cur" id="cur"></div><button class="ic laysw" id="laySw" hidden>가로 화면</button><button class="ic" id="mute" type="button" aria-label="소리">🔊</button></div>
  <div class="lcol"><div class="livea" id="liveA"></div><div class="ticker" id="ticker"></div><div class="qbar" id="qbar"></div>
@@ -2020,8 +2091,8 @@ let FST=0;addEventListener('pointerup',()=>{if(TOUCH()&&!document.fullscreenElem
 function goLand(){try{localStorage.setItem(LAYK,'land')}catch(_){}const R=document.documentElement;if(TOUCH()&&R.requestFullscreen&&!document.fullscreenElement)R.requestFullscreen({navigationUI:'hide'}).then(()=>screen.orientation&&screen.orientation.lock&&screen.orientation.lock('landscape').catch(()=>{})).catch(()=>{});setTimeout(setLand,300)}
 function lhud(t,M){if(t-LHT<120)return;LHT=t;const el=$('lhud');if(!el)return;const ci=charIdx(S.cls?S.cls.k:'기사',S.cls?S.cls.sx:'M');const tc=S.morph!==false&&C(S.eqT);
  const hp=Math.max(0,Math.ceil(S.hp)),xp=S.lv>=MAXLV?100:S.exp/expNeed(S.lv)*100;const k=ci+'|'+(tc?tc.id:'');
- if(el.dataset.k!==k){el.dataset.k=k;el.innerHTML=`<div class="lpf" data-chars="1">${tc?cardIco(tc,46):spr(ci,46)}</div><div class="lbs"><div class="lnm"><b id="lhLv"></b><span>${S.cls?S.cls.k:''}${tc?' · '+tc.n:''}</span></div><div class="lb hp"><i id="lhH"></i><span id="lhHt"></span></div><div class="lb mp"><i id="lhM"></i><span id="lhMt"></span></div><div class="lb xp"><i id="lhX"></i><span id="lhXt"></span></div></div>`}
- $('lhLv').textContent='Lv.'+S.lv;$('lhH').style.width=Math.min(100,hp/M.hp*100)+'%';$('lhHt').textContent=`${fmt(hp)} / ${fmt(M.hp)}`;$('lhM').style.width=Math.min(100,S.mp/M.mp*100)+'%';$('lhMt').textContent=`${Math.floor(S.mp)} / ${M.mp}`;$('lhX').style.width=xp+'%';$('lhXt').textContent=xp.toFixed(4)+'%';
+ if(el.dataset.k!==k){el.dataset.k=k;el.innerHTML=`<div class="lpf" data-chars="1"><div class="lpfi">${tc?cardIco(tc,60):spr(ci,60)}</div></div><div class="lbs"><div class="lnm"><b id="lhLv"></b><span>${S.cls?S.cls.k:''}${tc?' · '+tc.n:''}</span></div><div class="lb hp"><i id="lhH"></i><span id="lhHt"></span></div><div class="lb mp"><i id="lhM"></i><span id="lhMt"></span></div><div class="lb xp"><i id="lhX"></i><span id="lhXt"></span></div></div><div class="lhx"><span class="lhs" data-hx="pot"><i id="lhPi"></i><b id="lhP"></b><u>${ico('enh')}</u></span><span class="lhs" data-hx="buff"><i>${ico('elx')}</i><b>∞</b></span><span class="lhd cashb" data-charge="1"><i>${ico('dia')}</i><b id="lhDia">${CASH==null?'…':fmt(CASH)}</b></span></div>`}
+ $('lhLv').textContent='Lv.'+S.lv;{const w=document.querySelector('.ltopm .wring');if(w&&(!w.dataset.t||t-w.dataset.t>2000)){w.dataset.t=t;const n=(S.wpn||[]).length+(S.arms||[]).length+Object.keys(S.cards||{}).length;const p=Math.min(100,Math.round(n/240*100));w.style.setProperty('--w',p);w.textContent=p+'%'}}{const ps=potSel(),pe=$('lhP');if(pe){pe.textContent=ps<0?0:potN(ps);const pi=$('lhPi');if(pi&&pi.dataset.k!=ps){pi.dataset.k=ps;pi.innerHTML=potIco(POTS[Math.max(0,ps)][2])}}}$('lhH').style.width=Math.min(100,hp/M.hp*100)+'%';$('lhHt').textContent=`${fmt(hp)} / ${fmt(M.hp)}`;$('lhM').style.width=Math.min(100,S.mp/M.mp*100)+'%';$('lhMt').textContent=`${Math.floor(S.mp)} / ${M.mp}`;$('lhX').style.width=xp+'%';$('lhXt').textContent=xp.toFixed(4)+'%';
  if(!inDun()&&SV.wInit&&!S.burstK)S.wp={x:Math.round(SV.p.x),y:Math.round(SV.p.y)};{const nb=$('lnpc');if(nb)nb.hidden=!(SV.safe&&!inDun()&&!S.burstK&&inTown(SV.p.x,SV.p.y))}document.documentElement.classList.toggle('burst',!!S.burstK);mmDraw();{const ab=$('lauto');if(ab)ab.classList.toggle('on',!SV.noAuto)}{const xb=$('lexp');if(xb){xb.querySelector('i').style.width=xp+'%';xb.querySelector('span').textContent='Exp '+xp.toFixed(4)+'%'+(S.ein>0?'  ·  아인하사드 '+fmt(Math.round(S.ein)):'')}}
  {const bf=$('lbuf');if(bf){const L=[];const tcx=S.morph!==false&&C(S.eqT),dl=C(S.eqD);if(tcx)L.push([ico('mask'),G[tcx.g].c,'변신 · '+tcx.n]);if(dl)L.push([ico('doll'),G[dl.g].c,'인형 · '+dl.n]);for(const b of PBUF)if(pbOn(b[0]))L.push([b[2],b[3],b[1]+' · '+Math.ceil((S.pb[b[0]]-Date.now())/60000)+'분']);for(const k in BUFFS)if(BUFFS[k].until>performance.now())L.push([ico('synth'),'#9fd0ff','강화 효과']);if(S.ein>0)L.push([ico('sun'),'#7fd8ff','아인하사드의 축복']);if(S.burstK)L.push([ico('swords'),'#ff8a5a','폭젠']);const k2=L.map(x=>x[2]).join('|');if(bf.dataset.k!==k2){bf.dataset.k=k2;bf.innerHTML=L.map(x=>`<span style="--bc:${x[1]}" title="${x[2]}">${x[0]}</span>`).join('')}}}
  {const q=$('lqs');if(q){const pe=q.querySelector('[data-q=pot] b');if(pe){const ps=potSel();pe.textContent=ps<0?0:potN(ps);if(q.dataset.pk!=String(ps)){q.dataset.pk=ps;const pi=q.querySelector('[data-q=pot] i');if(pi)pi.innerHTML=potIco(POTS[Math.max(0,ps)][2])}}const tq=q.querySelector('[data-q=tp] b');if(tq)tq.textContent=S.tps||0;const rq=q.querySelector('[data-q=rt] b');if(rq)rq.textContent=S.rts||0;const ce=q.querySelector('[data-q=chest] b');if(ce)ce.textContent=fmt(S.chest||0)}}
@@ -2330,7 +2401,7 @@ function menuWin(){const st=$('stage');st.hidden=false;st.classList.add('sider')
  st.onclick=e=>{const t=e.target;if(t.id==='pkX'||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}const b=t.closest('[data-mn]');if(!b)return;ac();const[ty,k]=b.dataset.mn.split(':');st.hidden=true;st.innerHTML='';st.onclick=null;
   if(ty==='t'){TAB=k;render();document.documentElement.classList.add('mopen');lmSync();return}
   ({skill:skillWin,inv:invWin,synth:()=>synthWin('t'),map:mapWin,bm:bmWin,clan:clanWin,shop:shopWin,buff:bwin,wh:whWin,dun:dunWin,mute:()=>$('mute')&&$('mute').click(),mono:()=>{const m=document.querySelector('[data-mono],#mono,.top .ic:not(#mute):not(#laySw)');if(m)m.click()}})[k]()}}
-function ltopInit(){const el=$('ltopm');if(!el)return;el.innerHTML=[['shop','상점','shop'],['bag','가방','inv'],['skill','스킬','skill'],['quest','퀘스트','quest'],['clan','혈맹','clan'],['menu','메뉴','menu']].map(([ic,n,k])=>`<button data-tm="${k}"><i>${ico(ic)}</i><small>${n}</small></button>`).join('');
+function ltopInit(){const el=$('ltopm');if(!el)return;el.innerHTML=[['shop','상점','shop'],['bag','가방','inv'],['skill','스킬','skill'],['quest','퀘스트','quest'],['menu','메뉴','menu']].map(([ic,n,k])=>`<button data-tm="${k}"${k==='inv'?' class="wgt"':''}><i>${ico(ic)}</i>${k==='inv'?'<em class="wring"></em>':''}${k==='quest'||k==='menu'?'<em class="rdot"></em>':''}<small>${n}</small></button>`).join('');
  el.onclick=e=>{const b=e.target.closest('[data-tm]');if(!b)return;ac();({shop:shopWin,inv:invWin,skill:skillWin,clan:clanWin,menu:menuWin,quest:()=>{TAB='adv';render();document.documentElement.classList.add('mopen');lmSync()}})[b.dataset.tm]()}}
 /* ===== 혈맹 (서버에서 실제 플레이어끼리 공유) ===== */
 let CLAN=null,CLT='info',CLLAST=0;
@@ -2506,7 +2577,7 @@ function loop(t){if(!document.hidden&&!KICKED){if(MODE||!SV.on)battle(t);else su
 /* ================= 화면 ================= */
 function equipU(u){if(isOther(u)){announce('다른 캐릭터가 착용 중인 장비예요');return}const w=S.wpn.find(x=>x.u===u);if(w){if(!classW(C(w.id))){announce(`「${C(w.id).n}」은(는) ${(CL().wt||[]).map(x=>WTKO[x]).join('·')}을 쓰는 ${S.cls.k}이(가) 장착할 수 없어요`);return}S.eqW=u;return}const a=S.arms.find(x=>x.u===u);if(a)S.eqA[C(a.id).sl]=u}
 let TAB='hunt',POOL='t',SG=0,ET='w',AHT='buy';
-function headLite(){$('cur').innerHTML=`<span class="cit" title="강화 주문서"><i>${ico('scroll')}</i><b>${fmt(S.scroll)}</b></span><span class="cit" title="축복 주문서"><i>${ico('bless')}</i><b>${fmt(S.bless)}</b></span><span class="cdia cashb" data-charge="1" title="충전 잔액"><i>${ico('dia')}</i><b>${CASH==null?'…':fmt(CASH)}</b></span><span class="cgold" title="골드"><i>${ico('gold')}</i><b>${S.gold.toLocaleString()}</b></span>`;$('hcp').textContent=`전투력 ${fmt(power())}`;powToast()}
+function headLite(){$('cur').innerHTML=`<span class="cgold" title="골드"><i>${ico('gold')}</i><b>${S.gold.toLocaleString()}</b><em class="cgo">›</em></span>`;{const d=$('lhDia');if(d)d.textContent=CASH==null?'…':fmt(CASH)}$('hcp').textContent=`전투력 ${fmt(power())}`;powToast()}
 function head(){headLite();const t=C(S.eqT),d=C(S.eqD),w=W_(),wc=WC(w);const ci=charIdx(S.cls?S.cls.k:'기사',S.cls?S.cls.sx:'M');
  $('heq').innerHTML=`<div class="eq ch" data-chars="1">${spr(ci,52)}<div><small>${S.cls?S.cls.k:'직업'}</small><b>Lv.${S.lv}</b><em>${S.cls?S.cls.sx==='F'?'여':'남':''}</em></div></div>
  ${t?`<div class="eq${S.morph===false?' offm':''}" data-hpick="t" style="--gc:${G[t.g].c}">${cardIco(t,52)}<div><small>변신 · ${S.morph===false?'해제됨':t.F.sk}</small><b>${t.n}</b><em style="color:${G[t.g].c}">${G[t.g].ko}</em></div></div>`:'<div class="eq" data-hpick="t"><div><small>변신</small><b>없음</b></div></div>'}
@@ -3044,7 +3115,7 @@ function qCheck(){const el=$('qbar');if(!el)return;const q=qCur();const v=Math.m
  if(LAND){let dl='';try{qReset();const i=DQ.findIndex((x,j)=>!S.q.dc[j]);if(i>=0){const d=DQ[i],dv=Math.min(d[1],S.q.d[d[0]]||0);dl=`<div class="ql d" data-qgo="adv"><em>[일일]</em> ${d[2]}<small>(${fmt(dv)}/${fmt(d[1])})</small></div>`}}catch(_){}
   const f3=S.burstK?`<div class="ql b"><em>[폭젠]</em> ${(BURST.find(b=>b.k===S.burstK)||{}).n}<small>(남은 ${Math.ceil(burstLeft()/60000)}분)</small><button class="qlx" data-st="leave">나가기</button></div>`:inDun()?`<div class="ql b"><em>[던전]</em> ${DUNG[S.wd.r][0]} ${S.wd.f}층<small>(남은 ${Math.ceil(wdLeft()/60000)}분)</small></div>`:`<div class="ql f"><em>[필드]</em> ${gOf().n}<small>(몬스터 Lv.${SV.zml||gOf().ml})</small></div>`;
   const k=[q[2],v,done,dl,f3].join('|');if(el.dataset.k===k)return;el.dataset.k=k;
-  el.innerHTML=`<div class="qhd"><b>${ico('quest')} 퀘스트</b></div><div class="ql m${done?' ok':''}" ${done?'data-qc="1"':`data-qgo="${q[4]}"`}><em>[메인]</em> ${q[2]}<small>${done?'(완료 · 보상 받기)':`(${fmt(v)}/${fmt(q[1])})`}</small></div>${dl}${f3}`;el.classList.toggle('done',done);return}
+  el.innerHTML=`<div class="qhd"><b>${ico('quest')} 퀘스트</b><span>${ico('char')} 파티</span><span>${ico('swords')} 선택 대상</span><em>‹</em></div><div class="ql m${done?' ok':''}" ${done?'data-qc="1"':`data-qgo="${q[4]}"`}><em>[메인]</em> ${q[2]}<small>${done?'(완료 · 보상 받기)':`(${fmt(v)}/${fmt(q[1])})`}</small></div>${dl}${f3}`;el.classList.toggle('done',done);return}
  el.innerHTML=`<span class="qn">퀘스트 ${(S.qi||0)+1}</span><b>${q[2]}</b><small>${fmt(v)}/${fmt(q[1])} · ${rwTxt(q[3])}</small>${done?'<button class="btn sm2 gold" data-qc="1">보상 받기</button>':`<button class="btn sm2" data-qgo="${q[4]}">바로 가기</button>`}`;el.classList.toggle('done',done)}
 function qClaim(){const q=qCur();if(qVal(q)<q[1])return;S.qi=(S.qi||0)+1;const nq=qCur();S.qBase=Object.assign({},S.cnt||{});giveRw(q[3]);qCheck()}
 const cntAdd=(k,n=1)=>{S.cnt=S.cnt||{};S.cnt[k]=(S.cnt[k]||0)+n;qCheck()};
