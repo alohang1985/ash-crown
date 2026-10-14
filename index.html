@@ -2567,12 +2567,32 @@ const MPAL={'속삭이는 섬':['#1d4a66','#6f8a3e','#4f6a2c','#a99a62'],'기에
 let MAPR=null,MAPSEL=null;
 const tpCost=gr=>Math.round(goldPer({lv:gr.ml})*3/10)*10;
 let MAPBASE=null,MSEL=null;
-function mapBase(){if(MAPBASE)return MAPBASE;if(!ZG)wgBuild();const W=960,H=720,k=W/WW,cv=document.createElement('canvas');cv.width=W;cv.height=H;const x=cv.getContext('2d');x.fillStyle='#163a52';x.fillRect(0,0,W,H);
- for(let yy=0;yy<H;yy+=4)for(let xx=0;xx<W;xx+=4){const wx=xx/k,wy=yy/k;if(!isLand(wx,wy)){if(hashR(xx*7+yy)<.04){x.fillStyle='rgba(255,255,255,.08)';x.fillRect(xx,yy,6,1)}continue}const z=zoneAt(wx,wy);const P=MPAL[GROUNDS[z.gi].reg]||MPAL['속삭이는 섬'];x.fillStyle=hashR(xx*3+yy*5)<.5?P[1]:P[2];x.fillRect(xx,yy,4,4)}
- x.strokeStyle='rgba(0,0,0,.25)';x.lineWidth=1;for(let zx=1;zx<ZW;zx++){x.beginPath();x.moveTo(zx*ZS*k,0);x.lineTo(zx*ZS*k,H);x.stroke()}for(let zy=1;zy<ZH;zy++){x.beginPath();x.moveTo(0,zy*ZS*k);x.lineTo(W,zy*ZS*k);x.stroke()}
- x.lineCap='round';for(const[a,b]of ROADS){const A=townOf(a),B=townOf(b);const cxm=(A.x+B.x)/2+(hashR(a*7+b)-.5)*1600,cym=(A.y+B.y)/2+(hashR(a+b*5)-.5)*1600;x.strokeStyle='rgba(60,44,26,.8)';x.lineWidth=4;x.beginPath();x.moveTo(A.x*k,A.y*k);x.quadraticCurveTo(cxm*k,cym*k,B.x*k,B.y*k);x.stroke();x.strokeStyle='#c8aa78';x.lineWidth=2;x.stroke()}
- for(let i=0;i<500;i++){const wx=hashR(i*3+1)*WW,wy=hashR(i*5+2)*WH;if(!isLand(wx,wy))continue;x.fillStyle='rgba(0,0,0,.18)';x.beginPath();x.arc(wx*k,wy*k,1.5+hashR(i)*2,0,7);x.fill()}
- MAPBASE={cv,k,W,H};return MAPBASE}
+const MAPGT={'속삭이는 섬':'island','기에른 성':'castle','잿빛 협곡':'canyon','망자의 땅':'deadland','얼음과 불':'frost','심연':'abyss'};
+function mapBase(){if(MAPBASE)return MAPBASE;if(!ZG)wgBuild();const W=960,H=720,k=W/WW,cv=document.createElement('canvas');cv.width=W;cv.height=H;const x=cv.getContext('2d');
+ const imgs={};let ready=true;for(const r in MAPGT){const im=artImg('GT_'+MAPGT[r]+'.webp');imgs[r]=im;if(!im.complete||!im.naturalWidth)ready=false}const sea=artImg('GT_sea.webp');if(!sea.complete||!sea.naturalWidth)ready=false;
+ const pat=(im,sc)=>{const t=document.createElement('canvas');t.width=t.height=Math.round(256*sc);t.getContext('2d').drawImage(im,0,0,t.width,t.height);return x.createPattern(t,'repeat')};
+ // 바다
+ if(ready){x.fillStyle=pat(sea,.6);x.fillRect(0,0,W,H);x.fillStyle='rgba(10,40,70,.45)';x.fillRect(0,0,W,H)}else{x.fillStyle='#163a52';x.fillRect(0,0,W,H)}
+ // 땅 마스크 (지역별)
+ const S4=4,MW=W/S4,MH=H/S4;const land=document.createElement('canvas');land.width=MW;land.height=MH;const lx=land.getContext('2d');const regM={};
+ for(let yy=0;yy<MH;yy++)for(let xx=0;xx<MW;xx++){const wx=xx*S4/k,wy=yy*S4/k;if(!isLand(wx,wy))continue;lx.fillStyle='#fff';lx.fillRect(xx,yy,1,1);const z=zoneAt(wx,wy),r=GROUNDS[z.gi].reg;let m=regM[r];if(!m){m=regM[r]=document.createElement('canvas');m.width=MW;m.height=MH}m.getContext('2d').fillStyle='#fff';m.getContext('2d').fillRect(xx,yy,1,1)}
+ const blurUp=(src,b)=>{const c=document.createElement('canvas');c.width=W;c.height=H;const cx=c.getContext('2d');cx.filter=`blur(${b}px)`;cx.imageSmoothingEnabled=true;cx.drawImage(src,0,0,W,H);cx.filter='none';return c};
+ // 해안 모래·얕은 물
+ const L1=blurUp(land,10);x.save();x.globalAlpha=.55;x.globalCompositeOperation='screen';x.drawImage(L1,0,0);x.restore();
+ const L0=blurUp(land,3);
+ const landC=document.createElement('canvas');landC.width=W;landC.height=H;const lc=landC.getContext('2d');
+ for(const r in regM){const m=blurUp(regM[r],16);const P=MPAL[r]||MPAL['속삭이는 섬'];const layer=document.createElement('canvas');layer.width=W;layer.height=H;const ly=layer.getContext('2d');if(ready){const t=document.createElement('canvas');t.width=t.height=128;t.getContext('2d').drawImage(imgs[r],0,0,128,128);ly.fillStyle=ly.createPattern(t,'repeat')}else ly.fillStyle=P[1];ly.fillRect(0,0,W,H);ly.globalCompositeOperation='destination-in';ly.drawImage(m,0,0);lc.drawImage(layer,0,0)}
+ lc.globalCompositeOperation='destination-in';lc.drawImage(L0,0,0);x.drawImage(landC,0,0);
+ // 음영(언덕)·숲 질감
+ for(let i=0;i<260;i++){const wx=hashR(i*3+1)*WW,wy=hashR(i*5+2)*WH;if(!isLand(wx,wy))continue;const px=wx*k,py=wy*k,r=8+hashR(i)*26;const gr=x.createRadialGradient(px-r*.3,py-r*.3,1,px,py,r);gr.addColorStop(0,'rgba(255,255,230,.10)');gr.addColorStop(.6,'rgba(0,0,0,.06)');gr.addColorStop(1,'rgba(0,0,0,0)');x.fillStyle=gr;x.beginPath();x.arc(px,py,r,0,7);x.fill()}
+ x.lineCap='round';
+ // 길
+ for(const[a,b]of ROADS){const A=townOf(a),B=townOf(b);const cxm=(A.x+B.x)/2+(hashR(a*7+b)-.5)*1600,cym=(A.y+B.y)/2+(hashR(a+b*5)-.5)*1600;x.setLineDash([5,4]);x.strokeStyle='rgba(240,220,170,.75)';x.lineWidth=1.6;x.beginPath();x.moveTo(A.x*k,A.y*k);x.quadraticCurveTo(cxm*k,cym*k,B.x*k,B.y*k);x.stroke();x.setLineDash([])}
+ // 구름·안개
+ for(let i=0;i<22;i++){const px=hashR(i*7+9)*W,py=hashR(i*9+4)*H,r=40+hashR(i*3)*90;const gr=x.createRadialGradient(px,py,4,px,py,r);gr.addColorStop(0,'rgba(255,255,255,.22)');gr.addColorStop(1,'rgba(255,255,255,0)');x.fillStyle=gr;x.beginPath();x.arc(px,py,r,0,7);x.fill()}
+ // 가장자리 어둡게
+ const vg=x.createRadialGradient(W/2,H/2,H*.35,W/2,H/2,W*.65);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,.55)');x.fillStyle=vg;x.fillRect(0,0,W,H);
+ const res={cv,k,W,H};if(ready)MAPBASE=res;return res}
 function mapPts(){const L=[];for(let r=0;r<TOWNS.length;r++){const T=townOf(r);L.push({k:'town',r,n:TOWNS[r],x:T.x,y:T.y+40,ml:ZG[T.zi].ml})}for(let r=0;r<DUNG.length;r++){const e=dunEnt(r);L.push({k:'dun',r,n:DUNG[r][0],x:e.x,y:e.y+30,ml:ZG[e.zi].ml})}return L}
 let MTAB='all';function mapWin(){const st=$('stage');const B=mapBase();if(!MSEL){MSEL={x:SV.p.x,y:SV.p.y}}
  const info=()=>{const z=zoneAt(MSEL.x,MSEL.y),land=isLand(MSEL.x,MSEL.y);if(!z)return'';const gr=GROUNDS[z.gi],T=TIERS[gr.tier],dg=danger((z.ml-1)*5+1);const town=inTown(MSEL.x,MSEL.y)||(MSEL.n&&MSEL.k==='town');const cost=Math.round(goldPer({lv:z.ml})*3/10)*10;
@@ -2584,7 +2604,7 @@ let MTAB='all';function mapWin(){const st=$('stage');const B=mapBase();if(!MSEL)
   <div class="mapc"><canvas id="mapcv" width="${B.W}" height="${B.H}"></canvas></div></div>
   <div class="lmpf"><button class="lmpbm" id="mapBm">${ico('star')} 기억 장소 목록 보기</button><div class="lmpinfo" id="mapinfo">${info()}</div></div></div>`;
   const cv=$('mapcv'),x=cv.getContext('2d');let raf=0;const paint=()=>{if(!$('mapcv'))return;x.drawImage(B.cv,0,0);const k=B.k,tt=performance.now();
-   for(const p of mapPts()){const px=p.x*k,py=p.y*k;x.font='bold 13px "Noto Sans KR",sans-serif';x.textAlign='center';x.lineWidth=3;x.strokeStyle='#000';x.fillStyle=p.k==='town'?'#ffe9b0':'#e0b8ff';x.strokeText(p.n,px,py-12);x.fillText(p.n,px,py-12);x.fillStyle=p.k==='town'?'#ffd23a':'#c46bff';x.beginPath();x.arc(px,py,5,0,7);x.fill();x.strokeStyle='#000';x.lineWidth=1.5;x.stroke()}
+   for(const p of mapPts()){const px=p.x*k,py=p.y*k;x.font='bold 13px "Noto Sans KR",sans-serif';x.textAlign='center';x.lineWidth=3;x.strokeStyle='rgba(0,0,0,.85)';x.fillStyle='#f4ead2';const lb=(p.k==='town'?'':'')+p.n;x.strokeText(lb,px,py-20);x.fillText(lb,px,py-20);x.save();x.translate(px,py);const col=p.k==='town'?'#5aa0ff':'#3dcc6a';x.fillStyle='rgba(10,20,30,.75)';x.strokeStyle=col;x.lineWidth=2;if(p.k==='town'){x.beginPath();x.roundRect(-11,-11,22,22,3);x.fill();x.stroke();x.strokeStyle='#cfe4ff';x.lineWidth=1.6;x.beginPath();x.moveTo(-6,0);x.lineTo(0,-6);x.lineTo(6,0);x.moveTo(-4,-1);x.lineTo(-4,6);x.lineTo(4,6);x.lineTo(4,-1);x.stroke()}else{x.rotate(Math.PI/4);x.beginPath();x.rect(-9,-9,18,18);x.fill();x.stroke();x.rotate(-Math.PI/4);x.fillStyle='#bfffd0';x.beginPath();x.moveTo(0,-5);x.lineTo(5,0);x.lineTo(0,5);x.lineTo(-5,0);x.fill()}x.restore()}
    const pp=inDun()?dunEnt(S.wd.r):S.burstK?townOf(0):SV.p;x.save();x.translate(pp.x*k,pp.y*k);x.fillStyle='#7dff9a';x.shadowColor='#7dff9a';x.shadowBlur=10;x.beginPath();x.arc(0,0,5+Math.sin(tt/200)*1.5,0,7);x.fill();x.restore();
    if(MSEL){x.strokeStyle='#ffd98a';x.lineWidth=2;x.beginPath();x.arc(MSEL.x*k,MSEL.y*k,9+Math.sin(tt/150)*2,0,7);x.stroke();x.setLineDash([4,4]);x.beginPath();x.moveTo(pp.x*k,pp.y*k);x.lineTo(MSEL.x*k,MSEL.y*k);x.stroke();x.setLineDash([])}
    raf=requestAnimationFrame(paint)};paint()};
