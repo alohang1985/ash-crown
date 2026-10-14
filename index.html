@@ -1865,7 +1865,7 @@ function drawArt(c,card,x,gy,H,state,p,t){const a=artOf(card);if(!a)return false
   else if(t-ULTT<1400){an='ult';f=Math.min(A.n.ult-1,Math.floor((t-ULTT)/1400*A.n.ult))}
   else if(t-SKILLT<900){an='skill';f=Math.min(A.n.skill-1,Math.floor((t-SKILLT)/900*A.n.skill))}
   else if(dt0<620){an=(Math.floor(ATKT/7)%2)?'atk2':'atk1';f=Math.min(A.n[an]-1,Math.floor(dt0/620*A.n[an]))}
-  else if(HAMOVE>t){const run=A.n.run&&SV.goto&&Math.hypot(SV.goto.x-SV.p.x,SV.goto.y-SV.p.y)>160;an=run?'run':'walk';f=Math.floor(t/(run?85:115))%A.n[an]}
+  else if(HAMOVE>t){const run=A.n.run&&(accelMul()>1.2||(SV.goto&&Math.hypot(SV.goto.x-SV.p.x,SV.goto.y-SV.p.y)>120));an=run?'run':'walk';f=Math.floor(t/(run?85:115))%A.n[an]}
   else{an='idle';const n=A.n.idle,q=Math.floor(t/130)%(n*2-2);f=q<n?q:n*2-2-q}
   const im=artImg('HA_'+k+'_'+an+'.webp');if(im.complete&&im.naturalWidth){const sc=H*1.4/232,cx=x+H*.7;c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.fillStyle='rgba(0,0,0,.38)';c.beginPath();c.ellipse(cx,gy-2,46*sc*2.2,9*sc*2.2,0,0,7);c.fill();
    c.drawImage(im,f*A.cw,0,A.cw,A.ch,cx-A.cw/2*sc,gy-A.fy*sc,A.cw*sc,A.ch*sc);if(HITP>t){c.globalCompositeOperation='lighter';c.globalAlpha=.35;c.drawImage(im,f*A.cw,0,A.cw,A.ch,cx-A.cw/2*sc,gy-A.fy*sc,A.cw*sc,A.ch*sc)}c.restore();return true}}
