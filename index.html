@@ -2568,7 +2568,7 @@ let MAPR=null,MAPSEL=null;
 const tpCost=gr=>Math.round(goldPer({lv:gr.ml})*3/10)*10;
 let MAPBASE=null,MSEL=null;
 const MAPGT={'속삭이는 섬':'island','기에른 성':'castle','잿빛 협곡':'canyon','망자의 땅':'deadland','얼음과 불':'frost','심연':'abyss'};
-function mapBase(){if(MAPBASE)return MAPBASE;if(!ZG)wgBuild();const W=960,H=720,k=W/WW,cv=document.createElement('canvas');cv.width=W;cv.height=H;const x=cv.getContext('2d');
+const HASMAP=false;function mapBase(){if(MAPBASE)return MAPBASE;if(!ZG)wgBuild();const W=960,H=720,k=W/WW,cv=document.createElement('canvas');cv.width=W;cv.height=H;const x=cv.getContext('2d');if(HASMAP){const mi=artImg('MAP_world.webp');if(mi.complete&&mi.naturalWidth){x.drawImage(mi,0,0,W,H);MAPBASE={cv,k,W,H};return MAPBASE}}
  const imgs={};let ready=true;for(const r in MAPGT){const im=artImg('GT_'+MAPGT[r]+'.webp');imgs[r]=im;if(!im.complete||!im.naturalWidth)ready=false}const sea=artImg('GT_sea.webp');if(!sea.complete||!sea.naturalWidth)ready=false;
  const pat=(im,sc)=>{const t=document.createElement('canvas');t.width=t.height=Math.round(256*sc);t.getContext('2d').drawImage(im,0,0,t.width,t.height);return x.createPattern(t,'repeat')};
  // 바다
