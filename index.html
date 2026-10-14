@@ -920,6 +920,34 @@ html.land .svhud{bottom:20px!important}
 @media (max-height:520px){.lcsl{padding:8px 0 8px 10px;gap:3px}.lcsl button{padding:4px 10px}.lcsi{width:30px;height:30px}.lcsinfo{bottom:60px;min-width:180px}.lcsf{padding:6px 12px}.lcsf .lbtn{padding:7px 30px}}
 .lspw{align-items:start}.lspf{align-content:start}.lsp{grid-template-rows:auto auto auto auto}.lsp.big .lspi{min-height:130px}
 .lsptag{top:-8px!important;left:6px!important;border-radius:2px}.lsp{margin-top:6px}
+/* 보스·일일 던전 진행 중에는 조작 패널 보이기 */
+html.land.inmode .mctl{display:block!important;top:auto!important;bottom:96px!important;right:90px!important;width:min(340px,40vw)!important}
+/* 리니지M식 던전 창 */
+.ldun{width:min(1180px,98vw)!important;height:min(680px,96vh)!important;position:relative}
+.ldunh{display:flex;justify-content:center;align-items:center;position:relative;padding:10px;border-bottom:1px solid #3a2c18;background:radial-gradient(ellipse at 50% 0,rgba(224,120,40,.35),transparent 70%)}.ldunh b{font-size:20px;font-weight:900;color:#ffe2a0;text-shadow:0 0 12px rgba(255,150,40,.7)}.ldunh .mwx{position:absolute;right:10px}
+.ldunb{flex:1;display:grid;grid-template-columns:120px 1fr;min-height:0}
+.ldunc{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;padding:12px;overflow:auto;align-content:start}
+.ldc{display:grid;grid-template-rows:auto auto auto auto;gap:3px;justify-items:center;padding:0 0 10px;border:1px solid #6b5228;background:linear-gradient(#24190f,#0e0a06);color:#eadfc8;cursor:pointer;position:relative;overflow:hidden}
+.ldc:hover{border-color:#e0b04a;box-shadow:0 0 12px rgba(224,176,74,.4)}
+.ldci{width:100%;height:150px;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#5a3a1a,#1a0f08 70%),repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0 6px,transparent 6px 12px);font-size:72px;border-bottom:1px solid #3a2c18}
+.ldci canvas,.ldci img{image-rendering:pixelated}
+.ldc b{font-size:14px;color:#ffe9b0;margin-top:6px}.ldc small{font-size:11.5px;color:#cfc4ad}.ldc em{font-style:normal;font-size:11.5px;color:#7dff9a}
+.ldcc{display:flex;align-items:center;gap:3px;font-size:12px;color:#ffe9a8}.ldcc .svi{width:13px;height:13px;margin:0}
+.ldc.off{filter:grayscale(.6) brightness(.75)}.ldc.lock em{color:#ff8a7a}
+.ldpop{position:absolute;inset:0;background:rgba(0,0,0,.6);display:grid;place-items:center;z-index:3}
+.ldpw{width:min(620px,92%);background:linear-gradient(#1e1610,#0d0905);border:1px solid #8a6a2c;box-shadow:0 0 0 1px #000,0 10px 30px #000}
+.ldph{text-align:center;padding:10px;font-size:16px;font-weight:700;color:#ffe9b0;border-bottom:1px solid #3a2c18}
+.ldpb{display:grid;grid-template-columns:200px 1fr;gap:14px;padding:14px}.ldci.big{height:180px;border:1px solid #3a2c18}
+.ldpb p{font-size:13px;color:#d8ccb4;margin:0 0 10px;line-height:1.5}.ldpr{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-top:1px solid #2e2414;font-size:12.5px}.ldpr span{color:#a99a85}.ldpr b{display:flex;align-items:center;gap:4px;color:#ffe9a8;font-weight:500;text-align:right}.ldpr .svi{width:13px;height:13px;margin:0}
+.ldpf{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 14px 14px}.ldpf .lbtn:not(.blue){border:1px solid #8a2a20;background:linear-gradient(#5a1a12,#2a0a06);color:#ffd0c0}
+/* Mission Clear */
+.lmc2{position:fixed;inset:0;display:grid;grid-template-columns:1fr 1fr;background:radial-gradient(ellipse at 30% 50%,#24456a,#0a1424 60%,#04070c)}
+.lmc2a{display:grid;place-items:end center;overflow:hidden}.lmc2a img{max-height:96vh;max-width:100%;object-fit:contain}
+.lmc2r{display:flex;flex-direction:column;justify-content:center;gap:12px;padding:0 6vw 0 0}
+.lmc2r h2{margin:0;font-size:clamp(36px,6vw,64px);font-style:italic;font-weight:900;background:linear-gradient(#fff6c8,#ffcf5a 50%,#b8862a);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 6px rgba(0,0,0,.8))}
+.lmc2t{color:#cfe0f0;font-size:14px}.lmc2row{display:grid;gap:4px;padding:8px 0;border-top:1px solid rgba(160,200,240,.2)}.lmc2row span{color:#8aa0b8;font-size:12px}.lmc2row b{color:#fff;font-size:20px}.lmc2row p{margin:0;color:#ffe9b0;font-size:13.5px;line-height:1.6}
+.lmc2r .lbtn{width:200px}
+@media (max-height:520px){.ldci{height:96px;font-size:44px}.ldunb{grid-template-columns:96px 1fr}.ldpb{grid-template-columns:130px 1fr}.ldci.big{height:120px}}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -1083,7 +1111,11 @@ html.rot90 .lcsl button{padding:4px 10px}
 html.rot90 .lcsi{width:30px;height:30px}
 html.rot90 .lcsinfo{bottom:60px;min-width:180px}
 html.rot90 .lcsf{padding:6px 12px}
-html.rot90 .lcsf .lbtn{padding:7px 30px}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
+html.rot90 .lcsf .lbtn{padding:7px 30px}
+html.rot90 .ldci{height:96px;font-size:44px}
+html.rot90 .ldunb{grid-template-columns:96px 1fr}
+html.rot90 .ldpb{grid-template-columns:130px 1fr}
+html.rot90 .ldci.big{height:120px}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
 <div class="title" id="title"><div class="tbg"></div><div class="tin"><div class="tlogo">잿빛 왕관</div><div class="tsub">ASHEN CROWN · 에르덴 대륙</div><div class="tload"><i id="tbar"></i></div><div class="ttip" id="ttip">세계를 불러오는 중…</div><button class="tstart" id="tstart" disabled>게임 시작</button><div class="tfoot">서버 · 에르덴 1 &nbsp;|&nbsp; 시제품</div></div></div><div class="app">
  <div class="top"><div class="logo">잿빛 왕관<small>에르덴 대륙 · 시제품</small></div><div class="cur" id="cur"></div><button class="ic laysw" id="laySw" hidden>가로 화면</button><button class="ic" id="mute" type="button" aria-label="소리">🔊</button></div>
  <div class="lcol"><div class="livea" id="liveA"></div><div class="ticker" id="ticker"></div><div class="qbar" id="qbar"></div>
@@ -2191,12 +2223,31 @@ function skillWin(){const st=$('stage');const draw=()=>{const mine=SKILLS.filter
   if(b=t.closest('[data-sklv2]')){const id=b.dataset.sklv2;if(!skSpare(id)||skLv(id)>=5)return;S.skb[id]--;S.skills[id]++;sfx.rare(2);announce(`📖 「${SKM[id].n}」 Lv.${S.skills[id]}!`);save();draw();return}}}
 /* ===== 리니지M식 전체 메뉴 (≡) ===== */
 const MENUG=[['성장',[['char','내 캐릭터','t:char'],['elx','엘릭서','t:up'],['skill','스킬','w:skill']]],['장비',[['bag','가방','w:inv'],['enh','강화','t:enh'],['synth','합성','w:synth'],['chest','보물상자','t:chest'],['book','도감','t:book'],['medal','컬렉션','t:col']]],
- ['모험',[['map','지도','w:map'],['star','기억 장소','w:bm'],['swords','보스·던전·임무','t:adv'],['trophy','업적','t:ach'],['swords','결투장','t:arena'],['clan','혈맹','w:clan']]],['상점',[['shop','상점','w:shop'],['ticket','성장 패스','t:pass'],['cal','월정액','t:month']]],
+ ['모험',[['map','지도','w:map'],['star','기억 장소','w:bm'],['swords','던전','w:dun'],['trophy','임무·출석','t:adv'],['trophy','업적','t:ach'],['swords','결투장','t:arena'],['clan','혈맹','w:clan']]],['상점',[['shop','상점','w:shop'],['ticket','성장 패스','t:pass'],['cal','월정액','t:month']]],
  ['기타',[['potion','버프','w:buff'],['quest','사냥 정보','t:hunt'],['box','창고','w:wh'],['coin','거래소','t:ah'],['sound','소리 켜기/끄기','w:mute'],['sun','화면 밝기','w:mono']]]];
+
+/* ===== 리니지M식 던전 창: 왼쪽 탭 · 그림 카드 · 입장 확인 ===== */
+let DTAB='world';
+function dunGo(r){if(wdLeft()<=0){announce('오늘 던전 이용 시간을 모두 썼어요 (하루 2시간)');return}const e=dunEnt(r);S.burstK=null;S.wd=null;S.gi=e.gi;S.wp={x:e.x,y:e.y+30};SV.p.x=e.x;SV.p.y=e.y+30;SV.cam.x=SV.p.x;SV.cam.y=SV.p.y;mobs=[];shots=[];SV.wInit=0;SV.cells={};SV.goto=null;SV.tgt=null;portalUse({k:'enter',r})}
+function dunWin(){const st=$('stage');const TABS=[['world','월드 던전'],['trial','시련 던전'],['boss','보스 던전'],['burst','폭젠 사냥터']];
+ const items=()=>DTAB==='world'?DUNG.map((d,r)=>{const e=dunEnt(r),ml=ZG[e.zi].ml;return{id:'w'+r,n:d[0],img:ico('swords'),sub:`권장 Lv.${ml} · ${d[1]}층`,left:`남은 시간 ${Math.ceil(wdLeft()/60000)}분`,cost:0,desc:`${d[0]}. 층마다 몬스터가 강해지고, 마지막 층에는 보스가 기다려요. 함정을 조심하세요.`,rw:'장비 · 강화 주문서 · 변신 카드',ok:wdLeft()>0,go:()=>dunGo(r)}})
+  :DTAB==='trial'?DUNS.map(D=>({id:'t'+D.k,n:D.n,img:ico(D.k==='gold'?'gold':D.k==='scroll'?'scroll':'star'),sub:`${DUN_SEC}초 도전`,left:`오늘 ${dunLeft(D.k)}/${DUN_MAX}회`,cost:0,desc:D.d,rw:D.d,ok:dunLeft(D.k)>0&&!MODE,go:()=>{startDun(D.k)}}))
+  :DTAB==='boss'?BOSSES.map(B=>{const op=regOpen(B.r);return{id:'b'+B.r,n:B.n,img:spr(B.i,96),sub:`권장 ${stLabel(B.rec)}`,left:S.bossC[B.r]?`처치 ${S.bossC[B.r]}회`:'첫 처치 보상',cost:B.fee,desc:`${B.n}과(와) 일대일로 싸워요. 큰 공격은 회피 버튼으로 피해야 해요. 제한 시간 ${BOSS_SEC}초.`,rw:`골드 ${fmt(B.gold)} · 강화 주문서 ${B.scroll} · 장비`,ok:op&&S.gold>=B.fee&&!MODE,lock:!op,go:()=>{startBoss(B.r)}}})
+  :BURST.map(b=>({id:'u'+b.k,n:b.n,img:ico('swords'),sub:`몬스터 Lv.${b.ml}`,left:`남은 ${Math.ceil(burstLeft()/60000)}분`,cost:0,desc:'사방에서 몬스터가 쏟아지는 사냥터예요. 하루 1시간 이용할 수 있어요.',rw:'경험치 · 골드 · 장비',ok:burstLeft()>0,go:()=>goGround(0,b.k)}));
+ const draw=pop=>{const L=items();const P=pop&&L.find(x=>x.id===pop);
+  st.innerHTML=`<div class="mwin ldun"><div class="ldunh"><b>${TABS.find(t=>t[0]===DTAB)[1]}</b><button class="mwx" id="pkX">✕</button></div><div class="ldunb"><div class="lsy-g">${TABS.map(([k,n])=>`<button data-dt="${k}" class="${DTAB===k?'on':''}" style="--gc:#ffe9b0"><b>${n}</b></button>`).join('')}</div>
+   <div class="ldunc">${L.map(x=>`<button class="ldc${x.ok?'':' off'}${x.lock?' lock':''}" data-dc="${x.id}"><div class="ldci">${x.img}</div><b>${x.n}</b><small>${x.sub}</small><em>${x.lock?'잠김 · 앞 보스를 먼저 처치':x.left}</em>${x.cost?`<span class="ldcc">${ico('gold')} ${fmt(x.cost)}</span>`:''}</button>`).join('')}</div></div>
+   ${P?`<div class="ldpop"><div class="ldpw"><div class="ldph">${P.n}</div><div class="ldpb"><div class="ldci big">${P.img}</div><div><p>${P.desc}</p><div class="ldpr"><span>성공 보상</span><b>${P.rw}</b></div><div class="ldpr"><span>도전 비용</span><b>${P.cost?ico('gold')+' '+fmt(P.cost):'무료'}</b></div></div></div><div class="ldpf"><button class="lbtn" id="ldNo">취소</button><button class="lbtn blue" id="ldGo" ${P.ok?'':'disabled'}>입장</button></div></div></div>`:''}</div>`};
+ let POP=null;st.hidden=false;draw();
+ st.onclick=e=>{const t=e.target;if(t.id==='pkX'||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}let b;
+  if(b=t.closest('[data-dt]')){DTAB=b.dataset.dt;POP=null;draw();return}
+  if(b=t.closest('[data-dc]')){POP=b.dataset.dc;draw(POP);return}
+  if(t.closest('#ldNo')){POP=null;draw();return}
+  if(t.closest('#ldGo')){const x=items().find(i=>i.id===POP);if(!x||!x.ok)return;st.hidden=true;st.innerHTML='';st.onclick=null;x.go();return}}}
 function menuWin(){const st=$('stage');st.hidden=false;st.classList.add('sider');st.innerHTML=`<div class="lmside"><div class="lmsh"><b>메뉴</b><button class="mwx" id="pkX">✕</button></div><div class="lmsg">${MENUG.flatMap(([h,L])=>L).map(([ic,n,k])=>`<button data-mn="${k}"><i>${ico(ic)}</i><small>${n}</small></button>`).join('')}</div></div>`;
  st.onclick=e=>{const t=e.target;if(t.id==='pkX'||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}const b=t.closest('[data-mn]');if(!b)return;ac();const[ty,k]=b.dataset.mn.split(':');st.hidden=true;st.innerHTML='';st.onclick=null;
   if(ty==='t'){TAB=k;render();document.documentElement.classList.add('mopen');lmSync();return}
-  ({skill:skillWin,inv:invWin,synth:()=>synthWin('t'),map:mapWin,bm:bmWin,clan:clanWin,shop:shopWin,buff:bwin,wh:whWin,mute:()=>$('mute')&&$('mute').click(),mono:()=>{const m=document.querySelector('[data-mono],#mono,.top .ic:not(#mute):not(#laySw)');if(m)m.click()}})[k]()}}
+  ({skill:skillWin,inv:invWin,synth:()=>synthWin('t'),map:mapWin,bm:bmWin,clan:clanWin,shop:shopWin,buff:bwin,wh:whWin,dun:dunWin,mute:()=>$('mute')&&$('mute').click(),mono:()=>{const m=document.querySelector('[data-mono],#mono,.top .ic:not(#mute):not(#laySw)');if(m)m.click()}})[k]()}}
 function ltopInit(){const el=$('ltopm');if(!el)return;el.innerHTML=[['shop','상점','shop'],['bag','가방','inv'],['skill','스킬','skill'],['quest','퀘스트','quest'],['clan','혈맹','clan'],['menu','메뉴','menu']].map(([ic,n,k])=>`<button data-tm="${k}"><i>${ico(ic)}</i><small>${n}</small></button>`).join('');
  el.onclick=e=>{const b=e.target.closest('[data-tm]');if(!b)return;ac();({shop:shopWin,inv:invWin,skill:skillWin,clan:clanWin,menu:menuWin,quest:()=>{TAB='adv';render();document.documentElement.classList.add('mopen');lmSync()}})[b.dataset.tm]()}}
 /* ===== 혈맹 (서버에서 실제 플레이어끼리 공유) ===== */
@@ -3002,18 +3053,20 @@ function modeTick(t){const now=performance.now();if(now>MODE.until){modeEnd(MODE
  const el=$('mtime');if(el)el.textContent=modeLabel()}
 function modeDraw(c,t){if(MODE.k==='boss'){const b=mobs.find(m=>m.big);c.fillStyle='rgba(0,0,0,.6)';c.fillRect(60,38,264,16);if(b){bar(c,62,40,260,12,b.hp/b.max,'#ff5a2a','#300');}txt(c,`${MODE.B.n}${b?' '+fmt(Math.max(0,b.hp))+' / '+fmt(b.max):''}`,68,50,'#fff',11);
  if(MODE.tele){const k=(performance.now()-MODE.tele.at)/1600;c.fillStyle=`rgba(255,0,0,${.15+.2*Math.abs(Math.sin(t/80))})`;c.fillRect(0,34,BW,BH-34);c.font='900 22px "Noto Sans KR",sans-serif';const s='⚠ 강공격! 회피!';txt(c,s,BW/2-c.measureText(s).width/2,BH/2+10,'#ffe14a',22);bar(c,BW/2-80,BH/2+20,160,6,1-k,'#ffe14a')}}}
-function modeEnd(win,why){const m=MODE;if(!m)return;MODE=null;mobs=[];shots=[];modeUI();let html='';
+function modeEnd(win,why){const m=MODE;if(!m)return;const elapsed=performance.now()-(m.until-(m.k==='boss'?BOSS_SEC:DUN_SEC)*1000);MODE=null;mobs=[];shots=[];modeUI();let html='';
  if(m.k==='dun'){const z=m.z,n=m.kills;let r={};if(m.d.k==='gold'){r.gold=Math.round(n*m.st.gold*6*upGold())}else if(m.d.k==='scroll'){r.scroll=1+Math.floor(n/5);if(rnd()<n*.01)r.bless=1}else{const e=Math.round(n*m.st.exp*6);S.exp+=0;gainExp(e,performance.now());html=`경험치 ${fmt(e*stats().exp)}`}
   if(Object.keys(r).length){for(const[k,v]of Object.entries(r)){if(k==='gold')S.gold+=v;if(k==='scroll')S.scroll+=v;if(k==='bless')S.bless+=v}html=rwTxt(r)}track('dun');
-  resultBox(`${m.d.n} 종료`,`처치 <b>${n}</b>마리<br>${html}`,true)}
+  missionClear(`${m.d.n}`,`처치 <b>${n}</b>마리<br>${html}`,elapsed)}
  else if(win){const B=m.B,first=!S.bossC[B.r];S.bossC[B.r]=(S.bossC[B.r]||0)+1;S.gold+=B.gold;S.chest=(S.chest||0)+10;S.scroll+=B.scroll;const got=[];const ty=rnd()<.5?'w':'a';const c=pick(poolOf(ty,x=>x.g===(first?Math.min(3,B.eg):gearGrade('boss'))));giveCard(c);got.push(`${G[c.g].ko} ${tyKo(ty)} 「${c.n}」`);
   if(first){const tc=pick(CARDS.filter(x=>x.ty==='t'&&x.g===Math.min(4,B.eg)));giveCard(tc);got.push(`${G[tc.g].ko} 변신 「${tc.n}」`);const sg=[2,2,3,3,4,4][B.r];const SL=SKILLS.filter(k=>k.g===sg&&skOk(k));if(SL.length){const k=pick(SL);learnSkill(k);got.push(`${G[sg].ko} 스킬북 「${k.n}」`)}S.bless+=1+B.r}track('boss');flash();sfx.legend();buzz([100,60,200]);
   announce(`<span style="color:#ffd23a">☠ ${B.n} 처치!</span>`);
-  resultBox(`${B.n} 처치!`,`골드 ${fmt(B.gold)} · 강화 주문서 ${B.scroll}${first?` · 축복 주문서 ${1+B.r}`:''}<br>${got.join('<br>')}`,true)}
+  missionClear(`${B.n} 처치`,`골드 ${fmt(B.gold)} · 강화 주문서 ${B.scroll}${first?` · 축복 주문서 ${1+B.r}`:''}<br>${got.join('<br>')}`,elapsed)}
  else{resultBox('보스전 실패',`${why||''} · 입장료는 돌려받지 못해요.<br><span class="mini">전투력을 올리거나, 강공격 예고 때 「회피」를 누르고, 물약을 아껴 쓰세요.</span>`,false)}
  const M=stats();setTimeout(()=>{if(!MODE){S.hp=Math.max(S.hp,M.hp*.5)}},300);save();render()}
+function missionClear(title,body,ms){const st=$('stage');st.hidden=false;const tc=S.morph!==false&&C(S.eqT);const art=tc&&tc.id==='t:ereshkigal'?'<img src="art/H_hellking_card.png" alt="">':`<div class="lcsspr">${spr(charIdx(S.cls?S.cls.k:'기사',S.cls?S.cls.sx:'M'),260)}</div>`;const s=Math.max(0,ms/1000);
+ st.innerHTML=`<div class="lmc2"><div class="lmc2a">${art}</div><div class="lmc2r"><h2>Mission Clear</h2><small class="lmc2t">${title}</small><div class="lmc2row"><span>경과 시간</span><b>${Math.floor(s/60)}분 ${(s%60).toFixed(3).padStart(6,'0')}</b></div><div class="lmc2row"><span>던전 성공 보상</span><p>${body}</p></div><button class="lbtn gold" id="rbok">확인</button></div></div>`;sfx.legend&&sfx.legend();st.onclick=e=>{if(e.target.closest('#rbok')){st.hidden=true;st.innerHTML='';st.onclick=null}}}
 function resultBox(title,body,good){const st=$('stage');st.hidden=false;st.innerHTML=`<div class="cinfo" style="--ac:${good?'#ffcf5a':'#ff5a5a'};text-align:center"><h3>${title}</h3><p>${body}</p><button class="btn gold wide" id="rbok">확인</button></div>`;st.onclick=e=>{if(e.target.id==='rbok'){st.hidden=true;st.innerHTML='';st.onclick=null}}}
-function modeUI(){const el=$('mctl');if(!el)return;if(!MODE){stageUI();return}el.hidden=false;
+function modeUI(){document.documentElement.classList.toggle('inmode',!!MODE);const el=$('mctl');if(!el)return;if(!MODE){stageUI();return}el.hidden=false;
  el.innerHTML=MODE.k==='boss'?`<div class="mrow"><b id="mtime">${modeLabel()}</b><button class="btn" data-m="skill">스킬<small>MP 20</small></button><button class="btn gold" data-m="dodge">회피</button><button class="btn" data-m="pot">물약 <span id="mpot">${MODE.pots}</span></button><button class="btn red" data-m="quit">포기</button></div>`
  :`<div class="mrow"><b id="mtime">${modeLabel()}</b><button class="btn red" data-m="quit">나가기</button></div>`}
 function modeBtn(k){if(!MODE)return;const now=performance.now();const M=stats();
