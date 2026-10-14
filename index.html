@@ -760,6 +760,57 @@ html,body,button,input,select,textarea{font-family:'Noto Sans KR','Apple SD Goth
 .tlogo{font-family:'Nanum Myeongjo',serif!important}
 html.land .lnm b,html.land .lzone b,.qhd b{font-weight:700}
 html.land .lqs [data-q=morph],html.land .lqs [data-q=doll]{position:relative!important;left:auto!important;bottom:auto!important}
+/* ===== 리니지M식 합성 창 ===== */
+.lsy{width:min(1100px,96vw)!important;max-height:94vh}
+.lsy-b{display:grid;grid-template-columns:96px 1fr minmax(280px,34%);min-height:0;height:min(560px,78vh)}
+.lsy-g{display:flex;flex-direction:column;gap:3px;padding:8px 6px;background:rgba(0,0,0,.35);border-right:1px solid #3a2c18;overflow:auto}
+.lsy-g button{padding:9px 4px;border:1px solid #2e2414;background:linear-gradient(#1c160e,#120d08);color:#bfb39a;border-radius:2px;display:grid;gap:1px;text-align:center}
+.lsy-g button b{font-size:13px;color:var(--gc)}.lsy-g button small{font-size:10.5px}
+.lsy-g button.on{border-color:#c9a24a;background:linear-gradient(#3a2c16,#1e160c);box-shadow:inset 3px 0 0 #e0b04a;color:#fff}
+.lsy-c{display:grid;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:8px;padding:10px;align-content:start;overflow:auto}
+.lsc{display:grid;justify-items:center;gap:2px;padding:4px 3px 5px;border:1px solid color-mix(in srgb,var(--gc) 70%,#000);background:radial-gradient(circle at 50% 30%,color-mix(in srgb,var(--gc) 22%,#120c06),#0b0805 75%);border-radius:3px;color:#eadfc8;cursor:pointer}
+.lsc:hover{box-shadow:0 0 10px color-mix(in srgb,var(--gc) 60%,transparent)}.lsc.no{opacity:.35}
+.lsc b{font-size:11.5px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lsc em{font-style:normal;font-size:12px;font-weight:700;color:#ffe9a8}
+.lsy-r{display:flex;flex-direction:column;gap:10px;padding:10px 14px;border-left:1px solid #3a2c18;background:rgba(0,0,0,.25)}
+.lsy-rh{display:grid;gap:4px}.lsy-rh>b{font-size:15px;color:#ffe9b0;border-bottom:1px solid rgba(224,176,74,.4);padding-bottom:6px}.lsy-rh span{font-size:12px;color:#d8ccb4;text-align:right}.lsy-rh em{font-style:normal;font-weight:700}
+.lsy-sl{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.lss{aspect-ratio:3/4;display:grid;place-items:center;align-content:center;gap:2px;border:1px dashed #5a4422;background:rgba(0,0,0,.4);color:#8a7a5a;border-radius:3px;cursor:pointer;overflow:hidden;padding:2px}
+.lss i{font-style:normal;font-size:22px}.lss.on{border:1px solid var(--gc);background:radial-gradient(circle at 50% 30%,color-mix(in srgb,var(--gc) 25%,#120c06),#0b0805 75%)}
+.lss img,.lss canvas{max-width:100%;height:auto}.lss b{font-size:10px;color:#eadfc8;font-weight:500;white-space:nowrap;overflow:hidden;max-width:100%}
+.lsy-inf{font-size:12px;color:#d8ccb4;display:grid;gap:4px}.lsy-inf .bar{height:5px;background:#000;border:1px solid #3a2c18}.lsy-inf .bar i{display:block;height:100%;background:linear-gradient(90deg,#c9a24a,#ffe48a)}.lsy-inf small{color:#a99a85}
+.lsy-bt{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
+.lbtn{padding:11px 6px;border-radius:2px;font-weight:700;font-size:14px;display:grid;gap:1px;justify-items:center;cursor:pointer}
+.lbtn small{font-size:10.5px;font-weight:500;display:flex;align-items:center;gap:3px}.lbtn small .svi{width:12px;height:12px;margin:0}
+.lbtn.blue{border:1px solid #3d6aa8;background:linear-gradient(#2a4f86,#183256);color:#e8f1ff}
+.lbtn.gold{border:1px solid #c9a24a;background:linear-gradient(#a37a2a,#6b4a14);color:#fff6dc}.lbtn:disabled{filter:grayscale(.8) brightness(.6);cursor:default}
+.lsy-bt2{display:flex;justify-content:space-between;gap:8px;font-size:11.5px}
+@media (max-height:520px){.lsy-b{grid-template-columns:72px 1fr minmax(230px,36%);height:80vh}.lsy-g button{padding:5px 2px}.lsy-g button b{font-size:11px}.lsy-c{grid-template-columns:repeat(auto-fill,minmax(68px,1fr));gap:5px;padding:6px}.lsc .lsc-i img,.lsc .lsc-i canvas{width:48px!important;height:48px!important}.lsy-r{padding:6px 8px;gap:6px}.lbtn{padding:7px 4px;font-size:12px}}
+/* ===== 리니지M식 합성 결과 ===== */
+.lmr{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;align-items:center;color:#eadfc8}
+.lmr-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(40,52,70,.85),rgba(8,10,16,.97) 70%);backdrop-filter:blur(6px)}
+.lmr::after{content:'';position:absolute;inset:0;pointer-events:none;background:var(--fl,#ffd23a);opacity:0;mix-blend-mode:screen}
+.lmr.fl::after{animation:lmrfl .9s ease-out}
+@keyframes lmrfl{0%{opacity:0}12%{opacity:.85}100%{opacity:0}}
+.lmr-h{position:relative;display:flex;align-items:center;gap:14px;margin-top:22px}.lmr-h b{font-size:clamp(20px,3vw,30px);font-weight:900;color:#ffe2a0;text-shadow:0 0 14px rgba(255,160,40,.8),0 2px 2px #000;letter-spacing:.06em}
+.lmr-h i{width:min(26vw,300px);height:1px;background:linear-gradient(90deg,transparent,#e0902a)}.lmr-h i:last-child{transform:scaleX(-1)}
+.lmr-x{position:absolute;right:16px;top:14px;z-index:2;width:36px;height:36px;border:1px solid #a33;background:#2a0c0c;color:#ffd0d0;font-size:18px;cursor:pointer}
+.lmr-g{position:relative;flex:1;width:min(1000px,92vw);display:flex;flex-wrap:wrap;align-content:flex-start;gap:14px;padding:28px 10px;overflow:auto}
+.lmr-g.many{gap:8px}
+.lmc{position:relative;width:var(--cw);display:grid;gap:3px;justify-items:center;cursor:pointer;transition:opacity .3s,transform .3s}
+.lmc.gone{opacity:0;transform:scale(.6)}
+.lmc-f{width:var(--cw);height:calc(var(--cw)*1.2);overflow:hidden;border:2px solid var(--gc);background:#0b0805;box-shadow:0 0 0 1px #000,0 4px 10px #000;display:flex;align-items:center;justify-content:flex-start}
+.lmc-f img,.lmc-f canvas{width:var(--cw)!important;height:var(--cw)!important}
+.lmc-bk{flex:1 0 100%;width:100%;height:100%;display:grid;place-items:center;background:radial-gradient(circle,#3a2a12,#15100a 70%),repeating-linear-gradient(45deg,#2a1f12 0 4px,#1a130b 4px 8px);font-size:calc(var(--cw)*.5);border:3px double #8a6a2c}
+.lmc-st{display:flex;flex:0 0 auto;height:100%;align-items:center;will-change:transform}.lmc-st span{flex:0 0 var(--cw);display:flex;justify-content:center}
+.lmc.done .lmc-f{box-shadow:0 0 0 1px #000,0 0 14px color-mix(in srgb,var(--gc) 70%,transparent)}
+.lmc.up .lmc-f{animation:lmcup 1.2s ease-out}@keyframes lmcup{0%{transform:scale(1.25);filter:brightness(2.4)}100%{transform:none;filter:none}}
+.lmc-n{font-size:11.5px;font-weight:500;color:var(--gc);text-shadow:0 1px 2px #000;max-width:calc(var(--cw) + 16px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lmc-c{font-style:normal;font-size:13px;font-weight:900;color:#fff;text-shadow:0 1px 2px #000;min-height:0}
+.lmc-new{position:absolute;top:-6px;right:-6px;font-size:9px;font-weight:900;background:#e0302a;color:#fff;padding:1px 4px;border-radius:2px}
+.lmr-sum{position:relative;font-size:14px;color:#d8ccb4;margin-bottom:6px}.lmr-sum b{color:#ffe48a}
+.lmr-open{position:relative;margin:0 0 22px auto;margin-right:max(4vw,20px);padding:10px 34px;border:1px solid #3d6aa8;background:linear-gradient(#2a4f86,#183256);color:#e8f1ff;font-weight:700;font-size:15px;border-radius:2px;cursor:pointer}
+.lmr-many .lmc-n{display:none}
+@media (max-height:520px){.lmr-h{margin-top:8px}.lmr-g{padding:12px 8px;gap:8px}.lmr-open{margin-bottom:10px;padding:7px 22px}}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -886,7 +937,17 @@ html.rot90.land .ltopm button i{font-size:20px!important}
 html.rot90.land .lqs button i{font-size:19px!important}
 html.rot90.land .lqs .latk i{font-size:30px!important}
 html.rot90.land .lqs .lrd i{font-size:15px!important}
-html.rot90.land .top .cur .cit i{font-size:16px!important}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
+html.rot90.land .top .cur .cit i{font-size:16px!important}
+html.rot90 .lsy-b{grid-template-columns:72px 1fr minmax(230px,36%);height:80vh}
+html.rot90 .lsy-g button{padding:5px 2px}
+html.rot90 .lsy-g button b{font-size:11px}
+html.rot90 .lsy-c{grid-template-columns:repeat(auto-fill,minmax(68px,1fr));gap:5px;padding:6px}
+html.rot90 .lsc .lsc-i img,html.rot90 .lsc .lsc-i canvas{width:48px!important;height:48px!important}
+html.rot90 .lsy-r{padding:6px 8px;gap:6px}
+html.rot90 .lbtn{padding:7px 4px;font-size:12px}
+html.rot90 .lmr-h{margin-top:8px}
+html.rot90 .lmr-g{padding:12px 8px;gap:8px}
+html.rot90 .lmr-open{margin-bottom:10px;padding:7px 22px}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
 <div class="title" id="title"><div class="tbg"></div><div class="tin"><div class="tlogo">잿빛 왕관</div><div class="tsub">ASHEN CROWN · 에르덴 대륙</div><div class="tload"><i id="tbar"></i></div><div class="ttip" id="ttip">세계를 불러오는 중…</div><button class="tstart" id="tstart" disabled>게임 시작</button><div class="tfoot">서버 · 에르덴 1 &nbsp;|&nbsp; 시제품</div></div></div><div class="app">
  <div class="top"><div class="logo">잿빛 왕관<small>에르덴 대륙 · 시제품</small></div><div class="cur" id="cur"></div><button class="ic laysw" id="laySw" hidden>가로 화면</button><button class="ic" id="mute" type="button" aria-label="소리">🔊</button></div>
  <div class="lcol"><div class="livea" id="liveA"></div><div class="ticker" id="ticker"></div><div class="qbar" id="qbar"></div>
@@ -1766,6 +1827,7 @@ bless:'<rect x="5" y="4" width="14" height="16" rx="2" fill="#f3d36b" fill-opaci
 dia:'<path d="M6 5h12l3 4-9 11L3 9z" fill="#46c8ff"/><path d="M6 5h12l3 4-9 11L3 9zM3 9h18M10 5l-2 4 4 11 4-11-2-4" stroke="#0b3a55"/>',
 gold:'<circle cx="12" cy="12" r="8" fill="#e8b23a"/><circle cx="12" cy="12" r="8" stroke="#6b4a10"/><circle cx="12" cy="12" r="5" stroke="#fff0b0" fill="none"/>',
 buff:'<path d="M12 3v18M5 10l7-7 7 7" fill="none"/>',
+crown:'<path d="M3 8l4 4 5-7 5 7 4-4-2 11H5z" fill="#e8b23a" fill-opacity=".35"/><path d="M3 8l4 4 5-7 5 7 4-4-2 11H5zM5 19h14"/><circle cx="12" cy="14" r="1.6"/>',
 char:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-5 4-8 8-8s8 3 8 8"/>',
 elx:'<path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3" fill="#7a5cff" fill-opacity=".3"/><path d="M7 15h10"/>',
 enh:'<path d="M14 4l6 6-3 3-6-6zM11 7L3 15l3 3 8-8M5 21h8"/>',
@@ -2256,13 +2318,15 @@ const SKCOST={0:1000,2:10000,3:40000,4:150000};
 function synthWin(ty){const st=$('stage');if(ty)SYW={ty,g:SYW.ty===ty?SYW.g:0,sl:[]};const T=SYW;
  const draw=()=>{const A=SYNAD(T.ty);if(!A.grades.includes(T.g))T.g=A.grades[0];const g=T.g,ng=A.next(g);const L=A.items(g).map(c=>({c,n:A.spare(c)-T.sl.filter(x=>x===c.id).length})).filter(x=>x.n>0||T.sl.includes(x.c.id)).sort((a,b)=>b.n-a.n);
   const p=A.rate(g),key=(T.ty==='s'?'s':T.ty)+g,sp=S.spts[key]||0,cost=T.ty==='s'?SKCOST[g]:SYNCOST[g],full=T.sl.length===4,nAll=Math.floor(A.cnt(g)/4);
-  st.innerHTML=`<div class="mwin synw"><div class="mwh"><b>${A.nm} 합성</b><div class="mtabs">${['t','d','s'].map(k=>`<button data-sy="${k}" class="${k===T.ty?'on':''}">${k==='t'?'변신':k==='d'?'인형':'스킬북'}</button>`).join('')}</div><button class="mwx" id="pkX">✕</button></div>
-  <div class="synb"><div class="synl"><div class="syg">${A.grades.map(i=>`<button data-syg="${i}" class="${i===g?'on':''}" style="--gc:${G[i].c}">${G[i].ko}<small>${A.cnt(i)}</small></button>`).join('')}</div>
-   <div class="mwg">${L.map(x=>`<button class="mwc${x.n<=0?' no':''}" data-sya="${x.c.id}" style="--gc:${G[g].c}"><span class="mwi">${cardIco(x.c,52)}</span><b>${x.c.n}</b><em class="dup">중복 ${x.n}</em></button>`).join('')||`<p class="mini" style="grid-column:1/-1">이 등급에 합성할 ${A.nm}이(가) 없어요${T.ty==='s'?' (같은 스킬북을 또 얻으면 여기 쌓여요)':' (같은 카드 2장 이상부터, 1장은 남겨요)'}</p>`}</div></div>
-   <div class="synr"><div class="syc" style="--gc:${G[g].c};--gn:${G[ng].c}"><div class="syring"></div>${[0,1,2,3].map(i=>{const id=T.sl[i],c=id&&(T.ty==='s'?SKM[id]:C(id));return`<button class="sys s${i}${c?' on':''}" data-syr="${i}">${c?cardIco(c,64):'<i>+</i>'}${c?`<b>${c.n}</b>`:''}</button>`}).join('')}<div class="sycen">${G[ng].ko}<small>${(p*100<1?(p*100).toFixed(2):(p*100).toFixed(0))}%</small></div></div>
-    <div class="syinfo"><div>성공 시 <b style="color:${G[ng].c}">${G[ng].ko} ${A.nm}</b> 1개${p>=1?' · 100% 성공':` · 실패 시 <b style="color:${G[g].c}">${G[g].ko}</b> 무작위 1개`}</div>${T.ty!=='s'&&g===4?'<small style="color:#ffc83a">신화 합성은 합성 포인트가 쌓이지 않아요 · 오직 운으로만</small>':T.ty!=='s'&&g===5?'<small style="color:#2ef2ff">신화 4장이면 유일 확정</small>':`<div class="bar"><i style="width:${sp/SYN_PITY*100}%"></i></div><small>합성 포인트 ${sp} / ${SYN_PITY} · 100점이면 다음 합성 확정 성공</small>`}</div>
-    <div class="sybt"><button class="btn" id="syAuto">자동 등록</button><button class="btn" id="syClr">초기화</button><button class="btn gold" id="syGo" ${full&&S.gold>=cost?'':'disabled'}>합성 <small>💰 ${fmt(cost)}</small></button></div>
-    <button class="lnk" id="syAll" ${nAll?'':'disabled'}>${G[g].ko} 전부 한 번에 합성 (${nAll}회 · 💰 ${fmt(cost*nAll)})</button></div></div></div>`};
+  const gs=A.grades.slice().reverse();
+  st.innerHTML=`<div class="mwin synw lsy"><div class="mwh"><b>${A.nm}</b><div class="mtabs">${['t','d','s'].map(k=>`<button data-sy="${k}" class="${k===T.ty?'on':''}">${k==='t'?'변신':k==='d'?'인형':'스킬북'}</button>`).join('')}</div><button class="mwx" id="pkX">✕</button></div>
+  <div class="lsy-b"><div class="lsy-g">${gs.map(i=>`<button data-syg="${i}" class="${i===g?'on':''}" style="--gc:${G[i].c}"><b>${G[i].ko}</b><small>(${A.cnt(i)})</small></button>`).join('')}</div>
+   <div class="lsy-c">${L.map(x=>`<button class="lsc${x.n<=0?' no':''}" data-sya="${x.c.id}" style="--gc:${G[g].c}"><span class="lsc-i">${cardIco(x.c,64)}</span><b>${x.c.n}</b><em>x${x.n}</em></button>`).join('')||`<p class="mini" style="grid-column:1/-1;padding:10px">이 등급에 합성할 ${A.nm}이(가) 없어요${T.ty==='s'?' (같은 스킬북을 또 얻으면 여기 쌓여요)':' (같은 카드 2장 이상부터, 1장은 남겨요)'}</p>`}</div>
+   <div class="lsy-r"><div class="lsy-rh"><b>합성</b><span><em style="color:${G[g].c}">${G[g].ko}</em> → <em style="color:${G[ng].c}">${G[ng].ko}</em> 1장 획득 가능! · 성공 <b>${(p*100<1?(p*100).toFixed(2):(p*100).toFixed(0))}%</b></span></div>
+    <div class="lsy-sl">${[0,1,2,3].map(i=>{const id=T.sl[i],c=id&&(T.ty==='s'?SKM[id]:C(id));return`<button class="lss${c?' on':''}" data-syr="${i}" style="--gc:${G[g].c}">${c?cardIco(c,72)+`<b>${c.n}</b>`:'<i>+</i>'}</button>`}).join('')}</div>
+    <div class="lsy-inf">${p>=1?'100% 성공':`실패 시 <b style="color:${G[g].c}">${G[g].ko}</b> 무작위 1장`}${T.ty!=='s'&&g===4?' · <span style="color:#ffc83a">합성 포인트 없음</span>':T.ty!=='s'&&g===5?'':`<div class="bar"><i style="width:${sp/SYN_PITY*100}%"></i></div><small>합성 포인트 ${sp} / ${SYN_PITY}</small>`}</div>
+    <div class="lsy-bt"><button class="lbtn blue" id="syAuto">카드 자동 등록</button><button class="lbtn gold" id="syGo" ${full&&S.gold>=cost?'':'disabled'}>합성<small>${ico('gold')} ${fmt(cost)}</small></button></div>
+    <div class="lsy-bt2"><button class="lnk" id="syClr">초기화</button><button class="lnk" id="syAll" ${nAll?'':'disabled'}>${G[g].ko} 전부 합성 (${nAll}회 · ${fmt(cost*nAll)})</button></div></div></div></div>`};
  st.hidden=false;draw();const close=()=>{st.hidden=true;st.innerHTML='';st.onclick=null};
  const once=(A,ins)=>{const g=T.g,key=(T.ty==='s'?'s':T.ty)+g,sure=T.ty!=='s'&&g===4?false:(S.spts[key]||0)>=SYN_PITY,ok=sure||rnd()<A.rate(g);let r;if(ok){r=A.win(A.next(g));if(sure)S.spts[key]=0}else{r=A.lose(g);if(T.ty==='s'||g!==4)S.spts[key]=Math.min(SYN_PITY,(S.spts[key]||0)+R(8,15))}const gv=A.give(r);const dup=T.ty==='s'?gv==='dup':(S.cards[r.id]||0)>1;track('synth');return{ok,r,key,dup}};
  st.onclick=async e=>{const t=e.target;if(t.id==='pkX'||t===st){close();return}let b;const A=SYNAD(T.ty);const byId=id=>T.ty==='s'?SKM[id]:C(id);
@@ -2273,11 +2337,34 @@ function synthWin(ty){const st=$('stage');if(ty)SYW={ty,g:SYW.ty===ty?SYW.g:0,sl
   if(t.closest('#syAuto')){T.sl=[];const L=A.items(T.g).slice().sort((a,b)=>A.spare(b)-A.spare(a));for(const c of L){let n=A.spare(c);while(n-->0&&T.sl.length<4)T.sl.push(c.id)}draw();return}
   const cost=T.ty==='s'?SKCOST[T.g]:SYNCOST[T.g];
   if(t.closest('#syAll')){let n=0;const res=[];while(A.cnt(T.g)>=4&&S.gold>=cost&&n<300){const L=A.items(T.g).slice().sort((a,b)=>A.spare(b)-A.spare(a));const ins=[];for(const c of L){let k=A.spare(c);while(k-->0&&ins.length<4)ins.push(c)}if(ins.length<4)break;S.gold-=cost;ins.forEach(A.take);const r=once(A,ins);n++;res.push({ok:r.ok,c:r.r,g:T.g,dup:r.dup})}
-   if(!n){announce('골드가 부족하거나 재료가 모자라요');return}ensure();save();BUSY=true;await synthReveal(res,`${G[T.g].ko} ${A.nm} ${n}회 합성`);BUSY=false;save();synthWin();return}
+   if(!n){announce('골드가 부족하거나 재료가 모자라요');return}ensure();save();BUSY=true;await synthResult(res);BUSY=false;save();synthWin();return}
   if(t.closest('#syGo')){if(T.sl.length<4)return;if(S.gold<cost){announce('골드가 부족해요 · 합성 비용 '+fmt(cost));return}const ins=T.sl.map(byId);const need={};for(const c of ins)need[c.id]=(need[c.id]||0)+1;for(const c of ins)if(A.spare(c)<need[c.id])return;
    S.gold-=cost;ins.forEach(A.take);const{ok,r,key,dup}=once(A,ins);SYDUP=dup;T.sl=[];ensure();save();BUSY=true;const gg=T.g,ng=A.next(gg);
-   await synthDrama(ins,r,ok,gg,ng,A.nm);if(!ok)announce(`합성 실패 · ${G[gg].ko} 「${r.n}」 획득 · 합성 포인트 ${S.spts[key]}/${SYN_PITY}`);else{announce(`<span style="color:${G[r.g].c}">✦ 합성 성공! ${G[r.g].ko} 「${r.n}」</span>`);if(r.g>=3)wNotice(`<b>${(typeof ACC!=='undefined'&&ACC&&ACC.user)||(S.cls?S.cls.k:'모험가')}</b> 님이 합성으로 <em style="color:${G[r.g].c}">${G[r.g].ko} 「${r.n}」</em>을(를) 획득했습니다.`,G[r.g].c)}
+   await synthResult([{ok,c:r,g:gg,dup}]);if(!ok)announce(`합성 실패 · ${G[gg].ko} 「${r.n}」 획득 · 합성 포인트 ${S.spts[key]}/${SYN_PITY}`);else{announce(`<span style="color:${G[r.g].c}">✦ 합성 성공! ${G[r.g].ko} 「${r.n}」</span>`);if(r.g>=3)wNotice(`<b>${(typeof ACC!=='undefined'&&ACC&&ACC.user)||(S.cls?S.cls.k:'모험가')}</b> 님이 합성으로 <em style="color:${G[r.g].c}">${G[r.g].ko} 「${r.n}」</em>을(를) 획득했습니다.`,G[r.g].c)}
    BUSY=false;save();synthWin();return}}}
+
+/* 리니지M식 「합성 결과」: 카드 뒷면 → 카드 속 그림이 옆으로 돌다 멈춤 → 성공이면 화면 전체가 등급색으로 번쩍 · 다 열면 같은 카드는 한 장으로 묶고 아래에 x2 */
+async function synthResult(L){const n=L.length,many=n>14,cw=many?60:84;
+ const root=stageOn(`<div class="lmr" id="lmr"><div class="lmr-bg"></div><div class="lmr-h"><i></i><b>합성 결과</b><i></i></div><button class="lmr-x" id="lmrX" hidden>✕</button>
+ <div class="lmr-g${many?' many':''}" id="lmrg" style="--cw:${cw}px">${L.map((x,i)=>`<div class="lmc" id="lc${i}" data-lc="${i}" style="--gc:#8a6a2c"><div class="lmc-f"><div class="lmc-bk">${ico('crown')}</div></div><b class="lmc-n"></b><em class="lmc-c"></em></div>`).join('')}</div>
+ <div class="lmr-sum" id="lmrs"></div><button class="lmr-open" id="lmrO">모두 열기</button></div>`);
+ const R0=$('lmr'),opened=new Set();let ok=0,busy=0;
+ const open=async(i,fast)=>{if(opened.has(i))return;opened.add(i);const x=L[i],el=$('lc'+i);if(!el)return;const f=el.querySelector('.lmc-f');
+  const P=CARDS.filter(c=>c.ty===x.c.ty&&c.g===x.g);const strip=[];for(let k=0;k<9;k++)strip.push(P.length?pick(P):x.c);strip.push(x.c);
+  if(fast&&!x.ok){f.innerHTML=cardIco(x.c,cw)}else{
+   f.innerHTML=`<div class="lmc-st">${strip.map(c=>`<span>${cardIco(c,cw)}</span>`).join('')}</div>`;const s=f.firstChild;void s.offsetWidth;
+   const dur=SKIP?120:fast?(x.ok?900:260):(x.ok?1600:900);s.style.transition=`transform ${dur}ms cubic-bezier(.12,.7,.18,1)`;s.style.transform=`translateX(${-9*cw}px)`;sfx.tick&&sfx.tick(2);
+   if(x.ok){await W(dur*.72);R0.style.setProperty('--fl',G[x.c.g].c);R0.classList.remove('fl');void R0.offsetWidth;R0.classList.add('fl');thunder(x.c.g>=4);shake&&shake();buzz&&buzz(80);await W(dur*.28+120)}else await W(dur)}
+  el.style.setProperty('--gc',G[x.c.g].c);el.classList.add('done');if(x.ok){ok++;el.classList.add('up');sparks(el,x.c.g>=4?60:30,G[x.c.g].c)}
+  el.querySelector('.lmc-n').textContent=x.c.n;if(!x.dup)el.insertAdjacentHTML('beforeend','<span class="lmc-new">NEW</span>');
+  if(opened.size===n)finish()};
+ let fin=null;const done=new Promise(r=>fin=r);
+ const finish=async()=>{await W(450);const by={};L.forEach((x,i)=>{(by[x.c.id]=by[x.c.id]||[]).push(i)});
+  for(const id in by){const ix=by[id];if(ix.length<2)continue;ix.slice(1).forEach(i=>{const e=$('lc'+i);if(e){e.classList.add('gone');setTimeout(()=>e.remove(),320)}});const e0=$('lc'+ix[0]);if(e0)e0.querySelector('.lmc-c').textContent='x'+ix.length}
+  $('lmrs').innerHTML=n>1?`성공 <b>${ok}</b> / ${n}`:'';const O=$('lmrO');O.textContent='확인';O.onclick=()=>fin();$('lmrX').hidden=false;$('lmrX').onclick=()=>fin()};
+ $('lmrg').onclick=e=>{const c=e.target.closest('[data-lc]');if(c&&!busy)open(+c.dataset.lc,false)};
+ $('lmrO').onclick=async()=>{if(busy)return;busy=1;$('lmrO').disabled=true;for(let i=0;i<n;i++){if(opened.has(i))continue;await open(i,n>1);if(!L[i].ok)await W(n>20?30:90)}busy=0;$('lmrO').disabled=false};
+ await done;stageOff()}
 /* 여러 장 합성 연출: 카드가 옆으로 돌다가 하나씩 멈춤 · 성공한 칸에는 다음 등급 색의 번개가 치고 윗등급 카드가 뜸 */
 function boltSVG(){let d='M20 0',x=20;for(let y=24;y<=300;y+=24){x=20+(Math.random()*24-12);d+=` L${x.toFixed(0)} ${y}`}return`<svg class="svbolt" viewBox="0 0 40 300" preserveAspectRatio="none"><path d="${d}"/><path class="core" d="${d}"/></svg>`}
 async function synthReveal(L,title){const n=L.length,face=(c,dup)=>`<div class="svface" style="--gc:${G[c.g].c}">${dup?'<span class="dupb">중복</span>':'<span class="dupb new">NEW</span>'}${cardIco(c,n>24?44:56)}<b>${c.n}</b><small>${G[c.g].ko}</small></div>`;
