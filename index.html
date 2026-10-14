@@ -543,6 +543,24 @@ html.land .lbuf{cursor:pointer;pointer-events:auto;min-width:60px;min-height:22p
 .shtag{position:absolute;top:6px;left:6px;font-size:10px;font-weight:700;background:#e23a2a;color:#fff;padding:1px 6px;border-radius:3px}
 .shi.sold{opacity:.5}.shi.lock{filter:grayscale(.8);opacity:.6}
 @media (max-height:520px){.shb{grid-template-columns:110px 1fr}.shl button{padding:7px;font-size:12px}.shg{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}.shi .shic{width:46px;height:46px;font-size:24px}}
+/* 여러 장 합성 연출 */
+.srv{position:relative;width:min(1100px,96vw);max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:12px}
+.srv::before{content:'';position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle,color-mix(in srgb,var(--fl,#fff) 55%,transparent),transparent 70%);opacity:0}
+.srv.flashing::before{animation:srvfl .45s ease-out}@keyframes srvfl{0%{opacity:.9}100%{opacity:0}}
+.srvh{display:flex;gap:16px;align-items:baseline;color:#ffe9b0}.srvh b{font-family:'Nanum Myeongjo',serif;font-size:20px}.srvh span{color:#d8ccb4}.srvh span b{font-size:16px;color:#7dff9a}
+.srvg{display:grid;grid-template-columns:repeat(auto-fill,90px);gap:10px;justify-content:center;width:100%;overflow-y:auto;padding:10px;perspective:800px}.srvg.many{grid-template-columns:repeat(auto-fill,74px);gap:7px}
+.srvc{position:relative;height:124px;transform-style:preserve-3d}.srvg.many .srvc{height:100px}
+.svback{position:absolute;inset:0;border-radius:6px;border:2px solid color-mix(in srgb,var(--gc) 70%,#000);background:repeating-linear-gradient(45deg,#2a1f12 0 6px,#1a130b 6px 12px);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 18px #000}
+.svback i{font-style:normal;color:var(--gc);font-size:26px;text-shadow:0 0 10px var(--gc)}
+.srvc.spin{animation:svspin .5s linear infinite}@keyframes svspin{to{transform:rotateY(360deg)}}
+.srvc.charge .svback{animation:svch .26s ease-in;border-color:var(--nc);box-shadow:0 0 22px var(--nc),inset 0 0 22px var(--nc)}@keyframes svch{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.svbolt{position:absolute;left:50%;bottom:45%;width:46px;height:340px;transform:translateX(-50%);overflow:visible;pointer-events:none;z-index:3;animation:svb .5s ease-out forwards}
+.svbolt path{fill:none;stroke:var(--nc);stroke-width:7;stroke-linejoin:round;filter:drop-shadow(0 0 8px var(--nc)) drop-shadow(0 0 18px var(--nc))}.svbolt path.core{stroke:#fff;stroke-width:2.5}
+@keyframes svb{0%{opacity:0;clip-path:inset(0 0 100% 0)}20%{opacity:1;clip-path:inset(0 0 0 0)}55%{opacity:1}100%{opacity:0}}
+.svface{position:absolute;inset:0;border-radius:6px;border:2px solid var(--gc);background:linear-gradient(color-mix(in srgb,var(--gc) 22%,#120d07),#0b0805);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;animation:svf .3s ease-out}
+.svface b{font-size:10.5px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:94%}.svface small{font-size:9.5px;color:var(--gc)}
+@keyframes svf{0%{transform:rotateY(90deg)}100%{transform:none}}
+.srvc.up .svface{box-shadow:0 0 18px var(--gc),inset 0 0 14px color-mix(in srgb,var(--gc) 50%,transparent);animation:svf .3s ease-out,svup 1.6s ease-in-out .3s infinite}@keyframes svup{50%{box-shadow:0 0 30px var(--gc),inset 0 0 20px color-mix(in srgb,var(--gc) 60%,transparent)}}
 </style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
 <div class="title" id="title"><div class="tbg"></div><div class="tin"><div class="tlogo">잿빛 왕관</div><div class="tsub">ASHEN CROWN · 에르덴 대륙</div><div class="tload"><i id="tbar"></i></div><div class="ttip" id="ttip">세계를 불러오는 중…</div><button class="tstart" id="tstart" disabled>게임 시작</button><div class="tfoot">서버 · 에르덴 1 &nbsp;|&nbsp; 시제품</div></div></div><div class="app">
  <div class="top"><div class="logo">잿빛 왕관<small>에르덴 대륙 · 시제품</small></div><div class="cur" id="cur"></div><button class="ic laysw" id="laySw" hidden>가로 화면</button><button class="ic" id="mute" type="button" aria-label="소리">🔊</button></div>
@@ -1672,8 +1690,8 @@ function synthWin(ty){const st=$('stage');if(ty)SYW={ty,g:SYW.ty===ty?SYW.g:0,sl
   if(t.closest('#syClr')){T.sl=[];draw();return}
   if(t.closest('#syAuto')){T.sl=[];const L=A.items(T.g).slice().sort((a,b)=>A.spare(b)-A.spare(a));for(const c of L){let n=A.spare(c);while(n-->0&&T.sl.length<4)T.sl.push(c.id)}draw();return}
   const cost=T.ty==='s'?SKCOST[T.g]:SYNCOST[T.g];
-  if(t.closest('#syAll')){let n=0,okN=0;const won=[];while(A.cnt(T.g)>=4&&S.gold>=cost&&n<300){const L=A.items(T.g).slice().sort((a,b)=>A.spare(b)-A.spare(a));const ins=[];for(const c of L){let k=A.spare(c);while(k-->0&&ins.length<4)ins.push(c)}if(ins.length<4)break;S.gold-=cost;ins.forEach(A.take);const r=once(A,ins);n++;if(r.ok){okN++;won.push(r.r)}}
-   if(!n){announce('골드가 부족하거나 재료가 모자라요');return}ensure();save();BUSY=true;await showGrid(won,`${G[T.g].ko} ${A.nm} 합성 ${n}회 · 성공 ${okN}회`,won.length?'':'<p class="mini">모두 실패했지만 합성 포인트는 쌓였어요</p>');BUSY=false;save();synthWin();return}
+  if(t.closest('#syAll')){let n=0;const res=[];while(A.cnt(T.g)>=4&&S.gold>=cost&&n<300){const L=A.items(T.g).slice().sort((a,b)=>A.spare(b)-A.spare(a));const ins=[];for(const c of L){let k=A.spare(c);while(k-->0&&ins.length<4)ins.push(c)}if(ins.length<4)break;S.gold-=cost;ins.forEach(A.take);const r=once(A,ins);n++;res.push({ok:r.ok,c:r.r,g:T.g})}
+   if(!n){announce('골드가 부족하거나 재료가 모자라요');return}ensure();save();BUSY=true;await synthReveal(res,`${G[T.g].ko} ${A.nm} ${n}회 합성`);BUSY=false;save();synthWin();return}
   if(t.closest('#syGo')){if(T.sl.length<4)return;if(S.gold<cost){announce('골드가 부족해요 · 합성 비용 '+fmt(cost));return}const ins=T.sl.map(byId);const need={};for(const c of ins)need[c.id]=(need[c.id]||0)+1;for(const c of ins)if(A.spare(c)<need[c.id])return;
    S.gold-=cost;ins.forEach(A.take);const{ok,r,key}=once(A,ins);T.sl=[];ensure();save();BUSY=true;const gg=T.g,ng=A.next(gg);
    stageOn(`<div class="msg" id="msg">${G[gg].ko} ${A.nm} 4개를 합성합니다</div><div class="syc anim" style="--gc:${G[gg].c};--gn:${G[ng].c}"><div class="syring"></div>${ins.map((c,i)=>`<div class="sys s${i} on" id="o${i}">${cardIco(c,64)}</div>`).join('')}<div class="sycen" id="syc"></div></div>`);
@@ -1681,6 +1699,17 @@ function synthWin(ty){const st=$('stage');if(ty)SYW={ty,g:SYW.ty===ty?SYW.g:0,sl
    if(ok){flash();shake();sfx.boom();sparks($('syc'),70,G[ng].c);await W(400)}else{sparks($('syc'),20,G[gg].c);await W(300)}
    await revealOne(r,ok&&ng>=3);if(!ok)announce(`합성 실패 · ${G[gg].ko} 「${r.n}」 획득 · 합성 포인트 ${S.spts[key]}/${SYN_PITY}`);else{announce(`<span style="color:${G[r.g].c}">✦ 합성 성공! ${G[r.g].ko} 「${r.n}」</span>`);if(r.g>=3)wNotice(`<b>${(typeof ACC!=='undefined'&&ACC&&ACC.user)||(S.cls?S.cls.k:'모험가')}</b> 님이 합성으로 <em style="color:${G[r.g].c}">${G[r.g].ko} 「${r.n}」</em>을(를) 획득했습니다.`,G[r.g].c)}
    BUSY=false;save();synthWin();return}}}
+/* 여러 장 합성 연출: 카드가 옆으로 돌다가 하나씩 멈춤 · 성공한 칸에는 다음 등급 색의 번개가 치고 윗등급 카드가 뜸 */
+function boltSVG(){let d='M20 0',x=20;for(let y=24;y<=300;y+=24){x=20+(Math.random()*24-12);d+=` L${x.toFixed(0)} ${y}`}return`<svg class="svbolt" viewBox="0 0 40 300" preserveAspectRatio="none"><path d="${d}"/><path class="core" d="${d}"/></svg>`}
+async function synthReveal(L,title){const n=L.length,face=c=>`<div class="svface" style="--gc:${G[c.g].c}">${cardIco(c,n>24?44:56)}<b>${c.n}</b><small>${G[c.g].ko}</small></div>`;
+ stageOn(`<div class="srv"><div class="srvh"><b>${title}</b><span id="srvc">합성 중…</span></div><div class="srvg${n>24?' many':''}">${L.map((x,i)=>`<div class="srvc spin" id="sv${i}" style="--gc:${G[x.g].c};--nc:${G[Math.min(6,x.c.g)].c};animation-delay:${-(i%7)*90}ms"><div class="svback"><i>✦</i></div></div>`).join('')}</div><button class="btn gold" id="srvX" hidden>확인</button></div>`);
+ sfx.hum&&sfx.hum();await W(700);let ok=0;
+ for(let i=0;i<n;i++){const x=L[i],el=$('sv'+i);if(!el)continue;el.classList.remove('spin');
+  if(!x.ok){el.innerHTML=face(x.c);el.classList.add('done');sfx.tick&&sfx.tick(1);await W(n>20?70:150);continue}
+  ok++;el.innerHTML=`<div class="svback lit"><i>✦</i></div>`;el.classList.add('charge');await W(260);
+  el.insertAdjacentHTML('beforeend',boltSVG());el.classList.add('struck');document.querySelector('.srv').style.setProperty('--fl',G[x.c.g].c);document.querySelector('.srv').classList.remove('flashing');void el.offsetWidth;document.querySelector('.srv').classList.add('flashing');
+  sfx.boom&&sfx.boom();shake&&shake();buzz&&buzz(60);await W(220);el.querySelector('.svback').outerHTML=face(x.c);el.classList.add('done','up');sparks(el,x.c.g>=4?40:24,G[x.c.g].c);await W(x.c.g>=4?650:420)}
+ $('srvc').innerHTML=`성공 <b>${ok}</b> / ${n}`;const bt=$('srvX');bt.hidden=false;await new Promise(r=>{bt.onclick=r});stageOff()}
 function vSynth(){const g=SG;const have=haveCnt(POOL,g);const sp=S.spts[POOL+g]||0;const allG=G.slice(0,6).reduce((a,x,i)=>a+Math.floor(haveCnt(POOL,i)/4),0);
  if(POOL==='t'||POOL==='d'){return`<h3>합성</h3>${poolSel()}<div class="syntab"><p class="sub">리니지M처럼 같은 등급 카드 4장을 올려 합성해요. 성공하면 다음 등급, 실패하면 같은 등급 무작위 1장이 나와요.</p><button class="btn gold wide" data-act="synwin">${POOL==='t'?'변신':'인형'} 합성 창 열기</button></div>`}
  return`<h3>합성</h3>${poolSel()}<p class="sub">같은 등급 4장으로 다음 등급에 도전합니다. 실패하면 1장이 돌아오고 합성 포인트가 쌓여요. 100점이면 확정 성공. <b>같은 것이 2장 이상일 때만</b> 한 장을 남기고 나머지를 재료로 씁니다.${isGear(POOL)?' 강화한 것과 장착 중인 것도 재료에서 빠져요.':''}</p>
