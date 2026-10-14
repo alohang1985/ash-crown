@@ -676,6 +676,9 @@ html.land.mopen .ltopm{right:calc(min(500px,62vw) + 10px)}
 .mng h5{margin:0 0 6px;color:#c9a24a;font-size:13px;border-bottom:1px solid #3a2c14;padding-bottom:4px}.mng>div{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:6px}
 .mng button{display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 4px;border:1px solid #3a2c14;border-radius:6px;background:linear-gradient(#1c150c,#0e0a06);color:#eadfc8;cursor:pointer}.mng button i{font-style:normal;font-size:24px}.mng button small{font-size:11px}.mng button:hover{border-color:#e0b04a;box-shadow:0 0 10px rgba(224,176,74,.35)}
 @media (max-height:520px){.ltopm button{width:40px;height:40px}.ltopm button i{font-size:16px}.ltopm button small{font-size:8.5px}html.land .mmw{top:54px}html.land #mmap{width:120px;height:86px}html.land .lzone{top:146px;width:130px}html.land .top{display:none}}
+.dupb{position:absolute;top:3px;left:3px;font-size:9.5px;font-weight:700;padding:0 4px;border-radius:2px;background:#5a5a62;color:#fff;z-index:2}.dupb.new{background:#e23a2a}
+.sdr-front .dupb{top:6px;left:6px;font-size:12px;padding:1px 6px}
+.mwc em.dup{position:absolute;top:2px;right:3px;font-style:normal;font-size:9.5px;background:rgba(0,0,0,.7);color:#ffd98a;padding:0 4px;border-radius:2px}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -1003,6 +1006,11 @@ const sfx={tick:g=>tone(300+g*120,.08,'triangle',.08),up:g=>tone(420+g*160,.18,'
  rare:g=>{[0,4,7,12].forEach((s,i)=>tone(440*Math.pow(2,(s+g*2)/12),.35,'triangle',.1,i*.09))},legend:()=>{[0,4,7,12,16,19,24].forEach((s,i)=>tone(392*Math.pow(2,s/12),.5,'square',.07,i*.11));tone(60,1.2,'sine',.25,0,.5)},
  hit:()=>{tone(900,.06,'square',.1);tone(140,.18,'sawtooth',.12,0,.4)},fail:()=>tone(220,.5,'sawtooth',.1,0,.3),boom:()=>{tone(80,.9,'sawtooth',.2,0,.3);tone(40,1,'sine',.3)},hum:()=>tone(70,1.6,'sine',.12,0,1.6),
  slash:()=>tone(1200,.05,'sawtooth',.03,0,.4),coin:()=>{tone(1320,.06,'square',.03);tone(1760,.08,'square',.03,.05)},skill:()=>{tone(300,.3,'sawtooth',.06,0,3);tone(90,.4,'sine',.15)},shoot:()=>tone(700,.08,'triangle',.04,0,.5)};
+/* 진짜 같은 번개 소리: 날카로운 '쩍' 하는 균열음 + 낮게 우르릉 굴러가는 천둥 (잡음으로 합성) */
+function thunder(big){const a=AC;if(!a||MUTE)return;const t=a.currentTime,sr=a.sampleRate,len=Math.floor(sr*(big?3.2:2.4)),buf=a.createBuffer(1,len,sr),d=buf.getChannelData(0);let b0=0,b1=0;
+ for(let i=0;i<len;i++){const w=Math.random()*2-1;b0=.997*b0+w*.03;b1=.985*b1+w*.08;const tt=i/sr;const crack=tt<.18?(Math.random()*2-1)*Math.exp(-tt*22)*(1+(Math.random()<.02?3:0)):0;const roll=(b0*2.4+b1*.6)*Math.min(1,tt/.08)*Math.exp(-tt*(big?1.1:1.6))*(.65+.35*Math.sin(tt*7+Math.sin(tt*2.3)*3));d[i]=crack*.9+roll}
+ const src=a.createBufferSource();src.buffer=buf;const hp=a.createBiquadFilter();hp.type='highpass';hp.frequency.value=28;const lp=a.createBiquadFilter();lp.type='lowpass';lp.frequency.setValueAtTime(5200,t);lp.frequency.exponentialRampToValueAtTime(380,t+.5);const g=a.createGain();g.gain.setValueAtTime(big?1:.8,t);
+ src.connect(hp);hp.connect(lp);lp.connect(g);g.connect(a.destination);src.start(t);tone(45,1.2,'sine',big?.35:.25,.02)}
 const buzz=p=>{try{navigator.vibrate&&navigator.vibrate(p)}catch(_){}};let MUTE=false;
 function sideRender(){const el=$('side');if(!el||!S||!S.wpn||getComputedStyle(el).display==='none')return;const M=stats();
  el.innerHTML=`<div class="sbox"><h4>전투 능력</h4><div class="sg"><span>공격력<b>${fmt(M.atk)}</b></span><span>방어력<b>${fmt(M.def)}</b></span><span>치명타<b>${(M.crit*100).toFixed(1)}%</b></span><span>공격 속도<b>${(1000/M.iv).toFixed(2)}</b></span><span>스킬 위력<b>${fmt(M.skill)}</b></span><span>전투력<b>${fmt(power())}</b></span></div></div>
@@ -2071,7 +2079,7 @@ const spareI=(ty,id)=>{const all=inv(ty).filter(w=>w.id===id);return Math.max(0,
 const spare=c=>isGear(c.ty)?spareI(c.ty,c.id):Math.max(0,(S.cards[c.id]||0)-1);/* 한 장은 항상 남김 */
 const haveCnt=(ty,g)=>CARDS.filter(c=>c.ty===ty&&c.g===g).reduce((a,c)=>a+spare(c),0);
 /* ===== 리니지M식 합성 창: 같은 등급 4장 직접 등록 · 자동 등록 · 아데나(골드) 비용 · 실패 시 같은 등급 무작위 1장 ===== */
-const SYNCOST=[500,2000,8000,30000,120000,0];let SYW={ty:'t',g:0,sl:[]};
+const SYNCOST=[500,2000,8000,30000,120000,0];let SYW={ty:'t',g:0,sl:[]},SYDUP=false;
 const SYNAD=ty=>ty==='s'?{nm:'스킬북',grades:[0,2,3,4],next:g=>SKNEXT[g],rate:g=>SKSYN[g],items:g=>SKILLS.filter(k=>k.g===g),spare:k=>skSpare(k.id),take:k=>{S.skb[k.id]--},
   win:ng=>{const L=SKILLS.filter(k=>k.g===ng&&skOk(k));return pick(L.length?L:SKILLS.filter(k=>k.g===ng&&k.cls==='공용'))},lose:g=>{const L=SKILLS.filter(k=>k.g===g&&skOk(k));return pick(L.length?L:SKILLS.filter(k=>k.g===g))},give:k=>learnSkill(k),cnt:g=>skSpareG(g)}
  :{nm:ty==='t'?'변신':'인형',grades:[0,1,2,3,4],next:g=>g+1,rate:g=>Math.min(1,SYN[g]+(CL().syn||0)),items:g=>CARDS.filter(c=>c.ty===ty&&c.g===g),spare:c=>spare(c),take:c=>{S.cards[c.id]--},win:ng=>pick(poolOf(ty,x=>x.g===ng)),lose:g=>pick(poolOf(ty,x=>x.g===g)),give:c=>giveCard(c),cnt:g=>haveCnt(ty,g)};
@@ -2081,13 +2089,13 @@ function synthWin(ty){const st=$('stage');if(ty)SYW={ty,g:SYW.ty===ty?SYW.g:0,sl
   const p=A.rate(g),key=(T.ty==='s'?'s':T.ty)+g,sp=S.spts[key]||0,cost=T.ty==='s'?SKCOST[g]:SYNCOST[g],full=T.sl.length===4,nAll=Math.floor(A.cnt(g)/4);
   st.innerHTML=`<div class="mwin synw"><div class="mwh"><b>${A.nm} 합성</b><div class="mtabs">${['t','d','s'].map(k=>`<button data-sy="${k}" class="${k===T.ty?'on':''}">${k==='t'?'변신':k==='d'?'인형':'스킬북'}</button>`).join('')}</div><button class="mwx" id="pkX">✕</button></div>
   <div class="synb"><div class="synl"><div class="syg">${A.grades.map(i=>`<button data-syg="${i}" class="${i===g?'on':''}" style="--gc:${G[i].c}">${G[i].ko}<small>${A.cnt(i)}</small></button>`).join('')}</div>
-   <div class="mwg">${L.map(x=>`<button class="mwc${x.n<=0?' no':''}" data-sya="${x.c.id}" style="--gc:${G[g].c}"><span class="mwi">${cardIco(x.c,52)}</span><b>${x.c.n}</b><em>×${x.n}</em></button>`).join('')||`<p class="mini" style="grid-column:1/-1">이 등급에 합성할 ${A.nm}이(가) 없어요${T.ty==='s'?' (같은 스킬북을 또 얻으면 여기 쌓여요)':' (같은 카드 2장 이상부터, 1장은 남겨요)'}</p>`}</div></div>
+   <div class="mwg">${L.map(x=>`<button class="mwc${x.n<=0?' no':''}" data-sya="${x.c.id}" style="--gc:${G[g].c}"><span class="mwi">${cardIco(x.c,52)}</span><b>${x.c.n}</b><em class="dup">중복 ${x.n}</em></button>`).join('')||`<p class="mini" style="grid-column:1/-1">이 등급에 합성할 ${A.nm}이(가) 없어요${T.ty==='s'?' (같은 스킬북을 또 얻으면 여기 쌓여요)':' (같은 카드 2장 이상부터, 1장은 남겨요)'}</p>`}</div></div>
    <div class="synr"><div class="syc" style="--gc:${G[g].c};--gn:${G[ng].c}"><div class="syring"></div>${[0,1,2,3].map(i=>{const id=T.sl[i],c=id&&(T.ty==='s'?SKM[id]:C(id));return`<button class="sys s${i}${c?' on':''}" data-syr="${i}">${c?cardIco(c,64):'<i>+</i>'}${c?`<b>${c.n}</b>`:''}</button>`}).join('')}<div class="sycen">${G[ng].ko}<small>${(p*100<1?(p*100).toFixed(1):(p*100).toFixed(0))}%</small></div></div>
     <div class="syinfo"><div>성공 시 <b style="color:${G[ng].c}">${G[ng].ko} ${A.nm}</b> 1개 · 실패 시 <b style="color:${G[g].c}">${G[g].ko}</b> 무작위 1개</div><div class="bar"><i style="width:${sp/SYN_PITY*100}%"></i></div><small>합성 포인트 ${sp} / ${SYN_PITY} · 100점이면 다음 합성 확정 성공</small></div>
     <div class="sybt"><button class="btn" id="syAuto">자동 등록</button><button class="btn" id="syClr">초기화</button><button class="btn gold" id="syGo" ${full&&S.gold>=cost?'':'disabled'}>합성 <small>💰 ${fmt(cost)}</small></button></div>
     <button class="lnk" id="syAll" ${nAll?'':'disabled'}>${G[g].ko} 전부 한 번에 합성 (${nAll}회 · 💰 ${fmt(cost*nAll)})</button></div></div></div>`};
  st.hidden=false;draw();const close=()=>{st.hidden=true;st.innerHTML='';st.onclick=null};
- const once=(A,ins)=>{const g=T.g,key=(T.ty==='s'?'s':T.ty)+g,sure=(S.spts[key]||0)>=SYN_PITY,ok=sure||rnd()<A.rate(g);let r;if(ok){r=A.win(A.next(g));if(sure)S.spts[key]=0}else{r=A.lose(g);S.spts[key]=Math.min(SYN_PITY,(S.spts[key]||0)+R(8,15))}A.give(r);track('synth');return{ok,r,key}};
+ const once=(A,ins)=>{const g=T.g,key=(T.ty==='s'?'s':T.ty)+g,sure=(S.spts[key]||0)>=SYN_PITY,ok=sure||rnd()<A.rate(g);let r;if(ok){r=A.win(A.next(g));if(sure)S.spts[key]=0}else{r=A.lose(g);S.spts[key]=Math.min(SYN_PITY,(S.spts[key]||0)+R(8,15))}const gv=A.give(r);const dup=T.ty==='s'?gv==='dup':(S.cards[r.id]||0)>1;track('synth');return{ok,r,key,dup}};
  st.onclick=async e=>{const t=e.target;if(t.id==='pkX'||t===st){close();return}let b;const A=SYNAD(T.ty);const byId=id=>T.ty==='s'?SKM[id]:C(id);
   if(b=t.closest('[data-sy]')){T.ty=b.dataset.sy;T.sl=[];T.g=0;draw();return}if(b=t.closest('[data-syg]')){T.g=+b.dataset.syg;T.sl=[];draw();return}
   if(b=t.closest('[data-sya]')){const id=b.dataset.sya,c=byId(id);if(T.sl.length<4&&A.spare(c)-T.sl.filter(x=>x===id).length>0)T.sl.push(id);draw();return}
@@ -2095,22 +2103,22 @@ function synthWin(ty){const st=$('stage');if(ty)SYW={ty,g:SYW.ty===ty?SYW.g:0,sl
   if(t.closest('#syClr')){T.sl=[];draw();return}
   if(t.closest('#syAuto')){T.sl=[];const L=A.items(T.g).slice().sort((a,b)=>A.spare(b)-A.spare(a));for(const c of L){let n=A.spare(c);while(n-->0&&T.sl.length<4)T.sl.push(c.id)}draw();return}
   const cost=T.ty==='s'?SKCOST[T.g]:SYNCOST[T.g];
-  if(t.closest('#syAll')){let n=0;const res=[];while(A.cnt(T.g)>=4&&S.gold>=cost&&n<300){const L=A.items(T.g).slice().sort((a,b)=>A.spare(b)-A.spare(a));const ins=[];for(const c of L){let k=A.spare(c);while(k-->0&&ins.length<4)ins.push(c)}if(ins.length<4)break;S.gold-=cost;ins.forEach(A.take);const r=once(A,ins);n++;res.push({ok:r.ok,c:r.r,g:T.g})}
+  if(t.closest('#syAll')){let n=0;const res=[];while(A.cnt(T.g)>=4&&S.gold>=cost&&n<300){const L=A.items(T.g).slice().sort((a,b)=>A.spare(b)-A.spare(a));const ins=[];for(const c of L){let k=A.spare(c);while(k-->0&&ins.length<4)ins.push(c)}if(ins.length<4)break;S.gold-=cost;ins.forEach(A.take);const r=once(A,ins);n++;res.push({ok:r.ok,c:r.r,g:T.g,dup:r.dup})}
    if(!n){announce('골드가 부족하거나 재료가 모자라요');return}ensure();save();BUSY=true;await synthReveal(res,`${G[T.g].ko} ${A.nm} ${n}회 합성`);BUSY=false;save();synthWin();return}
   if(t.closest('#syGo')){if(T.sl.length<4)return;if(S.gold<cost){announce('골드가 부족해요 · 합성 비용 '+fmt(cost));return}const ins=T.sl.map(byId);const need={};for(const c of ins)need[c.id]=(need[c.id]||0)+1;for(const c of ins)if(A.spare(c)<need[c.id])return;
-   S.gold-=cost;ins.forEach(A.take);const{ok,r,key}=once(A,ins);T.sl=[];ensure();save();BUSY=true;const gg=T.g,ng=A.next(gg);
+   S.gold-=cost;ins.forEach(A.take);const{ok,r,key,dup}=once(A,ins);SYDUP=dup;T.sl=[];ensure();save();BUSY=true;const gg=T.g,ng=A.next(gg);
    await synthDrama(ins,r,ok,gg,ng,A.nm);if(!ok)announce(`합성 실패 · ${G[gg].ko} 「${r.n}」 획득 · 합성 포인트 ${S.spts[key]}/${SYN_PITY}`);else{announce(`<span style="color:${G[r.g].c}">✦ 합성 성공! ${G[r.g].ko} 「${r.n}」</span>`);if(r.g>=3)wNotice(`<b>${(typeof ACC!=='undefined'&&ACC&&ACC.user)||(S.cls?S.cls.k:'모험가')}</b> 님이 합성으로 <em style="color:${G[r.g].c}">${G[r.g].ko} 「${r.n}」</em>을(를) 획득했습니다.`,G[r.g].c)}
    BUSY=false;save();synthWin();return}}}
 /* 여러 장 합성 연출: 카드가 옆으로 돌다가 하나씩 멈춤 · 성공한 칸에는 다음 등급 색의 번개가 치고 윗등급 카드가 뜸 */
 function boltSVG(){let d='M20 0',x=20;for(let y=24;y<=300;y+=24){x=20+(Math.random()*24-12);d+=` L${x.toFixed(0)} ${y}`}return`<svg class="svbolt" viewBox="0 0 40 300" preserveAspectRatio="none"><path d="${d}"/><path class="core" d="${d}"/></svg>`}
-async function synthReveal(L,title){const n=L.length,face=c=>`<div class="svface" style="--gc:${G[c.g].c}">${cardIco(c,n>24?44:56)}<b>${c.n}</b><small>${G[c.g].ko}</small></div>`;
+async function synthReveal(L,title){const n=L.length,face=(c,dup)=>`<div class="svface" style="--gc:${G[c.g].c}">${dup?'<span class="dupb">중복</span>':'<span class="dupb new">NEW</span>'}${cardIco(c,n>24?44:56)}<b>${c.n}</b><small>${G[c.g].ko}</small></div>`;
  stageOn(`<div class="srv"><div class="srvh"><b>${title}</b><span id="srvc">합성 중…</span></div><div class="srvg${n>24?' many':''}">${L.map((x,i)=>`<div class="srvc spin" id="sv${i}" style="--gc:${G[x.g].c};--nc:${G[Math.min(6,x.c.g)].c};animation-delay:${-(i%7)*90}ms"><div class="svback"><i>✦</i></div></div>`).join('')}</div><button class="btn gold" id="srvX" hidden>확인</button></div>`);
  sfx.hum&&sfx.hum();await W(700);let ok=0;
  for(let i=0;i<n;i++){const x=L[i],el=$('sv'+i);if(!el)continue;el.classList.remove('spin');
-  if(!x.ok){el.innerHTML=face(x.c);el.classList.add('done');sfx.tick&&sfx.tick(1);await W(n>20?70:150);continue}
+  if(!x.ok){el.innerHTML=face(x.c,x.dup);el.classList.add('done');sfx.tick&&sfx.tick(1);await W(n>20?70:150);continue}
   ok++;el.innerHTML=`<div class="svback lit"><i>✦</i></div>`;el.classList.add('charge');await W(260);
-  el.insertAdjacentHTML('beforeend',boltSVG());el.classList.add('struck');document.querySelector('.srv').style.setProperty('--fl',G[x.c.g].c);document.querySelector('.srv').classList.remove('flashing');void el.offsetWidth;document.querySelector('.srv').classList.add('flashing');
-  sfx.boom&&sfx.boom();shake&&shake();buzz&&buzz(60);await W(220);el.querySelector('.svback').outerHTML=face(x.c);el.classList.add('done','up');sparks(el,x.c.g>=4?40:24,G[x.c.g].c);await W(x.c.g>=4?650:420)}
+  el.insertAdjacentHTML('beforeend',boltSVG());el.classList.add('struck');thunder(x.c.g>=4);document.querySelector('.srv').style.setProperty('--fl',G[x.c.g].c);document.querySelector('.srv').classList.remove('flashing');void el.offsetWidth;document.querySelector('.srv').classList.add('flashing');
+  shake&&shake();buzz&&buzz(60);await W(220);el.querySelector('.svback').outerHTML=face(x.c,x.dup);el.classList.add('done','up');sparks(el,x.c.g>=4?40:24,G[x.c.g].c);await W(x.c.g>=4?650:420)}
  $('srvc').innerHTML=`성공 <b>${ok}</b> / ${n}`;const bt=$('srvX');bt.hidden=false;await new Promise(r=>{bt.onclick=r});stageOff()}
 /* 한 장 합성 연출 (리니지M식): 4장이 마법진 가운데로 모여 한 장이 되고, 충전 → 성공이면 다음 등급 색 번개가 연달아 내리치고 폭발하며 윗등급 카드가 뒤집힘 */
 async function synthDrama(ins,r,ok,gg,ng,nm){const gc=G[gg].c,nc=G[ng].c,rc=G[r.g].c;
@@ -2122,10 +2130,10 @@ async function synthDrama(ins,r,ok,gg,ng,nm){const gc=G[gg].c,nc=G[ng].c,rc=G[r.
  root.classList.add('merged');card.classList.add('show');sfx.boom&&sfx.boom();await W(500);
  msg.textContent='기운을 모으는 중…';card.classList.add('charge');for(let k=0;k<6;k++){sparks(card,8,k%2?gc:'#fff');sfx.tick&&sfx.tick(k);await W(230)}
  if(ok){card.classList.add('ok');msg.textContent='';await W(350);
-  const n=ng>=5?3:ng>=3?2:1;for(let k=0;k<n;k++){root.insertAdjacentHTML('beforeend',`<div class="sdr-bolt" style="left:${45+(k-1)*6+Math.random()*4}%">${boltSVG()}</div>`);root.classList.remove('fl');void root.offsetWidth;root.classList.add('fl');sfx.boom&&sfx.boom();shake();buzz&&buzz(80);await W(ng>=4?420:340)}
+  const n=ng>=5?3:ng>=3?2:1;for(let k=0;k<n;k++){root.insertAdjacentHTML('beforeend',`<div class="sdr-bolt" style="left:${45+(k-1)*6+Math.random()*4}%">${boltSVG()}</div>`);root.classList.remove('fl');void root.offsetWidth;root.classList.add('fl');thunder(ng>=4||k===n-1);shake();buzz&&buzz(80);await W(ng>=4?420:340)}
   root.classList.add('burst');sparks(card,ng>=4?120:70,nc);sparks(card,40,'#fff');await W(600)}
  else{card.classList.add('fail');msg.textContent='합성 실패…';sfx.fail&&sfx.fail();await W(900)}
- card.innerHTML=`<div class="sdr-front" style="--rc:${rc}">${r.ty==='t'&&artOf(r)&&artOf(r)[0]==='hi'?`<img src="art/H_${artOf(r)[1]}_card.png">`:cardIco(r,130)}<b>${r.n}</b><small>${G[r.g].ko} ${nm}</small></div>`;card.classList.add('flip');if(ok)root.classList.add('win');
+ card.innerHTML=`<div class="sdr-front" style="--rc:${rc}">${r.ty==='t'&&artOf(r)&&artOf(r)[0]==='hi'?`<img src="art/H_${artOf(r)[1]}_card.png">`:cardIco(r,130)}<b>${r.n}</b><small>${G[r.g].ko} ${nm}</small>${SYDUP?'<span class="dupb">중복</span>':'<span class="dupb new">NEW</span>'}</div>`;card.classList.add('flip');if(ok)root.classList.add('win');
  msg.innerHTML=ok?`<span style="color:${rc}">✦ ${G[r.g].ko} 등급 획득!</span>`:`<span style="color:${rc}">${G[r.g].ko} 「${r.n}」</span>`;
  await W(ok&&r.g>=4?2200:1500);const b=document.createElement('button');b.className='btn gold sdr-ok';b.textContent='확인';root.appendChild(b);await new Promise(res=>{b.onclick=res;$('skip').onclick=res});stageOff()}
 function vSynth(){const g=SG;const have=haveCnt(POOL,g);const sp=S.spts[POOL+g]||0;const allG=G.slice(0,6).reduce((a,x,i)=>a+Math.floor(haveCnt(POOL,i)/4),0);
