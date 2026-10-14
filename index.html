@@ -1329,7 +1329,7 @@ function fieldTick(t,ms0,z0){if(!WG)wgBuild();const P=SV.p;
  let lists=[];
  if(inDun()){const ds=dunStat(),ms=stStat(ds.s);lists.push([SV.dc.fs,ms,ds.zi])}
  else{const gi=gAt(P.x,P.y);if(gi>=0&&gi!==(S.gi||0)){S.gi=gi;S.stage=GROUNDS[gi].s;const gr=GROUNDS[gi];wNotice(`「${gr.n}」 <small>몬스터 Lv.${gr.ml} · ${TIERS[gr.tier][0]}</small>`,TIERS[gr.tier][2]);stageUI()}
-  const act=new Set();for(const gr of GROUNDS)if(Math.abs(gr.cx-P.x)<CELL/2+650&&Math.abs(gr.cy-P.y)<CELL/2+500)act.add(gr.i);
+  const act=new Set();for(const gr of GROUNDS)if(Math.abs(gr.cx-P.x)<CELL/2+750&&Math.abs(gr.cy-P.y)<CELL/2+560)act.add(gr.i);
   for(const k in SV.cells)if(!act.has(+k)){for(const s of SV.cells[k].fs)if(s.m&&!s.m.dead&&!s.m.ag){s.m.dead=-1;s.m=null}if(!SV.cells[k].fs.some(s=>s.m))delete SV.cells[k]}
   for(const gi2 of act){if(!SV.cells[gi2])SV.cells[gi2]=cellBuild(gi2);const gr=GROUNDS[gi2];lists.push([SV.cells[gi2].fs,stStat(gr.s),gr.zi])}
   mobs=mobs.filter(m=>m.dead!==-1)}
@@ -1363,7 +1363,7 @@ function fieldBossDown(m,t){const ms=m.ms||curStat();if(m.dboss){SV.dBossDone=tr
 const FLDT=t=>{if(inDun())return`${DUNG[S.wd.r][0]} ${S.wd.f}층${S.wd.f===DUNG[S.wd.r][1]?(SV.dBossDone?' · 보스 처치 완료':' · 보스 층'):''}`;if(!SV.wInit)return'';if(SV.fb&&!SV.fb.dead)return'필드 보스 출현 중!';const s=Math.max(0,Math.ceil((SV.fbT-t)/1000));return`필드 보스까지 ${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`};
 function svBoss(ms,z){const ang=rnd()*6.283,d=Math.hypot(BW,BH)*.6;const L=ZMON[ZONES.indexOf(z)]||ZMON[0];const kind=['dark_knight','fire_demon','troll','minotaur','orc_chief','vampire'].find(k=>L.includes(k))||L[L.length-1];const hp=Math.round(ms.hp*(KMUL[kind]||1)*45*(1+.35*(SV.stg-1)));
  SV.boss=1;mobs.push({kind,km:KMUL[kind]||1,boss:true,sboss:true,svboss:1,x:SV.p.x+Math.cos(ang)*d,y:SV.p.y+Math.sin(ang)*d,hp,max:hp,dead:0,hit:0,stun:0,slow:0,cd:0,sp:.018});announce(`<span style="color:#ff8a5a">☠ 보스 등장! 「${NAMEDN[kind]||'우두머리'}」</span>`);sfx.boom();shakeT=performance.now()+400}
-function survival(t){const cv=$('bt');if(!cv)return;const LD=LAND;let h,KZ=1;if(LD){const vw=VW(),vh=VH();h=vh<520?250:300;BW=Math.max(384,Math.min(760,Math.round(h*vw/vh)));KZ=vh*Math.min(2,devicePixelRatio||1)/h}else{h=SVH();BW=384}const cw=Math.round(BW*KZ),ch=Math.round(h*KZ);if(cv.width!==cw||cv.height!==ch){cv.width=cw;cv.height=ch;cv.style.aspectRatio=LD?'':`384/${h}`}BH=h;SCK=KZ;OFF=0;svBindJoy(cv);const c=cv.getContext('2d');c.setTransform(KZ,0,0,KZ,0,0);c.imageSmoothingEnabled=false;
+function survival(t){const cv=$('bt');if(!cv)return;const LD=LAND;let h,KZ=1;if(LD){const vw=VW(),vh=VH();h=vh<520?330:400;BW=Math.max(384,Math.min(960,Math.round(h*vw/vh)));KZ=vh*Math.min(2,devicePixelRatio||1)/h}else{h=SVH();BW=384}const cw=Math.round(BW*KZ),ch=Math.round(h*KZ);if(cv.width!==cw||cv.height!==ch){cv.width=cw;cv.height=ch;cv.style.aspectRatio=LD?'':`384/${h}`}BH=h;SCK=KZ;OFF=0;svBindJoy(cv);const c=cv.getContext('2d');c.setTransform(KZ,0,0,KZ,0,0);c.imageSmoothingEnabled=false;
  let dt=Math.min(50,t-(lastT||t))*SPD;lastT=t;if(t<HSTOP||SV.pause||!$('stage').hidden)dt=0;const FLD=!S.burstK;const z=zone(),M0=stats(),ms=curStat(),cl=CL(),X=svStats(M0);const M=Object.assign({},M0,{hp:Math.round(M0.hp*X.hp),atk:M0.atk*X.dmg,iv:M0.iv/X.aspd});const dead=t<deadUntil;
  const P=SV.p;SV.runT+=dt/1000;if(S.burstK&&!dead&&dt){burstLeft();S.bu.ms+=dt/SPD;if(burstLeft()<=0){announce('🔥 오늘 폭젠 사냥터 시간이 끝났어요');goGround(S.gi||0);return}}
  // 이동: 직접 조작 > 자동
@@ -1441,7 +1441,7 @@ function survival(t){const cv=$('bt');if(!cv)return;const LD=LAND;let h,KZ=1;if(
  SV.loot=SV.loot.filter(L=>!L.done);
  // 그리기 (y 정렬)
  const ents=[...mobs.map(m=>({m,y:m.y})),{p:1,y:P.y}].sort((a,b)=>a.y-b.y);
- for(const e of ents){if(e.p){svDrawPlayer(c,t,P,M,dead);continue}const m=e.m;if(Math.abs(m.x-cam.x)>BW/2+90||Math.abs(m.y-cam.y)>BH/2+130)continue;const a=m.dead?Math.max(0,1-(t-m.dead)/400):1;if(a<=0)continue;const sc=m.boss?1.5:m.named?1.15:m.elite?.9:.72;
+ for(const e of ents){if(e.p){svDrawPlayer(c,t,P,M,dead);continue}const m=e.m;if(Math.abs(m.x-cam.x)>BW/2+90||Math.abs(m.y-cam.y)>BH/2+130)continue;const a=m.dead?Math.max(0,1-(t-m.dead)/400):1;if(a<=0)continue;const sc=m.boss?1.35:m.named?1.05:m.elite?.82:.66;
   c.fillStyle=`rgba(0,0,0,${.3*a})`;c.beginPath();c.ellipse(m.x,m.y,10*sc,3.5*sc,0,0,7);c.fill();if((m.named||m.elite||m.boss)&&!m.dead)morphAura(c,t,m.x,m.y,m.boss?5:m.named?5:3,true);
   const st=m.dead?'hurt':m.atkT&&t-m.atkT<420?'atk':m.mv?'walk':'idle';const pp=m.dead?(t-m.dead)/400:st==='atk'?(t-m.atkT)/420:(t%700)/700;c.save();c.globalAlpha=a;
   drawMon(c,m.kind,m.fx>0?'R':'L',m.x-32*sc,m.y+2,sc,st,pp,m.named?'purple':m.elite?'red':m.slow>t?'crystal':null);if(m.hit>t&&!m.dead){c.globalCompositeOperation='lighter';c.globalAlpha=.6;drawMon(c,m.kind,m.fx>0?'R':'L',m.x-32*sc,m.y+2,sc,st,pp)}c.restore();
