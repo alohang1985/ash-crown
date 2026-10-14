@@ -951,6 +951,23 @@ html.land.inmode .mctl{display:block!important;top:auto!important;bottom:96px!im
 /* 같은 카드 겹친 모양 */
 .lmc.stk .lmc-f{box-shadow:4px 4px 0 -1px #1a120a,4px 4px 0 0 var(--gc),8px 8px 0 -1px #120c06,8px 8px 0 0 color-mix(in srgb,var(--gc) 60%,#000),0 4px 10px #000}
 .lmc.stk{margin-right:8px}
+/* ===== 리니지M식: 옛 오른쪽 패널 탭들을 가운데 큰 창으로 ===== */
+html.land .rcol{top:3vh!important;bottom:3vh!important;left:2.5vw!important;right:2.5vw!important;width:auto!important;padding:0 0 16px!important;border:1px solid #8a6a2c!important;box-shadow:0 0 0 1px #000,0 0 0 4px #2a1f10,0 0 0 100vmax rgba(0,0,0,.55),0 20px 50px #000!important;background:linear-gradient(#1c150c,#0b0805)!important;transform:scale(.96)!important;opacity:0;pointer-events:none;transition:opacity .15s,transform .15s!important}
+html.land.mopen .rcol{transform:none!important;opacity:1;pointer-events:auto}
+html.land.mopen .lmenu{display:none!important}
+html.land .lclose{top:6px!important;right:8px!important;border-radius:2px!important;z-index:3;width:30px!important;height:30px!important}
+html.land .rcol .subt{position:sticky;top:0;z-index:2;margin:0 0 10px!important;padding:6px 50px 0 12px;gap:2px;background:linear-gradient(#24190f,#140e08);border-bottom:1px solid #3a2c18;overflow-x:auto}
+html.land .rcol .subt button{flex:0 0 auto!important;border:0!important;border-bottom:2px solid transparent!important;border-radius:0!important;background:none!important;padding:9px 18px!important;font-size:13.5px!important;color:#a99a85!important}
+html.land .rcol .subt button[aria-pressed=true]{color:#ffe9b0!important;border-bottom-color:#e0b04a!important;box-shadow:none!important}
+html.land .rcol .panel{padding:0 16px!important}
+html.land .rcol .panel>h3{font-size:16px;color:#ffe9b0;border-left:3px solid #e0b04a;padding-left:8px;margin:6px 0 10px}
+html.land .rcol .btn{border-radius:2px!important}
+html.land .rcol .btn.gold{background:linear-gradient(#a37a2a,#6b4a14)!important;border:1px solid #c9a24a!important;color:#fff6dc!important}
+html.land .rcol .btn:not(.gold){background:linear-gradient(#2a2016,#16100a)!important;border:1px solid #5a4422!important;color:#eadfc8!important}
+html.land .rcol .advb,html.land .rcol .cinfo,html.land .rcol .whres>div,html.land .rcol .bi,html.land .rcol .pt2{border-radius:2px!important}
+html.land .rcol .panel{display:block}
+@media (min-width:900px){html.land .rcol .panel{columns:auto}}
+.emo .svi.emi{display:inline-block;width:1.05em;height:1.05em;vertical-align:-.15em;margin:0 .08em}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -2008,6 +2025,10 @@ bless:'<rect x="5" y="4" width="14" height="16" rx="2" fill="#f3d36b" fill-opaci
 dia:'<path d="M6 5h12l3 4-9 11L3 9z" fill="#46c8ff"/><path d="M6 5h12l3 4-9 11L3 9zM3 9h18M10 5l-2 4 4 11 4-11-2-4" stroke="#0b3a55"/>',
 gold:'<circle cx="12" cy="12" r="8" fill="#e8b23a"/><circle cx="12" cy="12" r="8" stroke="#6b4a10"/><circle cx="12" cy="12" r="5" stroke="#fff0b0" fill="none"/>',
 buff:'<path d="M12 3v18M5 10l7-7 7 7" fill="none"/>',
+fire:'<path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-3 2-4 2-6 1 1 2 2 2 4 1-2 1-5 1-8z" fill="#ff7a20" fill-opacity=".45"/><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-3 2-4 2-6 1 1 2 2 2 4 1-2 1-5 1-8z"/>',
+skull:'<path d="M5 11a7 7 0 1 1 14 0v3l-2 1v3H7v-3l-2-1z" fill="#e8d9b0" fill-opacity=".2"/><path d="M5 11a7 7 0 1 1 14 0v3l-2 1v3H7v-3l-2-1zM10 18v2M14 18v2"/><circle cx="9.5" cy="11" r="1.6"/><circle cx="14.5" cy="11" r="1.6"/>',
+bolt:'<path d="M13 2L5 13h6l-1 9 8-11h-6z" fill="#ffd23a" fill-opacity=".4"/><path d="M13 2L5 13h6l-1 9 8-11h-6z"/>',
+lock:'<rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
 crown:'<path d="M3 8l4 4 5-7 5 7 4-4-2 11H5z" fill="#e8b23a" fill-opacity=".35"/><path d="M3 8l4 4 5-7 5 7 4-4-2 11H5zM5 19h14"/><circle cx="12" cy="14" r="1.6"/>',
 char:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-5 4-8 8-8s8 3 8 8"/>',
 elx:'<path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3" fill="#7a5cff" fill-opacity=".3"/><path d="M7 15h10"/>',
@@ -2027,6 +2048,13 @@ sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l
 chest:'<rect x="4" y="9" width="16" height="11" fill="#a0672a" fill-opacity=".5"/><path d="M4 9h16v11H4zM4 9c0-4 16-4 16 0M12 12v3"/>',
 };
 const ico=(k,cls)=>`<svg class="svi${cls?' '+cls:''}" viewBox="0 0 24 24" fill="none" stroke="#f1e2bb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ICS[k]||ICS.menu}</svg>`;
+
+/* 이모지 → 평면 아이콘 (화면에 그려지는 글자만 · 3D 이모지 금지) */
+const EMO={'🔥':'fire','🎁':'chest','💰':'gold','🌀':'tp','🛡️':'clan','🛡':'clan','💠':'dia','💎':'dia','☠':'skull','📜':'quest','✨':'synth','🏠':'rt','🧪':'potion','🍺':'potion','📃':'scroll','⚔️':'swords','⚔':'swords','🏹':'swords','🐉':'swords','📖':'book','🔮':'book','✝':'sun','☀️':'sun','☀':'sun','🌙':'sun','🏆':'trophy','🛒':'bag','🔨':'enh','⚒':'enh','👑':'crown','🎭':'mask','🧸':'doll','⚡':'bolt','🧲':'star','🦅':'star','⚗️':'elx','⚗':'elx','🔒':'lock','📍':'map','🛏':'rt','🏰':'box','🎉':'star','📅':'cal','📆':'cal','📦':'box','🎫':'ticket','🗺️':'map','🗺':'map','⭐':'star','👤':'char','🤺':'swords','🏅':'medal','📚':'book','🔊':'sound','🟢':'potion','🟠':'potion','🔵':'potion','☄':'fire','❄':'synth','🍖':'potion','💣':'fire','🚶':'','👥':'char','⏳':'cal','⌛':'cal','🗡️':'swords','🗡':'swords','💀':'skull','🪙':'gold','✚':'potion'};
+const EMORE=new RegExp(Object.keys(EMO).map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).sort((a,b)=>b.length-a.length).join('|'),'g');
+function emoFix(root){const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null);const L=[];let n;while(n=w.nextNode()){if(n.parentNode&&/^(SCRIPT|STYLE|TEXTAREA|INPUT|OPTION|TITLE)$/.test(n.parentNode.nodeName))continue;EMORE.lastIndex=0;if(EMORE.test(n.nodeValue))L.push(n)}
+ for(const t of L){const sp=document.createElement('span');sp.className='emo';sp.innerHTML=t.nodeValue.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'})[c]).replace(EMORE,m=>EMO[m]?ico(EMO[m],'emi'):'');t.parentNode.replaceChild(sp,t)}}
+(function(){let q=new Set(),raf=0;const run=()=>{raf=0;for(const r of q)if(r.isConnected)emoFix(r);q.clear()};new MutationObserver(ms=>{for(const m of ms){if(m.type==='characterData'){if(m.target.parentNode)q.add(m.target.parentNode)}else for(const a of m.addedNodes){if(a.nodeType===1)q.add(a);else if(a.nodeType===3&&a.parentNode)q.add(a.parentNode)}}if(!raf)raf=requestAnimationFrame(run)}).observe(document.body,{childList:true,subtree:true,characterData:true});emoFix(document.body)})();
 function lqsInit(){const q=$('lqs');if(!q)return;q.innerHTML=`<button class="lrd r1" data-q="map" title="지도"><i>${ico('map')}</i></button><button class="lrd r2" data-q="bm" title="기억 장소"><i>${ico('star')}</i></button><button class="lrd r3" data-q="menu" title="메뉴"><i>${ico('menu')}</i></button><button class="latk" data-q="atk" title="가장 가까운 몬스터 공격"><i>${ico('atk')}</i></button><button data-q="pot"><i>${potIco(POTS[Math.max(0,potSel())][2])}</i><b>${potSel()<0?0:potN(potSel())}</b><small>물약</small></button><button data-q="tp"><i>${ico('tp')}</i><b>${S.tps||0}</b><small>순간이동</small></button><button data-q="rt"><i>${ico('rt')}</i><b>${S.rts||0}</b><small>귀환</small></button><button data-q="morph"><i>${ico('mask')}</i><small>변신</small></button><button data-q="doll"><i>${ico('doll')}</i><small>인형</small></button>`;
  q.onclick=e=>{const b=e.target.closest('[data-q]');if(!b)return;ac();const k=b.dataset.q;
   if(k==='map'){mapWin();return}if(k==='bm'){bmWin();return}if(k==='menu'){menuWin();return}
