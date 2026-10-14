@@ -1009,6 +1009,7 @@ function gearGrade(src){const r=src==='chest'?CHR[chLv()-1]:GEARTAB[src];let x=r
 const KMUL={goblin:.6,zombie:.8,wolfman:.9,skeleton:.9,bandit:.8,orc:1,lizard:1.1,boarman:1.1,troll:1.6,minotaur:1.5,orc_chief:1.6,skel_knight:1.5,vampire:1.7,dark_mage:1.4,dark_knight:2,fire_demon:2.2};
 /* 고등급 변신 오라: 발밑 마법진 · 빛 날개 · 떠오르는 입자 · (유일) 번개 */
 const HALO={'t:ereshkigal':'#3dff7a'};
+function outlineF(tc,t){const col=HALO[tc.id]||G[tc.g].c,k=SCK||1,p=.75+.25*Math.sin(t/500);const a=Math.round(p*255).toString(16).padStart(2,'0');return`drop-shadow(0 0 ${(1.2*k).toFixed(1)}px ${col}) drop-shadow(0 0 ${(3*k).toFixed(1)}px ${col}${a})`}
 function morphAura(c,t,x,gy,g,back,id){if(!back)return;const col=(id&&HALO[id])||G[g].c,pu=.8+.2*Math.sin(t/700),H=g>=6?54:48;c.save();c.globalCompositeOperation='lighter';
  const cy=gy-H*.55,gr=c.createRadialGradient(x,cy,H*.15,x,cy,H*.95);gr.addColorStop(0,col+'00');gr.addColorStop(.45,col+'38');gr.addColorStop(.75,col+'1e');gr.addColorStop(1,col+'00');
  c.globalAlpha=pu*(g>=5?1:.7);c.fillStyle=gr;c.beginPath();c.ellipse(x,cy,H*.75,H*.95,0,0,7);c.fill();c.restore()}
@@ -1632,12 +1633,12 @@ function svDrawPlayer(c,t,P,M,dead){const tc=S.morph!==false&&S.morphLook!==fals
  if(SV.mpT&&t-SV.mpT<1100){const p=(t-SV.mpT)/1100,col=G[SV.mpG].c;c.save();c.globalCompositeOperation='lighter';const w=(26+SV.mpG*4)*(p<.2?p/.2:1-((p-.2)/.8)*.7),gr=c.createLinearGradient(P.x-w,0,P.x+w,0);gr.addColorStop(0,'rgba(0,0,0,0)');gr.addColorStop(.5,col);gr.addColorStop(1,'rgba(0,0,0,0)');c.globalAlpha=(1-p)*.9;c.fillStyle=gr;c.fillRect(P.x-w,P.y-BH,w*2,BH+4);c.fillStyle='#fff';c.globalAlpha=(1-p)*.7;c.fillRect(P.x-w*.18,P.y-BH,w*.36,BH+4);
   for(let r=0;r<3;r++){const q=Math.min(1,p*1.6-r*.15);if(q<=0)continue;c.globalAlpha=(1-q)*.9;c.strokeStyle=col;c.lineWidth=3;c.beginPath();c.ellipse(P.x,P.y,20+q*90,(20+q*90)*.38,0,0,7);c.stroke()}
   for(let i=0;i<18;i++){const a=i*2.4+SV.mpT,rr=(.3+hashR(i)*.7)*80*p;c.globalAlpha=1-p;c.fillStyle=i%3?col:'#fff';c.fillRect(P.x+Math.cos(a)*rr,P.y-10-p*90*hashR(i+7)+Math.sin(a)*rr*.4,2.5,2.5)}c.restore()}const st=dead?'hurt':t-ATKT<ATKD?'atk':'idle';const pp=dead?Math.min(1,(t-(deadUntil-2200))/600):(t-ATKT)/ATKD;
- c.fillStyle='rgba(0,0,0,.4)';c.beginPath();c.ellipse(P.x,P.y,11,4,0,0,7);c.fill();if(tc&&tc.g>=3)morphAura(c,t,P.x,P.y,tc.g,true,tc.id);
- c.save();if(P.fx<0){c.translate(P.x*2,0);c.scale(-1,1)}const walk=!dead&&t-P.mv<120&&st==='idle';
+ c.fillStyle='rgba(0,0,0,.4)';c.beginPath();c.ellipse(P.x,P.y,11,4,0,0,7);c.fill();
+ c.save();const OL=tc&&tc.g>=3?outlineF(tc,t):'';if(OL)c.filter=OL;if(P.fx<0){c.translate(P.x*2,0);c.scale(-1,1)}const walk=!dead&&t-P.mv<120&&st==='idle';
  let ok=false;if(tc){if(artOf(tc)){ok=drawArt(c,tc,P.x-30,P.y+2,54,st,pp,t)}else if(isBeast(tc)){ok=drawBeast(c,tc,P.x-22,P.y+2,.95,st,pp,t)}else{const L=transformLook(tc),cp=lpcCompose(L);if(cp){const sc=1.0*(L.scale||1);drawWings(c,L,P.x-32*sc,P.y+2,sc,t);ok=drawLook(c,cp,P.x-32*sc,P.y+2,sc,st,pp,1)}}}
  if(!ok&&CARDART[clsArtKey()]){ok=drawArt(c,{id:'t:'+clsArtKey()},P.x-30,P.y+2,54,st,pp,t)}
  if(!ok){const cp=lpcCompose(myLook());if(cp){if(walk){const f=1+Math.floor(t/90)%8;c.drawImage(cp.cv,f*64,cp.fw+64,64,64,P.x-32,P.y-62,64,64)}else ok=drawLook(c,cp,P.x-32,P.y+2,1.0,st,pp,1)}}
- if(HITP>t){c.globalCompositeOperation='source-atop';}c.restore();if(tc&&tc.g>=3)morphAura(c,t,P.x,P.y,tc.g,false);
+ if(HITP>t){c.globalCompositeOperation='source-atop';}c.restore();
  if(LAND&&!dead){const nm=(typeof ACC!=='undefined'&&ACC&&ACC.user)||(S.cls?S.cls.k:'');const hy=P.y-(tc&&artOf(tc)?78:66);c.save();c.font='bold 8px sans-serif';c.textAlign='center';c.lineWidth=2.5;c.strokeStyle='rgba(0,0,0,.85)';c.strokeText(nm,P.x,hy);c.fillStyle='#8cff8c';c.fillText(nm,P.x,hy);const mh=stats().hp;c.fillStyle='rgba(0,0,0,.7)';c.fillRect(P.x-14,hy+2,28,3);c.fillStyle='#e33';c.fillRect(P.x-14,hy+2,28*Math.max(0,Math.min(1,S.hp/mh)),3);c.restore()}
 }
 
@@ -1701,7 +1702,7 @@ function morphWin(){const st=$('stage');const all=CARDS.filter(c=>c.ty==='t');co
  const cv=$('mwcv'),cx=cv.getContext('2d');let t0=performance.now();const tick=t=>{if(st.hidden||!$('mwcv'))return;const c=C(MWSEL);cx.setTransform(1,0,0,1,0,0);cx.clearRect(0,0,560,560);
   const gc=G[c.g].c,gr=cx.createRadialGradient(280,380,10,280,380,260);gr.addColorStop(0,gc+'55');gr.addColorStop(1,'rgba(0,0,0,0)');cx.fillStyle=gr;cx.fillRect(0,0,560,560);
   cx.setTransform(4.2,0,0,4.2,280-4.2*64,470-4.2*112);cx.imageSmoothingEnabled=!!artOf(c);const cyc=(t-t0)%3600,stt=cyc<2400?'idle':'atk',pp=stt==='atk'?((cyc-2400)%600)/600:(t%700)/700;
-  cx.fillStyle='rgba(0,0,0,.45)';cx.beginPath();cx.ellipse(64,112,16,5,0,0,7);cx.fill();if(c.g>=3)morphAura(cx,t,64,112,c.g,true,c.id);drawMorphAt(cx,c,64,112,stt,pp,t);if(c.g>=3)morphAura(cx,t,64,112,c.g,false);
+  cx.fillStyle='rgba(0,0,0,.45)';cx.beginPath();cx.ellipse(64,112,16,5,0,0,7);cx.fill();if(c.g>=3){const col=HALO[c.id]||G[c.g].c;cx.filter=`drop-shadow(0 0 5px ${col}) drop-shadow(0 0 12px ${col})`}drawMorphAt(cx,c,64,112,stt,pp,t);cx.filter='none';
   requestAnimationFrame(tick)};requestAnimationFrame(tick);
  const close=()=>{st.hidden=true;st.innerHTML='';st.onclick=null};
  st.onclick=e=>{const t=e.target;if(t.id==='pkX'||t===st){close();return}if(t.id==='pkMorph'){S.morph=false;MORPHFX=performance.now();save();close();render();return}
