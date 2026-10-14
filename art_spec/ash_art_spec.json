@@ -12116,6 +12116,17 @@
    ],
    "desc_en": "EXACT same character as style_ref/hellking_* (명계의 왕, horned demon king in black-red lava armor, green soul aura) but wielding one-handed sword and shield instead of the greatsword. Same scale, same palette, same frame layout as existing hellking sheets.",
    "motion_prompt": "walk.png: WALK CYCLE (8 frames, seamless loop, side 3/4 view facing right): frame1 contact (front heel touches ground, legs widest), frame2 down (body lowest, front knee bends absorbing weight), frame3 passing (back leg swings past standing leg, body rising), frame4 up (body highest, standing leg straight, toes push off), frames5-8 = same with opposite legs. Arms swing opposite to legs, shoulders counter-rotate to hips, head bobs gently 2-3px, cape/cloth and hair follow with slight delay (secondary motion), weapon held steady with small sway. Even spacing between frames, NO frame duplicated, character stays in the SAME position and SAME scale in every cell (in-place walk), feet on the same ground line. run.png: RUN CYCLE (8 frames, seamless loop, side 3/4 view facing right): body leans forward ~15 degrees, frame1 contact, frame2 down (deep knee bend), frame3 push-off (back leg fully extended), frame4 flight (BOTH feet off the ground, legs scissored), frames5-8 opposite legs. Arms pump strongly (bent ~90 degrees), bigger head bob than walk, cape streams backward, hair/cloth trail behind. Stride clearly longer than walk. In-place run: same position, same scale, same ground line in every cell, even timing, no duplicated frames. Consistency rules: identical character design, colors, armor details, weapon and proportions in every frame; same lighting from top-left; clean silhouette; magenta #FF00FF solid background; each frame in its own grid cell with generous margin so nothing touches the cell edges; no text, no watermark."
+  },
+  {
+   "id": "map_world",
+   "category": "지도",
+   "name": "잿빛 대륙 전체 지도",
+   "priority": 0,
+   "size": "1920x1440",
+   "sheets": [
+    "map"
+   ],
+   "desc_en": "Lineage M style painted world map of a fantasy continent seen from above (like Lineage M Aden map): realistic painterly terrain, coastlines, rivers, forests, deserts, snow mountains, volcanic red wasteland, fog clouds. Layout must follow the region grid in notes: SW green island forest, W/center brown canyon desert, N dark grey deadland, NE/E snowy frost, E/SE red abyss lava edges, surrounded by sea. NO text, NO icons, no UI, 4:3."
   }
  ],
  "effects_rules": "이펙트 전용: 정사각형 3x3 그리드(9프레임, 왼→오, 위→아래), 모든 칸 같은 크기, 효과가 각 칸 중앙(바닥형은 칸 아래쪽 중앙)에 위치, 칸 밖으로 잘리지 않게 여백, 배경은 순수 검정 #000000, 캐릭터·글자·격자선 없음. 리니지M 같은 한국 MMORPG 스킬 이펙트 느낌으로 선명하고 빛나게(glow). 파일: art_in/e_<이름>/sheet.png",
