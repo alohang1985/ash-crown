@@ -32,10 +32,10 @@
   "bg_removal": "하지 않아도 됨 — 원본(마젠타 배경) 그대로 주세요. 정렬·배경제거·보간은 이쪽에서 일괄 처리.",
   "naming": "id 그대로 폴더명, 시트명은 sheets 배열의 이름"
  },
- "order": "priority 1(남은 몹) → 2(이펙트 20종, 그리고 전설·신화·유일 변신) → 3(영웅 이하 변신) → 4(인형).",
+ "order": "priority 1(남은 몹) → 2(직업 캐릭터 16종 · 이펙트 28종 · 전설·신화·유일 변신) → 3(영웅 이하 변신) → 4(인형). 직업 캐릭터를 이펙트보다 먼저.",
  "counts": {
-  "assets": 169,
-  "todo_images": 652
+  "assets": 193,
+  "todo_images": 792
  },
  "assets": [
   {
@@ -3643,6 +3643,526 @@
     "battle": "60~240"
    },
    "format": "PNG, 배경 순수 검정 #000000 (더하기 합성으로 표시하므로 배경 제거 불필요)",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_lord_M",
+   "category": "직업 캐릭터",
+   "name": "군주 남",
+   "grade": "-",
+   "desc_en": "male version: a young royal lord commander in ornate silver-and-gold plate armor with a royal crimson cape and small crown circlet, one-handed longsword and a kite shield with a lion crest, noble and commanding. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_lord_F",
+   "category": "직업 캐릭터",
+   "name": "군주 여",
+   "grade": "-",
+   "desc_en": "female version: a young royal lord commander in ornate silver-and-gold plate armor with a royal crimson cape and small crown circlet, one-handed longsword and a kite shield with a lion crest, noble and commanding. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_knight_M",
+   "category": "직업 캐릭터",
+   "name": "기사 남",
+   "grade": "-",
+   "desc_en": "male version: a heavy armored knight in full steel plate armor with a closed great helm and plume, wielding a huge two-handed greatsword, strong and stoic. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_knight_F",
+   "category": "직업 캐릭터",
+   "name": "기사 여",
+   "grade": "-",
+   "desc_en": "female version: a heavy armored knight in full steel plate armor with a closed great helm and plume, wielding a huge two-handed greatsword, strong and stoic. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_elf_M",
+   "category": "직업 캐릭터",
+   "name": "요정 남",
+   "grade": "-",
+   "desc_en": "male version: a graceful elf ranger with long pointed ears and long blond hair, light green-and-brown leather armor with a hooded cloak, wielding an elegant longbow with a quiver of arrows. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_elf_F",
+   "category": "직업 캐릭터",
+   "name": "요정 여",
+   "grade": "-",
+   "desc_en": "female version: a graceful elf ranger with long pointed ears and long blond hair, light green-and-brown leather armor with a hooded cloak, wielding an elegant longbow with a quiver of arrows. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_wizard_M",
+   "category": "직업 캐릭터",
+   "name": "마법사 남",
+   "grade": "-",
+   "desc_en": "male version: a wise wizard in flowing deep-blue robes with silver runes and a pointed hat, holding a tall wooden staff topped with a glowing blue crystal. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_wizard_F",
+   "category": "직업 캐릭터",
+   "name": "마법사 여",
+   "grade": "-",
+   "desc_en": "female version: a wise wizard in flowing deep-blue robes with silver runes and a pointed hat, holding a tall wooden staff topped with a glowing blue crystal. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_darkelf_M",
+   "category": "직업 캐릭터",
+   "name": "다크엘프 남",
+   "grade": "-",
+   "desc_en": "male version: a stealthy dark elf assassin with grey-violet skin, white hair, pointed ears, dark purple leather armor and mask scarf, wielding twin curved daggers. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_darkelf_F",
+   "category": "직업 캐릭터",
+   "name": "다크엘프 여",
+   "grade": "-",
+   "desc_en": "female version: a stealthy dark elf assassin with grey-violet skin, white hair, pointed ears, dark purple leather armor and mask scarf, wielding twin curved daggers. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_dragonknight_M",
+   "category": "직업 캐릭터",
+   "name": "용기사 남",
+   "grade": "-",
+   "desc_en": "male version: a dragon knight in crimson dragon-scale plate armor with a horned dragon-head helmet and small dragon wings on the back, wielding a long dragon spear. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_dragonknight_F",
+   "category": "직업 캐릭터",
+   "name": "용기사 여",
+   "grade": "-",
+   "desc_en": "female version: a dragon knight in crimson dragon-scale plate armor with a horned dragon-head helmet and small dragon wings on the back, wielding a long dragon spear. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_illusionist_M",
+   "category": "직업 캐릭터",
+   "name": "환술사 남",
+   "grade": "-",
+   "desc_en": "male version: a mysterious illusionist mage in violet and black robes with floating arcane cubes orbiting, holding a short ornate magic rod with a purple orb, masked face. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_illusionist_F",
+   "category": "직업 캐릭터",
+   "name": "환술사 여",
+   "grade": "-",
+   "desc_en": "female version: a mysterious illusionist mage in violet and black robes with floating arcane cubes orbiting, holding a short ornate magic rod with a purple orb, masked face. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_warrior_M",
+   "category": "직업 캐릭터",
+   "name": "전사 남",
+   "grade": "-",
+   "desc_en": "male version: a barbarian warrior with a bare muscular upper body, fur-and-leather armor, war paint and braided hair, wielding a massive double-bladed battle axe. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "c_warrior_F",
+   "category": "직업 캐릭터",
+   "name": "전사 여",
+   "grade": "-",
+   "desc_en": "female version: a barbarian warrior with a bare muscular upper body, fur-and-leather armor, war paint and braided hair, wielding a massive double-bladed battle axe. Playable hero, heroic and attractive, same dark-fantasy Korean MMORPG concept art style as the reference.",
+   "current": "LPC 도트(교체 대상)",
+   "display_px": {
+    "battle_height": "90~130",
+    "card": "96~200"
+   },
+   "format": "PNG, 배경 #FF00FF",
+   "sheets": [
+    "ref",
+    "idle",
+    "walk",
+    "attack1",
+    "attack2",
+    "skill",
+    "hit_death"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_royal_aura",
+   "category": "이펙트",
+   "name": "군주 오라",
+   "grade": "-",
+   "desc_en": "a regal golden aura with a glowing lion crest emblem and rising light banners",
+   "current": "없음",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_counter_barrier",
+   "category": "이펙트",
+   "name": "카운터 배리어",
+   "grade": "-",
+   "desc_en": "a translucent golden-blue hexagon shield barrier dome forming around a center point, pulsing, then fading",
+   "current": "없음",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_wind_arrow",
+   "category": "이펙트",
+   "name": "바람의 화살",
+   "grade": "-",
+   "desc_en": "a green spiraling wind-infused arrow shot horizontally to the right with a swirling wind trail",
+   "current": "없음",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_dragon_breath",
+   "category": "이펙트",
+   "name": "드래곤 브레스",
+   "grade": "-",
+   "desc_en": "a large cone of dragon fire breath blasting horizontally to the right",
+   "current": "없음",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_shadow_strike",
+   "category": "이펙트",
+   "name": "쉐도우 팽",
+   "grade": "-",
+   "desc_en": "fast purple-black shadow claw slashes crossing in an X shape with dark wisps",
+   "current": "없음",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_arcane_cube",
+   "category": "이펙트",
+   "name": "큐브 이그니션",
+   "grade": "-",
+   "desc_en": "several glowing violet arcane cubes appearing in a circle and detonating into purple fire",
+   "current": "없음",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_berserk",
+   "category": "이펙트",
+   "name": "광폭화",
+   "grade": "-",
+   "desc_en": "an intense red rage aura flaring upward like fire around a center with red lightning",
+   "current": "없음",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000",
+   "sheets": [
+    "sheet"
+   ],
+   "status": "todo",
+   "priority": 2
+  },
+  {
+   "id": "e_summon_circle",
+   "category": "이펙트",
+   "name": "마법진",
+   "grade": "-",
+   "desc_en": "a large glowing magic circle with runes appearing on the ground, rotating, flashing, fading",
+   "current": "없음",
+   "display_px": {
+    "battle": "60~240"
+   },
+   "format": "PNG, 배경 순수 검정 #000000",
    "sheets": [
     "sheet"
    ],
