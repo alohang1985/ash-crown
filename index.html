@@ -1193,6 +1193,40 @@ html.land .lexp span{top:-14px!important;font-size:9px!important}
 .lshtab .hot .svi,.lshtab .hot img{display:none}.lshtab .hot::before{content:'☆';color:#ffcf5a;font-size:20px}
 .lsct,.lscl,.lscp,.lsctm{position:relative;z-index:1}.lsci{flex:1 1 0;min-height:0!important}
 @media (max-height:520px){.lsc2 .lscl{position:absolute;right:4px;top:22px;padding:0}.lzoom{display:none}}
+/* ===== 리니지M 실측 비율 (화면 높이 기준 vh · 사용자 캡처 2868×1320에서 측정) ===== */
+.lchar{left:3vh!important;top:11.4vh!important;bottom:7.6vh!important;width:50vh!important}
+.lchar .lpth,.linv .linh,.lskw .lpth{height:7.6vh;min-height:0;padding:0 .6vh 0 2vh!important;gap:1vh}
+.lpth>button[data-cht],.lpth>button[data-skt]{font-size:2.6vh!important;padding:0 1vh!important}
+.lx{width:5.6vh!important;height:5.6vh!important;font-size:3vh!important}
+.lchar .lpb{padding:1.4vh!important;gap:1vh!important}
+.lchd{padding:1vh!important;gap:1vh!important}.lchcol{gap:1vh!important}
+.lcs2{width:9.1vh!important;min-width:0!important;max-width:none!important}
+.lcs2 em{font-size:2vh!important}.lcs2 small{font-size:1.6vh}
+.lchset{gap:.6vh}.lchset button{height:5.6vh;padding:0!important;font-size:2.4vh!important;gap:1vh!important}.lchset i{width:1.6vh!important;height:1.6vh!important}
+.ldots{padding:.4vh 0!important;gap:2vh}.ldots i{width:.9vh;height:.9vh}
+.lchc>div{width:16vh!important;height:21vh!important}.lchg div{padding:1.6vh!important;font-size:2.4vh}.lchst p{font-size:1.8vh!important}.lchbt .lbtn{height:6vh;padding:0!important;font-size:2.2vh!important}
+/* 가방 */
+.linv{right:2.6vh!important;top:11.4vh!important;bottom:auto!important;height:70vh!important;width:96vh!important;max-width:calc(100vw - 30vh)}
+.linh{height:8.3vh!important}.lsrch input{font-size:2.2vh!important;padding:0!important}.lrst{font-size:2.2vh!important;padding:1vh 2vh!important}
+.lflt{width:7vh!important;height:6vh!important;font-size:2vh!important}.lflt .svi{width:3.6vh!important;height:3.6vh!important}
+.ling{grid-template-columns:repeat(8,9.5vh)!important;gap:2vh 2vh!important;padding:1.6vh 2.4vh!important;justify-content:start}
+.lii{width:9.5vh}.lii u{font-size:1.8vh!important;line-height:2.4vh!important;padding:0 .5vh!important}.lii em,.lii b{font-size:2vh!important}
+.linf{padding:.6vh 2.4vh!important;font-size:2.4vh!important}.linf .svi{width:3vh!important;height:3vh!important}
+.linb{padding:1vh 1.4vh!important}.linb button{width:9vh!important;height:5.8vh!important;font-size:3vh!important}.linb .svi{width:3.4vh!important;height:3.4vh!important}
+.lidet{top:11.4vh!important;right:calc(min(96vh,100vw - 30vh) + 4vh)!important;width:42vh!important;padding:1.6vh!important;gap:1vh!important}
+.lidh>span{width:9vh!important;height:9vh!important}.lidh b{font-size:2.4vh!important}.lidh small,.lidd{font-size:1.9vh!important}.lidb .lbtn{height:5.6vh;padding:0!important;font-size:2.2vh!important}
+/* 스킬 */
+.lskw{right:2.6vh!important;top:11.4vh!important;bottom:auto!important;height:70vh!important;width:50vh!important}
+.lskr{padding:1vh .6vh!important;gap:1vh!important}.lskr>b{width:2.4vh!important;font-size:2.4vh!important}.lskr>div{gap:1vh!important}
+.lsk u{font-size:1.6vh!important}.lsk em{font-size:1.7vh!important}
+.lskb{padding:1vh!important;gap:1vh!important}.lskb .lbtn{height:5.8vh;padding:0 2vh!important;font-size:2.2vh!important}.lskb small{font-size:1.8vh!important}
+.lskw+.lidet{right:56vh!important}
+.ling{grid-template-columns:repeat(8,minmax(0,1fr))!important;gap:1.6vh!important;padding:1.6vh 2vh!important}.lii{width:auto}
+.lchart{position:relative}.lchart img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}.lchart .lcsspr{position:absolute;inset:0;display:grid;place-items:end center}
+.lchd{grid-template-columns:9.1vh 1fr 9.1vh!important;background:radial-gradient(ellipse at 50% 35%,rgba(230,140,40,.55),rgba(60,30,10,.4) 45%,#0b0805 75%)!important}
+.lchcol{gap:.7vh!important}.lcs2{width:8.6vh!important}.lchd{grid-template-columns:8.6vh 1fr 8.6vh!important}
+.eqimg{object-fit:contain;filter:drop-shadow(0 2px 3px rgba(0,0,0,.8))}
+.lchcol{display:grid!important;grid-template-rows:repeat(6,minmax(0,1fr));height:100%;min-height:0}.lchd{min-height:0}.lcs2{width:auto!important;height:100%;aspect-ratio:1;justify-self:center}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -1842,7 +1876,8 @@ function drawArt(c,card,x,gy,H,state,p,t){const a=artOf(card);if(!a)return false
   c.translate(x+w/2+lx,gy+(state==='hurt'?4:0));c.scale(sq,1/sq);c.drawImage(im,-w/2,-h+bob,w,h);c.restore();return true}
  const k=a[1],m=ARTM.fga[k],im=fgaSheet(k,a[2]);if(!(im.width||im.naturalWidth))return false;const fs=m.fs;const ri=state==='atk'?1:state==='hurt'?2:0;const n=m.rows[ri][1];
  const f=state==='idle'?Math.floor(t/220)%m.rows[0][1]:Math.min(n-1,Math.floor(Math.min(.999,p)*n));const D=H*1.9;c.save();c.globalAlpha=state==='hurt'&&p>=1?.35:1;c.drawImage(im,f*fs,ri*fs,fs,fs,x-D*.15,gy-D*.86,D,D);c.restore();return true}
-const cardIco=(c,px)=>{const a=c&&c.ty==='t'&&artOf(c);return a&&a[0]==='hi'?`<img src="art/H_${a[1]}_card.png" style="width:${px}px;height:${px}px;object-fit:cover;object-position:50% 15%;border-radius:6px">`:spr(c.i,px)};
+const EQIC=new Set([]);const eqKey=c=>c.id.split(':')[1].toLowerCase().replace(/[^a-z0-9_]/g,'_');
+const cardIco=(c,px)=>{if(c&&(c.ty==='w'||c.ty==='a')&&EQIC.has(eqKey(c)))return`<img class="eqimg" src="art/IC_eq_${eqKey(c)}.webp" style="width:${px}px;height:${px}px" alt="">`;const a=c&&c.ty==='t'&&artOf(c);return a&&a[0]==='hi'?`<img src="art/H_${a[1]}_card.png" style="width:${px}px;height:${px}px;object-fit:cover;object-position:50% 15%;border-radius:6px">`:spr(c.i,px)};
 const BEASTRE=/dragon|drake|wyvern|tiamat|xtahua|phoenix|manticore|griffon|sphinx|basilisk|golem|gargoyle|salamander|juggernaut/;
 const isBeast=card=>BEASTRE.test(card.id.slice(2));
 function drawBeast(c,card,x,gy,sc,state,p,t){if(!IMG.complete)return false;const sz=32*sc*1.75,br=1+Math.sin(t/260)*.03;const lx=state==='atk'?Math.sin(Math.min(1,p)*Math.PI)*18:0,ly=state==='hurt'?6:0;
@@ -2434,7 +2469,9 @@ function shopWin(){const st=$('stage');const draw=()=>{const now=Date.now();if(S
  const price=it=>{const b=shBought(it),so=it.lim&&b>=it.lim;return so?'<b class="so">구매 완료</b>':it.gold?`${ico('gold')}<b>${fmt(it.gold)}</b>`:it.won===0?'<b>무료</b>':`${ico('dia')}<b>${fmt(it.won)}</b>`};
  const card=it=>{const lock=it.lv&&S.lv<it.lv,so=it.lim&&shBought(it)>=it.lim;return`<button class="lsc2${so?' sold':''}${lock?' lock':''}" data-shb="${it.k}" ${so||lock?'disabled':''}><div class="lsct">${it.n.replace(/^\[[^\]]+\]\s*/,'')}</div><small class="lscl">${lock?'레벨 '+it.lv+' 이상':lim(it)}</small><div class="lsci">${shArt(it)}<i class="lzoom">${ico('star')}</i></div>${tl(it)?`<em class="lsctm">${tl(it)}</em>`:`<em class="lsctm d">${it.d}</em>`}<div class="lscp">${price(it)}</div></button>`};
  const feat=[...SHOP.filter(x=>x.cat==='ev'),...SHOP.filter(x=>x.cat==='pk')].filter(x=>!(x.lim&&shBought(x)>=x.lim)).slice(0,2);
- const body=SHC==='sum'?`<div class="shin">${vGacha()}</div>`:SHC==='pass'?`<div class="shin">${vPass()}</div>`:SHC==='mon'?`<div class="shin">${vMonth()}</div>${SHOP.some(x=>x.cat==='mon')?`<div class="lsg2">${SHOP.filter(x=>x.cat==='mon').map(card).join('')}</div>`:''}`:`<div class="lsg2">${SHOP.filter(x=>x.cat===SHC).map(card).join('')||'<p class="mini">상품이 없어요</p>'}</div>`;
+ const gcard=(pool,P,n)=>{const ty={t:'변신',d:'인형',s:'스킬북'}[pool],cur=P.cur==='gold',cost=n===1?P.p1:P.p11*n/11,rt=pool==='s'?SKR[P.k]:P.rates;let mg=0;rt.forEach((v,i)=>{if(v>0)mg=i});const img=pool==='t'?'item_poly':pool==='d'?'item_doll':'ui_skill';
+  return`<button class="lsc2" data-gk="${pool}|${P.k}|${n}" ${cur&&S.gold<cost?'disabled':''}><div class="lsct">${P.ko.replace(' 패키지','')} ${ty} 소환 ${n===11?'11+1':n===110?'110':'1'}회</div><small class="lscl">최고 <b style="color:${G[mg].c}">${G[mg].ko}</b></small><div class="lsci"><div class="lsa n1"><img src="art/IC_${img}.webp" alt=""></div></div><em class="lsctm d">${rt.map((v,i)=>v>=.001?`${G[i].ko} ${+(v*100).toFixed(1)}%`:'').filter(Boolean).slice(-3).join(' · ')}</em><div class="lscp">${cur?ico('gold'):ico('dia')}<b>${fmt(cost)}</b></div></button>`};
+ const body=SHC==='sum'?`<div class="lsg2">${['t','d','s'].flatMap(pool=>PACKS.flatMap(P=>[11,1].map(n=>gcard(pool,P,n)))).join('')}</div>`:SHC==='pass'?`<div class="shin">${vPass()}</div>`:SHC==='mon'?`<div class="shin">${vMonth()}</div>${SHOP.some(x=>x.cat==='mon')?`<div class="lsg2">${SHOP.filter(x=>x.cat==='mon').map(card).join('')}</div>`:''}`:`<div class="lsg2">${SHOP.filter(x=>x.cat===SHC).map(card).join('')||'<p class="mini">상품이 없어요</p>'}</div>`;
  st.innerHTML=`<div class="lshop2"><div class="lshh"><span class="lshc">${ico('dia')}<b>${CASH==null?'…':fmt(CASH)}</b></span><span class="lshc">${ico('gold')}<b>${S.gold.toLocaleString()}</b><em>›</em></span><span class="lsht">${ico('shop')}<b>상 점</b></span><span class="lshs">|</span><span class="lsht dim">${ico('bag')}보관함</span><button class="lx" id="pkX">✕</button></div>
   <div class="lshtab"><button class="hot">${ico('star')} 인 기</button>${SHTAB.map(([k,n])=>`<button data-shc="${k}" class="${SHC===k?'on':''}">${n}</button>`).join('')}</div>
   <div class="lshb"><div class="lshf">${feat.map(it=>`<button class="lshfi" data-shb="${it.k}"><div class="lsct">${it.n.replace(/^\[[^\]]+\]\s*/,'')}</div><small class="lscl">${lim(it)}</small><div class="lsci">${shArt(it)}</div><span class="lsrec">추천상품</span>${tl(it)?`<em class="lsctm">${tl(it)}</em>`:''}<div class="lscp">${price(it)}</div></button>`).join('')}</div><div class="lshm">${body}</div></div>
@@ -2443,6 +2480,7 @@ function shopWin(){const st=$('stage');const draw=()=>{const now=Date.now();if(S
  st.onclick=async e=>{const t=e.target;if(t.id==='pkX'||t===st){close();return}let b;
   if(b=t.closest('[data-shc]')){SHC=b.dataset.shc;draw();return}
   if(b=t.closest('[data-pool]')){POOL=b.dataset.pool;draw();return}
+  if(b=t.closest('[data-gk]')){if(BUSY||b.disabled)return;const[pool,pk,n]=b.dataset.gk.split('|');POOL=pool;st.hidden=true;st.innerHTML='';st.onclick=null;try{await buyPack(pk,+n)}catch(_){}const back=()=>{if(BUSY||!$('stage').hidden){setTimeout(back,250);return}shopWin()};setTimeout(back,300);return}
   if(t.closest('#shPct')){const L=SHOP.filter(x=>x.cat===SHC);announce(SHC==='sum'?'소환 확률은 각 상품 카드에 표시돼 있어요':L.length?L.map(x=>x.n+': '+x.d).slice(0,3).join(' / '):'상세 정보가 없어요');return}
   if(t.closest('#shAll')){const L=SHOP.filter(x=>x.cat===SHC&&x.gold&&!(x.lim&&shBought(x)>=x.lim)&&!(x.lv&&S.lv<x.lv));const tot=L.reduce((a,x)=>a+x.gold,0);if(!L.length){announce('일괄 구매는 골드 상품만 가능해요');return}if(S.gold<tot){announce('골드가 부족해요 · '+fmt(tot));return}if(!confirm(`골드 상품 ${L.length}개를 ${fmt(tot)} 골드에 모두 살까요?`))return;S.gold-=tot;for(const it of L){S.buy=S.buy||{};const p=it.per==='d'?kday():it.per==='w'?wkey():'a';const cur=S.buy[it.k]&&S.buy[it.k].p===p?S.buy[it.k].n:0;S.buy[it.k]={p,n:cur+1};await shopGive(it.rw)}announce(`${L.length}개 일괄 구매 완료`);save();headLite();draw();return}
   if(t.closest('.shin')){if(BUSY)return;const keepPool=POOL;$('body').onclick(e);const back=()=>{if(BUSY||(!st.hidden&&!st.querySelector('.lshop2'))){setTimeout(back,200);return}if(st.querySelector('.lshop2')||st.hidden)shopWin()};setTimeout(back,150);return}
@@ -2615,12 +2653,12 @@ let CHT='eq',CHP=0;
 function charWin(){const draw=()=>{const tc=S.morph!==false&&C(S.eqT),dl=C(S.eqD);
   const art=tc&&tc.id==='t:ereshkigal'?'<img src="art/H_hellking_card.png" alt="">':`<div class="lcsspr">${spr(charIdx(S.cls?S.cls.k:'기사',S.cls?S.cls.sx:'M'),220)}</div>`;
   const slot=sl=>{const x=sl==='w'?W_():eqArm(sl),c=x&&C(x.id);return`<button class="lcs2" data-ivk="${x?(sl==='w'?'w':'a')+':'+x.u:''}" style="--gc:${c?G[c.g].c:'#3a2c18'}">${c?cardIco(c,44):`<small>${{helm:'투구',body:'갑옷',w:'무기',glove:'장갑',boot:'부츠',cloak:'망토',shield:'방패',neck:'목걸이',ear:'귀걸이',ring:'반지',belt:'벨트'}[sl]}</small>`}${x&&x.e?`<em>+${x.e}</em>`:''}</button>`};
-  const P=[[['helm','body','w','glove','boot'],['cloak','shield']],[['neck','ear'],['ring','belt']]];
+  const P=[[['helm','body','w','glove','boot','cloak'],['shield','neck','ear','ring','belt']]];
   let body='';
-  if(CHT==='eq'){if(CHP<2){const[L,R]=P[CHP];body=`<div class="lchd"><div class="lchcol">${L.map(slot).join('')}</div><div class="lchart">${art}</div><div class="lchcol">${R.map(slot).join('')}</div></div>`}
+  if(CHT==='eq'){if(CHP>1)CHP=1;if(CHP<1){const[L,R]=P[CHP];body=`<div class="lchd"><div class="lchcol">${L.map(slot).join('')}</div><div class="lchart">${art}</div><div class="lchcol">${R.map(slot).join('')}</div></div>`}
    else{const card=(c,lab)=>c?`<div class="lchc" style="--gc:${G[c.g].c}"><small style="color:${G[c.g].c}">${c.n}</small><div>${cardIco(c,96)}</div><em>${G[c.g].ko}</em></div>`:`<div class="lchc empty"><small>${lab}</small><div></div></div>`;
     body=`<div class="lchh">변신 / 마법인형</div><div class="lchcs">${card(tc,'변신 없음')}${card(dl,'인형 없음')}</div>`}
-   body+=`<div class="ldots">${[0,1,2].map(i=>`<i class="${i===CHP?'on':''}" data-chp="${i}"></i>`).join('')}</div>`;
+   body+=`<div class="ldots">${[0,1].map(i=>`<i class="${i===CHP?'on':''}" data-chp="${i}"></i>`).join('')}</div>`;
    body+=`<div class="lchset">${[0,1,2].map(i=>`<button data-cset="${i}" class="${(S.cset||0)===i?'on':''}"><i></i>${i+1}SET</button>`).join('')}</div>`}
   else if(CHT==='st'){const s=S.st||{};const v=k=>(s[k]||0)+10;
    body=`<div class="lchst"><div class="lchel">${ico('elx')} 엘릭서 <b>${typeof elxUsed==='function'?elxUsed():0}</b></div><div class="lchg">${[['STR',v('str')],['INT',v('int')],['DEX',v('dex')],['WIS',10],['CON',v('con')],['CHA',10],['LFE',0],['DTH',0]].map(([k,n])=>`<div><i>${k}</i><b>${n}</b></div>`).join('')}</div><p>스탯 / 능력치 투자 및 초기화를 진행하시려면<br>하단 스탯 / 능력치 버튼을 터치해주세요.</p>${S.pt?`<p style="color:#7dff9a">남은 포인트 ${S.pt}</p>`:''}</div><div class="lchbt"><button class="lbtn blue" data-cgo="char">스탯 / 능력치</button><button class="lbtn blue" data-cgo="detail">상세 정보 ›</button></div>`}
