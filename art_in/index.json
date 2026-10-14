@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14 23:37",
+ "updated": "2026-10-14 23:39",
  "source": "Gemini 웹(Pro) via OpenClaw 맥미니 — 원본 그대로(배경 #FF00FF 요청, 오른쪽 아래 Gemini 반짝이 워터마크 있음)",
  "assets": {
   "e_meteor": {
@@ -682,6 +682,17 @@
      "w": 2048,
      "h": 2048,
      "sec": 75
+    }
+   },
+   "complete": true
+  },
+  "b_board": {
+   "sheets": {
+    "ref": {
+     "at": "10-14 23:39",
+     "w": 2048,
+     "h": 2048,
+     "sec": 90
     }
    },
    "complete": true
