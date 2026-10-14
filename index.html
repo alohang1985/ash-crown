@@ -1394,7 +1394,7 @@ function survival(t){const cv=$('bt');if(!cv)return;const LD=LAND;let h,KZ=1;if(
  if(dead){c.fillStyle='rgba(60,0,0,.45)';c.fillRect(0,LD?0:34,BW,BH-(LD?0:34))}svHud(t,M)}
 /* ===== 가로 화면 (리니지식) ===== */
 let LAND=false,LHT=0;
-const LAYK='ash.layout';const layPref=()=>{try{return localStorage.getItem(LAYK)||'land'}catch(_){return'land'}};
+const LAYK='ash.layout';const layPref=()=>'land';try{localStorage.removeItem('ash.layout')}catch(_){}
 const TOUCH=()=>matchMedia('(pointer:coarse)').matches||navigator.maxTouchPoints>1&&!matchMedia('(pointer:fine)').matches;
 function setLand(){const w=innerWidth,h=innerHeight,coarse=TOUCH();const v=(coarse||layPref()==='land')&&w>h&&h>=300;LAND=v;const R=document.documentElement;R.classList.toggle('land',v);if(!v)R.classList.remove('mopen');
  const rot=$('rot');if(rot)rot.hidden=!(coarse&&w<h);R.classList.toggle('touch',coarse);const sw=$('laySw');if(sw)sw.hidden=v||w<=h}
@@ -1546,7 +1546,7 @@ function shopWin(){const st=$('stage');const draw=()=>{const now=Date.now();
    S.buy=S.buy||{};const p=it.per==='d'?kday():it.per==='w'?wkey():'a';const cur=S.buy[it.k]&&S.buy[it.k].p===p?S.buy[it.k].n:0;S.buy[it.k]={p,n:cur+1};save();sfx.rare(2);
    const hasCards=it.rw.pull||it.rw.tcard;if(hasCards){BUSY=true;await shopGive(it.rw);BUSY=false;shopWin()}else{await shopGive(it.rw);announce(`🛒 「${it.n}」 구매 완료 · ${it.d}`);headLite();draw()}}}}
 function lmenuInit(){lqsInit();const m=$('lmenu');if(!m)return;const ic={grow:'👤',gear:'⚔️',gacha:'💎',adv:'🗺️',more:'📜'};
- m.innerHTML=GROUPS.map(g=>`<button data-lg="${g[0]}"><i>${ic[g[0]]||'•'}</i><small>${g[1]}</small></button>`).join('')+`<button data-lg="_clan"><i>🛡️</i><small>혈맹</small></button><button data-lg="_cls" title="기존(세로) 화면으로"><i>▭</i><small>기존화면</small></button>`;
+ m.innerHTML=GROUPS.map(g=>`<button data-lg="${g[0]}"><i>${ic[g[0]]||'•'}</i><small>${g[1]}</small></button>`).join('')+`<button data-lg="_clan"><i>🛡️</i><small>혈맹</small></button>`;
  m.onclick=e=>{const b=e.target.closest('[data-lg]');if(!b)return;ac();const k=b.dataset.lg;const R=document.documentElement;if(k==='_clan'){clanWin();return}if(k==='gacha'){shopWin();return}if(k==='_cls'){try{localStorage.setItem(LAYK,'classic')}catch(_){}setLand();return}
   const g=GROUPS.find(x=>x[0]===k);const open=R.classList.contains('mopen');if(open&&grpOf(TAB)[0]===k){R.classList.remove('mopen');return}TAB=LASTSUB[k]||g[2][0][0];render();R.classList.add('mopen');lmSync()};
  $('lhud').onclick=e=>{if(e.target.closest('.lpf'))m.querySelector('[data-lg=grow]').click()}; $('lbuf').onclick=()=>{ac();bwin()};$('lauto').onclick=()=>{ac();SV.noAuto=!SV.noAuto;announce(SV.noAuto?'자동 사냥을 껐어요 · 직접 움직여 주세요':'자동 사냥을 켰어요');$('lauto').classList.toggle('on',!SV.noAuto)};$('lclose').onclick=()=>{document.documentElement.classList.remove('mopen');lmSync()};
