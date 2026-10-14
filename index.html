@@ -1729,10 +1729,10 @@ function skMigrate(){if(!S||S.skMig2)return;S.skMig2=1;const byName=n=>SKILLS.fi
 const skLv=id=>(S.skills&&S.skills[id]||0);
 const skMul=id=>1+.15*(skLv(id)-1);
 function learnSkill(k){S.skills=S.skills||{};const lv=S.skills[k.id]||0;if(lv){S.skb=S.skb||{};S.skb[k.id]=(S.skb[k.id]||0)+1;return'dup'}S.skills[k.id]=1;if(!k.pas&&skOk(k)&&S.skEq.length<SK_SLOTS)S.skEq.push(k.id);return'new'}
-const skSpare=id=>(S.skb&&S.skb[id])||0;const SKNEXT={0:3,2:3,3:4,4:5};const SKSYN={0:.12,2:.2,3:.11,4:.1};
-const skSpareG=g=>SKILLS.filter(k=>k.g===g).reduce((a,k)=>a+skSpare(k.id),0);
+const skSpare=id=>(S.skb&&S.skb[id])||0;const SKNEXT={0:3,2:3,3:4,4:5};const SKSYN={0:.10,2:.10,3:.08,4:.05};/* 리니지M 스킬 카드 합성: 일반 8장→영웅 · 영웅 4장→전설 · 전설 2장→신화(약 5%) */
+const skSynthOnce_unused=0;const skSpareG=g=>SKILLS.filter(k=>k.g===g).reduce((a,k)=>a+skSpare(k.id),0);
 function skTake(g){const k=SKILLS.filter(x=>x.g===g&&skSpare(x.id)>0).sort((a,b)=>skSpare(b.id)-skSpare(a.id))[0];if(!k)return null;S.skb[k.id]--;return k}
-function skSynthOnce(g){const ins=[];for(let i=0;i<4;i++){const k=skTake(g);if(!k){ins.forEach(x=>S.skb[x.id]++);return null}ins.push(k)}const key='s'+g;const sure=(S.spts[key]||0)>=SYN_PITY;const ok=sure||rnd()<SKSYN[g];track('synth');
+function skSynthOnce(g){const ins=[];for(let i=0;i<SNEED('s',g);i++){const k=skTake(g);if(!k){ins.forEach(x=>S.skb[x.id]++);return null}ins.push(k)}const key='s'+g;const sure=false;const ok=rnd()<SKSYN[g];track('synth');
  if(ok){const ng=SKNEXT[g];const L=SKILLS.filter(k=>k.g===ng&&skOk(k));const k=pick(L.length?L:SKILLS.filter(k=>k.g===ng&&k.cls==='공용'));learnSkill(k);if(sure)S.spts[key]=0;return{ok,k}}const back=pick(ins);S.skb[back.id]++;S.spts[key]=Math.min(SYN_PITY,(S.spts[key]||0)+R(8,15));return{ok,k:back}}
 async function skSynth(g,all){if(skSpareG(g)<4||BUSY)return;BUSY=true;const won=[];let n=0,okN=0;do{const r=skSynthOnce(g);if(!r)break;n++;if(r.ok){okN++;won.push(r.k)}}while(all&&skSpareG(g)>=4&&n<300);save();
  if(!all&&n===1){if(won.length){await revealOne(won[0],false)}else{stageOn(`<div class="msg"><b>스킬북 합성 실패</b><br><span class="mini">한 권이 돌아왔어요 · 합성 포인트 ${S.spts['s'+g]||0}/${SYN_PITY}</span></div>`);sfx.fail();await wait(1400)}stageOff();return}
@@ -1754,7 +1754,7 @@ const PACKS=[{k:'normal',ko:'일반 패키지',d:'골드로 살 수 있는 기�
  {k:'silver',ko:'실버 패키지',d:'고급부터 시작 · 영웅까지',cur:'won',p1:330,p11:3300,rates:[0,.75,.21,.04,0,0,0],pity:30,pg:3,c:'#c9d3dc'},
  {k:'goldp',ko:'골드 패키지',d:'고급부터 시작 · 전설까지',cur:'won',p1:1100,p11:11000,rates:[0,.5,.341,.134,.025,0,0],pity:80,pg:4,c:'#ffcf5a'}];
 const ENH=[1,1,1,1,.9,.8,.6,.4,.25,.15,.09,.05,.03,.02,.01];const ENH_HI=[1,.5,.35,.25,.18,.12,.08,.05,.03,.02,.015,.01,.008,.005,.003];
-const enhRate=(c,lv)=>c.acc?[.9,.8,.7,.6,.5,.4,.3,.25,.2,.15,.1,.08,.06,.05,.04][lv]||.03:(c.g>=5?ENH_HI:ENH)[lv];const riskLv=c=>c.acc?99:c.g>=5?1:c.ty==='a'?4:6;const PROT_WON=110000;const SYN=[.35,.17,.12,.11,.10,1];const SNEED=(ty,g)=>ty!=='s'&&g===4?2:4;/* 리니지M 합성: 35/17/12/11%, 전설 2장→신화 10%, 신화 4장→유일 100% · 실패 시 1장 환급 · 희귀·영웅 합성 20회 실패 시 상위 1장 확정 *//* 전설→신화 0.05% · 합성 포인트 없음 → 신화 1장 평균 약 2.4억 원 · 유일 = 신화 4장 100% (약 10억) */const SYN_PITY=100;
+const enhRate=(c,lv)=>c.acc?[.9,.8,.7,.6,.5,.4,.3,.25,.2,.15,.1,.08,.06,.05,.04][lv]||.03:(c.g>=5?ENH_HI:ENH)[lv];const riskLv=c=>c.acc?99:c.g>=5?1:c.ty==='a'?4:6;const PROT_WON=110000;const SYN=[.35,.17,.12,.11,.10,1];const SNEED=(ty,g)=>ty==='s'?({0:8,3:4,4:2}[g]||4):g===4?2:4;/* 리니지M 합성: 35/17/12/11%, 전설 2장→신화 10%, 신화 4장→유일 100% · 실패 시 1장 환급 · 희귀·영웅 합성 20회 실패 시 상위 1장 확정 *//* 전설→신화 0.05% · 합성 포인트 없음 → 신화 1장 평균 약 2.4억 원 · 유일 = 신화 4장 100% (약 10억) */const SYN_PITY=100;
 const COLS=[['속삭이는 섬의 친구들','d',['생쥐','박쥐','개구리','양'],{hp:.05}],['기에른 수비대','t',['오크','오크 전사','오크 기사','오크 대족장'],{atk:.04}],
  ['숲의 사냥꾼','t',['엘프 사냥꾼','켄타우로스','하피'],{crit:.02}],['망자의 군단','t',['해골 병사','구울','미라','와이트'],{def:5}],['밤의 귀족','t',['뱀파이어','뱀파이어 기사','리치'],{atk:.06}],
  ['거인의 피','t',['언덕 거인','서리 거인','불의 거인','바위 거인','타이탄'],{hp:.12}],['용의 혈통','t',['붉은 용','빙룡','폭풍의 용','그림자 용'],{pw:.1}],
@@ -3164,11 +3164,11 @@ function synthWin(ty){const st=$('stage');if(ty)SYW={ty,g:SYW.ty===ty?SYW.g:0,sl
    <div class="lsy-c">${L.map(x=>`<button class="lsc${x.n<=0?' no':''}" data-sya="${x.c.id}" style="--gc:${G[g].c}"><span class="lsc-i">${cardIco(x.c,64)}</span><b>${x.c.n}</b><em>x${x.n}</em></button>`).join('')||`<p class="mini" style="grid-column:1/-1;padding:10px">이 등급에 합성할 ${A.nm}이(가) 없어요${T.ty==='s'?' (같은 스킬북을 또 얻으면 여기 쌓여요)':' (같은 카드 2장 이상부터, 1장은 남겨요)'}</p>`}</div>
    <div class="lsy-r"><div class="lsy-rh"><b>합성</b><span><em style="color:${G[g].c}">${G[g].ko}</em> → <em style="color:${G[ng].c}">${G[ng].ko}</em> ${Math.max(1,nSet)}장 획득 가능! · 성공 <b>${(p*100<1?(p*100).toFixed(2):(p*100).toFixed(0))}%</b></span></div>
     <div class="lsy-sl">${Array.from({length:Math.min(nd*5,Math.max(nd,Math.ceil((T.sl.length+1)/nd)*nd))},(_,i)=>i).map(i=>{const id=T.sl[i],c=id&&(T.ty==='s'?SKM[id]:C(id));return`<button class="lss${c?' on':''}" data-syr="${i}" style="--gc:${G[g].c}">${c?cardIco(c,56):'<i>+</i>'}</button>`}).join('')}</div>
-    <div class="lsy-inf">${T.ty!=='s'?`${G[g].ko} ${nd}장 → ${G[g+1].ko} 1장 · `:''}${p>=1?'100% 성공':`실패 시 넣은 카드 중 1장 돌려받음`}${T.ty==='s'?`<div class="bar"><i style="width:${sp/SYN_PITY*100}%"></i></div><small>합성 포인트 ${sp} / ${SYN_PITY}</small>`:(g===2||g===3)?`<div class="bar"><i style="width:${sp/20*100}%"></i></div><small>합성 시도 보상 ${sp} / 20 · 20회 실패하면 ${G[g+1].ko} 카드 1장 확정</small>`:''}</div>
+    <div class="lsy-inf">${`${G[g].ko} ${nd}장 → ${G[A.next(g)].ko} 1장 · `}${p>=1?'100% 성공':`실패 시 넣은 카드 중 1장 돌려받음`}${T.ty==='s'?'':(g===2||g===3)?`<div class="bar"><i style="width:${sp/20*100}%"></i></div><small>합성 시도 보상 ${sp} / 20 · 20회 실패하면 ${G[g+1].ko} 카드 1장 확정</small>`:''}</div>
     <div class="lsy-bt"><button class="lbtn blue" id="syAuto">카드 자동 등록</button><button class="lbtn gold" id="syGo" ${full&&S.gold>=cost*nSet?'':'disabled'}>합성<small>${ico('gold')} ${fmt(cost*Math.max(1,nSet))}</small></button></div>
     <div class="lsy-bt2"><button class="lnk" id="syClr">초기화</button><button class="lnk" id="syAll" ${nAll?'':'disabled'}>${G[g].ko} 전부 합성 (${nAll}회 · ${fmt(cost*nAll)})</button></div></div></div></div>`};
  st.hidden=false;draw();const close=()=>{st.hidden=true;st.innerHTML='';st.onclick=null};
- const once=(A,ins)=>{const g=T.g,key=(T.ty==='s'?'s':T.ty)+g;let r,ok;if(T.ty==='s'){const sure=(S.spts[key]||0)>=SYN_PITY;ok=sure||rnd()<A.rate(g);if(ok){r=A.win(A.next(g));if(sure)S.spts[key]=0}else{r=A.lose(g);S.spts[key]=Math.min(SYN_PITY,(S.spts[key]||0)+R(8,15))}}
+ const once=(A,ins)=>{const g=T.g,key=(T.ty==='s'?'s':T.ty)+g;let r,ok;if(T.ty==='s'){ok=rnd()<A.rate(g);r=ok?A.win(A.next(g)):pick(ins)}
   else{ok=rnd()<A.rate(g);if(ok)r=A.win(A.next(g));else{r=pick(ins);if(g===2||g===3){S.spts[key]=(S.spts[key]||0)+1;if(S.spts[key]>=20){S.spts[key]-=20;const bc=A.win(g+1);A.give(bc);announce(`<span style="color:${G[g+1].c}">합성 시도 보상 · ${G[g+1].ko} 「${bc.n}」 확정 획득!</span>`)}}}}const gv=A.give(r);const dup=T.ty==='s'?gv==='dup':(S.cards[r.id]||0)>1;track('synth');return{ok,r,key,dup}};
  st.onclick=async e=>{const t=e.target;if(t.id==='pkX'||t===st){close();return}let b;const A=SYNAD(T.ty);const byId=id=>T.ty==='s'?SKM[id]:C(id);
   if(b=t.closest('[data-sy]')){T.ty=b.dataset.sy;T.sl=[];T.g=0;draw();return}if(b=t.closest('[data-syg]')){T.g=+b.dataset.syg;T.sl=[];draw();return}
@@ -3466,7 +3466,7 @@ function cardInfo(id,u){const c=C(id);const it=u?inv(c.ty).find(x=>x.u===u):null
  <div class="row">${has?`<button class="btn gold" id="ciEq">장착</button>`:'<button class="btn" disabled>가진 것이 없어요</button>'}<button class="btn" id="ciX">닫기</button></div></div>`;
  const close=()=>{st.hidden=true;st.innerHTML='';st.onclick=null};st.onclick=e=>{if(e.target.id==='ciX'||e.target===st)close();if(e.target.id==='ciEq'){if(isGear(c.ty)){const w=u?it:inv(c.ty).filter(x=>x.id===id).sort((a,b)=>b.e-a.e)[0];if(w)equipU(w.u)}else if(c.ty==='t')S.eqT=id;else S.eqD=id;save();close();render()}}}
 function giveCard(c){if(isGear(c.ty))inv(c.ty).push({u:++S.uid,id:c.id,e:0});else S.cards[c.id]=(S.cards[c.id]||0)+1}
-const SKR={normal:[.98,0,0,.02,0,0],silver:[.6,0,0,.38,.02,0],goldp:[.3,0,0,.6,.099,.001]};
+const SKR={normal:[.999,0,0,.001,0,0],silver:[.99,0,0,.01,0,0],goldp:[.97,0,0,.028,.002,0]};/* 리니지M 스킬카드 뽑기 영웅 0.1% 수준 */
 function rollPack(P,ty){const key=P.k+ty;const pc=(S.pp[key]||0)+1;const rates=ty==='s'?SKR[P.k]:P.rates;const pg=ty==='s'?(P.k==='silver'?3:4):P.pg;let g;if(P.pity&&pc>=P.pity){g=pg;S.pp[key]=0}else{let x=rnd(),acc=0;g=rates.findIndex(r=>(acc+=r)>x);if(g<0)g=ty==='s'?0:1;if(P.pity)S.pp[key]=g>=pg?0:pc}
  if(ty==='s'){const L=SKILLS.filter(k=>k.g===g&&skOk(k));const k=pick(L.length?L:SKILLS.filter(k=>k.g===g&&k.cls==='공용'));learnSkill(k);return k}
  if(ty==='acc'){let gg=g,L=[];while(gg>=0&&!(L=CARDS.filter(x=>x.acc&&x.g===gg)).length)gg--;const c=pick(L);giveCard(c);return c}
