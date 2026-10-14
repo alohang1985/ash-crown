@@ -1253,6 +1253,10 @@ html.land .lqs{right:calc(10px + var(--sr))!important}html.land .lqs .latk{right
 .lshb,.lshtab{padding-left:calc(1.5vw + var(--sl,0px))!important;padding-right:calc(1.5vw + var(--sr,0px))!important}
 .lmside{padding-right:var(--sr,0px)}
 @media (max-height:520px){html.land .lhud{left:calc(6px + var(--sl))!important}html.land .qbar{left:calc(4px + var(--sl))!important}html.land .lbuf{left:calc(70px + var(--sl))!important}html.land .lbuf::before{left:calc(8px + var(--sl))}html.land .lqs .lrd{left:calc(6px + var(--sl))!important}html.land .lqs{right:calc(6px + var(--sr))!important}html.land .lqs .latk{right:calc(12px + var(--sr))!important}html.land .lauto{right:calc(86px + var(--sr))!important}html.land .mmw{right:calc(6px + var(--sr))!important}html.land .lzone{right:calc(6px + var(--sr))!important}}
+.rdot[hidden]{display:none!important}
+html.land .top{right:calc(5*58px + 22px + var(--sr,0px))!important}
+@media (max-height:520px){html.land .top{right:calc(5*44px + 12px + var(--sr,0px))!important}}
+.lqb{grid-template-columns:minmax(130px,15%) minmax(0,1fr) minmax(220px,32%)!important}.lqr b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -1523,7 +1527,8 @@ html.rot90.land .lqs{right:calc(6px + var(--sr))!important}
 html.rot90.land .lqs .latk{right:calc(12px + var(--sr))!important}
 html.rot90.land .lauto{right:calc(86px + var(--sr))!important}
 html.rot90.land .mmw{right:calc(6px + var(--sr))!important}
-html.rot90.land .lzone{right:calc(6px + var(--sr))!important}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
+html.rot90.land .lzone{right:calc(6px + var(--sr))!important}
+html.rot90.land .top{right:calc(5*44px + 12px + var(--sr,0px))!important}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
 <div class="title" id="title"><div class="tbg"></div><div class="tin"><div class="tlogo">잿빛 왕관</div><div class="tsub">ASHEN CROWN · 에르덴 대륙</div><div class="tload"><i id="tbar"></i></div><div class="ttip" id="ttip">세계를 불러오는 중…</div><button class="tstart" id="tstart" disabled>게임 시작</button><div class="tfoot">서버 · 에르덴 1 &nbsp;|&nbsp; 시제품</div></div></div><div class="app">
  <div class="top"><div class="logo">잿빛 왕관<small>에르덴 대륙 · 시제품</small></div><div class="cur" id="cur"></div><button class="ic laysw" id="laySw" hidden>가로 화면</button><button class="ic" id="mute" type="button" aria-label="소리">🔊</button></div>
  <div class="lcol"><div class="livea" id="liveA"></div><div class="ticker" id="ticker"></div><div class="qbar" id="qbar"></div>
@@ -2742,6 +2747,8 @@ function skillWin(){const draw=()=>{const ck=S.cls?S.cls.k:'';const eq=S.skEq||[
    if(b=t.closest('[data-sklv2]')){const id=b.dataset.sklv2;if(!skSpare(id)||skLv(id)>=5)return;S.skb[id]--;S.skills[id]++;sfx.rare(2);announce(`「${SKM[id].n}」 Lv.${S.skills[id]}!`);save();draw();return}}};draw()}
 /* 퀘스트 (전체 화면): 메인 · 업적 · 미션 · 혈맹 · 이벤트 */
 let QTAB='main',QL=0,QSEL=null;
+function qAnyClaim(){try{qReset();const m=qVal(qCur())>=qCur()[1],mi=DQ.some((q,i)=>!S.q.dc[i]&&qDone(DQ,i,'d'))||WQ.some((q,i)=>!S.q.wc[i]&&qDone(WQ,i,'w')),ac=ACH.some((a,i)=>!(S.ach||{})[i]&&achVal(a[0])>=a[1]),ev=S.att.last!==kday();return{m,mi,ac,ev,any:m||mi||ac||ev}}catch(_){return{any:false}}}
+setInterval(()=>{const c=qAnyClaim();document.querySelectorAll('.ltopm [data-tm=quest] .rdot').forEach(e=>e.hidden=!c.any);document.querySelectorAll('.ltopm [data-tm=menu] .rdot').forEach(e=>e.hidden=true)},1500);
 function questWin(){qReset();const draw=()=>{let left=[],rows=[],det=null;
   if(QTAB==='main'){const ch=[[0,6,'1~30 LV'],[6,12,'31~50 LV'],[12,18,'51~70 LV'],[18,99,'71~ LV']];left=ch.map((c,i)=>c[2]);const[a,b]=ch[QL]||ch[0];const cur=S.qi||0;
    const all=[...QCH];for(let k=QCH.length;k<=Math.max(cur,QCH.length+2);k++){const save_=S.qi;S.qi=k;all.push(qCur());S.qi=save_}
@@ -2771,7 +2778,7 @@ function menuWin(){const st=$('stage');st.hidden=false;st.classList.add('sider')
  st.onclick=e=>{const t=e.target;if(t.id==='pkX'||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}const b=t.closest('[data-mn]');if(!b)return;ac();const[ty,k]=b.dataset.mn.split(':');st.hidden=true;st.innerHTML='';st.onclick=null;
   if(ty==='t'){TAB=k;render();document.documentElement.classList.add('mopen');lmSync();return}
   ({skill:skillWin,inv:invWin,synth:()=>synthWin('t'),map:mapWin,bm:bmWin,clan:clanWin,shop:shopWin,buff:bwin,wh:whWin,dun:dunWin,char:charWin,adm:admWin,mute:()=>$('mute')&&$('mute').click(),mono:()=>{const m=document.querySelector('[data-mono],#mono,.top .ic:not(#mute):not(#laySw)');if(m)m.click()}})[k]()}}
-function ltopInit(){const el=$('ltopm');if(!el)return;el.innerHTML=[['shop','상점','shop'],['bag','가방','inv'],['skill','스킬','skill'],['quest','퀘스트','quest'],['menu','메뉴','menu']].map(([ic,n,k])=>`<button data-tm="${k}"${k==='inv'?' class="wgt"':''}><i>${ico(ic)}</i>${k==='inv'?'<em class="wring"></em>':''}${k==='quest'||k==='menu'?'<em class="rdot"></em>':''}<small>${n}</small></button>`).join('');
+function ltopInit(){const el=$('ltopm');if(!el)return;el.innerHTML=[['shop','상점','shop'],['bag','가방','inv'],['skill','스킬','skill'],['quest','퀘스트','quest'],['menu','메뉴','menu']].map(([ic,n,k])=>`<button data-tm="${k}"${k==='inv'?' class="wgt"':''}><i>${ico(ic)}</i>${k==='inv'?'<em class="wring"></em>':''}${k==='quest'||k==='menu'?'<em class="rdot" hidden></em>':''}<small>${n}</small></button>`).join('');
  el.onclick=e=>{const b=e.target.closest('[data-tm]');if(!b)return;ac();({shop:shopWin,inv:invWin,skill:skillWin,clan:clanWin,menu:menuWin,quest:questWin})[b.dataset.tm]()}}
 /* ===== 혈맹 (서버에서 실제 플레이어끼리 공유) ===== */
 let CLAN=null,CLT='info',CLLAST=0;
