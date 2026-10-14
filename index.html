@@ -413,6 +413,26 @@ html.land .lauto.on{color:#fff3c8;border-color:#ffcf5a;box-shadow:0 0 14px rgba(
 @media (max-height:520px){html.land .mmw{top:6px;right:62px}html.land #mmap{width:110px;height:80px}html.land .mctl{top:6px;right:186px}html.land .top{right:62px;top:96px}html.land .lauto{width:50px;height:50px;bottom:70px;right:70px}.wnote{top:60px}}
 html.land .mmw{top:50px}html.land .mctl{top:176px}
 @media (max-height:520px){html.land .mmw{top:6px}html.land .mctl{top:6px}.wnote{top:34vh}html.land .lauto small{display:none}}
+/* 변신 창 (리니지식) */
+.mwin{width:min(980px,96vw);height:min(640px,92vh);display:flex;flex-direction:column;background:linear-gradient(#1c150c,#0b0805);border:1px solid #8a6a2c;box-shadow:0 0 0 1px #000,0 0 0 4px #2a1f10,0 0 0 5px #6b5228,0 20px 60px #000;border-radius:4px;color:#eadfc8}
+.mwh{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid #4a3818;background:linear-gradient(#2c2112,#17110a)}.mwh b{font-family:'Nanum Myeongjo',serif;font-size:18px;color:#ffd98a}.mwh small{color:var(--ink2);font-size:12px}
+.mwx{margin-left:auto;width:30px;height:30px;border:1px solid #6b5228;background:#1d150c;color:#eadfc8;border-radius:4px;cursor:pointer}
+.mwb{flex:1;display:grid;grid-template-columns:minmax(240px,38%) 1fr;min-height:0}
+.mwl{display:flex;flex-direction:column;border-right:1px solid #3a2c14;background:radial-gradient(circle at 50% 40%,#2a1f10,#0b0805 70%);min-height:0}
+.mwpv{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}.mwpv canvas{width:min(100%,46vh);aspect-ratio:1;height:auto}
+#mwinfo{padding:10px 14px 14px;display:grid;gap:6px;border-top:1px solid #3a2c14;background:rgba(0,0,0,.35)}
+.mwn{display:flex;gap:8px;align-items:baseline}.mwn small{color:var(--gc);font-weight:700;font-size:12px;border:1px solid var(--gc);padding:0 6px;border-radius:3px}.mwn b{font-family:'Nanum Myeongjo',serif;font-size:20px;color:#fff;text-shadow:0 0 10px var(--gc)}
+.mwo{font-size:12px;color:#d8ccb4;line-height:1.5;max-height:90px;overflow:auto}.mwbt{display:flex;gap:6px}.mwbt .btn{flex:1}
+.mwr{overflow-y:auto;padding:10px}
+.mwg{display:grid;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:6px}
+.mwc{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px 5px;border:1px solid color-mix(in srgb,var(--gc) 55%,#000);background:linear-gradient(color-mix(in srgb,var(--gc) 16%,#120d07),#0d0905);border-radius:4px;cursor:pointer;color:#eadfc8}
+.mwc .mwi{width:58px;height:58px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.6)}
+.mwc b{font-size:11px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;color:var(--gc)}
+.mwc em{position:absolute;top:2px;right:4px;font-style:normal;font-size:10px;color:#fff;text-shadow:0 0 2px #000}
+.mwc .mweq{position:absolute;top:2px;left:3px;font-style:normal;font-size:9px;background:#e0b04a;color:#1a120a;padding:0 3px;border-radius:2px;font-weight:700}
+.mwc.no{filter:grayscale(1) brightness(.45)}.mwc.sel{box-shadow:0 0 0 2px #ffd98a,0 0 14px color-mix(in srgb,var(--gc) 70%,transparent)}.mwc.eq{border-color:#ffd98a}
+@media (max-width:700px){.mwb{grid-template-columns:1fr;grid-template-rows:auto 1fr}.mwpv canvas{width:160px}}
+@media (max-height:520px){.mwpv canvas{width:min(100%,40vh)}.mwo{max-height:44px}}
 </style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap" rel="stylesheet"></head><body>
 <div class="title" id="title"><div class="tbg"></div><div class="tin"><div class="tlogo">잿빛 왕관</div><div class="tsub">ASHEN CROWN · 에르덴 대륙</div><div class="tload"><i id="tbar"></i></div><div class="ttip" id="ttip">세계를 불러오는 중…</div><button class="tstart" id="tstart" disabled>게임 시작</button><div class="tfoot">서버 · 에르덴 1 &nbsp;|&nbsp; 시제품</div></div></div><div class="app">
  <div class="top"><div class="logo">잿빛 왕관<small>에르덴 대륙 · 시제품</small></div><div class="cur" id="cur"></div><button class="ic laysw" id="laySw" hidden>가로 화면</button><button class="ic" id="mute" type="button" aria-label="소리">🔊</button></div>
@@ -1214,7 +1234,7 @@ function vChar0(){const M=stats(),cl=CL(),ci=charIdx(S.cls?S.cls.k:'기사',S.cl
  <details class="pdet"><summary>장비 옵션 · 컬렉션 효과</summary><p class="mini">${Object.entries(M.O).map(([k,v])=>optTxt(k,v)).join(' · ')||'옵션 없음'}${M.procs.length?'<br>발동: '+M.procs.map(p=>p.n).join(', '):''}</p><p class="mini">컬렉션: ${Object.keys(col).length?bTxt(col):'없음'}</p><p class="mini">${cl.d||''}</p></details>
  <details class="pdet"><summary>물약 ${S.pot}개 · 초기화</summary><div class="row"><button class="btn" data-pot="10" ${S.gold<1000?'disabled':''}>물약 10개 · 1,000 골드</button><button class="btn" data-pot="100" ${S.gold<9000?'disabled':''}>100개 · 9,000 골드</button></div>
   <div class="row" style="margin-top:8px"><button class="btn" data-reset="1">이 캐릭터만 다시 시작</button><button class="btn red" data-resetall="1">계정 전체 초기화</button></div><p class="mini">「계정 전체 초기화」는 모든 캐릭터, 공유 골드·장비, 창고를 지워요. 충전 잔액은 서버에 있어서 그대로예요.</p></details>`}
-function slotPick(sl){const st=$('stage');let L=[];const cur=sl==='w'?S.eqW:sl==='t'?S.eqT:sl==='d'?S.eqD:S.eqA[sl];
+function slotPick(sl){if(sl==='t')return morphWin();const st=$('stage');let L=[];const cur=sl==='w'?S.eqW:sl==='t'?S.eqT:sl==='d'?S.eqD:S.eqA[sl];
  if(sl==='w')L=S.wpn.filter(w=>classW(C(w.id))&&!isOther(w.u)).map(w=>({key:w.u,c:C(w.id),e:w.e,b:w.b,sc:gearScore(C(w.id),w.e)}));
  else if(sl==='t'||sl==='d')L=Object.keys(S.cards).filter(id=>id.startsWith(sl+':')).map(id=>({key:id,c:C(id),n:S.cards[id],sc:POW[C(id).g]}));
  else L=S.arms.filter(a=>C(a.id).sl===sl&&!isOther(a.u)).map(a=>({key:a.u,c:C(a.id),e:a.e,b:a.b,sc:gearScore(C(a.id),a.e)}));
@@ -1224,6 +1244,25 @@ function slotPick(sl){const st=$('stage');let L=[];const cur=sl==='w'?S.eqW:sl==
  st.onclick=e=>{if(e.target.id==='pkX'||e.target===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}if(e.target.id==='pkMorph'){S.morph=S.morph===false?true:false;MORPHFX=performance.now();save();st.hidden=true;st.innerHTML='';st.onclick=null;render();return}if(e.target.id==='pkEnh'){st.hidden=true;st.innerHTML='';st.onclick=null;TAB='enh';ET=sl;render();return}
   const b=e.target.closest('[data-pk2]');if(!b)return;const k=b.dataset.pk2;if(sl==='t'){S.eqT=k;S.morph=true;MORPHFX=performance.now()}else if(sl==='d')S.eqD=k;else equipU(+k);save();st.hidden=true;st.innerHTML='';st.onclick=null;render()}}
 
+function drawMorphAt(c,tc,x,gy,st,pp,t){if(artOf(tc))return drawArt(c,tc,x-30,gy,54,st,pp,t);if(isBeast(tc))return drawBeast(c,tc,x-22,gy,.95,st,pp,t);const L=transformLook(tc),cp=lpcCompose(L);if(cp){const sc=L.scale||1;drawWings(c,L,x-32*sc,gy,sc,t);return drawLook(c,cp,x-32*sc,gy,sc,st,pp,1)}return false}
+let MWSEL=null;
+function morphWin(){const st=$('stage');const all=CARDS.filter(c=>c.ty==='t');const own=id=>S.cards[id]||0;
+ const L=all.slice().sort((a,b)=>(own(b.id)?1:0)-(own(a.id)?1:0)||b.g-a.g);MWSEL=MWSEL&&own(MWSEL)?MWSEL:(S.eqT||(L[0]&&L[0].id));
+ const nOwn=all.filter(c=>own(c.id)).length;
+ st.hidden=false;st.innerHTML=`<div class="mwin"><div class="mwh"><b>변신</b><small>보유 ${nOwn} / ${all.length}</small><button class="mwx" id="pkX">✕</button></div>
+ <div class="mwb"><div class="mwl"><div class="mwpv"><canvas id="mwcv" width="560" height="560"></canvas></div><div id="mwinfo"></div></div>
+ <div class="mwr"><div class="mwg">${L.map(c=>`<button class="mwc${own(c.id)?'':' no'}${c.id===S.eqT&&S.morph!==false?' eq':''}" data-mw="${c.id}" style="--gc:${G[c.g].c}"><span class="mwi">${cardIco(c,58)}</span><b>${c.n}</b>${own(c.id)>1?`<em>×${own(c.id)}</em>`:''}${c.id===S.eqT&&S.morph!==false?'<span class="mweq">변신 중</span>':''}</button>`).join('')}</div></div></div></div>`;
+ const info=()=>{const c=C(MWSEL);if(!c)return;const o=own(c.id),on=c.id===S.eqT&&S.morph!==false;$('mwinfo').innerHTML=`<div class="mwn" style="--gc:${G[c.g].c}"><small>${G[c.g].ko}</small><b>${c.n}</b></div><div class="mwo">${cardSub(c)}</div><div class="mwbt">${o?on?'<button class="btn" id="pkMorph">변신 해제</button>':'<button class="btn gold" id="mwGo">변신</button>':'<button class="btn" disabled>미보유 · 소환·합성으로 얻어요</button>'}</div>`;
+  for(const b of st.querySelectorAll('[data-mw]'))b.classList.toggle('sel',b.dataset.mw===MWSEL)};info();
+ const cv=$('mwcv'),cx=cv.getContext('2d');let t0=performance.now();const tick=t=>{if(st.hidden||!$('mwcv'))return;const c=C(MWSEL);cx.setTransform(1,0,0,1,0,0);cx.clearRect(0,0,560,560);
+  const gc=G[c.g].c,gr=cx.createRadialGradient(280,380,10,280,380,260);gr.addColorStop(0,gc+'55');gr.addColorStop(1,'rgba(0,0,0,0)');cx.fillStyle=gr;cx.fillRect(0,0,560,560);
+  cx.setTransform(4.2,0,0,4.2,280-4.2*64,470-4.2*112);cx.imageSmoothingEnabled=!!artOf(c);const cyc=(t-t0)%3600,stt=cyc<2400?'idle':'atk',pp=stt==='atk'?((cyc-2400)%600)/600:(t%700)/700;
+  cx.fillStyle='rgba(0,0,0,.45)';cx.beginPath();cx.ellipse(64,112,16,5,0,0,7);cx.fill();if(c.g>=3)morphAura(cx,t,64,112,c.g,true);drawMorphAt(cx,c,64,112,stt,pp,t);if(c.g>=3)morphAura(cx,t,64,112,c.g,false);
+  requestAnimationFrame(tick)};requestAnimationFrame(tick);
+ const close=()=>{st.hidden=true;st.innerHTML='';st.onclick=null};
+ st.onclick=e=>{const t=e.target;if(t.id==='pkX'||t===st){close();return}if(t.id==='pkMorph'){S.morph=false;MORPHFX=performance.now();save();close();render();return}
+  if(t.id==='mwGo'){S.eqT=MWSEL;S.morph=true;MORPHFX=performance.now();save();close();render();return}
+  const b=t.closest('[data-mw]');if(b){if(b.dataset.mw===MWSEL&&own(MWSEL)&&e.detail>=2){S.eqT=MWSEL;S.morph=true;MORPHFX=performance.now();save();close();render();return}MWSEL=b.dataset.mw;info()}}}
 const dropsHtml=()=>(S.drops||[]).length?(S.drops||[]).map(d=>`<li><b style="color:${d.c}">${d.n}</b><small>${d.z} · ${Math.max(0,Math.round((Date.now()-d.t)/60000))}분 전</small></li>`).join(''):'<li><small>아직 귀한 전리품이 없어요</small></li>';
 function vHunt(){const cur=S.burstK?-1:(S.gi||0);const bl=burstLeft();
  return`<h3>사냥터</h3><p class="sub">레벨대별 사냥터를 골라 사냥해요. 높은 사냥터일수록 경험치·골드·전리품이 많지만 몬스터가 강해요. <b>장비가 좋으면 높은 사냥터에서 빠르게 레벨업</b>할 수 있어요(내 레벨 +15까지 경험치가 늘어나요). 가끔 정예·네임드 몬스터가 나와요.</p>
