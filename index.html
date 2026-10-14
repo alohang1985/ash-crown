@@ -976,6 +976,11 @@ html.land .lnpc{top:auto!important;bottom:250px!important;left:66px!important}@m
 .hsk button .cdn{position:absolute;inset:0;display:grid;place-items:center;font-style:normal;font-weight:900;font-size:20px;color:#fff;text-shadow:0 0 3px #000,0 0 3px #000;pointer-events:none}
 .hsk button:not(.nx) .skart{filter:brightness(.55) saturate(.6)}
 html.land .hsk button.nx{box-shadow:0 0 0 1px #6b5228,0 3px 8px rgba(0,0,0,.8)!important}
+/* 오픈클로 UI 아이콘 */
+.svi.uiimg{object-fit:contain;filter:drop-shadow(0 2px 2px rgba(0,0,0,.8))!important}
+html.land .ltopm button i .uiimg{width:36px;height:36px}html.land .lqs .latk .uiimg{width:58px;height:58px}html.land .lqs .lrd .uiimg{width:28px;height:28px}
+.lmsg .uiimg{width:30px;height:30px}.qhd .uiimg{width:18px!important;height:18px!important}
+@media (max-height:520px){html.land .ltopm button i .uiimg{width:26px;height:26px}html.land .lqs .latk .uiimg{width:40px;height:40px}html.land .lqs .lrd .uiimg{width:20px;height:20px}}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -1144,7 +1149,10 @@ html.rot90 .ldci{height:96px;font-size:44px}
 html.rot90 .ldunb{grid-template-columns:96px 1fr}
 html.rot90 .ldpb{grid-template-columns:130px 1fr}
 html.rot90 .ldci.big{height:120px}
-html.rot90.land .lnpc{bottom:176px!important;left:46px!important}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
+html.rot90.land .lnpc{bottom:176px!important;left:46px!important}
+html.rot90.land .ltopm button i .uiimg{width:26px;height:26px}
+html.rot90.land .lqs .latk .uiimg{width:40px;height:40px}
+html.rot90.land .lqs .lrd .uiimg{width:20px;height:20px}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
 <div class="title" id="title"><div class="tbg"></div><div class="tin"><div class="tlogo">잿빛 왕관</div><div class="tsub">ASHEN CROWN · 에르덴 대륙</div><div class="tload"><i id="tbar"></i></div><div class="ttip" id="ttip">세계를 불러오는 중…</div><button class="tstart" id="tstart" disabled>게임 시작</button><div class="tfoot">서버 · 에르덴 1 &nbsp;|&nbsp; 시제품</div></div></div><div class="app">
  <div class="top"><div class="logo">잿빛 왕관<small>에르덴 대륙 · 시제품</small></div><div class="cur" id="cur"></div><button class="ic laysw" id="laySw" hidden>가로 화면</button><button class="ic" id="mute" type="button" aria-label="소리">🔊</button></div>
  <div class="lcol"><div class="livea" id="liveA"></div><div class="ticker" id="ticker"></div><div class="qbar" id="qbar"></div>
@@ -1497,7 +1505,7 @@ const TLC={};
 /* 고급 변신 그림: Pipoya RPG Monster Pack(상업적 사용 가능) · CraftPix 무료 몬스터 스프라이트(상업적 사용 가능) */
 const ARTM={"pip":{"lichking":[240,217],"dragon_mag":[222,230],"dragon_navy":[222,230],"dragon_storm":[222,230],"dragon_red":[222,230],"dragon_blue":[222,230],"dragon_gold":[222,230],"phoenix":[191,230],"griffon":[191,230],"cerberus":[240,211],"cerb_white":[240,211],"reaper":[224,230],"demonlord":[300,141],"skullangel":[300,175],"wyrm_dark":[235,230],"wyrm_green":[235,230],"golem_sand":[260,207],"golem_ice":[260,205],"golem_red":[260,205]},"fga":{"demon":{"fs":128,"rows":[["Idle",3],["Attack",4],["Hurt",2]]},"dragon":{"fs":128,"rows":[["Idle",3],["Attack",4],["Hurt",2]]},"jinn_animation":{"fs":128,"rows":[["Idle",3],["Magic_Attack",13],["Hurt",2]]},"lizard":{"fs":128,"rows":[["Idle",3],["Attack",5],["Hurt",2]]},"medusa":{"fs":128,"rows":[["Idle",3],["Attack",6],["Hurt",2]]},"small_dragon":{"fs":128,"rows":[["Idle",3],["Attack",3],["Hurt",2]]}}};const ARTI={};function artImg(f){return ARTI[f]||(ARTI[f]=Object.assign(new Image(),{src:'art/'+f}))}
 const HAX={"ham":{},"cart":{}};
-const HAM0={hellking:{"cw": 300, "ch": 300, "fy": 282, "n": {"walk": 4, "idle": 9, "atk1": 9, "atk2": 9, "skill": 9, "ult": 9, "hurt": 3, "death": 6}}};const HAM=Object.assign({},HAM0,HAX.ham);let SKILLT=-9e9,HAMOVE=0;
+const HAM0={hellking:{"cw": 300, "ch": 300, "fy": 282, "n": {"walk": 8, "run": 8, "idle": 9, "atk1": 9, "atk2": 9, "skill": 9, "ult": 9, "hurt": 3, "death": 6}}};const HAM=Object.assign({},HAM0,HAX.ham);let SKILLT=-9e9,HAMOVE=0;
 const HIART={hellking:{"idle": [379, 420], "atk1": [422, 420], "atk2": [420, 420], "ult": [420, 420], "card": [522, 520]}};let ULTT=-9e9;
 const CARDART={ereshkigal:['hi','hellking']};
 Object.assign(CARDART,HAX.cart);
@@ -1512,7 +1520,7 @@ function drawArt(c,card,x,gy,H,state,p,t){const a=artOf(card);if(!a)return false
   else if(t-ULTT<1400){an='ult';f=Math.min(A.n.ult-1,Math.floor((t-ULTT)/1400*A.n.ult))}
   else if(t-SKILLT<900){an='skill';f=Math.min(A.n.skill-1,Math.floor((t-SKILLT)/900*A.n.skill))}
   else if(dt0<620){an=(Math.floor(ATKT/7)%2)?'atk2':'atk1';f=Math.min(A.n[an]-1,Math.floor(dt0/620*A.n[an]))}
-  else if(HAMOVE>t){an='walk';f=Math.floor(t/140)%A.n.walk}
+  else if(HAMOVE>t){const run=A.n.run&&SV.goto&&Math.hypot(SV.goto.x-SV.p.x,SV.goto.y-SV.p.y)>160;an=run?'run':'walk';f=Math.floor(t/(run?85:115))%A.n[an]}
   else{an='idle';const n=A.n.idle,q=Math.floor(t/130)%(n*2-2);f=q<n?q:n*2-2-q}
   const im=artImg('HA_'+k+'_'+an+'.webp');if(im.complete&&im.naturalWidth){const sc=H*1.4/232,cx=x+H*.7;c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.fillStyle='rgba(0,0,0,.38)';c.beginPath();c.ellipse(cx,gy-2,46*sc*2.2,9*sc*2.2,0,0,7);c.fill();
    c.drawImage(im,f*A.cw,0,A.cw,A.ch,cx-A.cw/2*sc,gy-A.fy*sc,A.cw*sc,A.ch*sc);if(HITP>t){c.globalCompositeOperation='lighter';c.globalAlpha=.35;c.drawImage(im,f*A.cw,0,A.cw,A.ch,cx-A.cw/2*sc,gy-A.fy*sc,A.cw*sc,A.ch*sc)}c.restore();return true}}
@@ -2059,7 +2067,8 @@ sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l
 
 chest:'<rect x="4" y="9" width="16" height="11" fill="#a0672a" fill-opacity=".5"/><path d="M4 9h16v11H4zM4 9c0-4 16-4 16 0M12 12v3"/>',
 };
-const ico=(k,cls)=>`<svg class="svi${cls?' '+cls:''}" viewBox="0 0 24 24" fill="none" stroke="#f1e2bb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ICS[k]||ICS.menu}</svg>`;
+const ICIMG={shop:'shop',bag:'bag',skill:'skill',quest:'quest',clan:'clan',menu:'menu',map:'map',star:'bookmark',atk:'attack'};
+const ico=(k,cls)=>ICIMG[k]&&cls!=='emi'?`<img class="svi uiimg${cls?' '+cls:''}" src="art/IC_ui_${ICIMG[k]}.webp" alt="">`:`<svg class="svi${cls?' '+cls:''}" viewBox="0 0 24 24" fill="none" stroke="#f1e2bb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ICS[k]||ICS.menu}</svg>`;
 
 /* 이모지 → 평면 아이콘 (화면에 그려지는 글자만 · 3D 이모지 금지) */
 const EMO={'🔥':'fire','🎁':'chest','💰':'gold','🌀':'tp','🛡️':'clan','🛡':'clan','💠':'dia','💎':'dia','☠':'skull','📜':'quest','✨':'synth','🏠':'rt','🧪':'potion','🍺':'potion','📃':'scroll','⚔️':'swords','⚔':'swords','🏹':'swords','🐉':'swords','📖':'book','🔮':'book','✝':'sun','☀️':'sun','☀':'sun','🌙':'sun','🏆':'trophy','🛒':'bag','🔨':'enh','⚒':'enh','👑':'crown','🎭':'mask','🧸':'doll','⚡':'bolt','🧲':'star','🦅':'star','⚗️':'elx','⚗':'elx','🔒':'lock','📍':'map','🛏':'rt','🏰':'box','🎉':'star','📅':'cal','📆':'cal','📦':'box','🎫':'ticket','🗺️':'map','🗺':'map','⭐':'star','👤':'char','🤺':'swords','🏅':'medal','📚':'book','🔊':'sound','🟢':'potion','🟠':'potion','🔵':'potion','☄':'fire','❄':'synth','🍖':'potion','💣':'fire','🚶':'','👥':'char','⏳':'cal','⌛':'cal','🗡️':'swords','🗡':'swords','💀':'skull','🪙':'gold','✚':'potion'};
