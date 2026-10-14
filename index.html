@@ -981,6 +981,17 @@ html.land .hsk button.nx{box-shadow:0 0 0 1px #6b5228,0 3px 8px rgba(0,0,0,.8)!i
 html.land .ltopm button i .uiimg{width:36px;height:36px}html.land .lqs .latk .uiimg{width:58px;height:58px}html.land .lqs .lrd .uiimg{width:28px;height:28px}
 .lmsg .uiimg{width:30px;height:30px}.qhd .uiimg{width:18px!important;height:18px!important}
 @media (max-height:520px){html.land .ltopm button i .uiimg{width:26px;height:26px}html.land .lqs .latk .uiimg{width:40px;height:40px}html.land .lqs .lrd .uiimg{width:20px;height:20px}}
+/* 매입 상인 */
+.lsell .mtabs{margin-left:14px}.lsell .mtabs button{padding:5px 14px;border:0;border-bottom:2px solid #e0b04a;background:none;color:#ffe9b0}
+.nsg.lsg{grid-template-columns:repeat(auto-fill,minmax(52px,1fr));overflow:auto;max-height:100%;align-content:start}
+.lsg button{position:relative;aspect-ratio:1;border:1px solid color-mix(in srgb,var(--gc) 70%,#000);background:radial-gradient(#2a1f12,#0a0705);display:grid;place-items:center;cursor:pointer;padding:0}
+.lsg button img,.lsg button canvas,.lsg button .spr{max-width:40px;max-height:40px}
+.lsg button u{position:absolute;right:2px;top:1px;text-decoration:none;font-size:10px;color:#fff;text-shadow:0 0 2px #000}
+.lsg button.on{box-shadow:inset 0 0 0 2px #ffd27a,0 0 8px rgba(255,200,80,.6)}.lsg button.on::after{content:'✓';position:absolute;left:3px;bottom:0;color:#7dff9a;font-weight:900;font-size:13px;text-shadow:0 0 2px #000}
+.lsauto{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;align-items:center}.lsauto small{width:100%;text-align:center;color:#a99a85;font-size:11px}
+.lsauto button{padding:5px 8px;border:1px solid color-mix(in srgb,var(--gc) 60%,#000);background:#16100a;color:var(--gc);font-size:11.5px;cursor:pointer}
+.nstot .svi,.nsi small .svi,.lsell .shcash .svi{display:inline-block;width:13px;height:13px;vertical-align:-2px;margin:0}
+.lsell .nsf .lbtn{padding:8px 22px}.lsell .nsf .lbtn:not(.gold){border:1px solid #5a4422;background:#1a130b;color:#eadfc8}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -2218,6 +2229,23 @@ function npcWin(N){const st=$('stage');NSEL=0;NQTY=1;const L=NSHOP[N.k];const dr
  st.hidden=false;draw();st.onclick=e=>{const t=e.target;if(t.id==='pkX'||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}let b;
   if(b=t.closest('[data-nsi]')){NSEL=+b.dataset.nsi;draw();return}if(b=t.closest('[data-nq]')){NQTY=+b.dataset.nq;draw();return}
   if(t.closest('#nsBuy')){const it=L[NSEL],tot=it[3]*NQTY;if(S.gold<tot){announce('골드가 부족해요');return}S.gold-=tot;it[6](NQTY);sfx.up(1);announce(`🛒 ${it[1]} ×${NQTY} 구매 · ${fmt(tot)} 골드`);save();headLite();lqsInit();draw()}}}
+
+/* ===== 리니지M식 아이템 매입 상인: 왼쪽 판매 리스트 · 가운데 상인 · 오른쪽 소지품 ===== */
+let SELLSEL=new Set();
+function sellWin(N){const st=$('stage');SELLSEL=new Set();
+ const items=()=>[...S.wpn.map(x=>({...x,ty:'w'})),...S.arms.map(x=>({...x,ty:'a'}))].filter(x=>!isEqU(x.u)&&!isOther(x.u)).map(x=>({...x,c:C(x.id)})).filter(x=>x.c).sort((a,b)=>a.c.g-b.c.g||a.e-b.e);
+ const price=x=>Math.round(dismGold(x.c)*(1+x.e*.25));
+ const draw=()=>{const L=items(),sel=L.filter(x=>SELLSEL.has(x.u)),tot=sel.reduce((a,x)=>a+price(x),0);
+  st.innerHTML=`<div class="mwin nshop lsell"><div class="mwh"><b>상점</b><small>[${N.job||'아이템 매입 상인'}] ${N.nm||''}</small><div class="mtabs"><button class="on">판매</button></div><span class="shcash">${ico('gold')} ${fmt(S.gold)}</span><button class="mwx" id="pkX">✕</button></div><div class="nsb">
+  <div class="nsl"><div class="nsh">판매 리스트 <small>${sel.length}개</small></div>${sel.map(x=>`<button class="nsi" data-su="${x.u}"><span class="nsic" style="--gc:${G[x.c.g].c}">${cardIco(x.c,34)}</span><span><b style="color:${G[x.c.g].c}">${x.e?'+'+x.e+' ':''}${x.c.n}</b><small>${ico('gold')} ${fmt(price(x))}</small></span></button>`).join('')||'<p class="mini" style="padding:10px">오른쪽 소지품에서 팔 물건을 눌러 주세요</p>'}</div>
+  <div class="nsm"><div class="nsport">${IMG.complete?spr(charIdx(N.ck||'군주',N.sx||'M'),150):''}</div><p class="npctalk">쓸모없는 물건이 있으면 내가 사 주지. 값은 후하게 쳐 주겠네.</p><div class="lsauto"><small>자동 선택</small>${[0,1,2,3].map(gg=>`<button data-sg="${gg}" style="--gc:${G[gg].c}">${G[gg].ko} 이하</button>`).join('')}</div><small class="mini">착용 중·강화한 장비·축복 장비는 자동 선택에서 빠져요</small></div>
+  <div class="nsr"><div class="nsh">소지품 <small>장비 ${L.length}</small></div><div class="nsg lsg">${L.map(x=>`<button data-su="${x.u}" class="${SELLSEL.has(x.u)?'on':''}" style="--gc:${G[x.c.g].c}" title="${x.c.n}">${cardIco(x.c,40)}${x.e?`<u>+${x.e}</u>`:''}</button>`).join('')||'<p class="mini">팔 장비가 없어요</p>'}</div></div></div>
+  <div class="nsf"><button class="lbtn" id="slClr">선택 해제</button><div class="nstot">${sel.length}개 판매 · <b>${ico('gold')} ${fmt(tot)}</b></div><button class="lbtn gold" id="slGo" ${sel.length?'':'disabled'}>판매</button></div></div>`};
+ st.hidden=false;draw();st.onclick=e=>{const t=e.target;if(t.id==='pkX'||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}let b;
+  if(b=t.closest('[data-su]')){const u=+b.dataset.su;SELLSEL.has(u)?SELLSEL.delete(u):SELLSEL.add(u);sfx.tick&&sfx.tick(1);draw();return}
+  if(b=t.closest('[data-sg]')){const mg=+b.dataset.sg;for(const x of items())if(x.c.g<=mg&&x.e===0&&!x.b&&!(S.keepIds||{})[x.id])SELLSEL.add(x.u);draw();return}
+  if(t.closest('#slClr')){SELLSEL.clear();draw();return}
+  if(t.closest('#slGo')){let n=0,gsum=0;for(const x of items())if(SELLSEL.has(x.u)){const p=price(x);for(const ty of['w','a']){const L2=inv(ty),i=L2.findIndex(y=>y.u===x.u);if(i>=0){L2.splice(i,1);S.gold+=p;gsum+=p;n++}}}SELLSEL.clear();if(n){sfx.coin&&sfx.coin();announce(`장비 ${n}개 판매 · 골드 +${fmt(gsum)}`)}save();headLite();draw()}}}
 function npcSpecial(N){const st=$('stage');const box=(title,html)=>{st.hidden=false;st.innerHTML=`<div class="mwin npcw"><div class="mwh"><b>${title}</b><button class="mwx" id="pkX">✕</button></div><div class="npcb">${html}</div></div>`;st.onclick=e=>{const t=e.target;if(t.id==='pkX'||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}const b=t.closest('[data-ns]');if(b)nsAct(b.dataset.ns)}};
  const nsAct=k=>{const M=stats();if(k==='rest'){if(S.gold<200){announce('골드가 부족해요');return}S.gold-=200;S.hp=M.hp;S.mp=M.mp;sfx.up(3);playEA('heal',SV.p.x,SV.p.y+6,90,'b');announce('🛏 여관에서 푹 쉬었어요 · HP·MP 모두 회복');save();st.hidden=true;st.innerHTML='';st.onclick=null}
   else if(k==='rexp'){const L=S.lostExp||0,cost=Math.max(1000,Math.round(L/50));if(!L){announce('복구할 경험치가 없어요');return}if(S.gold<cost){announce('골드가 부족해요 · '+fmt(cost));return}S.gold-=cost;S.exp+=Math.round(L*.9);S.lostExp=0;while(S.exp>=expNeed(S.lv)&&S.lv<MAXLV){S.exp-=expNeed(S.lv);S.lv++}sfx.legend();playEA('holy_light',SV.p.x,SV.p.y,110);announce('✨ 잃은 경험치의 90%를 되찾았어요');save();st.hidden=true;st.innerHTML='';st.onclick=null}
@@ -2238,7 +2266,7 @@ function bmWin(){const st=$('stage');S.bm=S.bm||[];const draw=()=>{st.innerHTML=
 function npcMoveWin(){const T=inTown(SV.p.x,SV.p.y);if(!T)return;const st=$('stage');const L=npcPos(T).filter(n=>n.k!=='guard');
  st.hidden=false;st.classList.add('sidel');st.innerHTML=`<div class="lnpcm"><div class="lmsh"><b>NPC 즉시 이동</b><button class="mwx" id="pkX">✕</button></div><div class="lnml">${L.map((n,i)=>`<button data-nm="${i}"><span class="ni">${ico(n.k==='statue'?'synth':n.k==='board'?'quest':n.k==='general'?'potion':n.k==='magic'?'book':n.k==='tele'?'tp':n.k==='smith'?'enh':n.k==='wh'?'box':n.k==='inn'?'rt':n.k==='priest'?'sun':n.k==='buy'?'coin':'char')}</span><b>${n.k==='statue'?'버프 동상':n.k==='board'?'게시판':n.job}</b><small>${n.nm||''}</small></button>`).join('')}</div><div class="lnmf">텔레포트 비용 : ${ico('gold')} <b>100</b></div></div>`;
  st.onclick=e=>{const t=e.target;if(t.id==='pkX'||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}const b=t.closest('[data-nm]');if(!b)return;if(S.gold<100){announce('골드가 부족해요');return}S.gold-=100;const n=L[+b.dataset.nm];SV.p.x=n.x;SV.p.y=n.y+20;SV.cam.x=SV.p.x;SV.cam.y=SV.p.y;SV.goto=null;st.hidden=true;st.innerHTML='';st.onclick=null;playEA('holy_light',SV.p.x,SV.p.y,70);setTimeout(()=>npcTalk(n),250)}}
-function npcTalk(N){ac();if(N.k==='guard')return;if(N.k==='statue'){const now=Date.now();if((S.statT||0)>now){announce(`버프 동상은 ${Math.ceil((S.statT-now)/60000)}분 뒤에 다시 쓸 수 있어요`);return}S.statT=now+30*60e3;S.pb=S.pb||{};for(const k of['haste','brave'])S.pb[k]=Math.max(now,S.pb[k]||0)+10*60e3;playEA('buff',SV.p.x,SV.p.y+6,110,'b');sfx.legend();announce('✨ 버프 동상의 축복 · 10분 동안 신속·용기 효과');save();return}if(N.k==='buy'){TAB='chest';render();document.documentElement.classList.add('mopen');lmSync();announce('아이템 매입 상인 · 아래 「일괄 분해」로 장비를 골드로 바꿀 수 있어요');return}if(N.k==='inn'||N.k==='priest'||N.k==='board')return npcSpecial(N);if(N.k==='general'||N.k==='magic')return npcWin(N);if(N.k==='tele')return mapWin();if(N.k==='wh')return whWin();const R=document.documentElement;TAB='enh';render();R.classList.add('mopen');lmSync()}
+function npcTalk(N){ac();if(N.k==='guard')return;if(N.k==='statue'){const now=Date.now();if((S.statT||0)>now){announce(`버프 동상은 ${Math.ceil((S.statT-now)/60000)}분 뒤에 다시 쓸 수 있어요`);return}S.statT=now+30*60e3;S.pb=S.pb||{};for(const k of['haste','brave'])S.pb[k]=Math.max(now,S.pb[k]||0)+10*60e3;playEA('buff',SV.p.x,SV.p.y+6,110,'b');sfx.legend();announce('✨ 버프 동상의 축복 · 10분 동안 신속·용기 효과');save();return}if(N.k==='buy')return sellWin(N);if(N.k==='inn'||N.k==='priest'||N.k==='board')return npcSpecial(N);if(N.k==='general'||N.k==='magic')return npcWin(N);if(N.k==='tele')return mapWin();if(N.k==='wh')return whWin();const R=document.documentElement;TAB='enh';render();R.classList.add('mopen');lmSync()}
 function goTown(){let T=townOf(0);if(!S.burstK){const ref=inDun()?dunEnt(S.wd.r):SV.p;let bd=1e12;for(let r=0;r<TOWNS.length;r++){const T2=townOf(r),d=Math.hypot(T2.x-ref.x,T2.y-ref.y);if(d<bd){bd=d;T=T2}}}S.burstK=null;S.wd=null;S.gi=T.gi;S.stage=(ZG[T.zi].ml-1)*5+1;S.wp={x:T.x,y:T.y+40};mobs=[];shots=[];SV.wInit=0;SV.cells={};SV.dc=null;SV.tgt=null;SV.p.x=T.x;SV.p.y=T.y+40;SV.cam.x=SV.p.x;SV.cam.y=SV.p.y;stageUI();save();return T}
 /* ===== 리니지M식 가방(인벤토리) 창 ===== */
 let IVT='all',IVSEL=null;
