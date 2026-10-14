@@ -882,6 +882,44 @@ html.land .svhud{bottom:20px!important}
 .lmpinfo{flex:1;display:flex;align-items:center;gap:10px;justify-content:flex-end}.lmpi{display:grid;margin-right:auto;padding-left:10px}.lmpi b{color:#ffe9b0;font-size:14px}.lmpi small{color:#cfc4ad;font-size:11.5px}
 .lmpc{display:flex;align-items:center;gap:4px;font-size:12px;color:#d8ccb4}.lmpc .svi{width:13px;height:13px;margin:0}.lmpinfo .lbtn{padding:9px 24px}.lmpinfo .lbtn:not(.blue){border:1px solid #5a4422;background:#1a130b;color:#eadfc8}
 @media (max-height:520px){.lmap .mapb{grid-template-columns:170px 1fr}.lmpl button{padding:5px 7px}.lmpt>button[data-mtab]{padding:5px 10px;font-size:12px}.lmpinfo .lbtn{padding:6px 14px}}
+/* 리니지M식 캐시 상점 */
+.lshop{width:min(1180px,98vw)!important;height:min(700px,96vh)!important}
+.lspt{display:flex;align-items:center;gap:2px;padding:6px 10px;border-bottom:1px solid #3a2c18;background:linear-gradient(#1e1610,#120d08)}
+.lspt>button[data-shc]{position:relative;padding:8px 16px;background:none;border:0;border-bottom:2px solid transparent;color:#a99a85;font-size:13.5px;cursor:pointer}.lspt>button.on{color:#ffe9b0;border-bottom-color:#e0b04a}
+.lspt>button em{position:absolute;top:2px;right:2px;font-style:normal;font-size:9px;background:#e0302a;color:#fff;border-radius:50%;width:14px;height:14px;display:grid;place-items:center}
+.lspt>span:first-of-type{flex:1}.lspt .shcash{display:flex;align-items:center;gap:4px;font-size:12px;color:#eadfc8;margin-right:10px}.lspt .shcash .svi{width:14px;height:14px;margin:0}
+.lspb{flex:1;overflow:auto;padding:10px}
+.lspban{padding:8px 12px;margin-bottom:8px;background:linear-gradient(90deg,rgba(224,176,74,.18),transparent);border-left:3px solid #e0b04a;color:#ffe9b0;font-size:13px}
+.lspw{display:grid;grid-template-columns:minmax(220px,30%) 1fr;gap:10px}
+.lspf{display:grid;gap:10px}.lspg{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;align-content:start}
+.lsp{position:relative;display:grid;grid-template-rows:auto 1fr auto auto;gap:4px;padding:8px;background:linear-gradient(#22190f,#100b07);border:1px solid #4a3a22;box-shadow:inset 0 0 0 1px #000}
+.lsp.big{background:radial-gradient(circle at 50% 35%,#3a2a14,#120c06 70%);border-color:#8a6a2c}
+.lsph{display:flex;justify-content:space-between;align-items:baseline;gap:6px}.lsph b{font-size:13px;color:#ffe9b0;font-weight:700}.lsph small{font-size:11px;color:#a99a85}
+.lspi{position:relative;display:grid;place-items:center;min-height:90px}.lspi>.svi{width:78px;height:78px;opacity:.9;filter:drop-shadow(0 0 10px rgba(255,190,80,.35))}.lspi span{position:absolute;right:18%;bottom:8%;font-size:26px}
+.lsp.big .lspi{min-height:150px}.lsp.big .lspi>.svi{width:120px;height:120px}
+.lsp p{font-size:12px;color:#d8ccb4;margin:0}.lspd{font-size:11px;color:#a99a85;line-height:1.35}
+.lsppr{display:flex;align-items:center;justify-content:center;gap:4px;padding:8px;border:1px solid #6b5228;background:linear-gradient(#3a2c16,#1e160c);color:#fff;font-weight:700;font-size:13px;cursor:pointer}.lsppr.won{border-color:#3d6aa8;background:linear-gradient(#2a4f86,#183256)}.lsppr .svi{width:13px;height:13px;margin:0}.lsppr:disabled{filter:grayscale(.8) brightness(.6)}
+.lsptag{position:absolute;top:-1px;left:-1px;font-size:10px;font-weight:900;background:#e0302a;color:#fff;padding:1px 6px}
+.lsp.sold{opacity:.55}
+@media (max-height:520px){.lspw{grid-template-columns:200px 1fr}.lspg{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}.lspi{min-height:60px}.lspi>.svi{width:54px;height:54px}.lsp.big .lspi{min-height:90px}.lsp.big .lspi>.svi{width:80px;height:80px}}
+/* 리니지M식 캐릭터 선택 */
+.lcs{position:fixed;inset:0;display:grid;grid-template-columns:minmax(230px,24%) 1fr;grid-template-rows:1fr auto;color:#eadfc8}
+.lcsbg{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 70% 40%,#2b4766,#0e1a2a 55%,#05080e)}
+.lcsl{grid-row:1;display:flex;flex-direction:column;gap:6px;padding:20px 0 20px 18px;overflow:auto;justify-content:center}
+.lcsl button{display:flex;align-items:center;gap:12px;padding:8px 14px;background:linear-gradient(90deg,rgba(0,0,0,.35),transparent);border:0;color:#d8e2ee;text-align:left;cursor:pointer;clip-path:polygon(0 0,100% 0,92% 100%,0 100%)}
+.lcsl button.on{background:linear-gradient(90deg,#8a1a14,#5a0f0a 70%,transparent);color:#fff}
+.lcsi{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#1a2636;border:2px solid #4a6a8a;font-size:20px}.lcsl button.on .lcsi{border-color:#ffb27a;background:#3a0f0c}
+.lcsl b{display:block;font-size:14px}.lcsl small{font-size:11.5px;color:#a8b8c8}.lcsl button.empty{opacity:.6}
+.lcsa{grid-row:1;display:grid;place-items:end center;overflow:hidden}.lcsa img{max-height:100%;max-width:100%;object-fit:contain;filter:drop-shadow(0 0 30px rgba(120,180,255,.25))}
+.lcsspr{transform:scale(1.2);transform-origin:bottom center;image-rendering:pixelated;margin-bottom:6vh}
+.lcsinfo{position:absolute;right:4vw;bottom:90px;display:grid;gap:3px;padding:10px 16px;min-width:220px;background:rgba(8,14,24,.82);border:1px solid #2e4a66}
+.lcsinfo div{display:flex;justify-content:space-between;gap:20px;font-size:12.5px}.lcsinfo span{color:#8aa0b8}.lcsinfo b{font-weight:500}
+.lcsf{grid-column:1/-1;display:flex;align-items:center;gap:8px;padding:10px 18px;background:linear-gradient(transparent,rgba(0,0,0,.7))}.lcsf>span{flex:1}
+.lcsb{padding:8px 16px;background:none;border:0;color:#d8e2ee;font-size:15px;cursor:pointer}.lcsb:disabled{opacity:.35}
+.lcsf .lbtn{padding:10px 44px;font-size:15px}
+@media (max-height:520px){.lcsl{padding:8px 0 8px 10px;gap:3px}.lcsl button{padding:4px 10px}.lcsi{width:30px;height:30px}.lcsinfo{bottom:60px;min-width:180px}.lcsf{padding:6px 12px}.lcsf .lbtn{padding:7px 30px}}
+.lspw{align-items:start}.lspf{align-content:start}.lsp{grid-template-rows:auto auto auto auto}.lsp.big .lspi{min-height:130px}
+.lsptag{top:-8px!important;left:6px!important;border-radius:2px}.lsp{margin-top:6px}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -1033,7 +1071,19 @@ html.rot90 .lwt span img,html.rot90 .lwt span canvas{width:30px!important;height
 html.rot90 .lmap .mapb{grid-template-columns:170px 1fr}
 html.rot90 .lmpl button{padding:5px 7px}
 html.rot90 .lmpt>button[data-mtab]{padding:5px 10px;font-size:12px}
-html.rot90 .lmpinfo .lbtn{padding:6px 14px}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
+html.rot90 .lmpinfo .lbtn{padding:6px 14px}
+html.rot90 .lspw{grid-template-columns:200px 1fr}
+html.rot90 .lspg{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+html.rot90 .lspi{min-height:60px}
+html.rot90 .lspi>.svi{width:54px;height:54px}
+html.rot90 .lsp.big .lspi{min-height:90px}
+html.rot90 .lsp.big .lspi>.svi{width:80px;height:80px}
+html.rot90 .lcsl{padding:8px 0 8px 10px;gap:3px}
+html.rot90 .lcsl button{padding:4px 10px}
+html.rot90 .lcsi{width:30px;height:30px}
+html.rot90 .lcsinfo{bottom:60px;min-width:180px}
+html.rot90 .lcsf{padding:6px 12px}
+html.rot90 .lcsf .lbtn{padding:7px 30px}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
 <div class="title" id="title"><div class="tbg"></div><div class="tin"><div class="tlogo">잿빛 왕관</div><div class="tsub">ASHEN CROWN · 에르덴 대륙</div><div class="tload"><i id="tbar"></i></div><div class="ttip" id="ttip">세계를 불러오는 중…</div><button class="tstart" id="tstart" disabled>게임 시작</button><div class="tfoot">서버 · 에르덴 1 &nbsp;|&nbsp; 시제품</div></div></div><div class="app">
  <div class="top"><div class="logo">잿빛 왕관<small>에르덴 대륙 · 시제품</small></div><div class="cur" id="cur"></div><button class="ic laysw" id="laySw" hidden>가로 화면</button><button class="ic" id="mute" type="button" aria-label="소리">🔊</button></div>
  <div class="lcol"><div class="livea" id="liveA"></div><div class="ticker" id="ticker"></div><div class="qbar" id="qbar"></div>
@@ -1985,12 +2035,11 @@ let MTAB='all';function mapWin(){const st=$('stage');const B=mapBase();if(!MSEL)
   if(t.id==='mvTp'){const z=zoneAt(MSEL.x,MSEL.y);const cost=Math.round(goldPer({lv:z.ml})*3/10)*10;if(S.gold<cost){announce('골드가 부족해요 · '+fmt(cost));return}S.gold-=cost;close();S.burstK=null;S.wd=null;S.gi=z.gi;S.stage=(z.ml-1)*5+1;S.wp={x:MSEL.x,y:MSEL.y};mobs=[];shots=[];SV.wInit=0;SV.cells={};SV.tgt=null;SV.goto=null;SV.p.x=MSEL.x;SV.p.y=MSEL.y;SV.cam.x=SV.p.x;SV.cam.y=SV.p.y;flash();playEA('holy_light',SV.p.x,SV.p.y,110);announce(`🌀 「${MSEL.n||GROUNDS[z.gi].n}」(으)로 순간이동`);save();stageUI();return}
   if(t.id==='mvWalk'){if(S.burstK||inDun()){announce('지금은 걸어서 갈 수 없어요 · 순간이동을 쓰세요');return}SV.goto={x:MSEL.x,y:MSEL.y,auto:1,n:MSEL.n};SV.tapMob=null;close();announce(`🚶 「${MSEL.n||GROUNDS[zoneAt(MSEL.x,MSEL.y).gi].n}」(으)로 자동 이동 중 · 도착하면 자동 사냥 시작`);return}}}
 function shopWin(){const st=$('stage');const draw=()=>{const now=Date.now();
- st.innerHTML=`<div class="mwin shopw"><div class="mwh"><b>상점</b><span class="shcash">💰 ${fmt(S.gold)} · 충전 ₩${CASH==null?'…':fmt(CASH)}</span><button class="mwx" id="pkX">✕</button></div><div class="shb"><div class="shl">${SHCAT.map(([k,n,ic])=>`<button data-shc="${k}" class="${SHC===k?'on':''}"><i>${ic}</i>${n}${k==='ev'?'<em>N</em>':''}</button>`).join('')}</div>
- <div class="shr">${SHC==='ev'?`<div class="shban"><b>🎉 주간 이벤트</b><span>남은 시간 ${tLeft(wkLeft())}</span></div>`:SHC==='day'?`<div class="shban day"><b>📅 매일 상품</b><span>초기화까지 ${tLeft(dLeft())}</span></div>`:''}
- ${SHC==='sum'?`<div class="shin">${vGacha()}</div>`:SHC==='pass'?`<div class="shin">${vPass()}</div>`:SHC==='mon'?`<div class="shin">${vMonth()}</div>`:
- `<div class="shg">${SHOP.filter(x=>x.cat===SHC).map(it=>{const b=shBought(it),soldout=it.lim&&b>=it.lim,lock=it.lv&&S.lv<it.lv;return`<div class="shi${soldout?' sold':''}${lock?' lock':''}">${it.tag?`<span class="shtag">${it.tag}</span>`:''}<div class="shic">${it.ic}</div><b>${it.n}</b><small>${it.d}</small>
-  <div class="shlim">${it.lim?`${it.per==='d'?'일일':it.per==='w'?'주간':'계정'} 구매 ${b}/${it.lim}`:'무제한'}${lock?` · Lv.${it.lv} 이상`:''}</div>
-  <button class="btn ${it.won===0?'gold':it.gold?'':'gold'}" data-shb="${it.k}" ${soldout||lock?'disabled':''}>${soldout?'구매 완료':it.gold?`💰 ${fmt(it.gold)}`:it.won===0?'무료 받기':`₩ ${fmt(it.won)}`}</button></div>`}).join('')}</div>`}</div></div></div>`};
+ const card=(it,big)=>{const b=shBought(it),soldout=it.lim&&b>=it.lim,lock=it.lv&&S.lv<it.lv;const pr=soldout?'구매 완료':it.gold?`${ico('gold')} ${fmt(it.gold)}`:it.won===0?'무료':`₩ ${fmt(it.won)}`;
+  return`<div class="lsp${big?' big':''}${soldout?' sold':''}${lock?' lock':''}">${it.tag?`<span class="lsptag">${it.tag}</span>`:''}<div class="lsph"><b>${it.n}</b><small>${it.lim?`${b}/${it.lim}`:''}</small></div><div class="lspi">${ico(it.won>=30000?'chest':it.gold?'gold':it.rw&&(it.rw.pull||it.rw.tcard)?'mask':it.rw&&it.rw.scroll?'scroll':'chest')}</div>${big?`<p>${it.d}</p>`:`<small class="lspd">${it.d}</small>`}${lock?`<small class="lspd">Lv.${it.lv} 이상</small>`:''}<button class="lsppr${it.won>0&&!it.gold?' won':''}" data-shb="${it.k}" ${soldout||lock?'disabled':''}>${pr}</button></div>`};
+ st.innerHTML=`<div class="mwin shopw lshop"><div class="lspt">${SHCAT.map(([k,n])=>`<button data-shc="${k}" class="${SHC===k?'on':''}">${n}${k==='ev'?'<em>N</em>':''}</button>`).join('')}<span></span><span class="shcash">${ico('gold')} ${fmt(S.gold)} · ${ico('dia')} ₩${CASH==null?'…':fmt(CASH)}</span><button class="mwx" id="pkX">✕</button></div>
+ <div class="lspb">${SHC==='sum'?`<div class="shin">${vGacha()}</div>`:SHC==='pass'?`<div class="shin">${vPass()}</div>`:SHC==='mon'?`<div class="shin">${vMonth()}</div>`:(()=>{const L=SHOP.filter(x=>x.cat===SHC);const F=L.slice(0,2),Rr=L.slice(2);
+  return`${SHC==='ev'?`<div class="lspban">주간 이벤트 · 남은 시간 ${tLeft(wkLeft())}</div>`:SHC==='day'?`<div class="lspban">매일 상품 · 초기화까지 ${tLeft(dLeft())}</div>`:''}<div class="lspw"><div class="lspf">${F.map(it=>card(it,1)).join('')}</div><div class="lspg">${Rr.map(it=>card(it)).join('')}</div></div>`})()}</div></div>`};
  st.hidden=false;draw();const close=()=>{st.hidden=true;st.innerHTML='';st.onclick=null};
  st.onclick=async e=>{const t=e.target;if(t.id==='pkX'||t===st){close();return}let b;
   if(b=t.closest('[data-shc]')){SHC=b.dataset.shc;draw();return}
@@ -2573,11 +2622,18 @@ const arId=()=>SLOT_IDX?liveSid()+'_'+SLOT_IDX:liveSid();
 function bundleStr(){save();const b={v:2,cur:SLOT_IDX,roster:roster(),saves:{},wh:whGet(),acc:accGet()};for(let i=0;i<SLOT_MAX;i++){const v=localStorage.getItem(SKEY(i));if(v)b.saves[i]=v}return JSON.stringify(b)}
 function restoreBundle(str){let b=null;try{b=JSON.parse(str)}catch(_){}if(b&&b.v===2){for(let i=0;i<SLOT_MAX;i++)localStorage.removeItem(SKEY(i));for(const[i,v]of Object.entries(b.saves||{}))localStorage.setItem(SKEY(+i),v);localStorage.setItem('ash.roster',JSON.stringify(b.roster||{}));localStorage.setItem('ash.wh',JSON.stringify(b.wh||{}));if(b.acc)localStorage.setItem('ash.acc',JSON.stringify(b.acc));else localStorage.removeItem('ash.acc');localStorage.setItem('ash.cur',String(b.cur||0))}else localStorage.setItem('ash.v3',str)}
 function switchChar(i){save();try{localStorage.setItem('ash.cur',String(i))}catch(_){}location.reload()}
-function charSelect(){const r=roster();const st=$('stage');st.hidden=false;
- st.innerHTML=`<div class="cinfo" style="--ac:#e0b04a;width:min(560px,94vw)"><h3>캐릭터 선택</h3><p class="mini">직업마다 캐릭터를 따로 키워요. 레벨·장비·사냥터는 캐릭터마다, 충전 잔액과 창고는 함께 써요.</p><div class="chl">${Array.from({length:SLOT_MAX},(_,i)=>{const c=r[i];const cur=i===SLOT_IDX;
-  if(!c&&!(cur&&S.cls))return`<button class="chs empty" data-slot="${i}"><b>+</b><small>새 캐릭터</small></button>`;const cc=cur&&S.cls?{cls:S.cls.k,sx:S.cls.sx,lv:S.lv,stage:S.bestStage,t:S.eqT,pw:power()}:c;const card=cc.t&&C(cc.t);
-  return`<div class="chs${cur?' on':''}"><button data-slot="${i}" ${cur?'disabled':''}>${spr(charIdx(cc.cls,cc.sx),56)}<b>${cc.cls} Lv.${cc.lv}</b><small>${stLabel(cc.stage||1)} · 전투력 ${fmt(cc.pw||0)}</small><em>${cur?'플레이 중':'바꾸기'}</em></button>${cur?'':`<button class="chdel" data-slotdel="${i}" title="삭제">✕</button>`}</div>`}).join('')}</div><button class="btn wide" id="chX">닫기</button></div>`;
- st.onclick=e=>{if(e.target.id==='chX'||e.target===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}const b=e.target.closest('[data-slot]');if(b&&!b.disabled){switchChar(+b.dataset.slot);return}const d=e.target.closest('[data-slotdel]');if(d){const i=+d.dataset.slotdel;if(!confirm(`캐릭터 ${i+1}을(를) 삭제할까요? 되돌릴 수 없어요.`))return;try{localStorage.removeItem(SKEY(i));const rr=roster();delete rr[i];localStorage.setItem('ash.roster',JSON.stringify(rr));const A=accGet();if(A&&A.locks){delete A.locks[i];localStorage.setItem('ash.acc',JSON.stringify(A));OTHERS=new Set(Object.entries(A.locks).filter(([k])=>+k!==SLOT_IDX).flatMap(([,v])=>v))}}catch(_){}charSelect()}}}
+let CSEL=null;function charSelect(){const r=roster();const st=$('stage');st.hidden=false;if(CSEL==null)CSEL=SLOT_IDX;
+ const info=i=>{const cur=i===SLOT_IDX;const c=r[i];if(!c&&!(cur&&S.cls))return null;return cur&&S.cls?{cls:S.cls.k,sx:S.cls.sx,lv:S.lv,stage:S.bestStage,t:S.morph!==false?S.eqT:null,pw:power()}:c};
+ const draw=()=>{const sel=info(CSEL),card=sel&&sel.t&&C(sel.t),art=card&&card.id==='t:ereshkigal'?'<img src="art/H_hellking_card.png" alt="">':sel?`<div class="lcsspr">${spr(charIdx(sel.cls,sel.sx),300)}</div>`:'';
+  st.innerHTML=`<div class="lcs"><div class="lcsbg"></div><div class="lcsl">${Array.from({length:SLOT_MAX},(_,i)=>{const c=info(i);return`<button data-csel="${i}" class="${i===CSEL?'on':''}${c?'':' empty'}"><span class="lcsi">${c?ico(c.cls==='마법사'||c.cls==='환술사'?'book':c.cls==='요정'?'star':c.cls==='군주'?'crown':'swords'):'+'}</span><div>${c?`<b>${S.cls&&i===SLOT_IDX&&typeof ACC!=="undefined"&&ACC&&ACC.user?ACC.user:c.cls}</b><small>Lv ${c.lv} · ${c.cls}</small>`:'<b>새 캐릭터</b><small>빈 슬롯</small>'}</div></button>`}).join('')}</div>
+  <div class="lcsa">${art}</div>
+  ${sel?`<div class="lcsinfo"><div><span>직업</span><b>${sel.cls}</b></div><div><span>레벨</span><b>${sel.lv}</b></div><div><span>전투력</span><b>${fmt(sel.pw||0)}</b></div><div><span>사냥터</span><b>${stLabel(sel.stage||1)}</b></div><div><span>변신</span><b>${card?card.n:'-'}</b></div></div>`:''}
+  <div class="lcsf"><button class="lcsb" id="chX">◁ 이전</button><button class="lcsb" id="chDel" ${!sel||CSEL===SLOT_IDX?'disabled':''}>삭제</button><span></span><button class="lbtn blue" id="chGo">${!sel?'캐릭터 만들기':CSEL===SLOT_IDX?'계속하기':'입장하기'}</button></div></div>`};
+ draw();
+ st.onclick=e=>{const t=e.target;if(t.closest('#chX')){st.hidden=true;st.innerHTML='';st.onclick=null;CSEL=null;return}let b;
+  if(b=t.closest('[data-csel]')){CSEL=+b.dataset.csel;draw();return}
+  if(t.closest('#chGo')){if(CSEL===SLOT_IDX){st.hidden=true;st.innerHTML='';st.onclick=null;CSEL=null;return}const i=CSEL;CSEL=null;switchChar(i);return}
+  if(t.closest('#chDel')){const i=CSEL;if(i===SLOT_IDX||!info(i))return;if(!confirm(`캐릭터 ${i+1}을(를) 삭제할까요? 되돌릴 수 없어요.`))return;try{localStorage.removeItem(SKEY(i));const rr=roster();delete rr[i];localStorage.setItem('ash.roster',JSON.stringify(rr));const A=accGet();if(A&&A.locks){delete A.locks[i];localStorage.setItem('ash.acc',JSON.stringify(A));OTHERS=new Set(Object.entries(A.locks).filter(([k])=>+k!==SLOT_IDX).flatMap(([,v])=>v))}}catch(_){}CSEL=SLOT_IDX;charSelect()}}}
 const whGet=()=>{try{return Object.assign({gold:0,scroll:0,bless:0,items:[],cards:{}},JSON.parse(localStorage.getItem('ash.wh')||'{}'))}catch(_){return{gold:0,scroll:0,bless:0,items:[],cards:{}}}};
 const whSet=w=>{try{localStorage.setItem('ash.wh',JSON.stringify(w))}catch(_){}};
 
