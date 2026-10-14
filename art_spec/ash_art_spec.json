@@ -10363,6 +10363,1626 @@
    ],
    "priority": 1,
    "prompt": "Lineage M style square skill icon for the 환술사 class skill \"패러독스\" (attack): 대상의 영혼을 구속하는 단죄의 영역을 전개한다.. Painterly 2D, glowing magical symbol/effect filling the square, dark vignette edges, distinct color and shape from other skills, no text, 128x128"
+  },
+  {
+   "id": "i_eq_short_sword_1_new",
+   "card": "w:short_sword_1_new",
+   "category": "장비 아이콘",
+   "name": "숏소드",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 숏소드 (one-handed sword), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_scimitar_1_new",
+   "card": "w:scimitar_1_new",
+   "category": "장비 아이콘",
+   "name": "시미터",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 시미터 (one-handed sword), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_long_sword_1_new",
+   "card": "w:long_sword_1_new",
+   "category": "장비 아이콘",
+   "name": "롱소드",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 롱소드 (one-handed sword), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_falchion_1_new",
+   "card": "w:falchion_1_new",
+   "category": "장비 아이콘",
+   "name": "팔시온",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 팔시온 (one-handed sword), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_elven_broadsword",
+   "card": "w:elven_broadsword",
+   "category": "장비 아이콘",
+   "name": "엘프의 검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 엘프의 검 (one-handed sword), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_katana",
+   "card": "w:katana",
+   "category": "장비 아이콘",
+   "name": "카타나",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 카타나 (one-handed sword), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_sabre_1_silver",
+   "card": "w:sabre_1_silver",
+   "category": "장비 아이콘",
+   "name": "은빛 세이버",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 은빛 세이버 (one-handed sword), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_golden_sword",
+   "card": "w:golden_sword",
+   "category": "장비 아이콘",
+   "name": "황금검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 황금검 (one-handed sword), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_blessed_blade",
+   "card": "w:blessed_blade",
+   "category": "장비 아이콘",
+   "name": "축복받은 검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 축복받은 검 (one-handed sword), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_demon_blade",
+   "card": "w:demon_blade",
+   "category": "장비 아이콘",
+   "name": "마검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 마검 (one-handed sword), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_ancient_sword",
+   "card": "w:ancient_sword",
+   "category": "장비 아이콘",
+   "name": "태고의 검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 태고의 검 (one-handed sword), grade 신화(금빛·매우 화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_spwpn_sword_of_power_new",
+   "card": "w:spwpn_sword_of_power_new",
+   "category": "장비 아이콘",
+   "name": "군주의 검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 군주의 검 (one-handed sword), grade 유일(청록 광채·최상급). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_greatsword_1_new",
+   "card": "w:greatsword_1_new",
+   "category": "장비 아이콘",
+   "name": "수련용 대검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 수련용 대검 (two-handed greatsword), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_two_handed_sword",
+   "card": "w:two_handed_sword",
+   "category": "장비 아이콘",
+   "name": "투핸드 소드",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 투핸드 소드 (two-handed greatsword), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_orcish_great_sword",
+   "card": "w:orcish_great_sword",
+   "category": "장비 아이콘",
+   "name": "오크 대검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 오크 대검 (two-handed greatsword), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_claymore",
+   "card": "w:claymore",
+   "category": "장비 아이콘",
+   "name": "클레이모어",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 클레이모어 (two-handed greatsword), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_greatsword_2",
+   "card": "w:greatsword_2",
+   "category": "장비 아이콘",
+   "name": "기사의 대검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 기사의 대검 (two-handed greatsword), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_triple_sword_new",
+   "card": "w:triple_sword_new",
+   "category": "장비 아이콘",
+   "name": "삼날검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 삼날검 (two-handed greatsword), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_greatsword_4",
+   "card": "w:greatsword_4",
+   "category": "장비 아이콘",
+   "name": "흑기사의 대검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 흑기사의 대검 (two-handed greatsword), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_claymore_blessed",
+   "card": "w:claymore_blessed",
+   "category": "장비 아이콘",
+   "name": "성기사의 대검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 성기사의 대검 (two-handed greatsword), grade 신화(금빛·매우 화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_spwpn_sword_of_cerebov_new",
+   "card": "w:spwpn_sword_of_cerebov_new",
+   "category": "장비 아이콘",
+   "name": "화염 마왕의 검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 화염 마왕의 검 (two-handed greatsword), grade 유일(청록 광채·최상급). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_bow_1",
+   "card": "w:bow_1",
+   "category": "장비 아이콘",
+   "name": "사냥꾼의 활",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 사냥꾼의 활 (bow / crossbow), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_shortbow_1",
+   "card": "w:shortbow_1",
+   "category": "장비 아이콘",
+   "name": "짧은 활",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 짧은 활 (bow / crossbow), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_longbow",
+   "card": "w:longbow",
+   "category": "장비 아이콘",
+   "name": "장궁",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 장궁 (bow / crossbow), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_longbow_2",
+   "card": "w:longbow_2",
+   "category": "장비 아이콘",
+   "name": "은빛 장궁",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 은빛 장궁 (bow / crossbow), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_crossbow_1",
+   "card": "w:crossbow_1",
+   "category": "장비 아이콘",
+   "name": "석궁",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 석궁 (bow / crossbow), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_arbalest_2",
+   "card": "w:arbalest_2",
+   "category": "장비 아이콘",
+   "name": "대형 석궁",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 대형 석궁 (bow / crossbow), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_longbow_3",
+   "card": "w:longbow_3",
+   "category": "장비 아이콘",
+   "name": "엘프 왕의 활",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 엘프 왕의 활 (bow / crossbow), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_longbow_1",
+   "card": "w:longbow_1",
+   "category": "장비 아이콘",
+   "name": "정령의 활",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 정령의 활 (bow / crossbow), grade 신화(금빛·매우 화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_urand_sniper",
+   "card": "w:urand_sniper",
+   "category": "장비 아이콘",
+   "name": "명사수의 석궁",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 명사수의 석궁 (bow / crossbow), grade 유일(청록 광채·최상급). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_staff_0",
+   "card": "w:staff_0",
+   "category": "장비 아이콘",
+   "name": "나무 지팡이",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 나무 지팡이 (magic staff), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_staff_1",
+   "card": "w:staff_1",
+   "category": "장비 아이콘",
+   "name": "수련자의 지팡이",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 수련자의 지팡이 (magic staff), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_staff_2",
+   "card": "w:staff_2",
+   "category": "장비 아이콘",
+   "name": "마력의 지팡이",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 마력의 지팡이 (magic staff), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_staff_5",
+   "card": "w:staff_5",
+   "category": "장비 아이콘",
+   "name": "서리 지팡이",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 서리 지팡이 (magic staff), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_staff_7",
+   "card": "w:staff_7",
+   "category": "장비 아이콘",
+   "name": "화염의 지팡이",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 화염의 지팡이 (magic staff), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_staff_8",
+   "card": "w:staff_8",
+   "category": "장비 아이콘",
+   "name": "번개의 지팡이",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 번개의 지팡이 (magic staff), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_staff_9",
+   "card": "w:staff_9",
+   "category": "장비 아이콘",
+   "name": "대마법사의 지팡이",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 대마법사의 지팡이 (magic staff), grade 신화(금빛·매우 화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_spwpn_staff_of_dispater_new",
+   "card": "w:spwpn_staff_of_dispater_new",
+   "category": "장비 아이콘",
+   "name": "심연의 지팡이",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 심연의 지팡이 (magic staff), grade 유일(청록 광채·최상급). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_rod_0_new",
+   "card": "w:rod_0_new",
+   "category": "장비 아이콘",
+   "name": "수련자의 마력봉",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 수련자의 마력봉 (magic wand rod), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_rod_1_new",
+   "card": "w:rod_1_new",
+   "category": "장비 아이콘",
+   "name": "구리 마력봉",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 구리 마력봉 (magic wand rod), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_rod_2_new",
+   "card": "w:rod_2_new",
+   "category": "장비 아이콘",
+   "name": "은 마력봉",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 은 마력봉 (magic wand rod), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_rod_4_new",
+   "card": "w:rod_4_new",
+   "category": "장비 아이콘",
+   "name": "환영의 마력봉",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 환영의 마력봉 (magic wand rod), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_rod_5_new",
+   "card": "w:rod_5_new",
+   "category": "장비 아이콘",
+   "name": "시간의 마력봉",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 시간의 마력봉 (magic wand rod), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_rod_7_new",
+   "card": "w:rod_7_new",
+   "category": "장비 아이콘",
+   "name": "공허의 마력봉",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 공허의 마력봉 (magic wand rod), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_rod_9_new",
+   "card": "w:rod_9_new",
+   "category": "장비 아이콘",
+   "name": "차원의 마력봉",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 차원의 마력봉 (magic wand rod), grade 신화(금빛·매우 화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_spwpn_staff_of_olgreb",
+   "card": "w:spwpn_staff_of_olgreb",
+   "category": "장비 아이콘",
+   "name": "환술사의 지배봉",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 환술사의 지배봉 (magic wand rod), grade 유일(청록 광채·최상급). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_dagger_new",
+   "card": "w:dagger_new",
+   "category": "장비 아이콘",
+   "name": "단검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 단검 (dagger), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_orcish_dagger",
+   "card": "w:orcish_dagger",
+   "category": "장비 아이콘",
+   "name": "오크 단검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 오크 단검 (dagger), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_rapier_1",
+   "card": "w:rapier_1",
+   "category": "장비 아이콘",
+   "name": "레이피어",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 레이피어 (dagger), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_elven_dagger",
+   "card": "w:elven_dagger",
+   "category": "장비 아이콘",
+   "name": "엘프 단검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 엘프 단검 (dagger), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_quickblade",
+   "card": "w:quickblade",
+   "category": "장비 아이콘",
+   "name": "퀵블레이드",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 퀵블레이드 (dagger), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_double_sword_new",
+   "card": "w:double_sword_new",
+   "category": "장비 아이콘",
+   "name": "쌍날검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 쌍날검 (dagger), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_dagger_7",
+   "card": "w:dagger_7",
+   "category": "장비 아이콘",
+   "name": "그림자 단검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 그림자 단검 (dagger), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_urand_spriggans_knife_new",
+   "card": "w:urand_spriggans_knife_new",
+   "category": "장비 아이콘",
+   "name": "암살자의 단검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 암살자의 단검 (dagger), grade 신화(금빛·매우 화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_spwpn_vampires_tooth",
+   "card": "w:spwpn_vampires_tooth",
+   "category": "장비 아이콘",
+   "name": "흡혈의 이빨",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 흡혈의 이빨 (dagger), grade 유일(청록 광채·최상급). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_spear_1",
+   "card": "w:spear_1",
+   "category": "장비 아이콘",
+   "name": "창",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 창 (spear / polearm), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_spear_2_new",
+   "card": "w:spear_2_new",
+   "category": "장비 아이콘",
+   "name": "기병창",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 기병창 (spear / polearm), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_trident_1",
+   "card": "w:trident_1",
+   "category": "장비 아이콘",
+   "name": "삼지창",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 삼지창 (spear / polearm), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_halberd_1",
+   "card": "w:halberd_1",
+   "category": "장비 아이콘",
+   "name": "할버드",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 할버드 (spear / polearm), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_demon_trident",
+   "card": "w:demon_trident",
+   "category": "장비 아이콘",
+   "name": "악마의 삼지창",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 악마의 삼지창 (spear / polearm), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_tsurugi",
+   "card": "w:tsurugi",
+   "category": "장비 아이콘",
+   "name": "천검",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 천검 (spear / polearm), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_trishula",
+   "card": "w:trishula",
+   "category": "장비 아이콘",
+   "name": "신의 삼지창",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 신의 삼지창 (spear / polearm), grade 신화(금빛·매우 화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_spwpn_glaive_of_prune_new",
+   "card": "w:spwpn_glaive_of_prune_new",
+   "category": "장비 아이콘",
+   "name": "심판의 글레이브",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 심판의 글레이브 (spear / polearm), grade 유일(청록 광채·최상급). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_hand_axe_1_new",
+   "card": "w:hand_axe_1_new",
+   "category": "장비 아이콘",
+   "name": "손도끼",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 손도끼 (battle axe), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_club_new",
+   "card": "w:club_new",
+   "category": "장비 아이콘",
+   "name": "곤봉",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 곤봉 (mace / club), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_mace_1_new",
+   "card": "w:mace_1_new",
+   "category": "장비 아이콘",
+   "name": "철퇴",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 철퇴 (mace / club), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_war_axe_1",
+   "card": "w:war_axe_1",
+   "category": "장비 아이콘",
+   "name": "전투 도끼",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 전투 도끼 (battle axe), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_broad_axe_1",
+   "card": "w:broad_axe_1",
+   "category": "장비 아이콘",
+   "name": "브로드 액스",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 브로드 액스 (battle axe), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_executioner_axe",
+   "card": "w:executioner_axe",
+   "category": "장비 아이콘",
+   "name": "처형자의 도끼",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 처형자의 도끼 (battle axe), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_holy_scourge",
+   "card": "w:holy_scourge",
+   "category": "장비 아이콘",
+   "name": "성스러운 채찍",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 성스러운 채찍 (mace / club), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_battle_axe_7",
+   "card": "w:battle_axe_7",
+   "category": "장비 아이콘",
+   "name": "거인의 도끼",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 거인의 도끼 (battle axe), grade 신화(금빛·매우 화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_spwpn_wrath_of_trog_new",
+   "card": "w:spwpn_wrath_of_trog_new",
+   "category": "장비 아이콘",
+   "name": "분노의 도끼",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 분노의 도끼 (battle axe), grade 유일(청록 광채·최상급). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_cap_1",
+   "card": "a:cap_1",
+   "category": "장비 아이콘",
+   "name": "가죽 모자",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 가죽 모자 (helmet), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_helmet_1",
+   "card": "a:helmet_1",
+   "category": "장비 아이콘",
+   "name": "철 투구",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 철 투구 (helmet), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_elven_leather_helm",
+   "card": "a:elven_leather_helm",
+   "category": "장비 아이콘",
+   "name": "엘프 가죽 투구",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 엘프 가죽 투구 (helmet), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_helmet_2",
+   "card": "a:helmet_2",
+   "category": "장비 아이콘",
+   "name": "기사 투구",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 기사 투구 (helmet), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_crested_helmet",
+   "card": "a:crested_helmet",
+   "category": "장비 아이콘",
+   "name": "볏 투구",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 볏 투구 (helmet), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_wizard_hat_1",
+   "card": "a:wizard_hat_1",
+   "category": "장비 아이콘",
+   "name": "마법사 모자",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 마법사 모자 (helmet), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_helmet_4_visor",
+   "card": "a:helmet_4_visor",
+   "category": "장비 아이콘",
+   "name": "판금 투구",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 판금 투구 (helmet), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_plumed_helmet",
+   "card": "a:plumed_helmet",
+   "category": "장비 아이콘",
+   "name": "깃털 투구",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 깃털 투구 (helmet), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_helmet_art_1",
+   "card": "a:helmet_art_1",
+   "category": "장비 아이콘",
+   "name": "용사의 투구",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 용사의 투구 (helmet), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_helmet_ego_4",
+   "card": "a:helmet_ego_4",
+   "category": "장비 아이콘",
+   "name": "수호자의 투구",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 수호자의 투구 (helmet), grade 신화(금빛·매우 화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_urand_dragonmask",
+   "card": "a:urand_dragonmask",
+   "category": "장비 아이콘",
+   "name": "용의 가면",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 용의 가면 (helmet), grade 유일(청록 광채·최상급). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_leather_armor_1",
+   "card": "a:leather_armor_1",
+   "category": "장비 아이콘",
+   "name": "가죽 갑옷",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 가죽 갑옷 (body armor), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_robe_1_new",
+   "card": "a:robe_1_new",
+   "category": "장비 아이콘",
+   "name": "수련자 로브",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 수련자 로브 (body armor), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_ring_mail_1_new",
+   "card": "a:ring_mail_1_new",
+   "category": "장비 아이콘",
+   "name": "링 메일",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 링 메일 (body armor), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_studded_leather_armor",
+   "card": "a:studded_leather_armor",
+   "category": "장비 아이콘",
+   "name": "징 박힌 가죽 갑옷",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 징 박힌 가죽 갑옷 (body armor), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_chain_mail_1",
+   "card": "a:chain_mail_1",
+   "category": "장비 아이콘",
+   "name": "사슬 갑옷",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 사슬 갑옷 (body armor), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_scale_mail_1_new",
+   "card": "a:scale_mail_1_new",
+   "category": "장비 아이콘",
+   "name": "비늘 갑옷",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 비늘 갑옷 (body armor), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_elven_leather_armor",
+   "card": "a:elven_leather_armor",
+   "category": "장비 아이콘",
+   "name": "엘프 가죽 갑옷",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 엘프 가죽 갑옷 (body armor), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_banded_mail_1",
+   "card": "a:banded_mail_1",
+   "category": "장비 아이콘",
+   "name": "밴디드 메일",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 밴디드 메일 (body armor), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_robe_ego_1",
+   "card": "a:robe_ego_1",
+   "category": "장비 아이콘",
+   "name": "마력의 로브",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 마력의 로브 (body armor), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_plate_mail_1",
+   "card": "a:plate_mail_1",
+   "category": "장비 아이콘",
+   "name": "판금 갑옷",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 판금 갑옷 (body armor), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_troll_leather_armor",
+   "card": "a:troll_leather_armor",
+   "category": "장비 아이콘",
+   "name": "트롤 가죽 갑옷",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 트롤 가죽 갑옷 (body armor), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_ice_dragon_armor_new",
+   "card": "a:ice_dragon_armor_new",
+   "category": "장비 아이콘",
+   "name": "빙룡 비늘 갑옷",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 빙룡 비늘 갑옷 (body armor), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_crystal_plate_mail",
+   "card": "a:crystal_plate_mail",
+   "category": "장비 아이콘",
+   "name": "수정 판금 갑옷",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 수정 판금 갑옷 (body armor), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_gold_dragon_armor_new",
+   "card": "a:gold_dragon_armor_new",
+   "category": "장비 아이콘",
+   "name": "금룡 비늘 갑옷",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 금룡 비늘 갑옷 (body armor), grade 신화(금빛·매우 화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_urand_dragon_king",
+   "card": "a:urand_dragon_king",
+   "category": "장비 아이콘",
+   "name": "용왕의 갑옷",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 용왕의 갑옷 (body armor), grade 유일(청록 광채·최상급). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_cloak_1_leather",
+   "card": "a:cloak_1_leather",
+   "category": "장비 아이콘",
+   "name": "가죽 망토",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 가죽 망토 (cloak), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_cloak_2",
+   "card": "a:cloak_2",
+   "category": "장비 아이콘",
+   "name": "여행자 망토",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 여행자 망토 (cloak), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_cloak_3",
+   "card": "a:cloak_3",
+   "category": "장비 아이콘",
+   "name": "기사의 망토",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 기사의 망토 (cloak), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_cloak_4",
+   "card": "a:cloak_4",
+   "category": "장비 아이콘",
+   "name": "마법 망토",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 마법 망토 (cloak), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_urand_flash",
+   "card": "a:urand_flash",
+   "category": "장비 아이콘",
+   "name": "섬광의 망토",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 섬광의 망토 (cloak), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_urand_starlight",
+   "card": "a:urand_starlight",
+   "category": "장비 아이콘",
+   "name": "별빛 망토",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 별빛 망토 (cloak), grade 신화(금빛·매우 화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_urand_dragonskin",
+   "card": "a:urand_dragonskin",
+   "category": "장비 아이콘",
+   "name": "용가죽 망토",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 용가죽 망토 (cloak), grade 유일(청록 광채·최상급). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_glove_1_new",
+   "card": "a:glove_1_new",
+   "category": "장비 아이콘",
+   "name": "가죽 장갑",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 가죽 장갑 (gauntlets / gloves), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_glove_2_new",
+   "card": "a:glove_2_new",
+   "category": "장비 아이콘",
+   "name": "수련자 장갑",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 수련자 장갑 (gauntlets / gloves), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_glove_3_new",
+   "card": "a:glove_3_new",
+   "category": "장비 아이콘",
+   "name": "사냥꾼 장갑",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 사냥꾼 장갑 (gauntlets / gloves), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_gauntlet_1",
+   "card": "a:gauntlet_1",
+   "category": "장비 아이콘",
+   "name": "철 건틀릿",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 철 건틀릿 (gauntlets / gloves), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_glove_4_gauntlets",
+   "card": "a:glove_4_gauntlets",
+   "category": "장비 아이콘",
+   "name": "기사의 건틀릿",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 기사의 건틀릿 (gauntlets / gloves), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_glove_5",
+   "card": "a:glove_5",
+   "category": "장비 아이콘",
+   "name": "마력 장갑",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 마력 장갑 (gauntlets / gloves), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_urand_fencer_new",
+   "card": "a:urand_fencer_new",
+   "category": "장비 아이콘",
+   "name": "검객의 장갑",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 검객의 장갑 (gauntlets / gloves), grade 신화(금빛·매우 화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_urand_war",
+   "card": "a:urand_war",
+   "category": "장비 아이콘",
+   "name": "전쟁의 건틀릿",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 전쟁의 건틀릿 (gauntlets / gloves), grade 유일(청록 광채·최상급). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_low_boots",
+   "card": "a:low_boots",
+   "category": "장비 아이콘",
+   "name": "가죽 신발",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 가죽 신발 (boots), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_boots_1_brown_new",
+   "card": "a:boots_1_brown_new",
+   "category": "장비 아이콘",
+   "name": "여행자 부츠",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 여행자 부츠 (boots), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_boots_2_jackboots",
+   "card": "a:boots_2_jackboots",
+   "category": "장비 아이콘",
+   "name": "기사 부츠",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 기사 부츠 (boots), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_boots_3_stripe_new",
+   "card": "a:boots_3_stripe_new",
+   "category": "장비 아이콘",
+   "name": "엘프 부츠",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 엘프 부츠 (boots), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_boots_iron_2",
+   "card": "a:boots_iron_2",
+   "category": "장비 아이콘",
+   "name": "강철 부츠",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 강철 부츠 (boots), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_urand_assassin",
+   "card": "a:urand_assassin",
+   "category": "장비 아이콘",
+   "name": "그림자 장화",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 그림자 장화 (boots), grade 신화(금빛·매우 화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_boots_4_green",
+   "card": "a:boots_4_green",
+   "category": "장비 아이콘",
+   "name": "바람의 장화",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 바람의 장화 (boots), grade 유일(청록 광채·최상급). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_buckler_1_new",
+   "card": "a:buckler_1_new",
+   "category": "장비 아이콘",
+   "name": "나무 방패",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 나무 방패 (shield), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_buckler_2_new",
+   "card": "a:buckler_2_new",
+   "category": "장비 아이콘",
+   "name": "둥근 방패",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 둥근 방패 (shield), grade 일반(회색·소박). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_elven_buckler_1",
+   "card": "a:elven_buckler_1",
+   "category": "장비 아이콘",
+   "name": "엘프 방패",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 엘프 방패 (shield), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_shield_1",
+   "card": "a:shield_1",
+   "category": "장비 아이콘",
+   "name": "철 방패",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 철 방패 (shield), grade 고급(초록 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_shield_2_kite",
+   "card": "a:shield_2_kite",
+   "category": "장비 아이콘",
+   "name": "연 방패",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 연 방패 (shield), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_large_shield_1_new",
+   "card": "a:large_shield_1_new",
+   "category": "장비 아이콘",
+   "name": "대형 방패",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 대형 방패 (shield), grade 희귀(파랑 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_dwarven_buckler_1",
+   "card": "a:dwarven_buckler_1",
+   "category": "장비 아이콘",
+   "name": "드워프 방패",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 드워프 방패 (shield), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_shield_3",
+   "card": "a:shield_3",
+   "category": "장비 아이콘",
+   "name": "기사단 방패",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 기사단 방패 (shield), grade 영웅(빨강 빛). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_shield_of_reflection",
+   "card": "a:shield_of_reflection",
+   "category": "장비 아이콘",
+   "name": "반사의 방패",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 반사의 방패 (shield), grade 전설(보라 빛·화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_lshield_louise",
+   "card": "a:lshield_louise",
+   "category": "장비 아이콘",
+   "name": "성기사의 방패",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 성기사의 방패 (shield), grade 신화(금빛·매우 화려). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_urand_bullseye",
+   "card": "a:urand_bullseye",
+   "category": "장비 아이콘",
+   "name": "심판의 방패",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 심판의 방패 (shield), grade 유일(청록 광채·최상급). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_acc_neck",
+   "card": "a:acc_neck",
+   "category": "장비 아이콘",
+   "name": "수호의 목걸이",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 수호의 목걸이 (necklace), grade 장신구(금·보석). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_acc_ear",
+   "card": "a:acc_ear",
+   "category": "장비 아이콘",
+   "name": "지혜의 귀걸이",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 지혜의 귀걸이 (earring), grade 장신구(금·보석). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_acc_ring",
+   "card": "a:acc_ring",
+   "category": "장비 아이콘",
+   "name": "힘의 반지",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 힘의 반지 (ring), grade 장신구(금·보석). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
+  },
+  {
+   "id": "i_eq_acc_belt",
+   "card": "a:acc_belt",
+   "category": "장비 아이콘",
+   "name": "타이탄의 벨트",
+   "size": "128x128",
+   "sheets": [
+    "icon"
+   ],
+   "priority": 0,
+   "prompt": "Lineage M style equipment item icon: 타이탄의 벨트 (belt), grade 장신구(금·보석). Painterly 2D hand-painted item art like Lineage M inventory icons, item shown at a diagonal angle filling the square, metallic shine, subtle magical glow matching grade, dark background vignette, NOT pixel art, NOT 3D render, no text, 128x128, #FF00FF background"
   }
  ],
  "effects_rules": "이펙트 전용: 정사각형 3x3 그리드(9프레임, 왼→오, 위→아래), 모든 칸 같은 크기, 효과가 각 칸 중앙(바닥형은 칸 아래쪽 중앙)에 위치, 칸 밖으로 잘리지 않게 여백, 배경은 순수 검정 #000000, 캐릭터·글자·격자선 없음. 리니지M 같은 한국 MMORPG 스킬 이펙트 느낌으로 선명하고 빛나게(glow). 파일: art_in/e_<이름>/sheet.png",
@@ -10388,5 +12008,6 @@
   "prompt_prefix": "Lineage M official monster art style: hand-painted high-detail 2D fantasy illustration with BRIGHT, SATURATED, VIVID colors and strong readable silhouette, warm daylight lighting from top-left, glossy highlights, clean color separation (like Lineage M's 정글/해안/사막/설원 field monsters) — NOT dark, NOT gloomy, NOT desaturated, NOT muddy brown/black.",
   "reject": "결과물이 어둡거나 칙칙하면(평균 밝기가 낮거나 회갈색 위주) 다시 생성한다."
  },
- "skill_icon_rules": "스킬 아이콘은 스킬마다 반드시 다른 그림. 리니지M 스킬 아이콘처럼 정사각형 가득 차는 빛나는 문양·이펙트, 가장자리 어둡게, 글자 금지. 직업별 색 테마(기사 주황, 요정 초록, 마법사 파랑·보라, 다크엘프 보라, 용기사 붉은색, 전사 주황·갈색, 환술사 청록, 군주 금색)."
+ "skill_icon_rules": "스킬 아이콘은 스킬마다 반드시 다른 그림. 리니지M 스킬 아이콘처럼 정사각형 가득 차는 빛나는 문양·이펙트, 가장자리 어둡게, 글자 금지. 직업별 색 테마(기사 주황, 요정 초록, 마법사 파랑·보라, 다크엘프 보라, 용기사 붉은색, 전사 주황·갈색, 환술사 청록, 군주 금색).",
+ "equip_icon_rules": "★최우선★ 장비 아이콘 135종(i_eq_*). 사용자가 \"아이템 모양 시급\"이라고 함. 리니지M 가방 아이콘처럼 손그림, 대각선 구도로 칸을 가득 채움, 등급 높을수록 화려한 빛. 픽셀아트·3D 금지. 같은 종류(검·투구 등)도 아이템마다 모양·색 다르게."
 }
