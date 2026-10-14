@@ -968,6 +968,9 @@ html.land .rcol .advb,html.land .rcol .cinfo,html.land .rcol .whres>div,html.lan
 html.land .rcol .panel{display:block}
 @media (min-width:900px){html.land .rcol .panel{columns:auto}}
 .emo .svi.emi{display:inline-block;width:1.05em;height:1.05em;vertical-align:-.15em;margin:0 .08em}
+/* 닫기 버튼: 창을 내려도 항상 보이게 */
+html.land .lclose{position:fixed!important;top:calc(3vh + 6px)!important;right:calc(2.5vw + 10px)!important;z-index:45!important;width:34px!important;height:34px!important;background:#2a0c0c!important;border:1px solid #a33!important;color:#ffd0d0!important;opacity:0;pointer-events:none}
+html.land.mopen .lclose{opacity:1;pointer-events:auto}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -2361,6 +2364,7 @@ function lmenuInit(){{const st0=$('stage');if(st0&&!st0.dataset.obs){st0.dataset
  $('lhud').onclick=e=>{if(e.target.closest('.lpf'))m.querySelector('[data-lg=grow]').click()}; $('lbuf').onclick=()=>{ac();bwin()};{const mm=document.querySelector('.mmw');if(mm){mm.style.cursor='pointer';mm.title='지도 열기';mm.onclick=()=>{ac();mapWin()}}}$('lnpc').onclick=()=>{ac();npcMoveWin()};$('lauto').onclick=()=>{ac();SV.noAuto=!SV.noAuto;announce(SV.noAuto?'자동 사냥을 껐어요 · 직접 움직여 주세요':'자동 사냥을 켰어요');$('lauto').classList.toggle('on',!SV.noAuto)};$('lclose').onclick=()=>{document.documentElement.classList.remove('mopen');lmSync()};
  $('rotGo').onclick=()=>{goLand();$('rot').hidden=true};$('rotNo').onclick=()=>{sessionStorage.setItem('ash.port','1');$('rot').hidden=true};
  $('laySw').onclick=()=>goLand();addEventListener('resize',setLand);addEventListener('orientationchange',()=>setTimeout(setLand,200));setLand()}
+addEventListener('keydown',e=>{if(e.key==='Escape'){const R=document.documentElement;if(R.classList.contains('mopen')){R.classList.remove('mopen');lmSync&&lmSync()}else{const st=$('stage');if(st&&!st.hidden&&!BUSY&&st.querySelector('.mwx,#pkX,#chX,#rbok,#lmrX')){st.hidden=true;st.innerHTML='';st.onclick=null}}}});
 function lmSync(){const R=document.documentElement,o=R.classList.contains('mopen'),k=grpOf(TAB)[0];for(const b of $('lmenu').children)b.classList.toggle('on',o&&b.dataset.lg===k)}
 const GKEY=['island','castle','canyon','deadland','frost','abyss'];
 function svGround(c,cam,ox,oy,ri,T,t){const gk=GKEY[ri],GI=ICM.ground[gk];if(GI&&GI.t){const im=artImg('GT_'+gk+'.webp');if(im.complete&&im.naturalWidth){const pt=c.createPattern(im,'repeat');const S2=1;c.save();c.translate(((ox%256)+256)%256-256,((oy%256)+256)%256-256);c.fillStyle=pt;c.fillRect(0,0,BW+512,BH+512);c.restore();
