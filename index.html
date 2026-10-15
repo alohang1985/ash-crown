@@ -1355,6 +1355,19 @@ html.land .battle canvas{width:100%!important;height:100%!important}
 .lmside2 .rd{position:absolute;right:.4vh;top:.4vh;width:1.6vh;height:1.6vh;border-radius:50%;background:#e0302a;box-shadow:0 0 0 1px #000}
 .lmside2 button:hover i{filter:brightness(1.3)}
 .lmside2 .lmx{align-self:start;justify-self:center;width:7vh;height:7vh;border:2px solid #c8463a;background:rgba(80,10,8,.6);color:#fff;font-size:4vh;display:grid;place-items:center}
+/* 성장 패스 (가로 트랙) */
+.lpass{display:flex;flex-direction:column;gap:1.4vh;height:100%}
+.lpash{display:flex;justify-content:space-between;align-items:center;padding:1.4vh 2vh;background:linear-gradient(90deg,rgba(224,176,74,.2),transparent);border-left:.4vh solid #e0b04a}.lpash b{font-size:2.8vh;color:#ffe9b0;display:block}.lpash small{font-size:1.8vh;color:#a99a85}.lpash .lbtn{padding:1.2vh 3vh;font-size:2.2vh}.lpon{color:#7dff9a;font-weight:700;font-size:2.2vh}
+.lpasw{display:flex;gap:1vh;min-height:0}.lpasl{display:grid;grid-template-rows:3vh 11vh 11vh;gap:1vh;flex:0 0 12vh}.lpasl b{display:grid;place-items:center;background:#1a130b;border:1px solid #3a2c18;font-size:2vh;color:#d8ccb4}.lpasl .pr{color:#ffcf5a;background:linear-gradient(#3a2810,#1a1208)}
+.lpast{display:flex;gap:1vh;overflow-x:auto;padding-bottom:1vh}.lpcol{display:grid;grid-template-rows:3vh 11vh 11vh;gap:1vh;flex:0 0 12vh}.lpst{text-align:center;font-size:1.8vh;color:#a99a85}.lpcol.ok .lpst{color:#ffe48a}
+.lpc{position:relative;display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:.4vh;background:radial-gradient(#2a1f12,#0a0705);border:1px solid #3a2c18;cursor:pointer;padding:.4vh}.lpc .lrw{width:5vh;height:5vh}.lpc .lrw .svi{width:3.6vh;height:3.6vh}.lpc .lrw b{font-size:1.4vh}
+.lpc.ok{border-color:#e0b04a;box-shadow:0 0 1vh rgba(224,176,74,.5);animation:autop 1.6s infinite}.lpc.got{opacity:.45}.lpc.lock{filter:grayscale(.7) brightness(.6)}.lpc em{position:absolute;inset:0;display:grid;place-items:center;font-style:normal;font-size:4vh;color:#7dff6a;text-shadow:0 0 4px #000}.lpc em .svi{width:3vh;height:3vh}
+/* 월정액 카드 */
+.lmon{display:grid;place-items:center;height:100%}.lmonc{width:min(60vh,90%);display:grid;gap:1.6vh;padding:2vh;background:radial-gradient(ellipse at 50% 0,rgba(224,176,74,.25),transparent 60%),linear-gradient(#1e1610,#0b0805);border:1px solid #8a6a2c}
+.lmonh{display:flex;align-items:center;gap:1vh}.lmonh .svi{width:4vh;height:4vh}.lmonh b{font-size:3vh;color:#ffe9b0}.lmonh small{margin-left:auto;font-size:2vh;color:#a99a85}
+.lmoni{display:flex;align-items:center;gap:1vh;padding:1vh;background:rgba(0,0,0,.3)}.lmoni>span{width:11vh;font-size:1.9vh;color:#d8ccb4}.lmond{text-align:center;font-size:2.2vh;color:#d8ccb4}.lmond b{color:#7dff9a}
+.lmonb{display:grid;grid-auto-flow:column;gap:1vh}.lmonb .lbtn{padding:1.4vh;font-size:2.2vh}
+.lshm .shin{height:100%}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -3779,14 +3792,14 @@ const achReady=()=>ACH.filter((a,i)=>achVal(a[0])>=a[1]&&!(S.ach||{})[i]).length
 function vAch(){S.ach=S.ach||{};return`<h3>업적 <small class="mini">${Object.keys(S.ach).length} / ${ACH.length}</small></h3>${ACH.map((a,i)=>{const v=Math.min(a[1],achVal(a[0])),done=v>=a[1],got=S.ach[i];return`<div class="qi${got?' got':done?' ok':''}"><div><b>${a[2]}</b><small>${rwTxt(a[3])}</small><i class="qb"><u style="width:${v/a[1]*100}%"></u></i></div><button class="btn sm2${done&&!got?' gold':''}" data-ach="${i}" ${!done||got?'disabled':''}>${got?'완료':done?'받기':fmt(v)+'/'+fmt(a[1])}</button></div>`}).join('')}`}
 /* 성장 패스 (무료 · 프리미엄) */
 const PASS_WON=3300;const PASS=Array.from({length:30},(_,i)=>{const st=(i+1)*3;return{st,free:i%3===2?{scroll:5+i}:{gold:Math.round(stGOLD(st*5)*800)},prem:i%5===4?{bless:2+Math.floor(i/5),scroll:20}:i%2?{scroll:8+Math.floor(i/2)}:{scroll:10+i,bless:1}}});
-function vPass(){S.pass=S.pass||{f:{},p:{},on:false};const P=S.pass,best=S.lv||1;return`<h3>성장 패스 <small class="mini">레벨을 올릴 때마다 보상</small></h3>
- <div class="advb passhd"><div><b>프리미엄 패스</b><small>${P.on?'<span style="color:#7dff9a">활성화됨</span>':`축복·강화 주문서를 추가로 받아요 · 이미 지난 단계도 받을 수 있어요`}</small></div>${P.on?'':`<button class="btn gold" data-passbuy="1">₩${fmt(PASS_WON)}</button>`}</div>
- <div class="passl">${PASS.map((t,i)=>{const ok=best>=t.st;return`<div class="pt2${ok?' ok':''}"><b>Lv.${t.st}</b><button class="btn sm2${ok&&!P.f[i]?' gold':''}" data-pass="f:${i}" ${!ok||P.f[i]?'disabled':''}>${P.f[i]?'✓':rwTxt(t.free)}</button><button class="btn sm2${P.on&&ok&&!P.p[i]?' gold':''} prem" data-pass="p:${i}" ${!P.on||!ok||P.p[i]?'disabled':''}>${P.p[i]?'✓':(P.on?'':'🔒 ')+rwTxt(t.prem)}</button></div>`}).join('')}</div>`}
+function vPass(){S.pass=S.pass||{f:{},p:{},on:false};const P=S.pass,best=S.lv||1;const cell=(r,got,ok,dk,lock)=>`<button class="lpc${got?' got':ok?' ok':''}${lock?' lock':''}" data-pass="${dk}" ${!ok||got||lock?'disabled':''}>${rwIcons(r)}${got?'<em>✓</em>':lock?`<em>${ico('lock')}</em>`:''}</button>`;
+ return`<div class="lpass"><div class="lpash"><div><b>성장 패스</b><small>레벨을 올리면 단계별 보상 · 현재 Lv.${best}</small></div>${P.on?'<span class="lpon">프리미엄 활성화</span>':`<button class="lbtn gold" data-passbuy="1">프리미엄 패스 ₩${fmt(PASS_WON)}</button>`}</div>
+ <div class="lpasw"><div class="lpasl"><span></span><b>일반</b><b class="pr">프리미엄</b></div><div class="lpast">${PASS.map((t,i)=>{const ok=best>=t.st;return`<div class="lpcol${ok?' ok':''}"><span class="lpst">Lv.${t.st}</span>${cell(t.free,P.f[i],ok,'f:'+i,false)}${cell(t.prem,P.p[i],ok,'p:'+i,!P.on)}</div>`}).join('')}</div></div></div>`}
 /* 월정액 */
 const MON_WON=1100;const MON_RW=()=>({bless:1,scroll:5,gold:Math.round(stGOLD(S.bestStage||1)*1500)});
 function vMonth(){S.mon=S.mon||{until:0,last:''};const M_=S.mon,act=M_.until>Date.now(),days=act?Math.ceil((M_.until-Date.now())/864e5):0,today=M_.last===kday();
- return`<h3>월정액 <small class="mini">30일 동안 매일 보상</small></h3><div class="advb"><p>구매하면 바로 <b>축복 주문서 5 · 강화 주문서 30</b>, 그리고 30일 동안 매일 <b>${rwTxt(MON_RW())}</b>를 받아요.</p>
- ${act?`<p class="mini">남은 기간 ${days}일</p><button class="btn gold wide" data-monclaim="1" ${today?'disabled':''}>${today?'오늘 받음':'오늘 보상 받기'}</button><button class="btn wide" data-monbuy="1" style="margin-top:6px">30일 연장 · ₩${fmt(MON_WON)}</button>`:`<button class="btn gold wide" data-monbuy="1">월정액 구매 · ₩${fmt(MON_WON)}</button>`}</div>`}
+ return`<div class="lmon"><div class="lmonc"><div class="lmonh">${ico('cal')}<b>월정액</b><small>30일</small></div><div class="lmoni"><span>즉시 지급</span>${rwIcons({bless:5,scroll:30})}</div><div class="lmoni"><span>매일 지급</span>${rwIcons(MON_RW())}</div>
+ ${act?`<div class="lmond">남은 기간 <b>${days}일</b></div><div class="lmonb"><button class="lbtn gold" data-monclaim="1" ${today?'disabled':''}>${today?'오늘 받음':'오늘 보상 받기'}</button><button class="lbtn blue" data-monbuy="1">30일 연장 · ₩${fmt(MON_WON)}</button></div>`:`<div class="lmonb"><button class="lbtn blue" data-monbuy="1">구매 · ₩${fmt(MON_WON)}</button></div>`}</div></div>`}
 /* ================= 모험: 보스 · 던전 · 임무 · 출석 ================= */
 const REGS=[...new Set(ZONES.map(z=>z.reg))];
 const BOSSES=[['섬의 지배자 오우거','t:ogre_new'],['오크 대족장 그룰','t:orc_warlord'],['협곡의 만티코어','t:manticore'],['망자의 왕 데스나이트','t:death_knight'],['붉은 용 아그니스','t:dragon'],['심연의 지옥 군주','t:pit_fiend']].map(([n,id],r)=>{
