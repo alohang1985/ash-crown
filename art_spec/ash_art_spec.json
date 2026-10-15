@@ -12142,12 +12142,15 @@
    "id": "bg_alchemy",
    "category": "UI 배경",
    "name": "질서의 연금 서재 배경",
-   "size": "1280x720",
+   "size": "1600x900",
    "sheets": [
-    "bg"
+    "bg",
+    "pose_idle",
+    "pose_reach",
+    "pose_raise"
    ],
    "request_sheet": "style_ref/req_alchemy.png",
-   "prompt": "Lineage M style painterly dark alchemist study: bookshelves, candles, green/blue glass flasks, open book, skull, red cloth table, golden empty orb stand at center, golden-crowned white-robed priestess alchemist on the right reaching toward the center, warm candle light, dark vignette, low saturation, no text, 1280x720"
+   "prompt": "Lineage M style painterly full-screen scene 1600x900: dark alchemist study, left 30% and right 28% kept dark and simple (UI overlays), golden empty orb stand on a red-cloth table at center (x 39-53%, y 40-70%), golden-crowned white-robed priestess alchemist on the right-center (x 54-72%) reaching toward the orb, bookshelves, candles, green/blue flasks, books, skull, warm candlelight, vignette, low saturation, no text"
   },
   {
    "id": "i_alst",
