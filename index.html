@@ -1530,7 +1530,7 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .ldci.big.art{width:calc(var(--vh)*22);aspect-ratio:3/5;height:auto;background:center/cover no-repeat;border:1px solid #6b5228}
 .svhud .hsk,.svhud .hskp{pointer-events:auto;touch-action:none}
 .anico{display:inline-block;background-size:calc(100% * var(--n)) 100%;background-repeat:no-repeat;animation-name:anfr;animation-timing-function:steps(var(--n));animation-iteration-count:infinite}
-@keyframes anfr{from{background-position:0 0}to{background-position:100% 0}}
+@keyframes anfr{from{background-position:0 0}to{background-position:var(--to) 0}}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -2477,7 +2477,7 @@ function drawArt(c,card,x,gy,H,state,p,t){const a=artOf(card);if(!a)return false
 const EQIC=new Set([]);const eqKey=c=>c.id.split(':')[1].toLowerCase().replace(/[^a-z0-9_]/g,'_');
 const ANM={};/*ANM*/
 /* 신화·유일 장비: 오픈클로 반짝 회전 애니(AN_*.webp)가 있으면 그걸로 */
-const anIco=(c,px)=>{const a=ANM[c.n];if(!a)return null;return`<span class="anico" style="width:${px}px;height:${px}px;background-image:url(art/AN_${a.f}.webp);--n:${a.n};animation-duration:${a.n*.1}s"></span>`};
+const anIco=(c,px)=>{const a=ANM[c.n];if(!a)return null;return`<span class="anico" style="width:${px}px;height:${px}px;background-image:url(art/AN_${a.f}.webp);--n:${a.n};--to:${(a.n/Math.max(1,a.n-1)*100).toFixed(3)}%;animation-duration:${a.n*.1}s"></span>`};
 const cardIco=(c,px)=>{if(c&&c.g>=5&&(c.ty==='w'||c.ty==='a')){const z=anIco(c,px);if(z)return z}if(c&&(c.ty==='w'||c.ty==='a')&&EQIC.has(eqKey(c)))return`<img class="eqimg" src="art/IC_eq_${eqKey(c)}.webp" style="width:${px}px;height:${px}px" alt="">`;const a=c&&c.ty==='t'&&artOf(c);return a&&a[0]==='hi'?`<img src="art/H_${a[1]}_card.png" style="width:${px}px;height:${px}px;object-fit:cover;object-position:50% 15%;border-radius:6px">`:spr(c.i,px)};
 const BEASTRE=/dragon|drake|wyvern|tiamat|xtahua|phoenix|manticore|griffon|sphinx|basilisk|golem|gargoyle|salamander|juggernaut/;
 const isBeast=card=>BEASTRE.test(card.id.slice(2));
