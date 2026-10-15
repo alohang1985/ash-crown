@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15 16:56",
+ "updated": "2026-10-15 17:06",
  "source": "Gemini 웹(Pro) via OpenClaw 맥미니 — 원본 그대로(배경 #FF00FF 요청, 오른쪽 아래 Gemini 반짝이 워터마크 있음)",
  "assets": {
   "e_meteor": {
@@ -1849,115 +1849,115 @@
   "al_ui": {
    "sheets": {
     "al_btn": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_btn2": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_orb": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_orb_dark": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_orb_g2": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_orb_g3": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_orb_g4": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_orb_g5": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_panel": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_parch": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_seal_glow": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_slot": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_slot_on": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "pose_loop_1": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "pose_loop_2": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "pose_loop_3": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "pose_loop_4": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "pose_loop_5": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "pose_loop_6": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "pose_loop_7": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "pose_loop_8": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_burst": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_flame": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_flame_g2": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_flame_g3": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_flame_g4": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_flame_g5": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     },
     "al_orb_glass": {
-     "at": "10-15 16:56",
+     "at": "10-15 16:55",
      "by": "chatgpt-plus"
     }
    },
@@ -2187,6 +2187,333 @@
     },
     "npc_teleporter_s": {
      "at": "10-15 16:45",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프": {
+   "sheets": {
+    "sheet_1": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    },
+    "sheet_2": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    },
+    "sheet_3": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    },
+    "sheet_4": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_0": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_1": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_10": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_11": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_12": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_13": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_14": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_15": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_16": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_17": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_18": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_19": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_2": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_20": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_21": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_22": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_23": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_24": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_25": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_26": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_27": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_28": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_29": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_3": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_30": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_31": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_32": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_33": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_4": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_5": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_6": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_7": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_8": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sk_다크엘프_9": {
+   "sheets": {
+    "icon": {
+     "at": "10-15 17:06",
      "by": "chatgpt-plus"
     }
    },
