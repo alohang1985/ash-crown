@@ -1615,7 +1615,7 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .lalch2.hasorb .alorbimg{display:block;inset:-30%!important;background:url(art/AL_al_flame.webp) 0 0/1600% 100% no-repeat;animation:anfr16 1.3s steps(16) infinite;opacity:.55;transition:opacity .5s}
 .lalch2.hasorb .alorb2.lit .alorbimg{opacity:1}
 .lalch2.hasorb .alorb2.grade .alorbimg{background-image:var(--orbimg)}
-.lalch2.hasdark:not(:has(.alsl2.on)) .alorbimg{background-image:url(art/AL_al_flame.webp)!important}
+
 @keyframes anfr16{to{background-position:106.6667% 0}}
 .alburst{position:absolute;left:50%;top:44%;width:calc(var(--vh)*70);aspect-ratio:1;transform:translate(-50%,-50%);background:url(art/AL_al_burst.webp) 0 0/1200% 100% no-repeat;animation:anfr12 1.1s steps(12) forwards;pointer-events:none;z-index:4}
 @keyframes anfr12{to{background-position:109.0909% 0}}
@@ -1747,6 +1747,12 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .lalch2.fl2 .alorbimg{left:-35%!important;right:-35%!important;top:-60%!important;bottom:-10%!important}
 /* 배경과 수정구 위치가 화면 비율에 따라 어긋나지 않게: 배경을 창에 딱 맞춤 */
 .alpose i,.lalch2,.lalch2.rv{background-size:100% 100%!important}
+
+/* 대기(재료 없음): 불길 없이 유리 수정구 + 은은한 빛만 · 재료를 올리면 불길(24프레임)이 피어오름 */
+.lalch2:not(:has(.alsl2.on)):not(.rv) .alorbimg{display:none!important}
+.lalch2.fl2 .alorbimg{background-image:url(art/AL_al_flame2.webp?v=3)!important;background-size:2400% 100%!important;animation:anfr24 2.6s steps(24) infinite!important}
+.lalch2.fl2 .alorb2.grade .alorbimg{background-image:var(--orbimg)!important}
+.lalch2.fl2 .alorbimg{left:-25%!important;right:-45%!important;top:-55%!important;bottom:-15%!important}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -3684,7 +3690,7 @@ function mailWin(){const st=$('stage');st.hidden=false;st.classList.remove('side
  st.onclick=async e=>{const t=e.target;if(t.id==='pkX'||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}let b;if(b=t.closest('[data-mread]')){await take(b.dataset.mread);return}if(t.closest('#mAll')){const ids=(S.mail||[]).map(m=>m.id);for(const id of ids)await take(id);return}}}
 /* 리니지M 메뉴 그대로 (사용자 캡처 기준 · 5칸 × 8줄). 아직 없는 기능은 '준비 중' */
 const LMENU=[['shop','상점','w:shop'],['bag','가방','w:inv'],['skill','스킬','w:skill'],['quest','퀘스트','w:quest'],null,
- ['craft','제작','w:craft'],['coin','거래소','w:mkt'],['mask','변신','w:morph'],['doll','마법인형','w:synthd'],['relic','성물','s:성물'],
+ ['craft','제작','w:craft'],['coin','거래소','w:mkt'],['mask','변신','w:morph'],['doll','마법인형','w:dollw'],['relic','성물','s:성물'],
  ['swords','던전','w:dun'],['cal','출석체크','w:att'],['ticket','패스','t:pass'],['book','스킬카드','w:synths'],['medal','컬렉션','t:col'],
  ['clan','혈맹','w:clan'],['friend','친구','s:친구'],['star','기억장소','w:bm'],['trophy','랭킹','t:arena'],['fish','낚시','s:낚시'],
  ['pvp','PVP북','t:arena'],['elx','연금','w:alch'],['mail','우편함','w:mail'],['guard','수호성','s:수호성'],['emblem','문양','s:문양'],
@@ -3699,7 +3705,7 @@ function menuWin(){const st=$('stage');st.hidden=false;st.classList.remove('side
  st.onclick=e=>{const t=e.target;if(t.closest('#pkX')||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}const b=t.closest('[data-mn]');if(!b)return;ac();const[ty,k]=b.dataset.mn.split(':');st.hidden=true;st.innerHTML='';st.onclick=null;
   if(ty==='s'){announce(`「${k}」은(는) 준비 중이에요`);return}
   if(ty==='t'){TAB=k;render();document.documentElement.classList.add('mopen');lmSync();return}
-  ({skill:skillWin,inv:invWin,synth:()=>synthWin('t'),synthd:()=>synthWin('d'),synths:()=>synthWin('s'),morph:morphWin,quest:questWin,att:()=>{QTAB='ev';QL=0;questWin()},map:mapWin,bm:bmWin,clan:clanWin,shop:shopWin,buff:bwin,wh:whWin,dun:dunWin,char:charWin,adm:admWin,enh:enhWin,mail:mailWin,mkt:mkWin,alch:alWin,acct:acctWin,craft:craftWin,stat:statWin,set:setWin,restart:()=>{if(typeof charSelect==='function')charSelect()},mute:()=>$('mute')&&$('mute').click(),mono:()=>{const m=document.querySelector('[data-mono],#mono,.top .ic:not(#mute):not(#laySw)');if(m)m.click()}})[k]()}}
+  ({skill:skillWin,inv:invWin,synth:()=>synthWin('t'),synthd:()=>synthWin('d'),synths:()=>synthWin('s'),morph:morphWin,quest:questWin,att:()=>{QTAB='ev';QL=0;questWin()},map:mapWin,bm:bmWin,clan:clanWin,shop:shopWin,buff:bwin,wh:whWin,dun:dunWin,char:charWin,adm:admWin,enh:enhWin,mail:mailWin,mkt:mkWin,alch:alWin,dollw:()=>slotPick('d'),acct:acctWin,craft:craftWin,stat:statWin,set:setWin,restart:()=>{if(typeof charSelect==='function')charSelect()},mute:()=>$('mute')&&$('mute').click(),mono:()=>{const m=document.querySelector('[data-mono],#mono,.top .ic:not(#mute):not(#laySw)');if(m)m.click()}})[k]()}}
 function ltopInit(){const el=$('ltopm');if(!el)return;el.innerHTML=[['shop','상점','shop'],['bag','가방','inv'],['skill','스킬','skill'],['quest','퀘스트','quest'],['menu','메뉴','menu']].map(([ic,n,k])=>`<button data-tm="${k}"${k==='inv'?' class="wgt"':''}><i>${ico(ic)}</i>${k==='inv'?'<em class="wring"></em>':''}${k==='quest'||k==='menu'?'<em class="rdot" hidden></em>':''}<small>${n}</small></button>`).join('');
  el.onclick=e=>{const b=e.target.closest('[data-tm]');if(!b)return;ac();({shop:shopWin,inv:invWin,skill:skillWin,clan:clanWin,menu:menuWin,quest:questWin})[b.dataset.tm]()}}
 /* ===== 혈맹 (서버에서 실제 플레이어끼리 공유) ===== */
@@ -3860,7 +3866,7 @@ const skReady=(k,t)=>(SV.cdT&&SV.cdT[k.n]||0)<=t;
 function svHudK(){const el=$('svhud');if(el)el.dataset.k=''}
 /* 스킬 슬롯 밀어서 페이지 넘기기 (리니지M처럼 좌우로 쓸기) */
 {let sx=null,sy=0,moved=false;addEventListener('pointerdown',e=>{const h=e.target.closest&&e.target.closest('#svhud');if(!h){sx=null;return}sx=e.clientX;sy=e.clientY;moved=false},true);
- addEventListener('pointerup',e=>{if(sx==null)return;let dx=e.clientX-sx,dy=e.clientY-sy;if(document.documentElement.classList.contains('rot90')){const t=dx;dx=dy;dy=-t}sx=null;if(Math.abs(dx)>28&&Math.abs(dx)>Math.abs(dy)){moved=true;S.skPg=(skPg()+(dx<0?1:SKPG-1))%SKPG;save();svHudK();e.preventDefault();e.stopPropagation()}},true);
+ addEventListener('pointerup',e=>{if(sx==null)return;let dx=e.clientX-sx,dy=e.clientY-sy;if(document.documentElement.classList.contains('rot90')){const t=dx;dx=dy;dy=-t}sx=null;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*2){moved=true;S.skPg=(skPg()+(dx<0?1:SKPG-1))%SKPG;save();svHudK();e.preventDefault();e.stopPropagation()}},true);
  addEventListener('click',e=>{if(moved&&e.target.closest&&e.target.closest('#svhud')){moved=false;e.preventDefault();e.stopPropagation()}},true)}
 function svHud(t,M){if(LAND&&M)lhud(t,M);const el=$('svhud');if(!el)return;if(MODE||!SV.on){el.hidden=true;return}el.hidden=false;const L=svSkills().slice(0,5);const PB=skBar().slice(skPg()*SK_SLOTS,skPg()*SK_SLOTS+SK_SLOTS);const key=PB.join('|')+'|'+skPg()+'|'+S.pot;
  if(el.dataset.k!==key){el.dataset.k=key;let li=0;el.innerHTML=`<div class="hsk">${PB.map((id,j)=>{if(!id)return`<button class="hske" data-hskadd="${j}"><i>+</i></button>`;const k=L[li],i=li++;return`<button data-hsk="${i}" data-hslot="${j}" style="--gc:${k.g!=null?G[k.g].c:'#c79bff'}"><i>${skArt(k)}</i><span class="cd"></span><small>${k.n}</small></button>`}).join('')}</div><div class="hskp">${Array.from({length:SKPG},(_,p)=>`<button data-hskpg="${p}" class="${p===skPg()?'on':''}"></button>`).join('')}</div><button class="hpot" data-hpot="1"><i>🧪</i><b>${S.pot}</b></button>`}
