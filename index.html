@@ -1609,6 +1609,16 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .alrmark{border:3px solid #ffd770!important;background:rgba(255,215,112,.08)}
 .alri>*{border-color:rgba(255,255,255,.15)!important;box-shadow:none!important}.alreel.done .alri.fin>*{border-color:var(--gc)!important;box-shadow:0 0 22px var(--gc),0 0 44px var(--gc)!important}
 .alrmark{box-sizing:border-box}
+/* 수정구: 가만히 있는 유리 + 둘레 불길 16프레임 (회전 없음) */
+.lalch2.hasorb .alorb2{left:44.2%!important;top:26%!important;width:13%!important}
+.alglass{display:none}.lalch2.hasorb .alglass{display:block;position:absolute;inset:8%;background:url(art/AL_al_orb_glass.webp) center/contain no-repeat}
+.lalch2.hasorb .alorbimg{display:block;inset:-30%!important;background:url(art/AL_al_flame.webp) 0 0/1600% 100% no-repeat;animation:anfr16 1.3s steps(16) infinite;opacity:.55;transition:opacity .5s}
+.lalch2.hasorb .alorb2.lit .alorbimg{opacity:1}
+.lalch2.hasorb .alorb2.grade .alorbimg{background-image:var(--orbimg)}
+.lalch2.hasdark:not(:has(.alsl2.on)) .alorbimg{background-image:url(art/AL_al_flame.webp)!important}
+@keyframes anfr16{to{background-position:106.6667% 0}}
+.alburst{position:absolute;left:50%;top:44%;width:calc(var(--vh)*70);aspect-ratio:1;transform:translate(-50%,-50%);background:url(art/AL_al_burst.webp) 0 0/1200% 100% no-repeat;animation:anfr12 1.1s steps(12) forwards;pointer-events:none;z-index:4}
+@keyframes anfr12{to{background-position:109.0909% 0}}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -4673,7 +4683,7 @@ const alSeal=()=>`<svg class="alsealsvg" viewBox="0 0 100 100"><circle cx="50" c
 function alWin(){const st=$('stage');st.hidden=false;st.classList.remove('sidel','sider','dockl','dockr');st.classList.add('alfull');new MutationObserver((m,ob)=>{if(st.hidden||!st.querySelector('.lalch2')){st.classList.remove('alfull');ob.disconnect()}}).observe(st,{childList:true,attributes:true,attributeFilter:['hidden']});ALM=ALM.filter(a=>a.src==='alst'||[...S.wpn,...S.arms].some(w=>w.u===a.u));
  const icoM=(x,px)=>x.src==='alst'?alstIco(x.g):cardIco(C(x.id),px);const nmM=x=>x.src==='alst'?x.n:(x.e?'+'+x.e+' ':'')+C(x.id).n;
  let draw=()=>{const mats=alMats().filter(x=>!ALM.some(a=>a.src==='eq'&&a.u===x.u)).filter(x=>ALTAB==='all'||(ALTAB==='a'&&x.ty==='a')||(ALTAB==='w'&&x.ty==='w')||(ALTAB==='etc'&&x.ty==='etc'));const T=alTable(ALM);
-  if(!window.__alA)window.__alA=setInterval(alAnim,ALLOOP.filter(Boolean).length>=8?260:1500);const nAll=alMats().length;st.innerHTML=`<div class="lalch2 hasbg${ORBOK?' hasorb':''}${ALDARK?' hasdark':''}"><div class="alpose"><i class="p0"></i>${ALLOOP.filter(Boolean).length>=8?ALLOOP.map((u,i)=>`<i class="lp${i===(window.__alF||0)?' on':''}" style="background-image:url(${u})"></i>`).join(''):''}<i class="p1"></i><i class="p2"></i></div><div class="alscene"><div class="alorb2${ALM.length?' lit':''}"><i></i><b class="alorbimg"></b></div></div>
+  if(!window.__alA)window.__alA=setInterval(alAnim,ALLOOP.filter(Boolean).length>=8?260:1500);const nAll=alMats().length;st.innerHTML=`<div class="lalch2 hasbg${ORBOK?' hasorb':''}${ALDARK?' hasdark':''}"><div class="alpose"><i class="p0"></i>${ALLOOP.filter(Boolean).length>=8?ALLOOP.map((u,i)=>`<i class="lp${i===(window.__alF||0)?' on':''}" style="background-image:url(${u})"></i>`).join(''):''}<i class="p1"></i><i class="p2"></i></div><div class="alscene"><div class="alorb2${ALM.length?' lit':''}"><i></i><u class="alglass"></u><b class="alorbimg"></b></div></div>
    <div class="altitle">${alSeal()}<b>질서의 연금</b><button class="alx" id="pkX">✕</button></div>
    <div class="alparch${ALM.length?' lit':''}"><div class="alseal">${alSeal()}</div><div class="alsealg"></div>${[0,1,2,3,4].map(i=>{const a=ALM[i];return`<button class="alsl2 s${i}${a?' on':''}" data-alr="${i}">${a?icoM(a,44)+(a.e?`<em>+${a.e}</em>`:''):''}</button>`}).join('')}</div>
    <div class="albt2"><button data-alinfo="1">${ico('quest')}<span>연금 재료 목록</span></button><button data-alrate="1">${ico('star')}<span>성공 확률</span></button></div>
@@ -4705,7 +4715,7 @@ function alReveal(res,g){return new Promise(done=>{const st=$('stage');const sc=
   const N=46,items=[];for(let i=0;i<N;i++)items.push(rc());const tease=pool.filter(c=>c.g>=Math.min(5,g+1));const fin=N-4;if(tease.length){items[fin+1]=tease[Math.floor(Math.random()*tease.length)]}
   const cell=c=>`<div class="alri" style="--gc:${G[c.g].c}">${cardIco(c,52)}</div>`;strip.innerHTML=items.map((c,i)=>i===fin?`<div class="alri fin" style="--gc:${G[g].c}">${res.c?cardIco(res.c,52):alstIco(res.alst)}</div>`:cell(c)).join('');
   let started=false;
-  o.onclick=()=>{if(started)return;started=true;o.querySelector('.altap2').textContent='';{const fl=document.createElement('div');fl.className='alflash';o.appendChild(fl);setTimeout(()=>fl.remove(),900)}sfx.rare&&sfx.rare(2);
+  o.onclick=()=>{if(started)return;started=true;o.querySelector('.altap2').textContent='';{const fl=document.createElement('div');fl.className='alflash';o.appendChild(fl);setTimeout(()=>fl.remove(),900);const bu=document.createElement('div');bu.className='alburst';o.appendChild(bu);setTimeout(()=>bu.remove(),1100)}sfx.rare&&sfx.rare(2);
    const H=reel.clientWidth/5,target=(fin-2)*H,D=6000,t0=performance.now();let gradeShown=false,lastIdx=-1;
    /* 위치 곡선: 빠르게 → 서서히 감속 → 다음 칸(더 좋은 아이템) 직전까지 갔다가 살짝 되돌아와 결과에서 정지 */
    /* 빠르게 → 서서히 감속 → 다음 칸(더 좋은 아이템)을 반쯤 보여주며 거의 멈춤 → 아주 천천히 되돌아와 가운데 칸에 정확히 정지 */
