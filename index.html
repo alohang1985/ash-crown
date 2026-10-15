@@ -2559,7 +2559,8 @@ function drawBG(c,t,dt,z){const ri=Math.max(0,REGS.indexOf(z.reg));const L=bgLay
   for(const p of PTS){if(p.p!==T.pt)continue;c.fillStyle=p.p==='snow'?'rgba(255,255,255,.8)':p.p==='ember'?'rgba(255,140,40,.8)':p.p==='dust'?'rgba(255,220,170,.35)':'rgba(200,190,230,.12)';if(p.p==='fog'){c.beginPath();c.arc(p.x,p.y,20*p.s,0,7);c.fill()}else c.fillRect(p.x,p.y,p.s,p.s)}}
  return true}
 /* 몬스터 피해: 방어력은 비율로 깎고, 내가 빨리 잡을수록(강할수록) 한 방 최대 피해가 HP의 작은 비율로 제한됨 → 한 방에 죽지 않게 */
-function monHit(att,ms,M){const red=Math.min(.75,M.def/(M.def+60));const raw=ms.atk*(att.km||1)*(att.named?4:att.elite?2.2:1)*(att.boss?2.5:1)*(1-red)-M.red;const hits=Math.max(1,(att.max||ms.hp)/Math.max(1,M.atk));
+function monHit(att,ms,M){if(S.burstK&&!S.trial&&!S.bossF&&LAND)return Math.round(monHit0(att,ms,M)*.3);return monHit0(att,ms,M)}
+function monHit0(att,ms,M){const red=Math.min(.75,M.def/(M.def+60));const raw=ms.atk*(att.km||1)*(att.named?4:att.elite?2.2:1)*(att.boss?2.5:1)*(1-red)-M.red;const hits=Math.max(1,(att.max||ms.hp)/Math.max(1,M.atk));
  const cap=M.hp*Math.min(.9,Math.max(.04,.035*hits*(att.boss||att.named?1.6:att.elite?1.3:1)));return Math.max(1,Math.round(Math.min(raw,cap)*(.8+rnd()*.4)))}
 /* ================= 전투 ================= */
 let BW=384,SCK=1;const BS=1.5;let HSTOP=0,ATKT=-9999,ATKD=400,HITP=0,BH=168,OFF=0,SKI=0, mobs=[],fx=[],shots=[],btT=0,nextSpawn=0,lastT=0,mAtkT=0,skT=0,regT=0,deadUntil=0,shakeT=0,combo=0,comboT=0;
@@ -2729,8 +2730,8 @@ function vpt(e){return ROT90?{x:e.clientY,y:innerWidth-e.clientX}:{x:e.clientX,y
 function svBindJoy(cv){if(cv.dataset.joy)return;cv.dataset.joy=1;const pos=e=>{if(ROT90){const p=vpt(e);return{x:p.x/VW()*BW,y:p.y/VH()*BH}}const r=cv.getBoundingClientRect();return{x:(e.clientX-r.left)/r.width*BW,y:(e.clientY-r.top)/r.height*BH}};
  cv.addEventListener('pointerdown',e=>{if(MODE)return;SV.joy={o:pos(e),c:pos(e),t0:performance.now(),mv:0};cv.setPointerCapture(e.pointerId)});cv.addEventListener('pointermove',e=>{if(SV.joy){SV.joy.c=pos(e);if(Math.hypot(SV.joy.c.x-SV.joy.o.x,SV.joy.c.y-SV.joy.o.y)>8){SV.joy.mv=1;SV.goto=null}SV.inp.t=performance.now()}});
  const up=()=>{const j=SV.joy;if(j&&!j.mv&&performance.now()-j.t0<350)SV.tap={x:j.o.x,y:j.o.y};SV.joy=null};cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);cv.style.touchAction='none'}
-function svSpawn(ms,z){const ang=rnd()*6.283,d=Math.hypot(BW,BH)*.62;const kind=pick(ZMON[ZONES.indexOf(z)]||ZMON[0]);const km=(KMUL[kind]||1)*(S.burstK?1.6:1);const rr=rnd();const named=rr<.0004,elite=!named&&rr<.03;const grow=S.burstK?9.5:(1+.35*(SV.stg-1))*(1+SV.wave*.06);
- const hp=Math.round(ms.hp*km*(named?18:elite?5:1)*grow);mobs.push({kind,km,elite,named,x:SV.p.x+Math.cos(ang)*d,y:SV.p.y+Math.sin(ang)*d,hp,max:hp,dead:0,hit:0,stun:0,slow:0,cd:0,sp:(.022+rnd()*.012)*(elite?.85:1)})}
+function svSpawn(ms,z){const ang=rnd()*6.283,d=Math.hypot(BW,BH)*(S.burstK?.42:.62);const kind=pick(ZMON[ZONES.indexOf(z)]||ZMON[0]);const km=(KMUL[kind]||1)*(S.burstK?1.6:1);const rr=rnd();const named=rr<.0004,elite=!named&&rr<.03;const grow=S.burstK?12:(1+.35*(SV.stg-1))*(1+SV.wave*.06);
+ const hp=Math.round(ms.hp*km*(named?18:elite?5:1)*grow);mobs.push({kind,km,elite,named,x:SV.p.x+Math.cos(ang)*d,y:SV.p.y+Math.sin(ang)*d,hp,max:hp,dead:0,hit:0,stun:0,slow:0,cd:0,sp:(.022+rnd()*.012)*(elite?.85:1)*(S.burstK?2.6:1)})}
 /* ===== 리니지식 월드: 사냥터 42곳이 하나로 이어진 대륙 · 지역 던전 ===== */
 const FR=1000,CELL=1400,WCOL=7;
 const DUNG=[['말하는 섬 던전',3],['기에른 지하수로',3],['잿빛 협곡 지하 미궁',3],['망자의 무덤',3],['용의 둥지',3],['오만의 탑',5]];
@@ -2836,7 +2837,7 @@ function survival(t){const cv=$('bt');if(!cv)return;const LD=LAND;let h,KZ=1;if(
   if(near&&!low&&(FLD||crowd<7)){const W2=FLD?viaGate(P,near):near;const dx=W2.x-P.x,dy=W2.y-P.y,d=W2===near?(nd||1):Math.max(1,Math.hypot(dx,dy));if(W2!==near){if(d>3){tx=dx/d;ty=dy/d}}else if(d>want+(SV.chs?0:24)){tx=dx/d;ty=dy/d;SV.chs=1}else SV.chs=0}
   else{const l=Math.hypot(ax,ay);if(l>0){tx=ax/l;ty=ay/l}}
   const g=SV.gems.find(g=>Math.hypot(g.x-P.x,g.y-P.y)<120);if(g&&!near){tx=g.x-P.x;ty=g.y-P.y}
-  if(!FLD&&(!near||nd>200)){tx-=P.x*.002;ty-=P.y*.002}if(FLD&&!near){const cc=inDun()?{cx:0,cy:0}:gOf();if(Math.hypot(cc.cx-P.x,cc.cy-P.y)>80){tx=cc.cx-P.x;ty=cc.cy-P.y}}mx=tx;my=ty}
+  if(!FLD&&(!near||nd>200)){tx-=P.x*.002;ty-=P.y*.002}if(FLD&&!near){const cc=inDun()?{cx:0,cy:0}:gOf();if(Math.hypot(cc.cx-P.x,cc.cy-P.y)>80){tx=cc.cx-P.x;ty=cc.cy-P.y}}if(S.burstK&&!S.trial&&!S.bossF&&near&&nd<260){tx=0;ty=0;if(near.x!==P.x&&Math.abs(near.x-P.x)>8)P.fx=near.x>P.x?1:-1}/* 폭젠: 몹이 몰려오니 제자리에서 사냥 */mx=tx;my=ty}
  if(mx||my){P.dir=d8h(mx,my,P.dir);const q=d8v(P.dir);mx=q[0];my=q[1]}const ml=Math.hypot(mx,my)||1;const tcm=S.morph!==false&&C(S.eqT);const spd=.058*X.spd*(BUFFS.aspd&&buffV('aspd')?1.1:1)*(1+((tcm&&tcm.pmspd)||0)/100)*accelMul();if(!dead&&(mx||my)&&!(SV.pstun>t)){const px0=P.x,py0=P.y,kv=1-Math.exp(-dt/80);if(P.vx==null||!(t-P.mv<200)){P.vx=mx/ml;P.vy=my/ml}else{P.vx+=(mx/ml-P.vx)*kv;P.vy+=(my/ml-P.vy)*kv}const vl=Math.hypot(P.vx,P.vy)||1;P.x+=P.vx/vl*spd*dt;P.y+=P.vy/vl*spd*dt;P.dist=(P.dist||0)+spd*dt;if(FLD){const w=worldClamp(px0,py0,P.x,P.y);P.x=w[0];P.y=w[1]}if(FLD&&!manual){const sk=SV.stk||(SV.stk={x:P.x,y:P.y,t});if(t-sk.t>1400){if(Math.hypot(P.x-sk.x,P.y-sk.y)<12&&SV.tgt&&Math.hypot(SV.tgt.x-P.x,SV.tgt.y-P.y)>70){SV.ban.set(SV.tgt,t+10000);SV.tgt=null}SV.stk={x:P.x,y:P.y,t}}}if(Math.abs(mx)>.3)P.fx=mx>0?1:-1;P.mv=t;HAMOVE=t+120}
  const cam=SV.cam;cam.x=P.x;cam.y=P.y;const ox=BW/2-cam.x,oy=BH/2+10-cam.y;
  // 바닥
