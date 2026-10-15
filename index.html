@@ -1720,6 +1720,17 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .lidet .mqi>s.mqs,.lidh .mqi>s.mqs,.lchc .mqi>s.mqs,.mkdh .mqi>s.mqs{display:block;animation:mqsh 6s ease-in-out infinite}
 
 .mqs{text-decoration:none}
+/* 합성 결과: 카드가 실제로 뒤집히는 회전(리니지M) */
+.srv2c{perspective:600px}
+.srv2c.glow .srb{animation:srflip1 .28s ease-in forwards}
+@keyframes srflip1{0%{transform:rotateY(0)}100%{transform:rotateY(90deg);filter:brightness(3)}}
+.srf{animation:srflip2 .32s ease-out!important}
+@keyframes srflip2{0%{transform:rotateY(-90deg);filter:brightness(3)}60%{filter:brightness(1.6)}100%{transform:none;filter:none}}
+.srv2c.wait .srb{animation:srwob 1.2s ease-in-out infinite}
+@keyframes srwob{0%,100%{transform:rotateY(-12deg)}50%{transform:rotateY(12deg)}}
+/* 불길 v2 실제 크기 맞춤 */
+.lalch2.fl2 .alorbimg{inset:-85%!important;top:-150%!important}
+.alrays{animation-duration:1.4s}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -4046,11 +4057,11 @@ function boltSVG(){let d='M20 0',x=20;for(let y=24;y<=300;y+=24){x=20+(Math.rand
    · 높은 등급은 큰 빛 폭발 · 실패(돌려받은 카드)는 회색 · 「모두 열기」로 한 번에 */
 async function synthReveal(L,title){const n=L.length;let skip=false;
  const face=x=>`<div class="srf fg${x.c.g} ${x.ok?'':'fail'}" style="--gc:${G[x.c.g].c}"><div class="srfa">${cardIco(x.c,64)}</div><b>${x.c.n}</b>${x.dup?'':'<u>NEW</u>'}</div>`;
- stageOn(`<div class="srv2"><div class="srv2bg"></div><div class="srv2h"><i></i><b>합성 결과</b><i></i></div><div class="srv2g${n>15?' many':''}">${L.map((x,i)=>`<div class="srv2c" id="sv${i}" style="--gc:${G[x.c.g].c}"><div class="srb"></div></div>`).join('')}</div><span class="srv2s" id="srvc"></span><button class="lbtn blue srv2x" id="srvX">모두 열기</button></div>`);
+ stageOn(`<div class="srv2"><div class="srv2bg"></div><div class="srv2h"><i></i><b>합성 결과</b><i></i></div><div class="srv2g${n>15?' many':''}">${L.map((x,i)=>`<div class="srv2c wait" id="sv${i}" style="--gc:${G[x.c.g].c}"><div class="srb"></div></div>`).join('')}</div><span class="srv2s" id="srvc"></span><button class="lbtn blue srv2x" id="srvX">모두 열기</button></div>`);
  const bt=$('srvX');bt.onclick=()=>{skip=true};await W(450);let ok=0;
  for(let i=0;i<n;i++){const x=L[i],el=$('sv'+i);if(!el)continue;if(x.ok)ok++;
-  if(skip){el.innerHTML=face(x);el.classList.add('open');continue}
-  el.classList.add('glow');(sfx.tick&&sfx.tick(1));await W(x.ok&&x.c.g>=3?260:160);
+  if(skip){el.classList.remove('wait');el.innerHTML=face(x);el.classList.add('open');continue}
+  el.classList.remove('wait');el.classList.add('glow');(sfx.tick&&sfx.tick(1));await W(x.ok&&x.c.g>=3?260:160);
   if(x.ok&&x.c.g>=3){const b=document.createElement('div');b.className='srburst'+(x.c.g>=4?' big':'');el.appendChild(b);if(x.c.g>=4){const r=document.querySelector('.srv2');r.style.setProperty('--fl',G[x.c.g].c);r.classList.remove('rays');void r.offsetWidth;r.classList.add('rays');sfx.legend&&sfx.legend()}else sfx.rare&&sfx.rare(2)}
   el.classList.remove('glow');el.innerHTML=face(x)+(el.querySelector('.srburst')?el.querySelector('.srburst').outerHTML:'');el.classList.add('open');await W(x.ok&&x.c.g>=4?900:x.ok?260:150)}
  $('srvc').innerHTML=`성공 <b>${ok}</b> / ${n}`;bt.textContent='확인';await new Promise(r=>{bt.onclick=r});stageOff()}
