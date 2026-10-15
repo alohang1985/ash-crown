@@ -1626,6 +1626,20 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .mkrow.chk{background:linear-gradient(90deg,#1a2a3e,#121a26)!important}
 .mkall{margin-left:auto;background:#211910;border:1px solid #5a4422;color:#d8c8a0;padding:3px 10px;font-size:11px}
 .mkbulk{display:flex;align-items:center;gap:8px;padding:6px 8px;background:#120d07;border-top:1px solid #3a2c18}.mkbulk span{flex:1;font-size:12.5px;display:flex;align-items:center;gap:4px}.mkbulk .svi,.mkbulk img{width:15px;height:15px}
+/* 수정구 불길 보강: 뒤(크게·흐리게)+앞 두 겹, 빛 섞기, 발광 · 시작 순간 분출 */
+.lalch2.hasorb .alorbimg{mix-blend-mode:screen;inset:-42%!important;filter:brightness(1.25) saturate(1.2)}
+.lalch2.hasorb .alorbimg.back{inset:-70%!important;opacity:.45!important;filter:blur(1.5px) brightness(1.4);animation-duration:1.7s;animation-delay:-.6s;transform:scaleY(1.15)}
+.lalch2.hasorb .alorb2.lit .alorbimg.back{opacity:.8!important}
+.alorbglow{position:absolute;inset:-60%;border-radius:50%;background:radial-gradient(circle,rgba(255,200,90,.45),rgba(255,140,30,.18) 40%,transparent 68%);mix-blend-mode:screen;pointer-events:none;animation:alglow 2.2s ease-in-out infinite}
+.alorb2.grade .alorbglow{background:radial-gradient(circle,color-mix(in srgb,var(--oc) 60%,#fff),color-mix(in srgb,var(--oc) 30%,transparent) 40%,transparent 70%)}
+.alorb2.erupt .alorbimg{animation-duration:.7s!important;transform:scale(1.55)!important;transition:transform .35s ease-out;opacity:1!important}
+.alorb2.erupt .alorbglow{inset:-140%;transition:inset .3s}
+/* 시작 순간: 리니지M처럼 화면이 금빛 섞인 흰빛으로 확 덮였다가 천천히 걷힘 + 큰 빛 폭발 */
+.alflash{background:radial-gradient(circle at 51% 40%,#fff 0,#fff8e0 25%,rgba(255,236,190,.92) 60%,rgba(255,220,160,.85))!important;animation:alfx2 1.3s ease-out forwards!important}
+@keyframes alfx2{0%{opacity:0}8%{opacity:1}25%{opacity:.95}100%{opacity:0}}
+.alburst{width:calc(var(--vh)*170)!important;top:40%!important;left:51%!important;mix-blend-mode:screen;animation:anfr12 1.4s steps(12) forwards!important;z-index:5}
+.lalch2.hasorb .alorbimg,.lalch2.hasorb .alorbimg.back{filter:none!important}
+.lalch2.hasorb .alorbimg.back{display:none!important}.lalch2.hasorb .alorbimg{inset:-48%!important}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -4696,7 +4710,7 @@ const alSeal=()=>`<svg class="alsealsvg" viewBox="0 0 100 100"><circle cx="50" c
 function alWin(){const st=$('stage');st.hidden=false;st.classList.remove('sidel','sider','dockl','dockr');st.classList.add('alfull');new MutationObserver((m,ob)=>{if(st.hidden||!st.querySelector('.lalch2')){st.classList.remove('alfull');ob.disconnect()}}).observe(st,{childList:true,attributes:true,attributeFilter:['hidden']});ALM=ALM.filter(a=>a.src==='alst'||[...S.wpn,...S.arms].some(w=>w.u===a.u));
  const icoM=(x,px)=>x.src==='alst'?alstIco(x.g):cardIco(C(x.id),px);const nmM=x=>x.src==='alst'?x.n:(x.e?'+'+x.e+' ':'')+C(x.id).n;
  let draw=()=>{const mats=alMats().filter(x=>!ALM.some(a=>a.src==='eq'&&a.u===x.u)).filter(x=>ALTAB==='all'||(ALTAB==='a'&&x.ty==='a')||(ALTAB==='w'&&x.ty==='w')||(ALTAB==='etc'&&x.ty==='etc'));const T=alTable(ALM);
-  if(!window.__alA)window.__alA=setInterval(alAnim,ALLOOP.filter(Boolean).length>=8?900:1500);const nAll=alMats().length;st.innerHTML=`<div class="lalch2 hasbg${ORBOK?' hasorb':''}${ALDARK?' hasdark':''}"><div class="alpose"><i class="p0"></i>${ALLOOP.filter(Boolean).length>=8?ALLOOP.map((u,i)=>`<i class="lp${i===(window.__alF||0)?' on':''}" style="background-image:url(${u})"></i>`).join(''):''}<i class="p1"></i><i class="p2"></i></div><div class="alscene"><div class="alorb2${ALM.length?' lit':''}"><i></i><u class="alglass"></u><b class="alorbimg"></b></div></div>
+  if(!window.__alA)window.__alA=setInterval(alAnim,ALLOOP.filter(Boolean).length>=8?900:1500);const nAll=alMats().length;st.innerHTML=`<div class="lalch2 hasbg${ORBOK?' hasorb':''}${ALDARK?' hasdark':''}"><div class="alpose"><i class="p0"></i>${ALLOOP.filter(Boolean).length>=8?ALLOOP.map((u,i)=>`<i class="lp${i===(window.__alF||0)?' on':''}" style="background-image:url(${u})"></i>`).join(''):''}<i class="p1"></i><i class="p2"></i></div><div class="alscene"><div class="alorb2${ALM.length?' lit':''}"><i></i><b class="alorbimg back"></b><u class="alglass"></u><b class="alorbimg"></b><em class="alorbglow"></em></div></div>
    <div class="altitle">${alSeal()}<b>질서의 연금</b><button class="alx" id="pkX">✕</button></div>
    <div class="alparch${ALM.length?' lit':''}"><div class="alseal">${alSeal()}</div><div class="alsealg"></div>${[0,1,2,3,4].map(i=>{const a=ALM[i];return`<button class="alsl2 s${i}${a?' on':''}" data-alr="${i}">${a?icoM(a,44)+(a.e?`<em>+${a.e}</em>`:''):''}</button>`}).join('')}</div>
    <div class="albt2"><button data-alinfo="1">${ico('quest')}<span>연금 재료 목록</span></button><button data-alrate="1">${ico('star')}<span>성공 확률</span></button></div>
@@ -4728,7 +4742,7 @@ function alReveal(res,g){return new Promise(done=>{const st=$('stage');const sc=
   const N=46,items=[];for(let i=0;i<N;i++)items.push(rc());const tease=pool.filter(c=>c.g>=Math.min(5,g+1));const fin=N-4;if(tease.length){items[fin+1]=tease[Math.floor(Math.random()*tease.length)]}
   const cell=c=>`<div class="alri" style="--gc:${G[c.g].c}">${cardIco(c,52)}</div>`;strip.innerHTML=items.map((c,i)=>i===fin?`<div class="alri fin" style="--gc:${G[g].c}">${res.c?cardIco(res.c,52):alstIco(res.alst)}</div>`:cell(c)).join('');
   let started=false;
-  o.onclick=()=>{if(started)return;started=true;o.querySelector('.altap2').textContent='';{const fl=document.createElement('div');fl.className='alflash';o.appendChild(fl);setTimeout(()=>fl.remove(),900);const bu=document.createElement('div');bu.className='alburst';o.appendChild(bu);setTimeout(()=>bu.remove(),1100)}sfx.rare&&sfx.rare(2);
+  o.onclick=()=>{if(started)return;started=true;o.querySelector('.altap2').textContent='';{const fl=document.createElement('div');fl.className='alflash';o.appendChild(fl);setTimeout(()=>fl.remove(),900);const bu=document.createElement('div');bu.className='alburst';o.appendChild(bu);setTimeout(()=>bu.remove(),1500);const orb2=(sc||st).querySelector('.alorb2');if(orb2){orb2.classList.add('erupt');setTimeout(()=>orb2.classList.remove('erupt'),1800)}}sfx.rare&&sfx.rare(2);
    const H=reel.clientWidth/5,target=(fin-2)*H,D=6000,t0=performance.now();let gradeShown=false,lastIdx=-1;
    /* 위치 곡선: 빠르게 → 서서히 감속 → 다음 칸(더 좋은 아이템) 직전까지 갔다가 살짝 되돌아와 결과에서 정지 */
    /* 빠르게 → 서서히 감속 → 다음 칸(더 좋은 아이템)을 반쯤 보여주며 거의 멈춤 → 아주 천천히 되돌아와 가운데 칸에 정확히 정지 */
