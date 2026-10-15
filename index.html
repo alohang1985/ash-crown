@@ -1557,6 +1557,12 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .alorb2.grade .alorbimg{background-image:var(--orbimg)}
 @keyframes anfr8{to{background-position:114.2857% 0}}
 .lalch2.hasorb .alorb2{background:none!important;box-shadow:none!important}.lalch2.hasorb .alorb2>i{display:none}
+/* 수정구 그림이 오기 전: 가짜 구슬 대신 그림 속 금빛 그릇 위에 빛만 */
+.lalch2:not(.hasorb) .alorb2{background:radial-gradient(circle at 50% 62%,rgba(255,230,160,.55),rgba(255,170,60,.18) 38%,rgba(255,140,30,0) 66%)!important;box-shadow:none!important;mix-blend-mode:screen;animation:alglow 2.4s ease-in-out infinite}
+.lalch2:not(.hasorb) .alorb2>i{display:none}
+.lalch2:not(.hasorb) .alorb2.lit{background:radial-gradient(circle at 50% 62%,rgba(255,250,220,.95),rgba(255,190,80,.5) 30%,rgba(255,140,30,0) 68%)!important}
+.lalch2:not(.hasorb) .alorb2.grade{background:radial-gradient(circle at 50% 60%,#fff,var(--oc) 28%,transparent 70%)!important;box-shadow:none!important}
+@keyframes alglow{50%{opacity:.75;transform:scale(1.04)}}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -4564,7 +4570,7 @@ function alTable(L){if(!L.length)return null;const top=L.map(alWho).sort((a,b)=>
  const extra=Math.max(0,L.length-3)*.02;p=[Math.max(0,p[0]-extra),p[1],p[2]+extra];return{gs,p}}
 function alMats(){const L=[];for(const x of[...S.wpn,...S.arms]){if(isEqU(x.u)||isOther(x.u))continue;const c=C(x.id);if(!c||c.acc||c.g<2||c.g>4)continue;L.push({src:'eq',u:x.u,id:x.id,e:x.e,ty:c.ty})}for(const[g,n]of ALST){const have=(S.alst||{})[g]||0,used=ALM.filter(a=>a.src==='alst'&&a.g===g).length;for(let i=0;i<have-used;i++)L.push({src:'alst',g,n,ty:'etc',k:'al'+g+'_'+i})}return L}
 function alPop(title,html){const sc=document.querySelector('.lalch2');if(!sc)return;const o=sc.querySelector('.alpop');if(o)o.remove();sc.insertAdjacentHTML('beforeend',`<div class="alpop"><div class="alpw"><div class="alph"><b>${title}</b><button data-alpx="1">✕</button></div><div class="alpb">${html}</div><button class="alpok" data-alpx="1">확인</button></div></div>`)}
-const BGALCH=typeof ARTS!=='undefined'&&false;
+let BGALCH=true,ORBOK=false;{const i=new Image();i.onload=()=>{ORBOK=true};i.src='art/AL_al_orb.webp'}
 const alSeal=()=>`<svg class="alsealsvg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1"/><polygon points="50,12 61,40 90,40 66,58 75,87 50,69 25,87 34,58 10,40 39,40" fill="none" stroke="currentColor" stroke-width="2"/></svg>`;
 function alWin(){const st=$('stage');st.hidden=false;st.classList.remove('sidel','sider','dockl','dockr');st.classList.add('alfull');new MutationObserver((m,ob)=>{if(st.hidden||!st.querySelector('.lalch2')){st.classList.remove('alfull');ob.disconnect()}}).observe(st,{childList:true,attributes:true,attributeFilter:['hidden']});ALM=ALM.filter(a=>a.src==='alst'||[...S.wpn,...S.arms].some(w=>w.u===a.u));
  const icoM=(x,px)=>x.src==='alst'?alstIco(x.g):cardIco(C(x.id),px);const nmM=x=>x.src==='alst'?x.n:(x.e?'+'+x.e+' ':'')+C(x.id).n;
