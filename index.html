@@ -1366,6 +1366,83 @@ html.land .hsk button.hske{background:rgba(0,0,0,.55)!important;box-shadow:0 0 0
 .hskp button.on{background:#f0d8a0;box-shadow:0 0 4px rgba(255,220,150,.8)}
 .hskp button::after{content:'';display:block;margin:-8px;width:23px;height:23px}
 html.land .svhud{flex-direction:column;align-items:center;gap:0}
+/* ===== 거래소 (리니지M) ===== */
+.lmkt .mwh{gap:10px}.lmkt .mkdia{display:flex;align-items:center;gap:4px;margin-left:8px;font-size:12px;color:#ffe7b0}.lmkt .mkdia .svi,.lmkt .mkdia img{width:16px;height:16px}
+.lmkt .mwh>b:first-child .svi{width:18px;height:18px;vertical-align:-3px}
+.mktab{display:flex;gap:2px;padding:0 10px;border-bottom:1px solid #3a2c18;background:#120d07}
+.mktab button{position:relative;padding:8px 16px;border:0;background:none;color:#9a8a6a;font-weight:700;font-size:12.5px}
+.mktab button.on{color:#ffe2a0;box-shadow:inset 0 -2px 0 #e0b04a}
+.mktab .rd{position:absolute;top:5px;right:6px;width:6px;height:6px;border-radius:50%;background:#ff4a3a}
+.mksb{flex:1;min-height:0;display:flex;gap:8px;padding:8px}
+.mkcat{width:92px;display:flex;flex-direction:column;gap:3px;overflow:auto}
+.mkcat button{display:flex;justify-content:space-between;padding:7px 9px;border:1px solid #2a2014;background:linear-gradient(#211910,#150f09);color:#cdbd9a;font-size:12px;border-radius:2px}
+.mkcat button.on{background:linear-gradient(#3a6aa0,#1d3c62);border-color:#6a9ad0;color:#fff}
+.mkmid{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.mkq{display:flex;gap:6px}.mkq input{flex:1;background:#0a0704;border:1px solid #3a2c18;color:#eadfc8;padding:6px 10px;font:inherit;font-size:12px}
+.mkq .lbtn{background:linear-gradient(#5a4220,#3a2a12);border-color:#a07a3a}
+.mkgrid{flex:1;overflow:auto;display:grid;grid-template-columns:1fr 1fr;gap:5px;align-content:start}
+.mkk{display:flex;align-items:center;gap:8px;padding:5px 8px;background:linear-gradient(90deg,#1e1710,#140e08);border:1px solid #2e2416}
+.mkk>i{width:38px;height:38px;flex:none;border:1px solid var(--gc);background:#000;display:grid;place-items:center;overflow:hidden}
+.mkk>div{flex:1;min-width:0}.mkk b{display:block;font-size:12px;color:var(--gc);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mkk small{font-size:10.5px;color:#7dcf6a}
+.mkk .lbtn{padding:4px 10px;font-size:11.5px;line-height:1.2;display:flex;flex-direction:column;align-items:center}.mkk .lbtn em{font-style:normal;font-size:9.5px;color:#bcd8ff}
+.mkh{display:flex;align-items:center;gap:10px;font-size:12.5px}.mkh b{color:#ffe2a0}.mkh span{color:#9a8a6a;font-size:11px}
+.mkback{background:none;border:1px solid #3a2c18;color:#cdbd9a;padding:3px 10px}
+.mkrows{flex:1;overflow:auto;display:flex;flex-direction:column;gap:4px}
+.mkrow{display:grid;grid-template-columns:40px 1fr auto auto;grid-template-rows:auto auto;column-gap:10px;align-items:center;text-align:left;padding:5px 10px;border:1px solid #2e2416;background:linear-gradient(90deg,#1e1710,#140e08);color:#eadfc8}
+.mkrow.on{border-color:#6a9ad0;background:linear-gradient(90deg,#1d2c40,#121a26)}
+.mkrow i{grid-row:span 2;width:38px;height:38px;border:1px solid var(--gc);background:#000;display:grid;place-items:center;overflow:hidden}
+.mkrow b{font-size:12.5px;color:var(--gc)}.mkrow small{grid-column:2;font-size:10.5px;color:#7dcf6a}
+.mkrow em{grid-row:span 2;font-style:normal;font-size:11px;color:#e0b04a}.mkrow u{grid-row:span 2;text-decoration:none;display:flex;align-items:center;gap:3px;font-weight:900;color:#ffe9b0;font-size:13px;min-width:74px;justify-content:flex-end}
+.mkrow u .svi,.mkrow u img,.mkpr .svi,.mkpr img{width:15px;height:15px}
+.mkdet{width:210px;flex:none;display:flex;flex-direction:column;gap:6px;padding:8px;background:#0d0906;border:1px solid #3a2c18;overflow:auto}
+.mkdh{display:flex;align-items:center;gap:8px}.mkdh i{width:48px;height:48px;border:1px solid var(--gc);display:grid;place-items:center;background:#000;overflow:hidden}.mkdh b{flex:1;color:var(--gc);font-size:13px}
+.mkty{margin:0;font-size:11px;color:#c9a24a;border-left:2px solid #c9a24a;padding-left:6px}
+.mkopt p{margin:2px 0;font-size:11px;display:flex;gap:8px}.mkopt p span{color:#9a8a6a;width:40px}.mkopt .opts{margin:4px 0;padding-left:16px;font-size:11px;color:#dcd0b0}
+.mkpr{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;padding:5px 6px;background:#16100a;border:1px solid #2e2416}.mkpr b{display:flex;align-items:center;gap:3px;color:#ffb070}
+.mkbtn{display:flex;gap:4px;margin-top:auto}.mkbtn .lbtn{flex:1}
+.mkbk,.mkic{display:grid;place-items:center;width:100%;height:100%}.mkbk .skart{width:100%;height:100%}.mkic .svi,.mkic img{width:70%;height:70%}
+.mksell{flex:1;min-height:0;display:flex;gap:10px;padding:10px}
+.mkmine{flex:1;overflow:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(48px,1fr));gap:4px;align-content:start}
+.mkmi{position:relative;aspect-ratio:1;border:1px solid var(--gc);background:#000;padding:0;display:grid;place-items:center;overflow:hidden}.mkmi.on{box-shadow:0 0 0 2px #6a9ad0}
+.mkmi em,.mkmi u{position:absolute;font-style:normal;text-decoration:none;font-size:10px;font-weight:900;color:#fff;text-shadow:0 0 2px #000}.mkmi em{right:2px;bottom:1px}.mkmi u{left:2px;top:1px}
+.mkreg{width:250px;display:flex;flex-direction:column;gap:6px;font-size:12px;overflow:auto}.mkreg h4{margin:8px 0 0;font-size:12px;color:#c9a24a}
+.mkpin{display:flex;gap:4px}.mkpin input{flex:1;min-width:0;background:#0a0704;border:1px solid #3a2c18;color:#ffe9b0;text-align:right;padding:5px;font:inherit}.mkpin button{background:#211910;border:1px solid #3a2c18;color:#cdbd9a;padding:0 8px}
+.mkon p,.mkset p{display:flex;justify-content:space-between;margin:0;padding:5px 8px;border-bottom:1px solid #22190f;font-size:11.5px}.mkon span,.mkset span{display:flex;align-items:center;gap:3px;color:#ffe2a0}
+.mkset{flex:1;overflow:auto;padding:10px;display:flex;flex-direction:column;gap:2px}.mkset .lbtn{margin-top:10px;align-self:center;padding:8px 26px}
+.mkset .svi,.mkset img,.mkon .svi,.mkon img{width:14px;height:14px}
+/* ===== 질서의 연금 ===== */
+.lalch .alb{flex:1;min-height:0;display:grid;grid-template-columns:30% 1fr 30%;gap:0}
+.alpent{position:relative;margin:10px;background:radial-gradient(circle at 50% 50%,#5a4422,#2a1e10 70%);border:1px solid #6b5228;border-radius:4px}
+.alstar{position:absolute;inset:8% 8% 26% 8%;width:84%;height:66%;pointer-events:none}
+.alsl{position:absolute;width:21%;aspect-ratio:1;background:#0a0704;border:1px solid #3a2c18;box-shadow:inset 0 0 8px #000;padding:0;display:grid;place-items:center;overflow:hidden}
+.alsl.on{border-color:#ffcf6a;box-shadow:0 0 10px rgba(255,200,90,.6)}.alsl em{position:absolute;right:2px;bottom:0;font-style:normal;font-size:10px;font-weight:900;color:#fff;text-shadow:0 0 2px #000}
+.alsl.s0{left:39.5%;top:5%}.alsl.s1{left:8%;top:28%}.alsl.s2{left:71%;top:28%}.alsl.s3{left:18%;top:56%}.alsl.s4{left:61%;top:56%}
+.albt{position:absolute;left:6px;right:6px;bottom:6px;display:flex;flex-direction:column;gap:4px}.albt .lbtn{font-size:11px;padding:5px}
+.alstage{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px;padding-bottom:12px;background:radial-gradient(ellipse at 50% 60%,rgba(255,170,60,.15),transparent 60%),linear-gradient(#1a120a,#0a0704)}
+.alsage{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 35%,rgba(255,220,150,.08),transparent 50%)}
+.alorb{position:relative;width:34%;aspect-ratio:1;border-radius:50%;margin-bottom:auto;margin-top:16%;background:radial-gradient(circle at 40% 35%,#3a3020,#0a0704 70%);box-shadow:0 0 0 2px #6b5228,0 18px 0 -6px #4a3418}
+.alorb.lit{background:radial-gradient(circle at 40% 35%,#fff6c8,#ffcf5a 30%,#c97a10 62%,#5a3006);box-shadow:0 0 30px rgba(255,190,80,.7),0 0 70px rgba(255,140,30,.35)}
+.alorb.grade{background:radial-gradient(circle at 45% 40%,#fff,var(--oc) 35%,#000 95%);box-shadow:0 0 40px var(--oc),0 0 90px var(--oc)}
+.alorb.spin{animation:alsp 1.6s ease-in-out infinite}@keyframes alsp{50%{filter:brightness(1.35)}}
+.alst-go{padding:8px 22px;font-size:13px}.alst-go .svi,.alst-go img{width:15px;height:15px;vertical-align:-3px}
+.almat{display:flex;flex-direction:column;margin:10px;min-height:0}.alh{text-align:center;color:#9a8a6a;font-size:12px;letter-spacing:2px;padding:2px 0 6px}
+.altab{display:flex;justify-content:space-around;border-bottom:1px solid #3a2c18;margin-bottom:6px}.altab button{background:none;border:0;color:#9a8a6a;font-size:11.5px;padding:5px}.altab button.on{color:#ffe2a0;box-shadow:inset 0 -2px 0 #e0b04a}
+.algrid{flex:1;overflow:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;align-content:start}
+.algrid button{position:relative;aspect-ratio:1;padding:0;border:1px solid var(--gc);background:#000;display:grid;place-items:center;overflow:hidden}.algrid em{position:absolute;right:2px;bottom:0;font-style:normal;font-size:10px;font-weight:900;color:#fff;text-shadow:0 0 2px #000}
+.almat small{text-align:right;color:#7a6a4a;font-size:10px;margin-top:4px}
+.alst{display:grid;place-items:center;width:100%;height:100%;border-radius:50%}.alst .svi,.alst img{width:70%;height:70%}.alst.g2{background:radial-gradient(#4aa3ff55,transparent)}.alst.g3{background:radial-gradient(#ff4d4d55,transparent)}.alst.g4{background:radial-gradient(#c46bff66,transparent)}.alst.big{width:64px;height:64px}
+.alrv{position:absolute;inset:0;z-index:5;background:rgba(5,3,2,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer}
+.alrv .alorb{width:min(26vh,180px);margin:0}.alrv .alcyc{position:absolute;top:18%;width:66px;height:66px;display:grid;place-items:center;border:1px solid #6b5228;background:#000}
+.alrv .alcyc:empty{display:none}.altap{color:#e8dcc0;font-size:13px}.alok{margin:0;color:#e8dcc0;font-size:13px}.alnm{font-size:15px}.alcf{padding:7px 30px}
+.lmkt .mwh>b,.lalch .mwh>b{display:flex;align-items:center;gap:6px}
+.lmkt .lbtn:not(.blue),.lalch .lbtn:not(.blue){background:linear-gradient(#2e2416,#18110a)!important;color:#d8c8a0!important;border:1px solid #5a4422!important}
+.mkmi{height:48px;aspect-ratio:auto}.mkmine{grid-auto-rows:48px}
+.algrid{grid-auto-rows:minmax(0,auto)}.algrid button{height:46px;aspect-ratio:auto}
+.mkreg .svi,.mkreg img{width:14px;height:14px;vertical-align:-2px}
+.alsl.s1,.alsl.s2{top:24%}.alsl.s3,.alsl.s4{top:46%}.alstar{inset:6% 8% 34% 8%;height:60%}
+.albt .lbtn .svi,.albt .lbtn img{width:13px;height:13px;vertical-align:-2px}
+.lalch .algrid{grid-auto-rows:46px!important}.lalch .algrid button{height:100%!important;width:100%}
+.lalch .algrid button img,.lalch .algrid button .svi{max-width:90%;max-height:90%}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -3211,7 +3288,7 @@ function mailWin(){const st=$('stage');st.hidden=false;st.classList.remove('side
  const take=async id=>{const i=(S.mail||[]).findIndex(m=>m.id==id);if(i<0)return;const m=S.mail.splice(i,1)[0];save();const p=/^pk_(\w+)_(\w)$/.exec(m.it);if(p){const P=PACKS.find(x=>x.k===p[1]);if(P){const keep=POOL;POOL=p[2];BUSY=true;const res=[];for(let k=0;k<12;k++)res.push(rollPack(P,POOL));track('summon',12);save();await showGrid(res,`${MAILN[m.it]}`);stageOff();POOL=keep}}};
  st.onclick=async e=>{const t=e.target;if(t.id==='pkX'||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}let b;if(b=t.closest('[data-mread]')){await take(b.dataset.mread);return}if(t.closest('#mAll')){const ids=(S.mail||[]).map(m=>m.id);for(const id of ids)await take(id);return}}}
 const LMENU=[['shop','상점','w:shop'],['bag','가방','w:inv'],['skill','스킬','w:skill'],['quest','퀘스트','w:quest'],null,
- ['enh','강화','w:enh'],['coin','거래소','t:ah'],['mask','변신','w:morph'],['doll','마법인형','w:synthd'],['synth','합성','w:synth'],
+ ['enh','강화','w:enh'],['coin','거래소','w:mkt'],['elx','연금','w:alch'],['mask','변신','w:morph'],['doll','마법인형','w:synthd'],['synth','합성','w:synth'],
  ['swords','던전','w:dun'],['cal','출석체크','w:att'],['ticket','패스','t:pass'],['book','스킬카드','w:synths'],['medal','컬렉션','t:col'],
  ['clan','혈맹','w:clan'],['map','지도','w:map'],['star','기억장소','w:bm'],['trophy','업적','t:ach'],['swords','결투장','t:arena'],
  ['elx','엘릭서','t:up'],['chest','보물상자','t:chest'],['book','도감','t:book'],['box','창고','w:wh'],['potion','버프','w:buff'],
@@ -3221,7 +3298,7 @@ function menuWin(){const st=$('stage');st.hidden=false;st.classList.remove('side
  st.innerHTML=`<div class="lmside2">${L.map(x=>x?`<button data-mn="${x[2]}"><i>${ico(x[0])}${(x[2]==='w:quest'&&qd)||(x[2]==='w:mail'&&(S.mail||[]).length)?'<em class="rd"></em>':''}</i><small>${x[1]}</small></button>`:`<button class="lmx" id="pkX">✕</button>`).join('')}</div>`;
  st.onclick=e=>{const t=e.target;if(t.closest('#pkX')||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}const b=t.closest('[data-mn]');if(!b)return;ac();const[ty,k]=b.dataset.mn.split(':');st.hidden=true;st.innerHTML='';st.onclick=null;
   if(ty==='t'){TAB=k;render();document.documentElement.classList.add('mopen');lmSync();return}
-  ({skill:skillWin,inv:invWin,synth:()=>synthWin('t'),synthd:()=>synthWin('d'),synths:()=>synthWin('s'),morph:morphWin,quest:questWin,att:()=>{QTAB='ev';QL=0;questWin()},map:mapWin,bm:bmWin,clan:clanWin,shop:shopWin,buff:bwin,wh:whWin,dun:dunWin,char:charWin,adm:admWin,enh:enhWin,mail:mailWin,mute:()=>$('mute')&&$('mute').click(),mono:()=>{const m=document.querySelector('[data-mono],#mono,.top .ic:not(#mute):not(#laySw)');if(m)m.click()}})[k]()}}
+  ({skill:skillWin,inv:invWin,synth:()=>synthWin('t'),synthd:()=>synthWin('d'),synths:()=>synthWin('s'),morph:morphWin,quest:questWin,att:()=>{QTAB='ev';QL=0;questWin()},map:mapWin,bm:bmWin,clan:clanWin,shop:shopWin,buff:bwin,wh:whWin,dun:dunWin,char:charWin,adm:admWin,enh:enhWin,mail:mailWin,mkt:mkWin,alch:alWin,mute:()=>$('mute')&&$('mute').click(),mono:()=>{const m=document.querySelector('[data-mono],#mono,.top .ic:not(#mute):not(#laySw)');if(m)m.click()}})[k]()}}
 function ltopInit(){const el=$('ltopm');if(!el)return;el.innerHTML=[['shop','상점','shop'],['bag','가방','inv'],['skill','스킬','skill'],['quest','퀘스트','quest'],['menu','메뉴','menu']].map(([ic,n,k])=>`<button data-tm="${k}"${k==='inv'?' class="wgt"':''}><i>${ico(ic)}</i>${k==='inv'?'<em class="wring"></em>':''}${k==='quest'||k==='menu'?'<em class="rdot" hidden></em>':''}<small>${n}</small></button>`).join('');
  el.onclick=e=>{const b=e.target.closest('[data-tm]');if(!b)return;ac();({shop:shopWin,inv:invWin,skill:skillWin,clan:clanWin,menu:menuWin,quest:questWin})[b.dataset.tm]()}}
 /* ===== 혈맹 (서버에서 실제 플레이어끼리 공유) ===== */
@@ -4235,4 +4312,111 @@ if(S.lvFix){delete S.lvFix;if(S.auto!==false)autoStat();setTimeout(()=>announce(
  pre.forEach(u=>{const i=new Image();i.onload=i.onerror=bump;i.src=u});setTimeout(()=>{$('tstart').disabled=false},4000);
  $('tstart').onclick=()=>{ac();sfx.legend();if(LAND||TOUCH())goLand();tl.classList.add('out');setTimeout(()=>tl.remove(),900)}}
 dailyEvent();einRefill();setInterval(einRefill,60000);render();stageUI();qCheck();lmenuInit();requestAnimationFrame(loop);if(!S.cls)pickClass();
+
+/* ===================== 리니지M식 거래소 (다이아) =====================
+   검색 · 판매 등록 · 정산 · 정산 내역. 매물은 날마다 "유저가 올린 것처럼" 새로 생김(진짜 희귀템은 거의 없음).
+   다이아 = 충전 잔액. 판매 대금은 수수료 2% 빼고 정산 탭으로 들어옴. */
+const MK_CAT=[['all','전체'],['sword','한손검'],['gsword','양손검'],['bow','활'],['staff','지팡이'],['dagger','단검'],['spear','창'],['axe','도끼'],['rod','마력봉'],['arm','방어구'],['acc','장신구'],['card','변신·인형'],['book','스킬북'],['etc','소모품']];
+const ALST=[[2,'희귀 연금석'],[3,'영웅 연금석'],[4,'전설 연금석']];
+/* 아이템 다이아 가치 (리니지M 거래소 시세 느낌) */
+function mkVal(k){if(k.kind==='alst')return[0,0,3000,30000,300000][k.g];if(k.kind==='scroll')return 150;if(k.kind==='bless')return 2500;if(k.kind==='book')return[400,1500,6000,40000,300000,0][k.g]||400;
+ const c=C(k.id),e=k.e||0;if(c.ty==='t'||c.ty==='d')return[40,180,1200,9000,90000,0,0][c.g];
+ if(c.acc)return Math.round(25000*Math.pow(1.9,e));const safe=c.ty==='w'?6:4;const base=(c.ty==='w'?[60,220,1600,16000,130000,2500000,0]:[40,160,1100,11000,90000,1800000,0])[c.g];
+ return Math.round(base*(1+Math.min(e,safe)*.25)*(e>safe?Math.pow(2.3,e-safe):1))}
+const nice=v=>{const p=Math.pow(10,Math.max(0,Math.floor(Math.log10(Math.max(1,v)))-1));return Math.max(1,Math.round(v/p)*p)};
+const clsOfW=c=>c.ty==='w'?CLASSES.filter(x=>(x.wt||[]).includes(c.wt)).map(x=>x.k).join('/'):c.ty==='t'?'변신 카드':c.ty==='d'?'인형 카드':'모든 클래스';
+function mkKinds(){const L=[];
+ for(const c of CARDS){if(c.off)continue;if(c.ty==='w'&&c.g>=1&&c.g<=5)L.push({key:c.id,id:c.id,cat:c.wt,c});else if(c.ty==='a'&&!c.acc&&c.g>=1&&c.g<=5)L.push({key:c.id,id:c.id,cat:'arm',c});else if(c.ty==='a'&&c.acc&&c.g===7)L.push({key:c.id,id:c.id,cat:'acc',c});else if((c.ty==='t'||c.ty==='d')&&c.g>=1&&c.g<=4)L.push({key:c.id,id:c.id,cat:'card',c})}
+ const ord={w:0,a:1};L.sort((a,b)=>(a.cat==='card')-(b.cat==='card')||(a.cat==='acc')-(b.cat==='acc')||(ord[a.c.ty]??2)-(ord[b.c.ty]??2)||b.c.g-a.c.g);
+ for(const k of SKILLS)if(!k.pas&&k.g<=4)L.push({key:'sb:'+k.id,kind:'book',sid:k.id,g:k.g,cat:'book',nm:k.n+' 스킬북',sk:k});
+ for(const[g,n]of ALST)L.push({key:'al:'+g,kind:'alst',g,cat:'etc',nm:n});L.push({key:'sc',kind:'scroll',g:1,cat:'etc',nm:'강화 주문서'});L.push({key:'bs',kind:'bless',g:3,cat:'etc',nm:'축복 주문서'});return L}
+let MKK=null;const mkKindsC=()=>MKK||(MKK=mkKinds());
+const mkG=k=>k.c?k.c.g:k.g;const mkName=(k,e)=>k.c?(e?'+'+e+' ':'')+k.c.n:k.nm;
+function mkListings(k){const day=kday(),r=srng(hs(day+k.key));const g=mkG(k);const isC=k.c&&(k.c.ty==='t'||k.c.ty==='d');
+ let n=k.kind==='alst'||k.kind==='scroll'||k.kind==='bless'?6+Math.floor(r()*10):k.kind==='book'?[8,6,4,2,1][g]||1:isC?[0,10,7,4,2][g]:g>=7?6+Math.floor(r()*6):[0,14,11,6,2,0][g]||0;
+ if(g===5&&!isC)n=r()<.35?1:0; /* 신화 장비는 아주 가끔 */ if(k.kind==='book'&&k.sk&&k.sk.cls!=='공용'&&S.cls&&k.sk.cls!==S.cls.k)n=Math.max(0,n-2);
+ n=Math.round(n*(.6+r()*.8));const out=[];const bought=(S.mk&&S.mk.day===day&&S.mk.bought)||{};
+ for(let i=0;i<n;i++){const id=day+'|'+k.key+'|'+i;if(bought[id])continue;let e=0;if(k.c&&(k.c.ty==='w'||k.c.ty==='a')){const safe=k.c.acc?0:k.c.ty==='w'?6:4;const x=r();e=x<.35?0:x<.6?Math.min(safe,1+Math.floor(r()*safe)):x<.88?safe:safe+1+Math.floor(r()*(g>=4?1:2)*(k.c.acc?3:1));if(k.c.acc)e=Math.floor(r()*6)}
+  const qty=k.kind==='scroll'?[10,50,100][Math.floor(r()*3)]:k.kind==='bless'||k.kind==='alst'?1+Math.floor(r()*3):1;
+  const p=nice(mkVal({...k,e})*qty*(.82+r()*.55));const left=Math.floor(r()*71)+1;out.push({id,k,e,qty,p,left})}
+ return out.sort((a,b)=>a.p-b.p)}
+let MKT='search',MKC='all',MKQ='',MKSEL=null,MKL=null,MKSS=null,MKSP=0;
+function mkState(){S.mk=S.mk||{};if(S.mk.day!==kday()){S.mk.day=kday();S.mk.bought={}}S.mk.sell=S.mk.sell||[];S.mk.settle=S.mk.settle||[];S.mk.hist=S.mk.hist||[];return S.mk}
+function mkTick(){const m=mkState(),now=Date.now();let ch=false;for(const x of m.sell){if(!x.done&&now>=x.at){x.done=1;const got=Math.floor(x.p*.98);m.settle.push({n:x.n,p:x.p,got,t:now});ch=true;announce(`<span style="color:#9fe3ff">💎 거래소에서 「${x.n}」이(가) ${fmt(x.p)} 다이아에 팔렸어요 · 정산에서 받으세요</span>`)}}if(ch){m.sell=m.sell.filter(x=>!x.done);save()}}
+setInterval(()=>{try{if(S&&S.cls)mkTick()}catch(_){}},15000);
+function mkGive(L){const k=L.k;if(k.kind==='alst'){S.alst=S.alst||{};S.alst[k.g]=(S.alst[k.g]||0)+L.qty}else if(k.kind==='scroll')S.scroll+=L.qty;else if(k.kind==='bless')S.bless=(S.bless||0)+L.qty;else if(k.kind==='book'){S.skb=S.skb||{};S.skb[k.sid]=(S.skb[k.sid]||0)+1;if(!(S.skills||{})[k.sid]){S.skills[k.sid]=1;S.skb[k.sid]--}}
+ else if(k.c.ty==='w')S.wpn.push({u:++S.uid,id:k.id,e:L.e});else if(k.c.ty==='a')S.arms.push({u:++S.uid,id:k.id,e:L.e});else S.cards[k.id]=(S.cards[k.id]||0)+1}
+function mkMine(){const L=[];for(const x of[...S.wpn,...S.arms]){if(isEqU(x.u)||isOther(x.u))continue;const c=C(x.id);if(!c||c.g>=6||c.g<1)continue;L.push({src:'eq',u:x.u,c,e:x.e,n:(x.e?'+'+x.e+' ':'')+c.n,val:mkVal({id:x.id,e:x.e})})}
+ for(const id in S.cards){const c=C(id);if(!c||c.g>=5)continue;const n=S.cards[id]-(id===S.eqT||id===S.eqD?1:0);if(n>0)L.push({src:'card',id,c,e:0,n:c.n,cnt:n,val:mkVal({id})})}
+ for(const[g,n]of ALST)if((S.alst||{})[g])L.push({src:'alst',g,n,cnt:S.alst[g],val:mkVal({kind:'alst',g}),c:null});return L.sort((a,b)=>b.val-a.val).slice(0,160)}
+function mkWin(){const st=$('stage');mkState();st.hidden=false;st.classList.remove('sidel','sider','dockl','dockr');
+ const dia=()=>CASH==null?'…':fmt(CASH);
+ const icoOf=(k,e,px)=>k.c?cardIco(k.c,px):k.kind==='book'?`<span class="mkbk">${skArt(k.sk)}</span>`:`<span class="mkic">${k.kind==='alst'?ico('elx'):ico('scroll')}</span>`;
+ const draw=()=>{const m=mkState();let body='';
+  if(MKT==='search'){const kinds=mkKindsC().filter(k=>(MKC==='all'||k.cat===MKC)&&(!MKQ||mkName(k).includes(MKQ))).map(k=>[k,mkListings(k).length]).sort((a,b)=>(!!b[1])-(!!a[1])).map(x=>x[0]);
+   let mid='';if(MKL){const L=mkListings(MKL);mid=`<div class="mkh"><button class="mkback" data-mkback="1">‹ 목록</button><b>${mkName(MKL)}</b><span>판매 ${L.length}건</span></div><div class="mkrows">${L.map(x=>`<button class="mkrow${MKSEL&&MKSEL.id===x.id?' on':''}" data-mkl="${x.id}" style="--gc:${G[mkG(x.k)].c}"><i>${icoOf(x.k,x.e,34)}</i><b>${mkName(x.k,x.e)}${x.qty>1?' ×'+x.qty:''}</b><small>${x.k.c?clsOfW(x.k.c):''}</small><em>${x.left>=24?Math.floor(x.left/24)+'일 '+(x.left%24)+'시간':x.left+'시간'}</em><u>${ico('dia')}${fmt(x.p)}</u></button>`).join('')||'<p class="mini" style="padding:14px">지금은 올라온 물건이 없어요</p>'}</div>`}
+   else mid=`<div class="mkgrid">${kinds.slice(0,120).map(k=>{const L=mkListings(k);return`<div class="mkk" style="--gc:${G[mkG(k)].c}"><i>${icoOf(k,0,38)}</i><div><b>${mkName(k)}</b><small>${k.c?clsOfW(k.c):k.kind==='book'?(k.sk.cls):'소모품'}</small></div><button class="lbtn blue" data-mkk="${k.key}" ${L.length?'':'disabled'}>판매 목록${L.length?`<em>${L.length}건 · ${fmt(L[0].p)}~</em>`:''}</button></div>`}).join('')}</div>`;
+   const sel=MKSEL;const det=sel?`<div class="mkdet" style="--gc:${G[mkG(sel.k)].c}"><div class="mkdh"><i>${icoOf(sel.k,sel.e,48)}</i><b>${mkName(sel.k,sel.e)}${sel.qty>1?' ×'+sel.qty:''}</b><button class="lx" data-mkx="1">✕</button></div><p class="mkty">${sel.k.c?G[sel.k.c.g].ko+' '+tyKo(sel.k.c.acc?'acc':sel.k.c.ty):sel.k.kind==='book'?'스킬북':'소모품'}</p>
+    ${sel.k.c?`<div class="mkopt"><p><span>클래스</span>${clsOfW(sel.k.c)}</p>${sel.k.c.acc?`<ul class="opts">${Object.entries(accOpt(sel.k.c,sel.e)).map(([k,v])=>`<li>${optTxt(k,v)}</li>`).join('')}</ul>`:optHtml(sel.k.c)}</div>`:sel.k.kind==='book'?`<p class="mini">${sel.k.sk.d}</p>`:''}
+    <div class="mkpr"><span>판매 금액</span><b>${ico('dia')}${fmt(sel.p)}</b></div><div class="mkbtn"><button class="lbtn" data-mksise="1">시세</button><button class="lbtn blue" data-mkbuy="1">구매</button></div></div>`:'';
+   body=`<div class="mksb"><div class="mkcat">${MK_CAT.map(([k,n])=>`<button class="${MKC===k?'on':''}" data-mkc="${k}">${n}<span>›</span></button>`).join('')}</div><div class="mkmid"><div class="mkq"><input id="mkq" placeholder="아이템 이름을 입력하세요." value="${MKQ}"><button class="lbtn" data-mkreset="1">전체 초기화</button></div>${mid}</div>${det}</div>`}
+  else if(MKT==='sell'){const mine=mkMine();const s=MKSS;const fee=s?Math.max(200,Math.round(MKSP*2)):0;
+   body=`<div class="mksell"><div class="mkmine">${mine.map((x,i)=>`<button class="mkmi${s&&s.i===i?' on':''}" data-mks="${i}" style="--gc:${x.c?G[x.c.g].c:G[x.g].c}"><i>${x.c?cardIco(x.c,40):ico('elx')}</i>${x.e?`<em>+${x.e}</em>`:''}${x.cnt>1?`<u>${x.cnt}</u>`:''}</button>`).join('')||'<p class="mini">팔 수 있는 물건이 없어요 (착용 중·유일·신화 카드는 못 팔아요)</p>'}</div>
+    <div class="mkreg">${s?`<b style="color:${s.c?G[s.c.g].c:G[s.g].c}">${s.n}</b><p class="mini">최근 시세 약 ${ico('dia')}${fmt(nice(s.val))}</p><div class="mkpin"><button data-mkp="-10">-10%</button><input id="mkp" type="number" min="1" value="${MKSP}"><button data-mkp="10">+10%</button></div><div class="mkpr"><span>등록 수수료</span><b>${ico('gold')}${fmt(fee)}</b></div><div class="mkpr"><span>판매 시 받는 다이아 (수수료 2%)</span><b>${ico('dia')}${fmt(Math.floor(MKSP*.98))}</b></div><button class="lbtn blue" data-mkreg="1" ${m.sell.length>=30?'disabled':''}>판매 등록</button>`:'<p class="mini">왼쪽에서 팔 물건을 고르세요</p>'}
+    <h4>판매 중 ${m.sell.length}/30</h4><div class="mkon">${m.sell.map(x=>`<p><b>${x.n}</b><span>${ico('dia')}${fmt(x.p)}</span></p>`).join('')||'<p class="mini">없음</p>'}</div></div></div>`}
+  else if(MKT==='settle'){const tot=m.settle.reduce((a,x)=>a+x.got,0);body=`<div class="mkset">${m.settle.map(x=>`<p><b>${x.n}</b><span>판매가 ${fmt(x.p)} → 정산 ${ico('dia')}${fmt(x.got)}</span></p>`).join('')||'<p class="mini" style="padding:20px">정산할 다이아가 없어요</p>'}${tot?`<button class="lbtn blue" data-mkget="1">전체 회수 · ${ico('dia')}${fmt(tot)}</button>`:''}</div>`}
+  else body=`<div class="mkset">${m.hist.slice(-60).reverse().map(x=>`<p><b>${x.n}</b><span>${x.buy?'구매':'판매'} ${ico('dia')}${fmt(x.p)} · ${new Date(x.t).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}</span></p>`).join('')||'<p class="mini" style="padding:20px">거래 내역이 없어요</p>'}</div>`;
+  st.innerHTML=`<div class="mwin lmkt"><div class="mwh"><b>${ico('coin')} 거래소</b><span class="mkdia">${ico('dia')}<b>${dia()}</b></span><span class="mkdia">${ico('gold')}<b>${fmt(S.gold)}</b></span><button class="mwx" id="pkX">✕</button></div>
+   <div class="mktab">${[['search','검색'],['sell','판매 등록'],['settle','정산'],['hist','정산 내역']].map(([k,n])=>`<button class="${MKT===k?'on':''}" data-mkt="${k}">${n}${k==='settle'&&m.settle.length?'<em class="rd"></em>':''}</button>`).join('')}</div>${body}</div>`;
+  const q=$('mkq');if(q)q.oninput=()=>{MKQ=q.value.trim();MKL=null;MKSEL=null;const pos=q.selectionStart;draw();const q2=$('mkq');q2.focus();q2.setSelectionRange(pos,pos)};const pi=$('mkp');if(pi)pi.onchange=()=>{MKSP=Math.max(1,Math.round(+pi.value||1));draw()}};
+ draw();st.onclick=async e=>{const t=e.target;if(t.closest('#pkX')||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}let b;const m=mkState();
+  if(b=t.closest('[data-mkt]')){MKT=b.dataset.mkt;MKSEL=null;MKSS=null;draw();return}
+  if(b=t.closest('[data-mkc]')){MKC=b.dataset.mkc;MKL=null;MKSEL=null;draw();return}
+  if(t.closest('[data-mkreset]')){MKC='all';MKQ='';MKL=null;MKSEL=null;draw();return}
+  if(b=t.closest('[data-mkk]')){MKL=mkKindsC().find(k=>k.key===b.dataset.mkk);MKSEL=null;draw();return}
+  if(t.closest('[data-mkback]')){MKL=null;MKSEL=null;draw();return}if(t.closest('[data-mkx]')){MKSEL=null;draw();return}
+  if(b=t.closest('[data-mkl]')){MKSEL=mkListings(MKL).find(x=>x.id===b.dataset.mkl)||null;draw();return}
+  if(t.closest('[data-mksise]')&&MKSEL){const L=mkListings(MKSEL.k).filter(x=>x.e===MKSEL.e);const v=nice(mkVal({...MKSEL.k,e:MKSEL.e})*MKSEL.qty);announce(`📈 「${mkName(MKSEL.k,MKSEL.e)}」 최근 7일 평균 시세 ${fmt(v)} 다이아 · 최저 ${fmt(L.length?L[0].p:v)} · 오늘 ${L.length}건`);return}
+  if(t.closest('[data-mkbuy]')&&MKSEL){const x=MKSEL;if(!await lconfirm(`「${mkName(x.k,x.e)}${x.qty>1?' ×'+x.qty:''}」을(를) <b>${fmt(x.p)} 다이아</b>에 구매할까요?`))return;if(!await spendCash(x.p,'거래소 구매'))return;m.bought[x.id]=1;mkGive(x);m.hist.push({n:mkName(x.k,x.e),p:x.p,t:Date.now(),buy:1});sfx.coin();announce(`💎 「${mkName(x.k,x.e)}」 구매 완료 · 가방에 들어갔어요`);MKSEL=null;save();lqsInit&&lqsInit();draw();return}
+  if(b=t.closest('[data-mks]')){const L=mkMine();const x=L[+b.dataset.mks];MKSS={...x,i:+b.dataset.mks};MKSP=nice(x.val);draw();return}
+  if(b=t.closest('[data-mkp]')){MKSP=Math.max(1,nice(MKSP*(1+(+b.dataset.mkp)/100)));draw();return}
+  if(t.closest('[data-mkreg]')&&MKSS){const x=MKSS,fee=Math.max(200,Math.round(MKSP*2));if(S.gold<fee){announce('등록 수수료(아데나)가 부족해요');return}if(!await lconfirm(`「${x.n}」을(를) <b>${fmt(MKSP)} 다이아</b>에 판매 등록할까요?<br><small>등록 수수료 ${fmt(fee)} 골드 · 3일 안에 안 팔리면 돌려받아요</small>`))return;
+   S.gold-=fee;if(x.src==='eq'){S.wpn=S.wpn.filter(w=>w.u!==x.u);S.arms=S.arms.filter(w=>w.u!==x.u)}else if(x.src==='card'){S.cards[x.id]--;if(S.cards[x.id]<=0)delete S.cards[x.id]}else{S.alst[x.g]--}
+   const ratio=MKSP/Math.max(1,x.val);const delay=ratio<=.9?R(1,4):ratio<=1.05?R(3,15):ratio<=1.3?R(15,90):R(180,4000);m.sell.push({n:x.n,p:MKSP,at:Date.now()+delay*60000,t:Date.now()});MKSS=null;save();headLite();announce(`📦 「${x.n}」 판매 등록 · ${fmt(MKSP)} 다이아`);draw();return}
+  if(t.closest('[data-mkget]')){const tot=m.settle.reduce((a,x)=>a+x.got,0);if(!tot)return;try{const r=await fetch(API+'/earn',{method:'POST',body:JSON.stringify({id:liveSid(),amt:tot,what:'거래소 정산'})});const j=await r.json();if(!j.ok){announce('정산에 실패했어요 · 잠시 후 다시');return}CASH=j.won}catch(_){announce('서버에 연결할 수 없어요');return}for(const x of m.settle)m.hist.push({n:x.n,p:x.got,t:Date.now()});m.settle=[];save();headLite();sfx.coin();announce(`💎 ${fmt(tot)} 다이아를 회수했어요`);draw();return}}}
+
+/* ===================== 질서의 연금 (리니지M) =====================
+   장비 3~5개를 오망성에 올리고 20만 아데나 → 수정구 색으로 등급이 보이고 결과 아이템. 결과의 절반쯤은 연금석.
+   확률은 인벤 '질서 연금 확률(영웅템+파템2)' 표 기준. */
+let ALM=[],ALTAB='all';
+const alWho=x=>x.src==='alst'?{g:x.g,e:0}:{g:C(x.id).g,e:x.e||0};
+function alTable(L){if(!L.length)return null;const top=L.map(alWho).sort((a,b)=>b.g-a.g||b.e-a.e)[0];let p,gs;
+ if(top.g>=4){gs=[3,4,5];p=[.55,.42,.03]}else if(top.g===3){gs=[2,3,4];p=top.e>=5?[.2132,.6768,.11]:top.e===4?[.3468,.5932,.06]:top.e===3?[.448,.512,.04]:[.5742,.4108,.02]}else{gs=[1,2,3];p=[.15,.75,.10]}
+ const extra=Math.max(0,L.length-3)*.02;p=[Math.max(0,p[0]-extra),p[1],p[2]+extra];return{gs,p}}
+function alMats(){const L=[];for(const x of[...S.wpn,...S.arms]){if(isEqU(x.u)||isOther(x.u))continue;const c=C(x.id);if(!c||c.acc||c.g<2||c.g>4)continue;L.push({src:'eq',u:x.u,id:x.id,e:x.e,ty:c.ty})}for(const[g,n]of ALST){const have=(S.alst||{})[g]||0,used=ALM.filter(a=>a.src==='alst'&&a.g===g).length;for(let i=0;i<have-used;i++)L.push({src:'alst',g,n,ty:'etc',k:'al'+g+'_'+i})}return L}
+function alWin(){const st=$('stage');st.hidden=false;st.classList.remove('sidel','sider','dockl','dockr');ALM=ALM.filter(a=>a.src==='alst'||[...S.wpn,...S.arms].some(w=>w.u===a.u));
+ const icoM=(x,px)=>x.src==='alst'?`<span class="alst g${x.g}">${ico('elx')}</span>`:cardIco(C(x.id),px);const nmM=x=>x.src==='alst'?x.n:(x.e?'+'+x.e+' ':'')+C(x.id).n;
+ const draw=()=>{const mats=alMats().filter(x=>!ALM.some(a=>a.src==='eq'&&a.u===x.u)).filter(x=>ALTAB==='all'||(ALTAB==='a'&&x.ty==='a')||(ALTAB==='w'&&x.ty==='w')||(ALTAB==='etc'&&x.ty==='etc'));const T=alTable(ALM);
+  st.innerHTML=`<div class="mwin lalch"><div class="mwh"><b>${ico('star')} 질서의 연금</b><button class="mwx" id="pkX">✕</button></div><div class="alb">
+   <div class="alpent">${[0,1,2,3,4].map(i=>{const a=ALM[i];return`<button class="alsl s${i}${a?' on':''}" data-alr="${i}">${a?icoM(a,40)+(a.e?`<em>+${a.e}</em>`:''):''}</button>`}).join('')}<svg class="alstar" viewBox="0 0 100 100"><polygon points="50,6 61,38 95,38 67,58 78,91 50,71 22,91 33,58 5,38 39,38" fill="none" stroke="rgba(255,210,120,.35)" stroke-width="1.2"/><circle cx="50" cy="52" r="44" fill="none" stroke="rgba(255,210,120,.25)"/></svg>
+    <div class="albt"><button class="lbtn" data-alinfo="1">${ico('quest')} 연금 재료 목록</button><button class="lbtn" data-alrate="1">${ico('star')} 성공 확률</button></div></div>
+   <div class="alstage"><div class="alsage"></div><div class="alorb${ALM.length?' lit':''}"></div><p class="mini">${ALM.length<3?`재료를 ${3-ALM.length}개 더 올려 주세요 (3~5개)`:'연금을 시작할 수 있어요'}</p><button class="lbtn blue alst-go" data-algo="1" ${ALM.length<3||S.gold<200000?'disabled':''}>${ico('gold')} 200,000 &nbsp;연금 시작</button></div>
+   <div class="almat"><div class="alh">연금 재료</div><div class="altab">${[['all','전체'],['a','방어구'],['w','무기'],['etc','ETC']].map(([k,n])=>`<button class="${ALTAB===k?'on':''}" data-alt="${k}">${n}</button>`).join('')}</div><div class="algrid">${mats.slice(0,60).map(x=>`<button data-alm="${x.src==='eq'?'u'+x.u:x.k}" style="--gc:${G[alWho(x).g].c}" title="${nmM(x)}">${icoM(x,36)}${x.e?`<em>+${x.e}</em>`:''}</button>`).join('')||'<p class="mini">희귀~전설 장비나 연금석이 필요해요 · 거래소에서 살 수 있어요</p>'}</div><small>${alMats().length}개</small></div></div></div>`};
+ draw();let busy=false;
+ st.onclick=async e=>{const t=e.target;if(busy)return;if(t.closest('#pkX')||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}let b;
+  if(b=t.closest('[data-alt]')){ALTAB=b.dataset.alt;draw();return}
+  if(b=t.closest('[data-alr]')){const i=+b.dataset.alr;if(ALM[i]){ALM.splice(i,1);draw()}return}
+  if(b=t.closest('[data-alm]')){if(ALM.length>=5){announce('재료는 5개까지 올릴 수 있어요');return}const k=b.dataset.alm;const x=alMats().find(x=>(x.src==='eq'?'u'+x.u:x.k)===k);if(x){ALM.push(x);draw()}return}
+  if(t.closest('[data-alinfo]')){announce('연금 재료: 희귀·영웅·전설 무기/방어구 (착용 중·장신구 제외) 또는 연금석 · 3~5개 · 가장 좋은 재료가 결과를 정해요');return}
+  if(t.closest('[data-alrate]')){const T=alTable(ALM);if(!T){announce('재료를 올리면 확률이 보여요');return}announce(`성공 확률 · ${T.gs.map((g,i)=>`<span style="color:${G[g].c}">${G[g].ko} ${(T.p[i]*100).toFixed(2)}%</span>`).join(' · ')} <small>(각 등급의 약 절반은 연금석)</small>`);return}
+  if(t.closest('[data-algo]')){if(ALM.length<3)return;if(S.gold<200000){announce('아데나가 부족해요');return}const T=alTable(ALM);busy=true;S.gold-=200000;
+   for(const a of ALM){if(a.src==='eq'){S.wpn=S.wpn.filter(w=>w.u!==a.u);S.arms=S.arms.filter(w=>w.u!==a.u)}else S.alst[a.g]--}ALM=[];
+   let x=Math.random(),gi=0;for(;gi<2&&x>=T.p[gi];gi++)x-=T.p[gi];const g=T.gs[gi];let res;
+   if(g<=4&&g>=2&&Math.random()<.5){res={alst:g,n:G[g].ko+' 연금석'};S.alst=S.alst||{};S.alst[g]=(S.alst[g]||0)+1}
+   else{const pool=CARDS.filter(c=>(c.ty==='w'||c.ty==='a')&&!c.acc&&!c.off&&c.g===g);const mine=pool.filter(c=>c.ty!=='w'||classW(c));const c=(Math.random()<.5&&mine.length?mine:pool)[Math.floor(Math.random()*(Math.random()<.5&&mine.length?mine:pool).length)];res={c,n:c.n};(c.ty==='w'?S.wpn:S.arms).push({u:++S.uid,id:c.id,e:0})}
+   save();headLite();await alReveal(res,g);busy=false;draw();return}}}
+function alReveal(res,g){return new Promise(done=>{const st=$('stage');const o=document.createElement('div');o.className='alrv';o.innerHTML=`<div class="alsage"></div><div class="alorb lit spin"></div><div class="alcyc"></div><p class="altap">화면 중앙을 터치해 주세요.</p>`;st.appendChild(o);
+  const cyc=o.querySelector('.alcyc'),orb=o.querySelector('.alorb');const pool=CARDS.filter(c=>(c.ty==='w'||c.ty==='a')&&!c.acc&&c.g>=2&&c.g<=5);let started=false;
+  o.onclick=()=>{if(started)return;started=true;o.querySelector('.altap').textContent='';sfx.rare&&sfx.rare(2);let n=0;const tm=setInterval(()=>{const c=pool[Math.floor(Math.random()*pool.length)];cyc.innerHTML=cardIco(c,56);n++;if(n===8)orb.style.setProperty('--oc',G[g].c),orb.classList.add('grade');if(n>=22){clearInterval(tm);cyc.innerHTML=res.c?cardIco(res.c,64):`<span class="alst big g${res.alst}">${ico('elx')}</span>`;
+    o.insertAdjacentHTML('beforeend',`<p class="alok">연금술에 성공하였습니다.</p><b class="alnm" style="color:${G[g].c}">${res.n}</b><button class="lbtn blue alcf">확인</button>`);if(g>=4){flash();sfx.legend&&sfx.legend()}else sfx.up&&sfx.up(2);o.querySelector('.alcf').onclick=ev=>{ev.stopPropagation();o.remove();done()}}},n<14?90:160)}})}
 </script><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{})</script></body></html>
