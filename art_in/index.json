@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15 23:43",
+ "updated": "2026-10-16 00:10",
  "source": "Gemini 웹(Pro) via OpenClaw 맥미니 — 원본 그대로(배경 #FF00FF 요청, 오른쪽 아래 Gemini 반짝이 워터마크 있음)",
  "assets": {
   "e_meteor": {
@@ -4529,7 +4529,7 @@
   "pc_ereshkigal": {
    "sheets": {
     "card": {
-     "at": "10-15 23:43",
+     "at": "10-16 00:10",
      "by": "chatgpt-plus"
     }
    },
@@ -4538,7 +4538,286 @@
   "pc_phoenix": {
    "sheets": {
     "card": {
-     "at": "10-15 23:43",
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_centaur": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_deep_elf_blademaster": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_deep_elf_fighter_new": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_deep_elf_mage": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_deep_elf_sorcerer": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_dragon": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_frost_giant_new": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_golden_dragon": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_griffon": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_harpy": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_hill_giant_new": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_holy_dragon": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_ice_dragon_new": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_manticore": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_merfolk_impaler_new": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_minotaur": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_naga_mage": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_naga_warrior": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_necromancer_new": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_ogre_new": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_orc_knight_new": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_orc_warrior_new": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_revenant": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_skeletal_warrior_new": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_sphinx_new": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_stone_golem": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_troll": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_vampire_new": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_wizard": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_wraith": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "pc_yaktaur_new": {
+   "sheets": {
+    "card": {
+     "at": "10-16 00:10",
      "by": "chatgpt-plus"
     }
    },
