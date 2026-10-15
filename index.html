@@ -1573,6 +1573,15 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .crr{display:flex;align-items:center;gap:10px;padding:6px 10px;border:1px solid #2e2416;background:linear-gradient(90deg,#1e1710,#140e08)}
 .crr>i{width:48px;height:48px;border:1px solid var(--gc);display:grid;place-items:center;background:#000;overflow:hidden}.crr>div{flex:1}.crr b{display:block;color:var(--gc);font-size:13px}.crr small{font-size:11.5px}
 .lcraft .mwh small{margin-left:10px;font-size:12px}
+.lcsill{position:absolute;right:30%;bottom:8%;height:86%;width:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,.8));pointer-events:none}
+.clsill{width:100%;height:110px;object-fit:contain;object-position:50% 0}
+/* 연금 UI 그림 적용: 양피지 그림에 이미 오망성이 있으니 코드 오망성 숨김 · 발광 문양 위치 맞춤 */
+.alparch{background-color:transparent!important;box-shadow:none!important}.alparch::after{display:none}.alparch .alseal{display:none}
+.alsealg{left:15%!important;top:20%!important;width:70%!important}
+.alsl2{border:0!important;box-shadow:none!important}.alsl2.on{box-shadow:0 0 14px rgba(255,170,50,.8)!important}
+.algo2,.albt2 button{border:0!important;box-shadow:none!important}
+.lalch2.hasorb .alorb2{left:43.5%!important;top:28%!important;width:15%!important}.alorbimg{inset:-6%!important}
+.alnm2{top:27%!important;background:linear-gradient(90deg,transparent,rgba(0,0,0,.75),transparent);padding:2px 0}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -3955,9 +3964,11 @@ const arId=()=>SLOT_IDX?liveSid()+'_'+SLOT_IDX:liveSid();
 function bundleStr(){save();const b={v:2,cur:SLOT_IDX,roster:roster(),saves:{},wh:whGet(),acc:accGet()};for(let i=0;i<SLOT_MAX;i++){const v=localStorage.getItem(SKEY(i));if(v)b.saves[i]=v}return JSON.stringify(b)}
 function restoreBundle(str){let b=null;try{b=JSON.parse(str)}catch(_){}if(b&&b.v===2){for(let i=0;i<SLOT_MAX;i++)localStorage.removeItem(SKEY(i));for(const[i,v]of Object.entries(b.saves||{}))localStorage.setItem(SKEY(+i),v);localStorage.setItem('ash.roster',JSON.stringify(b.roster||{}));localStorage.setItem('ash.wh',JSON.stringify(b.wh||{}));if(b.acc)localStorage.setItem('ash.acc',JSON.stringify(b.acc));else localStorage.removeItem('ash.acc');localStorage.setItem('ash.cur',String(b.cur||0))}else localStorage.setItem('ash.v3',str)}
 function switchChar(i){save();try{localStorage.setItem('ash.cur',String(i))}catch(_){}location.reload()}
+const CHK={'군주':'lord','기사':'knight','요정':'elf','마법사':'wizard','다크엘프':'darkelf','용기사':'dragonknight','환술사':'illusionist','전사':'warrior'};const CHOK={};for(const k of Object.values(CHK))for(const x of['M','F']){const i=new Image();i.onload=()=>{CHOK[k+'_'+x]=1};i.src=`art/CH_${k}_${x}.webp`}
+const chArt=(cls,sx)=>{const k=CHK[cls]+'_'+(sx||'M');return CHOK[k]?`art/CH_${k}.webp`:null};
 let CSEL=null;function charSelect(){const r=roster();const st=$('stage');st.hidden=false;if(CSEL==null)CSEL=SLOT_IDX;
  const info=i=>{const cur=i===SLOT_IDX;const c=r[i];if(!c&&!(cur&&S.cls))return null;return cur&&S.cls?{cls:S.cls.k,sx:S.cls.sx,lv:S.lv,stage:S.bestStage,t:S.morph!==false?S.eqT:null,pw:power()}:c};
- const draw=()=>{const sel=info(CSEL),card=sel&&sel.t&&C(sel.t),art=card&&card.id==='t:ereshkigal'?'<img src="art/H_hellking_card.png" alt="">':sel?`<div class="lcsspr">${spr(charIdx(sel.cls,sel.sx),300)}</div>`:'';
+ const draw=()=>{const sel=info(CSEL),card=sel&&sel.t&&C(sel.t),art=card&&card.id==='t:ereshkigal'?'<img src="art/H_hellking_card.png" alt="">':sel?(chArt(sel.cls,sel.sx)?`<img class="lcsill" src="${chArt(sel.cls,sel.sx)}" alt="">`:`<div class="lcsspr">${spr(charIdx(sel.cls,sel.sx),300)}</div>`):'';
   st.innerHTML=`<div class="lcs"><div class="lcsbg"></div><div class="lcsl">${Array.from({length:SLOT_MAX},(_,i)=>{const c=info(i);return`<button data-csel="${i}" class="${i===CSEL?'on':''}${c?'':' empty'}"><span class="lcsi">${c?ico(c.cls==='마법사'||c.cls==='환술사'?'book':c.cls==='요정'?'star':c.cls==='군주'?'crown':'swords'):'+'}</span><div>${c?`<b>${S.cls&&i===SLOT_IDX&&typeof ACC!=="undefined"&&ACC&&ACC.user?ACC.user:c.cls}</b><small>Lv ${c.lv} · ${c.cls}</small>`:'<b>새 캐릭터</b><small>빈 슬롯</small>'}</div></button>`}).join('')}</div>
   <div class="lcsa">${art}</div>
   ${sel?`<div class="lcsinfo"><div><span>직업</span><b>${sel.cls}</b></div><div><span>레벨</span><b>${sel.lv}</b></div><div><span>전투력</span><b>${fmt(sel.pw||0)}</b></div><div><span>사냥터</span><b>${stLabel(sel.stage||1)}</b></div><div><span>변신</span><b>${card?card.n:'-'}</b></div></div>`:''}
@@ -4238,7 +4249,7 @@ function enhWin(){const draw=()=>{const it=enhItem(),c=it&&C(it.id);const all=[.
    if(t.closest('#ewDet')){const it2=enhItem();if(it2){IVSEL=(C(it2.id).ty==='w'?'w:':'a:')+it2.u;invWin()}return}
    if(t.closest('#ewGo')){if(BUSY)return;enhQuick(EWT==='bless');draw();setTimeout(()=>{if(ERES&&performance.now()-ERES.t0>1100){ERES=null;if($('stage').querySelector('.lenh'))draw()}},1200);return}}};draw()}
 /* ---------- 직업 · 이벤트 ---------- */
-function pickClass(){if(S.cls)return;const st=$('stage');st.hidden=false;st.innerHTML=`<div class="cls"><h2>${S.cls?'전직 · 직업을 바꿉니다':'직업을 고르세요'}</h2><p class="mini">${S.cls?'전직 주문서 1장을 씁니다. 레벨과 장비는 그대로예요.':'새 캐릭터의 직업을 골라요. 다른 직업은 캐릭터를 하나 더 만들어 키우면 돼요.'}</p><div class="clg">${CLASSES.map(c=>['M','F'].map(sx=>`<button data-k="${c.k}" data-sx="${sx}"${S.cls&&S.cls.k===c.k&&S.cls.sx===sx?' class="on"':''}>${spr(charIdx(c.k,sx),64)}<b>${c.k} ${sx==='M'?'남':'여'}</b><small>${c.d}</small><small class="csk">${(SKD[c.k]||[]).slice(0,1).map(x=>'시작 스킬 「'+x[0]+'」').join('')}</small></button>`).join('')).join('')}</div>${S.cls?'<button class="btn" id="clsX" style="margin-top:10px;width:100%">취소</button>':''}</div>`;
+function pickClass(){if(S.cls)return;const st=$('stage');st.hidden=false;st.innerHTML=`<div class="cls"><h2>${S.cls?'전직 · 직업을 바꿉니다':'직업을 고르세요'}</h2><p class="mini">${S.cls?'전직 주문서 1장을 씁니다. 레벨과 장비는 그대로예요.':'새 캐릭터의 직업을 골라요. 다른 직업은 캐릭터를 하나 더 만들어 키우면 돼요.'}</p><div class="clg">${CLASSES.map(c=>['M','F'].map(sx=>`<button data-k="${c.k}" data-sx="${sx}"${S.cls&&S.cls.k===c.k&&S.cls.sx===sx?' class="on"':''}>${chArt(c.k,sx)?`<img class="clsill" src="${chArt(c.k,sx)}" alt="">`:spr(charIdx(c.k,sx),64)}<b>${c.k} ${sx==='M'?'남':'여'}</b><small>${c.d}</small><small class="csk">${(SKD[c.k]||[]).slice(0,1).map(x=>'시작 스킬 「'+x[0]+'」').join('')}</small></button>`).join('')).join('')}</div>${S.cls?'<button class="btn" id="clsX" style="margin-top:10px;width:100%">취소</button>':''}</div>`;
  st.onclick=e=>{if(e.target.id==='clsX'){st.onclick=null;st.hidden=true;st.innerHTML='';return}const b=e.target.closest('[data-k]');if(!b)return;const was=S.cls;if(was&&was.k===b.dataset.k&&was.sx===b.dataset.sx)return;if(was)S.cc--;S.cls={k:b.dataset.k,sx:b.dataset.sx};if(!was)liveSend('born');st.onclick=null;st.hidden=true;st.innerHTML='';if(was)announce(`<span style="color:#7dff9a">✦ ${was.k}에서 ${S.cls.k}(으)로 전직했습니다</span>`);save();render();ac()}}
 function dailyEvent(){const d=kday();if(S.day===d)return;const first=!S.day;S.day=d;save()}
 
@@ -4623,7 +4634,7 @@ function alTable(L){if(L.length<1)return null;const C9=ALC[alCond(L)];const rows
 const alGrades=T=>T.cond.g.map((p,i)=>[i+2,p/100]).filter(x=>x[1]>0);
 function alMats(){const L=[];for(const x of[...S.wpn,...S.arms]){if(isEqU(x.u)||isOther(x.u))continue;const c=C(x.id);if(!c||c.acc||c.g<2||c.g>4)continue;L.push({src:'eq',u:x.u,id:x.id,e:x.e,ty:c.ty})}return L}/* 연금석은 연금 재료가 아님 (리니지M: 제작·변신 제작·컬렉션 전용) */
 function alPop(title,html){const sc=document.querySelector('.lalch2');if(!sc)return;const o=sc.querySelector('.alpop');if(o)o.remove();sc.insertAdjacentHTML('beforeend',`<div class="alpop"><div class="alpw"><div class="alph"><b>${title}</b><button data-alpx="1">✕</button></div><div class="alpb">${html}</div><button class="alpok" data-alpx="1">확인</button></div></div>`)}
-let BGALCH=true,ORBOK=false,ALLOOP=[],ALDARK=false;for(let k=1;k<=8;k++){const i=new Image();i.onload=()=>{ALLOOP[k-1]=i.src};i.src=`art/BG_alchemy_pose_loop_${k}.webp`}{const i=new Image();i.onload=()=>{ALDARK=true};i.src='art/AL_al_orb_dark.webp'}
+let BGALCH=true,ORBOK=false,ALLOOP=[],ALDARK=false;for(let k=1;k<=8;k++){const i=new Image();i.onload=()=>{ALLOOP[k-1]=i.src};i.src=`art/AL_pose_loop_${k}.webp`}{const i=new Image();i.onload=()=>{ALDARK=true};i.src='art/AL_al_orb_dark.webp'}
 /* 연금술사 움직임: 8프레임이 있으면 루프, 없으면 대기↔손 뻗기 천천히 오가기 */
 function alAnim(){const sc=document.querySelector('.lalch2');if(!sc){clearInterval(window.__alA);window.__alA=0;return}const L=ALLOOP.filter(Boolean);const p0=sc.querySelector('.alpose .p0');
  if(L.length>=4){window.__alF=((window.__alF||0)+1)%L.length;if(p0&&!sc.dataset.pose)p0.style.backgroundImage=`url(${L[window.__alF]})`;return}
