@@ -1504,6 +1504,8 @@ html.land .svhud{flex-direction:column;align-items:center;gap:0}
 .alpok{align-self:center;margin:calc(var(--vh)*1.5) 0 calc(var(--vh)*2);padding:calc(var(--vh)*1.2) calc(var(--vh)*8);border:1px solid #6a8ac8;background:linear-gradient(#2c4a7e,#16284a);color:#fff;font-size:calc(var(--vh)*2.8)}
 .alsl2 .alst{width:88%!important;height:88%!important}.alcf2{top:82%}
 .alflash{position:absolute;inset:0;background:radial-gradient(circle at 46% 52%,#fff,#fff6d0 40%,rgba(255,230,160,.6));animation:alfx .9s ease-out forwards;pointer-events:none;z-index:3}@keyframes alfx{0%{opacity:0}15%{opacity:1}100%{opacity:0}}
+.lalch2.rv{background:url(art/BG_alchemy_pose_reach.webp) center/cover no-repeat,url(art/BG_alchemy.webp) center/cover no-repeat,radial-gradient(ellipse 30% 40% at 46% 52%,rgba(255,170,60,.22),transparent 70%),linear-gradient(90deg,#0d0905,#1f160c 40%,#1a120a 70%,#0b0805)}
+.alst img{width:100%;height:100%;object-fit:contain}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -4412,7 +4414,7 @@ function mkMine(){const L=[];for(const x of[...S.wpn,...S.arms]){if(isEqU(x.u)||
  for(const[g,n]of ALST)if((S.alst||{})[g])L.push({src:'alst',g,n,cnt:S.alst[g],val:mkVal({kind:'alst',g}),c:null});return L.sort((a,b)=>b.val-a.val).slice(0,160)}
 function mkWin(){const st=$('stage');mkState();st.hidden=false;st.classList.remove('sidel','sider','dockl','dockr');
  const dia=()=>CASH==null?'…':fmt(CASH);
- const icoOf=(k,e,px)=>k.c?cardIco(k.c,px):k.kind==='book'?`<span class="mkbk">${skArt(k.sk)}</span>`:`<span class="mkic">${k.kind==='alst'?ico('elx'):ico('scroll')}</span>`;
+ const icoOf=(k,e,px)=>k.c?cardIco(k.c,px):k.kind==='book'?`<span class="mkbk">${skArt(k.sk)}</span>`:k.kind==='alst'?alstIco(k.g):`<span class="mkic">${ico('scroll')}</span>`;
  const draw=()=>{const m=mkState();let body='';
   if(MKT==='search'){const kinds=mkKindsC().filter(k=>(MKC==='all'||k.cat===MKC)&&(!MKQ||mkName(k).includes(MKQ))).map(k=>[k,mkListings(k).length]).sort((a,b)=>(!!b[1])-(!!a[1])).map(x=>x[0]);
    let mid='';if(MKL){const L=mkListings(MKL);mid=`<div class="mkh"><button class="mkback" data-mkback="1">‹ 목록</button><b>${mkName(MKL)}</b><span>판매 ${L.length}건</span></div><div class="mkrows">${L.map(x=>`<button class="mkrow${MKSEL&&MKSEL.id===x.id?' on':''}" data-mkl="${x.id}" style="--gc:${G[mkG(x.k)].c}"><i>${icoOf(x.k,x.e,34)}</i><b>${mkName(x.k,x.e)}${x.qty>1?' ×'+x.qty:''}</b><small>${x.k.c?clsOfW(x.k.c):''}</small><em>${x.left>=24?Math.floor(x.left/24)+'일 '+(x.left%24)+'시간':x.left+'시간'}</em><u>${ico('dia')}${fmt(x.p)}</u></button>`).join('')||'<p class="mini" style="padding:14px">지금은 올라온 물건이 없어요</p>'}</div>`}
@@ -4450,6 +4452,8 @@ function mkWin(){const st=$('stage');mkState();st.hidden=false;st.classList.remo
    장비 3~5개를 오망성에 올리고 20만 아데나 → 수정구 색으로 등급이 보이고 결과 아이템. 결과의 절반쯤은 연금석.
    확률은 인벤 '질서 연금 확률(영웅템+파템2)' 표 기준. */
 let ALM=[],ALTAB='all';
+/* 연금석 아이콘: 그림이 오면 IC_alst_N.webp, 없으면 임시 플라스크 */
+const alstIco=g=>`<span class="alst g${g}"><img src="art/IC_alst_${g}.webp" onerror="this.replaceWith(Object.assign(document.createElement('i'),{innerHTML:ico('elx')}))" alt=""></span>`;
 const alWho=x=>x.src==='alst'?{g:x.g,e:0}:{g:C(x.id).g,e:x.e||0};
 function alTable(L){if(!L.length)return null;const top=L.map(alWho).sort((a,b)=>b.g-a.g||b.e-a.e)[0];let p,gs;
  if(top.g>=4){gs=[3,4,5];p=[.55,.42,.03]}else if(top.g===3){gs=[2,3,4];p=top.e>=5?[.2132,.6768,.11]:top.e===4?[.3468,.5932,.06]:top.e===3?[.448,.512,.04]:[.5742,.4108,.02]}else{gs=[1,2,3];p=[.15,.75,.10]}
@@ -4459,7 +4463,7 @@ function alPop(title,html){const sc=document.querySelector('.lalch2');if(!sc)ret
 const BGALCH=typeof ARTS!=='undefined'&&false;
 const alSeal=()=>`<svg class="alsealsvg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1"/><polygon points="50,12 61,40 90,40 66,58 75,87 50,69 25,87 34,58 10,40 39,40" fill="none" stroke="currentColor" stroke-width="2"/></svg>`;
 function alWin(){const st=$('stage');st.hidden=false;st.classList.remove('sidel','sider','dockl','dockr');st.classList.add('alfull');new MutationObserver((m,ob)=>{if(st.hidden||!st.querySelector('.lalch2')){st.classList.remove('alfull');ob.disconnect()}}).observe(st,{childList:true,attributes:true,attributeFilter:['hidden']});ALM=ALM.filter(a=>a.src==='alst'||[...S.wpn,...S.arms].some(w=>w.u===a.u));
- const icoM=(x,px)=>x.src==='alst'?`<span class="alst g${x.g}">${ico('elx')}</span>`:cardIco(C(x.id),px);const nmM=x=>x.src==='alst'?x.n:(x.e?'+'+x.e+' ':'')+C(x.id).n;
+ const icoM=(x,px)=>x.src==='alst'?alstIco(x.g):cardIco(C(x.id),px);const nmM=x=>x.src==='alst'?x.n:(x.e?'+'+x.e+' ':'')+C(x.id).n;
  const draw=()=>{const mats=alMats().filter(x=>!ALM.some(a=>a.src==='eq'&&a.u===x.u)).filter(x=>ALTAB==='all'||(ALTAB==='a'&&x.ty==='a')||(ALTAB==='w'&&x.ty==='w')||(ALTAB==='etc'&&x.ty==='etc'));const T=alTable(ALM);
   const nAll=alMats().length;st.innerHTML=`<div class="lalch2${BGALCH?' hasbg':''}"><div class="alscene"><div class="alorb2${ALM.length?' lit':''}"><i></i></div></div>
    <div class="altitle">${alSeal()}<b>질서의 연금</b><button class="alx" id="pkX">✕</button></div>
@@ -4487,6 +4491,6 @@ function alWin(){const st=$('stage');st.hidden=false;st.classList.remove('sidel'
 function alReveal(res,g){return new Promise(done=>{const st=$('stage');const sc=st.querySelector('.lalch2');if(sc)sc.classList.add('rv');const o=document.createElement('div');o.className='alrv2';o.innerHTML=`<p class="altop"></p><div class="alcyc2"></div><b class="alnm2"></b><p class="altap2">화면 중앙을 터치해 주세요.</p><button class="alcf2" hidden>확인</button>`;(sc||st).appendChild(o);
   const cyc=o.querySelector('.alcyc2'),orb=(sc||st).querySelector('.alorb2');if(orb)orb.classList.add('lit','spin');const pool=CARDS.filter(c=>(c.ty==='w'||c.ty==='a')&&!c.acc&&c.g>=2&&c.g<=5);let started=false;
   o.onclick=()=>{if(started)return;started=true;o.querySelector('.altap2').textContent='';{const fl=document.createElement('div');fl.className='alflash';o.appendChild(fl);setTimeout(()=>fl.remove(),900)}sfx.rare&&sfx.rare(2);let n=0;const step=()=>{const c=pool[Math.floor(Math.random()*pool.length)];cyc.innerHTML=cardIco(c,56);cyc.style.setProperty('--gc',G[c.g].c);n++;if(n===10&&orb){orb.style.setProperty('--oc',G[g].c);orb.classList.add('grade')}
-    if(n>=24){cyc.innerHTML=res.c?cardIco(res.c,60):`<span class="alst big g${res.alst}">${ico('elx')}</span>`;cyc.style.setProperty('--gc',G[g].c);cyc.classList.add('fin');o.querySelector('.altop').textContent='연금술에 성공하였습니다.';const nm=o.querySelector('.alnm2');nm.textContent=res.n;nm.style.color=G[g].c;const b=o.querySelector('.alcf2');b.hidden=false;if(g>=4){flash();sfx.legend&&sfx.legend()}else sfx.up&&sfx.up(2);b.onclick=ev=>{ev.stopPropagation();o.remove();if(sc)sc.classList.remove('rv');done()};return}
+    if(n>=24){cyc.innerHTML=res.c?cardIco(res.c,60):alstIco(res.alst);cyc.style.setProperty('--gc',G[g].c);cyc.classList.add('fin');o.querySelector('.altop').textContent='연금술에 성공하였습니다.';const nm=o.querySelector('.alnm2');nm.textContent=res.n;nm.style.color=G[g].c;const b=o.querySelector('.alcf2');b.hidden=false;if(g>=4){flash();sfx.legend&&sfx.legend()}else sfx.up&&sfx.up(2);b.onclick=ev=>{ev.stopPropagation();o.remove();if(sc)sc.classList.remove('rv');done()};return}
     setTimeout(step,n<12?80:n<20?140:240)};step()}})}
 </script><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{})</script></body></html>
