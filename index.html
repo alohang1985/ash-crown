@@ -1443,6 +1443,66 @@ html.land .svhud{flex-direction:column;align-items:center;gap:0}
 .albt .lbtn .svi,.albt .lbtn img{width:13px;height:13px;vertical-align:-2px}
 .lalch .algrid{grid-auto-rows:46px!important}.lalch .algrid button{height:100%!important;width:100%}
 .lalch .algrid button img,.lalch .algrid button .svi{max-width:90%;max-height:90%}
+/* ===== 질서의 연금 (리니지M 화면 배치 그대로: 전체 화면 장면) ===== */
+.stage.alfull{background:#000!important;padding:0!important;display:block!important}
+.lalch2{position:absolute;inset:0;overflow:hidden;color:#eadfc8;font-family:'Noto Sans KR',sans-serif;
+ background:url(art/BG_alchemy.webp) center/cover no-repeat,radial-gradient(ellipse 30% 40% at 46% 52%,rgba(255,170,60,.22),transparent 70%),radial-gradient(ellipse 22% 45% at 62% 40%,rgba(255,225,170,.08),transparent 70%),linear-gradient(90deg,#0d0905,#1f160c 40%,#1a120a 70%,#0b0805)}
+.lalch2::before{content:'';position:absolute;left:30%;right:28%;top:52%;height:22%;background:linear-gradient(#3a2412,#1e130a);clip-path:polygon(4% 30%,96% 30%,100% 100%,0 100%);opacity:.9}
+.lalch2.hasbg::before{display:none}
+.alscene{position:absolute;inset:0;pointer-events:none}
+.alorb2{position:absolute;left:39.5%;top:40%;width:12.5%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 32%,rgba(255,255,255,.55),rgba(255,230,170,.15) 35%,rgba(60,40,20,.35) 70%,rgba(0,0,0,.5));box-shadow:inset 0 0 18px rgba(255,220,150,.25),0 0 0 1px rgba(255,220,150,.25)}
+.alorb2::after{content:'';position:absolute;left:28%;right:28%;bottom:-24%;height:26%;background:linear-gradient(#e0b04a,#7a5212);clip-path:polygon(20% 0,80% 0,100% 60%,90% 100%,10% 100%,0 60%);box-shadow:0 0 6px #000}
+.alorb2.lit{background:radial-gradient(circle at 38% 32%,#fffbe0,#ffd36a 28%,#d68a14 60%,#6a3a06);box-shadow:0 0 30px rgba(255,180,60,.8),0 0 80px rgba(255,130,20,.45)}
+.alorb2.lit i{position:absolute;inset:-35%;border-radius:50%;background:conic-gradient(from 0deg,transparent,rgba(255,160,40,.35),transparent 30%,rgba(255,200,80,.3),transparent 60%,rgba(255,140,30,.35),transparent);filter:blur(6px);animation:alfl 3s linear infinite}
+@keyframes alfl{to{transform:rotate(360deg)}}
+.alorb2.grade{background:radial-gradient(circle at 45% 42%,#fff,var(--oc) 32%,#100010 95%)!important;box-shadow:0 0 40px var(--oc),0 0 110px var(--oc)!important}.alorb2.grade i{display:none}
+.alorb2.spin{animation:alsp 1.4s ease-in-out infinite}
+.altitle{position:absolute;right:1.5%;top:2.5%;display:flex;align-items:center;gap:8px}.altitle b{font-size:calc(var(--vh)*3.9);font-weight:700;color:#f0e6cc;text-shadow:0 1px 3px #000}
+.alsealsvg{color:#d8c8a0;width:calc(var(--vh)*4);height:calc(var(--vh)*4)}
+.alx{margin-left:calc(var(--vh)*3);width:calc(var(--vh)*6.4);height:calc(var(--vh)*6.4);border:1px solid #c9a24a;background:linear-gradient(#5a2a1a,#2a120a);color:#fff;font-size:calc(var(--vh)*3.4);display:grid;place-items:center;padding:0}
+.alparch{position:absolute;left:2%;top:14%;width:27%;height:64%;background:radial-gradient(ellipse at 50% 50%,#b48a52,#7a5428 70%,#4a321a);border-radius:2px 18px 2px 2px;box-shadow:0 0 0 1px #2a1a0a,0 6px 20px #000,inset 0 0 30px rgba(40,20,0,.6)}
+.alparch::after{content:'';position:absolute;right:-1px;top:-1px;width:16%;height:12%;background:linear-gradient(225deg,#1a120a 48%,#d0a870 52%,#8a6230);border-radius:0 18px 0 0}
+.alseal{position:absolute;left:12%;top:12%;width:76%;aspect-ratio:1;color:rgba(255,236,190,.55);filter:drop-shadow(0 0 6px rgba(255,220,140,.4))}.alseal .alsealsvg{width:100%;height:100%}
+.alsl2{position:absolute;width:24%;aspect-ratio:1;background:#060402;border:1px solid #2a1a0a;box-shadow:inset 0 0 10px #000;padding:0;display:grid;place-items:center;overflow:visible}
+.alsl2.on{background:#120c06;border-color:#ffcf6a;box-shadow:0 0 0 2px rgba(255,190,80,.5),0 0 18px rgba(255,170,50,.9)}
+.alsl2 img,.alsl2 .svi{width:88%;height:88%}.alsl2 em{position:absolute;right:3px;bottom:1px;font-style:normal;font-size:calc(var(--vh)*2.4);font-weight:900;color:#fff;text-shadow:0 0 3px #000}
+.alsl2.s0{left:38%;top:9%}.alsl2.s1{left:4%;top:37%}.alsl2.s2{left:72%;top:37%}.alsl2.s3{left:15%;top:68%}.alsl2.s4{left:61%;top:68%}
+.albt2{position:absolute;left:9%;top:73%;width:14%;display:flex;flex-direction:column;gap:calc(var(--vh)*4)}
+.albt2 button{display:flex;align-items:center;gap:6px;justify-content:center;padding:calc(var(--vh)*1.2) 8px;background:linear-gradient(rgba(30,22,14,.92),rgba(14,10,6,.92));border:1px solid #4a3a20;color:#e8dcc0;font-size:calc(var(--vh)*2.6)}
+.albt2 .svi,.albt2 img{width:calc(var(--vh)*3.4);height:calc(var(--vh)*3.4)}
+.almat2{position:absolute;left:71%;top:13%;width:26%;bottom:15%;display:flex;flex-direction:column}
+.alh2{text-align:center;font-size:calc(var(--vh)*2.7);color:#a89878;letter-spacing:2px;padding-bottom:4px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.6),transparent)}
+.altab2{display:flex;align-items:center;justify-content:space-around;padding:4px 0;background:rgba(0,0,0,.6)}.altab2 span{color:#4a3a20}
+.altab2 button{background:none;border:0;color:#8a7a5a;font-size:calc(var(--vh)*2.4);padding:2px 6px;display:grid;place-items:center}.altab2 button.on{color:#f0e0b0;filter:drop-shadow(0 0 4px rgba(255,220,150,.6))}
+.altab2 .svi,.altab2 img{width:calc(var(--vh)*3.4);height:calc(var(--vh)*3.4)}.altab2 i.g4{display:block;width:calc(var(--vh)*2.6);height:calc(var(--vh)*2.6);background:conic-gradient(currentColor 0 25%,transparent 0 50%,currentColor 0 75%,transparent 0) 0 0/50% 50%;border:1px solid currentColor}
+.algrid2{flex:1;overflow:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--vh)*1.6);padding:calc(var(--vh)*1.6);background:rgba(0,0,0,.55);align-content:start}
+.algrid2>*{aspect-ratio:1;background:rgba(10,8,6,.85);border:1px solid #2a2218}
+.algrid2 button{position:relative;padding:0;border-color:var(--gc);display:grid;place-items:center;overflow:hidden}.algrid2 img,.algrid2 .svi{width:90%;height:90%}
+.algrid2 em{position:absolute;right:2px;bottom:0;font-style:normal;font-size:calc(var(--vh)*2.3);font-weight:900;color:#9fd0ff;text-shadow:0 0 2px #000}
+.almat2 small{text-align:right;font-size:calc(var(--vh)*2.4);color:#c8bca0;padding-top:4px}
+.algo2{position:absolute;left:38.5%;top:80%;width:23%;height:8.5%;display:flex;align-items:center;justify-content:center;gap:calc(var(--vh)*2);border:1px solid #6a8ac8;background:linear-gradient(#2c4a7e,#16284a);box-shadow:0 0 0 1px #0a1428,0 4px 12px #000;color:#fff;font-size:calc(var(--vh)*3)}
+.algo2 i .svi,.algo2 i img{width:calc(var(--vh)*3.6);height:calc(var(--vh)*3.6);vertical-align:-4px}.algo2 b{color:#ffe9a8}.algo2:disabled{filter:grayscale(.6) brightness(.7)}
+.alhint{position:absolute;left:38.5%;width:23%;top:74%;text-align:center;font-size:calc(var(--vh)*2.4);color:#c8bca0;margin:0;text-shadow:0 1px 2px #000}
+.lalch2.rv>*:not(.alscene):not(.alrv2):not(.altitle){display:none}
+.alrv2{position:absolute;inset:0;cursor:pointer}
+.altop{position:absolute;left:30%;right:30%;top:12%;margin:0;text-align:center;font-size:calc(var(--vh)*3);color:#efe4c8;background:linear-gradient(90deg,transparent,rgba(0,0,0,.7),transparent)}
+.altop:empty{display:none}
+.alcyc2{position:absolute;left:41.8%;top:18%;width:8%;aspect-ratio:1;display:grid;place-items:center;background:#0a0806;border:1px solid var(--gc,#6b5228);box-shadow:0 0 12px var(--gc,transparent)}
+.alcyc2:empty{display:none}.alcyc2 img,.alcyc2 .svi{width:90%;height:90%}.alcyc2.fin{box-shadow:0 0 20px var(--gc),0 0 40px var(--gc)}
+.alnm2{position:absolute;left:30%;right:30%;top:34%;text-align:center;font-size:calc(var(--vh)*3);text-shadow:0 1px 3px #000}
+.altap2{position:absolute;left:0;right:0;top:72%;text-align:center;margin:0;color:#efe4c8;font-size:calc(var(--vh)*2.8);text-shadow:0 1px 3px #000}
+.alcf2{position:absolute;left:43%;width:14%;top:70%;height:7%;border:1px solid #6a8ac8;background:linear-gradient(#2c4a7e,#16284a);color:#fff;font-size:calc(var(--vh)*2.8)}
+.algrid2{grid-auto-rows:calc(var(--vh)*8.2)}.algrid2>*{aspect-ratio:auto!important;height:100%!important;width:100%}
+.algo2.dim{filter:brightness(.75)}
+.alpop{position:absolute;inset:0;background:rgba(0,0,0,.55);display:grid;place-items:center;z-index:10}
+.alpw{width:min(62%,calc(var(--vh)*110));max-height:84%;display:flex;flex-direction:column;background:linear-gradient(#1f170d,#0d0905);border:1px solid #8a6a2c;box-shadow:0 0 0 1px #000,0 0 0 3px #2a1f10,0 12px 40px #000}
+.alph{display:flex;align-items:center;justify-content:center;position:relative;padding:calc(var(--vh)*2);border-bottom:1px solid #3a2c18}.alph b{color:#ffe2a0;font-size:calc(var(--vh)*3.2)}
+.alph button{position:absolute;right:8px;background:none;border:0;color:#cdbd9a;font-size:calc(var(--vh)*3.2)}
+.alpb{overflow:auto;padding:calc(var(--vh)*2) calc(var(--vh)*3);font-size:calc(var(--vh)*2.6);line-height:1.6;color:#e0d4b8}.alpb p{margin:6px 0}
+.altb{width:100%;border-collapse:collapse;margin:4px 0 8px}.altb th,.altb td{border:1px solid #3a2c18;padding:calc(var(--vh)*.9) 6px;text-align:center}.altb th{background:#1a130a;color:#c9a24a;font-weight:500}.altb td:first-child{color:#e8dcc0}
+.alnow{color:#9fd0ff;margin:0 0 4px!important}
+.alpok{align-self:center;margin:calc(var(--vh)*1.5) 0 calc(var(--vh)*2);padding:calc(var(--vh)*1.2) calc(var(--vh)*8);border:1px solid #6a8ac8;background:linear-gradient(#2c4a7e,#16284a);color:#fff;font-size:calc(var(--vh)*2.8)}
+.alsl2 .alst{width:88%!important;height:88%!important}.alcf2{top:82%}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -4394,29 +4454,38 @@ function alTable(L){if(!L.length)return null;const top=L.map(alWho).sort((a,b)=>
  if(top.g>=4){gs=[3,4,5];p=[.55,.42,.03]}else if(top.g===3){gs=[2,3,4];p=top.e>=5?[.2132,.6768,.11]:top.e===4?[.3468,.5932,.06]:top.e===3?[.448,.512,.04]:[.5742,.4108,.02]}else{gs=[1,2,3];p=[.15,.75,.10]}
  const extra=Math.max(0,L.length-3)*.02;p=[Math.max(0,p[0]-extra),p[1],p[2]+extra];return{gs,p}}
 function alMats(){const L=[];for(const x of[...S.wpn,...S.arms]){if(isEqU(x.u)||isOther(x.u))continue;const c=C(x.id);if(!c||c.acc||c.g<2||c.g>4)continue;L.push({src:'eq',u:x.u,id:x.id,e:x.e,ty:c.ty})}for(const[g,n]of ALST){const have=(S.alst||{})[g]||0,used=ALM.filter(a=>a.src==='alst'&&a.g===g).length;for(let i=0;i<have-used;i++)L.push({src:'alst',g,n,ty:'etc',k:'al'+g+'_'+i})}return L}
-function alWin(){const st=$('stage');st.hidden=false;st.classList.remove('sidel','sider','dockl','dockr');ALM=ALM.filter(a=>a.src==='alst'||[...S.wpn,...S.arms].some(w=>w.u===a.u));
+function alPop(title,html){const sc=document.querySelector('.lalch2');if(!sc)return;const o=sc.querySelector('.alpop');if(o)o.remove();sc.insertAdjacentHTML('beforeend',`<div class="alpop"><div class="alpw"><div class="alph"><b>${title}</b><button data-alpx="1">✕</button></div><div class="alpb">${html}</div><button class="alpok" data-alpx="1">확인</button></div></div>`)}
+const BGALCH=typeof ARTS!=='undefined'&&false;
+const alSeal=()=>`<svg class="alsealsvg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1"/><polygon points="50,12 61,40 90,40 66,58 75,87 50,69 25,87 34,58 10,40 39,40" fill="none" stroke="currentColor" stroke-width="2"/></svg>`;
+function alWin(){const st=$('stage');st.hidden=false;st.classList.remove('sidel','sider','dockl','dockr');st.classList.add('alfull');new MutationObserver((m,ob)=>{if(st.hidden||!st.querySelector('.lalch2')){st.classList.remove('alfull');ob.disconnect()}}).observe(st,{childList:true,attributes:true,attributeFilter:['hidden']});ALM=ALM.filter(a=>a.src==='alst'||[...S.wpn,...S.arms].some(w=>w.u===a.u));
  const icoM=(x,px)=>x.src==='alst'?`<span class="alst g${x.g}">${ico('elx')}</span>`:cardIco(C(x.id),px);const nmM=x=>x.src==='alst'?x.n:(x.e?'+'+x.e+' ':'')+C(x.id).n;
  const draw=()=>{const mats=alMats().filter(x=>!ALM.some(a=>a.src==='eq'&&a.u===x.u)).filter(x=>ALTAB==='all'||(ALTAB==='a'&&x.ty==='a')||(ALTAB==='w'&&x.ty==='w')||(ALTAB==='etc'&&x.ty==='etc'));const T=alTable(ALM);
-  st.innerHTML=`<div class="mwin lalch"><div class="mwh"><b>${ico('star')} 질서의 연금</b><button class="mwx" id="pkX">✕</button></div><div class="alb">
-   <div class="alpent">${[0,1,2,3,4].map(i=>{const a=ALM[i];return`<button class="alsl s${i}${a?' on':''}" data-alr="${i}">${a?icoM(a,40)+(a.e?`<em>+${a.e}</em>`:''):''}</button>`}).join('')}<svg class="alstar" viewBox="0 0 100 100"><polygon points="50,6 61,38 95,38 67,58 78,91 50,71 22,91 33,58 5,38 39,38" fill="none" stroke="rgba(255,210,120,.35)" stroke-width="1.2"/><circle cx="50" cy="52" r="44" fill="none" stroke="rgba(255,210,120,.25)"/></svg>
-    <div class="albt"><button class="lbtn" data-alinfo="1">${ico('quest')} 연금 재료 목록</button><button class="lbtn" data-alrate="1">${ico('star')} 성공 확률</button></div></div>
-   <div class="alstage"><div class="alsage"></div><div class="alorb${ALM.length?' lit':''}"></div><p class="mini">${ALM.length<3?`재료를 ${3-ALM.length}개 더 올려 주세요 (3~5개)`:'연금을 시작할 수 있어요'}</p><button class="lbtn blue alst-go" data-algo="1" ${ALM.length<3||S.gold<200000?'disabled':''}>${ico('gold')} 200,000 &nbsp;연금 시작</button></div>
-   <div class="almat"><div class="alh">연금 재료</div><div class="altab">${[['all','전체'],['a','방어구'],['w','무기'],['etc','ETC']].map(([k,n])=>`<button class="${ALTAB===k?'on':''}" data-alt="${k}">${n}</button>`).join('')}</div><div class="algrid">${mats.slice(0,60).map(x=>`<button data-alm="${x.src==='eq'?'u'+x.u:x.k}" style="--gc:${G[alWho(x).g].c}" title="${nmM(x)}">${icoM(x,36)}${x.e?`<em>+${x.e}</em>`:''}</button>`).join('')||'<p class="mini">희귀~전설 장비나 연금석이 필요해요 · 거래소에서 살 수 있어요</p>'}</div><small>${alMats().length}개</small></div></div></div>`};
+  const nAll=alMats().length;st.innerHTML=`<div class="lalch2${BGALCH?' hasbg':''}"><div class="alscene"><div class="alorb2${ALM.length?' lit':''}"><i></i></div></div>
+   <div class="altitle">${alSeal()}<b>질서의 연금</b><button class="alx" id="pkX">✕</button></div>
+   <div class="alparch"><div class="alseal">${alSeal()}</div>${[0,1,2,3,4].map(i=>{const a=ALM[i];return`<button class="alsl2 s${i}${a?' on':''}" data-alr="${i}">${a?icoM(a,44)+(a.e?`<em>+${a.e}</em>`:''):''}</button>`}).join('')}</div>
+   <div class="albt2"><button data-alinfo="1">${ico('quest')}<span>연금 재료 목록</span></button><button data-alrate="1">${ico('star')}<span>성공 확률</span></button></div>
+   <div class="almat2"><div class="alh2">연금 재료</div><div class="altab2">${[['all','▦'],['a','🛡'],['w','⚔'],['etc','ETC']].map(([k,n])=>`<button class="${ALTAB===k?'on':''}" data-alt="${k}">${k==='all'?'<i class="g4"></i>':k==='a'?ico('helm'):k==='w'?ico('atk'):'ETC'}</button>`).join('<span>|</span>')}</div>
+    <div class="algrid2">${Array.from({length:Math.max(20,Math.ceil(mats.length/4)*4)},(_,i)=>{const x=mats[i];return x?`<button data-alm="${x.src==='eq'?'u'+x.u:x.k}" style="--gc:${G[alWho(x).g].c}" title="${nmM(x)}">${icoM(x,40)}${x.e?`<em>+${x.e}</em>`:''}</button>`:'<span></span>'}).join('')}</div><small>${ALM.length}/${nAll}</small></div>
+   <button class="algo2${ALM.length<3?' dim':''}" data-algo="1"><i>${ico('gold')}</i><b>200,000</b><span>연금 시작</span></button>
+   ${ALM.length<3?`<p class="alhint">재료를 ${3-ALM.length}개 더 올려 주세요</p>`:''}</div>`};
  draw();let busy=false;
  st.onclick=async e=>{const t=e.target;if(busy)return;if(t.closest('#pkX')||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}let b;
   if(b=t.closest('[data-alt]')){ALTAB=b.dataset.alt;draw();return}
   if(b=t.closest('[data-alr]')){const i=+b.dataset.alr;if(ALM[i]){ALM.splice(i,1);draw()}return}
   if(b=t.closest('[data-alm]')){if(ALM.length>=5){announce('재료는 5개까지 올릴 수 있어요');return}const k=b.dataset.alm;const x=alMats().find(x=>(x.src==='eq'?'u'+x.u:x.k)===k);if(x){ALM.push(x);draw()}return}
-  if(t.closest('[data-alinfo]')){announce('연금 재료: 희귀·영웅·전설 무기/방어구 (착용 중·장신구 제외) 또는 연금석 · 3~5개 · 가장 좋은 재료가 결과를 정해요');return}
-  if(t.closest('[data-alrate]')){const T=alTable(ALM);if(!T){announce('재료를 올리면 확률이 보여요');return}announce(`성공 확률 · ${T.gs.map((g,i)=>`<span style="color:${G[g].c}">${G[g].ko} ${(T.p[i]*100).toFixed(2)}%</span>`).join(' · ')} <small>(각 등급의 약 절반은 연금석)</small>`);return}
-  if(t.closest('[data-algo]')){if(ALM.length<3)return;if(S.gold<200000){announce('아데나가 부족해요');return}const T=alTable(ALM);busy=true;S.gold-=200000;
+  if(t.closest('[data-alpx]')){const p=st.querySelector('.alpop');if(p)p.remove();return}if(t.closest('.alpop'))return;
+  if(t.closest('[data-alinfo]')){alPop('연금 재료 목록',`<table class="altb"><tr><th>재료</th><th>쓸 수 있는 것</th></tr><tr><td style="color:${G[2].c}">희귀</td><td>희귀 무기·방어구, 희귀 연금석</td></tr><tr><td style="color:${G[3].c}">영웅</td><td>영웅 무기·방어구 (강화할수록 좋아요), 영웅 연금석</td></tr><tr><td style="color:${G[4].c}">전설</td><td>전설 무기·방어구, 전설 연금석</td></tr></table><p>• 재료 <b>3~5개</b> · 비용 <b>200,000 아데나</b><br>• 착용 중인 장비와 장신구는 못 넣어요<br>• 가장 좋은 재료 1개가 결과 등급을 정하고, 4·5번째 재료는 높은 등급 확률을 조금 올려요<br>• 재료가 모자라면 <b>거래소</b>에서 사세요 (메뉴 → 거래소)</p>`);return}
+  if(t.closest('[data-alrate]')){const T=alTable(ALM);const row=(lb,p,gs)=>`<tr><td>${lb}</td>${gs.map((g,i)=>`<td style="color:${G[g].c}">${G[g].ko} ${(p[i]*100).toFixed(2)}%</td>`).join('')}</tr>`;
+   alPop('성공 확률',`${T?`<p class="alnow">지금 올린 재료 기준</p><table class="altb">${row('현재',T.p,T.gs)}</table>`:'<p class="alnow">재료를 올리면 지금 확률이 보여요</p>'}<table class="altb"><tr><th>가장 좋은 재료</th><th colspan=3>결과 등급 확률</th></tr>${row('영웅 +5 이상',[.2132,.6768,.11],[2,3,4])}${row('영웅 +4',[.3468,.5932,.06],[2,3,4])}${row('영웅 +3',[.448,.512,.04],[2,3,4])}${row('영웅 +0~2',[.5742,.4108,.02],[2,3,4])}${row('전설',[.55,.42,.03],[3,4,5])}${row('희귀',[.15,.75,.10],[1,2,3])}</table><p>• 각 등급 결과의 약 절반은 <b>연금석</b>이에요 (다시 연금 재료로 쓸 수 있어요)</p>`);return}
+  if(t.closest('[data-algo]')){if(ALM.length<3){alPop('연금 시작',`<p>재료가 <b>${3-ALM.length}개</b> 더 필요해요.<br>오른쪽 <b>연금 재료</b>에서 아이템을 눌러 오망성에 올려 주세요.</p>`);return}if(S.gold<200000){alPop('연금 시작','<p>아데나가 부족해요 (200,000 필요)</p>');return}const T=alTable(ALM);busy=true;S.gold-=200000;
    for(const a of ALM){if(a.src==='eq'){S.wpn=S.wpn.filter(w=>w.u!==a.u);S.arms=S.arms.filter(w=>w.u!==a.u)}else S.alst[a.g]--}ALM=[];
    let x=Math.random(),gi=0;for(;gi<2&&x>=T.p[gi];gi++)x-=T.p[gi];const g=T.gs[gi];let res;
    if(g<=4&&g>=2&&Math.random()<.5){res={alst:g,n:G[g].ko+' 연금석'};S.alst=S.alst||{};S.alst[g]=(S.alst[g]||0)+1}
    else{const pool=CARDS.filter(c=>(c.ty==='w'||c.ty==='a')&&!c.acc&&!c.off&&c.g===g);const mine=pool.filter(c=>c.ty!=='w'||classW(c));const c=(Math.random()<.5&&mine.length?mine:pool)[Math.floor(Math.random()*(Math.random()<.5&&mine.length?mine:pool).length)];res={c,n:c.n};(c.ty==='w'?S.wpn:S.arms).push({u:++S.uid,id:c.id,e:0})}
    save();headLite();await alReveal(res,g);busy=false;draw();return}}}
-function alReveal(res,g){return new Promise(done=>{const st=$('stage');const o=document.createElement('div');o.className='alrv';o.innerHTML=`<div class="alsage"></div><div class="alorb lit spin"></div><div class="alcyc"></div><p class="altap">화면 중앙을 터치해 주세요.</p>`;st.appendChild(o);
-  const cyc=o.querySelector('.alcyc'),orb=o.querySelector('.alorb');const pool=CARDS.filter(c=>(c.ty==='w'||c.ty==='a')&&!c.acc&&c.g>=2&&c.g<=5);let started=false;
-  o.onclick=()=>{if(started)return;started=true;o.querySelector('.altap').textContent='';sfx.rare&&sfx.rare(2);let n=0;const tm=setInterval(()=>{const c=pool[Math.floor(Math.random()*pool.length)];cyc.innerHTML=cardIco(c,56);n++;if(n===8)orb.style.setProperty('--oc',G[g].c),orb.classList.add('grade');if(n>=22){clearInterval(tm);cyc.innerHTML=res.c?cardIco(res.c,64):`<span class="alst big g${res.alst}">${ico('elx')}</span>`;
-    o.insertAdjacentHTML('beforeend',`<p class="alok">연금술에 성공하였습니다.</p><b class="alnm" style="color:${G[g].c}">${res.n}</b><button class="lbtn blue alcf">확인</button>`);if(g>=4){flash();sfx.legend&&sfx.legend()}else sfx.up&&sfx.up(2);o.querySelector('.alcf').onclick=ev=>{ev.stopPropagation();o.remove();done()}}},n<14?90:160)}})}
+function alReveal(res,g){return new Promise(done=>{const st=$('stage');const sc=st.querySelector('.lalch2');if(sc)sc.classList.add('rv');const o=document.createElement('div');o.className='alrv2';o.innerHTML=`<p class="altop"></p><div class="alcyc2"></div><b class="alnm2"></b><p class="altap2">화면 중앙을 터치해 주세요.</p><button class="alcf2" hidden>확인</button>`;(sc||st).appendChild(o);
+  const cyc=o.querySelector('.alcyc2'),orb=(sc||st).querySelector('.alorb2');if(orb)orb.classList.add('lit','spin');const pool=CARDS.filter(c=>(c.ty==='w'||c.ty==='a')&&!c.acc&&c.g>=2&&c.g<=5);let started=false;
+  o.onclick=()=>{if(started)return;started=true;o.querySelector('.altap2').textContent='';sfx.rare&&sfx.rare(2);let n=0;const step=()=>{const c=pool[Math.floor(Math.random()*pool.length)];cyc.innerHTML=cardIco(c,56);cyc.style.setProperty('--gc',G[c.g].c);n++;if(n===10&&orb){orb.style.setProperty('--oc',G[g].c);orb.classList.add('grade')}
+    if(n>=24){cyc.innerHTML=res.c?cardIco(res.c,60):`<span class="alst big g${res.alst}">${ico('elx')}</span>`;cyc.style.setProperty('--gc',G[g].c);cyc.classList.add('fin');o.querySelector('.altop').textContent='연금술에 성공하였습니다.';const nm=o.querySelector('.alnm2');nm.textContent=res.n;nm.style.color=G[g].c;const b=o.querySelector('.alcf2');b.hidden=false;if(g>=4){flash();sfx.legend&&sfx.legend()}else sfx.up&&sfx.up(2);b.onclick=ev=>{ev.stopPropagation();o.remove();if(sc)sc.classList.remove('rv');done()};return}
+    setTimeout(step,n<12?80:n<20?140:240)};step()}})}
 </script><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{})</script></body></html>
