@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15 13:45",
+ "updated": "2026-10-15 14:59",
  "source": "Gemini 웹(Pro) via OpenClaw 맥미니 — 원본 그대로(배경 #FF00FF 요청, 오른쪽 아래 Gemini 반짝이 워터마크 있음)",
  "assets": {
   "e_meteor": {
@@ -1574,6 +1574,274 @@
     "card": {
      "at": "10-15 13:45",
      "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "bg_alchemy": {
+   "sheets": {
+    "bg": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "pose_idle": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "pose_reach": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "pose_raise": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "i_alst": {
+   "sheets": {
+    "alst_2": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "alst_3": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "alst_4": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "i_menu": {
+   "sheets": {
+    "mn_bag": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_book": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_cal": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_castle": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_clan": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_clock": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_coin": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_craft": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_doll": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_elx": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_emblem": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_exit": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_fish": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_friend": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_gear": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_gem": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_guard": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_mail": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_mask": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_medal": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_potion": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_pvp": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_quest": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_rank": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_relic": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_shop": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_skill": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_skillup": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_star": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_stat": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_swords": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_ticket": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_totem": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_trophy": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    },
+    "mn_*": {
+     "at": "10-15 14:59",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "anim_eq": {
+   "sheets": {
+    "거인의 도끼": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "거인의 벨트": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "검객의 장갑": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "고대 용의 목걸이": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "그림자 장화": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "금룡 비늘 갑옷": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "대마법사의 지팡이": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "별빛 망토": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "성기사의 대검": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "성기사의 방패": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "수호자의 투구": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "신의 삼지창": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "심연의 귀걸이": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "심연의 지팡이": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "암살자의 단검": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "정령의 활": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "차원의 마력봉": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "태고의 검": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "파멸의 반지": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
+    },
+    "<item name>": {
+     "at": "10-15 14:59",
+     "by": "anim_eq.py"
     }
    },
    "complete": true
