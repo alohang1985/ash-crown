@@ -1707,6 +1707,14 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 @keyframes srrays{0%{opacity:0;transform:scale(.6)}20%{opacity:1}100%{opacity:0;transform:scale(1.4)}}
 .srv2s{position:absolute;left:4%;bottom:5%;font-size:calc(var(--vh)*2.6)}.srv2x{position:absolute;right:12%;bottom:4%;min-width:calc(var(--vh)*22);padding:calc(var(--vh)*1.4)}
 .srv2g{overflow-x:hidden;overflow-y:auto;scrollbar-width:none}.srv2g::-webkit-scrollbar{display:none}.srv2c{overflow:visible}
+.srv2bg{background:url(art/UI_synth_bg.webp) center/cover,radial-gradient(ellipse 60% 50% at 50% 45%,rgba(60,80,120,.35),transparent 70%),linear-gradient(#0e141f,#0a0d14 60%,#07090e)!important}
+.srf{background:url(art/UI_card_frame_0.webp) center/100% 100% no-repeat,linear-gradient(180deg,color-mix(in srgb,var(--gc) 25%,#0c1018),#0a0c12)}
+.srf.fg1{background-image:url(art/UI_card_frame_1.webp),linear-gradient(180deg,color-mix(in srgb,var(--gc) 25%,#0c1018),#0a0c12)}
+.srf.fg2{background-image:url(art/UI_card_frame_2.webp),linear-gradient(180deg,color-mix(in srgb,var(--gc) 25%,#0c1018),#0a0c12)}
+.srf.fg3{background-image:url(art/UI_card_frame_3.webp),linear-gradient(180deg,color-mix(in srgb,var(--gc) 25%,#0c1018),#0a0c12)}
+.srf.fg4{background-image:url(art/UI_card_frame_4.webp),linear-gradient(180deg,color-mix(in srgb,var(--gc) 25%,#0c1018),#0a0c12)}
+.srf.fg5{background-image:url(art/UI_card_frame_5.webp),linear-gradient(180deg,color-mix(in srgb,var(--gc) 25%,#0c1018),#0a0c12)}
+.srf.fg6{background-image:url(art/UI_card_frame_6.webp),linear-gradient(180deg,color-mix(in srgb,var(--gc) 25%,#0c1018),#0a0c12)}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -4032,7 +4040,7 @@ function boltSVG(){let d='M20 0',x=20;for(let y=24;y<=300;y+=24){x=20+(Math.rand
 /* 리니지M 합성 결과 (사용자 영상 2026-10-15): 「합성 결과」 · 우주 배경 · 카드 뒷면이 5장씩 줄지어 깔림 → 한 장씩 하얗게 번쩍이며 뒤집힘
    · 높은 등급은 큰 빛 폭발 · 실패(돌려받은 카드)는 회색 · 「모두 열기」로 한 번에 */
 async function synthReveal(L,title){const n=L.length;let skip=false;
- const face=x=>`<div class="srf ${x.ok?'':'fail'}" style="--gc:${G[x.c.g].c}"><div class="srfa">${cardIco(x.c,64)}</div><b>${x.c.n}</b>${x.dup?'':'<u>NEW</u>'}</div>`;
+ const face=x=>`<div class="srf fg${x.c.g} ${x.ok?'':'fail'}" style="--gc:${G[x.c.g].c}"><div class="srfa">${cardIco(x.c,64)}</div><b>${x.c.n}</b>${x.dup?'':'<u>NEW</u>'}</div>`;
  stageOn(`<div class="srv2"><div class="srv2bg"></div><div class="srv2h"><i></i><b>합성 결과</b><i></i></div><div class="srv2g${n>15?' many':''}">${L.map((x,i)=>`<div class="srv2c" id="sv${i}" style="--gc:${G[x.c.g].c}"><div class="srb"></div></div>`).join('')}</div><span class="srv2s" id="srvc"></span><button class="lbtn blue srv2x" id="srvX">모두 열기</button></div>`);
  const bt=$('srvX');bt.onclick=()=>{skip=true};await W(450);let ok=0;
  for(let i=0;i<n;i++){const x=L[i],el=$('sv'+i);if(!el)continue;if(x.ok)ok++;
