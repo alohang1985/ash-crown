@@ -4166,27 +4166,31 @@
   "t_hellking8": {
    "sheets": {
     "idle": {
-     "at": "10-15 21:05",
+     "at": "10-15 21:27",
      "by": "chatgpt-plus"
     },
     "walk": {
-     "at": "10-15 21:05",
+     "at": "10-15 21:27",
      "by": "chatgpt-plus"
     },
     "run": {
-     "at": "10-15 21:05",
+     "at": "10-15 21:27",
      "by": "chatgpt-plus"
     },
     "attack": {
-     "at": "10-15 21:05",
+     "at": "10-15 21:27",
      "by": "chatgpt-plus"
     },
     "skill": {
-     "at": "10-15 21:05",
+     "at": "10-15 21:27",
      "by": "chatgpt-plus"
     },
     "hurt": {
-     "at": "10-15 21:05",
+     "at": "10-15 21:27",
+     "by": "chatgpt-plus"
+    },
+    "death": {
+     "at": "10-15 21:27",
      "by": "chatgpt-plus"
     }
    },
