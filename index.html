@@ -2314,11 +2314,14 @@ function accMerge(x){let A=accGet();
   try{const w=JSON.parse(localStorage.getItem('ash.wh')||'null');if(w){A.gold+=w.gold||0;for(const it of(w.items||[])){const nu=++A.uid;(it.ty==='w'?A.wpn:A.arms).push({u:nu,id:it.id,e:it.e,b:it.b||undefined})}w.gold=0;w.items=[];localStorage.setItem('ash.wh',JSON.stringify(w))}}catch(_){}}
  if(x._fresh){const ea={};for(const[sl,f]of[['body','ring_mail_1_new'],['helm','cap_1'],['glove','glove_1_new'],['boot','low_boots'],['cloak','cloak_1_leather'],['shield','buckler_1_new']]){const u=++A.uid;A.arms.push({u,id:'a:'+f,e:0});ea[sl]=u}x.eqA=ea;x.eqW=0;delete x._fresh}
  if(!A.migBal){A.migBal=1;if(A.gold>5e7)A.gold=5e7}
+ /* 변신·인형 카드는 계정 공유 (같은 계정의 모든 캐릭터) */
+ if(!A.cards){A.cards={};for(let i=0;i<SLOT_MAX;i++){let o=null;if(i===SLOT_IDX)o=x;else try{o=JSON.parse(localStorage.getItem(SKEY(i))||'null')}catch(_){}if(!o||!o.cards)continue;for(const[k,v]of Object.entries(o.cards))A.cards[k]=(A.cards[k]||0)+v}}
+ x.cards=Object.assign({},A.cards);
  x.gold=A.gold;x.wpn=A.wpn.filter(w=>CM[w.id]);x.arms=A.arms.filter(w=>CM[w.id]);x.uid=Math.max(A.uid,x.uid||0);
  OTHERS=new Set(Object.entries(A.locks||{}).filter(([k])=>+k!==SLOT_IDX).flatMap(([,v])=>v));
  for(const[k,v]of Object.entries(x.eqA||{}))if(OTHERS.has(v)||!x.arms.some(a=>a.u===v))delete x.eqA[k];if(OTHERS.has(x.eqW)||!x.wpn.some(w=>w.u===x.eqW))x.eqW=0;
  if(!x.wpn.length){const u=++x.uid;x.wpn.push({u,id:'w:short_sword_1_new',e:0})}}
-function accSaveLocal(){const A=accGet()||{locks:{}};A.gold=S.gold;A.wpn=S.wpn;A.arms=S.arms;A.uid=S.uid;A.locks=A.locks||{};A.locks[SLOT_IDX]=[S.eqW,...Object.values(S.eqA||{})].filter(Boolean);try{localStorage.setItem('ash.acc',JSON.stringify(A))}catch(_){}}
+function accSaveLocal(){const A=accGet()||{locks:{}};A.gold=S.gold;A.cards=S.cards;A.wpn=S.wpn;A.arms=S.arms;A.uid=S.uid;A.locks=A.locks||{};A.locks[SLOT_IDX]=[S.eqW,...Object.values(S.eqA||{})].filter(Boolean);try{localStorage.setItem('ash.acc',JSON.stringify(A))}catch(_){}}
 let S=load();
 function load(){let x=null;try{x=JSON.parse(localStorage.getItem(KEY))}catch(_){}
  let fresh=false;if(!x){let o=null;if(!SLOT_IDX)try{o=JSON.parse(localStorage.getItem('ash.v2'))}catch(_){}if(!o&&accGet())fresh=true;x=o||{giftHK:1,gold:5000,scroll:5,bless:0,chest:5,cards:{'t:goblin_new':1,'d:rat':1},eqT:'t:goblin_new',eqD:'d:rat',wlv:0,t:Date.now(),log:[],hz:0,spent:0,pp:{},kills:0}}
