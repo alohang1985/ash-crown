@@ -1641,7 +1641,7 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .lalch2.hasorb .alorbimg,.lalch2.hasorb .alorbimg.back{filter:none!important}
 .lalch2.hasorb .alorbimg.back{display:none!important}.lalch2.hasorb .alorbimg{inset:-48%!important}
 /* 불길 v2 (24프레임) · 점화 · 빛기둥 — 그림이 오면 자동 사용 */
-.lalch2.fl2 .alorbimg{background-image:url(art/AL_al_flame2.webp?v=4);background-size:2400% 100%;animation:anfr24 1.6s steps(24) infinite;inset:-70%!important}
+.lalch2.fl2 .alorbimg{background-image:url(art/AL_al_flame2.webp?v=5);background-size:2400% 100%;animation:anfr24 1.6s steps(24) infinite;inset:-70%!important}
 .lalch2.fl2 .alorb2.grade .alorbimg{background-image:var(--orbimg)}
 @keyframes anfr24{to{background-position:104.3478% 0}}
 .alignite{position:absolute;left:51%;top:30%;width:calc(var(--vh)*120);aspect-ratio:1;transform:translate(-50%,-50%);background:url(art/AL_al_ignite.webp) 0 0/1600% 100% no-repeat;mix-blend-mode:screen;animation:anfr16b 1.6s steps(16) forwards;pointer-events:none;z-index:6}
@@ -1750,7 +1750,7 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 
 /* 대기(재료 없음): 불길 없이 유리 수정구 + 은은한 빛만 · 재료를 올리면 불길(24프레임)이 피어오름 */
 .lalch2:not(:has(.alsl2.on)):not(.rv) .alorbimg{display:none!important}
-.lalch2.fl2 .alorbimg{background-image:url(art/AL_al_flame2.webp?v=4)!important;background-size:2400% 100%!important;animation:anfr24 2.6s steps(24) infinite!important}
+.lalch2.fl2 .alorbimg{background-image:url(art/AL_al_flame2.webp?v=5)!important;background-size:2400% 100%!important;animation:anfr24 2.6s steps(24) infinite!important}
 .lalch2.fl2 .alorb2.grade .alorbimg{background-image:var(--orbimg)!important}
 .lalch2.fl2 .alorbimg{left:-25%!important;right:-45%!important;top:-55%!important;bottom:-15%!important}
 .lalch2.fl2 .alorbimg{left:-45%!important;right:-45%!important;top:-80%!important;bottom:-12%!important}
@@ -2719,7 +2719,7 @@ const EFXMAP={fire:'fire_burst',ice:'ice_lance',bolt:'lightning',dark:'dark_blas
 function drawMon(c,name,side,x,groundY,sc,state,p,tint){if(MAM.m[name]&&drawMA(c,name,side,x,groundY,sc,state,p,tint))return true;const im=monTinted(name,side,tint);if(!im.width&&!(im.complete&&im.naturalWidth))return false;const rows=LPCM.mon[name].rows;let y=0;const ri=state==='walk'?0:state==='atk'?1:state==='hurt'?2:0;for(let i=0;i<ri;i++)y+=rows[i][2];const[,n,fw]=rows[ri];
  const f=state==='idle'?0:Math.min(n-1,Math.floor(p*n))%n;const dx=x-(fw-64)/2*sc,dy=groundY-62*sc-(fw-64)/2*sc;
   c.drawImage(im,f*fw,y,fw,fw,dx,dy,fw*sc,fw*sc);return true}
-let LPC_ON=true,MORPHFX=0;setTimeout(()=>{if(typeof EAM!=='undefined')for(const k in EAM.m)artImg('EA_'+k+'.webp')},9000);setTimeout(()=>{if(typeof MAM!=='undefined')for(const k in MAM.m)for(const an in MAM.m[k].n)artImg('MA_'+k+'_'+an+'.webp');if(typeof HAM!=='undefined')for(const k in HAM)for(const an in HAM[k].n)artImg('HA_'+k+'_'+an+'.webp')},8000);
+let LPC_ON=true,MORPHFX=0;/* 이펙트·몹·변신 그림은 실제로 화면에 나올 때만 받음(메모리 절약) */
 /* 변신마다 다른 모습: 카드 이름으로 종족(머리·몸)을 정하고, 갑옷·투구·망토·무기·색은 카드마다 고유하게 */
 const TRACE=[[/skeleton|skeletal|bone_dragon|lich|wight|wraith|revenant/,{head:'mhead_skeleton',body:'body_skeleton',noHair:1}],[/zombie|mummy|ghoul/,{head:'mhead_zombie',skin:{mul:[200,210,170]},noHair:1}],[/vampire|ereshkigal/,{head:'mhead_vampire',skin:{mul:[235,225,240]}}],
  [/dragon|drake|wyvern|tiamat|xtahua|salamander|naga|basilisk|phoenix|merfolk/,{head:'mhead_lizard',skin:'green',noHair:1}],[/troll|giant|ettin|cyclops|titan|antaeus|golem|gargoyle|juggernaut|ogre/,{head:'mhead_troll',skin:{mul:[150,175,150]},noHair:1}],
@@ -2748,9 +2748,9 @@ function drawArt(c,card,x,gy,H,state,p,t){const a=artOf(card);if(!a)return false
   else if(dt0<620){an=(Math.floor(ATKT/7)%2)?'atk2':'atk1';f=Math.min(A.n[an]-1,Math.floor(dt0/620*A.n[an]))}
   else if(HAMOVE>t){const run=!!A.n.run;an=run?'run':'walk';f=Math.floor((SV.p.dist||0)/(run?9:6))%A.n[an]}
   else{an='idle';const n=A.n.idle,q=Math.floor(t/130)%(n*2-2);f=q<n?q:n*2-2-q}
-  {/* 8방향 시트(H8_<k>_<동작>.webp: 행=S,SE,E,NE,N · 칸 256)가 있으면 사용 — 왼쪽 방향은 바깥에서 좌우 뒤집힘 */const a8={atk1:'attack',atk2:'attack',ult:'skill'}[an]||an;const i8=artImg('H8_'+k+'_'+a8+'.webp');
-   if(i8.complete&&i8.naturalWidth){const n8=Math.max(1,Math.round(i8.naturalWidth/(i8.naturalHeight/5))),cw8=i8.naturalWidth/n8,ch8=i8.naturalHeight/5;const d=SV.p.dir==null?0:SV.p.dir;/* dir:0=E,1=SE,2=S,3=SW,4=W,5=NW,6=N,7=NE */const row={0:2,1:1,2:0,3:1,4:2,5:3,6:4,7:3}[d];const f8=Math.min(n8-1,Math.round(f*n8/Math.max(1,A.n[an]))%n8);const sc8=H*2.3/ch8,cx=x+H*.7,s0=H*1.4/232;
-    c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality=SMQ;c.fillStyle='rgba(0,0,0,.38)';c.beginPath();c.ellipse(cx,gy-2,46*s0*2.2,9*s0*2.2,0,0,7);c.fill();c.drawImage(i8,f8*cw8,row*ch8,cw8,ch8,cx-cw8/2*sc8,gy-ch8*.85*sc8,cw8*sc8,ch8*sc8);c.restore();return true}}
+  {/* 8방향 시트(H8_<k>_<동작>.webp: 행=S,SE,E,NE,N · 칸 256)가 있으면 사용 — 왼쪽 방향은 바깥에서 좌우 뒤집힘 */const a8={atk1:'attack',atk2:'attack',ult:'skill'}[an]||an;const i8=artImg('H8_'+k+'_'+a8+'.webp');let J=i8;if(!(i8.complete&&i8.naturalWidth)){const i0=artImg('H8_'+k+'_idle.webp');if(i0.naturalWidth)J=i0}/* 아직 안 받은 동작은 잠깐 서 있는 8방향 그림으로 */
+   if(J.complete&&J.naturalWidth){const n8=Math.max(1,Math.round(J.naturalWidth/(J.naturalHeight/5))),cw8=J.naturalWidth/n8,ch8=J.naturalHeight/5;const d=SV.p.dir==null?0:SV.p.dir;/* dir:0=E,1=SE,2=S,3=SW,4=W,5=NW,6=N,7=NE */const row={0:2,1:1,2:0,3:1,4:2,5:3,6:4,7:3}[d];const f8=Math.min(n8-1,Math.round(f*n8/Math.max(1,A.n[an]))%n8);const sc8=H*2.3/ch8,cx=x+H*.7,s0=H*1.4/232;
+    c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality=SMQ;c.fillStyle='rgba(0,0,0,.38)';c.beginPath();c.ellipse(cx,gy-2,46*s0*2.2,9*s0*2.2,0,0,7);c.fill();c.drawImage(J,f8*cw8,row*ch8,cw8,ch8,cx-cw8/2*sc8,gy-ch8*.85*sc8,cw8*sc8,ch8*sc8);c.restore();return true}}
   const im=artImg('HA_'+k+'_'+an+'.webp');if(im.complete&&im.naturalWidth){const sc=H*1.4/232,cx=x+H*.7;c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality=SMQ;c.fillStyle='rgba(0,0,0,.38)';c.beginPath();c.ellipse(cx,gy-2,46*sc*2.2,9*sc*2.2,0,0,7);c.fill();
    c.drawImage(im,f*A.cw,0,A.cw,A.ch,cx-A.cw/2*sc,gy-A.fy*sc,A.cw*sc,A.ch*sc);if(HITP>t){c.globalCompositeOperation='lighter';c.globalAlpha=.35;c.drawImage(im,f*A.cw,0,A.cw,A.ch,cx-A.cw/2*sc,gy-A.fy*sc,A.cw*sc,A.ch*sc)}c.restore();return true}}
  if(a[0]==='hi'){const k=a[1],I=HIART[k];const fr=(t-ULTT<1100)?'ult':state==='atk'?(Math.floor(t/400)%2?'atk2':'atk1'):'idle';const im=artImg('H_'+k+'_'+fr+'.png');if(!im.complete||!im.naturalWidth){const i0=artImg('H_'+k+'_idle.png');if(!i0.complete||!i0.naturalWidth)return false}
@@ -4238,8 +4238,8 @@ const arId=()=>SLOT_IDX?liveSid()+'_'+SLOT_IDX:liveSid();
 function bundleStr(){save();const b={v:2,cur:SLOT_IDX,roster:roster(),saves:{},wh:whGet(),acc:accGet()};for(let i=0;i<SLOT_MAX;i++){const v=localStorage.getItem(SKEY(i));if(v)b.saves[i]=v}return JSON.stringify(b)}
 function restoreBundle(str){let b=null;try{b=JSON.parse(str)}catch(_){}if(b&&b.v===2){for(let i=0;i<SLOT_MAX;i++)localStorage.removeItem(SKEY(i));for(const[i,v]of Object.entries(b.saves||{}))localStorage.setItem(SKEY(+i),v);localStorage.setItem('ash.roster',JSON.stringify(b.roster||{}));localStorage.setItem('ash.wh',JSON.stringify(b.wh||{}));if(b.acc)localStorage.setItem('ash.acc',JSON.stringify(b.acc));else localStorage.removeItem('ash.acc');localStorage.setItem('ash.cur',String(b.cur||0))}else localStorage.setItem('ash.v3',str)}
 function switchChar(i){save();try{localStorage.setItem('ash.cur',String(i))}catch(_){}location.reload()}
-const CHK={'군주':'lord','기사':'knight','요정':'elf','마법사':'wizard','다크엘프':'darkelf','용기사':'dragonknight','환술사':'illusionist','전사':'warrior'};const CHOK={};for(const k of Object.values(CHK))for(const x of['M','F']){const i=new Image();i.onload=()=>{CHOK[k+'_'+x]=1};i.src=`art/CH_${k}_${x}.webp`}
-const chArt=(cls,sx)=>{const k=CHK[cls]+'_'+(sx||'M');return CHOK[k]?`art/CH_${k}.webp`:null};
+const CHK={'군주':'lord','기사':'knight','요정':'elf','마법사':'wizard','다크엘프':'darkelf','용기사':'dragonknight','환술사':'illusionist','전사':'warrior'};/* 직업 그림(CH_)은 16장 모두 있음 → 미리 받지 않고 쓸 때 바로 사용 */
+const chArt=(cls,sx)=>CHK[cls]?`art/CH_${CHK[cls]}_${sx||'M'}.webp`:null;
 const NAI={};function npcArt(k){if(!(k in NAI)){NAI[k]=null;const i=new Image();i.onload=()=>{NAI[k]=i};i.src=`art/NA_${k}.webp`}return NAI[k]}
 let CSEL=null;function charSelect(){const r=roster();const st=$('stage');st.hidden=false;if(CSEL==null)CSEL=SLOT_IDX;
  const info=i=>{const cur=i===SLOT_IDX;const c=r[i];if(!c&&!(cur&&S.cls))return null;return cur&&S.cls?{cls:S.cls.k,sx:S.cls.sx,lv:S.lv,stage:S.bestStage,t:S.morph!==false?S.eqT:null,pw:power()}:c};
@@ -4929,7 +4929,7 @@ function alPre(){if(ALPRE)return;ALPRE=true;const cls=(f,c)=>{const e=document.q
  for(let k=1;k<=8;k++){const i=new Image();i.onload=()=>{ALLOOP[k-1]=i.src};i.src=`art/AL_pose_loop_${k}.webp`}
  {const i=new Image();i.onload=()=>{ALDARK=true;cls(0,'hasdark')};i.src='art/AL_al_orb_dark.webp'}
  {const i=new Image();i.onload=()=>{ORBOK=true;cls(0,'hasorb')};i.src='art/AL_al_flame.webp'}
- {const i=new Image();i.onload=()=>{FL2=true;cls(0,'fl2')};i.src='art/AL_al_flame2.webp?v=4'}
+ {const i=new Image();i.onload=()=>{FL2=true;cls(0,'fl2')};i.src='art/AL_al_flame2.webp?v=5'}
  {const i=new Image();i.onload=()=>{RAYS=true};i.src='art/AL_al_rays.webp'}
  {const i=new Image();i.onload=()=>{IGN=true};i.src='art/AL_al_ignite.webp'}}
 setTimeout(()=>{(window.requestIdleCallback||setTimeout)(alPre)},60000);
@@ -4979,7 +4979,7 @@ function alReveal(res,g){return new Promise(done=>{const st=$('stage');const sc=
    /* 빠르게 → 서서히 감속 → 다음 칸(더 좋은 아이템)을 반쯤 보여주며 거의 멈춤 → 아주 천천히 되돌아와 가운데 칸에 정확히 정지 */
    const pos=p=>{if(p<.8){const q=p/.8;return(target+H*.42)*(1-Math.pow(1-q,4))}const q=(p-.8)/.2;const e=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2;return target+H*.42*(1-e)};
    const frame=now=>{const p=Math.min(1,(now-t0)/D);const y=pos(p);strip.style.transform=`translateX(${-y}px)`;const idx=Math.round(y/H)+2;if(idx!==lastIdx){lastIdx=idx;sfx.tick?sfx.tick():(sfx.up&&p<.95&&sfx.up(0))}
-    strip.style.filter=p<.6?`blur(${Math.max(0,2.4-p*4)}px)`:'none';if(!gradeShown&&orb){gradeShown=true;const sg=Math.min(5,Math.max(2,(Math.random()<.22&&g<5)?g+1:g));orb.style.setProperty('--oc',G[sg].c);orb.style.setProperty('--orbimg',`url(art/AL_al_flame${FL2?'2':''}_g${sg}.webp?v=4)`);orb.classList.add('grade')}
+    strip.style.filter=p<.6?`blur(${Math.max(0,2.4-p*4)}px)`:'none';if(!gradeShown&&orb){gradeShown=true;const sg=Math.min(5,Math.max(2,(Math.random()<.22&&g<5)?g+1:g));orb.style.setProperty('--oc',G[sg].c);orb.style.setProperty('--orbimg',`url(art/AL_al_flame${FL2?'2':''}_g${sg}.webp?v=5)`);orb.classList.add('grade')}
     if(p<1){requestAnimationFrame(frame);return}
     strip.style.transform=`translateX(${-target}px)`;{const m=reel.querySelector('.alrmark').getBoundingClientRect(),f=reel.querySelector('.alri.fin').getBoundingClientRect();const dx=(f.left+f.right)/2-(m.left+m.right)/2;if(Math.abs(dx)>.5)strip.style.transform=`translateX(${-target-dx/((reel.getBoundingClientRect().width/reel.offsetWidth)||1)}px)`}{const snap=()=>{const m=reel.querySelector('.alrmark').getBoundingClientRect(),f=reel.querySelector('.alri.fin').getBoundingClientRect(),cur=new DOMMatrix(getComputedStyle(strip).transform).m41,dx=(f.left+f.right)/2-(m.left+m.right)/2;if(Math.abs(dx)>.5){strip.style.transition='none';strip.style.transform=`translateX(${cur-dx/((reel.getBoundingClientRect().width/reel.offsetWidth)||1)}px)`}};setTimeout(snap,450);setTimeout(snap,1200)}reel.classList.add('done');o.classList.add('fin');if(orb)orb.classList.remove('spin','erupt');if(RAYS){const ry=document.createElement('div');ry.className='alrays';ry.style.setProperty('--oc',G[g].c);o.appendChild(ry)}o.querySelector('.altop').textContent='연금술에 성공하였습니다.';if(sc)sc.dataset.pose='raise';const nm=o.querySelector('.alnm2');nm.textContent=res.n;nm.style.color=G[g].c;const b=o.querySelector('.alcf2');b.hidden=false;if(g>=4){flash();sfx.legend&&sfx.legend()}else sfx.up&&sfx.up(2);b.onclick=ev=>{ev.stopPropagation();o.remove();if(sc){sc.classList.remove('rv');sc.dataset.pose=''}done()}};
    requestAnimationFrame(frame)}})}
