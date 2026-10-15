@@ -1529,6 +1529,8 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .ldc.art.off{filter:grayscale(.7) brightness(.6)}
 .ldci.big.art{width:calc(var(--vh)*22);aspect-ratio:3/5;height:auto;background:center/cover no-repeat;border:1px solid #6b5228}
 .svhud .hsk,.svhud .hskp{pointer-events:auto;touch-action:none}
+.anico{display:inline-block;background-size:calc(100% * var(--n)) 100%;background-repeat:no-repeat;animation-name:anfr;animation-timing-function:steps(var(--n));animation-iteration-count:infinite}
+@keyframes anfr{from{background-position:0 0}to{background-position:100% 0}}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -2473,7 +2475,10 @@ function drawArt(c,card,x,gy,H,state,p,t){const a=artOf(card);if(!a)return false
  const k=a[1],m=ARTM.fga[k],im=fgaSheet(k,a[2]);if(!(im.width||im.naturalWidth))return false;const fs=m.fs;const ri=state==='atk'?1:state==='hurt'?2:0;const n=m.rows[ri][1];
  const f=state==='idle'?Math.floor(t/220)%m.rows[0][1]:Math.min(n-1,Math.floor(Math.min(.999,p)*n));const D=H*1.9;c.save();c.globalAlpha=state==='hurt'&&p>=1?.35:1;c.drawImage(im,f*fs,ri*fs,fs,fs,x-D*.15,gy-D*.86,D,D);c.restore();return true}
 const EQIC=new Set([]);const eqKey=c=>c.id.split(':')[1].toLowerCase().replace(/[^a-z0-9_]/g,'_');
-const cardIco=(c,px)=>{if(c&&(c.ty==='w'||c.ty==='a')&&EQIC.has(eqKey(c)))return`<img class="eqimg" src="art/IC_eq_${eqKey(c)}.webp" style="width:${px}px;height:${px}px" alt="">`;const a=c&&c.ty==='t'&&artOf(c);return a&&a[0]==='hi'?`<img src="art/H_${a[1]}_card.png" style="width:${px}px;height:${px}px;object-fit:cover;object-position:50% 15%;border-radius:6px">`:spr(c.i,px)};
+const ANM={};/*ANM*/
+/* 신화·유일 장비: 오픈클로 반짝 회전 애니(AN_*.webp)가 있으면 그걸로 */
+const anIco=(c,px)=>{const a=ANM[c.n];if(!a)return null;return`<span class="anico" style="width:${px}px;height:${px}px;background-image:url(art/AN_${a.f}.webp);--n:${a.n};animation-duration:${a.n*.1}s"></span>`};
+const cardIco=(c,px)=>{if(c&&c.g>=5&&(c.ty==='w'||c.ty==='a')){const z=anIco(c,px);if(z)return z}if(c&&(c.ty==='w'||c.ty==='a')&&EQIC.has(eqKey(c)))return`<img class="eqimg" src="art/IC_eq_${eqKey(c)}.webp" style="width:${px}px;height:${px}px" alt="">`;const a=c&&c.ty==='t'&&artOf(c);return a&&a[0]==='hi'?`<img src="art/H_${a[1]}_card.png" style="width:${px}px;height:${px}px;object-fit:cover;object-position:50% 15%;border-radius:6px">`:spr(c.i,px)};
 const BEASTRE=/dragon|drake|wyvern|tiamat|xtahua|phoenix|manticore|griffon|sphinx|basilisk|golem|gargoyle|salamander|juggernaut/;
 const isBeast=card=>BEASTRE.test(card.id.slice(2));
 function drawBeast(c,card,x,gy,sc,state,p,t){if(!IMG.complete)return false;const sz=32*sc*1.75,br=1+Math.sin(t/260)*.03;const lx=state==='atk'?Math.sin(Math.min(1,p)*Math.PI)*18:0,ly=state==='hurt'?6:0;
@@ -3384,7 +3389,7 @@ const LMENU=[['shop','상점','w:shop'],['bag','가방','w:inv'],['skill','스�
  ['craft','제작','s:제작'],['coin','거래소','w:mkt'],['mask','변신','w:morph'],['doll','마법인형','w:synthd'],['relic','성물','s:성물'],
  ['swords','던전','w:dun'],['cal','출석체크','w:att'],['ticket','패스','t:pass'],['book','스킬카드','w:synths'],['medal','컬렉션','t:col'],
  ['clan','혈맹','w:clan'],['friend','친구','s:친구'],['star','기억장소','w:bm'],['trophy','랭킹','t:arena'],['fish','낚시','s:낚시'],
- ['pvp','PVP북','t:arena'],['elx','연금','w:alch'],['quest','우편함','w:mail'],['guard','수호성','s:수호성'],['emblem','문양','s:문양'],
+ ['pvp','PVP북','t:arena'],['elx','연금','w:alch'],['mail','우편함','w:mail'],['guard','수호성','s:수호성'],['emblem','문양','s:문양'],
  ['potion','엘릭서','t:up'],['clock','스케줄','s:스케줄'],['skillup','숙련','s:숙련'],['totem','토템','s:토템'],['gem','지배석','s:지배석'],
  ['rank','작위','s:작위'],['stat','통계','t:hunt'],['castle','성관리','s:성관리'],['gear','설정','w:set'],['exit','재시작','w:restart'],
  ['book','몬스터 도감','t:book']];
