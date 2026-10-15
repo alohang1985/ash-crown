@@ -1503,6 +1503,7 @@ html.land .svhud{flex-direction:column;align-items:center;gap:0}
 .alnow{color:#9fd0ff;margin:0 0 4px!important}
 .alpok{align-self:center;margin:calc(var(--vh)*1.5) 0 calc(var(--vh)*2);padding:calc(var(--vh)*1.2) calc(var(--vh)*8);border:1px solid #6a8ac8;background:linear-gradient(#2c4a7e,#16284a);color:#fff;font-size:calc(var(--vh)*2.8)}
 .alsl2 .alst{width:88%!important;height:88%!important}.alcf2{top:82%}
+.alflash{position:absolute;inset:0;background:radial-gradient(circle at 46% 52%,#fff,#fff6d0 40%,rgba(255,230,160,.6));animation:alfx .9s ease-out forwards;pointer-events:none;z-index:3}@keyframes alfx{0%{opacity:0}15%{opacity:1}100%{opacity:0}}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -4485,7 +4486,7 @@ function alWin(){const st=$('stage');st.hidden=false;st.classList.remove('sidel'
    save();headLite();await alReveal(res,g);busy=false;draw();return}}}
 function alReveal(res,g){return new Promise(done=>{const st=$('stage');const sc=st.querySelector('.lalch2');if(sc)sc.classList.add('rv');const o=document.createElement('div');o.className='alrv2';o.innerHTML=`<p class="altop"></p><div class="alcyc2"></div><b class="alnm2"></b><p class="altap2">화면 중앙을 터치해 주세요.</p><button class="alcf2" hidden>확인</button>`;(sc||st).appendChild(o);
   const cyc=o.querySelector('.alcyc2'),orb=(sc||st).querySelector('.alorb2');if(orb)orb.classList.add('lit','spin');const pool=CARDS.filter(c=>(c.ty==='w'||c.ty==='a')&&!c.acc&&c.g>=2&&c.g<=5);let started=false;
-  o.onclick=()=>{if(started)return;started=true;o.querySelector('.altap2').textContent='';sfx.rare&&sfx.rare(2);let n=0;const step=()=>{const c=pool[Math.floor(Math.random()*pool.length)];cyc.innerHTML=cardIco(c,56);cyc.style.setProperty('--gc',G[c.g].c);n++;if(n===10&&orb){orb.style.setProperty('--oc',G[g].c);orb.classList.add('grade')}
+  o.onclick=()=>{if(started)return;started=true;o.querySelector('.altap2').textContent='';{const fl=document.createElement('div');fl.className='alflash';o.appendChild(fl);setTimeout(()=>fl.remove(),900)}sfx.rare&&sfx.rare(2);let n=0;const step=()=>{const c=pool[Math.floor(Math.random()*pool.length)];cyc.innerHTML=cardIco(c,56);cyc.style.setProperty('--gc',G[c.g].c);n++;if(n===10&&orb){orb.style.setProperty('--oc',G[g].c);orb.classList.add('grade')}
     if(n>=24){cyc.innerHTML=res.c?cardIco(res.c,60):`<span class="alst big g${res.alst}">${ico('elx')}</span>`;cyc.style.setProperty('--gc',G[g].c);cyc.classList.add('fin');o.querySelector('.altop').textContent='연금술에 성공하였습니다.';const nm=o.querySelector('.alnm2');nm.textContent=res.n;nm.style.color=G[g].c;const b=o.querySelector('.alcf2');b.hidden=false;if(g>=4){flash();sfx.legend&&sfx.legend()}else sfx.up&&sfx.up(2);b.onclick=ev=>{ev.stopPropagation();o.remove();if(sc)sc.classList.remove('rv');done()};return}
     setTimeout(step,n<12?80:n<20?140:240)};step()}})}
 </script><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{})</script></body></html>
