@@ -3064,8 +3064,9 @@ function battle(t){const cv=$('bt');if(!cv)return;{const h=innerWidth>=1440?236:
  if(MODE)modeDraw(c,t)}
 /* ================= 서바이벌 전투 (탑뷰 · 사방에서 몰려오는 몹 · 판마다 스킬 고르기) ================= */
 const PH_=38,AS_=PH_/54;/* 리니지M 비율: 캐릭터 키 ≈ 화면 높이 13% */
-function d8h(x,y,pd){if(!x&&!y)return null;const a=Math.atan2(y,x),st=Math.PI/4;if(pd!=null){let df=Math.abs(a-pd*st);df=Math.min(df,6.2832-df);if(df<.58)return pd}return(Math.round(a/st)+8)%8}
-function d8v(k){const a=k*Math.PI/4;let c=Math.cos(a),n=Math.sin(a);if(Math.abs(c)<1e-6)c=0;if(Math.abs(n)<1e-6)n=0;return[c,n]}
+/* 8방향 판정: 쿼터뷰라 화면상 대각선이 45°보다 낮음(≈30°) → 세로를 1.4배로 보고 판정(대각선 중심 ≈35°). 떨림 방지 여유는 경계(22.5°)를 살짝 넘는 정도만 */
+function d8h(x,y,pd){if(!x&&!y)return null;const a=Math.atan2(y*1.4,x),st=Math.PI/4;if(pd!=null){let df=Math.abs(a-pd*st);df=Math.min(df,6.2832-df);if(df<.46)return pd}return(Math.round(a/st)+8)%8}
+function d8v(k){const a=k*Math.PI/4;let c=Math.cos(a),n=Math.sin(a)/1.4;{const l=Math.hypot(c,n);c/=l;n/=l}if(Math.abs(c)<1e-6)c=0;if(Math.abs(n)<1e-6)n=0;return[c,n]}
 function d8(x,y){if(!x&&!y)return[0,0];const a=Math.round(Math.atan2(y,x)/(Math.PI/4))*(Math.PI/4);let c=Math.cos(a),n=Math.sin(a);if(Math.abs(c)<1e-6)c=0;if(Math.abs(n)<1e-6)n=0;return[c,n]}
 const SV={loot:[],wave:1,waveT:0,stg:1,combo:0,comboT:0,evo:{},pick:[],clear:0,on:true,cam:{x:0,y:0},p:{x:0,y:0,fx:1,mv:0},inp:{x:0,y:0,t:0},keys:{},runT:0,rlv:1,rxp:0,rk:{},gems:[],nextSp:0,bossT:120,pause:false,orbA:0,tm:{},lastHit:0,joy:null};
 const SVH=()=>innerWidth>=1440?300:innerWidth>=1000?260:330;
