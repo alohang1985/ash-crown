@@ -6319,101 +6319,101 @@
    "id": "dg_talking_island",
    "category": "던전 그림",
    "name": "말하는 섬 던전 입구 (안개 낀 섬 동굴)",
-   "size": "512x384",
+   "size": "432x720",
    "sheets": [
     "card"
    ],
-   "prompt": "Lineage M style dungeon selection card illustration: 말하는 섬 던전 입구 (안개 낀 섬 동굴), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+   "prompt": "Lineage M style dungeon selection card illustration: 말하는 섬 던전 입구 (안개 낀 섬 동굴), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 432x720 portrait ★리니지M 던전 카드 규칙: 세로 카드(가로:세로 = 3:5, 예 432×720). 주제 하나(입구·건물·괴물)를 화면 중앙에 크게. 채도 낮고 약간 어두운 유화풍, 아래 40%는 어둡게 빠짐(가격·글자가 올라감). 밝은 하늘·청록 바다·관광 포스터 같은 쨍한 색 금지. 참고: style_ref/dg_card_compare.png (위 = 리니지M 실제 카드, 오른쪽 아래 = 맞는 방향)."
   },
   {
    "id": "dg_giern_sewer",
    "category": "던전 그림",
    "name": "기에른 지하수로 (돌 수로, 횃불)",
-   "size": "512x384",
+   "size": "432x720",
    "sheets": [
     "card"
    ],
-   "prompt": "Lineage M style dungeon selection card illustration: 기에른 지하수로 (돌 수로, 횃불), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+   "prompt": "Lineage M style dungeon selection card illustration: 기에른 지하수로 (돌 수로, 횃불), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 432x720 portrait ★리니지M 던전 카드 규칙: 세로 카드(가로:세로 = 3:5, 예 432×720). 주제 하나(입구·건물·괴물)를 화면 중앙에 크게. 채도 낮고 약간 어두운 유화풍, 아래 40%는 어둡게 빠짐(가격·글자가 올라감). 밝은 하늘·청록 바다·관광 포스터 같은 쨍한 색 금지. 참고: style_ref/dg_card_compare.png (위 = 리니지M 실제 카드, 오른쪽 아래 = 맞는 방향)."
   },
   {
    "id": "dg_canyon_maze",
    "category": "던전 그림",
    "name": "잿빛 협곡 지하 미궁",
-   "size": "512x384",
+   "size": "432x720",
    "sheets": [
     "card"
    ],
-   "prompt": "Lineage M style dungeon selection card illustration: 잿빛 협곡 지하 미궁, painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+   "prompt": "Lineage M style dungeon selection card illustration: 잿빛 협곡 지하 미궁, painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 432x720 portrait ★리니지M 던전 카드 규칙: 세로 카드(가로:세로 = 3:5, 예 432×720). 주제 하나(입구·건물·괴물)를 화면 중앙에 크게. 채도 낮고 약간 어두운 유화풍, 아래 40%는 어둡게 빠짐(가격·글자가 올라감). 밝은 하늘·청록 바다·관광 포스터 같은 쨍한 색 금지. 참고: style_ref/dg_card_compare.png (위 = 리니지M 실제 카드, 오른쪽 아래 = 맞는 방향)."
   },
   {
    "id": "dg_tomb",
    "category": "던전 그림",
    "name": "망자의 무덤 (묘지·석관)",
-   "size": "512x384",
+   "size": "432x720",
    "sheets": [
     "card"
    ],
-   "prompt": "Lineage M style dungeon selection card illustration: 망자의 무덤 (묘지·석관), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+   "prompt": "Lineage M style dungeon selection card illustration: 망자의 무덤 (묘지·석관), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 432x720 portrait ★리니지M 던전 카드 규칙: 세로 카드(가로:세로 = 3:5, 예 432×720). 주제 하나(입구·건물·괴물)를 화면 중앙에 크게. 채도 낮고 약간 어두운 유화풍, 아래 40%는 어둡게 빠짐(가격·글자가 올라감). 밝은 하늘·청록 바다·관광 포스터 같은 쨍한 색 금지. 참고: style_ref/dg_card_compare.png (위 = 리니지M 실제 카드, 오른쪽 아래 = 맞는 방향)."
   },
   {
    "id": "dg_dragon_nest",
    "category": "던전 그림",
    "name": "용의 둥지 (용암·뼈)",
-   "size": "512x384",
+   "size": "432x720",
    "sheets": [
     "card"
    ],
-   "prompt": "Lineage M style dungeon selection card illustration: 용의 둥지 (용암·뼈), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+   "prompt": "Lineage M style dungeon selection card illustration: 용의 둥지 (용암·뼈), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 432x720 portrait ★리니지M 던전 카드 규칙: 세로 카드(가로:세로 = 3:5, 예 432×720). 주제 하나(입구·건물·괴물)를 화면 중앙에 크게. 채도 낮고 약간 어두운 유화풍, 아래 40%는 어둡게 빠짐(가격·글자가 올라감). 밝은 하늘·청록 바다·관광 포스터 같은 쨍한 색 금지. 참고: style_ref/dg_card_compare.png (위 = 리니지M 실제 카드, 오른쪽 아래 = 맞는 방향)."
   },
   {
    "id": "dg_tower",
    "category": "던전 그림",
    "name": "오만의 탑 (하늘로 솟은 검은 탑)",
-   "size": "512x384",
+   "size": "432x720",
    "sheets": [
     "card"
    ],
-   "prompt": "Lineage M style dungeon selection card illustration: 오만의 탑 (하늘로 솟은 검은 탑), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+   "prompt": "Lineage M style dungeon selection card illustration: 오만의 탑 (하늘로 솟은 검은 탑), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 432x720 portrait ★리니지M 던전 카드 규칙: 세로 카드(가로:세로 = 3:5, 예 432×720). 주제 하나(입구·건물·괴물)를 화면 중앙에 크게. 채도 낮고 약간 어두운 유화풍, 아래 40%는 어둡게 빠짐(가격·글자가 올라감). 밝은 하늘·청록 바다·관광 포스터 같은 쨍한 색 금지. 참고: style_ref/dg_card_compare.png (위 = 리니지M 실제 카드, 오른쪽 아래 = 맞는 방향)."
   },
   {
    "id": "dg_trial_gold",
    "category": "던전 그림",
    "name": "황금 동굴",
-   "size": "512x384",
+   "size": "432x720",
    "sheets": [
     "card"
    ],
-   "prompt": "Lineage M style dungeon selection card illustration: 황금 동굴, painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+   "prompt": "Lineage M style dungeon selection card illustration: 황금 동굴, painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 432x720 portrait ★리니지M 던전 카드 규칙: 세로 카드(가로:세로 = 3:5, 예 432×720). 주제 하나(입구·건물·괴물)를 화면 중앙에 크게. 채도 낮고 약간 어두운 유화풍, 아래 40%는 어둡게 빠짐(가격·글자가 올라감). 밝은 하늘·청록 바다·관광 포스터 같은 쨍한 색 금지. 참고: style_ref/dg_card_compare.png (위 = 리니지M 실제 카드, 오른쪽 아래 = 맞는 방향)."
   },
   {
    "id": "dg_trial_scroll",
    "category": "던전 그림",
    "name": "대장장이 창고",
-   "size": "512x384",
+   "size": "432x720",
    "sheets": [
     "card"
    ],
-   "prompt": "Lineage M style dungeon selection card illustration: 대장장이 창고, painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+   "prompt": "Lineage M style dungeon selection card illustration: 대장장이 창고, painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 432x720 portrait ★리니지M 던전 카드 규칙: 세로 카드(가로:세로 = 3:5, 예 432×720). 주제 하나(입구·건물·괴물)를 화면 중앙에 크게. 채도 낮고 약간 어두운 유화풍, 아래 40%는 어둡게 빠짐(가격·글자가 올라감). 밝은 하늘·청록 바다·관광 포스터 같은 쨍한 색 금지. 참고: style_ref/dg_card_compare.png (위 = 리니지M 실제 카드, 오른쪽 아래 = 맞는 방향)."
   },
   {
    "id": "dg_trial_exp",
    "category": "던전 그림",
    "name": "시련의 탑",
-   "size": "512x384",
+   "size": "432x720",
    "sheets": [
     "card"
    ],
-   "prompt": "Lineage M style dungeon selection card illustration: 시련의 탑, painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+   "prompt": "Lineage M style dungeon selection card illustration: 시련의 탑, painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 432x720 portrait ★리니지M 던전 카드 규칙: 세로 카드(가로:세로 = 3:5, 예 432×720). 주제 하나(입구·건물·괴물)를 화면 중앙에 크게. 채도 낮고 약간 어두운 유화풍, 아래 40%는 어둡게 빠짐(가격·글자가 올라감). 밝은 하늘·청록 바다·관광 포스터 같은 쨍한 색 금지. 참고: style_ref/dg_card_compare.png (위 = 리니지M 실제 카드, 오른쪽 아래 = 맞는 방향)."
   },
   {
    "id": "dg_burst",
    "category": "던전 그림",
    "name": "폭젠 사냥터 (몬스터가 쏟아지는 붉은 하늘의 평원)",
-   "size": "512x384",
+   "size": "432x720",
    "sheets": [
     "card"
    ],
-   "prompt": "Lineage M style dungeon selection card illustration: 폭젠 사냥터 (몬스터가 쏟아지는 붉은 하늘의 평원), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 512x384"
+   "prompt": "Lineage M style dungeon selection card illustration: 폭젠 사냥터 (몬스터가 쏟아지는 붉은 하늘의 평원), painterly 2D fantasy concept art, dramatic lighting, rich detail, no text, 432x720 portrait ★리니지M 던전 카드 규칙: 세로 카드(가로:세로 = 3:5, 예 432×720). 주제 하나(입구·건물·괴물)를 화면 중앙에 크게. 채도 낮고 약간 어두운 유화풍, 아래 40%는 어둡게 빠짐(가격·글자가 올라감). 밝은 하늘·청록 바다·관광 포스터 같은 쨍한 색 금지. 참고: style_ref/dg_card_compare.png (위 = 리니지M 실제 카드, 오른쪽 아래 = 맞는 방향)."
   },
   {
    "id": "m_mushroom",
