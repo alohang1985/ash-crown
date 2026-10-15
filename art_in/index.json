@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15 17:51",
+ "updated": "2026-10-15 18:10",
  "source": "Gemini 웹(Pro) via OpenClaw 맥미니 — 원본 그대로(배경 #FF00FF 요청, 오른쪽 아래 Gemini 반짝이 워터마크 있음)",
  "assets": {
   "e_meteor": {
@@ -1849,115 +1849,143 @@
   "al_ui": {
    "sheets": {
     "al_btn": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_btn2": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_orb": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_orb_dark": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_orb_g2": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_orb_g3": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_orb_g4": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_orb_g5": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_panel": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_parch": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_seal_glow": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_slot": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_slot_on": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "pose_loop_1": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "pose_loop_2": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "pose_loop_3": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "pose_loop_4": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "pose_loop_5": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "pose_loop_6": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "pose_loop_7": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "pose_loop_8": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_burst": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_flame": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_flame_g2": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_flame_g3": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_flame_g4": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_flame_g5": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     },
     "al_orb_glass": {
-     "at": "10-15 16:55",
+     "at": "10-15 18:10",
+     "by": "chatgpt-plus"
+    },
+    "al_flame2": {
+     "at": "10-15 18:10",
+     "by": "chatgpt-plus"
+    },
+    "al_flame2_g2": {
+     "at": "10-15 18:10",
+     "by": "chatgpt-plus"
+    },
+    "al_flame2_g3": {
+     "at": "10-15 18:10",
+     "by": "chatgpt-plus"
+    },
+    "al_flame2_g4": {
+     "at": "10-15 18:10",
+     "by": "chatgpt-plus"
+    },
+    "al_flame2_g5": {
+     "at": "10-15 18:10",
+     "by": "chatgpt-plus"
+    },
+    "al_ignite": {
+     "at": "10-15 18:10",
+     "by": "chatgpt-plus"
+    },
+    "al_rays": {
+     "at": "10-15 18:10",
      "by": "chatgpt-plus"
     }
    },
@@ -3149,71 +3177,67 @@
   "town": {
    "sheets": {
     "stall_1": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     },
     "stall_2": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     },
     "stall_3": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     },
     "stall_4": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     },
     "stall_5": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     },
     "town_grass": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     },
     "town_ground_a": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     },
     "town_ground_b": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     },
     "town_ground_c": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     },
     "town_road": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     },
     "tree_1": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     },
     "tree_2": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     },
     "tree_3": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     },
     "tree_4": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     },
     "tree_5": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     },
     "tree_6": {
-     "at": "10-15 17:51",
-     "by": "chatgpt-plus"
-    },
-    "stall_6": {
-     "at": "10-15 17:51",
+     "at": "10-15 17:50",
      "by": "chatgpt-plus"
     }
    },
