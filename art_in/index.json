@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15 16:45",
+ "updated": "2026-10-15 16:53",
  "source": "Gemini 웹(Pro) via OpenClaw 맥미니 — 원본 그대로(배경 #FF00FF 요청, 오른쪽 아래 Gemini 반짝이 워터마크 있음)",
  "assets": {
   "e_meteor": {
@@ -2082,83 +2082,123 @@
   "npc": {
    "sheets": {
     "npc_buyer": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_buyer_s": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_clan": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_clan_s": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_general": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_general_s": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_guard": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_guard_s": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_innkeeper": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_innkeeper_s": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_magic": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_magic_s": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_priest": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_priest_s": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_smith": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_smith_s": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_storage": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_storage_s": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_teleporter": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     },
     "npc_teleporter_s": {
-     "at": "10-15 16:45",
+     "at": "10-15 16:53",
+     "by": "chatgpt-plus"
+    },
+    "buy": {
+     "at": "10-15 16:53",
+     "by": "chatgpt-plus"
+    },
+    "clanm": {
+     "at": "10-15 16:53",
+     "by": "chatgpt-plus"
+    },
+    "general": {
+     "at": "10-15 16:53",
+     "by": "chatgpt-plus"
+    },
+    "guard": {
+     "at": "10-15 16:53",
+     "by": "chatgpt-plus"
+    },
+    "inn": {
+     "at": "10-15 16:53",
+     "by": "chatgpt-plus"
+    },
+    "magic": {
+     "at": "10-15 16:53",
+     "by": "chatgpt-plus"
+    },
+    "priest": {
+     "at": "10-15 16:53",
+     "by": "chatgpt-plus"
+    },
+    "smith": {
+     "at": "10-15 16:53",
+     "by": "chatgpt-plus"
+    },
+    "tele": {
+     "at": "10-15 16:53",
+     "by": "chatgpt-plus"
+    },
+    "wh": {
+     "at": "10-15 16:53",
      "by": "chatgpt-plus"
     }
    },
