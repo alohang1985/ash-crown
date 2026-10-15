@@ -1788,6 +1788,16 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .gcbo>em{font-style:normal;font-size:calc(var(--vh)*3.2);color:#cfe0ff;padding:2px 18px;background:radial-gradient(ellipse,rgba(70,110,200,.55),transparent 70%)}
 .gcbo .srv2c{width:calc(var(--vh)*16.5);height:calc(var(--vh)*21.5)}
 .gcr .srfa img,.gcr .srfa canvas{transform:scale(1.1)}
+/* 카드 공개: 뒷면 그림 그대로 왼쪽으로 빙글빙글 → 앞면이 오른쪽에서 돌아 들어옴 */
+.srv2c.spin .srb{animation:cdspin var(--spd,520ms) cubic-bezier(.3,.1,.5,1) forwards!important;background-color:transparent}
+@keyframes cdspin{0%{transform:rotateY(0);filter:none}70%{filter:brightness(1.4)}100%{transform:rotateY(-990deg);filter:brightness(2.6) drop-shadow(0 0 12px #fff)}}
+.srv2c.open .srf{animation:cdin .34s ease-out!important}
+@keyframes cdin{0%{transform:rotateY(90deg);filter:brightness(2.6)}60%{filter:brightness(1.5)}100%{transform:none;filter:none}}
+.srv2c{transform-style:preserve-3d}
+.gcr.many .gcg{grid-template-columns:repeat(8,calc(var(--vh)*11));gap:calc(var(--vh)*1.6) calc(var(--vh)*2.4)}
+.gcr.many .gcw .srv2c{width:calc(var(--vh)*11);height:calc(var(--vh)*14.3)}
+.gcr.many .gcn{font-size:calc(var(--vh)*2.1)}
+.gcr .gcb{overflow-y:auto;scrollbar-width:none}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -2787,7 +2797,7 @@ const anIco=(c,px)=>{const a=ANM[c.n];if(!a)return null;return`<span class="anic
 const MQ={};const mqIco=(c,px)=>{const k=c.n;if(!(k in MQ)){MQ[k]=null;const i=new Image();i.onload=()=>{MQ[k]=1};i.src=`art/MQ_${encodeURIComponent(k)}.webp`}return MQ[k]?`<span class="mqi g${c.g}" style="width:${px}px;height:${px}px"><img src="art/MQ_${encodeURIComponent(k)}.webp" alt=""><s class="mqs"></s></span>`:null};
 const cardIco=(c,px)=>{if(c&&c.g>=5&&(c.ty==='w'||c.ty==='a')&&!c.acc){const z=mqIco(c,px);if(z)return z;const b=cardIco0(c,px);return`<span class="mqi g${c.g}" style="width:${px}px;height:${px}px">${b}<s class=\"mqs\"></s></span>`}return cardIco0(c,px)};
 /* 오픈클로 변신 카드 그림(PC_<id>.webp)이 있으면 그걸로 — pc_in.py가 목록을 채움 */
-const PCIMG=new Set(["ereshkigal", "phoenix"]);
+const PCIMG=new Set([]);
 const cardIco0=(c,px)=>{if(c&&(c.ty==='w'||c.ty==='a')&&EQIC.has(eqKey(c)))return`<img class="eqimg" src="art/IC_eq_${eqKey(c)}.webp" style="width:${px}px;height:${px}px" alt="">`;if(c&&c.ty==='t'&&PCIMG.has(c.id.slice(2)))return`<img class="pcimg" src="art/PC_${c.id.slice(2)}.webp" style="width:${px}px;height:${Math.round(px*1.3)}px;object-fit:contain;object-position:50% 100%" alt="">`;const a=c&&c.ty==='t'&&artOf(c);return a&&a[0]==='hi'?`<img src="art/H_${a[1]}_card.png" style="width:${px}px;height:${px}px;object-fit:cover;object-position:50% 15%;border-radius:6px">`:spr(c.i,px)};
 const BEASTRE=/dragon|drake|wyvern|tiamat|xtahua|phoenix|manticore|griffon|sphinx|basilisk|golem|gargoyle|salamander|juggernaut/;
 const isBeast=card=>BEASTRE.test(card.id.slice(2));
@@ -4152,16 +4162,7 @@ async function synthResult(L0){const GRP={};const L=[];for(const x of L0){const 
 function boltSVG(){let d='M20 0',x=20;for(let y=24;y<=300;y+=24){x=20+(Math.random()*24-12);d+=` L${x.toFixed(0)} ${y}`}return`<svg class="svbolt" viewBox="0 0 40 300" preserveAspectRatio="none"><path d="${d}"/><path class="core" d="${d}"/></svg>`}
 /* 리니지M 합성 결과 (사용자 영상 2026-10-15): 「합성 결과」 · 우주 배경 · 카드 뒷면이 5장씩 줄지어 깔림 → 한 장씩 하얗게 번쩍이며 뒤집힘
    · 높은 등급은 큰 빛 폭발 · 실패(돌려받은 카드)는 회색 · 「모두 열기」로 한 번에 */
-async function synthReveal(L,title){const n=L.length;let skip=false;
- const face=x=>`<div class="srf fg${x.c.g} ${x.ok?'':'fail'}" style="--gc:${G[x.c.g].c}"><div class="srfa">${cardIco(x.c,64)}</div><b>${x.c.n}</b>${x.dup?'':'<u>NEW</u>'}</div>`;
- stageOn(`<div class="srv2"><div class="srv2bg"></div><div class="srv2h"><i></i><b>합성 결과</b><i></i></div><div class="srv2g${n>15?' many':''}">${L.map((x,i)=>`<div class="srv2c wait" id="sv${i}" style="--gc:${G[x.c.g].c}"><div class="srb"></div></div>`).join('')}</div><span class="srv2s" id="srvc"></span><button class="lbtn blue srv2x" id="srvX">모두 열기</button></div>`);
- const bt=$('srvX');bt.onclick=()=>{skip=true};await W(450);let ok=0;
- for(let i=0;i<n;i++){const x=L[i],el=$('sv'+i);if(!el)continue;if(x.ok)ok++;
-  if(skip){el.classList.remove('wait');el.innerHTML=face(x);el.classList.add('open');continue}
-  el.classList.remove('wait');el.classList.add('glow');(sfx.tick&&sfx.tick(1));await W(x.ok&&x.c.g>=3?260:160);
-  if(x.ok&&x.c.g>=3){const b=document.createElement('div');b.className='srburst'+(x.c.g>=4?' big':'');el.appendChild(b);if(x.c.g>=4){const r=document.querySelector('.srv2');r.style.setProperty('--fl',G[x.c.g].c);r.classList.remove('rays');void r.offsetWidth;r.classList.add('rays');sfx.legend&&sfx.legend()}else sfx.rare&&sfx.rare(2)}
-  el.classList.remove('glow');el.innerHTML=face(x)+(el.querySelector('.srburst')?el.querySelector('.srburst').outerHTML:'');el.classList.add('open');await W(x.ok&&x.c.g>=4?900:x.ok?260:150)}
- $('srvc').innerHTML=`성공 <b>${ok}</b> / ${n}`;bt.textContent='확인';await new Promise(r=>{bt.onclick=r});stageOff()}
+async function synthReveal(L,title){await cardReveal(L,{title:'합성 결과',stat:true});stageOff()}
 /* 한 장 합성 연출 (리니지M식): 4장이 마법진 가운데로 모여 한 장이 되고, 충전 → 성공이면 다음 등급 색 번개가 연달아 내리치고 폭발하며 윗등급 카드가 뒤집힘 */
 async function synthDrama(ins,r,ok,gg,ng,nm){const gc=G[gg].c,nc=G[ng].c,rc=G[r.g].c;
  stageOn(`<div class="sdr" id="sdr" style="--gc:${gc};--nc:${nc};--rc:${rc}"><div class="sdr-bg"></div><div class="sdr-circle"><i></i><i></i><i></i></div>
@@ -4440,18 +4441,22 @@ async function revealOne(c,big){const g=c.g;stageOn(`<div class="msg" id="msg">$
  $('msg').innerHTML=`<b style="color:${G[g].c}">${G[g].ko}</b> · ${c.n}`;if(g>=3)announce(`<span style="color:${G[g].c}">★ 당신이 ${G[g].ko} ${tyKo(c.ty)} 「${c.n}」을 손에 넣었습니다!</span>`);await wait(SKIP?400:g>=4?2200:g>=2?1300:900)}
 /* 여러 장 결과: 기다리지 않고 한 번에 보여주기 */
 /* 리니지M 변신·인형 뽑기 결과: 뒷면 카드 10장(5×2) + 오른쪽 「보너스」 1장 → 한 장씩 빛나며 뒤집힘, 이름은 카드 아래 등급색 */
-async function gachaReveal(res,title){const n=res.length,bi=n===11?10:-1;let skip=false;
- const face=c=>`<div class="srf fg${c.g}" style="--gc:${G[c.g].c}"><div class="srfa">${cardIco(c,72)}</div></div>`;
- const cell=(c,i)=>`<div class="gcw"><div class="srv2c wait" id="gv${i}" style="--gc:${G[c.g].c}"><div class="srb"></div></div><b class="gcn" id="gn${i}" style="color:${G[c.g].c}"></b></div>`;
- stageOn(`<div class="srv2 gcr"><div class="srv2bg"></div><div class="srv2h"><i></i><b>뽑기 결과</b><i></i></div><div class="gcb"><div class="gcg">${res.map((c,i)=>i===bi?'':cell(c,i)).join('')}</div>${bi>=0?`<div class="gcbo"><em>보너스</em>${cell(res[bi],bi)}</div>`:''}</div><button class="lbtn blue srv2x" id="gvX">모두 열기</button></div>`);
- const sk=$('skip');if(sk)sk.remove();const bt=$('gvX');bt.onclick=()=>{skip=true};await W(500);
- for(let i=0;i<n;i++){const c=res[i],el=$('gv'+i);if(!el)continue;const nm=$('gn'+i);
-  if(!skip){el.classList.remove('wait');el.classList.add('glow');sfx.flip&&sfx.flip();await W(c.g>=3?320:170);
-   if(c.g>=3){const b=document.createElement('div');b.className='srburst'+(c.g>=4?' big':'');el.appendChild(b);if(c.g>=4){const r=document.querySelector('.srv2');r.style.setProperty('--fl',G[c.g].c);r.classList.remove('rays');void r.offsetWidth;r.classList.add('rays');sfx.legend&&sfx.legend()}else sfx.rare&&sfx.rare(2)}}
-  el.classList.remove('wait','glow');const bu=el.querySelector('.srburst');el.innerHTML=face(c)+(bu?bu.outerHTML:'');el.classList.add('open');nm.textContent=c.n;
-  if(!skip)await W(c.g>=4?900:c.g>=3?320:140)}
- for(const c of res)if(c.g>=4)announce(`<span style="color:${G[c.g].c}">★ 당신이 ${G[c.g].ko} ${tyKo(c.ty)} 「${c.n}」을 손에 넣었습니다!</span>`);
+/* 공통 카드 공개 연출 (변신·인형 뽑기 = 합성 결과, 같은 모양): 뒷면 카드들 → 한 장씩 왼쪽으로 빙글빙글 돌다가(높은 등급일수록 오래) 앞면 · 이름은 카드 아래 등급색
+   L: [{c, ok(실패면 false), dup(이미 보유)}] · opt: {title, bonus(마지막 장을 오른쪽 보너스로), stat(성공 n/N 표시)} */
+async function cardReveal(L,opt){const n=L.length,bi=opt.bonus&&n===11?10:-1;let skip=false;
+ const face=x=>`<div class="srf fg${x.c.g}${x.ok===false?' fail':''}" style="--gc:${G[x.c.g].c}"><div class="srfa">${cardIco(x.c,72)}</div>${x.dup===false?'<u>NEW</u>':''}</div>`;
+ const cell=(x,i)=>`<div class="gcw"><div class="srv2c wait" id="gv${i}" style="--gc:${G[x.c.g].c}"><div class="srb"></div></div><b class="gcn" id="gn${i}" style="color:${x.ok===false?'#888':G[x.c.g].c}"></b></div>`;
+ stageOn(`<div class="srv2 gcr${n>11?' many':''}"><div class="srv2bg"></div><div class="srv2h"><i></i><b>${opt.title}</b><i></i></div><div class="gcb"><div class="gcg">${L.map((x,i)=>i===bi?'':cell(x,i)).join('')}</div>${bi>=0?`<div class="gcbo"><em>보너스</em>${cell(L[bi],bi)}</div>`:''}</div><span class="srv2s" id="gvc"></span><button class="lbtn blue srv2x" id="gvX">모두 열기</button></div>`);
+ const sk=$('skip');if(sk)sk.remove();const bt=$('gvX');bt.onclick=()=>{skip=true};await W(500);let ok=0;
+ for(let i=0;i<n;i++){const x=L[i],c=x.c,el=$('gv'+i);if(!el)continue;if(x.ok!==false)ok++;const nm=$('gn'+i);const hi=x.ok!==false&&c.g>=3;
+  if(!skip){el.classList.remove('wait');const sp=hi?(c.g>=4?1100:800):520;el.style.setProperty('--spd',sp+'ms');el.classList.add('spin');sfx.flip&&sfx.flip();await W(sp);
+   if(hi){const b=document.createElement('div');b.className='srburst'+(c.g>=4?' big':'');el.appendChild(b);if(c.g>=4){const r=document.querySelector('.srv2');r.style.setProperty('--fl',G[c.g].c);r.classList.remove('rays');void r.offsetWidth;r.classList.add('rays');sfx.legend&&sfx.legend()}else sfx.rare&&sfx.rare(2)}}
+  el.classList.remove('wait','spin');const bu=el.querySelector('.srburst');el.innerHTML=face(x)+(bu?bu.outerHTML:'');el.classList.add('open');nm.textContent=c.n;
+  if(!skip)await W(c.g>=4&&x.ok!==false?900:hi?360:200)}
+ if(opt.stat)$('gvc').innerHTML=`성공 <b>${ok}</b> / ${n}`;
+ for(const x of L)if(x.ok!==false&&x.c.g>=4)announce(`<span style="color:${G[x.c.g].c}">★ 당신이 ${G[x.c.g].ko} ${tyKo(x.c.ty)} 「${x.c.n}」을 손에 넣었습니다!</span>`);
  bt.textContent='확인';return new Promise(r=>{bt.onclick=r})}
+async function gachaReveal(res,title){return cardReveal(res.map(c=>({c})),{title:'뽑기 결과',bonus:true})}
 function showGrid(res,title,headHtml){if(res.length>=2&&res.length<=11&&res.every(c=>c.ty==='t'||c.ty==='d'))return gachaReveal(res,title);const m={};for(const c of res){(m[c.id]=m[c.id]||{c,n:0}).n++}/* 11장 이하(리니지M 11회 뽑기)는 같은 카드도 한 장씩 따로 · 6+5 두 줄 */const R11=res.length<=11;const L=R11?res.map(c=>({c,n:1})).sort((a,b)=>b.c.g-a.c.g):Object.values(m).sort((a,b)=>b.c.g-a.c.g||b.n-a.n);
  const cnt=G.map((g,i)=>res.filter(c=>c.g===i).length);const top=res.reduce((a,c)=>Math.max(a,c.g),0);
  stageOn(`<div class="rg"><div class="rgh"><b>${title}</b><div class="rgc">${G.map((g,i)=>cnt[i]?`<span style="color:${g.c}">${g.ko} ${cnt[i]}</span>`:'').join('')}</div>${headHtml||''}</div>
