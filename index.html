@@ -1715,6 +1715,9 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .srf.fg4{background-image:url(art/UI_card_frame_4.webp),linear-gradient(180deg,color-mix(in srgb,var(--gc) 25%,#0c1018),#0a0c12)}
 .srf.fg5{background-image:url(art/UI_card_frame_5.webp),linear-gradient(180deg,color-mix(in srgb,var(--gc) 25%,#0c1018),#0a0c12)}
 .srf.fg6{background-image:url(art/UI_card_frame_6.webp),linear-gradient(180deg,color-mix(in srgb,var(--gc) 25%,#0c1018),#0a0c12)}
+/* 목록·가방·장비칸에선 신화·유일 아이콘도 가만히 (다 같이 움직이면 어색함) — 상세 정보에서만 빛이 한 번씩 지나감 */
+.mqi>i{display:none}.mqi.g6{animation:none!important}
+.lidet .mqi>i,.lidh .mqi>i,.lchc .mqi>i,.mkdh .mqi>i{display:block;animation:mqsh 6s ease-in-out infinite}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
