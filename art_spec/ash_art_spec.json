@@ -12164,6 +12164,28 @@
    ],
    "request_sheet": "style_ref/req_alchemy.png",
    "prompt": "Lineage M style item icons, glowing alchemy stone crystal with ornate gold rim, three versions: blue (rare), red (hero), purple (legend), 96x96 transparent background, 2D hand-painted, no text"
+  },
+  {
+   "id": "i_menu",
+   "category": "UI 아이콘",
+   "name": "메뉴 아이콘 35개",
+   "size": "96x96 each transparent (or 6x6 sheet mn_sheet.png)",
+   "sheets": [
+    "mn_*"
+   ],
+   "request_sheet": "style_ref/req_menu_icons.png",
+   "prompt": "Lineage M style menu icons, ivory/cream single-color emblem icons with soft gold shading, transparent background, no text"
+  },
+  {
+   "id": "anim_eq",
+   "category": "아이템 애니메이션",
+   "name": "신화·유일 장비 반짝 회전 아이콘 20개",
+   "size": "768x96 (8 frames of 96x96)",
+   "sheets": [
+    "<item name>"
+   ],
+   "request_sheet": "style_ref/req_mythic_anim.png",
+   "prompt": "Lineage M mythic item icon animation, 8 frames in one row, item slowly turning with metallic sheen sweep and star flare sparkles, gold glow (mythic) or teal-green glow (unique), transparent background, same design every frame"
   }
  ],
  "effects_rules": "이펙트 전용: 정사각형 3x3 그리드(9프레임, 왼→오, 위→아래), 모든 칸 같은 크기, 효과가 각 칸 중앙(바닥형은 칸 아래쪽 중앙)에 위치, 칸 밖으로 잘리지 않게 여백, 배경은 순수 검정 #000000, 캐릭터·글자·격자선 없음. 리니지M 같은 한국 MMORPG 스킬 이펙트 느낌으로 선명하고 빛나게(glow). 파일: art_in/e_<이름>/sheet.png",
