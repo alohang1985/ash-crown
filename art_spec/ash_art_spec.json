@@ -12137,6 +12137,30 @@
    ],
    "priority": 1,
    "prompt": "Lineage M style square skill icon (ORIGINAL painting, same readability/feel as Lineage M skill icons) for \"패러독스\": 대상의 영혼을 구속하는 단죄의 영역을 전개한다.<br><br>영역 내의 대상에게 자신이 받는 대미지를 전이하고, 경계를 벗어날 경우 즉시 속박된다.<br><br>…. Visual direction: Bright orange-yellow fiery sun swirl, paradox. Painterly 2D, symbol filling the square, glowing magic, dark vignette edges, no text, 128x128."
+  },
+  {
+   "id": "bg_alchemy",
+   "category": "UI 배경",
+   "name": "질서의 연금 서재 배경",
+   "size": "1280x720",
+   "sheets": [
+    "bg"
+   ],
+   "request_sheet": "style_ref/req_alchemy.png",
+   "prompt": "Lineage M style painterly dark alchemist study: bookshelves, candles, green/blue glass flasks, open book, skull, red cloth table, golden empty orb stand at center, golden-crowned white-robed priestess alchemist on the right reaching toward the center, warm candle light, dark vignette, low saturation, no text, 1280x720"
+  },
+  {
+   "id": "i_alst",
+   "category": "아이템 아이콘",
+   "name": "연금석 3종 (희귀 파랑·영웅 빨강·전설 보라)",
+   "size": "3 icons 96x96 transparent",
+   "sheets": [
+    "alst_2",
+    "alst_3",
+    "alst_4"
+   ],
+   "request_sheet": "style_ref/req_alchemy.png",
+   "prompt": "Lineage M style item icons, glowing alchemy stone crystal with ornate gold rim, three versions: blue (rare), red (hero), purple (legend), 96x96 transparent background, 2D hand-painted, no text"
   }
  ],
  "effects_rules": "이펙트 전용: 정사각형 3x3 그리드(9프레임, 왼→오, 위→아래), 모든 칸 같은 크기, 효과가 각 칸 중앙(바닥형은 칸 아래쪽 중앙)에 위치, 칸 밖으로 잘리지 않게 여백, 배경은 순수 검정 #000000, 캐릭터·글자·격자선 없음. 리니지M 같은 한국 MMORPG 스킬 이펙트 느낌으로 선명하고 빛나게(glow). 파일: art_in/e_<이름>/sheet.png",
