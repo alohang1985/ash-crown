@@ -4582,16 +4582,25 @@ let ALM=[],ALTAB='all';
 /* 연금석 아이콘: 그림이 오면 IC_alst_N.webp, 없으면 임시 플라스크 */
 const alstIco=g=>`<span class="alst g${g}"><img src="art/IC_alst_${g}.webp" onerror="this.replaceWith(Object.assign(document.createElement('i'),{innerHTML:ico('elx')}))" alt=""></span>`;
 const alWho=x=>x.src==='alst'?{g:x.g,e:0}:{g:C(x.id).g,e:x.e||0};
-/* 인벤 '질서 연금 확률(영웅템+파템2)' 표 그대로. 각 줄 = [희귀 연금석, 희귀 인형카드, 영웅 연금석, 영웅 장비, 전설 연금석, 전설 장비] %
-   영웅템 강화 단계: 장신구는 +1~2/+3/+4/+5, 무기·방어구는 '안전강화+1'이 +3 줄 (무기 안전 6, 방어구 안전 4) */
-const ALT={'1':[21.02,36.40,25,16.08,1,.50],'3':[20,24.80,26,25.20,2,2],'4':[19.48,15.20,27,32.32,3,3],'5':[14.92,6.40,30,37.68,6,5.50]};
-function alRow(top){if(top.src==='alst')return'1';const c=C(top.id),e=top.e||0;if(c.acc)return e>=5?'5':e>=4?'4':e>=3?'3':'1';const safe=c.ty==='w'?6:4;const over=e-safe;return over>=3?'5':over===2?'4':over===1?'3':'1'}
-function alTable(L){if(!L.length)return null;const W=L.map(x=>({x,...alWho(x)}));const top=W.sort((a,b)=>b.g-a.g||b.e-a.e)[0];
- if(top.g>=4)return{rows:[[3,'stone',30],[3,'item',25],[4,'stone',22],[4,'item',20],[5,'stone',1],[5,'item',2]],key:'전설'};
- if(top.g===3){const r=ALT[alRow(top.x)];return{rows:[[2,'stone',r[0]],[2,'doll',r[1]],[3,'stone',r[2]],[3,'item',r[3]],[4,'stone',r[4]],[4,'item',r[5]]],key:alRow(top.x)}}
- return{rows:[[1,'item',15],[2,'stone',50],[2,'doll',27],[3,'stone',5],[3,'item',3]],key:'희귀'}}
-const alGrades=T=>{const g={};for(const[gr,,p]of T.rows)g[gr]=(g[gr]||0)+p;return Object.entries(g).map(([k,v])=>[+k,v/100])};
-function alMats(){const L=[];for(const x of[...S.wpn,...S.arms]){if(isEqU(x.u)||isOther(x.u))continue;const c=C(x.id);if(!c||c.acc||c.g<2||c.g>4)continue;L.push({src:'eq',u:x.u,id:x.id,e:x.e,ty:c.ty})}for(const[g,n]of ALST){const have=(S.alst||{})[g]||0,used=ALM.filter(a=>a.src==='alst'&&a.g===g).length;for(let i=0;i<have-used;i++)L.push({src:'alst',g,n,ty:'etc',k:'al'+g+'_'+i})}return L}
+/* 리니지M 질서의 연금 확률표 (사용자 제공 표 · 조건 1~9) — [희귀, 영웅, 전설, 신화] 총확률 · 각 등급 안의 연금석 % · 영웅 변신카드 % */
+const ALC=[
+ {n:'조건1 · 희귀 3개',g:[97.88,2.12,0,0],st:[29.68,1,0,0],cd:.08},
+ {n:'조건2 · 희귀 4개',g:[96.26,3.74,0,0],st:[30.66,1.5,0,0],cd:.16},
+ {n:'조건3 · 희귀 5개',g:[95.14,4.86,0,0],st:[32.14,2,0,0],cd:.24},
+ {n:'조건4 · 영웅(안전+1) 1 + 희귀 2',g:[44.80,51.2,4,0],st:[20,26,2,0],cd:.8},
+ {n:'조건5 · 영웅(안전+1) 2 + 희귀 1',g:[27.56,64.44,8,0],st:[17.96,28,4,0],cd:.96},
+ {n:'조건6 · 영웅(안전+1) 3',g:[21.32,67.68,11,0],st:[14.92,30,5.5,0],cd:1.12},
+ {n:'조건7 · 영웅(안전+1) 1 + 영웅 2 더',g:[21.20,66.80,12,0],st:[14.40,30,6,0],cd:1.2},
+ {n:'조건8 · 영웅(안전+1) 1 + 영웅 4 더',g:[20.84,64.16,15,0],st:[12.84,27,7.5,0],cd:1.44},
+ {n:'조건9 · 전설(안전+1) 1 + 영웅(안전+1) 2',g:[6.10,50.40,41.3,2.3],st:[6.10,17,21.25,2],cd:1.6}];
+const alSafe1=x=>{if(x.src==='alst')return true;const c=C(x.id);return(x.e||0)>=(c.ty==='w'?7:5)};/* 안전강화+1: 무기 7강·방어구 5강 이상 */
+function alCond(L){const W=L.map(x=>({x,...alWho(x)}));const leg=W.filter(w=>w.g>=4),hero=W.filter(w=>w.g===3),n=L.length;
+ if(leg.length&&hero.length>=2)return 8;if(leg.length)return 5;/* 표에 없는 경우: 전설만 → 조건6 수준 */
+ if(hero.length){const h1=hero.filter(w=>alSafe1(w.x)).length;if(n>=5&&hero.length>=5)return 7;if(n>=3&&hero.length>=3&&n>3)return 6;if(hero.length>=3)return h1>=1?5:4;if(hero.length===2)return h1>=1?4:3;return h1>=1?3:2}
+ return n>=5?2:n>=4?1:0}
+function alTable(L){if(L.length<1)return null;const C9=ALC[alCond(L)];const rows=[];[2,3,4,5].forEach((g,i)=>{const tot=C9.g[i];if(!tot)return;const st=Math.min(tot,C9.st[i]);const cd=g===3?Math.min(tot-st,C9.cd):0;if(st)rows.push([g,'stone',st]);if(cd)rows.push([g,'card',cd]);if(tot-st-cd>0)rows.push([g,'item',tot-st-cd])});return{rows,cond:C9}}
+const alGrades=T=>T.cond.g.map((p,i)=>[i+2,p/100]).filter(x=>x[1]>0);
+function alMats(){const L=[];for(const x of[...S.wpn,...S.arms]){if(isEqU(x.u)||isOther(x.u))continue;const c=C(x.id);if(!c||c.acc||c.g<2||c.g>4)continue;L.push({src:'eq',u:x.u,id:x.id,e:x.e,ty:c.ty})}return L}/* 연금석은 연금 재료가 아님 (리니지M: 제작·변신 제작·컬렉션 전용) */
 function alPop(title,html){const sc=document.querySelector('.lalch2');if(!sc)return;const o=sc.querySelector('.alpop');if(o)o.remove();sc.insertAdjacentHTML('beforeend',`<div class="alpop"><div class="alpw"><div class="alph"><b>${title}</b><button data-alpx="1">✕</button></div><div class="alpb">${html}</div><button class="alpok" data-alpx="1">확인</button></div></div>`)}
 let BGALCH=true,ORBOK=false,ALLOOP=[],ALDARK=false;for(let k=1;k<=8;k++){const i=new Image();i.onload=()=>{ALLOOP[k-1]=i.src};i.src=`art/BG_alchemy_pose_loop_${k}.webp`}{const i=new Image();i.onload=()=>{ALDARK=true};i.src='art/AL_al_orb_dark.webp'}
 /* 연금술사 움직임: 8프레임이 있으면 루프, 없으면 대기↔손 뻗기 천천히 오가기 */
@@ -4616,15 +4625,14 @@ function alWin(){const st=$('stage');st.hidden=false;st.classList.remove('sidel'
   if(b=t.closest('[data-alr]')){const i=+b.dataset.alr;if(ALM[i]){ALM.splice(i,1);draw()}return}
   if(b=t.closest('[data-alm]')){if(ALM.length>=5){announce('재료는 5개까지 올릴 수 있어요');return}const k=b.dataset.alm;const x=alMats().find(x=>(x.src==='eq'?'u'+x.u:x.k)===k);if(x){ALM.push(x);draw()}return}
   if(t.closest('[data-alpx]')){const p=st.querySelector('.alpop');if(p)p.remove();return}if(t.closest('.alpop'))return;
-  if(t.closest('[data-alinfo]')){alPop('연금 재료 목록',`<table class="altb"><tr><th>재료</th><th>쓸 수 있는 것</th></tr><tr><td style="color:${G[2].c}">희귀</td><td>희귀 무기·방어구, 희귀 연금석</td></tr><tr><td style="color:${G[3].c}">영웅</td><td>영웅 무기·방어구 (강화할수록 좋아요), 영웅 연금석</td></tr><tr><td style="color:${G[4].c}">전설</td><td>전설 무기·방어구, 전설 연금석</td></tr></table><p>• 재료 <b>3~5개</b> · 비용 <b>200,000 아데나</b><br>• 착용 중인 장비와 장신구는 못 넣어요<br>• 가장 좋은 재료 1개가 결과 등급을 정하고, 4·5번째 재료는 높은 등급 확률을 조금 올려요<br>• 재료가 모자라면 <b>거래소</b>에서 사세요 (메뉴 → 거래소)</p>`);return}
-  if(t.closest('[data-alrate]')){const T=alTable(ALM);const nm={stone:'연금석',item:'장비',doll:'인형 카드 2장'};const cell=(g,k,p)=>`<td style="color:${G[g].c}">${G[g].ko} ${nm[k]} ${p.toFixed(2)}%</td>`;
-   const tb=r=>`<tr><td>${{'1':'영웅 +1~2 (장비는 안전강화)','3':'영웅 +3 (장비는 안전강화+1)','4':'영웅 +4 (장비는 안전강화+2)','5':'영웅 +5 (장비는 안전강화+3)'}[r]}</td>${[[2,'stone'],[2,'doll'],[3,'stone'],[3,'item'],[4,'stone'],[4,'item']].map(([g,k],i)=>cell(g,k,ALT[r][i])).join('')}</tr>`;
-   alPop('성공 확률',`${T?`<p class="alnow">지금 올린 재료 기준 · ${alGrades(T).map(([g,p])=>`<b style="color:${G[g].c}">${G[g].ko} ${(p*100).toFixed(2)}%</b>`).join(' · ')}</p>`:'<p class="alnow">재료를 올리면 지금 확률이 보여요</p>'}<p>리니지M 「질서의 연금」 확률표 (영웅 장비 1개 + 희귀 장비 2개 기준 · 가장 좋은 재료와 강화 단계로 결정)</p><table class="altb small">${['1','3','4','5'].map(tb).join('')}</table><p>• 희귀 결과는 <b>희귀 연금석</b> 또는 <b>인형 카드 2장</b>만 나와요 · 영웅·전설 결과는 <b>연금석</b> 또는 <b>장비</b><br>• 연금석은 같은 등급 재료로 다시 연금에 쓰거나 거래소에 팔 수 있어요</p>`);return}
+  if(t.closest('[data-alinfo]')){alPop('연금 재료 목록',`<table class="altb"><tr><th>재료</th><th>쓸 수 있는 것</th></tr><tr><td style="color:${G[2].c}">희귀</td><td>희귀 무기·방어구</td></tr><tr><td style="color:${G[3].c}">영웅</td><td>영웅 무기·방어구 (안전강화+1 이상이 좋아요)</td></tr><tr><td style="color:${G[4].c}">전설</td><td>전설 무기·방어구</td></tr></table><p>• 재료 <b>3~5개</b> · 비용 <b>200,000 아데나</b><br>• 착용 중인 장비와 장신구는 못 넣어요<br>• 가장 좋은 재료 1개가 결과 등급을 정하고, 4·5번째 재료는 높은 등급 확률을 조금 올려요<br>• 재료가 모자라면 <b>거래소</b>에서 사세요 (메뉴 → 거래소)</p>`);return}
+  if(t.closest('[data-alrate]')){const T=ALM.length?alTable(ALM):null;const pc=(v,g)=>v?`<td style="color:${G[g].c}">${v}%</td>`:'<td>-</td>';
+   alPop('성공 확률',`${T?`<p class="alnow">지금: <b>${T.cond.n}</b> · ${alGrades(T).map(([g,p])=>`<b style="color:${G[g].c}">${G[g].ko} ${(p*100).toFixed(2)}%</b>`).join(' · ')}</p>`:'<p class="alnow">재료를 올리면 지금 조건이 보여요</p>'}<p>리니지M 「질서의 연금」 확률표 (안전+1 = 무기 7강 · 방어구 5강 이상)</p><table class="altb small"><tr><th>조건 · 재료</th><th>희귀</th><th>영웅</th><th>전설</th><th>신화</th></tr>${ALC.map(c=>`<tr><td>${c.n}</td>${c.g.map((v,i)=>pc(v,i+2)).join('')}</tr>`).join('')}</table><p>• 각 등급 안에서 <b>연금석</b> 또는 그 등급 <b>장비</b>가 나와요 (영웅에는 변신 카드도 조금) · 연금석은 제작·변신 제작·컬렉션에 쓰는 재료예요 (거래소 판매 가능)</p>`);return}
   if(t.closest('[data-algo]')){if(ALM.length<3){alPop('연금 시작',`<p>재료가 <b>${3-ALM.length}개</b> 더 필요해요.<br>오른쪽 <b>연금 재료</b>에서 아이템을 눌러 오망성에 올려 주세요.</p>`);return}if(S.gold<200000){alPop('연금 시작','<p>아데나가 부족해요 (200,000 필요)</p>');return}const T=alTable(ALM);busy=true;S.gold-=200000;
    for(const a of ALM){if(a.src==='eq'){S.wpn=S.wpn.filter(w=>w.u!==a.u);S.arms=S.arms.filter(w=>w.u!==a.u)}else S.alst[a.g]--}ALM=[];
    const tot=T.rows.reduce((a,r)=>a+r[2],0);let x=Math.random()*tot,ri=0;for(;ri<T.rows.length-1&&x>=T.rows[ri][2];ri++)x-=T.rows[ri][2];const[g,kind]=T.rows[ri];let res;
    if(kind==='stone'){res={alst:g,n:G[g].ko+' 연금석'};S.alst=S.alst||{};S.alst[g]=(S.alst[g]||0)+1}
-   else if(kind==='doll'){const L=CARDS.filter(c=>c.ty==='d'&&c.g===g);const c=L[Math.floor(Math.random()*L.length)];S.cards[c.id]=(S.cards[c.id]||0)+2;res={c,n:c.n+' 인형 카드 ×2'}}
+   else if(kind==='card'){const L=CARDS.filter(c=>c.ty==='t'&&c.g===g&&!c.off);const c=L[Math.floor(Math.random()*L.length)];S.cards[c.id]=(S.cards[c.id]||0)+1;res={c,n:c.n+' 변신 카드'}}
    else{const pool=CARDS.filter(c=>(c.ty==='w'||c.ty==='a')&&!c.acc&&!c.off&&c.g===g);const mine=pool.filter(c=>c.ty!=='w'||classW(c));const c=(Math.random()<.5&&mine.length?mine:pool)[Math.floor(Math.random()*(Math.random()<.5&&mine.length?mine:pool).length)];res={c,n:c.n};(c.ty==='w'?S.wpn:S.arms).push({u:++S.uid,id:c.id,e:0})}
    save();headLite();await alReveal(res,g);busy=false;draw();return}}}
 function alReveal(res,g){return new Promise(done=>{const st=$('stage');const sc=st.querySelector('.lalch2');if(sc)sc.dataset.pose='reach';if(sc)sc.classList.add('rv');const o=document.createElement('div');o.className='alrv2';o.innerHTML=`<p class="altop"></p><div class="alcyc2"></div><b class="alnm2"></b><p class="altap2">화면 중앙을 터치해 주세요.</p><button class="alcf2" hidden>확인</button>`;(sc||st).appendChild(o);
