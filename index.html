@@ -1647,6 +1647,19 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .alignite{position:absolute;left:51%;top:30%;width:calc(var(--vh)*120);aspect-ratio:1;transform:translate(-50%,-50%);background:url(art/AL_al_ignite.webp) 0 0/1600% 100% no-repeat;mix-blend-mode:screen;animation:anfr16b 1.6s steps(16) forwards;pointer-events:none;z-index:6}
 @keyframes anfr16b{to{background-position:106.6667% 0}}
 .alrays{position:absolute;left:51%;top:20%;width:calc(var(--vh)*90);aspect-ratio:1;transform:translate(-50%,-50%);background:url(art/AL_al_rays.webp) 0 0/1200% 100% no-repeat;mix-blend-mode:screen;animation:anfr12 1.2s steps(12) infinite;pointer-events:none;filter:drop-shadow(0 0 20px var(--oc))}
+/* 신화·유일 아이콘: 아이템은 가만히, 빛줄기만 대각선으로 천천히 지나가고 테두리가 은은히 숨쉼 */
+.mqi{position:relative;display:inline-grid;place-items:center;overflow:hidden;vertical-align:middle}
+.mqi>img,.mqi>*:not(i){width:100%!important;height:100%!important;object-fit:contain}
+.mqi>i{position:absolute;inset:-40%;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.0) 44%,rgba(255,250,220,.55) 50%,rgba(255,255,255,0) 56%,transparent 60%);transform:translateX(-60%);animation:mqsh 3.6s ease-in-out infinite;pointer-events:none;mix-blend-mode:screen}
+.mqi.g6>i{animation-duration:2.8s;background:linear-gradient(115deg,transparent 40%,rgba(255,180,90,0) 44%,rgba(255,220,150,.7) 50%,rgba(255,140,60,0) 56%,transparent 60%)}
+@keyframes mqsh{0%,55%{transform:translateX(-60%)}100%{transform:translateX(60%)}}
+.mqi.g5{box-shadow:inset 0 0 10px rgba(255,200,58,.45)}.mqi.g6{box-shadow:inset 0 0 12px rgba(255,106,42,.6);animation:mqbr 2.4s ease-in-out infinite}
+@keyframes mqbr{50%{box-shadow:inset 0 0 18px rgba(255,140,60,.85)}}
+/* 상점: 더 따뜻하고 밝게 */
+.lshop2{background:radial-gradient(ellipse 80% 60% at 50% 0,rgba(255,190,110,.28),transparent 70%),linear-gradient(#3a2a1c,#22180f 55%,#1a120b)!important}
+.lshop2 .lsg2>*,.lshop2 [class*=card]{filter:brightness(1.12) saturate(1.05)}
+/* 가방: 살짝 반투명 (뒤 사냥터가 비침) */
+.linv,html.land .stage.dockr .linv,html.land .stage.sider .linv{background:rgba(14,10,6,.72)!important;backdrop-filter:blur(2px)}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -2209,7 +2222,7 @@ html.vfix.land .lqs button:nth-child(n+4){display:flex!important}</style><link r
 <script>/* 잿빛 왕관 · 시제품 v3 — 그림: Dungeon Crawl Stone Soup 타일 (CC0, 퍼블릭 도메인) */
 const $=id=>document.getElementById(id);const rnd=Math.random;const R=(a,b)=>a+Math.floor(rnd()*(b-a+1));const pick=a=>a[Math.floor(rnd()*a.length)];const wait=ms=>new Promise(r=>setTimeout(r,ms));
 const fmt=n=>{n=Math.round(n);const a=Math.abs(n);if(a<1e6)return n.toLocaleString();for(const[v,u]of[[1e40,'정'],[1e36,'간'],[1e32,'구'],[1e28,'양'],[1e24,'자'],[1e20,'해'],[1e16,'경'],[1e12,'조'],[1e8,'억'],[1e4,'만']])if(a>=v){const x=n/v;return(x<10?x.toFixed(2):x<100?x.toFixed(1):Math.round(x).toString())+u}return n.toLocaleString()};
-const G=[{ko:'일반',c:'#b8b8b8'},{ko:'고급',c:'#5fcf6e'},{ko:'희귀',c:'#4aa3ff'},{ko:'영웅',c:'#ff4d4d'},{ko:'전설',c:'#c46bff'},{ko:'신화',c:'#ffc83a'},{ko:'유일',c:'#2ef2ff'},{ko:'장신구',c:'#e8c070'}];
+const G=[{ko:'일반',c:'#b8b8b8'},{ko:'고급',c:'#5fcf6e'},{ko:'희귀',c:'#4aa3ff'},{ko:'영웅',c:'#ff4d4d'},{ko:'전설',c:'#c46bff'},{ko:'신화',c:'#ffc83a'},{ko:'유일',c:'#ff6a2a'},{ko:'장신구',c:'#e8c070'}];
 const POW=[30,90,260,700,1800,5000,14000];
 /* ================= 데이터 ================= */
 const CLASSES=[{k:'군주',hpl:12,d:'사냥 골드 +15% · 한손검',gold:1.15,wt:['sword']},{k:'기사',hpl:16,d:'공격력 +15% · 양손검',atk:1.15,wt:['gsword']},{k:'요정',hpl:10,d:'치명타 +10% · 활 · 원거리',crit:.1,wt:['bow'],ranged:1},{k:'마법사',hpl:8,d:'주문서 획득 2배 · 스킬 +20% · 지팡이 · 원거리',scroll:2,sk:1.2,wt:['staff'],ranged:2},
@@ -2622,7 +2635,9 @@ const EQIC=new Set([]);const eqKey=c=>c.id.split(':')[1].toLowerCase().replace(/
 const ANM={"성기사의 방패":{"f":"an18853587","n":8},"검객의 장갑":{"f":"an98445579","n":8},"대마법사의 지팡이":{"f":"an22268733","n":8},"정령의 활":{"f":"an75767786","n":8},"심연의 지팡이":{"f":"an20858989","n":8},"암살자의 단검":{"f":"an86909703","n":8},"거인의 벨트":{"f":"an98981710","n":8},"파멸의 반지":{"f":"an85989901","n":8},"금룡 비늘 갑옷":{"f":"an18574419","n":8},"태고의 검":{"f":"an987182","n":8},"심연의 귀걸이":{"f":"an96540571","n":8},"차원의 마력봉":{"f":"an86814153","n":8},"거인의 도끼":{"f":"an5166163","n":8},"고대 용의 목걸이":{"f":"an59553574","n":8},"성기사의 대검":{"f":"an24215014","n":8},"별빛 망토":{"f":"an60684045","n":8},"그림자 장화":{"f":"an89412779","n":8},"신의 삼지창":{"f":"an11165183","n":8},"수호자의 투구":{"f":"an12164775","n":8}};/*ANM*/
 /* 신화·유일 장비: 오픈클로 반짝 회전 애니(AN_*.webp)가 있으면 그걸로 */
 const anIco=(c,px)=>{const a=ANM[c.n];if(!a)return null;return`<span class="anico" style="width:${px}px;height:${px}px;background-image:url(art/AN_${a.f}.webp);--n:${a.n};--to:${(a.n/Math.max(1,a.n-1)*100).toFixed(3)}%;animation-duration:${a.n*.1}s"></span>`};
-const cardIco=(c,px)=>{if(c&&c.g>=5&&(c.ty==='w'||c.ty==='a')){const z=anIco(c,px);if(z)return z}if(c&&(c.ty==='w'||c.ty==='a')&&EQIC.has(eqKey(c)))return`<img class="eqimg" src="art/IC_eq_${eqKey(c)}.webp" style="width:${px}px;height:${px}px" alt="">`;const a=c&&c.ty==='t'&&artOf(c);return a&&a[0]==='hi'?`<img src="art/H_${a[1]}_card.png" style="width:${px}px;height:${px}px;object-fit:cover;object-position:50% 15%;border-radius:6px">`:spr(c.i,px)};
+const MQ={};const mqIco=(c,px)=>{const k=c.n;if(!(k in MQ)){MQ[k]=null;const i=new Image();i.onload=()=>{MQ[k]=1};i.src=`art/MQ_${encodeURIComponent(k)}.webp`}return MQ[k]?`<span class="mqi g${c.g}" style="width:${px}px;height:${px}px"><img src="art/MQ_${encodeURIComponent(k)}.webp" alt=""><i></i></span>`:null};
+const cardIco=(c,px)=>{if(c&&c.g>=5&&(c.ty==='w'||c.ty==='a')&&!c.acc){const z=mqIco(c,px);if(z)return z;const b=cardIco0(c,px);return`<span class="mqi g${c.g}" style="width:${px}px;height:${px}px">${b}<i></i></span>`}return cardIco0(c,px)};
+const cardIco0=(c,px)=>{if(c&&(c.ty==='w'||c.ty==='a')&&EQIC.has(eqKey(c)))return`<img class="eqimg" src="art/IC_eq_${eqKey(c)}.webp" style="width:${px}px;height:${px}px" alt="">`;const a=c&&c.ty==='t'&&artOf(c);return a&&a[0]==='hi'?`<img src="art/H_${a[1]}_card.png" style="width:${px}px;height:${px}px;object-fit:cover;object-position:50% 15%;border-radius:6px">`:spr(c.i,px)};
 const BEASTRE=/dragon|drake|wyvern|tiamat|xtahua|phoenix|manticore|griffon|sphinx|basilisk|golem|gargoyle|salamander|juggernaut/;
 const isBeast=card=>BEASTRE.test(card.id.slice(2));
 function drawBeast(c,card,x,gy,sc,state,p,t){if(!IMG.complete)return false;const sz=32*sc*1.75,br=1+Math.sin(t/260)*.03;const lx=state==='atk'?Math.sin(Math.min(1,p)*Math.PI)*18:0,ly=state==='hurt'?6:0;
@@ -4318,8 +4333,16 @@ function enhWin(){const draw=()=>{const it=enhItem(),c=it&&C(it.id);const all=[.
    if(t.closest('#ewGo')){if(BUSY)return;enhQuick(EWT==='bless');draw();setTimeout(()=>{if(ERES&&performance.now()-ERES.t0>1100){ERES=null;if($('stage').querySelector('.lenh'))draw()}},1200);return}}};draw()}
 /* ---------- 직업 · 이벤트 ---------- */
 function pickClass(){if(S.cls)return;const st=$('stage');st.hidden=false;st.innerHTML=`<div class="cls"><h2>${S.cls?'전직 · 직업을 바꿉니다':'직업을 고르세요'}</h2><p class="mini">${S.cls?'전직 주문서 1장을 씁니다. 레벨과 장비는 그대로예요.':'새 캐릭터의 직업을 골라요. 다른 직업은 캐릭터를 하나 더 만들어 키우면 돼요.'}</p><div class="clg">${CLASSES.map(c=>['M','F'].map(sx=>`<button data-k="${c.k}" data-sx="${sx}"${S.cls&&S.cls.k===c.k&&S.cls.sx===sx?' class="on"':''}>${chArt(c.k,sx)?`<img class="clsill" src="${chArt(c.k,sx)}" alt="">`:spr(charIdx(c.k,sx),64)}<b>${c.k} ${sx==='M'?'남':'여'}</b><small>${c.d}</small><small class="csk">${(SKD[c.k]||[]).slice(0,1).map(x=>'시작 스킬 「'+x[0]+'」').join('')}</small></button>`).join('')).join('')}</div>${S.cls?'<button class="btn" id="clsX" style="margin-top:10px;width:100%">취소</button>':''}</div>`;
- st.onclick=e=>{if(e.target.id==='clsX'){st.onclick=null;st.hidden=true;st.innerHTML='';return}const b=e.target.closest('[data-k]');if(!b)return;const was=S.cls;if(was&&was.k===b.dataset.k&&was.sx===b.dataset.sx)return;if(was)S.cc--;S.cls={k:b.dataset.k,sx:b.dataset.sx};if(!was)liveSend('born');st.onclick=null;st.hidden=true;st.innerHTML='';if(was)announce(`<span style="color:#7dff9a">✦ ${was.k}에서 ${S.cls.k}(으)로 전직했습니다</span>`);save();render();ac()}}
-function dailyEvent(){const d=kday();if(S.day===d)return;const first=!S.day;S.day=d;save()}
+ st.onclick=e=>{if(e.target.id==='clsX'){st.onclick=null;st.hidden=true;st.innerHTML='';return}const b=e.target.closest('[data-k]');if(!b)return;const was=S.cls;if(was&&was.k===b.dataset.k&&was.sx===b.dataset.sx)return;if(was)S.cc--;S.cls={k:b.dataset.k,sx:b.dataset.sx};if(!was){liveSend('born');setTimeout(()=>{starterPack();uqEvent();render()},50)}st.onclick=null;st.hidden=true;st.innerHTML='';if(was)announce(`<span style="color:#7dff9a">✦ ${was.k}에서 ${S.cls.k}(으)로 전직했습니다</span>`);save();render();ac()}}
+/* 시작 패키지 (모든 신규): +8 전설 무기(직업 무기) + +6 영웅 방어구 6부위 + 1억 골드 */
+function starterPack(){if(!S.cls||S.starter)return;S.starter=1;if((S.lv||1)>5){save();return}/* 기존 캐릭터는 제외 */const cl=CL();const w=CARDS.find(c=>c.ty==='w'&&c.g===4&&!c.off&&(cl.wt||[]).includes(c.wt))||CARDS.find(c=>c.ty==='w'&&c.g===4);if(w){const u=++S.uid;S.wpn.push({u,id:w.id,e:8});S.eqW=u}
+ for(const sl of['helm','body','cloak','glove','boot','shield']){const a=CARDS.find(c=>c.ty==='a'&&!c.acc&&c.g===3&&c.sl===sl);if(a){const u=++S.uid;S.arms.push({u,id:a.id,e:6});S.eqA[sl]=u}}
+ S.gold+=100000000;save();setTimeout(()=>announce('<span style="color:#ffd27a">🎁 시작 패키지 · +8 전설 무기 · +6 영웅 방어구 6부위 · 1억 골드 지급!</span>'),1500)}
+/* 이벤트: 2026-10-22까지 누구나 유일 변신 「명계의 왕」 사용 가능 (기간 끝나면 회수) */
+const UQ_EV_END=Date.UTC(2026,9,22,15,0,0);
+function uqEvent(){const id='t:ereshkigal';if(Date.now()<UQ_EV_END){if(!(S.cards[id]>0)){S.cards[id]=1;S.uqEv=1;setTimeout(()=>announce('<span style="color:#ff8a4a">🔥 이벤트 · 10월 22일까지 누구나 유일 변신 「명계의 왕」을 쓸 수 있어요 · 변신 창에서 장착하세요</span>'),2500)}}
+ else if(S.uqEv){S.uqEv=0;S.cards[id]=Math.max(0,(S.cards[id]||1)-1);if(!S.cards[id]){delete S.cards[id];if(S.eqT===id)S.eqT=null}}}
+function dailyEvent(){starterPack();uqEvent();const d=kday();if(S.day===d)return;const first=!S.day;S.day=d;save()}
 
 /* ================= 방치형: 스테이지 · 능력 강화 · 축복 · 퀘스트 ================= */
 function stageKill(m,t){if(MODE)return;S.cnt=S.cnt||{};S.cnt.kill=(S.cnt.kill||0)+1;if(!m.sboss&&rnd()<(m.named?.2:m.elite?.004:.0005)){S.chest=(S.chest||0)+1;fx.push({k:'num',x:m.x,y:m.y-20,t,txt:'🎁 보물상자',c:'#ffcf5a'})}
