@@ -1771,6 +1771,13 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .lidcls{margin:4px 8px 2px;padding:4px 8px;border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.35);font-size:12px;line-height:1.4}
 .lidcls .clsl{font-size:12px}.clsl b{text-decoration:none;color:#fff;background:rgba(120,200,90,.25);padding:0 3px;border-radius:2px;white-space:nowrap}
 .clsl.no em{display:block}
+/* 11회 뽑기 결과: 리니지M처럼 11장을 6+5 두 줄로 */
+.rgg.r11{display:flex!important;flex-wrap:wrap;justify-content:center;gap:calc(var(--vh)*1.4);overflow:visible;padding:6px 0}
+.rgg.r11 .rgi{width:calc((100% - var(--vh)*7)/6);max-width:120px;aspect-ratio:.78;justify-content:center;gap:4px;border-width:2px}
+.rgg.r11 .rgi small{font-size:calc(var(--vh)*2.6)}
+.rgg.r11 .rgi{max-width:calc(var(--vh)*20);aspect-ratio:.86}
+.rgg.r11 .rgi img,.rgg.r11 .rgi canvas{transform:scale(1.25)}
+.rgg.r11{width:calc(var(--vh)*20*6 + var(--vh)*1.4*5 + 2px);max-width:100%;margin:0 auto}.rgg.r11 .rgi{width:calc(var(--vh)*20);flex:0 0 auto}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -4419,10 +4426,10 @@ async function revealOne(c,big){const g=c.g;stageOn(`<div class="msg" id="msg">$
  if(g>=2){sparks(bc,g*14,G[g].c);sfx.rare(g)}if(g>=3){$('beam').classList.add('on');flash();shake()}if(g>=4){sfx.legend();buzz([100,60,200,60,300]);sparks(bc,80,G[g].c)}
  $('msg').innerHTML=`<b style="color:${G[g].c}">${G[g].ko}</b> · ${c.n}`;if(g>=3)announce(`<span style="color:${G[g].c}">★ 당신이 ${G[g].ko} ${tyKo(c.ty)} 「${c.n}」을 손에 넣었습니다!</span>`);await wait(SKIP?400:g>=4?2200:g>=2?1300:900)}
 /* 여러 장 결과: 기다리지 않고 한 번에 보여주기 */
-function showGrid(res,title,headHtml){const m={};for(const c of res){(m[c.id]=m[c.id]||{c,n:0}).n++}const L=Object.values(m).sort((a,b)=>b.c.g-a.c.g||b.n-a.n);
+function showGrid(res,title,headHtml){const m={};for(const c of res){(m[c.id]=m[c.id]||{c,n:0}).n++}/* 11장 이하(리니지M 11회 뽑기)는 같은 카드도 한 장씩 따로 · 6+5 두 줄 */const R11=res.length<=11;const L=R11?res.map(c=>({c,n:1})).sort((a,b)=>b.c.g-a.c.g):Object.values(m).sort((a,b)=>b.c.g-a.c.g||b.n-a.n);
  const cnt=G.map((g,i)=>res.filter(c=>c.g===i).length);const top=res.reduce((a,c)=>Math.max(a,c.g),0);
  stageOn(`<div class="rg"><div class="rgh"><b>${title}</b><div class="rgc">${G.map((g,i)=>cnt[i]?`<span style="color:${g.c}">${g.ko} ${cnt[i]}</span>`:'').join('')}</div>${headHtml||''}</div>
- <div class="rgg">${L.map((x,i)=>`<div class="rgi${x.c.g>=3?' hi':''}" style="--ac:${G[x.c.g].c};animation-delay:${Math.min(i,40)*18}ms">${cardIco(x.c,40)}<small>${x.c.n}</small>${x.n>1?`<em>×${x.n}</em>`:''}</div>`).join('')}</div>
+ <div class="rgg${R11?' r11':''}">${L.map((x,i)=>`<div class="rgi${x.c.g>=3?' hi':''}" style="--ac:${G[x.c.g].c};animation-delay:${R11?i*90:Math.min(i,40)*18}ms">${cardIco(x.c,R11?Math.round(Math.min(72,VHH()*.13)):40)}<small>${x.c.n}</small>${x.n>1?`<em>×${x.n}</em>`:''}</div>`).join('')}</div>
  <button class="btn gold wide" id="rgok">확인</button></div>`);$('skip').remove();
  if(top>=3){flash();sfx.rare(top);buzz([60,40,120])}else sfx.tick(2);if(top>=4)sfx.legend();
  for(const x of L)if(x.c.g>=4)announce(`<span style="color:${G[x.c.g].c}">★ 당신이 ${G[x.c.g].ko} ${tyKo(x.c.ty)} 「${x.c.n}」을 손에 넣었습니다!</span>`);
