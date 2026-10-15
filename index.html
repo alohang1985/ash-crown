@@ -1641,7 +1641,7 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .lalch2.hasorb .alorbimg,.lalch2.hasorb .alorbimg.back{filter:none!important}
 .lalch2.hasorb .alorbimg.back{display:none!important}.lalch2.hasorb .alorbimg{inset:-48%!important}
 /* 불길 v2 (24프레임) · 점화 · 빛기둥 — 그림이 오면 자동 사용 */
-.lalch2.fl2 .alorbimg{background-image:url(art/AL_al_flame2.webp?v=3);background-size:2400% 100%;animation:anfr24 1.6s steps(24) infinite;inset:-70%!important}
+.lalch2.fl2 .alorbimg{background-image:url(art/AL_al_flame2.webp?v=4);background-size:2400% 100%;animation:anfr24 1.6s steps(24) infinite;inset:-70%!important}
 .lalch2.fl2 .alorb2.grade .alorbimg{background-image:var(--orbimg)}
 @keyframes anfr24{to{background-position:104.3478% 0}}
 .alignite{position:absolute;left:51%;top:30%;width:calc(var(--vh)*120);aspect-ratio:1;transform:translate(-50%,-50%);background:url(art/AL_al_ignite.webp) 0 0/1600% 100% no-repeat;mix-blend-mode:screen;animation:anfr16b 1.6s steps(16) forwards;pointer-events:none;z-index:6}
@@ -1750,12 +1750,15 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 
 /* 대기(재료 없음): 불길 없이 유리 수정구 + 은은한 빛만 · 재료를 올리면 불길(24프레임)이 피어오름 */
 .lalch2:not(:has(.alsl2.on)):not(.rv) .alorbimg{display:none!important}
-.lalch2.fl2 .alorbimg{background-image:url(art/AL_al_flame2.webp?v=3)!important;background-size:2400% 100%!important;animation:anfr24 2.6s steps(24) infinite!important}
+.lalch2.fl2 .alorbimg{background-image:url(art/AL_al_flame2.webp?v=4)!important;background-size:2400% 100%!important;animation:anfr24 2.6s steps(24) infinite!important}
 .lalch2.fl2 .alorb2.grade .alorbimg{background-image:var(--orbimg)!important}
 .lalch2.fl2 .alorbimg{left:-25%!important;right:-45%!important;top:-55%!important;bottom:-15%!important}
 .lalch2.fl2 .alorbimg{left:-45%!important;right:-45%!important;top:-80%!important;bottom:-12%!important}
 .lalch2.hasorb .alorb2{top:29.5%!important}.lalch2.fl2 .alorbimg{top:-70%!important;bottom:-22%!important}
 .lalch2.hasorb .alorb2{top:33.5%!important;left:43.4%!important}
+/* 수정구: 그림 속 받침대 그릇(가로 51.2%, 그릇 윗면 51.5%)에 정확히 · 불길 고리의 가운데(프레임 55% 높이)가 수정구 중심에 오게 */
+.lalch2.hasorb .alorb2{left:44.95%!important;top:31%!important;width:12.5%!important}
+.lalch2.fl2 .alorbimg{left:-70%!important;right:-70%!important;top:-82%!important;bottom:-58%!important;inset:auto;-webkit-mask-image:none;mask-image:none}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -2716,8 +2719,8 @@ function drawArt(c,card,x,gy,H,state,p,t){const a=artOf(card);if(!a)return false
   else if(HAMOVE>t){const run=!!A.n.run;an=run?'run':'walk';f=Math.floor((SV.p.dist||0)/(run?9:6))%A.n[an]}
   else{an='idle';const n=A.n.idle,q=Math.floor(t/130)%(n*2-2);f=q<n?q:n*2-2-q}
   {/* 8방향 시트(H8_<k>_<동작>.webp: 행=S,SE,E,NE,N · 칸 256)가 있으면 사용 — 왼쪽 방향은 바깥에서 좌우 뒤집힘 */const a8={atk1:'attack',atk2:'attack',ult:'skill'}[an]||an;const i8=artImg('H8_'+k+'_'+a8+'.webp');
-   if(i8.complete&&i8.naturalWidth){const n8=Math.max(1,Math.round(i8.naturalWidth/(i8.naturalHeight/5))),cw8=i8.naturalWidth/n8,ch8=i8.naturalHeight/5;const d=SV.p.dir==null?0:SV.p.dir;/* dir:0=E,1=SE,2=S,3=SW,4=W,5=NW,6=N,7=NE */const row={0:2,1:1,2:0,3:1,4:2,5:3,6:4,7:3}[d];const f8=Math.min(n8-1,Math.round(f*n8/Math.max(1,A.n[an]))%n8);const sc8=H*1.25/ch8,cx=x+H*.7;
-    c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.fillStyle='rgba(0,0,0,.38)';c.beginPath();c.ellipse(cx,gy-2,40*sc8*2,8*sc8*2,0,0,7);c.fill();c.drawImage(i8,f8*cw8,row*ch8,cw8,ch8,cx-cw8/2*sc8,gy-ch8*.85*sc8,cw8*sc8,ch8*sc8);c.restore();return true}}
+   if(i8.complete&&i8.naturalWidth){const n8=Math.max(1,Math.round(i8.naturalWidth/(i8.naturalHeight/5))),cw8=i8.naturalWidth/n8,ch8=i8.naturalHeight/5;const d=SV.p.dir==null?0:SV.p.dir;/* dir:0=E,1=SE,2=S,3=SW,4=W,5=NW,6=N,7=NE */const row={0:2,1:1,2:0,3:1,4:2,5:3,6:4,7:3}[d];const f8=Math.min(n8-1,Math.round(f*n8/Math.max(1,A.n[an]))%n8);const sc8=H*2.3/ch8,cx=x+H*.7,s0=H*1.4/232;
+    c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.fillStyle='rgba(0,0,0,.38)';c.beginPath();c.ellipse(cx,gy-2,46*s0*2.2,9*s0*2.2,0,0,7);c.fill();c.drawImage(i8,f8*cw8,row*ch8,cw8,ch8,cx-cw8/2*sc8,gy-ch8*.85*sc8,cw8*sc8,ch8*sc8);c.restore();return true}}
   const im=artImg('HA_'+k+'_'+an+'.webp');if(im.complete&&im.naturalWidth){const sc=H*1.4/232,cx=x+H*.7;c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.fillStyle='rgba(0,0,0,.38)';c.beginPath();c.ellipse(cx,gy-2,46*sc*2.2,9*sc*2.2,0,0,7);c.fill();
    c.drawImage(im,f*A.cw,0,A.cw,A.ch,cx-A.cw/2*sc,gy-A.fy*sc,A.cw*sc,A.ch*sc);if(HITP>t){c.globalCompositeOperation='lighter';c.globalAlpha=.35;c.drawImage(im,f*A.cw,0,A.cw,A.ch,cx-A.cw/2*sc,gy-A.fy*sc,A.cw*sc,A.ch*sc)}c.restore();return true}}
  if(a[0]==='hi'){const k=a[1],I=HIART[k];const fr=(t-ULTT<1100)?'ult':state==='atk'?(Math.floor(t/400)%2?'atk2':'atk1'):'idle';const im=artImg('H_'+k+'_'+fr+'.png');if(!im.complete||!im.naturalWidth){const i0=artImg('H_'+k+'_idle.png');if(!i0.complete||!i0.naturalWidth)return false}
@@ -2879,8 +2882,8 @@ function statWin(){lmMig();const st=$('stage');STP=STP||{...(S.lma||{})};
 const AUI={};function auImg(k){if(!(k in AUI)){AUI[k]=null;const i=new Image();i.onload=()=>{AUI[k]=i};i.src=`art/AU_${k}.webp`}return AUI[k]}
 function auFrame(c,im,t,ms,cx,by,h){const n=Math.max(1,Math.round(im.naturalWidth/im.naturalHeight)),fw=im.naturalWidth/n,f=Math.floor(t/ms)%n,w=h*fw/im.naturalHeight;c.drawImage(im,f*fw,0,fw,im.naturalHeight,cx-w/2,by-h,w,h)}
 function auraArt(c,P,t,g){const T=g>=6?'unique':'myth';const B=auImg('aura_'+T+'_back'),Gd=auImg('aura_'+T+'_ground'),F=auImg('aura_'+T+'_front'),Bo=auImg('aura_'+T+'_bolt');if(!B)return false;
- c.save();c.translate(P.x,P.y);c.scale(AS_,AS_);c.translate(-P.x,-P.y);c.globalAlpha=g>=6?1:.85;if(Gd)auFrame(c,Gd,t,70,P.x,P.y+14,46);auFrame(c,B,t,65,P.x,P.y+8,118);c.restore();
- window.__strd=null;window.__gfire=front=>{if(!front)return;c.save();c.globalCompositeOperation='lighter';c.globalAlpha=g>=6?.55:.45;if(F)auFrame(c,F,t+300,65,P.x,P.y+8,118);if(Bo&&g>=6&&(Math.floor(t/1400)%3!==2))auFrame(c,Bo,t,55,P.x,P.y+8,122);c.restore()};return true}
+ c.save();c.translate(P.x,P.y);c.scale(AS_,AS_);c.translate(-P.x,-P.y);c.globalAlpha=g>=6?1:.85;if(Gd)auFrame(c,Gd,t,120,P.x,P.y+14,46);auFrame(c,B,t,115,P.x,P.y+8,118);c.restore();
+ window.__strd=null;window.__gfire=front=>{if(!front)return;c.save();c.globalCompositeOperation='lighter';c.globalAlpha=g>=6?.55:.45;if(F)auFrame(c,F,t+300,115,P.x,P.y+8,118);if(Bo&&g>=6&&(Math.floor(t/2600)%3===0))auFrame(c,Bo,t,150,P.x,P.y+8,122);c.restore()};return true}
 let LASTKILL=null;
 function addDrop(c,txt){{const gi=G.findIndex(x=>x.c===c);if(gi>=3)wNotice(`<b>${(typeof ACC!=='undefined'&&ACC&&ACC.user)||(S.cls?S.cls.k:'모험가')}</b> 님이 <em style="color:${c}">${txt}</em> 을(를) 획득했습니다.`,c)}if(SV.on&&!MODE&&LASTKILL)SV.loot.push({x:LASTKILL.x+R(-8,8),y:LASTKILL.y+R(-4,4),c,txt,t:performance.now()});S.drops=S.drops||[];S.drops.unshift({n:txt,c,z:zone().n,t:Date.now()});S.drops=S.drops.slice(0,15);if(TAB==='hunt'&&!BUSY){const el=$('drops');if(el)el.innerHTML=dropsHtml()}}
 const goldPer=z=>10*Math.pow(z.lv,1.5);
@@ -4930,7 +4933,7 @@ function alReveal(res,g){return new Promise(done=>{const st=$('stage');const sc=
    /* 빠르게 → 서서히 감속 → 다음 칸(더 좋은 아이템)을 반쯤 보여주며 거의 멈춤 → 아주 천천히 되돌아와 가운데 칸에 정확히 정지 */
    const pos=p=>{if(p<.8){const q=p/.8;return(target+H*.42)*(1-Math.pow(1-q,4))}const q=(p-.8)/.2;const e=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2;return target+H*.42*(1-e)};
    const frame=now=>{const p=Math.min(1,(now-t0)/D);const y=pos(p);strip.style.transform=`translateX(${-y}px)`;const idx=Math.round(y/H)+2;if(idx!==lastIdx){lastIdx=idx;sfx.tick?sfx.tick():(sfx.up&&p<.95&&sfx.up(0))}
-    strip.style.filter=p<.6?`blur(${Math.max(0,2.4-p*4)}px)`:'none';if(!gradeShown&&orb){gradeShown=true;const sg=Math.min(5,Math.max(2,(Math.random()<.22&&g<5)?g+1:g));orb.style.setProperty('--oc',G[sg].c);orb.style.setProperty('--orbimg',`url(art/AL_al_flame${FL2?'2':''}_g${sg}.webp?v=3)`);orb.classList.add('grade')}
+    strip.style.filter=p<.6?`blur(${Math.max(0,2.4-p*4)}px)`:'none';if(!gradeShown&&orb){gradeShown=true;const sg=Math.min(5,Math.max(2,(Math.random()<.22&&g<5)?g+1:g));orb.style.setProperty('--oc',G[sg].c);orb.style.setProperty('--orbimg',`url(art/AL_al_flame${FL2?'2':''}_g${sg}.webp?v=4)`);orb.classList.add('grade')}
     if(p<1){requestAnimationFrame(frame);return}
     strip.style.transform=`translateX(${-target}px)`;{const m=reel.querySelector('.alrmark').getBoundingClientRect(),f=reel.querySelector('.alri.fin').getBoundingClientRect();const dx=(f.left+f.right)/2-(m.left+m.right)/2;if(Math.abs(dx)>.5)strip.style.transform=`translateX(${-target-dx}px)`}reel.classList.add('done');o.classList.add('fin');if(orb)orb.classList.remove('spin','erupt');if(RAYS){const ry=document.createElement('div');ry.className='alrays';ry.style.setProperty('--oc',G[g].c);o.appendChild(ry)}o.querySelector('.altop').textContent='연금술에 성공하였습니다.';if(sc)sc.dataset.pose='raise';const nm=o.querySelector('.alnm2');nm.textContent=res.n;nm.style.color=G[g].c;const b=o.querySelector('.alcf2');b.hidden=false;if(g>=4){flash();sfx.legend&&sfx.legend()}else sfx.up&&sfx.up(2);b.onclick=ev=>{ev.stopPropagation();o.remove();if(sc){sc.classList.remove('rv');sc.dataset.pose=''}done()}};
    requestAnimationFrame(frame)}})}
