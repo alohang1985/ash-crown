@@ -1563,6 +1563,11 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .lalch2:not(.hasorb) .alorb2.lit{background:radial-gradient(circle at 50% 62%,rgba(255,250,220,.95),rgba(255,190,80,.5) 30%,rgba(255,140,30,0) 68%)!important}
 .lalch2:not(.hasorb) .alorb2.grade{background:radial-gradient(circle at 50% 60%,#fff,var(--oc) 28%,transparent 70%)!important;box-shadow:none!important}
 @keyframes alglow{50%{opacity:.75;transform:scale(1.04)}}
+.alpose .p1,.alpose .p2{transition:opacity 1.2s ease-in-out}
+.alsealg{position:absolute;left:6%;top:6%;width:88%;aspect-ratio:1;background:url(art/AL_al_seal_glow.webp) center/contain no-repeat;opacity:0;transition:opacity .8s;mix-blend-mode:screen;pointer-events:none}
+.alparch.lit .alsealg{opacity:1;animation:alglow 2.4s ease-in-out infinite}
+.lalch2.hasdark:not(:has(.alsl2.on)) .alorbimg{background-image:url(art/AL_al_orb_dark.webp)}
+.lalch2.hasorb .alseal{display:none}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -4570,14 +4575,18 @@ function alTable(L){if(!L.length)return null;const top=L.map(alWho).sort((a,b)=>
  const extra=Math.max(0,L.length-3)*.02;p=[Math.max(0,p[0]-extra),p[1],p[2]+extra];return{gs,p}}
 function alMats(){const L=[];for(const x of[...S.wpn,...S.arms]){if(isEqU(x.u)||isOther(x.u))continue;const c=C(x.id);if(!c||c.acc||c.g<2||c.g>4)continue;L.push({src:'eq',u:x.u,id:x.id,e:x.e,ty:c.ty})}for(const[g,n]of ALST){const have=(S.alst||{})[g]||0,used=ALM.filter(a=>a.src==='alst'&&a.g===g).length;for(let i=0;i<have-used;i++)L.push({src:'alst',g,n,ty:'etc',k:'al'+g+'_'+i})}return L}
 function alPop(title,html){const sc=document.querySelector('.lalch2');if(!sc)return;const o=sc.querySelector('.alpop');if(o)o.remove();sc.insertAdjacentHTML('beforeend',`<div class="alpop"><div class="alpw"><div class="alph"><b>${title}</b><button data-alpx="1">✕</button></div><div class="alpb">${html}</div><button class="alpok" data-alpx="1">확인</button></div></div>`)}
-let BGALCH=true,ORBOK=false;{const i=new Image();i.onload=()=>{ORBOK=true};i.src='art/AL_al_orb.webp'}
+let BGALCH=true,ORBOK=false,ALLOOP=[],ALDARK=false;for(let k=1;k<=8;k++){const i=new Image();i.onload=()=>{ALLOOP[k-1]=i.src};i.src=`art/BG_alchemy_pose_loop_${k}.webp`}{const i=new Image();i.onload=()=>{ALDARK=true};i.src='art/AL_al_orb_dark.webp'}
+/* 연금술사 움직임: 8프레임이 있으면 루프, 없으면 대기↔손 뻗기 천천히 오가기 */
+function alAnim(){const sc=document.querySelector('.lalch2');if(!sc){clearInterval(window.__alA);window.__alA=0;return}const L=ALLOOP.filter(Boolean);const p0=sc.querySelector('.alpose .p0');
+ if(L.length>=4){window.__alF=((window.__alF||0)+1)%L.length;if(p0&&!sc.dataset.pose)p0.style.backgroundImage=`url(${L[window.__alF]})`;return}
+ if(sc.classList.contains('rv'))return;window.__alT=(window.__alT||0)+1;if(!sc.querySelector('.alsl2.on'))sc.dataset.pose=(window.__alT%4<2)?'':'reach'}{const i=new Image();i.onload=()=>{ORBOK=true};i.src='art/AL_al_orb.webp'}
 const alSeal=()=>`<svg class="alsealsvg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1"/><polygon points="50,12 61,40 90,40 66,58 75,87 50,69 25,87 34,58 10,40 39,40" fill="none" stroke="currentColor" stroke-width="2"/></svg>`;
 function alWin(){const st=$('stage');st.hidden=false;st.classList.remove('sidel','sider','dockl','dockr');st.classList.add('alfull');new MutationObserver((m,ob)=>{if(st.hidden||!st.querySelector('.lalch2')){st.classList.remove('alfull');ob.disconnect()}}).observe(st,{childList:true,attributes:true,attributeFilter:['hidden']});ALM=ALM.filter(a=>a.src==='alst'||[...S.wpn,...S.arms].some(w=>w.u===a.u));
  const icoM=(x,px)=>x.src==='alst'?alstIco(x.g):cardIco(C(x.id),px);const nmM=x=>x.src==='alst'?x.n:(x.e?'+'+x.e+' ':'')+C(x.id).n;
  const draw=()=>{const mats=alMats().filter(x=>!ALM.some(a=>a.src==='eq'&&a.u===x.u)).filter(x=>ALTAB==='all'||(ALTAB==='a'&&x.ty==='a')||(ALTAB==='w'&&x.ty==='w')||(ALTAB==='etc'&&x.ty==='etc'));const T=alTable(ALM);
-  const nAll=alMats().length;st.innerHTML=`<div class="lalch2 hasbg${ORBOK?' hasorb':''}"><div class="alpose"><i class="p0"></i><i class="p1"></i><i class="p2"></i></div><div class="alscene"><div class="alorb2${ALM.length?' lit':''}"><i></i><b class="alorbimg"></b></div></div>
+  if(!window.__alA)window.__alA=setInterval(alAnim,ALLOOP.filter(Boolean).length>=4?140:1500);const nAll=alMats().length;st.innerHTML=`<div class="lalch2 hasbg${ORBOK?' hasorb':''}${ALDARK?' hasdark':''}"><div class="alpose"><i class="p0"></i><i class="p1"></i><i class="p2"></i></div><div class="alscene"><div class="alorb2${ALM.length?' lit':''}"><i></i><b class="alorbimg"></b></div></div>
    <div class="altitle">${alSeal()}<b>질서의 연금</b><button class="alx" id="pkX">✕</button></div>
-   <div class="alparch"><div class="alseal">${alSeal()}</div>${[0,1,2,3,4].map(i=>{const a=ALM[i];return`<button class="alsl2 s${i}${a?' on':''}" data-alr="${i}">${a?icoM(a,44)+(a.e?`<em>+${a.e}</em>`:''):''}</button>`}).join('')}</div>
+   <div class="alparch${ALM.length?' lit':''}"><div class="alseal">${alSeal()}</div><div class="alsealg"></div>${[0,1,2,3,4].map(i=>{const a=ALM[i];return`<button class="alsl2 s${i}${a?' on':''}" data-alr="${i}">${a?icoM(a,44)+(a.e?`<em>+${a.e}</em>`:''):''}</button>`}).join('')}</div>
    <div class="albt2"><button data-alinfo="1">${ico('quest')}<span>연금 재료 목록</span></button><button data-alrate="1">${ico('star')}<span>성공 확률</span></button></div>
    <div class="almat2"><div class="alh2">연금 재료</div><div class="altab2">${[['all','▦'],['a','🛡'],['w','⚔'],['etc','ETC']].map(([k,n])=>`<button class="${ALTAB===k?'on':''}" data-alt="${k}">${k==='all'?'<i class="g4"></i>':k==='a'?ico('helm'):k==='w'?ico('atk'):'ETC'}</button>`).join('<span>|</span>')}</div>
     <div class="algrid2">${Array.from({length:Math.max(20,Math.ceil(mats.length/4)*4)},(_,i)=>{const x=mats[i];return x?`<button data-alm="${x.src==='eq'?'u'+x.u:x.k}" style="--gc:${G[alWho(x).g].c}" title="${nmM(x)}">${icoM(x,40)}${x.e?`<em>+${x.e}</em>`:''}</button>`:'<span></span>'}).join('')}</div><small>${ALM.length}/${nAll}</small></div>
