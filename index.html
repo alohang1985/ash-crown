@@ -1605,6 +1605,10 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .alrmark{left:40%!important;right:auto!important;width:20%;top:-2px!important;height:calc(100% + 4px)!important}
 .alreel::before,.alreel::after{top:0!important;bottom:0!important;width:28%;height:auto!important}.alreel::before{left:0;right:auto!important;background:linear-gradient(90deg,#000,transparent)!important}.alreel::after{right:0;left:auto!important;background:linear-gradient(270deg,#000,transparent)!important}
 .altop{top:3%!important}.alnm2{top:24%!important}
+.alri{opacity:.45;transition:opacity .2s}.alreel.done .alri{opacity:.3}.alreel.done .alri.fin{opacity:1}
+.alrmark{border:3px solid #ffd770!important;background:rgba(255,215,112,.08)}
+.alri>*{border-color:rgba(255,255,255,.15)!important;box-shadow:none!important}.alreel.done .alri.fin>*{border-color:var(--gc)!important;box-shadow:0 0 22px var(--gc),0 0 44px var(--gc)!important}
+.alrmark{box-sizing:border-box}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -4702,12 +4706,13 @@ function alReveal(res,g){return new Promise(done=>{const st=$('stage');const sc=
   const cell=c=>`<div class="alri" style="--gc:${G[c.g].c}">${cardIco(c,52)}</div>`;strip.innerHTML=items.map((c,i)=>i===fin?`<div class="alri fin" style="--gc:${G[g].c}">${res.c?cardIco(res.c,52):alstIco(res.alst)}</div>`:cell(c)).join('');
   let started=false;
   o.onclick=()=>{if(started)return;started=true;o.querySelector('.altap2').textContent='';{const fl=document.createElement('div');fl.className='alflash';o.appendChild(fl);setTimeout(()=>fl.remove(),900)}sfx.rare&&sfx.rare(2);
-   const H=reel.clientWidth/5,target=(fin-2)*H,D=5200,t0=performance.now();let gradeShown=false,lastIdx=-1;
+   const H=reel.clientWidth/5,target=(fin-2)*H,D=6000,t0=performance.now();let gradeShown=false,lastIdx=-1;
    /* 위치 곡선: 빠르게 → 서서히 감속 → 다음 칸(더 좋은 아이템) 직전까지 갔다가 살짝 되돌아와 결과에서 정지 */
-   const pos=p=>{if(p<.82){const q=p/.82;return target*1.03*(1-Math.pow(1-q,3.2))}const q=(p-.82)/.18;const over=target*1.03,back=target;const k=q<.55?Math.sin(q/.55*Math.PI/2):1;return over+(back-over)*(q<.55?0:1-Math.pow(1-(q-.55)/.45,2))+(q<.55?H*.35*k:H*.35*(1-(q-.55)/.45))};
+   /* 빠르게 → 서서히 감속 → 다음 칸(더 좋은 아이템)을 반쯤 보여주며 거의 멈춤 → 아주 천천히 되돌아와 가운데 칸에 정확히 정지 */
+   const pos=p=>{if(p<.8){const q=p/.8;return(target+H*.42)*(1-Math.pow(1-q,4))}const q=(p-.8)/.2;const e=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2;return target+H*.42*(1-e)};
    const frame=now=>{const p=Math.min(1,(now-t0)/D);const y=pos(p);strip.style.transform=`translateX(${-y}px)`;const idx=Math.round(y/H)+2;if(idx!==lastIdx){lastIdx=idx;sfx.tick?sfx.tick():(sfx.up&&p<.95&&sfx.up(0))}
     strip.style.filter=p<.6?`blur(${Math.max(0,2.4-p*4)}px)`:'none';if(!gradeShown&&p>.45&&orb){gradeShown=true;orb.style.setProperty('--oc',G[g].c);orb.style.setProperty('--orbimg',`url(art/AL_al_flame_g${Math.min(5,Math.max(2,g))}.webp)`);orb.classList.add('grade')}
     if(p<1){requestAnimationFrame(frame);return}
-    strip.style.transform=`translateX(${-target}px)`;reel.classList.add('done');o.querySelector('.altop').textContent='연금술에 성공하였습니다.';if(sc)sc.dataset.pose='raise';const nm=o.querySelector('.alnm2');nm.textContent=res.n;nm.style.color=G[g].c;const b=o.querySelector('.alcf2');b.hidden=false;if(g>=4){flash();sfx.legend&&sfx.legend()}else sfx.up&&sfx.up(2);b.onclick=ev=>{ev.stopPropagation();o.remove();if(sc){sc.classList.remove('rv');sc.dataset.pose=''}done()}};
+    strip.style.transform=`translateX(${-target}px)`;{const m=reel.querySelector('.alrmark').getBoundingClientRect(),f=reel.querySelector('.alri.fin').getBoundingClientRect();const dx=(f.left+f.right)/2-(m.left+m.right)/2;if(Math.abs(dx)>.5)strip.style.transform=`translateX(${-target-dx}px)`}reel.classList.add('done');o.querySelector('.altop').textContent='연금술에 성공하였습니다.';if(sc)sc.dataset.pose='raise';const nm=o.querySelector('.alnm2');nm.textContent=res.n;nm.style.color=G[g].c;const b=o.querySelector('.alcf2');b.hidden=false;if(g>=4){flash();sfx.legend&&sfx.legend()}else sfx.up&&sfx.up(2);b.onclick=ev=>{ev.stopPropagation();o.remove();if(sc){sc.classList.remove('rv');sc.dataset.pose=''}done()}};
    requestAnimationFrame(frame)}})}
 </script><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{})</script></body></html>
