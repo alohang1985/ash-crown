@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15 15:58",
+ "updated": "2026-10-15 16:19",
  "source": "Gemini 웹(Pro) via OpenClaw 맥미니 — 원본 그대로(배경 #FF00FF 요청, 오른쪽 아래 Gemini 반짝이 워터마크 있음)",
  "assets": {
   "e_meteor": {
@@ -1934,6 +1934,78 @@
     }
    },
    "complete": true
+  },
+  "c_elf_F": {
+   "sheets": {
+    "full": {
+     "at": "10-15 16:19",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": false
+  },
+  "c_elf_M": {
+   "sheets": {
+    "full": {
+     "at": "10-15 16:19",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": false
+  },
+  "c_knight_F": {
+   "sheets": {
+    "full": {
+     "at": "10-15 16:19",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": false
+  },
+  "c_knight_M": {
+   "sheets": {
+    "full": {
+     "at": "10-15 16:19",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": false
+  },
+  "c_lord_F": {
+   "sheets": {
+    "full": {
+     "at": "10-15 16:19",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": false
+  },
+  "c_lord_M": {
+   "sheets": {
+    "full": {
+     "at": "10-15 16:19",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": false
+  },
+  "c_wizard_F": {
+   "sheets": {
+    "full": {
+     "at": "10-15 16:19",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": false
+  },
+  "c_wizard_M": {
+   "sheets": {
+    "full": {
+     "at": "10-15 16:19",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": false
   }
  }
 }
