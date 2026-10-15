@@ -1371,6 +1371,17 @@ html.land .battle canvas{width:100%!important;height:100%!important}
 .lmail{width:min(90vh,92%)!important;height:min(72vh,92%)!important}.lmll{flex:1;overflow:auto;display:grid;gap:1vh;padding:1.4vh;align-content:start}
 .lmlr{display:flex;align-items:center;gap:1.6vh;padding:1vh 1.4vh;background:linear-gradient(90deg,#24190f,#140e08);border:1px solid #3a2c18}.lmlr .lslot{width:7vh;height:7vh;flex:0 0 auto}.lmlr div{flex:1;display:grid}.lmlr b{font-size:2.2vh;color:#ffe9b0}.lmlr small{font-size:1.7vh;color:#a99a85}.lmlr .lbtn{padding:1vh 3vh;font-size:2vh}
 .lmlf{display:flex;justify-content:flex-end;padding:1vh 1.4vh;border-top:1px solid #3a2c18}.lmlf .lbtn{padding:1.2vh 4vh;font-size:2.1vh}
+/* 합성 카드 칸 안에 맞게 */
+.lsc{overflow:hidden;min-width:0}.lsc .lsc-i{width:auto!important;height:auto!important;display:grid!important;place-items:center;max-width:100%}
+.lsc .lsc-i>*{max-width:100%!important}
+.lsc b{width:100%;text-align:center}
+.lsy-c{grid-template-columns:repeat(auto-fill,minmax(13vh,1fr))!important}
+/* 운영자 */
+.ladcls{display:grid;gap:.8vh;padding:1vh;margin-bottom:1vh;background:rgba(255,220,150,.05);border:1px solid #3a2c18}.ladcls>b{font-size:2vh;color:#ffe9b0}
+.ladcls>div{display:flex!important;flex-wrap:wrap;gap:.6vh}.ladcls .lbtn{flex:0 0 auto;padding:.8vh 1.6vh!important;font-size:1.9vh!important;border:1px solid #5a4422;background:linear-gradient(#2a2016,#16100a);color:#eadfc8;writing-mode:horizontal-tb;white-space:nowrap}
+.ladm .mwh .lbtn{background:linear-gradient(#2a2016,#16100a)!important;color:#eadfc8!important;border:1px solid #5a4422!important}
+.ladl{grid-template-columns:1fr!important}
+.ladr .row{flex-wrap:wrap}.ladr .row .lbtn{flex:1 1 30%;white-space:nowrap}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -2808,7 +2819,7 @@ function goTown(){let T=townOf(0);if(!S.burstK){const ref=inDun()?dunEnt(S.wd.r)
 /* ===== 리니지M식 가방(인벤토리) 창 ===== */
 let IVT='all',IVSEL=null;
 function invItems(){const L=[];for(const w of S.wpn){if(isOther(w.u))continue;L.push({k:'w:'+w.u,cat:'eq',c:C(w.id),e:w.e,b:w.b,u:w.u,eq:w.u===S.eqW})}for(const a of S.arms){if(isOther(a.u))continue;L.push({k:'a:'+a.u,cat:'eq',c:C(a.id),e:a.e,b:a.b,u:a.u,eq:Object.values(S.eqA).includes(a.u)})}
- const con=[...POTS.map((p,i)=>[p[0],potIco(p[2]),p[1],potN(i)]),['scroll','📃','강화 주문서',S.scroll],['bless','📜','축복 주문서',S.bless||0],['prot','🛡️','보호 주문서',S.prot||0],['tps','🌀','순간이동 주문서',S.tps||0],['rts','🏠','귀환 주문서',S.rts||0],['chest','🎁','보물상자',S.chest||0],...PBUF.map(b=>['pb_'+b[0],b[2],b[1],(S.pbInv||{})[b[0]]||0]),...ELX.map(e=>['elx_'+e[0],e[2],e[1],(S.elx||{})[e[0]]||0])];
+ const con=[...POTS.map((p,i)=>[p[0],potIco(p[2]),p[1],potN(i)]),['scroll',ico('scroll'),'강화 주문서',S.scroll],['bless',ico('bless'),'축복 주문서',S.bless||0],['prot',ico('bless'),'보호 주문서',S.prot||0],['tps',ico('tp'),'순간이동 주문서',S.tps||0],['rts',ico('rt'),'귀환 주문서',S.rts||0],['chest',ico('chest'),'보물상자',S.chest||0],...PBUF.map(b=>['pb_'+b[0],b[2],b[1],(S.pbInv||{})[b[0]]||0]),...ELX.map(e=>['elx_'+e[0],e[2],e[1],(S.elx||{})[e[0]]||0])];
  for(const[k,ic,n,v]of con)if(v>0)L.push({k:'c:'+k,cat:'use',ic,n,cnt:v});if(S.mstone)L.push({k:'c:mstone',cat:'etc',ic:'💠',n:'마력의 돌',cnt:S.mstone});return L}
 /* ===== 리니지M식 스킬 창 ===== */
 let SKT='act',SKSEL=null;
@@ -3251,7 +3262,7 @@ function synthWin(ty){const st=$('stage');if(ty)SYW={ty,g:SYW.ty===ty?SYW.g:0,sl
   const gs=A.grades.slice().reverse();
   st.innerHTML=`<div class="mwin synw lsy"><div class="mwh"><b>${A.nm}</b><div class="mtabs">${['t','d','s'].map(k=>`<button data-sy="${k}" class="${k===T.ty?'on':''}">${k==='t'?'변신':k==='d'?'인형':'스킬북'}</button>`).join('')}</div><button class="mwx" id="pkX">✕</button></div>
   <div class="lsy-b"><div class="lsy-g">${gs.map(i=>`<button data-syg="${i}" class="${i===g?'on':''}" style="--gc:${G[i].c}"><b>${G[i].ko}</b><small>(${A.cnt(i)})</small></button>`).join('')}</div>
-   <div class="lsy-c">${L.map(x=>`<button class="lsc${x.n<=0?' no':''}" data-sya="${x.c.id}" style="--gc:${G[g].c}"><span class="lsc-i">${cardIco(x.c,64)}</span><b>${x.c.n}</b><em>x${x.n}</em></button>`).join('')||`<p class="mini" style="grid-column:1/-1;padding:10px">이 등급에 합성할 ${A.nm}이(가) 없어요${T.ty==='s'?' (같은 스킬북을 또 얻으면 여기 쌓여요)':' (같은 카드 2장 이상부터, 1장은 남겨요)'}</p>`}</div>
+   <div class="lsy-c">${L.map(x=>`<button class="lsc${x.n<=0?' no':''}" data-sya="${x.c.id}" style="--gc:${G[g].c}"><span class="lsc-i">${cardIco(x.c,Math.round(innerHeight*.085))}</span><b>${x.c.n}</b><em>x${x.n}</em></button>`).join('')||`<p class="mini" style="grid-column:1/-1;padding:10px">이 등급에 합성할 ${A.nm}이(가) 없어요${T.ty==='s'?' (같은 스킬북을 또 얻으면 여기 쌓여요)':' (같은 카드 2장 이상부터, 1장은 남겨요)'}</p>`}</div>
    <div class="lsy-r"><div class="lsy-rh"><b>합성</b><span><em style="color:${G[g].c}">${G[g].ko}</em> → <em style="color:${G[ng].c}">${G[ng].ko}</em> ${Math.max(1,nSet)}장 획득 가능! · 성공 <b>${(p*100<1?(p*100).toFixed(2):(p*100).toFixed(0))}%</b></span></div>
     <div class="lsy-sl">${Array.from({length:Math.min(nd*5,Math.max(nd,Math.ceil((T.sl.length+1)/nd)*nd))},(_,i)=>i).map(i=>{const id=T.sl[i],c=id&&(T.ty==='s'?SKM[id]:C(id));return`<button class="lss${c?' on':''}" data-syr="${i}" style="--gc:${G[g].c}">${c?cardIco(c,56):'<i>+</i>'}</button>`}).join('')}</div>
     <div class="lsy-inf">${`${G[g].ko} ${nd}장 → ${G[A.next(g)].ko} 1장 · `}${p>=1?'100% 성공':`실패 시 넣은 카드 중 1장 돌려받음`}${T.ty==='s'?'':(g===2||g===3)?`<div class="bar"><i style="width:${sp/20*100}%"></i></div><small>합성 시도 보상 ${sp} / 20 · 20회 실패하면 ${G[g+1].ko} 카드 1장 확정</small>`:''}</div>
