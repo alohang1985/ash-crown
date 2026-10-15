@@ -1486,15 +1486,6 @@
     }
    },
    "complete": false
-  },
-  "dg_talking_island": {
-   "sheets": {
-    "card": {
-     "at": "10-15 11:49",
-     "by": "chatgpt-free"
-    }
-   },
-   "complete": true
   }
  }
 }
