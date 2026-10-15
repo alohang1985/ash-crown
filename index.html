@@ -1641,7 +1641,7 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .lalch2.hasorb .alorbimg,.lalch2.hasorb .alorbimg.back{filter:none!important}
 .lalch2.hasorb .alorbimg.back{display:none!important}.lalch2.hasorb .alorbimg{inset:-48%!important}
 /* 불길 v2 (24프레임) · 점화 · 빛기둥 — 그림이 오면 자동 사용 */
-.lalch2.fl2 .alorbimg{background-image:url(art/AL_al_flame2.webp);background-size:2400% 100%;animation:anfr24 1.6s steps(24) infinite;inset:-70%!important}
+.lalch2.fl2 .alorbimg{background-image:url(art/AL_al_flame2.webp?v=3);background-size:2400% 100%;animation:anfr24 1.6s steps(24) infinite;inset:-70%!important}
 .lalch2.fl2 .alorb2.grade .alorbimg{background-image:var(--orbimg)}
 @keyframes anfr24{to{background-position:104.3478% 0}}
 .alignite{position:absolute;left:51%;top:30%;width:calc(var(--vh)*120);aspect-ratio:1;transform:translate(-50%,-50%);background:url(art/AL_al_ignite.webp) 0 0/1600% 100% no-repeat;mix-blend-mode:screen;animation:anfr16b 1.6s steps(16) forwards;pointer-events:none;z-index:6}
@@ -1743,6 +1743,10 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .alrv2.fin .alorbglow{animation:none;opacity:.6}
 .alflash{animation:alfx2 1.1s ease-out forwards!important}
 .lalch2.fl2 .alorbimg{left:-55%!important;right:-55%!important;top:-95%!important;bottom:-15%!important}
+
+.lalch2.fl2 .alorbimg{left:-35%!important;right:-35%!important;top:-60%!important;bottom:-10%!important}
+/* 배경과 수정구 위치가 화면 비율에 따라 어긋나지 않게: 배경을 창에 딱 맞춤 */
+.alpose i,.lalch2,.lalch2.rv{background-size:100% 100%!important}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -3606,7 +3610,7 @@ function charWin(){const draw=()=>{const tc=S.morph!==false&&C(S.eqT),dl=C(S.eqD
    if(b=t.closest('[data-cset]')){const k=+b.dataset.cset,cur=S.cset||0;S.csets=S.csets||{};S.csets[cur]={w:S.eqW,a:{...S.eqA},t:S.eqT,d:S.eqD};const N=S.csets[k];if(N&&k!==cur){if(N.w&&S.wpn.some(x=>x.u===N.w))S.eqW=N.w;for(const sl in N.a)if(S.arms.some(x=>x.u===N.a[sl]))S.eqA[sl]=N.a[sl];if(N.t)S.eqT=N.t;if(N.d)S.eqD=N.d}S.cset=k;announce(`${k+1}SET 장비로 바꿨어요`);save();draw();return}
    if(b=t.closest('[data-cgo]')){dockClose();statWin();return}
    if(b=t.closest('[data-ttl]')){S.title=+b.dataset.ttl;announce('호칭 「'+ACH[S.title][2]+'」');save();draw();return}
-   if(b=t.closest('.lcs2[data-ivk]')&&b.dataset.ivk){IVSEL=(b.dataset.ivk[0]==='w'?'w:':'a:')+b.dataset.ivk.split(':')[1];invWin();return}}};draw()}
+   if((b=t.closest('.lcs2[data-ivk]'))&&b.dataset.ivk){IVSEL=(b.dataset.ivk[0]==='w'?'w:':'a:')+b.dataset.ivk.split(':')[1];invWin();return}}};draw()}
 /* 가방 (오른쪽) */
 let IVQ='';
 function invWin(){const draw=()=>{const all=invItems();const L=all.filter(x=>(IVT==='all'||x.cat===IVT)&&(!IVQ||((x.c?x.c.n:x.n)||'').includes(IVQ))).sort((a,b)=>(b.eq?1:0)-(a.eq?1:0)||(b.c?b.c.g:0)-(a.c?a.c.g:0)||(b.e||0)-(a.e||0));const N=all.length,cap=208;
@@ -4905,7 +4909,7 @@ function alReveal(res,g){return new Promise(done=>{const st=$('stage');const sc=
    /* 빠르게 → 서서히 감속 → 다음 칸(더 좋은 아이템)을 반쯤 보여주며 거의 멈춤 → 아주 천천히 되돌아와 가운데 칸에 정확히 정지 */
    const pos=p=>{if(p<.8){const q=p/.8;return(target+H*.42)*(1-Math.pow(1-q,4))}const q=(p-.8)/.2;const e=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2;return target+H*.42*(1-e)};
    const frame=now=>{const p=Math.min(1,(now-t0)/D);const y=pos(p);strip.style.transform=`translateX(${-y}px)`;const idx=Math.round(y/H)+2;if(idx!==lastIdx){lastIdx=idx;sfx.tick?sfx.tick():(sfx.up&&p<.95&&sfx.up(0))}
-    strip.style.filter=p<.6?`blur(${Math.max(0,2.4-p*4)}px)`:'none';if(!gradeShown&&p>.45&&orb){gradeShown=true;orb.style.setProperty('--oc',G[g].c);orb.style.setProperty('--orbimg',`url(art/AL_al_flame${FL2?'2':''}_g${Math.min(5,Math.max(2,g))}.webp)`);orb.classList.add('grade')}
+    strip.style.filter=p<.6?`blur(${Math.max(0,2.4-p*4)}px)`:'none';if(!gradeShown&&orb){gradeShown=true;const sg=Math.min(5,Math.max(2,(Math.random()<.22&&g<5)?g+1:g));orb.style.setProperty('--oc',G[sg].c);orb.style.setProperty('--orbimg',`url(art/AL_al_flame${FL2?'2':''}_g${sg}.webp?v=3)`);orb.classList.add('grade')}
     if(p<1){requestAnimationFrame(frame);return}
     strip.style.transform=`translateX(${-target}px)`;{const m=reel.querySelector('.alrmark').getBoundingClientRect(),f=reel.querySelector('.alri.fin').getBoundingClientRect();const dx=(f.left+f.right)/2-(m.left+m.right)/2;if(Math.abs(dx)>.5)strip.style.transform=`translateX(${-target-dx}px)`}reel.classList.add('done');o.classList.add('fin');if(orb)orb.classList.remove('spin','erupt');if(RAYS){const ry=document.createElement('div');ry.className='alrays';ry.style.setProperty('--oc',G[g].c);o.appendChild(ry)}o.querySelector('.altop').textContent='연금술에 성공하였습니다.';if(sc)sc.dataset.pose='raise';const nm=o.querySelector('.alnm2');nm.textContent=res.n;nm.style.color=G[g].c;const b=o.querySelector('.alcf2');b.hidden=false;if(g>=4){flash();sfx.legend&&sfx.legend()}else sfx.up&&sfx.up(2);b.onclick=ev=>{ev.stopPropagation();o.remove();if(sc){sc.classList.remove('rv');sc.dataset.pose=''}done()}};
    requestAnimationFrame(frame)}})}
