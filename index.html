@@ -1582,6 +1582,14 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .algo2,.albt2 button{border:0!important;box-shadow:none!important}
 .lalch2.hasorb .alorb2{left:43.5%!important;top:28%!important;width:15%!important}.alorbimg{inset:-6%!important}
 .alnm2{top:27%!important;background:linear-gradient(90deg,transparent,rgba(0,0,0,.75),transparent);padding:2px 0}
+/* 규칙: 고정된 그림을 빙글빙글 돌리는 연출 금지 → 빛이 맥박치듯 밝아졌다 어두워지는 것으로 */
+@keyframes syr{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.03)}}
+@keyframes svspin{0%,100%{filter:brightness(1)}50%{filter:brightness(1.6)}}
+@keyframes lmspin{0%,100%{filter:brightness(1)}50%{filter:brightness(1.5)}}
+@keyframes lmcr{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes alfl{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
+.alorbimg{display:none}.lalch2.hasorb .alorbimg{display:block}
+.alpose .lp{opacity:0;transition:opacity .45s ease-in-out}.alpose .lp.on{opacity:1}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -2875,7 +2883,7 @@ function drawWorld(c,t,cam){const P=SV.p,hw=BW/2+60,hh=BH/2+80;
    if(isLand(x+st/2,y-st/2)||isLand(x+st/2,y+st*1.5)||isLand(x-st/2,y+st/2)||isLand(x+st*1.5,y+st/2)){c.fillStyle='rgba(220,210,170,.35)';c.fillRect(x,y,st+1,st+1)}}
   for(const[a,b]of ROADS){const A=townOf(a),Bt=townOf(b);const mx=Math.min(A.x,Bt.x)-200,Mx=Math.max(A.x,Bt.x)+200,my=Math.min(A.y,Bt.y)-200,My=Math.max(A.y,Bt.y)+200;if(Mx<L||mx>Rr||My<Tt||my>B)continue;const cxm=(A.x+Bt.x)/2+(hashR(a*7+b)-.5)*1600,cym=(A.y+Bt.y)/2+(hashR(a+b*5)-.5)*1600;c.save();c.lineCap='round';c.strokeStyle='rgba(90,70,45,.55)';c.lineWidth=46;c.beginPath();c.moveTo(A.x,A.y);c.quadraticCurveTo(cxm,cym,Bt.x,Bt.y);c.stroke();c.strokeStyle='rgba(176,150,108,.75)';c.lineWidth=36;c.stroke();c.setLineDash([3,18]);c.strokeStyle='rgba(120,98,66,.5)';c.lineWidth=2;c.stroke();c.restore()}
   drawTowns(c,t,cam)}
- for(const p of portals()){if(Math.abs(p.x-cam.x)>hw||Math.abs(p.y-cam.y)>hh)continue;c.save();c.translate(p.x,p.y);c.globalCompositeOperation='lighter';const pu=1+.08*Math.sin(t/250);const gr=c.createRadialGradient(0,0,4,0,0,40*pu);gr.addColorStop(0,'#fff');gr.addColorStop(.3,p.c);gr.addColorStop(1,'rgba(0,0,0,0)');c.fillStyle=gr;c.scale(1,.5);c.beginPath();c.arc(0,0,40*pu,0,7);c.fill();c.strokeStyle=p.c;c.lineWidth=2;c.rotate(t/600);for(let i=0;i<3;i++){c.beginPath();c.arc(0,0,22+i*8,i,i+4);c.stroke()}c.restore();
+ for(const p of portals()){if(Math.abs(p.x-cam.x)>hw||Math.abs(p.y-cam.y)>hh)continue;c.save();c.translate(p.x,p.y);c.globalCompositeOperation='lighter';const pu=1+.08*Math.sin(t/250);const gr=c.createRadialGradient(0,0,4,0,0,40*pu);gr.addColorStop(0,'#fff');gr.addColorStop(.3,p.c);gr.addColorStop(1,'rgba(0,0,0,0)');c.fillStyle=gr;c.scale(1,.5);c.beginPath();c.arc(0,0,40*pu,0,7);c.fill();c.strokeStyle=p.c;c.lineWidth=2;c.globalAlpha*=.75+.25*Math.sin(t/260);for(let i=0;i<3;i++){c.beginPath();c.arc(0,0,22+i*8,i,i+4);c.stroke()}c.restore();
   c.save();c.font='bold 10px "Noto Sans KR",sans-serif';c.textAlign='center';c.lineWidth=3;c.strokeStyle='#000';c.strokeText(p.n,p.x,p.y-26);c.fillStyle='#e8c8ff';c.fillText(p.n,p.x,p.y-26);c.restore()}}
 /* 울타리 넘기: 안↔밖으로 갈 때는 가장 가까운 문으로 돌아감 */
 function viaGate(P,D){if(inDun())return D;for(let r=0;r<TOWNS.length;r++){const T=townOf(r);const ein=x=>Math.hypot(x.x-T.x,(x.y-T.y)/.8)<FENCE_R;const pin=ein(P),din=ein(D);if(pin===din)continue;const out=pin?D:P;const a=Math.atan2((out.y-T.y)/.8,out.x-T.x);let best=GATES[0],bd=9;for(const g2 of GATES){const d=Math.abs(Math.atan2(Math.sin(a-g2),Math.cos(a-g2)));if(d<bd){bd=d;best=g2}}
@@ -2893,7 +2901,7 @@ function trapTick(t,M){if(!inDun()||!SV.dc||!SV.dc.traps)return;const P=SV.p;for
  else if(T.k==='para'){SV.pstun=t+1500;playEA('stun',P.x,P.y-52,40)}
  fx.push({k:'num',x:P.x,y:P.y-66,t,txt:nm+'!',c:TRAPN[T.k][1]});sfx.boom&&sfx.boom()}}
  if(SV.ppois&&SV.ppois.u>t&&t-(SV.ppois.lt||0)>1000){SV.ppois.lt=t;S.hp-=SV.ppois.v;fx.push({k:'num',x:P.x,y:P.y-44,t,txt:'-'+fmt(SV.ppois.v),c:'#7dff5a'})}}
-function drawTraps(c,t){if(!inDun()||!SV.dc||!SV.dc.traps)return;const P=SV.p;for(const T of SV.dc.traps){const d=Math.hypot(T.x-P.x,T.y-P.y);if(d>110||t<T.rt)continue;const a=Math.min(1,(110-d)/60)*(.45+.25*Math.sin(t/200));c.save();c.translate(T.x,T.y);c.scale(1,.45);c.globalAlpha=a;c.strokeStyle=TRAPN[T.k][1];c.lineWidth=2;c.beginPath();c.arc(0,0,14,0,7);c.stroke();c.rotate(t/900);for(let i=0;i<5;i++){const q=i*1.2566;c.beginPath();c.moveTo(Math.cos(q)*14,Math.sin(q)*14);c.lineTo(Math.cos(q+2.51)*14,Math.sin(q+2.51)*14);c.stroke()}c.restore()}}
+function drawTraps(c,t){if(!inDun()||!SV.dc||!SV.dc.traps)return;const P=SV.p;for(const T of SV.dc.traps){const d=Math.hypot(T.x-P.x,T.y-P.y);if(d>110||t<T.rt)continue;const a=Math.min(1,(110-d)/60)*(.45+.25*Math.sin(t/200));c.save();c.translate(T.x,T.y);c.scale(1,.45);c.globalAlpha=a;c.strokeStyle=TRAPN[T.k][1];c.lineWidth=2;c.beginPath();c.arc(0,0,14,0,7);c.stroke();for(let i=0;i<5;i++){const q=i*1.2566;c.beginPath();c.moveTo(Math.cos(q)*14,Math.sin(q)*14);c.lineTo(Math.cos(q+2.51)*14,Math.sin(q+2.51)*14);c.stroke()}c.restore()}}
 const CASTER={dark_mage:['dark_blast','#c070ff'],vampire:['dark_blast','#ff4a6a'],fire_demon:['fire_burst','#ff7a20'],skel_knight:['lightning','#a0c8ff'],orc_chief:['earthquake','#ffcf8a']};
 function fieldAggro(m){if(m.ag)return;m.ag=1;if(m.camp!=null)for(const o of mobs)if(o.camp===m.camp&&!o.dead&&Math.hypot(o.x-m.x,o.y-m.y)<220)o.ag=1}
 function fieldBossDown(m,t){const ms=m.ms||curStat();if(Math.random()<.03){const L=CARDS.filter(x=>x.ty==='t'&&(tSrc(x)||[]).includes('보스 드랍'));const c=L[Math.floor(Math.random()*L.length)];if(c){S.cards[c.id]=(S.cards[c.id]||0)+1;wNotice(`보스에게서 영웅 변신 <em style="color:${G[3].c}">「${c.n}」</em> 카드가 떨어졌습니다!`,G[3].c)}}if(m.dboss){SV.dBossDone=true;const gd=Math.round(ms.gold*200*upGold());S.gold+=gd;S.chest=(S.chest||0)+3;S.scroll+=5;S.bless=(S.bless||0)+1;flash();sfx.legend();fx.push({k:'clear',t,txt:'던전 보스 처치!'});wNotice(`<b>${(typeof ACC!=='undefined'&&ACC&&ACC.user)||(S.cls?S.cls.k:'모험가')}</b> 님이 「${DUNG[S.wd.r][0]}」의 주인을 쓰러뜨렸습니다!`,'#c46bff');announce(`<span style="color:#ffd23a">🏆 던전 보스 처치 · 골드 +${fmt(gd)} · 상자 +3 · 주문서 +5 · 축복 주문서 +1</span>`);save();return}
@@ -4637,13 +4645,13 @@ function alPop(title,html){const sc=document.querySelector('.lalch2');if(!sc)ret
 let BGALCH=true,ORBOK=false,ALLOOP=[],ALDARK=false;for(let k=1;k<=8;k++){const i=new Image();i.onload=()=>{ALLOOP[k-1]=i.src};i.src=`art/AL_pose_loop_${k}.webp`}{const i=new Image();i.onload=()=>{ALDARK=true};i.src='art/AL_al_orb_dark.webp'}
 /* 연금술사 움직임: 8프레임이 있으면 루프, 없으면 대기↔손 뻗기 천천히 오가기 */
 function alAnim(){const sc=document.querySelector('.lalch2');if(!sc){clearInterval(window.__alA);window.__alA=0;return}const L=ALLOOP.filter(Boolean);const p0=sc.querySelector('.alpose .p0');
- if(L.length>=4){window.__alF=((window.__alF||0)+1)%L.length;if(p0&&!sc.dataset.pose)p0.style.backgroundImage=`url(${L[window.__alF]})`;return}
- if(sc.classList.contains('rv'))return;window.__alT=(window.__alT||0)+1;if(!sc.querySelector('.alsl2.on'))sc.dataset.pose=(window.__alT%4<2)?'':'reach'}{const i=new Image();i.onload=()=>{ORBOK=true};i.src='art/AL_al_orb.webp'}
+ if(L.length>=8){window.__alF=((window.__alF||0)+1)%8;const ls=sc.querySelectorAll('.alpose .lp');ls.forEach((e,i)=>e.classList.toggle('on',i===window.__alF));return}
+ if(sc.classList.contains('rv'))return;window.__alT=(window.__alT||0)+1;if(!sc.querySelector('.alsl2.on'))sc.dataset.pose=(window.__alT%4<2)?'':'reach'}{const i=new Image();i.onload=()=>{ORBOK=true};i.src='art/AL_al_flame.webp'}
 const alSeal=()=>`<svg class="alsealsvg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1"/><polygon points="50,12 61,40 90,40 66,58 75,87 50,69 25,87 34,58 10,40 39,40" fill="none" stroke="currentColor" stroke-width="2"/></svg>`;
 function alWin(){const st=$('stage');st.hidden=false;st.classList.remove('sidel','sider','dockl','dockr');st.classList.add('alfull');new MutationObserver((m,ob)=>{if(st.hidden||!st.querySelector('.lalch2')){st.classList.remove('alfull');ob.disconnect()}}).observe(st,{childList:true,attributes:true,attributeFilter:['hidden']});ALM=ALM.filter(a=>a.src==='alst'||[...S.wpn,...S.arms].some(w=>w.u===a.u));
  const icoM=(x,px)=>x.src==='alst'?alstIco(x.g):cardIco(C(x.id),px);const nmM=x=>x.src==='alst'?x.n:(x.e?'+'+x.e+' ':'')+C(x.id).n;
- const draw=()=>{const mats=alMats().filter(x=>!ALM.some(a=>a.src==='eq'&&a.u===x.u)).filter(x=>ALTAB==='all'||(ALTAB==='a'&&x.ty==='a')||(ALTAB==='w'&&x.ty==='w')||(ALTAB==='etc'&&x.ty==='etc'));const T=alTable(ALM);
-  if(!window.__alA)window.__alA=setInterval(alAnim,ALLOOP.filter(Boolean).length>=4?140:1500);const nAll=alMats().length;st.innerHTML=`<div class="lalch2 hasbg${ORBOK?' hasorb':''}${ALDARK?' hasdark':''}"><div class="alpose"><i class="p0"></i><i class="p1"></i><i class="p2"></i></div><div class="alscene"><div class="alorb2${ALM.length?' lit':''}"><i></i><b class="alorbimg"></b></div></div>
+ let draw=()=>{const mats=alMats().filter(x=>!ALM.some(a=>a.src==='eq'&&a.u===x.u)).filter(x=>ALTAB==='all'||(ALTAB==='a'&&x.ty==='a')||(ALTAB==='w'&&x.ty==='w')||(ALTAB==='etc'&&x.ty==='etc'));const T=alTable(ALM);
+  if(!window.__alA)window.__alA=setInterval(alAnim,ALLOOP.filter(Boolean).length>=8?260:1500);const nAll=alMats().length;st.innerHTML=`<div class="lalch2 hasbg${ORBOK?' hasorb':''}${ALDARK?' hasdark':''}"><div class="alpose"><i class="p0"></i>${ALLOOP.filter(Boolean).length>=8?ALLOOP.map((u,i)=>`<i class="lp${i===(window.__alF||0)?' on':''}" style="background-image:url(${u})"></i>`).join(''):''}<i class="p1"></i><i class="p2"></i></div><div class="alscene"><div class="alorb2${ALM.length?' lit':''}"><i></i><b class="alorbimg"></b></div></div>
    <div class="altitle">${alSeal()}<b>질서의 연금</b><button class="alx" id="pkX">✕</button></div>
    <div class="alparch${ALM.length?' lit':''}"><div class="alseal">${alSeal()}</div><div class="alsealg"></div>${[0,1,2,3,4].map(i=>{const a=ALM[i];return`<button class="alsl2 s${i}${a?' on':''}" data-alr="${i}">${a?icoM(a,44)+(a.e?`<em>+${a.e}</em>`:''):''}</button>`}).join('')}</div>
    <div class="albt2"><button data-alinfo="1">${ico('quest')}<span>연금 재료 목록</span></button><button data-alrate="1">${ico('star')}<span>성공 확률</span></button></div>
@@ -4651,6 +4659,7 @@ function alWin(){const st=$('stage');st.hidden=false;st.classList.remove('sidel'
     <div class="algrid2">${Array.from({length:Math.max(20,Math.ceil(mats.length/4)*4)},(_,i)=>{const x=mats[i];return x?`<button data-alm="${x.src==='eq'?'u'+x.u:x.k}" style="--gc:${G[alWho(x).g].c}" title="${nmM(x)}">${icoM(x,40)}${x.e?`<em>+${x.e}</em>`:''}</button>`:'<span></span>'}).join('')}</div><small>${ALM.length}/${nAll}</small></div>
    <button class="algo2${ALM.length<3?' dim':''}" data-algo="1"><i>${ico('gold')}</i><b>200,000</b><span>연금 시작</span></button>
    ${ALM.length<3?`<p class="alhint">재료를 ${3-ALM.length}개 더 올려 주세요</p>`:''}</div>`};
+ {const d0=draw;draw=()=>{const old=st.querySelector('.alpose');d0();const sc=st.querySelector('.lalch2');const nw=sc&&sc.querySelector('.alpose');if(old&&nw){nw.replaceWith(old)}}}
  draw();let busy=false;
  st.onclick=async e=>{const t=e.target;if(busy)return;if(t.closest('#pkX')||t===st){st.hidden=true;st.innerHTML='';st.onclick=null;return}let b;
   if(b=t.closest('[data-alt]')){ALTAB=b.dataset.alt;draw();return}
