@@ -1875,6 +1875,54 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .lske{text-align:center;color:#8d8278;font-size:calc(var(--vh)*2.5);margin:calc(var(--vh)*3) 0}
 .lsksi{display:flex;gap:calc(var(--vh)*1.4);align-items:center}.lsksi small{display:block;color:#a99;font-size:calc(var(--vh)*2)}
 .lskw .lsk,.lskw .lsk .skart{border-radius:0!important}.lskg.cls .lsk.no{filter:brightness(.4) saturate(.4)}
+/* 변신창 (리니지M 실측: 800×450 프레임 → 1vh=4.5px) */
+.stage.mwfull{background:transparent!important;backdrop-filter:none!important;display:block!important;padding:0!important}
+.mw2{position:fixed;left:0;top:0;width:calc(var(--vh)*177.8);height:calc(var(--vh)*100);color:#e8e2d6;font-size:calc(var(--vh)*2.4);z-index:60}
+.mw2bg{position:absolute;inset:0;background:url(art/UI_synth_bg.webp) center/cover,#0b1220;}
+.mw2bg::after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(8,12,20,.35),rgba(8,12,20,.55))}
+.mw2t{position:absolute;right:0;top:0;width:calc(var(--vh)*60);height:calc(var(--vh)*12);display:flex;align-items:center;justify-content:flex-end;gap:calc(var(--vh)*16)}
+.mw2t b{font-size:calc(var(--vh)*4);font-weight:800;letter-spacing:.3em;color:#fff;text-shadow:0 1px 3px #000}
+.mw2x{width:calc(var(--vh)*5.6);height:calc(var(--vh)*5.6);margin-right:calc(var(--vh)*1.6);border:2px solid #d0503f;background:rgba(110,20,14,.75);color:#fff;font-size:calc(var(--vh)*3.4);display:grid;place-items:center;cursor:pointer}
+.mw2tab{position:absolute;left:calc(var(--vh)*7);right:0;top:calc(var(--vh)*12.4);height:calc(var(--vh)*5.4);display:flex;align-items:center;gap:calc(var(--vh)*1);border-bottom:1px solid rgba(255,255,255,.08)}
+.mw2tab button{background:none;border:0;color:#7b7d84;font-weight:700;font-size:calc(var(--vh)*2.6);padding:0 calc(var(--vh)*4.4);height:100%;cursor:pointer}
+.mw2tab button.on{color:#fff;border-bottom:2px solid #c9a24a;background:linear-gradient(transparent,rgba(201,162,74,.15))}
+.mw2go{margin-left:auto;margin-right:calc(var(--vh)*1.6);color:#fff;font-weight:700;font-size:calc(var(--vh)*2.7);cursor:pointer}
+.mw2go::before{content:'↻ ';color:#ddd}
+.mw2l{position:absolute;left:calc(var(--vh)*6.6);top:calc(var(--vh)*18.6);width:calc(var(--vh)*21);display:flex;flex-direction:column;gap:calc(var(--vh)*.5)}
+.mwgb{height:calc(var(--vh)*10);background:linear-gradient(90deg,#1c2433,#141b27);border:0;border-left:3px solid transparent;color:#cfd3db;display:grid;place-content:center;gap:0;cursor:pointer}
+.mwgb b{font-size:calc(var(--vh)*2.6);font-weight:700}.mwgb small{font-size:calc(var(--vh)*2);color:#9aa0aa}
+.mwgb.on{background:linear-gradient(90deg,#3a4458,#262e3e);border-left-color:#fff;color:#fff}
+.mw2f{position:absolute;left:calc(var(--vh)*30);right:calc(var(--vh)*1.6);top:calc(var(--vh)*19.4);height:calc(var(--vh)*5.2);display:flex;align-items:center;gap:calc(var(--vh)*8);font-weight:700;font-size:calc(var(--vh)*2.5)}
+.mw2f label{margin-left:auto;width:calc(var(--vh)*45);height:100%;background:rgba(0,0,0,.55);border:1px solid #2a3240;display:flex;align-items:center}
+.mw2f input{flex:1;background:none;border:0;color:#fff;font-size:calc(var(--vh)*2.3);padding:0 calc(var(--vh)*1.4)}
+.mw2f button{width:calc(var(--vh)*16);height:100%;background:#1b2230;border:1px solid #2f3848;color:#aab;font-size:calc(var(--vh)*2.3)}
+.mw2g{position:absolute;left:calc(var(--vh)*30);top:calc(var(--vh)*27.6);width:calc(var(--vh)*74);bottom:calc(var(--vh)*9);display:grid;grid-template-columns:repeat(4,calc(var(--vh)*17));grid-auto-rows:calc(var(--vh)*20.4);gap:calc(var(--vh)*1.4) calc(var(--vh)*1.5);overflow-y:auto;scrollbar-width:none;align-content:start}
+.mw2g::-webkit-scrollbar{display:none}
+.mwc2{position:relative;padding:0;border:2px solid color-mix(in srgb,var(--gc) 70%,#000);background:linear-gradient(180deg,color-mix(in srgb,var(--gc) 35%,#0b0d14),#0a0b10);overflow:hidden;cursor:pointer}
+.mwc2 .mwa{position:absolute;inset:0;display:grid;place-items:end center}
+.mwc2 .mwa>*{width:100%!important;height:100%!important;object-fit:cover!important;object-position:50% 20%!important}
+.mwc2.no .mwa{filter:brightness(0) opacity(.55)}
+.mwc2.no{background:linear-gradient(180deg,color-mix(in srgb,var(--gc) 22%,#0b0d14),#08090d)}
+.mwc2.sel{box-shadow:0 0 0 2px #fff,0 0 14px var(--gc)}
+.mwc2 em{position:absolute;right:3px;bottom:2px;font-style:normal;font-size:calc(var(--vh)*2.2);font-weight:800;color:#fff;text-shadow:0 0 3px #000}
+.mwc2 .mweq2{position:absolute;left:0;right:0;top:0;font-style:normal;font-size:calc(var(--vh)*2);background:rgba(200,140,40,.85);color:#fff;text-align:center}
+.mwc2 .mwaw{position:absolute;left:3px;bottom:2px;text-decoration:none;font-size:calc(var(--vh)*1.9);color:#d8a8ff;font-weight:800;text-shadow:0 0 3px #000}
+.mw2d{position:absolute;left:calc(var(--vh)*105.5);right:0;top:calc(var(--vh)*27);bottom:calc(var(--vh)*9)}
+.mw2art{position:absolute;left:0;top:0;width:calc(var(--vh)*38);height:calc(var(--vh)*48);display:grid;place-items:center;background:radial-gradient(ellipse 60% 55% at 50% 55%,color-mix(in srgb,var(--gc) 75%,transparent),transparent 72%)}
+.mw2art>*{width:calc(var(--vh)*30)!important;height:calc(var(--vh)*39)!important;object-fit:contain!important}
+.mw2n{position:absolute;left:calc(var(--vh)*40);right:calc(var(--vh)*2);top:0}
+.mw2n b{display:block;font-size:calc(var(--vh)*3.2);color:var(--gc);font-weight:800}
+.mw2n small{font-size:calc(var(--vh)*2.3);color:var(--gc)}
+.mw2oh{position:absolute;left:calc(var(--vh)*40);right:calc(var(--vh)*2);top:calc(var(--vh)*12.6);text-align:center;color:#9aa0aa;font-size:calc(var(--vh)*2.4);border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:calc(var(--vh)*.6)}
+.mw2o{position:absolute;left:calc(var(--vh)*40);right:calc(var(--vh)*2);top:calc(var(--vh)*17.4);bottom:calc(var(--vh)*1);overflow-y:auto;scrollbar-width:none}
+.mw2o p{display:flex;justify-content:space-between;margin:0;line-height:1.3;font-size:calc(var(--vh)*2.35)}
+.mw2o p b{font-weight:600}.mw2o p.off{color:#6b6f78}
+.mw2o h6{margin:calc(var(--vh)*.4) 0;font-size:calc(var(--vh)*2.35);color:#c28bff;font-weight:700}.mw2o h6.off{color:#6b5a80}
+.mw2o p.sk span{color:#ffd27a}
+.mw2now{position:absolute;left:calc(var(--vh)*13);top:calc(var(--vh)*48);width:calc(var(--vh)*20);height:calc(var(--vh)*5.8);background:linear-gradient(#2d4f86,#1b3460);border:1px solid #4a6aa6;color:#fff;font-weight:800;font-size:calc(var(--vh)*2.6);cursor:pointer}
+.mw2now:disabled{background:#222833;border-color:#333a48;color:#777}
+.mw2b{position:absolute;left:calc(var(--vh)*108);right:calc(var(--vh)*2);bottom:calc(var(--vh)*1.6);height:calc(var(--vh)*6);display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--vh)*1.6)}
+.mw2b button{background:linear-gradient(#7a5a2a,#4f3816);border:1px solid #a9844a;color:#fff;font-weight:800;font-size:calc(var(--vh)*2.6);cursor:pointer}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -4148,23 +4196,39 @@ function slotPick(sl){if(sl==='t')return morphWin();const st=$('stage');let L=[]
 
 function drawMorphAt(c,tc,x,gy,st,pp,t){if(artOf(tc))return drawArt(c,tc,x-30,gy,PH_,st,pp,t);if(isBeast(tc))return drawBeast(c,tc,x-22,gy,.95,st,pp,t);const L=transformLook(tc),cp=lpcCompose(L);if(cp){const sc=L.scale||1;drawWings(c,L,x-32*sc,gy,sc,t);return drawLook(c,cp,x-32*sc,gy,sc,st,pp,1)}return false}
 let MWSEL=null;
+/* 변신 (리니지M 캡처 claude_req/func/07_변신 실측): 전체화면 · 탭(변신/합성/변신 컬렉션/용병 파견) · 왼쪽 등급 목록 · 4열 카드 · 오른쪽 큰 그림+옵션 정보 · 즉시 변신/각성/컬렉션 보기/변신 등록 */
+let MWG=-1,MWQ='';
 function morphWin(){const st=$('stage');const all=CARDS.filter(c=>c.ty==='t');const own=id=>S.cards[id]||0;
- const L=all.slice().sort((a,b)=>(own(b.id)?1:0)-(own(a.id)?1:0)||b.g-a.g);MWSEL=MWSEL&&own(MWSEL)?MWSEL:(S.eqT||(L[0]&&L[0].id));
- const nOwn=all.filter(c=>own(c.id)).length;
- st.hidden=false;st.innerHTML=`<div class="mwin"><div class="mwh"><b>변신</b><small>보유 ${nOwn} / ${all.length}</small><button class="btn sm2 gold mwsyn" id="mwSyn">변신 합성</button><button class="mwx" id="pkX">✕</button></div>
- <div class="mwb"><div class="mwl"><div class="mwpv"><canvas id="mwcv" width="560" height="560"></canvas></div><div id="mwinfo"></div></div>
- <div class="mwr"><div class="mwg">${L.map(c=>`<button class="mwc${own(c.id)?'':' no'}${c.id===S.eqT&&S.morph!==false?' eq':''}" data-mw="${c.id}" style="--gc:${G[c.g].c}"><span class="mwi">${cardIco(c,58)}</span><b>${c.n}</b>${own(c.id)>1?`<em>×${own(c.id)}</em>`:''}${c.id===S.eqT&&S.morph!==false?'<span class="mweq">변신 중</span>':''}</button>`).join('')}</div></div></div></div>`;
- const info=()=>{const c=C(MWSEL);if(!c)return;const o=own(c.id),on=c.id===S.eqT&&S.morph!==false;$('mwinfo').innerHTML=`<div class="mwn" style="--gc:${G[c.g].c}"><small>${G[c.g].ko}</small><b>${c.n}</b></div><div class="mwo">${cardSub(c)}${optHtml(c)}</div><div class="mwbt">${o?on?'<button class="btn" id="pkMorph">변신 해제</button>':'<button class="btn gold" id="mwGo">변신</button>':'<button class="btn" disabled>미보유 · 소환·합성으로 얻어요</button>'}</div>`;
-  for(const b of st.querySelectorAll('[data-mw]'))b.classList.toggle('sel',b.dataset.mw===MWSEL)};info();
- const cv=$('mwcv'),cx=cv.getContext('2d');let t0=performance.now();const tick=t=>{if(st.hidden||!$('mwcv'))return;const c=C(MWSEL);cx.setTransform(1,0,0,1,0,0);cx.clearRect(0,0,560,560);
-  const gc=G[c.g].c,gr=cx.createRadialGradient(280,380,10,280,380,260);gr.addColorStop(0,gc+'55');gr.addColorStop(1,'rgba(0,0,0,0)');cx.fillStyle=gr;cx.fillRect(0,0,560,560);
-  cx.setTransform(4.2,0,0,4.2,280-4.2*64,470-4.2*112);cx.imageSmoothingEnabled=!!artOf(c);const cyc=(t-t0)%3600,stt=cyc<2400?'idle':'atk',pp=stt==='atk'?((cyc-2400)%600)/600:(t%700)/700;
-  cx.fillStyle='rgba(0,0,0,.45)';cx.beginPath();cx.ellipse(64,112,16,5,0,0,7);cx.fill();if(c.g>=3){const col=HALO[c.id]||G[c.g].c;cx.filter=`drop-shadow(0 0 5px ${col}) drop-shadow(0 0 12px ${col})`}drawMorphAt(cx,c,64,112,stt,pp,t);cx.filter='none';
-  requestAnimationFrame(tick)};requestAnimationFrame(tick);
- const close=()=>{st.hidden=true;st.innerHTML='';st.onclick=null};
- st.onclick=e=>{const t=e.target;if(t.id==='pkX'||t===st){close();return}if(t.id==='pkMorph'){S.morph=false;MORPHFX=performance.now();save();close();render();return}
-  if(t.id==='mwSyn'){synthWin('t');return}if(t.id==='mwGo'){S.eqT=MWSEL;S.morph=true;MORPHFX=performance.now();save();close();render();return}
-  const b=t.closest('[data-mw]');if(b){if(b.dataset.mw===MWSEL&&own(MWSEL)&&e.detail>=2){S.eqT=MWSEL;S.morph=true;MORPHFX=performance.now();save();close();render();return}MWSEL=b.dataset.mw;info()}}}
+ if(!MWSEL||!C(MWSEL))MWSEL=S.eqT||all[0].id;
+ const draw=()=>{const L=all.filter(c=>(MWG<0||c.g===MWG)&&(!MWQ||c.n.includes(MWQ))).sort((a,b)=>(own(b.id)?1:0)-(own(a.id)?1:0)||b.g-a.g);
+  const gl=[[-1,'전체'],[6,'유일'],[5,'신화'],[4,'전설'],[3,'영웅'],[2,'희귀'],[1,'고급'],[0,'일반']].map(([g,n])=>{const A=all.filter(c=>g<0||c.g===g);return`<button class="mwgb${MWG===g?' on':''}" data-mwg="${g}"><b>${n}</b><small>(${A.filter(c=>own(c.id)).length}/${A.length})</small></button>`}).join('');
+  const c=C(MWSEL),o=own(c.id),on=c.id===S.eqT&&S.morph!==false,aw=polyAwake(c);
+  const rows=[['이동 속도','+'+c.pmspd+'%'],['공격 속도','+'+c.paspd+'%'],[PSTAT[c.ptype][1],'+'+c.pstat],...Object.entries(c.opt||{}).map(([k,v])=>[OPTS[k][0],'+'+v+OPTS[k][1]])];
+  const awr=c.aw?Object.entries(c.aw).map(([k,v])=>[OPTS[k]?OPTS[k][0]:k,'+'+v+(OPTS[k]?OPTS[k][1]:'')]):[];
+  const cell=k=>{const n=own(k.id);return`<button class="mwc2${n?'':' no'}${k.id===MWSEL?' sel':''}" data-mw="${k.id}" style="--gc:${G[k.g].c}"><span class="mwa">${cardIco(k,64)}</span>${k.id===S.eqT&&S.morph!==false?'<i class="mweq2">변신 중</i>':''}${n>1?`<em>×${n}</em>`:''}${polyAwake(k)?'<u class="mwaw">각성</u>':''}</button>`};
+  st.hidden=false;st.classList.add('mwfull');st.innerHTML=`<div class="mw2"><div class="mw2bg"></div>
+   <div class="mw2t"><b>변 신</b><button class="mw2x" id="pkX">✕</button></div>
+   <div class="mw2tab"><button class="on">변신</button><button data-mwt="syn">합성</button><button data-mwt="col">변신 컬렉션</button><button data-mwt="mer">용병 파견</button><span class="mw2go" data-mwt="doll">마법인형 탐험 바로가기</span></div>
+   <div class="mw2l">${gl}</div>
+   <div class="mw2f"><span>▶ ${MWG<0?'전체':G[MWG].ko}</span><span>▶ 모든 유형</span><label><input id="mwQ" placeholder="검색할 카드 이름을 입력하세요." value="${MWQ.replace(/"/g,'')}"></label><button id="mwR">초기화</button></div>
+   <div class="mw2g">${L.map(cell).join('')}</div>
+   <div class="mw2d" style="--gc:${G[c.g].c}"><div class="mw2art">${cardIco(c,150)}</div>
+    <div class="mw2n"><b>${c.n}</b><small>${G[c.g].ko} · ${c.ptype}</small></div>
+    <div class="mw2oh">옵션 정보</div>
+    <div class="mw2o">${rows.map(([k,v])=>`<p><span>${k}</span><b>${v}</b></p>`).join('')}${awr.length?`<h6 class="${aw?'':'off'}">(각성)</h6>${awr.map(([k,v])=>`<p class="${aw?'':'off'}"><span>${k}</span><b>${v}</b></p>`).join('')}`:''}${c.sks.map(k=>`<p class="sk"><span>스킬 「${k.n}」</span></p>`).join('')}</div>
+    <button class="mw2now" id="${o?(on?'pkMorph':'mwGo'):''}" ${o?'':'disabled'}>${o?(on?'변신 해제':'즉시 변신'):'미보유'}</button></div>
+   <div class="mw2b"><button id="mwAw">각 성</button><button id="mwCol">컬렉션 보기</button><button id="mwReg">변신 등록</button></div></div>`;
+  const q=$('mwQ');if(q)q.oninput=()=>{MWQ=q.value;const p=q.selectionStart;draw();const q2=$('mwQ');q2.focus();q2.setSelectionRange(p,p)}};
+ const close=()=>{st.hidden=true;st.innerHTML='';st.onclick=null;st.classList.remove('mwfull')};
+ st.onclick=e=>{const t=e.target;if(t.id==='pkX'){close();return}if(t.id==='pkMorph'){S.morph=false;MORPHFX=performance.now();save();close();render();return}
+  if(t.id==='mwGo'){S.eqT=MWSEL;S.morph=true;MORPHFX=performance.now();save();close();render();return}
+  if(t.id==='mwR'){MWQ='';MWG=-1;draw();return}
+  if(t.id==='mwAw'){const c=C(MWSEL);announce(c.aw?(polyAwake(c)?'이미 각성이 적용 중이에요':'같은 변신 카드가 2장 있으면 자동으로 각성돼요'):'이 변신은 각성이 없어요');return}
+  if(t.id==='mwCol'){close();TAB='col';render();document.documentElement.classList.add('mopen');lmSync();return}
+  if(t.id==='mwReg'){announce('변신 카드는 얻는 즉시 자동으로 등록돼요');return}
+  let b;if(b=t.closest('[data-mwt]')){const k=b.dataset.mwt;if(k==='syn'){close();synthWin('t')}else if(k==='doll'){close();slotPick('d')}else if(k==='col'){close();TAB='col';render();document.documentElement.classList.add('mopen');lmSync()}else announce('「용병 파견」은 준비 중이에요');return}
+  if(b=t.closest('[data-mwg]')){MWG=+b.dataset.mwg;draw();return}
+  if(b=t.closest('[data-mw]')){if(b.dataset.mw===MWSEL&&own(MWSEL)&&e.detail>=2){S.eqT=MWSEL;S.morph=true;MORPHFX=performance.now();save();close();render();return}MWSEL=b.dataset.mw;draw()}};draw()}
 const dropsHtml=()=>(S.drops||[]).length?(S.drops||[]).map(d=>`<li><b style="color:${d.c}">${d.n}</b><small>${d.z} · ${Math.max(0,Math.round((Date.now()-d.t)/60000))}분 전</small></li>`).join(''):'<li><small>아직 귀한 전리품이 없어요</small></li>';
 function vHunt(){const cur=S.burstK?-1:(S.gi||0);const bl=burstLeft();
  return`<h3>사냥터</h3><p class="sub">레벨대별 사냥터를 골라 사냥해요. 높은 사냥터일수록 경험치·골드·전리품이 많지만 몬스터가 강해요. <b>장비가 좋으면 높은 사냥터에서 빠르게 레벨업</b>할 수 있어요(내 레벨 +15까지 경험치가 늘어나요). 가끔 정예·네임드 몬스터가 나와요.</p>
