@@ -12199,6 +12199,34 @@
    "format": "PNG 1280×400 (320×400 프레임 4장 가로, 금빛 스파클만 변화, 동상 고정)",
    "status": "todo",
    "priority": 0
+  },
+  {
+   "id": "sys_gs",
+   "name": "수호성 화면 그림",
+   "request_sheet": "style_ref/req_gs.png",
+   "status": "todo",
+   "priority": 0
+  },
+  {
+   "id": "sys_mun",
+   "name": "문양 화면 그림",
+   "request_sheet": "style_ref/req_mun.png",
+   "status": "todo",
+   "priority": 0
+  },
+  {
+   "id": "sys_dom",
+   "name": "지배석 화면 그림",
+   "request_sheet": "style_ref/req_dom.png",
+   "status": "todo",
+   "priority": 0
+  },
+  {
+   "id": "t_golden_dragon8_v2",
+   "name": "변신 톤다운 샘플(제우스 idle 8방향)",
+   "request_sheet": "style_ref/req_morph_tone.png",
+   "status": "todo",
+   "priority": 0
   }
  ],
  "effects_rules": "이펙트 전용: 정사각형 3x3 그리드(9프레임, 왼→오, 위→아래), 모든 칸 같은 크기, 효과가 각 칸 중앙(바닥형은 칸 아래쪽 중앙)에 위치, 칸 밖으로 잘리지 않게 여백, 배경은 순수 검정 #000000, 캐릭터·글자·격자선 없음. 리니지M 같은 한국 MMORPG 스킬 이펙트 느낌으로 선명하고 빛나게(glow). 파일: art_in/e_<이름>/sheet.png",
