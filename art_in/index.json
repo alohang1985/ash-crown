@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16 13:37",
+ "updated": "2026-10-16 13:44",
  "source": "Gemini 웹(Pro) via OpenClaw 맥미니 — 원본 그대로(배경 #FF00FF 요청, 오른쪽 아래 Gemini 반짝이 워터마크 있음)",
  "assets": {
   "e_meteor": {
@@ -8484,7 +8484,7 @@
   "e_counter_barrier": {
    "sheets": {
     "sheet": {
-     "at": "10-16 09:46",
+     "at": "10-16 13:44",
      "by": "chatgpt-plus"
     }
    },
@@ -8493,7 +8493,7 @@
   "e_dragon_breath": {
    "sheets": {
     "sheet": {
-     "at": "10-16 09:46",
+     "at": "10-16 13:44",
      "by": "chatgpt-plus"
     }
    },
@@ -8502,7 +8502,7 @@
   "e_hit_spark": {
    "sheets": {
     "sheet": {
-     "at": "10-16 09:46",
+     "at": "10-16 13:44",
      "by": "chatgpt-plus"
     }
    },
@@ -8511,7 +8511,7 @@
   "e_royal_aura": {
    "sheets": {
     "sheet": {
-     "at": "10-16 09:46",
+     "at": "10-16 13:44",
      "by": "chatgpt-plus"
     }
    },
@@ -8520,7 +8520,7 @@
   "e_shadow_strike": {
    "sheets": {
     "sheet": {
-     "at": "10-16 09:46",
+     "at": "10-16 13:44",
      "by": "chatgpt-plus"
     }
    },
@@ -8529,7 +8529,7 @@
   "e_wind_arrow": {
    "sheets": {
     "sheet": {
-     "at": "10-16 09:46",
+     "at": "10-16 13:44",
      "by": "chatgpt-plus"
     }
    },
@@ -8736,6 +8736,33 @@
    "sheets": {
     "totem_teb": {
      "at": "10-16 13:37",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "e_arcane_cube": {
+   "sheets": {
+    "sheet": {
+     "at": "10-16 13:44",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "e_berserk": {
+   "sheets": {
+    "sheet": {
+     "at": "10-16 13:44",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "e_summon_circle": {
+   "sheets": {
+    "sheet": {
+     "at": "10-16 13:44",
      "by": "chatgpt-plus"
     }
    },
