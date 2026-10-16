@@ -1845,6 +1845,36 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 .linb button{width:calc(var(--vh)*9)!important;height:calc(var(--vh)*6)!important;border:1px solid #3d6aa8!important;border-top-color:#7fb0ff!important;background:linear-gradient(#2c5a96,#163a6a)!important;border-radius:2px;font-size:calc(var(--vh)*3.2)!important;color:#fff;filter:none}
 .linb button.on{box-shadow:0 0 0 2px #ffd27a inset}
 .linb button svg{stroke:#d8ecff;filter:drop-shadow(0 0 3px rgba(120,190,255,.9));stroke-width:2.6}
+/* 스킬창: 리니지M 캡처(claude_req/func/03_스킬) 실측 — 폭 51vh, 번호+4칸 한 줄, 칸 10vh */
+.lskw{width:calc(var(--vh)*51)!important;background:linear-gradient(#2a1d16,#1a120e)!important;border:1px solid #4a3326!important}
+.lskw .lpth button{color:#8d8278!important;font-weight:700}
+.lskw .lpth button.on{color:#fff!important;border-left:3px solid #e2a23a;padding-left:calc(var(--vh)*1)}
+.lskw .lpth button.on::after{display:none!important}
+.lskg{padding:calc(var(--vh)*1) calc(var(--vh)*1.2)!important}
+.lskr{display:flex!important;align-items:center;background:rgba(0,0,0,.28);border-bottom:1px solid rgba(255,255,255,.06);padding:calc(var(--vh)*1.1) calc(var(--vh)*.4)!important}
+.lskr>b{color:#c9bfb0!important;font-weight:600!important;flex:0 0 calc(var(--vh)*2.8)!important;text-align:center}
+.lskr>div{display:grid!important;grid-template-columns:repeat(4,calc(var(--vh)*10))!important;gap:calc(var(--vh)*1.1)!important}
+.lskg.cls .lskr{background:transparent;border:0}
+.lskg.cls .lskr>div{grid-template-columns:repeat(4,calc(var(--vh)*10.4))!important}
+.lskw .lsk{width:calc(var(--vh)*10)!important;height:calc(var(--vh)*10)!important;border:1px solid #6d6258!important;background:linear-gradient(#2b221c,#120d0a)!important;box-shadow:none!important;padding:0!important}
+.lskg.cls .lsk{border:2px solid #a7802f!important;width:calc(var(--vh)*10.4)!important;height:calc(var(--vh)*10.4)!important}
+.lskw .lsk.no{filter:brightness(.55) saturate(.6)}
+.lskw .lsk .skart{outline:none!important;box-shadow:none!important}
+.lskw .lsk u.sf{position:absolute;left:2px;top:1px;background:none!important;color:#fff!important;font-style:italic;font-weight:900;font-size:calc(var(--vh)*1.9)!important;text-shadow:0 0 3px #1c8a2a,0 0 2px #000;padding:0!important}
+.lskw .lsk u.on{position:absolute;left:3px;top:1px;background:none!important;color:#3dff5a!important;font-weight:900;font-size:calc(var(--vh)*2.5)!important;text-shadow:0 0 2px #000;padding:0!important}
+.lskw .lsk u.pp{position:absolute;right:2px;top:2px;left:auto;background:#6a6a6a!important;color:#fff!important;font-style:italic;font-family:Georgia,serif;font-size:calc(var(--vh)*1.9)!important;line-height:1.1;padding:0 .25em!important;border:1px solid #aaa}
+.lskw .lsk u.au2{position:absolute;right:3px;top:3px;width:calc(var(--vh)*2);height:calc(var(--vh)*2);border:1.5px solid #e8e8e8;background:none!important;padding:0!important;box-shadow:0 0 2px #000}
+.lskw .lsk u.au2::before,.lskw .lsk u.au2::after{content:'';position:absolute;left:50%;top:50%;width:120%;height:1.5px;background:#e8e8e8;transform:translate(-50%,-50%) rotate(45deg)}
+.lskw .lsk u.au2::after{transform:translate(-50%,-50%) rotate(-45deg)}
+.lskw .lsk em{display:none!important}
+.lskb{display:grid!important;grid-template-columns:repeat(3,1fr);gap:calc(var(--vh)*.6)!important;padding:calc(var(--vh)*1)!important}
+.lskb .lbtn{height:calc(var(--vh)*6.2)!important;background:#231a15!important;border:1px solid #3a2c22!important;color:#8d8278!important;font-size:calc(var(--vh)*2.6)!important;font-weight:700}
+.lskb .lbtn.blue{background:linear-gradient(#24406c,#182c4e)!important;border-color:#3a5a8c!important;color:#fff!important}
+.lsks{margin:calc(var(--vh)*1) 0;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.05);padding:calc(var(--vh)*1.2)}
+.lsks h5{margin:0 0 calc(var(--vh)*1);font-size:calc(var(--vh)*2.7);color:#fff;border-left:3px solid #e2a23a;padding-left:calc(var(--vh)*1)}
+.lske{text-align:center;color:#8d8278;font-size:calc(var(--vh)*2.5);margin:calc(var(--vh)*3) 0}
+.lsksi{display:flex;gap:calc(var(--vh)*1.4);align-items:center}.lsksi small{display:block;color:#a99;font-size:calc(var(--vh)*2)}
+.lskw .lsk,.lskw .lsk .skart{border-radius:0!important}.lskg.cls .lsk.no{filter:brightness(.4) saturate(.4)}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -3778,16 +3808,19 @@ function invWin(){const draw=()=>{const all=invItems();const L=all.filter(x=>(IV
  const all0=()=>invItems();draw()}
 /* 스킬 (오른쪽): 전체 · 기술 · 전용 · 특수 */
 let SKT2='all';
+const skSpecial=()=>{const w=typeof W_==='function'&&W_(),c=w&&C(w.id),ex=c&&EXSK[c.n];const sec=(t,b)=>`<div class="lsks"><h5>${t}</h5>${b}</div>`;
+ return sec('수호성 사용 스킬','<p class="lske">사용 가능한 수호성 스킬이 없습니다.</p>')+sec('장비 스킬',ex?`<div class="lsksi"><span class="lsk" style="--gc:${G[c.g].c}">${cardIco(c,40)}</span><div><b style="color:${G[c.g].c}">${ex[0]}</b><small>${c.n} 착용 시 공격할 때 일정 확률로 발동</small></div></div>`:'<p class="lske">사용 가능한 장비 스킬이 없습니다.</p>')+sec('보유 아이템 스킬','<p class="lske">사용 가능한 보유 아이템 스킬이 없습니다.</p>')};
 function skillWin(){const draw=()=>{const ck=S.cls?S.cls.k:'';const eq=skBar().filter(Boolean);
-  const mine=SKILLS.filter(k=>skOk(k)&&(SKT2==='all'||(SKT2==='act'?!k.pas:SKT2==='cls'?k.cls===ck:k.pas))).sort((a,b)=>(skLv(b.id)?1:0)-(skLv(a.id)?1:0)||a.g-b.g);
-  const sel=SKM[SKSEL];const rows=[];for(let i=0;i<mine.length;i+=8)rows.push(mine.slice(i,i+8));
-  const cell=k=>{const l=skLv(k.id),self=!k.mult&&(k.heal||k.buff);return`<button class="lsk${l?'':' no'}${eq.includes(k.id)?' eq':''}${k.id===SKSEL?' sel':''}" data-sks="${k.id}" style="--gc:${G[k.g].c}">${skArt(k)}${self?'<u class="sf">SELF</u>':''}${k.pas?'<u class="pp">P</u>':isSlotSk(k)?'<u class="pp ac">A</u>':'<u class="pp au">자동</u>'}${l?`<em>Lv.${l}</em>`:!skLvOk(k)?`<em class="lk">${k.lv}</em>`:''}</button>`};
+  if(!['all','cls','sp'].includes(SKT2))SKT2='all';/* 리니지M: 전체(일반 등급 스킬) · 전용(영웅 이상, 금테) · 특수(수호성·장비·보유 아이템 스킬) */
+  const mine=SKT2==='sp'?[]:SKILLS.filter(k=>skOk(k)&&(SKT2==='cls'?k.g>=3:k.g<3)).sort((a,b)=>(skLv(b.id)?1:0)-(skLv(a.id)?1:0)||a.g-b.g);
+  const sel=SKM[SKSEL];const rows=[];for(let i=0;i<mine.length;i+=4)rows.push(mine.slice(i,i+4));
+  const cell=k=>{const l=skLv(k.id),self=!k.mult&&(k.heal||k.buff);return`<button class="lsk${l?'':' no'}${eq.includes(k.id)?' eq':''}${k.id===SKSEL?' sel':''}" data-sks="${k.id}" style="--gc:${G[k.g].c}">${skArt(k)}${k.pas&&SKT2==='cls'&&l?'<u class="on">ON</u>':self?'<u class="sf">SELF</u>':''}${k.pas?'<u class="pp">P</u>':'<u class="au2"></u>'}</button>`};
   const det=sel?(()=>{const l=skLv(sel.id),on=eq.includes(sel.id),sp=skSpare(sel.id);return`<div class="lidet" style="--gc:${G[sel.g].c}"><div class="lidh"><span class="lsk">${skArt(sel)}</span><div><b style="color:${G[sel.g].c}">${sel.n}</b><small>${G[sel.g].ko} · ${sel.cls}${sel.pas?' · 패시브':''} · 습득 Lv.${sel.lv||1}${l?' · 스킬 Lv.'+l:''}</small></div></div><p class="lidd">${sel.d}</p><p class="mini">${l?`위력 +${(l-1)*15}%`:'아직 배우지 않았어요'}${sp?` · 보관 스킬북 ${sp}권`:''}${!sel.pas?` · 재사용 ${Math.round(skCdOf(sel)/1000)}초`:''}</p><div class="lidb">${l&&!sel.pas&&skActOk(sel)?`<button class="lbtn ${on?'blue':'gold'}" data-skeq2="${sel.id}">${on?'슬롯에서 빼기':'슬롯에 넣기 ('+(skPg()+1)+'페이지)'}</button>`:''}${l&&sp&&l<5?`<button class="lbtn blue" data-sklv2="${sel.id}">레벨 업</button>`:''}</div></div>`})():'';
-  const st=dockOpen('dockr',`${det}<div class="lskw"><div class="lpth">${[['all','전체'],['act','기술'],['cls','전용'],['pas','특수']].map(([k,n])=>`<button data-skt="${k}" class="${SKT2===k?'on':''}">${n}</button>`).join('<span>|</span>')}<button class="lx" id="pkX">✕</button></div>
-   <div class="lskg">${rows.map((r,i)=>`<div class="lskr"><b>${i+1}</b><div>${r.map(cell).join('')}</div></div>`).join('')||'<p class="mini" style="padding:12px">스킬이 없어요</p>'}</div>
-   <div class="lskb"><small>슬롯 ${skBar().filter(Boolean).length}/${SKPG*SK_SLOTS} · ${SKPG}페이지</small><button class="lbtn blue" id="skSyn">${ico('book')} 스킬카드</button><button class="lbtn" id="skDet">${ico('star')} 상세 보기</button></div></div>`);
+  const st=dockOpen('dockr',`${det}<div class="lskw"><div class="lpth">${[['all','전체'],['cls','전용'],['sp','특수']].map(([k,n])=>`<button data-skt="${k}" class="${SKT2===k?'on':''}">${n}</button>`).join('<span>|</span>')}<button class="lx" id="pkX">✕</button></div>
+   <div class="lskg${SKT2==='cls'?' cls':''}">${SKT2==='sp'?skSpecial():SKT2==='cls'?`<div class="lskr"><div>${mine.map(cell).join('')}</div></div>`:rows.map((r,i)=>`<div class="lskr"><b>${i+1}</b><div>${r.map(cell).join('')}</div></div>`).join('')||'<p class="mini" style="padding:12px">스킬이 없어요</p>'}</div>
+   <div class="lskb"><button class="lbtn" id="skDeb">디버프</button><button class="lbtn blue" id="skSyn">스킬카드</button><button class="lbtn" id="skDet">상세 보기</button></div></div>`);
   st.onclick=e=>{const t=e.target;if(t.closest('#pkX')||t===st){dockClose();return}let b;
-   if(t.closest('#skSyn')){synthWin('s');return}if(t.closest('#skDet')){if(!SKSEL&&mine[0])SKSEL=mine[0].id;draw();return}
+   if(t.closest('#skSyn')){synthWin('s');return}if(t.closest('#skDeb')){const L=[];if(SV&&SV.pstun>performance.now())L.push('스턴');announce(L.length?'현재 디버프: '+L.join(', '):'현재 걸린 디버프가 없어요');return}if(t.closest('#skDet')){if(!SKSEL&&mine[0])SKSEL=mine[0].id;draw();return}
    if(b=t.closest('[data-skt]')){SKT2=b.dataset.skt;SKSEL=null;draw();return}
    if(b=t.closest('[data-sks]')){SKSEL=SKSEL===b.dataset.sks?null:b.dataset.sks;draw();return}
    if(b=t.closest('[data-skeq2]')){const id=b.dataset.skeq2,B=skBar();S.skBarOff=S.skBarOff||{};const i=B.indexOf(id);if(i>=0){B[i]=null;S.skBarOff[id]=1}else{delete S.skBarOff[id];const p=skPg()*SK_SLOTS;let j=-1;for(let q=p;q<p+SK_SLOTS;q++)if(!B[q]){j=q;break}if(j<0){announce(`${skPg()+1}페이지 슬롯이 가득 찼어요 · 슬롯 아래 점을 눌러 다른 페이지로 바꾸거나 스킬을 빼 주세요`);return}B[j]=id}save();svHudK();draw();return}
