@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16 08:48",
+ "updated": "2026-10-16 08:54",
  "source": "Gemini 웹(Pro) via OpenClaw 맥미니 — 원본 그대로(배경 #FF00FF 요청, 오른쪽 아래 Gemini 반짝이 워터마크 있음)",
  "assets": {
   "e_meteor": {
@@ -7130,6 +7130,23 @@
    "sheets": {
     "map": {
      "at": "10-16 08:48",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "npc_test": {
+   "sheets": {
+    "general": {
+     "at": "10-16 08:54",
+     "by": "chatgpt-plus"
+    },
+    "smith": {
+     "at": "10-16 08:54",
+     "by": "chatgpt-plus"
+    },
+    "storage": {
+     "at": "10-16 08:54",
      "by": "chatgpt-plus"
     }
    },
