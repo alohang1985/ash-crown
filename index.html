@@ -1824,6 +1824,27 @@ html.rot90 body,html.rot90.land body{transform:none!important;position:static!im
 /* 신화·유일 애니메이션 아이콘: 24프레임 시트를 12fps로 */
 .mya{display:inline-block;background-repeat:no-repeat;background-size:calc(var(--n)*100%) 100%;animation:myafr calc(var(--n)*83ms) steps(var(--n)) infinite;border-radius:2px}
 @keyframes myafr{from{background-position:0 0}to{background-position:calc(var(--n) / (var(--n) - 1) * 100%) 0}}
+/* 가방: 리니지M 캡처(claude_req/func/02_가방) 실측 */
+.ling .lii{border:1px solid #3a3029!important;background:linear-gradient(160deg,#241c16,#120d0a)!important;border-radius:2px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.6)!important}
+.ling .lii.sel{border-color:#ffd27a!important}
+.ling .lii img,.ling .lii canvas,.ling .lii .spr,.ling .lii .mya,.ling .lii .mqi{max-width:94%!important;max-height:94%!important}
+.ling .lii u{left:1px;top:1px;font-style:italic;font-family:Georgia,serif;font-size:calc(var(--vh)*2.3);line-height:1.15;padding:0 .3em;background:linear-gradient(#3a7af0,#1d4fc0);border:1px solid #8ab4ff;border-radius:2px}
+.ling .lii em{color:#5ab0ff;font-size:calc(var(--vh)*2.5)}
+.ling .lii .ilk{position:absolute;left:2px;bottom:2px;width:calc(var(--vh)*2.6);height:calc(var(--vh)*2.9);text-decoration:none;background:radial-gradient(circle at 50% 70%,#3a2a10 0 18%,transparent 19%),linear-gradient(#f4d27a,#b78a2a);clip-path:polygon(15% 42%,15% 30%,25% 12%,50% 4%,75% 12%,85% 30%,85% 42%,100% 42%,100% 100%,0 100%,0 42%,15% 42%,30% 42%,30% 32%,38% 20%,50% 16%,62% 20%,70% 32%,70% 42%);filter:drop-shadow(0 0 1px #000)}
+.ling .lii .iqe{position:absolute;inset:-1px;display:grid;place-items:center;background:linear-gradient(160deg,#d4a742,#7a5a1c 70%,#4a360f);border:2px solid #ffd77a;color:#fff;font-weight:900;font-size:calc(var(--vh)*3);text-shadow:0 0 3px #000,0 1px 2px #000;z-index:3;cursor:pointer}
+.ling .lii .iqn{position:absolute;bottom:calc(100% + 2px);left:50%;transform:translateX(-50%);white-space:nowrap;font-weight:800;font-size:calc(var(--vh)*2.9);padding:1px 14px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.72) 18%,rgba(0,0,0,.72) 82%,transparent);text-shadow:-1px 0 #000,1px 0 #000,0 -1px #000,0 1px #000;z-index:4;pointer-events:none}
+.ling .lii:nth-child(8n) .iqn,.ling .lii:nth-child(8n-1) .iqn{left:auto;right:0;transform:none}
+.ling .lii:nth-child(8n+1) .iqn,.ling .lii:nth-child(8n+2) .iqn{left:0;transform:none}
+.ling{overflow-x:hidden!important;overflow-y:auto!important}
+.ling .lii:nth-child(-n+8) .iqn{bottom:auto;top:calc(100% + 2px)}
+.linv,html.land .stage.dockr .linv,html.land .stage.sider .linv{background:linear-gradient(#211a15,#16110d)!important;backdrop-filter:none!important;border:1px solid #4a3a2a!important}
+.ling{background:transparent!important}
+.ling .lii .iqe{background:linear-gradient(160deg,rgba(212,167,66,.82),rgba(122,90,28,.82) 70%,rgba(74,54,15,.85))}
+.ling .lii.qk>img,.ling .lii.qk>span:not(.iqn):not(.iqe),.ling .lii.qk>canvas{opacity:.55}
+.linb{gap:calc(var(--vh)*.8)!important;background:transparent!important;border-top:0!important}
+.linb button{width:calc(var(--vh)*9)!important;height:calc(var(--vh)*6)!important;border:1px solid #3d6aa8!important;border-top-color:#7fb0ff!important;background:linear-gradient(#2c5a96,#163a6a)!important;border-radius:2px;font-size:calc(var(--vh)*3.2)!important;color:#fff;filter:none}
+.linb button.on{box-shadow:0 0 0 2px #ffd27a inset}
+.linb button svg{stroke:#d8ecff;filter:drop-shadow(0 0 3px rgba(120,190,255,.9));stroke-width:2.6}
 
 /* rot90 compact */
 html.rot90.land .lpf{width:46px;height:46px}
@@ -3732,22 +3753,29 @@ function charWin(){const draw=()=>{const tc=S.morph!==false&&C(S.eqT),dl=C(S.eqD
    if((b=t.closest('.lcs2[data-ivk]'))&&b.dataset.ivk){IVSEL=(b.dataset.ivk[0]==='w'?'w:':'a:')+b.dataset.ivk.split(':')[1];invWin();return}}};draw()}
 /* 가방 (오른쪽) */
 let IVQ='';
+/* 가방(리니지M 캡처 기준): 장비를 한 번 누르면 칸 위에 등급색 이름 + 칸이 「장착」 버튼으로 바뀜, 다시 누르면 장착 · 길게 누르면 상세 · 핀=잠금 모드 */
+let IVQK=null,IVLOCKM=false;
 function invWin(){const draw=()=>{const all=invItems();const L=all.filter(x=>(IVT==='all'||x.cat===IVT)&&(!IVQ||((x.c?x.c.n:x.n)||'').includes(IVQ))).sort((a,b)=>(b.eq?1:0)-(a.eq?1:0)||(b.c?b.c.g:0)-(a.c?a.c.g:0)||(b.e||0)-(a.e||0));const N=all.length,cap=208;
   const sel=all.find(x=>x.k===IVSEL)||null;
   const det=sel?`<div class="lidet" style="--gc:${sel.c?G[sel.c.g].c:'#8a6a2c'}"><div class="lidh"><span>${sel.c?cardIco(sel.c,52):`<i>${sel.ic}</i>`}</span><div><b style="color:${sel.c?G[sel.c.g].c:'#ffe9b0'}">${sel.c?(sel.b?'축복받은 ':'')+(sel.e?'+'+sel.e+' ':'')+sel.c.n:sel.n}</b><small>${sel.c?G[sel.c.g].ko+' · '+cardSub0(sel.c):'보유 '+fmt(sel.cnt)}</small></div></div>${sel.c&&clsLine(sel.c)?`<div class="lidcls">${clsLine(sel.c).replace('<br>','')}</div>`:''}${sel.c?optHtml(sel.c):''}<div class="lidb">${sel.c?`${sel.eq?'<button class="lbtn" disabled>착용 중</button>':`<button class="lbtn gold" data-iveq="${sel.k}">장착</button>`}<button class="lbtn blue" data-ivenh="${sel.k}">강화</button>`:/^c:pot\d?$/.test(sel.k)?`<button class="lbtn gold" data-ivuse="${sel.k.slice(2)}">사용</button><button class="lbtn blue" data-ivpk="${sel.k.slice(2)}">퀵슬롯 등록</button>`:sel.k.startsWith('c:pb_')?`<button class="lbtn gold" data-ivuse="${sel.k.slice(2)}">사용</button>`:sel.k.startsWith('c:elx_')||sel.k==='c:chest'?`<button class="lbtn gold" data-ivgo="${sel.k}">사용하러 가기</button>`:''}</div></div>`:'';
   const st=dockOpen('dockr',`${det}<div class="linv"><div class="linh"><label class="lsrch"><input id="ivQ" placeholder="검색할 이름을 입력해주세요" value="${IVQ.replace(/"/g,'')}">${ico('star')}</label><button class="lrst" id="ivR">초기화</button>${[['all','menu'],['eq','clan'],['use','potion'],['etc','']].map(([k,ic])=>`<button class="lflt${IVT===k?' on':''}" data-ivt="${k}">${ic?ico(ic):'ETC'}</button>`).join('')}<button class="lx" id="pkX">✕</button></div>
-   <div class="ling">${L.map(x=>`<button class="lii${x.k===IVSEL?' sel':''}${x.c&&x.c.ty==='w'&&!classW(x.c)?' lino':''}" data-ivk="${x.k}" style="--gc:${x.c?G[x.c.g].c:'#3a2c18'}">${x.c?cardIco(x.c,44):`<i>${x.ic}</i>`}${x.eq?'<u>E</u>':''}${x.e?`<em>+${x.e}</em>`:''}${x.cnt!=null?`<b>${x.cnt>=1e8?Math.floor(x.cnt/1e8)+'억':x.cnt>=1e4?Math.floor(x.cnt/1e4)+'만':fmt(x.cnt)}</b>`:''}</button>`).join('')}${Array.from({length:Math.max(0,32-L.length)},()=>'<div class="lii empty"></div>').join('')}</div>
-   <div class="linf"><span>${ico('gold')} ${S.gold.toLocaleString()}</span><b>${N}/${cap}</b></div><div class="linb"><button title="정렬" id="ivSort">›</button><button title="일괄 분해" id="ivDism">${ico('enh')}</button><button title="새로고침" id="ivRef">⟳</button></div></div>`);
+   <div class="ling">${L.map(x=>`<button class="lii${x.k===IVSEL?' sel':''}${x.k===IVQK?' qk':''}${x.c&&x.c.ty==='w'&&!classW(x.c)?' lino':''}" data-ivk="${x.k}" style="--gc:${x.c?G[x.c.g].c:'#3a2c18'}">${x.c?cardIco(x.c,44):`<i>${x.ic}</i>`}${x.eq?'<u>E</u>':''}${(S.ivLock||{})[x.k]?'<s class="ilk"></s>':''}${x.k===IVQK?`<span class="iqn" style="color:${x.c?G[x.c.g].c:'#fff'}">${x.c?(x.e?'+'+x.e+' ':'')+x.c.n:x.n}</span><span class="iqe" data-ivqeq="${x.k}">장착</span>`:''}${x.e?`<em>+${x.e}</em>`:''}${x.cnt!=null?`<b>${x.cnt>=1e8?Math.floor(x.cnt/1e8)+'억':x.cnt>=1e4?Math.floor(x.cnt/1e4)+'만':fmt(x.cnt)}</b>`:''}</button>`).join('')}${Array.from({length:Math.max(0,32-L.length)},()=>'<div class="lii empty"></div>').join('')}</div>
+   <div class="linf"><span>${ico('gold')} ${S.gold.toLocaleString()}</span><b>${N}/${cap}</b></div><div class="linb"><button title="정렬" id="ivSort"><svg viewBox="0 0 24 24" width="62%" height="62%" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button><button title="자동 정렬" id="ivArr"><svg viewBox="0 0 24 24" width="62%" height="62%" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M12 3l-3 3M12 3l3 3M12 21l-3-3M12 21l3-3M3 12l3-3M3 12l3 3M21 12l-3-3M21 12l-3 3"/></svg></button><button title="잠금" id="ivPin" class="${IVLOCKM?'on':''}"><svg viewBox="0 0 24 24" width="62%" height="62%" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3l6 6-3 1-4 4 1 4-2 1-4-4-5 5M9 11l4 4M14 4l-4 5"/></svg></button><button title="일괄 분해" id="ivDism"><svg viewBox="0 0 24 24" width="62%" height="62%" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></svg></button><button title="새로고침" id="ivRef"><svg viewBox="0 0 24 24" width="62%" height="62%" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-14 5M4 12a8 8 0 0 1 14-5M18 3v4h-4M6 21v-4h4"/></svg></button></div></div>`);
   const q=$('ivQ');if(q){q.oninput=()=>{IVQ=q.value;const p=q.selectionStart;draw();const q2=$('ivQ');q2.focus();q2.setSelectionRange(p,p)}}
-  st.onclick=e=>{const t=e.target;if(t.closest('#pkX')||t===st){dockClose();return}let b;
+  st.onclick=e=>{const t=e.target;if(st.__lp&&Date.now()-st.__lp<400)return;if(t.closest('#pkX')||t===st){dockClose();return}let b;
    if(t.closest('#ivR')){IVQ='';IVT='all';draw();return}if(b=t.closest('[data-ivt]')){IVT=b.dataset.ivt;draw();return}
-   if(t.closest('#ivDism')){if(confirm('희귀 이하 장비(장착·강화·축복 제외)를 모두 분해할까요?'))bulkDismantle(2);draw();return}if(t.closest('#ivRef')||t.closest('#ivSort')){draw();return}
+   if(t.closest('#ivPin')){IVLOCKM=!IVLOCKM;IVQK=null;announce(IVLOCKM?'잠글 아이템을 눌러주세요 (잠긴 아이템은 분해·판매되지 않아요)':'잠금 모드를 껐어요');draw();return}if(t.closest('#ivArr')){IVQK=null;draw();return}if(b=t.closest('[data-ivqeq]')){IVQK=null;equipU(+b.dataset.ivqeq.split(':')[1]);save();sfx.up(1);draw();return}if(t.closest('#ivDism')){if(confirm('희귀 이하 장비(장착·강화·축복 제외)를 모두 분해할까요?'))bulkDismantle(2);draw();return}if(t.closest('#ivRef')||t.closest('#ivSort')){draw();return}
    if(b=t.closest('[data-iveq]')){equipU(+b.dataset.iveq.split(':')[1]);save();sfx.up(1);draw();return}
    if(b=t.closest('[data-ivenh]')){const[ty,u]=b.dataset.ivenh.split(':');const it=inv(ty).find(x=>x.u===+u);if(it){const c=C(it.id);if(ty==='w'){if(S.eqW!==it.u)equipU(it.u);ET='w'}else{if(!Object.values(S.eqA).includes(it.u))equipU(it.u);ET=c.sl}}ENHU=+u;enhWin();return}
    if(b=t.closest('[data-ivpk]')){S.potK=POTS.findIndex(p=>p[0]===b.dataset.ivpk);announce(POTS[S.potK][1]+'을(를) 퀵슬롯에 등록했어요');lqsInit();save();draw();return}
    if(b=t.closest('[data-ivuse]')){const k=b.dataset.ivuse;const pi=POTS.findIndex(p=>p[0]===k);if(pi>=0){if(!potDrink(stats(),null,null,null,pi))announce('지금은 마실 수 없어요')}else if(k.startsWith('pb_'))pbUse(k.slice(3));save();draw();return}
    if(b=t.closest('[data-ivgo]')){dockClose();TAB=b.dataset.ivgo==='c:chest'?'chest':'up';render();document.documentElement.classList.add('mopen');lmSync();return}
-   if(b=t.closest('[data-ivk]')){IVSEL=IVSEL===b.dataset.ivk?null:b.dataset.ivk;draw();return}}};draw()}
+   if(b=t.closest('[data-ivk]')){const k=b.dataset.ivk;if(IVLOCKM){S.ivLock=S.ivLock||{};if(S.ivLock[k])delete S.ivLock[k];else S.ivLock[k]=1;save();draw();return}
+    const it=all0().find(x=>x.k===k);const eqable=it&&it.c&&(it.c.ty==='w'||it.c.ty==='a')&&!it.eq;
+    if(eqable&&IVQK!==k){IVQK=k;IVSEL=null;draw();return}IVQK=null;IVSEL=IVSEL===k?null:k;draw();return}};
+  /* 길게 누르면 상세 */
+  let lpT=0;st.onpointerdown=e=>{const b=e.target.closest('[data-ivk]');clearTimeout(lpT);if(!b)return;lpT=setTimeout(()=>{IVQK=null;IVSEL=b.dataset.ivk;draw();st.__lp=Date.now()},450)};st.onpointerup=st.onpointerleave=()=>clearTimeout(lpT)};
+ const all0=()=>invItems();draw()}
 /* 스킬 (오른쪽): 전체 · 기술 · 전용 · 특수 */
 let SKT2='all';
 function skillWin(){const draw=()=>{const ck=S.cls?S.cls.k:'';const eq=skBar().filter(Boolean);
@@ -4667,7 +4695,7 @@ function chestOpenOne(auto){if(!(S.chest>0))return null;S.chest--;cntAdd('chest'
  else if(auto&&c.g<=(S.chDism??1)){dismantle(u,true);act='dism'}
  return{c,act,better}}
 function dismantle(u,quiet){for(const ty of['w','a']){const L=inv(ty),i=L.findIndex(x=>x.u===u);if(i>=0&&!isEqU(u)){const c=C(L[i].id);L.splice(i,1);const g=dismGold(c);S.gold+=g;if(rnd()<[.05,.1,.25,.5,1,1,1][c.g])S.scroll+=c.g>=4?R(2,4):1;if(!quiet)announce(`🔨 「${c.n}」 분해 · 골드 +${fmt(g)}`);return g}}return 0}
-function bulkDismantle(maxG){let n=0,g=0;for(const ty of['w','a'])for(const x of inv(ty).slice()){const c=C(x.id);if(!isEqU(x.u)&&x.e===0&&!x.b&&c.g<=maxG&&!(S.keepIds||{})[x.id]){g+=dismantle(x.u,true);n++}}if(n){announce(`🔨 장비 ${n}개 일괄 분해 · 골드 +${fmt(g)}`);sfx.coin()}save();render();return n}
+function bulkDismantle(maxG){let n=0,g=0;for(const ty of['w','a'])for(const x of inv(ty).slice()){const c=C(x.id);if(!isEqU(x.u)&&x.e===0&&!x.b&&c.g<=maxG&&!(S.keepIds||{})[x.id]&&!(S.ivLock||{})[(ty==='w'?'w:':'a:')+x.u]){g+=dismantle(x.u,true);n++}}if(n){announce(`🔨 장비 ${n}개 일괄 분해 · 골드 +${fmt(g)}`);sfx.coin()}save();render();return n}
 let CHAUTO_T=0;
 function chestTick(){if(!S.chAuto||MODE||!(S.chest>0)||(S.lv||1)<5)return;const now=performance.now();if(now-CHAUTO_T<1500/SPD)return;CHAUTO_T=now;const r=chestOpenOne(true);if(r&&r.act==='equip'){announce(`<span style="color:${G[r.c.g].c}">🎁 보물상자 · ${G[r.c.g].ko} 「${r.c.n}」 자동 장착!</span>`);sfx.rare(r.c.g)}if(TAB==='chest')render();stageUI()}
 function vChest(){const r=CHR[chLv()-1];return`<h3>보물상자 <small class="mini">보스를 잡으면 나와요 · 열면 내 직업 장비가 나와요</small></h3>
