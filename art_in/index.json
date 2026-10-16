@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16 19:25",
+ "updated": "2026-10-16 19:32",
  "source": "Gemini 웹(Pro) via OpenClaw 맥미니 — 원본 그대로(배경 #FF00FF 요청, 오른쪽 아래 Gemini 반짝이 워터마크 있음)",
  "assets": {
   "e_meteor": {
@@ -9056,119 +9056,152 @@
   "sys_mun": {
    "sheets": {
     "bg_ain": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "bg_eva": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "bg_gran": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "bg_map": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "bg_paa": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "bg_sai": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "bg_sil": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "crest": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "emblem_ain": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "emblem_eva": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "emblem_gran": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "emblem_map": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "emblem_paa": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "emblem_sai": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "emblem_sil": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "node_ain_off": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "node_ain_on": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "node_eva_off": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "node_eva_on": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "node_gran_off": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "node_gran_on": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "node_map_off": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "node_map_on": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "node_paa_off": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "node_paa_on": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "node_sai_off": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "node_sai_on": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "node_sil_off": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
      "by": "chatgpt-plus"
     },
     "node_sil_on": {
-     "at": "10-16 19:25",
+     "at": "10-16 19:24",
+     "by": "chatgpt-plus"
+    }
+   },
+   "complete": true
+  },
+  "sys_dom": {
+   "sheets": {
+    "bg_main": {
+     "at": "10-16 19:32",
+     "by": "chatgpt-plus"
+    },
+    "bg_synth": {
+     "at": "10-16 19:32",
+     "by": "chatgpt-plus"
+    },
+    "slot_empty": {
+     "at": "10-16 19:32",
+     "by": "chatgpt-plus"
+    },
+    "slot_hero": {
+     "at": "10-16 19:32",
+     "by": "chatgpt-plus"
+    },
+    "slot_legend": {
+     "at": "10-16 19:32",
+     "by": "chatgpt-plus"
+    },
+    "slot_lock": {
+     "at": "10-16 19:32",
+     "by": "chatgpt-plus"
+    },
+    "slot_rare": {
+     "at": "10-16 19:32",
      "by": "chatgpt-plus"
     }
    },
