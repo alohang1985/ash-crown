@@ -100,3 +100,13 @@ Remove ALL grass tufts, small stones, pebbles, flowers and leaves from this imag
 - 솔직한 걱정: 3×3 으로 이어 붙이면 갈라짐(협곡)·눈더미(눈밭)가 같은 간격으로 반복돼 보여요(규칙 6). 한 장에 주인공 무늬가 2~3개라서요.
   → 승인할 때 «무늬를 한 장에 1개만, 나머지는 단색» 처럼 고칠 점을 적어 주시면 그대로 반영해요. 변형 _3(거의 단색)을 많이 섞어 쓰는 방법도 있어요.
 - 이어 붙임 처리도 고쳤어요: 예전엔 반 칸 밀린 그림을 전체에 섞어서 큰 무늬가 두 번 보였는데, 이제 가장자리 15% 띠만 섞어요.
+
+
+[진행 · 11:30] 키트(K2) 성벽 샘플 올렸어요 → art_in/kit/wall/  — 여기서 멈추고 OK 기다려요.
+- wall_se, wall_ne, wall_ne_2(↗ 변형), corner_n·e·s·w, gate_se, gate_ne  (배경 #FF00FF, 여백 8px, 직선 성벽이 가로 약 230px = 캐릭터 64px 기준 길이 256)
+- 8조각을 한 장에 같이 그려 돌·높이·두께를 맞춘 뒤 잘랐어요. 그림자는 마젠타 위에 그려져서 지웠어요(게임에서 그림자 따로 깔아 주세요).
+- 솔직한 문제: 제미나이가 직선 두 개를 모두 ↗ 방향으로 그려서, wall_se 는 wall_ne 를 좌우로 뒤집어 만들었어요(빛이 오른쪽 위에서 오는 것처럼 보일 수 있어요).
+  모서리·문 조각은 끝이 정확히 맞물리는지 아직 확인 못 했어요 — 게임에 붙여 보고 어긋나면 알려 주세요.
+- 첫 시도는 리니지M 마을 화면을 참고로 붙였더니 화면(UI·글자·사람)째로 성벽 뒤에 그려서 버렸고, 참고 그림 없이 글로만 다시 그렸어요.
+- 보낸 프롬프트 전문(맨 앞에 «이미지를 생성해줘.» 붙음, 첨부 없음):
+A modular TOWN WALL kit for an isometric game, 8 separate pieces in a 4x2 layout (left to right, top row then bottom row): 1) straight wall segment running diagonally down-right (↘), 2) straight wall segment running diagonally up-right (↗), 3) corner piece pointing north (top), 4) corner pointing east (right), 5) corner pointing south (bottom), 6) corner pointing west (left), 7) gate in a ↘ wall: open arch with a small banner, 8) gate in a ↗ wall: open arch with a small banner. All pieces are the SAME greyish-white stone, the SAME wall height and thickness, with a walkway and crenellations on top, so their ends join exactly. 45-degree isometric 3/4 view (2:1 diamond grid, no perspective), light from the upper left with shadows falling to the lower right, Lineage M style hand-painted 2D game art, calm and slightly warm colours, no text, no people. Background: perfectly flat pure magenta (#FF00FF), nothing else, no ground under the pieces, no frames or grid lines. Keep generous empty magenta space between the pieces so each can be cut out separately.
