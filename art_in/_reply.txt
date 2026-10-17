@@ -35,3 +35,12 @@ B(GPT, 13:31부터): 기사 남 다시(은회색 판금, 망토·방패·금색 
 - dg2/ 던전 입장 배경 6장, sys_hal/bg_main.png, sys_elx/bg.png, sys_stat/bg.png (모두 1600×900)
 - 제미나이 반짝이 표시와, 참고 화면에서 따라 그린 글자(«Exp…»)는 가장자리를 잘라 없앴어요.
 GPT(B 목록)는 13:31부터 기사 남 다시 → 제우스 v2 … 순서로 시작해요.
+
+[진행 · 08:42] «오늘 제미나이는 땅» 확인했어요. 큰 지도(늑대 언덕 2차)는 취소했어요.
+- 바닥 텍스처: art_in/gt2/<지역>_<종류>_<1|2|3>.png (1024, 상하좌우 이어짐, 원래 크기용)
+  · 공통: common_grass·common_dirt·common_road·common_gravel·common_moss·common_mud
+  · island_sand, canyon_dirt, deadland_ash, frost_snow, abyss_rock, castle_stone (이 순서로)
+- 바닥 장식: art_in/gd2/<rocks|bush|drygrass|flowers|puddle|crack|leaves|bones|mushroom>_<1~6>.png (긴 쪽 256px, 배경 #FF00FF)
+- 마을 바닥 말하는 섬·오렌은 이미 올렸어요: art_in/town2/town2_talking.png, town2_oren.png
+- 참고: 바닥을 이어 붙이는 처리에 실수가 있어서(가장자리 가운데에 이음새 줄) 고쳤고, 그동안 올린 타일(town/, ground/, town2/)도 모두 다시 만들어 올렸어요.
+- 늑대 언덕 1차(art_in/map2_wolfhill/map.png)는 축척이 너무 가까워서(나무가 너비의 1/4) 쓰지 마세요.
