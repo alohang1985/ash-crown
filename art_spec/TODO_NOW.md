@@ -26,6 +26,21 @@
 ### K3. 건물 (각 2~3종) → art_in/kit/bld/
 - house_small, house_mid, house_large, inn, smithy, church, shop, warehouse, guardhouse, tower_mage, stable, mill, tent_merchant — 모두 정면이 오른쪽 아래를 보게.
 
+### K3+. 들어갈 수 있는 건물 = 바깥 + 실내 한 쌍 (리니지M 방식)
+- 리니지M: 들어갈 수 있는 건물(성당·여관·상점·창고·대장간)은 안에 들어가면 지붕과 앞쪽 두 벽이 사라지고 실내(바닥·의자·제단·선반)가 보여요. 들어갈 수 없는 건물은 뒤로 가면 반투명해져요(이건 코드가 처리).
+- 그래서 들어가는 건물은 두 장을 같은 캔버스 크기·같은 위치로 주세요: <이름>_out.png(지붕 있는 바깥), <이름>_in.png(지붕·앞 두 벽을 잘라낸 단면: 뒤 두 벽 안쪽면 + 실내 바닥 + 가구). 두 장을 겹치면 벽 위치가 정확히 맞아야 해요.
+- 문은 오른쪽 아래(정면)에 하나, 사람이 지나갈 폭(캐릭터 2명).
+- 대상: church(성당: 긴 의자 줄·제단·스테인드글라스 뒷벽), inn(여관: 탁자·난로·카운터), shop(진열대), warehouse(상자·선반), smithy(모루·화로)
+- 크기: 성당 폭 640~760px, 나머지 360~480px (캐릭터 64px 기준). 고딕 성당은 리니지M 아덴 마을 성당처럼 크게.
+- 바닥 받침 흙 섬(지금 BD_* 그림 아래 깔린 흙덩이)은 넣지 마세요 — 건물만, 아래는 #FF00FF.
+
+### K6. 던전 벽 부품 (이어 붙이기) → art_in/kit/dun/
+- 리니지 동굴 던전처럼 좁은 통로 미로를 벽 조각으로 만들 거예요(구조는 제가 짜요).
+- 종류별: cave(말하는 섬 던전처럼 회갈색 돌을 쌓은 낮은 굽은 벽), prison(기란 감옥: 회색 벽돌 벽·쇠창살 문), tower(오만의 탑: 흰 대리석 기둥 + 벽면 장식), lava(붉은 바위 + 용암 틈), ice(얼음 벽)
+- 각 종류마다: wall_se, wall_ne(직선 128), corner_out_n·e·s·w, corner_in_n·e·s·w, end_cap, door/opening, pillar, 그리고 바닥 4096×2304 맨바닥 1~2장
+- 소품: torch_wall, brazier, bones_pile, broken_pillar, chest, cobweb, rubble, puddle — 각 3종
+- 벽 높이 = 캐릭터 키의 1.2배(약 80px), 두께 일정, 조각 끝이 정확히 맞물리게.
+
 ### K4. 마을 소품 (각 3~6종) → art_in/kit/prop/
 - lamp, bench, barrel, crate, cart, well, fountain, market_stall, banner, signpost, hay, flowerpot, planter_box, statue_small, noticeboard, weapon_rack, sack, firewood
 
