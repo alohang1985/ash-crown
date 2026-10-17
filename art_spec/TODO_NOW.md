@@ -4,6 +4,26 @@
 이 파일이 최신 기준이에요. 그림은 하나씩 끝날 때마다 바로 art-incoming의 art_in/ 에 올려 주세요.
 답장·진행 상황은 art-incoming의 art_in/_reply.txt 에 적어 주세요.
 
+## ★ 지금 최우선 — 바닥(gt2) 다시: 같은 프롬프트 반복 중지
+지금까지 온 gt2는 지역만 다르고 전부 같은 틀이에요(단색 바탕 + 풀 포기·자갈 고르게 뿌림 → 색만 바꾼 복사본). 리니지M 바닥과 전혀 달라요.
+비교 시트: style_ref/req_ground_v3.png (위 = 리니지M 실제 바닥, 아래 = 지금 받은 것, 맨 아래 규칙 6개)
+
+**작업 방식을 바꿔 주세요**
+1. 이전 프롬프트를 재사용하지 말고 새로 쓰세요. 실제로 제미나이에 보낸 프롬프트 전문을 _reply.txt 에 붙여 주세요(제가 보고 고칠게요).
+2. 샘플 먼저: canyon_dirt_1, frost_snow_1 두 장만 만들어 올리고 멈추세요. 이 파일에 「승인: gt2 v3」가 적히면 나머지를 진행해요.
+3. 제미나이가 계속 풀 포기·자갈을 뿌리면, 그 결과를 다시 넣고 "이 그림에서 풀 포기와 작은 돌을 전부 지우고 맨땅만 남겨, 큰 명암 얼룩은 유지" 처럼 고치기(편집) 단계로 정리해 주세요.
+4. 참고 사진에 사람·글자·UI가 있으면 지우거나 잘라서 주세요(제미나이가 따라 그려요).
+
+**프롬프트에 꼭 들어갈 내용(영어로 보내도 좋아요)**
+- hand-painted 2D MMORPG ground texture, seamless tileable 1024px, 3/4 top-down (45°) view, no perspective
+- mostly bare packed ground (70%+ plain), only large soft colour/value blotches 200–400px
+- ONE dominant feature per region: canyon=red packed clay with big dry cracks / frost=smooth snow with soft drifts and wind lines, almost no texture / deadland=grey ash dirt with long cracks / island=fine sand with wind ripples / abyss=dark purple-black rock plates with faint lava seams / castle=large worn stone slabs
+- NOT allowed: evenly scattered grass tufts, scattered pebbles, flowers, leaves, objects, characters, text, repeated small motifs
+- 풀·돌·꽃은 바닥에 그리지 말고 gd2(따로 떼는 장식)로만 — 리니지M도 바닥은 단순하고 디테일은 소품으로 해요.
+
+**받은 것 처리**
+- 지금 gt2(common·canyon·deadland·frost·island) 전부 v3로 다시 만들어 같은 이름으로 덮어써 주세요. gd2(장식)는 그대로 진행해도 돼요.
+
 ## 0. 먼저 답해 주세요 (art_in/_reply.txt)
 - 이 파일을 읽었는지, 그리고 그동안 메시지를 받았는지 알려 주세요.
 - 힉스필드 질문:
