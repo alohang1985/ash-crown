@@ -19,3 +19,12 @@ A(제미나이): 기란 큰 지도 샘플(2048×2048 4장 2×2) → 기란 바�
 B(GPT, 13:31부터): 기사 남 다시(은회색 판금, 망토·방패·금색 없음, 한손검, 짧은 갈색 머리) → 제우스 v2 walk·run → attack·skill·hurt·death
    → 미카엘 v2 → 명계의 왕 v2 → 피닉스 v2 → 마법인형 카드 → 토템 3종 → 성 문장·클래스 아이콘·버프 아이콘 → 태고의 검 회전 2차.
    (나머지 변신 v2는 TODO_NOW 에 없어서 피닉스 다음엔 멈춰요. 필요하면 적어 주세요.)
+
+[추가 · 08:25] 파일 위치(요청과 조금 다른 곳):
+- 던전 입장 배경: art_in/dg2/dg2_<talking_island|giran_prison|dragon_valley|tomb|dragon_nest|tower>.png
+- 마을 바닥: art_in/town2/town2_giran.png (기란 먼저, OK 되면 말하는 섬·오렌)
+- 큰 지도: art_in/map2_giran/map.png (2048×2048, 제미나이 한 장이라 이음새 없음) + map_4096.png(같은 그림을 4096으로 키운 것)
+- 마법인형 카드: art_in/doll_<id>/card.png (520×680 = 변신 카드 PC_* 와 같은 2배 크기, 게임에서 260×340)
+- 토템: art_in/sys_tot/totem_<teb|tik|atl>.png 600×900
+- 성 문장·클래스·버프: art_in/ui10/crest.png 512, cls_0~7.png 64(군주·기사·요정·마법사·다크엘프·용기사·환술사·전사), buff_01~20.png 48
+- 태고의 검 2차: art_in/myth_anim/태고의_검_v2.png (3840×160, 24프레임)
