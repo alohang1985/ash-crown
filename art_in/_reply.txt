@@ -63,3 +63,33 @@ GPT(B 목록)는 13:31부터 기사 남 다시 → 제우스 v2 … 순서로 �
 - talking_pave_1, talking_bed_m_1(나무 울타리 들꽃), oren_pave_1(눈 덮인 돌길), oren_planter_1(얼음 결정 꽃 화단)
 - 제미나이가 참고 화면(사람·이름표)을 자꾸 따라 그려서 손으로 잘라냈어요. 이상한 조각이 남아 있으면 알려 주세요.
 다음: gt2(45°) → gd2 → town2 다시.
+
+
+[진행 · 11:19] gt2 v3 확인 — 이전 프롬프트 재사용 중지, 샘플 2장(canyon_dirt_1, frost_snow_1)만 만들고 멈춰요. «승인: gt2 v3» 보면 나머지 34장.
+- 참고 사진: 비교 시트 윗줄에서 사람·글자·UI 없는 부분만 잘라 한 장으로 붙였어요(다져진 흙길·눈밭·붉은 모래 바람결·마른 땅 갈라짐).
+- 풀 포기·작은 돌이 많이 나오면 같은 대화창에서 아래 «지우기» 편집을 한 번 더 보내요.
+- 실제로 제미나이에 보내는 프롬프트 전문(맨 앞에 «이미지를 생성해줘.» 가 붙어요):
+
+[canyon_dirt_1]
+Hand-painted 2D MMORPG ground texture, seamless tileable square, 3/4 top-down view (about 45 degrees), NO perspective (same scale everywhere), light from the upper left, slightly warm and moderately saturated like Lineage M. MOSTLY BARE PACKED GROUND: at least 70% of the area is plain ground with only very large, soft colour/value blotches (each 20-40% of the image wide). NOT allowed: evenly scattered grass tufts, scattered pebbles or small stones, flowers, leaves, objects, characters, text, UI, grid, stripes, any small repeated motif. The attached photos are real Lineage M ground (bare, simple) - match that simplicity, do not copy them. Region: red canyon. ONE dominant feature: red packed clay with a few big dry crack networks (long, irregular). Nothing else. Variant 1: the feature is clearly visible but sparse.
+
+[frost_snow_1]
+Hand-painted 2D MMORPG ground texture, seamless tileable square, 3/4 top-down view (about 45 degrees), NO perspective (same scale everywhere), light from the upper left, slightly warm and moderately saturated like Lineage M. MOSTLY BARE PACKED GROUND: at least 70% of the area is plain ground with only very large, soft colour/value blotches (each 20-40% of the image wide). NOT allowed: evenly scattered grass tufts, scattered pebbles or small stones, flowers, leaves, objects, characters, text, UI, grid, stripes, any small repeated motif. The attached photos are real Lineage M ground (bare, simple) - match that simplicity, do not copy them. Region: frost. ONE dominant feature: smooth snow with a few soft drifts and faint wind lines. Almost no texture, very calm, pale blue-white. Variant 1: the feature is clearly visible but sparse.
+
+[지우기 편집(필요할 때만)]
+Remove ALL grass tufts, small stones, pebbles, flowers and leaves from this image, keep only the bare ground and its large soft light/dark blotches (and the region's main feature). Keep it seamless and the same size, no text.
+
+[나머지 지역·종류의 «ONE dominant feature» 문장]
+- canyon_dirt: Region: red canyon. ONE dominant feature: red packed clay with a few big dry crack networks (long, irregular). Nothing else.
+- frost_snow: Region: frost. ONE dominant feature: smooth snow with a few soft drifts and faint wind lines. Almost no texture, very calm, pale blue-white.
+- deadland_ash: Region: deadland. ONE dominant feature: grey ash dirt with a few long cracks. Nothing else.
+- island_sand: Region: island beach. ONE dominant feature: fine sand with wind ripples. Nothing else.
+- abyss_rock: Region: abyss. ONE dominant feature: dark purple-black rock plates with faint thin lava seams between them.
+- castle_stone: Region: castle. ONE dominant feature: large worn stone slabs (big, irregular), plain between them.
+- common_dirt: Region: plain field. ONE dominant feature: packed brown dirt road ground, almost a single colour with very soft blotches.
+- common_grass: Region: meadow. ONE dominant feature: short flat grass covering the ground like a soft carpet (no individual tufts), with large soft colour patches.
+- common_road: Region: road. ONE dominant feature: packed dirt with two faint long wheel-rut lines crossing the tile.
+- common_gravel: Region: gravel yard. ONE dominant feature: fine flat gravel surface reading as a soft speckled colour, no distinct individual stones.
+- common_moss: Region: old ruins. ONE dominant feature: a few large flat stone slabs half covered by soft moss patches.
+- common_mud: Region: wet field. ONE dominant feature: dark mud with one or two large shallow wet patches (soft reflections).
+- 변형: _1: Variant 1: the feature is clearly visible but sparse. / _2: Variant 2: different layout from variant 1 (not a rearrangement of the same pieces). / _3: Variant 3: almost plain base colour only - for use as a calm filler tile.
