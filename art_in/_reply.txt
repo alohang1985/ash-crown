@@ -28,3 +28,10 @@ B(GPT, 13:31부터): 기사 남 다시(은회색 판금, 망토·방패·금색 
 - 토템: art_in/sys_tot/totem_<teb|tik|atl>.png 600×900
 - 성 문장·클래스·버프: art_in/ui10/crest.png 512, cls_0~7.png 64(군주·기사·요정·마법사·다크엘프·용기사·환술사·전사), buff_01~20.png 48
 - 태고의 검 2차: art_in/myth_anim/태고의_검_v2.png (3840×160, 24프레임)
+
+[진행 · 08:21] 제미나이 A 목록 1차 끝 — 올렸어요:
+- map2_giran/map.png(2048) + map_4096.png ← 샘플이에요. OK면 나머지 16곳도 같은 방식으로 할게요.
+- town2/town2_giran.png(1024, 이음새 없음) ← OK면 말하는 섬·오렌도.
+- dg2/ 던전 입장 배경 6장, sys_hal/bg_main.png, sys_elx/bg.png, sys_stat/bg.png (모두 1600×900)
+- 제미나이 반짝이 표시와, 참고 화면에서 따라 그린 글자(«Exp…»)는 가장자리를 잘라 없앴어요.
+GPT(B 목록)는 13:31부터 기사 남 다시 → 제우스 v2 … 순서로 시작해요.
