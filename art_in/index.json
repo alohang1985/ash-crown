@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-17 08:43",
+ "updated": "2026-10-17 08:46",
  "source": "Gemini 웹(Pro) via OpenClaw 맥미니 — 원본 그대로(배경 #FF00FF 요청, 오른쪽 아래 Gemini 반짝이 워터마크 있음)",
  "assets": {
   "e_meteor": {
@@ -9400,7 +9400,11 @@
   "gt2": {
    "sheets": {
     "common_grass_1": {
-     "at": "10-17 08:43",
+     "at": "10-17 08:46",
+     "by": "chatgpt-plus"
+    },
+    "common_grass_2": {
+     "at": "10-17 08:46",
      "by": "chatgpt-plus"
     }
    },
