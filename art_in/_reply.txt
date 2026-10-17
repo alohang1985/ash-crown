@@ -49,3 +49,8 @@ GPT(B 목록)는 13:31부터 기사 남 다시 → 제우스 v2 … 순서로 �
 - 지금까지 그린 gt2 15장(common grass·dirt·road·gravel·moss)은 위에서 똑바로 본 시점이라 모두 45°로 다시 그려 같은 이름으로 덮어써요.
 - 순서: common 6종 → 지역 6종 → 바닥 장식 gd2 → town2 기란·말하는 섬·오렌 다시(45°).
 - 참고 그림 lm_ground_angle_ref.png 를 바닥마다 같이 붙여요.
+
+[진행 · 09:32] 기란 마을 바닥(리니지M처럼 공들여서) 확인 — 제미나이로 gt2 보다 먼저 해요.
+- art_in/town3/: pave_giran_1·2(1024 이어짐) → bed_s|m|l_1·2(#FF00FF, 384×192·640×320·960×480) → lamp_1·2(높이 160) → curb_1~3(긴 쪽 512)
+  → talking_pave_1, talking_bed_m_1(나무 울타리 들꽃 화단), oren_pave_1, oren_planter_1(얼음 화분)
+- 그다음 gt2(45°) → gd2 → town2 다시 순서예요. 풀밭 45° 3장은 이미 덮어써서 올렸어요.
