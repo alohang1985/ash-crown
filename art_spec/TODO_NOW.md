@@ -4,6 +4,39 @@
 이 파일이 최신 기준이에요. 그림은 하나씩 끝날 때마다 바로 art-incoming의 art_in/ 에 올려 주세요.
 답장·진행 상황은 art-incoming의 art_in/_reply.txt 에 적어 주세요.
 
+## ★★ 새 방식 — 큰 바닥 + 부품을 아주 많이 (배치는 Claude가 직접) · gt2 v3보다 우선
+한 장에 풀·돌·꽃·울타리까지 다 그려 넣지 마세요. 땅은 땅만, 사물은 하나씩 따로 주세요. 배치는 제가 게임 안에서 하나하나 해요.
+비교·크기 시트: style_ref/req_kit_v1.png (지금 마을 = 동그란 접시 + 코드로 그린 말뚝 울타리 → 다시 만들 거예요)
+
+**공통**: 45° 쿼터뷰(원근 없음), 빛 왼쪽 위·그림자 오른쪽 아래, 리니지M 톤(차분·약간 따뜻), 글자·사람 금지.
+크기 기준: 캐릭터 키 = 64px. 모든 부품을 이 비율로(나무 160~260px, 집 300~480px 폭, 바위 30~120px).
+부품 배경은 #FF00FF 단색, 한 파일에 한 개, 가장자리 여백 8px.
+
+### K1. 큰 바닥 (맨땅만) → art_in/kit/ground/<이름>_<n>.png
+- 4096×2304(게임 화면 6배), 상하좌우 이어짐, 풀 포기·돌·꽃·물건 0개. 큰 명암 얼룩만.
+- 종류(각 2장): grass_meadow(짧은 풀밭, 질감만), dirt_packed, mud_dark, sand_beach, sand_desert(바람결), clay_red(큰 갈라짐), ash_grey, snow, rock_dark(용암 금 약하게), cobble_town(마을 포장돌, 큰 패턴 없이 고른 돌), cobble_worn(낡고 흙 섞인 포장), flagstone_plaza(큰 판석 광장)
+- 띠 모양 길: road_dirt_strip, road_stone_strip (2048×512, 가로 방향 이어짐, 양 끝 이어짐, 위아래 가장자리는 #FF00FF로 부드럽게 사라짐) — 제가 대각선으로 돌려 깔아요.
+
+### K2. 성벽·울타리 (이어 붙이는 조각) → art_in/kit/wall/
+- 마을 성벽(회백색 돌): wall_se(↘ 방향 직선, 길이 256), wall_ne(↗ 방향), corner_n·e·s·w, tower_round, tower_square, gate_se·gate_ne(문 열린 아치, 깃발 작게), wall_broken_se·ne
+- 나무 울타리: fence_se, fence_ne(길이 128), fence_post, fence_gate
+- 낮은 돌담: stonewall_low_se·ne, 생울타리 hedge_se·ne
+- 조각끼리 끝이 정확히 맞물리게(같은 높이·두께). 2:1 마름모 격자에 맞춰 주세요.
+
+### K3. 건물 (각 2~3종) → art_in/kit/bld/
+- house_small, house_mid, house_large, inn, smithy, church, shop, warehouse, guardhouse, tower_mage, stable, mill, tent_merchant — 모두 정면이 오른쪽 아래를 보게.
+
+### K4. 마을 소품 (각 3~6종) → art_in/kit/prop/
+- lamp, bench, barrel, crate, cart, well, fountain, market_stall, banner, signpost, hay, flowerpot, planter_box, statue_small, noticeboard, weapon_rack, sack, firewood
+
+### K5. 자연 소품 (많이: 각 6~12종) → art_in/kit/nat/
+- tree_oak, tree_pine, tree_dead, tree_blossom, bush, grass_clump, flower_patch, fern, reed, rock_small, rock_mid, rock_big, cliff_piece, stump, log, mushroom, bones, skull, puddle(반투명 물), crack_decal, leaves_pile, snow_pile, ice_rock, cactus, coral
+- 풀·꽃 덩어리는 크기 3단계(소·중·대)로.
+
+**순서**: K2 성벽·울타리 → K1 cobble_town·flagstone_plaza·grass_meadow·dirt_packed → K3 → K4 → K5 → 나머지 K1.
+샘플 먼저: wall_se·wall_ne·corner·gate 한 세트 올리고 _reply.txt에 알려 주세요. 제가 게임에 붙여 보고 OK하면 계속.
+보낸 프롬프트 전문도 _reply.txt에 붙여 주세요.
+
 ## ★ 지금 최우선 — 바닥(gt2) 다시: 같은 프롬프트 반복 중지
 지금까지 온 gt2는 지역만 다르고 전부 같은 틀이에요(단색 바탕 + 풀 포기·자갈 고르게 뿌림 → 색만 바꾼 복사본). 리니지M 바닥과 전혀 달라요.
 비교 시트: style_ref/req_ground_v3.png (위 = 리니지M 실제 바닥, 아래 = 지금 받은 것, 맨 아래 규칙 6개)
