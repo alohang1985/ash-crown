@@ -110,3 +110,13 @@ Remove ALL grass tufts, small stones, pebbles, flowers and leaves from this imag
 - 첫 시도는 리니지M 마을 화면을 참고로 붙였더니 화면(UI·글자·사람)째로 성벽 뒤에 그려서 버렸고, 참고 그림 없이 글로만 다시 그렸어요.
 - 보낸 프롬프트 전문(맨 앞에 «이미지를 생성해줘.» 붙음, 첨부 없음):
 A modular TOWN WALL kit for an isometric game, 8 separate pieces in a 4x2 layout (left to right, top row then bottom row): 1) straight wall segment running diagonally down-right (↘), 2) straight wall segment running diagonally up-right (↗), 3) corner piece pointing north (top), 4) corner pointing east (right), 5) corner pointing south (bottom), 6) corner pointing west (left), 7) gate in a ↘ wall: open arch with a small banner, 8) gate in a ↗ wall: open arch with a small banner. All pieces are the SAME greyish-white stone, the SAME wall height and thickness, with a walkway and crenellations on top, so their ends join exactly. 45-degree isometric 3/4 view (2:1 diamond grid, no perspective), light from the upper left with shadows falling to the lower right, Lineage M style hand-painted 2D game art, calm and slightly warm colours, no text, no people. Background: perfectly flat pure magenta (#FF00FF), nothing else, no ground under the pieces, no frames or grid lines. Keep generous empty magenta space between the pieces so each can be cut out separately.
+
+
+[진행 · 11:51] 성벽 직선 2개 다시(템플릿 kit_tpl) → art_in/kit/wall/wall_se.png 504×362, wall_ne.png 505×373 (#FF00FF, 여백 8px)
+- 템플릿을 이미지로 첨부해서 «상자 안을 채워» 요청했고, 결과를 템플릿 상자 모양(선 안쪽)대로 잘랐어요 → 바깥 윤곽의 기울기는 템플릿 그대로 2:1이에요.
+- 솔직한 점: 제미나이는 상자를 정확히 따르지 않고 더 높은 벽을 그려서, 상자 모양으로 «잘라 낸» 거예요. 그래서
+  · 벽 안쪽 돌 줄눈·성가퀴 줄이 2:1보다 아주 조금 어긋날 수 있어요(wall_se 성가퀴 줄은 거의 맞고, wall_ne 는 성가퀴가 앞쪽 가장자리 쪽에 붙음).
+  · 두 장의 돌 모양(성가퀴 구멍 등)이 조금 달라요.
+- 모서리·문은 L자 템플릿 올라오면 같은 방식으로 할게요. 예전 모서리·문(corner_*, gate_*)은 기울기가 틀린 옛 것이에요.
+- 보낸 프롬프트(맨 앞에 «이미지를 생성해줘.», 템플릿 이미지 첨부):
+이 그림의 검은 선 상자 안을 정확히 채우는 회백색 돌 성벽을 그려줘. 파란 선이 바닥 앞선(성벽이 땅에 닿는 앞쪽 모서리)이야. 윗면에 걷는 길과 성가퀴(톱니 모양 흉벽), 앞면은 쌓은 돌 블록, 약간의 이끼. 상자 밖은 지금 그대로 순수 마젠타(#FF00FF), 검은 선·파란 선은 지워. 그림 크기·위치·기울기를 바꾸지 말 것. 45° 아이소메트릭, 빛은 왼쪽 위, 리니지M 손그림 페인터리, 차분하고 약간 따뜻한 색, 글자·사람 없음.
