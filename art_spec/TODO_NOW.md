@@ -4,6 +4,9 @@
 이 파일이 최신 기준이에요. 그림은 하나씩 끝날 때마다 바로 art-incoming의 art_in/ 에 올려 주세요.
 답장·진행 상황은 art-incoming의 art_in/_reply.txt 에 적어 주세요.
 
+## ★★★ 새 요청(그림 아님): 보스·준보스 자료 조사 → art_spec/REQ_BOSS_DATA.md 를 먼저 봐 주세요
+결과: art_in/_data/boss_list.csv
+
 ## ★ 급함(작은 것) — 왼쪽 위 HUD 아이콘 4개 (제미나이)
 비교 시트: style_ref/req_hud_icons.png (위 = 리니지M 실제, 아래 = 지금 우리 흰 선 아이콘)
 → art_in/hud/hud_haste.png, hud_attack.png, hud_defense.png, hud_rank.png (각 128×128, 배경 #FF00FF)
